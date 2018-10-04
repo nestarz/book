@@ -101,6 +101,7 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          'gatsby-plugin-netlify-cms',
           {
             resolve: 'gatsby-remark-images',
             options: {
