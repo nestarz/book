@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Post from '../components/Post'
 import Sidebar from '../components/Sidebar'
+import Layout from "../components/Layout"
 
 import '../assets/scss/init.scss'
 
@@ -15,6 +16,7 @@ class IndexRoute extends React.Component {
     })
 
     return (
+      <Layout>
       <div>
         <Helmet>
           <title>{title}</title>
@@ -25,6 +27,7 @@ class IndexRoute extends React.Component {
           <div className="content__inner">{items}</div>
         </div>
       </div>
+      </Layout>
     )
   }
 }
