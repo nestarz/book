@@ -8,7 +8,7 @@ public_folder: assets
 collections:
   - name: projects
     label: Projets
-    folder: src/pages/projects
+    folder: content/posts
     create: true
     fields:
       - { name: date, label: Date, widget: date }
