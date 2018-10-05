@@ -6,12 +6,13 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: src/pages/posts
+  - name: projects
+    label: Projets
+    folder: src/pages/projects
     create: true
     fields:
-      - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
+      - { name: image, label: Image, widget: image }
       - { name: body, label: Body, widget: markdown }
+      - { name: showonlyimage, label: Show Image ?, widget: boolean }
