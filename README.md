@@ -1,38 +1,156 @@
-# Gatstrap
+![](https://i.imgur.com/M0nwIVi.png)
 
-[![Build Status](https://travis-ci.org/jaxx2104/gatsby-starter-bootstrap.svg?branch=master)](https://travis-ci.org/jaxx2104/gatsby-starter-bootstrap)
-[![dependency Status](https://img.shields.io/david/jaxx2104/gatsby-starter-bootstrap.svg?style=flat-square)](https://david-dm.org/jaxx2104/gatsby-starter-bootstrap#info=dependencies)
+# Gatsby Starter Portfolio: Emma
 
-Gatsby starter for bootstrap a blog
+A portfolio starter for [Gatsby](https://www.gatsbyjs.org/). The target audience are designers and photographers.
 
-![thumb](https://user-images.githubusercontent.com/2681007/42584980-656c9406-856f-11e8-882f-cafa9d89b395.png)
+[Demo Website](https://portfolio-emma.netlify.com/)
 
-## GatsbyJS v2, v1, v0
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LeKoArts/gatsby-starter-portfolio-emma)
 
-- For v2 version of this starter, check out the [master branch](https://github.com/jaxx2104/gatsby-starter-bootstrap).
-- For v1 version, check out the [v1 branch](https://github.com/jaxx2104/gatsby-starter-bootstrap/tree/v1).
-- For v0 version, check out the [v0 branch](https://github.com/jaxx2104/gatsby-starter-bootstrap/tree/v0).
-- Make sure to read the [migration guide](https://next.gatsbyjs.org/docs/migrating-from-v1-to-v2/) when porting v1 projects to v2.
+- Full-width grid-layout
+- Large images
+- Light theme
+
+## Why?
+
+If you want to quickly bootstrap a design/photography portfolio or use it as a foundation for your personal site the *gatsby-starter-portfolio* are a perfect fit for you! The project's goal is to offer minimalistic and fast websites. 
+
+I hope you like my starters and create something awesome! To see some of my work you can visit my [website](https://www.lekoarts.de) or support me on [Patreon](https://www.patreon.com/lekoarts) to get some neat rewards (4K images, project files, tutorial insights). Every pledge on Patreon helps me creating more free starters!
+
+Also check out the other *gatsby-starter-portfolio*:
+- [gatsby-starter-portfolio-emilia](https://github.com/LeKoArts/gatsby-starter-portfolio-emilia)
+- [gatsby-starter-portfolio-bella](https://github.com/LeKoArts/gatsby-starter-portfolio-bella)
+- [gatsby-starter-portfolio-cara](https://github.com/LeKoArts/gatsby-starter-portfolio-cara)
+
+Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfolio.netlify.com/)!
 
 ## Features
 
-- Single column layout
-- Simple components: Post, Page, Navi, Footer etc.
-- [Twitter Bootstrap 4](https://github.com/twbs/bootstrap) css framework.
-- Custom theme color.
+- Gatsby v2.0.0
+- Configurable
+    - Use the website.js to easily change the most important information
+    - Easily change the font
+- Random colors for your covers and project views
+- Uses Emotion for styling
+- Projects in Markdown
+- Google Analytics Support
+- SEO
+    - Sitemap
+    - Schema.org JSONLD
+    - OpenGraph Tags
+    - Twitter Tags
+- Offline Support
+- WebApp Manifest Support
+- Typography.js
+- Responsive images
+    - The right image size for every screen size
+    - Traced SVG loading (lazy-loading)
+    - WebP support
 
-## Installation
+## Getting Started
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-`gatsby new gatstrap https://github.com/jaxx2104/gatsby-starter-bootstrap`
+Check your development environment! You'll need [Node.js](https://nodejs.org/en/), the [Gatsby CLI](https://www.gatsbyjs.org/docs/) and [node-gyp](https://github.com/nodejs/node-gyp#installation) installed. The official Gatsby website also lists two articles regarding this topic:
+- [Gatsby on Windows](https://www.gatsbyjs.org/docs/gatsby-on-windows/)
+- [Check your development environment](https://www.gatsbyjs.org/tutorial/part-zero/)
 
-## Usage
+To copy and install this starter run this command (with "project-name" being the name of your folder you wish to install it in):
 
-develop
-`gatsby develop`
+```
+gatsby new project-name https://github.com/LeKoArts/gatsby-starter-portfolio-emma
+npm run dev
+```
 
-### Custom Theme
+### Adding a new project
+- Create a new folder in ``content/projects`` with the current date (Format: YYYY-MM-DD)
+- Create a new markdown file, add the frontmatter (use the same date format)
+- Add an image and reference it in your frontmatter as ``cover``
+- Write your content below the frontmatter
 
-`/src/layouts/gatstrap.css`
+If you're still unsure have a look at the already existing examples.
 
-![1f466b07-5506-4c8d-8d17-8d02b42d6d0d](https://user-images.githubusercontent.com/2681007/43086458-5092d0be-8ed8-11e8-8125-8b336fdd3b43.gif)
+### Adding new features/plugins
+
+You can add other features by having a look at the offical [plugins page](https://www.gatsbyjs.org/docs/plugins/)
+
+### Building your site
+
+```
+npm run build
+```
+Copy the content of the ``public`` folder to your webhost or use a website like Netlify which automates that for you.
+
+## Configuration
+
+You can configure your setup in ``config/website.js``:
+
+```JS
+module.exports = {
+  pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
+  siteTitle: 'Emma', // Navigation and Site Title
+  siteTitleAlt: 'Emma - Gatsby Starter Portfolio', // Alternative Site title for SEO
+  siteUrl: 'https://portfolio-emma.netlify.com', // Domain of your site. No trailing slash!
+  siteLanguage: 'en', // Language Tag on <html> element
+  siteLogo: '/logos/logo-1024.png', // Used for SEO and manifest
+  siteDescription: 'Minimalistic bright portfolio with full-width grid and large images',
+  author: 'LekoArts', // Author for schemaORGJSONLD
+  // siteFBAppID: '123456789', // Facebook App ID - Optional
+  userTwitter: '@emma', // Twitter Username
+  ogSiteName: 'emma', // Facebook Site Name
+  ogLanguage: 'en_US',
+  googleAnalyticsID: 'UA-12345689-1',
+  // Manifest and Progress color
+  themeColor: '#3498DB',
+  backgroundColor: '#2b2e3c',
+  // Settings for typography.jsx
+  headerFontFamily: 'Merriweather',
+  bodyFontFamily: 'Roboto',
+  baseFontSize: '16px',
+};
+```
+
+You can also configure the styling of the site by editing the theme variables in ``config/theme.js``. `overlay` are the colors that get randomly selected for the Index page and the project detail view.
+
+```JS
+import { darken } from 'polished';
+
+const brand = {
+  primary: '#cf1993',
+  secondary: '#7b8acc',
+};
+
+const colors = {
+  grey: '#25252',
+  black: '#000',
+  bg_color: '#f3f3f3',
+  body_color: '#222',
+  link_color: brand.primary,
+  link_color_hover: `${darken(0.15, brand.primary)}`,
+};
+
+export const overlay = ['#f76262', '#216583', '#65c0ba', '#35477d', '#6c5b7b', '#203541', '#9951ff', '#480032'];
+
+const theme = {
+  brand,
+  colors,
+  breakpoints: {
+    xs: '400px',
+    s: '600px',
+    m: '900px',
+    l: '1200px',
+  },
+  container: {
+    base: '100rem',
+    text: '55rem',
+  },
+  spacer: {
+    horizontal: '2rem',
+    vertical: '3rem',
+  },
+};
+
+export default theme;
+
+```
+
+**Attention:** You also need to edit ``static/robots.txt`` to include your domain!

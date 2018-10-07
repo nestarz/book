@@ -1,75 +1,70 @@
-const each = require('lodash/each')
-const Promise = require('bluebird')
-const path = require('path')
-const PostTemplate = path.resolve('./src/templates/index.js')
+const path = require('path');
+const _ = require('lodash');
+
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions;
+  let slug;
+  if (node.internal.type === 'MarkdownRemark') {
+    if (
+      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
+      Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug')
+    ) {
+      slug = `/${_.kebabCase(node.frontmatter.slug)}`;
+    }
+    if (
+      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
+      Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
+    ) {
+      slug = `/${_.kebabCase(node.frontmatter.title)}`;
+    }
+    createNodeField({ node, name: 'slug', value: slug });
+  }
+};
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
+    const projectPage = path.resolve('src/templates/project.jsx');
     resolve(
-      graphql(
-        `
-          {
-            allFile(filter: { extension: { regex: "/md|js/" } }, limit: 1000) {
-              edges {
-                node {
-                  id
-                  name: sourceInstanceName
-                  path: absolutePath
-                  remark: childMarkdownRemark {
-                    id
-                    frontmatter {
-                      layout
-                      path
-                    }
-                  }
+      graphql(`
+        {
+          projects: allMarkdownRemark {
+            edges {
+              node {
+                fields {
+                  slug
                 }
               }
             }
           }
-        `
-      ).then(({ errors, data }) => {
-        if (errors) {
-          console.log(errors)
-          reject(errors)
+        }
+      `).then(result => {
+        if (result.errors) {
+          /* eslint no-console: "off" */
+          console.log(result.errors);
+          reject(result.errors);
         }
 
-        // Create blog posts & pages.
-        const items = data.allFile.edges
-        const posts = items.filter(({ node }) => /posts/.test(node.name))
-        each(posts, ({ node }) => {
-          if (!node.remark) return
-          const { path } = node.remark.frontmatter
+        result.data.projects.edges.forEach(edge => {
           createPage({
-            path,
-            component: PostTemplate,
-          })
-        })
-
-        const pages = items.filter(({ node }) => /page/.test(node.name))
-        each(pages, ({ node }) => {
-          if (!node.remark) return
-          const { name } = path.parse(node.path)
-          const PageTemplate = path.resolve(node.path)
-          createPage({
-            path: name,
-            component: PageTemplate,
-          })
-        })
+            path: edge.node.fields.slug,
+            component: projectPage,
+            context: {
+              slug: edge.node.fields.slug,
+            },
+          });
+        });
       })
-    )
-  })
-}
+    );
+  });
+};
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+/* Allow us to use something like: import { X } from 'directory' instead of '../../folder/directory' */
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      alias: {
-        components: path.resolve(__dirname, 'src/components'),
-        templates: path.resolve(__dirname, 'src/templates'),
-        scss: path.resolve(__dirname, 'src/scss'),
-      },
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     },
-  })
-}
+  });
+};
