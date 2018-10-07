@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: nestarz/book
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: projects
+    label: Projets
+    folder: content/projects
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: client, label: Client }
+      - { name: service, label: Service }
+      - { name: cover, label: Cover, widget: image }
+      - { name: image, label: Image, widget: image }
+      - { name: body, label: Body, widget: markdown }
+      - { name: showonlyimage, label: Show Image ?, widget: boolean }
