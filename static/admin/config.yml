@@ -1,16 +1,19 @@
 backend:
   name: github
   repo: nestarz/book
+  branch: master
 
 media_folder: static/assets
 public_folder: assets
+publish_mode: editorial_workflow
 
 collections:
   - name: projects
     label: Projets
-    folder: "content/projects/{{year}}-{{month}}-{{day}}/"
+    folder: "content/projects/"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}/{{year}}-{{month}}-{{day}}_{{slug}}"
+    media_folder: "{{year}}-{{month}}-{{day}}/{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
