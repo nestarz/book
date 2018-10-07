@@ -21,7 +21,4 @@ To test the production build you can run ${chalk.yellow('npm run serve')}.
 
 For further information check the readme of the project
 ${chalk.blue(pkg.repository.url)}
-
-Interested in more starters? Check out my starter overview!
-${chalk.blue('https://gatsby-starter-portfolio.netlify.com/')}
 `);

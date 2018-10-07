@@ -7,8 +7,8 @@ import Helmet from 'react-helmet';
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
+    {/* <Helmet bodyAttributes={{style: `background-color : ${theme.colors.bg_color}`}}/> */}
     <React.Fragment>
-      <Helmet bodyAttributes={{style: `background-color : ${theme.colors.bg_color}`}}/>
       <SEO />
       <Navigation />
       {children}
