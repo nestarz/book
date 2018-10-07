@@ -8,9 +8,9 @@ public_folder: assets
 collections:
   - name: projects
     label: Projets
-    folder: content/projects
+    folder: "content/projects/{{year}}-{{month}}-{{day}}/"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
