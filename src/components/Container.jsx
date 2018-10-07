@@ -6,6 +6,10 @@ const Wrapper = styled.div`
   margin: 0 auto;
   padding: 0 ${props => props.theme.spacer.horizontal};
   max-width: ${props => props.theme.container[props.type]};
+  display: grid;
+  padding: 0 4rem;
+  grid-template-columns: 4fr 2fr 2fr;
+  width: 100%;
   ${props =>
     props.type === 'text' &&
     css`
@@ -16,7 +20,35 @@ const Wrapper = styled.div`
         --baseline-multiplier: 0.179;
         --x-height-multiplier: 0.35;
       }
-    `};
+    ` || props.type === 'info' &&
+    css`
+      a {
+        color: inherit; /* blue colors for links too */
+        text-decoration: inherit; /* no underline */
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: red;
+        }
+      }
+      div {
+        padding-right: 2rem;
+        font-size: 22px;
+      }
+      h1 {
+        font-family: CircularStd-Book;
+        font-weight: 200;
+        position: relative;
+      }
+      ul {
+        list-style: none;
+        margin-left: 0rem;
+      }
+      p, li {
+        line-height: 32px;
+        margin-bottom: 0;
+      }
+    `}; 
 `;
 
 const Container = ({ children, type, className }) => (

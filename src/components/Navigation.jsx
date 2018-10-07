@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { FaInstagram, FaBehance, FaDribbble } from 'react-icons/fa';
+import { FaInstagram, FaBehance, FaPinterest, FaGithub } from 'react-icons/fa';
 import styled, { css } from 'react-emotion';
 import config from '../../config/website';
 import theme from '../../config/theme';
@@ -8,7 +8,7 @@ import theme from '../../config/theme';
 const Wrapper = styled.header`
   align-items: center;
   display: flex;
-  padding: 1rem 0 3rem 0;
+  padding: 4.7rem 0;
   a {
     color: ${props => props.theme.colors.body_color};
     text-decoration: none;
@@ -30,8 +30,8 @@ const active = css`
 const Nav = styled.nav`
   display: flex;
   flex: 1;
-  justify-content: flex-start;
-  padding: 0 ${props => props.theme.spacer.horizontal};
+  justify-content: flex-end;
+  font-size: 22px;
   a:not(:first-child) {
     margin-left: 1rem;
   }
@@ -46,9 +46,10 @@ const Nav = styled.nav`
 const Name = styled.div`
   display: flex;
   flex: 1;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 0 ${props => props.theme.spacer.horizontal};
   a {
-    font-size: 23px;
+    font-size: 22px;
     font-family: ${`${config.headerFontFamily}, sans-serif`};
     &:hover,
     &:focus {
@@ -65,7 +66,7 @@ const Name = styled.div`
 
 const SocialMedia = styled.div`
   display: flex;
-  flex: 1;
+  flex: 0;
   justify-content: flex-end;
   padding: 0 ${props => props.theme.spacer.horizontal};
   a {
@@ -85,36 +86,39 @@ const SocialMedia = styled.div`
 
 const Navigation = () => (
   <Wrapper>
+    <Name>
+      <Link to="/">{config.siteTitle} — {config.siteDescription}</Link>
+    </Name>
     <Nav>
       <Link
-        to="/about"
+        to="/"
         activeClassName={css`
           ${active};
         `}
       >
-        About
+        Work
       </Link>
       <Link
-        to="/contact"
+        to="/info"
         activeClassName={css`
           ${active};
         `}
       >
-        Contact
+        Info
       </Link>
     </Nav>
-    <Name>
-      <Link to="/">{config.siteTitle}</Link>
-    </Name>
     <SocialMedia>
-      <a href="https://www.instagram.com/lekoarts.de" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/nestarz" target="_blank" rel="noopener noreferrer">
+        <FaGithub />
+      </a>
+      <a href="https://www.instagram.com/eliasrhouzlane" target="_blank" rel="noopener noreferrer">
         <FaInstagram />
       </a>
-      <a href="https://www.behance.net/lekoarts" target="_blank" rel="noopener noreferrer">
-        <FaBehance />
+      <a href="https://pinterest.com/eliasrhouzlane" target="_blank" rel="noopener noreferrer">
+        <FaPinterest />
       </a>
-      <a href="https://dribbble.com/LeKoArts" target="_blank" rel="noopener noreferrer">
-        <FaDribbble />
+      <a href="https://www.behance.net/eliasrhouzlane" target="_blank" rel="noopener noreferrer">
+        <FaBehance />
       </a>
     </SocialMedia>
   </Wrapper>

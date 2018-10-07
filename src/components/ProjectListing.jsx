@@ -8,12 +8,14 @@ import { overlay } from '../../config/theme';
 
 const Wrapper = styled.div`
   display: grid;
+  padding: 0 50px;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   width: 100%;
 `;
 
 const Item = styled.div`
   position: relative;
+  margin: 5px;
   &:before {
     content: '';
     display: block;
@@ -64,7 +66,8 @@ const ImageWrapper = styled.div`
 `;
 
 const Overlay = styled.div`
-  background-color: ${props => props.theme.brand.primary};
+  //background-color: ${props => props.theme.brand.primary};
+  //box-shadow: inset 0 0 100px #000;
   height: 100%;
   left: 0;
   position: absolute;
@@ -77,6 +80,9 @@ const ProjectListing = ({ projectEdges }) => (
   <Wrapper>
     {projectEdges.map(project => {
       const overlayColor = sample(overlay);
+      const overlayStyle = {
+        backgroundImage: 'radial-gradient(circle at top center, transparent 0, rgba(17,17,17,.75))'
+      };
       return (
         <Item key={project.node.fields.slug}>
           <Content>
@@ -84,7 +90,7 @@ const ProjectListing = ({ projectEdges }) => (
               <Img fluid={project.node.frontmatter.cover.childImageSharp.fluid} />
             </ImageWrapper>
             <Link to={project.node.fields.slug}>
-              <Overlay style={{ backgroundColor: overlayColor }} />
+              <Overlay style={overlayStyle} />
               <h2>{project.node.frontmatter.client}</h2>
               <div>{project.node.frontmatter.service}</div>
             </Link>
