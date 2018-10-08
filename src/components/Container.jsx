@@ -6,9 +6,6 @@ const Wrapper = styled.div`
   margin: 0 auto;
   padding: 0 ${props => props.theme.spacer.horizontal};
   max-width: ${props => props.theme.container[props.type]};
-  display: grid;
-  padding: 0 4rem;
-  grid-template-columns: 4fr 2fr 2fr;
   width: 100%;
   ${props =>
     props.type === 'text' &&
@@ -22,6 +19,9 @@ const Wrapper = styled.div`
       }
     ` || props.type === 'info' &&
     css`
+      display: grid;
+      padding: 0 4rem;
+      grid-template-columns: 4fr 2fr 2fr;
       a {
         color: inherit; /* blue colors for links too */
         text-decoration: inherit; /* no underline */

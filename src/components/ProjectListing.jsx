@@ -8,7 +8,6 @@ import { overlay } from '../../config/theme';
 
 const Item = styled.div`
   position: relative;
-  margin: 5px;
   &:before {
     content: '';
     display: block;
@@ -18,8 +17,9 @@ const Item = styled.div`
 
 const Wrapper = styled.div`
   display: grid;
-  padding: 0 50px;
+  padding: 0 2rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 1rem;
   width: 100%;
   grid-template-columns: minmax(auto, 300px);
   grid-template-rows: 45vh 45vh;
