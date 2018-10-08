@@ -1,5 +1,7 @@
 import Typography from 'typography';
 
+import "circular-std";
+
 const config = require('../../config/website');
 
 const typography = new Typography({

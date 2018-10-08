@@ -8,6 +8,7 @@
     "type": "git"
   },
   "dependencies": {
+    "circular-std": "^1.0.0",
     "emotion": "^9.2.9",
     "emotion-server": "^9.2.9",
     "emotion-theming": "^9.2.9",
