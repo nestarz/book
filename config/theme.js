@@ -17,7 +17,7 @@ const colors = {
 
 export const overlay = ['#111'];
 
-const theme = {
+const light = {
   brand,
   colors,
   breakpoints: {
@@ -34,6 +34,34 @@ const theme = {
     horizontal: '4rem',
     vertical: '6rem',
   },
+};
+
+const dark = {
+  brand,
+  colors: { 
+    ...colors, 
+    bg_color: 'black',
+    body_color: '#fff',
+  },
+  breakpoints: {
+    xs: '400px',
+    s: '600px',
+    m: '900px',
+    l: '1200px',
+  },
+  container: {
+    base: '100rem',
+    text: '55rem',
+  },
+  spacer: {
+    horizontal: '4rem',
+    vertical: '6rem',
+  },
+};
+
+const theme = {
+  light,
+  dark
 };
 
 export default theme;

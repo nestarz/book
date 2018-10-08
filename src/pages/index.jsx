@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { ProjectListing, Layout } from 'components';
-import Helmet from 'react-helmet';
 import theme from '../../config/theme';
 
 const Index = ({
@@ -10,7 +9,7 @@ const Index = ({
     allMarkdownRemark: { edges: projectEdges },
   },
 }) => (
-  <Layout>
+  <Layout theme={theme.light}>
     <ProjectListing projectEdges={projectEdges} />
   </Layout>
 );

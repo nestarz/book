@@ -4,15 +4,15 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'emotion-theming';
 import { SEO, Navigation, Footer } from '../components';
 import Helmet from 'react-helmet';
-import theme from '../../config/theme';
 
-const Layout = ({ children }) => (
+const Layout = ({ theme, children }) => (
   <ThemeProvider theme={theme}>
     <React.Fragment>
       <Helmet>
         <style type="text/css">{`
             body {
               background-color : ${theme.colors.bg_color};
+              color: ${theme.colors.body_color};
             }
       `}</style>
       </Helmet>
@@ -27,5 +27,6 @@ const Layout = ({ children }) => (
 export default Layout;
 
 Layout.propTypes = {
+  theme: PropTypes.object.isRequired,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
 };

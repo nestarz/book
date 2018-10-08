@@ -9,6 +9,7 @@ const Wrapper = styled.header`
   align-items: center;
   display: flex;
   padding: 4.7rem 0;
+  letter-spacing: calc(-6 / 1000 * 1em);
   a {
     color: ${props => props.theme.colors.body_color};
     text-decoration: none;
@@ -24,7 +25,7 @@ const Wrapper = styled.header`
 `;
 
 const active = css`
-  color: ${theme.brand.primary} !important;
+  color: ${theme.light.brand.primary} !important;
 `;
 
 const Nav = styled.nav`

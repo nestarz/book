@@ -3,9 +3,10 @@ import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 import { Header, Container, Layout } from 'components';
 import config from '../../config/website';
+import theme from '../../config/theme';
 
 const About = () => (
-  <Layout>
+  <Layout theme={theme.light}>
     <Helmet title={`About | ${config.siteTitle}`} />
     <Container type="info">
     <div>

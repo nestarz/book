@@ -16,8 +16,8 @@ module.exports = {
   themeColor: '#000',
   backgroundColor: '#000',
   // Settings for typography.jsx
-  headerFontFamily: 'CircularStd-Book',
-  bodyFontFamily: 'CircularStd-Book',
+  headerFontFamily: 'CircularStd',
+  bodyFontFamily: 'CircularStd',
   baseFontSize: '16px',
   // Social Links
   twitter: 'https://twitter.com/nestarz',

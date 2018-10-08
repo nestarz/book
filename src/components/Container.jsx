@@ -36,8 +36,8 @@ const Wrapper = styled.div`
         font-size: 22px;
       }
       h1 {
-        font-family: CircularStd-Book;
-        font-weight: 200;
+        font-weight: 500;
+        letter-spacing: calc(-23 / 1000 * 1em);
         position: relative;
       }
       ul {
