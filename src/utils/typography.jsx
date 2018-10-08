@@ -11,17 +11,7 @@ const typography = new Typography({
   headerFontFamily: [config.headerFontFamily, 'sans-serif'],
   bodyFontFamily: [config.bodyFontFamily, 'sans-serif'],
   scaleRatio: 2.5,
-  headerWeight: 700,
-  googleFonts: [
-    {
-      name: config.headerFontFamily,
-      styles: ['700'],
-    },
-    {
-      name: config.bodyFontFamily,
-      styles: ['400'],
-    },
-  ],
+  headerWeight: 700
 });
 
 export default typography;

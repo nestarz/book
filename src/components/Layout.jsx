@@ -1,3 +1,4 @@
+import "circular-std";
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'emotion-theming';

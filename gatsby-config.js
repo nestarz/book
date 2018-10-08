@@ -68,6 +68,7 @@ module.exports = {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography.jsx',
+        omitGoogleFont: true
       },
     },
     'gatsby-plugin-catch-links',
