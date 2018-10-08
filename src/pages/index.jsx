@@ -11,13 +11,6 @@ const Index = ({
   },
 }) => (
   <Layout>
-    <Helmet>
-      <style type="text/css">{`
-          body {
-            background-color : ${theme.colors.bg_color};
-          }
-    `}</style>
-    </Helmet>
     <ProjectListing projectEdges={projectEdges} />
   </Layout>
 );

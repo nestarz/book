@@ -8,6 +8,13 @@ import theme from '../../config/theme';
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <React.Fragment>
+      <Helmet>
+        <style type="text/css">{`
+            body {
+              background-color : ${theme.colors.bg_color};
+            }
+      `}</style>
+      </Helmet>
       <SEO />
       <Navigation />
       {children}
