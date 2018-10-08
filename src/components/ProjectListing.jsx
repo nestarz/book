@@ -16,7 +16,6 @@ const Item = styled.div`
   }
 `;
 
-
 const Wrapper = styled.div`
   display: grid;
   padding: 0 50px;
@@ -41,7 +40,7 @@ const Content = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
-  p, h2 {
+  header {
     display: none;
   }
   a {
@@ -63,12 +62,18 @@ const Content = styled.div`
       text-decoration: none;
     }
   }
-  a:hover + p, a:hover + h2 {
+  a:hover + header {
     margin: -4rem 0rem;
     padding: 2rem;
     background-color: white;
     pointer-events: none;
     display: block;
+    h2 {
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 150%;
+    }
   }
 `;
 
@@ -86,7 +91,7 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const Overlay = styled.div`
+const OverlayLink = styled(Link)`
   //background-color: ${props => props.theme.brand.primary};
   //box-shadow: inset 0 0 100px #000;
   height: 100%;
@@ -95,9 +100,6 @@ const Overlay = styled.div`
   top: 0;
   width: 100%;
   z-index: -1;
-`;
-
-const OverlayLink = styled(Link)`
   mix-blend-mode: color-dodge;
   filter: blur(50px);
 `
@@ -107,7 +109,7 @@ const ProjectListing = ({ projectEdges }) => (
     {projectEdges.map(project => {
       const overlayColor = sample(overlay);
       const overlayStyle = {
-        backgroundImage: 'radial-gradient(circle at center top, green 10px, rgb(255, 0, 0))'
+        backgroundImage: 'radial-gradient(circle at center top, red 20px, black)'
       };
       return (
         <Item key={project.node.fields.slug}>
@@ -115,11 +117,11 @@ const ProjectListing = ({ projectEdges }) => (
             <ImageWrapper>
               <Img fluid={project.node.frontmatter.cover.childImageSharp.fluid} />
             </ImageWrapper>
-            <OverlayLink to={project.node.fields.slug}>
-              <Overlay style={overlayStyle} />
-            </OverlayLink>
-            <h2>{project.node.frontmatter.title}</h2>
-            <p>{project.node.frontmatter.client}</p>
+            <OverlayLink to={project.node.fields.slug} style={overlayStyle}/>
+            <header>
+              <h2>{project.node.frontmatter.title}</h2>
+              <p>{project.node.frontmatter.client}</p>
+            </header>
           </Content>
         </Item>
       );
