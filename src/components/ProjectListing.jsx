@@ -109,7 +109,7 @@ const ProjectListing = ({ projectEdges }) => (
     {projectEdges.map(project => {
       const overlayColor = sample(overlay);
       const overlayStyle = {
-        backgroundImage: 'radial-gradient(circle at center top, red 20px, black)'
+        backgroundImage: 'radial-gradient(circle at center top, purple 20px, black)'
       };
       return (
         <Item key={project.node.fields.slug}>
