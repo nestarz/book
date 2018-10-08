@@ -2,9 +2,10 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { Header, Container, Layout } from 'components';
 import config from '../../config/website';
+import theme from '../../config/theme';
 
 const Contact = () => (
-  <Layout>
+  <Layout theme={theme.light}>
     <Helmet title={`Contact | ${config.siteTitle}`} />
     <Header>Contact</Header>
     <Container type="text">
