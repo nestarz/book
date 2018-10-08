@@ -8,6 +8,7 @@ import theme from '../../config/theme';
 const Wrapper = styled.header`
   align-items: center;
   display: flex;
+  flex: 1 1 auto;
   padding: 4.7rem 0;
   letter-spacing: calc(-6 / 1000 * 1em);
   a {
@@ -49,12 +50,11 @@ const Name = styled.div`
   flex: 1;
   justify-content: flex-start;
   padding: 0 ${props => props.theme.spacer.horizontal};
+  font-size: 22px;
   a {
-    font-size: 22px;
     font-family: ${`${config.headerFontFamily}, sans-serif`};
     &:hover,
     &:focus {
-      color: ${props => props.theme.colors.body_color};
       text-decoration: none;
     }
   }
@@ -88,7 +88,7 @@ const SocialMedia = styled.div`
 const Navigation = () => (
   <Wrapper>
     <Name>
-      <Link to="/">{config.siteTitle} — {config.siteDescription}</Link>
+      <div><Link to="/">{config.siteTitle}</Link> — {config.siteDescription}</div>
     </Name>
     <Nav>
       <Link
