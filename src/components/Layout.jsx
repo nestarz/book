@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'emotion-theming';
 import { SEO, Navigation, Footer } from '../components';
+import Helmet from 'react-helmet';
 import theme from '../../config/theme';
 
 const Layout = ({ children }) => (
