@@ -2,6 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { ProjectListing, Layout } from 'components';
+import Helmet from 'react-helmet';
+import theme from '../../config/theme';
 
 const Index = ({
   data: {
@@ -9,6 +11,13 @@ const Index = ({
   },
 }) => (
   <Layout>
+    <Helmet>
+      <style type="text/css">{`
+          body {
+            background-color : ${theme.colors.bg_color};
+          }
+    `}</style>
+    </Helmet>
     <ProjectListing projectEdges={projectEdges} />
   </Layout>
 );
