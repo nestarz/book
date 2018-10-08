@@ -11,7 +11,7 @@ const SEO = props => {
   let image;
   let postURL;
   const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
-  if (postSEO) {
+  if (postSEO && postMeta.cover.childImageSharp) {
     const postMeta = postNode.frontmatter;
     title = postMeta.title; // eslint-disable-line prefer-destructuring
     description = postNode.excerpt;
@@ -34,7 +34,7 @@ const SEO = props => {
       alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
     },
   ];
-  if (postSEO) {
+  if (postSEO && postMeta.cover.childImageSharp) {
     schemaOrgJSONLD = [
       {
         '@context': 'http://schema.org',
