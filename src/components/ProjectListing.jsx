@@ -6,6 +6,17 @@ import Img from 'gatsby-image';
 import sample from 'lodash/sample';
 import { overlay } from '../../config/theme';
 
+const Item = styled.div`
+  position: relative;
+  margin: 5px;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+`;
+
+
 const Wrapper = styled.div`
   display: grid;
   padding: 0 50px;
@@ -22,16 +33,6 @@ const Wrapper = styled.div`
   & ${Item}:nth-child(3)  { grid-area: p3; }
   & ${Item}:nth-child(4)  { grid-area: p4; }
   & ${Item}:nth-child(5)  { grid-area: p5; }
-`;
-
-const Item = styled.div`
-  position: relative;
-  margin: 5px;
-  &:before {
-    content: '';
-    display: block;
-    padding-top: 100%;
-  }
 `;
 
 const Content = styled.div`
