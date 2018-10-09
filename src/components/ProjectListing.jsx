@@ -65,7 +65,8 @@ const Content = styled.div`
   a:hover + header {
     margin: -4rem 0rem;
     padding: 2rem;
-    background-color: white;
+    background-color : ${props => props.theme.colors.bg_color};
+    color: ${props => props.theme.colors.body_color};
     pointer-events: none;
     display: block;
     h2 {
@@ -101,7 +102,7 @@ const OverlayLink = styled(Link)`
   width: 100%;
   z-index: -1;
   mix-blend-mode: color-dodge;
-  filter: blur(50px);
+  filter: blur(100px);
 `
 
 const ProjectListing = ({ projectEdges }) => (
@@ -109,7 +110,7 @@ const ProjectListing = ({ projectEdges }) => (
     {projectEdges.map(project => {
       const overlayColor = sample(overlay);
       const overlayStyle = {
-        backgroundImage: 'radial-gradient(circle at center top, purple 20px, black)'
+        //backgroundImage: 'radial-gradient(circle at center top, purple 20px, black)'
       };
       return (
         <Item key={project.node.fields.slug}>
