@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as THREE from 'three';
+var STLLoader = require('three-stl-loader')(THREE)
 
 class ThreeScene extends Component{
   componentDidMount(){
@@ -14,7 +15,7 @@ class ThreeScene extends Component{
       0.1,
       1000
     )
-    this.camera.position.z = 4
+    this.camera.position.z = 2
     //ADD RENDERER
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
     this.renderer.setClearColor(0x000000, 0)
@@ -22,9 +23,22 @@ class ThreeScene extends Component{
     this.mount.appendChild(this.renderer.domElement)
     //ADD CUBE
     const geometry = new THREE.BoxGeometry(1, 1, 1)
-    const material = new THREE.MeshBasicMaterial({ color: this.props.theme.colors.body_color })
+    const material = new THREE.MeshBasicMaterial({ color: this.props.theme.colors.bg_color })
     this.cube = new THREE.Mesh(geometry, material)
     this.scene.add(this.cube)
+
+    // //ADD TEAPOT
+    this.loader = new STLLoader();
+    this.loader.load('assets/models/teapot.stl', (geometry) => {
+      var material = new THREE.MeshNormalMaterial()
+      var material = new THREE.MeshBasicMaterial({ color: this.props.theme.brand.primary });
+      var mesh = new THREE.Mesh(geometry, material)
+      mesh.rotation.set( Math.PI * 1.5, 0, 0 );
+      mesh.position.z -= 15;
+      this.cube = mesh;
+      this.scene.add(this.cube);
+    });
+
 this.start()
   }
 componentWillUnmount(){
@@ -40,8 +54,8 @@ stop = () => {
     cancelAnimationFrame(this.frameId)
   }
 animate = () => {
-   this.cube.rotation.x += 0.01
-   this.cube.rotation.y += 0.01
+   this.cube.rotation.x += 0.005
+   this.cube.rotation.y += 0.005
    this.renderScene()
    this.frameId = window.requestAnimationFrame(this.animate)
  }

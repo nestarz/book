@@ -59,6 +59,8 @@
     "react-spring": "^5.9.2",
     "react-typography": "^0.16.13",
     "three": "^0.97.0",
+    "three-obj-mtl-loader": "^1.0.3",
+    "three-stl-loader": "^1.0.6",
     "typography": "^0.16.17"
   },
   "keywords": [
