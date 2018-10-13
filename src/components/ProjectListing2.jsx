@@ -17,7 +17,7 @@ const Item = styled.div`
 
 const Wrapper = styled.div`
   display: grid;
-  padding: 3rem 2rem;
+  padding: 0 2rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-gap: 1rem;
   width: 100%;
