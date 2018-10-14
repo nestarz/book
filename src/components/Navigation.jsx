@@ -4,6 +4,14 @@ import { FaInstagram, FaBehance, FaPinterest, FaGithub } from 'react-icons/fa';
 import styled, { css } from 'react-emotion';
 import config from '../../config/website';
 import theme from '../../config/theme';
+import { ThreeScene } from '../components';
+import { withParentSize } from '@vx/responsive';
+
+let NavObjToRender = withParentSize(
+  ({ screenWidth, screenHeight, ...rest }) => (
+    <ThreeScene width={screenWidth} height={screenHeight} {...rest} />
+  )
+);
 
 const Wrapper = styled.header`
   align-items: center;

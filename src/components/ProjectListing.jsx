@@ -8,6 +8,7 @@ import { overlay } from '../../config/theme';
 
 const Item = styled.div`
   position: relative;
+  min-width: 300px;
   &:before {
     content: '';
     display: block;
@@ -17,15 +18,15 @@ const Item = styled.div`
 
 const Wrapper = styled.div`
   display: grid;
-  padding: 3rem 2rem;
+  padding: 0rem 2rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-gap: 1rem;
   width: 100%;
   grid-template-columns: minmax(auto, 300px);
-  grid-template-rows: 45vh 45vh;
+  grid-template-rows: 40vh 40vh;
   grid-template-areas:
   "p1  p1  p1  p2  p2"
-  "p3  p3  p4  p5  p6";
+  "p3  p3  p4  p4  p5";
   width: 100%;
   & ${Item}:nth-child(1)  { grid-area: p1; }
   & ${Item}:nth-child(2)  { grid-area: p2; }
@@ -40,15 +41,15 @@ const Content = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
-  header {
-    display: none;
-  }
   a {
     color: #fff;
     height: 100%;
     left: 0;
     opacity: 0;
-    padding: 2rem;
+    padding-bottom: calc(2 * calc(2 * .5rem));
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: calc(2 * .5rem);
     position: absolute;
     top: 0;
     width: 100%;
@@ -62,18 +63,23 @@ const Content = styled.div`
       text-decoration: none;
     }
   }
-  a:hover + header {
-    margin: -4rem 0rem;
-    padding: 2rem;
-    background-color : ${props => props.theme.colors.bg_color};
-    color: ${props => props.theme.colors.body_color};
+  header {
+    margin: 0rem 0rem;
+    //background-color : ${props => props.theme.colors.bg_color};
+    color: ${props => props.theme.colors.bg_color};
     pointer-events: none;
     display: block;
     h2 {
+      font-size: 44px;
+      line-height: 50px;
       margin-bottom: 1rem;
+      font-weight: 500;
+      letter-spacing: calc(-23 / 1000 * 1em);
     }
     p {
-      font-size: 150%;
+      font-size: 22px;
+      letter-spacing: calc(-6 / 1000 * 1em);
+      font-weight: 400;
     }
   }
 `;
@@ -93,16 +99,15 @@ const ImageWrapper = styled.div`
 `;
 
 const OverlayLink = styled(Link)`
-  //background-color: ${props => props.theme.brand.primary};
-  //box-shadow: inset 0 0 100px #000;
+  //background-color: ${props => props.theme.colors.bg_color};
+  //box-shadow: inset 0 0 300px ${props => props.theme.colors.body_color};
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: -1;
-  mix-blend-mode: color-dodge;
-  filter: blur(100px);
+  filter: blur(0px);
 `
 
 const ProjectListing = ({ projectEdges }) => (
@@ -110,7 +115,7 @@ const ProjectListing = ({ projectEdges }) => (
     {projectEdges.map(project => {
       const overlayColor = sample(overlay);
       const overlayStyle = {
-        //backgroundImage: 'radial-gradient(circle at center top, purple 20px, black)'
+        backgroundImage: 'radial-gradient(circle at top center,transparent 0,rgba(17,17,17,.75))'
       };
       return (
         <Item key={project.node.fields.slug}>
@@ -118,11 +123,12 @@ const ProjectListing = ({ projectEdges }) => (
             <ImageWrapper>
               <Img fluid={project.node.frontmatter.cover.childImageSharp.fluid} />
             </ImageWrapper>
-            <OverlayLink to={project.node.fields.slug} style={overlayStyle}/>
+            <OverlayLink to={project.node.fields.slug} style={overlayStyle}>
             <header>
-              <h2>{project.node.frontmatter.title}</h2>
               <p>{project.node.frontmatter.client}</p>
+              <h2>{project.node.frontmatter.title}</h2>
             </header>
+            </OverlayLink>
           </Content>
         </Item>
       );

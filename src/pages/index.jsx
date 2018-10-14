@@ -9,7 +9,7 @@ const Index = ({
     allMarkdownRemark: { edges: projectEdges },
   },
 }) => (
-  <Layout theme={theme.light}>
+  <Layout theme={theme.light} chart={false}>
     <ProjectListing projectEdges={projectEdges} />
   </Layout>
 );

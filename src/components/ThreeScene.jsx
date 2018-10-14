@@ -34,7 +34,7 @@ class ThreeScene extends Component{
       var material = new THREE.MeshBasicMaterial({ color: this.props.theme.brand.primary });
       var mesh = new THREE.Mesh(geometry, material)
       mesh.rotation.set( Math.PI * 1.5, 0, 0 );
-      mesh.position.z -= 15;
+      mesh.position.z -= 20;
       this.cube = mesh;
       this.scene.add(this.cube);
     });

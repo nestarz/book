@@ -10,7 +10,7 @@ const Wrapper = styled.footer`
   font-size: 100px;
   a {
     text-decoration: none;
-    color: ${props => props.theme.brand.primary};
+    color: ${props => props.theme.colors.body_color};
   }
 `;
 
@@ -21,7 +21,7 @@ const Footer = () => (
       config={{ duration: 5000, easing: Easing.linear }}
       from={{ opacity: 0 }}
       to={{ opacity: 1 }}>
-      {props => <div style={props}>✌️</div>}
+      {props => <div style={props}><a href="mailto:elias.rhouzlane@gmail.com">✌️</a></div>}
     </Spring>
   </Wrapper>
 );

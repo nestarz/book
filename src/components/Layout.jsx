@@ -31,7 +31,7 @@ const WrapperChart = styled.div`
   }
 `;
 
-const Layout = ({ theme, children }) => (
+const Layout = ({ theme, chart, children }) => (
   <ThemeProvider theme={theme}>
     <React.Fragment>
       <Helmet>
