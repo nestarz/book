@@ -22,14 +22,14 @@ export default ({
         id='vLines'
         height={200}
         width={200}
-        stroke={theme.colors.body_color}
+        stroke={theme.brand.secondary}
         strokeWidth={1}
       />
       <PatternLines
         id='hLines'
         height={200}
         width={200}
-        stroke={theme.colors.body_color}
+        stroke={theme.brand.secondary}
         strokeWidth={1}
         orientation={['horizontal']}
       />
@@ -37,7 +37,7 @@ export default ({
         id='dLines'
         height={200}
         width={200}
-        stroke={theme.colors.body_color}
+        stroke={theme.brand.secondary}
         strokeWidth={1}
         orientation={['diagonal']}
       />
@@ -45,7 +45,7 @@ export default ({
         id='dhLines'
         height={200}
         width={200}
-        stroke={theme.colors.body_color}
+        stroke={theme.brand.secondary}
         strokeWidth={1}
         orientation={['vertical', 'horizontal']}
       />
@@ -53,13 +53,13 @@ export default ({
         id='Circles'
         height={200}
         width={200}
-        fill={theme.colors.body_color}
+        fill={theme.brand.secondary}
       />
       <PatternCircles
         id='cCircles'
         height={10}
         width={10}
-        fill={theme.colors.body_color}
+        fill={theme.brand.secondary}
         complement
       />
       <PatternWaves
@@ -67,7 +67,7 @@ export default ({
         height={200}
         width={200}
         fill="transparent"
-        stroke={theme.colors.body_color}
+        stroke={theme.brand.secondary}
         strokeWidth={1}
         complement
       />
@@ -76,7 +76,7 @@ export default ({
         height={12}
         width={12}
         fill="transparent"
-        stroke={theme.colors.body_color}
+        stroke={theme.brand.secondary}
         strokeWidth={1}
         complement
       />

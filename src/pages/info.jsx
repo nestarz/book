@@ -38,6 +38,20 @@ const MainInformation = styled.div`
     letter-spacing: calc(-23 / 1000 * 1em);
     position: relative;
   }
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 5.7vw !important;
+    }
+    div {
+    margin-bottom: 20px;
+    padding: 0;
+  }
+  & > div {
+    max-width: 600px;
+    margin-right: 0rem;
+  }
+  padding: 0 20px;
+  }
   ul {
     list-style: none;
     margin-left: 0rem;
