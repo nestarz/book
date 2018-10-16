@@ -43,9 +43,9 @@ const Layout = ({ theme, chart, children }) => (
       `}</style>
       </Helmet>
       <SEO />
-      <WrapperChart>
+      {/* <WrapperChart>
         <ChartToRender theme={theme}/>
-      </WrapperChart>
+      </WrapperChart> */}
       <WrapperChart>
         <ObjToRender theme={theme} />
       </WrapperChart>

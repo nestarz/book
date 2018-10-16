@@ -40,7 +40,7 @@ const dark = {
   brand,
   colors: { 
     ...colors, 
-    bg_color: 'black',
+    bg_color: '#111',
     body_color: '#fff',
   },
   breakpoints: {
