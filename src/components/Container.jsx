@@ -10,25 +10,13 @@ const Wrapper = styled.div`
   ${props =>
     props.type === 'text' &&
     css`
-      p {
-        font-size: 1.25rem;
-        letter-spacing: -0.003em;
-        line-height: 1.58;
-        --baseline-multiplier: 0.179;
-        --x-height-multiplier: 0.35;
-      }
-    ` || props.type === 'info' &&
-    css`
-      display: grid;
-      padding: 0 4rem;
-      grid-template-columns: 4fr 2fr 2fr;
       a {
         color: inherit; /* blue colors for links too */
         text-decoration: inherit; /* no underline */
         text-decoration: none;
         transition: all 0.3s ease-in-out;
         &:hover {
-          color: red;
+          color: #410099;
         }
       }
       div {
@@ -40,13 +28,8 @@ const Wrapper = styled.div`
         letter-spacing: calc(-23 / 1000 * 1em);
         position: relative;
       }
-      ul {
-        list-style: none;
-        margin-left: 0rem;
-      }
       p, li {
         line-height: 32px;
-        margin-bottom: 0;
       }
     `}; 
 `;
