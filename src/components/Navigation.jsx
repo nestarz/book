@@ -13,7 +13,10 @@ const Wrapper = styled.header`
   flex: 1 0 auto;
   flex-wrap: wrap;
   justify-content: space-around; /* ADJUSTMENT */
-  padding: 4.7rem 0;
+  @media (min-width: ${props => props.theme.breakpoints.m}) {
+    justify-content: space-between; /* ADJUSTMENT */
+  }
+  padding: 3.5rem 0 4.7rem 0;
   letter-spacing: calc(-6 / 1000 * 1em);
   a {
     color: ${props => props.theme.colors.body_color};

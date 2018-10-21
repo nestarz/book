@@ -4,8 +4,9 @@ import styled, { css } from 'react-emotion';
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  padding: 0 ${props => props.theme.spacer.horizontal};
-  max-width: ${props => props.theme.container[props.type]};
+  padding: 4rem ${props => props.theme.spacer.horizontal};
+  background-color: ${props => props.theme.colors.body_color};
+  color: ${props => props.theme.colors.bg_color};
   width: 100%;
   ${props =>
     props.type === 'text' &&
@@ -34,9 +35,15 @@ const Wrapper = styled.div`
     `}; 
 `;
 
+const SecondWrapper = styled.div`
+  max-width: ${props => props.theme.container[props.type]};
+  margin: auto;
+`
 const Container = ({ children, type, className }) => (
   <Wrapper className={className} type={type}>
-    {children}
+    <SecondWrapper type={type}>
+      {children}
+    </SecondWrapper>
   </Wrapper>
 );
 

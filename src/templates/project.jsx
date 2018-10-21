@@ -19,10 +19,13 @@ const Wrapper = styled.section`
   color: white;
   padding: 0rem ${props => props.theme.spacer.horizontal};
   margin-bottom: 5rem;
+  padding: 0 8.5vw;
   color: ${props => props.theme.colors.body_color};
   h1 {
     font-size: 300%;
     margin-bottom: 0.5rem;
+    font-weight: 500;
+    letter-spacing: calc(-23 / 1000 * 1em);
   }
   p {
     font-size: 200%;
@@ -58,7 +61,7 @@ const Bottom = styled.div`
 
 const ImageWrapper = styled.div`
   > div { 
-    margin: 5rem 6rem 0 6rem;
+    margin: 5rem auto 0 auto;
     > div {
       position: static !important;
     }
