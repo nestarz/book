@@ -5,20 +5,11 @@ import { ThemeProvider } from 'emotion-theming';
 import { SEO, Navigation, Footer } from '../components';
 import Helmet from 'react-helmet';
 import {CircleArrow as ScrollUpButton} from "react-scroll-up-button";
-import { Chords } from '../components';
 import { withScreenSize } from '@vx/responsive';
 import styled, { css } from 'react-emotion';
-
 import { ThreeScene } from '../components';
 
-
-let ChartToRender = withScreenSize(
-  ({ screenWidth, screenHeight, ...rest }) => (
-    <Chords width={screenWidth * 1} height={screenHeight * 1} {...rest} />
-  )
-);
-
-let ObjToRender = withScreenSize(
+let ThreeBackground = withScreenSize(
   ({ screenWidth, screenHeight, ...rest }) => (
     <ThreeScene width={screenWidth} height={screenHeight} {...rest} />
   )
@@ -44,11 +35,8 @@ const Layout = ({ theme, chart, children }) => (
       </Helmet>
       <SEO />
       {/* <WrapperChart>
-        <ChartToRender theme={theme}/>
+        <ThreeBackground theme={theme} />
       </WrapperChart> */}
-      <WrapperChart>
-        <ObjToRender theme={theme} />
-      </WrapperChart>
       <Navigation />
       {children}
       <Footer />

@@ -52,6 +52,7 @@
     "polished": "^2.0.3",
     "prop-types": "^15.6.2",
     "react": "^16.5.1",
+    "react-burger-menu": "^2.5.4",
     "react-dom": "^16.5.1",
     "react-emotion": "^9.2.9",
     "react-helmet": "^5.2.0",

@@ -1,22 +1,18 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { FaInstagram, FaBehance, FaPinterest, FaGithub } from 'react-icons/fa';
+import { FaInstagram, FaBehance, FaPinterest, FaGithub, FaUnderline } from 'react-icons/fa';
 import styled, { css } from 'react-emotion';
 import config from '../../config/website';
 import theme from '../../config/theme';
-import { ThreeScene } from '../components';
-import { withParentSize } from '@vx/responsive';
+import { HamburgerMenu } from '../components';
 
-let NavObjToRender = withParentSize(
-  ({ screenWidth, screenHeight, ...rest }) => (
-    <ThreeScene width={screenWidth} height={screenHeight} {...rest} />
-  )
-);
 
 const Wrapper = styled.header`
-  align-items: center;
+  align-items: baseline;
   display: flex;
-  flex: 1 1 auto;
+  flex: 1 0 auto;
+  flex-wrap: wrap;
+  justify-content: space-around; /* ADJUSTMENT */
   padding: 4.7rem 0;
   letter-spacing: calc(-6 / 1000 * 1em);
   a {
@@ -35,6 +31,18 @@ const Wrapper = styled.header`
 
 const active = css`
   color: ${theme.light.brand.primary} !important;
+  position: relative;
+  &:after {
+    background-color: ${theme.light.brand.primary};
+    border-radius: 10px;
+    bottom: -10px;
+    content: '';
+    height: 5px;
+    left: calc(50% - 10px);
+    position: absolute;
+    width: 20px;
+    z-index:-1000;
+  }
 `;
 
 const Nav = styled.nav`
@@ -48,15 +56,12 @@ const Nav = styled.nav`
   @media (max-width: ${props => props.theme.breakpoints.s}) {
     padding: 0 1rem;
   }
-  @media (max-width: ${props => props.theme.breakpoints.xs}) {
-    order: 2;
-  }
 `;
 
 const Name = styled.div`
-  display: flex;
-  flex: 1;
-  justify-content: flex-start;
+min-width: 400px;
+flex-basis: auto; /* default value */
+text-align: center;
   padding: 0 ${props => props.theme.spacer.horizontal};
   font-size: 22px;
   a {
@@ -67,7 +72,6 @@ const Name = styled.div`
     }
   }
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
-    order: 1;
     flex: 1 0 100%;
     margin-bottom: 0.75rem;
   }
@@ -88,48 +92,64 @@ const SocialMedia = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.s}) {
     padding: 0 1rem;
   }
-  @media (max-width: ${props => props.theme.breakpoints.xs}) {
-    order: 3;
-  }
 `;
+
+const RightGroup = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 20px;
+`
 
 const Navigation = () => (
   <Wrapper>
+    {/* <HamburgerMenu/> */}
     <Name>
-      <div><Link to="/">{config.siteTitle}</Link> — {config.siteDescription}</div>
+    {/* <ThreeScene width={80} height={80} theme={theme} /> */}
+    <div><Link to="/">{config.siteTitle}</Link> — {config.siteDescription}</div>
     </Name>
-    <Nav>
-      <Link
-        to="/"
-        activeClassName={css`
-          ${active};
-        `}
-      >
-        Work
-      </Link>
-      <Link
-        to="/info"
-        activeClassName={css`
-          ${active};
-        `}
-      >
-        Info
-      </Link>
-    </Nav>
-    <SocialMedia>
-    <a href="https://github.com/nestarz" target="_blank" rel="noopener noreferrer">
-        <FaGithub />
-      </a>
-      <a href="https://www.instagram.com/eliasrhouzlane" target="_blank" rel="noopener noreferrer">
-        <FaInstagram />
-      </a>
-      <a href="https://pinterest.com/eliasrhouzlane" target="_blank" rel="noopener noreferrer">
-        <FaPinterest />
-      </a>
-      <a href="https://www.behance.net/eliasrhouzlane" target="_blank" rel="noopener noreferrer">
-        <FaBehance />
-      </a>
-    </SocialMedia>
+    <RightGroup>
+      <Nav>
+        <Link
+          to="/"
+          activeClassName={css`
+            ${active};
+          `}
+        >
+          Work
+        </Link>
+        <Link
+          to="/share"
+          activeClassName={css`
+            ${active};
+          `}
+        >
+          Share
+        </Link>
+        <Link
+          to="/info"
+          activeClassName={css`
+            ${active};
+          `}
+        >
+          Info
+        </Link>
+      </Nav>
+      <SocialMedia>
+      <a href="https://github.com/nestarz" target="_blank" rel="noopener noreferrer">
+          <FaGithub />
+        </a>
+        <a href="https://www.instagram.com/eliasrhouzlane" target="_blank" rel="noopener noreferrer">
+          <FaInstagram />
+        </a>
+        <a href="https://pinterest.com/eliasrhouzlane" target="_blank" rel="noopener noreferrer">
+          <FaPinterest />
+        </a>
+        <a href="https://www.behance.net/eliasrhouzlane" target="_blank" rel="noopener noreferrer">
+          <FaBehance />
+        </a>
+      </SocialMedia>
+    </RightGroup>
   </Wrapper>
 );
 

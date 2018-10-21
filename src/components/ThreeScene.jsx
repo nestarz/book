@@ -65,7 +65,7 @@ renderScene = () => {
 render(){
     return(
       <div
-        style={{ width: '400px', height: '400px' }}
+        style={{ width: this.width + 'px', height: this.height + 'px' }}
         ref={(mount) => { this.mount = mount }}
       />
     )
