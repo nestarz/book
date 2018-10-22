@@ -15,6 +15,7 @@ const Wrapper = styled.header`
   justify-content: space-around; /* ADJUSTMENT */
   @media (min-width: ${props => props.theme.breakpoints.m}) {
     justify-content: space-between; /* ADJUSTMENT */
+    flex-wrap: nowrap;
   }
   padding: 3.5rem 0 4.7rem 0;
   letter-spacing: calc(-6 / 1000 * 1em);

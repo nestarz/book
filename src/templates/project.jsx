@@ -4,7 +4,7 @@ import styled from 'react-emotion';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { ThemeProvider } from 'emotion-theming';
-import { Container, SEO, Layout } from 'components';
+import { Container, SEO, Layout, FocusOnSelect } from 'components';
 import sample from 'lodash/sample';
 import Img from 'gatsby-image';
 import config from '../../config/website';
@@ -21,6 +21,9 @@ const Wrapper = styled.section`
   margin-bottom: 5rem;
   padding: 0 8.5vw;
   color: ${props => props.theme.colors.body_color};
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    font-size: 3vw;
+  }
   h1 {
     font-size: 300%;
     margin-bottom: 0.5rem;
@@ -124,7 +127,7 @@ export const pageQuery = graphql`
   query ProjectPostBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
-      excerpt
+      excerpt(pruneLength: 60)
       frontmatter {
         title
         date(formatString: "DD.MM.YYYY")

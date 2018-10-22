@@ -8,6 +8,9 @@ const Wrapper = styled.div`
   background-color: ${props => props.theme.colors.body_color};
   color: ${props => props.theme.colors.bg_color};
   width: 100%;
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    padding: 2rem 1rem;
+  }
   ${props =>
     props.type === 'text' &&
     css`
@@ -17,12 +20,18 @@ const Wrapper = styled.div`
         text-decoration: none;
         transition: all 0.3s ease-in-out;
         &:hover {
-          color: #410099;
+          color: ${props.theme.brand.primary};
         }
       }
+      h1, h2, h3, h4 {
+        font-weight: 500;
+        letter-spacing: calc(-23 / 1000 * 1em);
+      }
       div {
-        padding-right: 2rem;
-        font-size: 22px;
+        @media (min-width: ${props.theme.breakpoints.s}) {
+          font-size: 22px;
+        }
+        font-size: 16px;
       }
       h1 {
         font-weight: 500;
@@ -32,12 +41,29 @@ const Wrapper = styled.div`
       p, li {
         line-height: 32px;
       }
+      li {
+        line-height: 28px;
+      }
+      ul { list-style: none;}
+
+      li { position: relative;}
+      
+      li:before {
+          position: absolute;  
+          vertical-align: middle;
+          display: inline-block;
+          content: "";
+          margin-left: -9px;
+      }
     `}; 
 `;
 
 const SecondWrapper = styled.div`
   max-width: ${props => props.theme.container[props.type]};
   margin: auto;
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    max-width: none;
+  }
 `
 const Container = ({ children, type, className }) => (
   <Wrapper className={className} type={type}>

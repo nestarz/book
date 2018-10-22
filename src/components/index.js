@@ -12,6 +12,7 @@ import ProjectListing from './ProjectListing';
 import ShareListing from './ShareListing';
 import SEO from './SEO';
 import HamburgerMenu from './HamburgerMenu';
+import FocusOnSelect from './FocusOnSelect';
 
 export { 
     Container, 
@@ -27,5 +28,6 @@ export {
     ProjectListing,
     ShareListing,
     SEO,
-    HamburgerMenu
+    HamburgerMenu,
+    FocusOnSelect
 };

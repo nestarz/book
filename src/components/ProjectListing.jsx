@@ -9,33 +9,30 @@ import { overlay } from '../../config/theme';
 const Item = styled.div`
   position: relative;
   min-width: 300px;
+  max-height: 40vh;
+  margin: 10px;
+  flex-grow: 1;
+  width: 33%;
   &:before {
     content: '';
     display: block;
-    padding-top: 100%;
+    padding-top: 40vh;
   }
 `;
 
 const Wrapper = styled.div`
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
   z-index:1;
   padding: 0rem 2rem;
   margin-top: 0vh;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-gap: 1rem;
-  width: 100%;
-  grid-template-columns: minmax(auto, 300px);
-  grid-template-rows: 40vh 40vh;
-  grid-template-areas:
-  "p1  p1  p1  p2  p2"
-  "p3  p3  p4  p4  p5";
-  width: 100%;
-  & ${Item}:nth-child(1)  { grid-area: p1; }
-  & ${Item}:nth-child(2)  { grid-area: p2; }
-  & ${Item}:nth-child(3)  { grid-area: p3; }
-  & ${Item}:nth-child(4)  { grid-area: p4; }
-  & ${Item}:nth-child(5)  { grid-area: p5; }
+  flex: 0 0 50%;
+  & ${Item}:nth-child(1)  { flex-grow: 100;  }
+  & ${Item}:nth-child(2)  { flex-grow: 2; }
+  & ${Item}:nth-child(3)  { flex-grow: 1; }
+  & ${Item}:nth-child(4)  { flex-grow: 1; }
+  & ${Item}:nth-child(5)  { flex-grow: 3; }
 `;
 
 const Content = styled.div`
