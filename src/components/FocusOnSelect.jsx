@@ -10,13 +10,15 @@ export default class FocusOnSelect extends Component {
       slidesToScroll: 1,
       speed: 500
     };
+    console.log(this.props.images);
     return (
       <div>
-        <h2>FocusOnSelect</h2>
-        <div>Click on any slide to select and make it current slide</div>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.3.15/slick.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.css" />
         <Slider {...settings}>
           <div>
             <h3>1</h3>
+            {this.props.images[0]}
           </div>
           <div>
             <h3>2</h3>

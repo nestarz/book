@@ -6,7 +6,7 @@ import theme from '../../config/theme';
 
 const Share = ({
   data: {
-    allMarkdownRemark: { edges: projectEdges },
+    allMdx: { edges: projectEdges },
   },
 }) => (
   <Layout theme={theme.light} chart={false}>
@@ -18,7 +18,7 @@ export default Share;
 
 Share.propTypes = {
   data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
+    allMdx: PropTypes.shape({
       edges: PropTypes.array.isRequired,
     }),
   }).isRequired,
@@ -26,11 +26,14 @@ Share.propTypes = {
 
 export const pageQuery = graphql`
   query ShareQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          fields {
-            slug
+          parent {
+            ... on File {
+              name
+              sourceInstanceName
+            }
           }
           excerpt(pruneLength: 50)
           frontmatter {

@@ -9,6 +9,8 @@ import sample from 'lodash/sample';
 import Img from 'gatsby-image';
 import config from '../../config/website';
 import theme from '../../config/theme';
+import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXProvider } from '@mdx-js/tag'
 
 //const overlayColor = sample(overlay);
 
@@ -71,7 +73,7 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) => {
+const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
   const project = postNode.frontmatter;
   return (
     <Layout theme={theme.dark}>
@@ -83,7 +85,7 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
           }
     `}</style>
     </Helmet>
-      <SEO postPath={slug} postNode={postNode} postSEO />
+      <SEO postPath={id} postNode={postNode} postSEO />
       <Wrapper>
         <h1>{project.title}</h1>
         <p>{postNode.excerpt}</p>
@@ -106,7 +108,9 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
         </InformationWrapper>
       </Wrapper>
       <Container type="text">
-        <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+        <MDXRenderer>
+          {postNode.code.body}
+        </MDXRenderer>
       </Container>
     </Layout>
   );
@@ -116,18 +120,20 @@ export default Project;
 
 Project.propTypes = {
   pageContext: PropTypes.shape({
-    slug: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
   }).isRequired,
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object.isRequired,
+    mdx: PropTypes.object.isRequired,
   }).isRequired,
 };
 
 export const pageQuery = graphql`
-  query ProjectPostBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+  query($id: String!) {
+    mdx(id: { eq: $id }) {
       excerpt(pruneLength: 60)
+      code {
+        body
+      }
       frontmatter {
         title
         date(formatString: "DD.MM.YYYY")
@@ -143,9 +149,6 @@ export const pageQuery = graphql`
             }
           }
         }
-      }
-      fields {
-        slug
       }
     }
   }

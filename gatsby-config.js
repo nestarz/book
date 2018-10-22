@@ -25,15 +25,18 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: 'gatsby-mdx',
       options: {
-        plugins: [
+        extensions: [".mdx", ".md"],
+        gatsbyRemarkPlugins: [
           {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 820,
-              quality: 90,
+              quality: 80,
               linkImagesToOriginal: false,
+              withWebp: true,
+              wrapperStyle: "margin-bottom: 10rem"
             },
           },
           {
@@ -52,12 +55,9 @@ module.exports = {
               related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
               noIframeBorder: true //Optional: Disable insertion of <style> border: 0
             }
-          },
-          {
-            resolve: 'gatsby-remark-responsive-iframe',
-          },
-        ],
-      },
+          }
+        ]
+      }
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
@@ -98,5 +98,11 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-smartypants`],
+      },
+    },
   ],
 };

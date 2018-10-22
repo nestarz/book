@@ -3,10 +3,10 @@
 ## Features
 
 - Gatsby v2.0.0
+- MDX Support
 - Configurable
     - Use the website.js to easily change the most important information
     - Easily change the font
-- Random colors for your covers and project views
 - Uses Emotion for styling
 - Projects in Markdown
 - Google Analytics Support
@@ -52,31 +52,6 @@ Copy the content of the ``public`` folder to your webhost or use a website like 
 ## Configuration
 
 You can configure your setup in ``config/website.js``:
-
-```JS
-module.exports = {
-  pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
-  siteTitle: 'Emma', // Navigation and Site Title
-  siteTitleAlt: 'Emma - Gatsby Starter Portfolio', // Alternative Site title for SEO
-  siteUrl: 'https://portfolio-emma.netlify.com', // Domain of your site. No trailing slash!
-  siteLanguage: 'en', // Language Tag on <html> element
-  siteLogo: '/logos/logo-1024.png', // Used for SEO and manifest
-  siteDescription: 'Minimalistic bright portfolio with full-width grid and large images',
-  author: 'LekoArts', // Author for schemaORGJSONLD
-  // siteFBAppID: '123456789', // Facebook App ID - Optional
-  userTwitter: '@emma', // Twitter Username
-  ogSiteName: 'emma', // Facebook Site Name
-  ogLanguage: 'en_US',
-  googleAnalyticsID: 'UA-12345689-1',
-  // Manifest and Progress color
-  themeColor: '#3498DB',
-  backgroundColor: '#2b2e3c',
-  // Settings for typography.jsx
-  headerFontFamily: 'Merriweather',
-  bodyFontFamily: 'Roboto',
-  baseFontSize: '16px',
-};
-```
 
 You can also configure the styling of the site by editing the theme variables in ``config/theme.js``. `overlay` are the colors that get randomly selected for the Index page and the project detail view.
 

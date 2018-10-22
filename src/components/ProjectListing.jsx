@@ -118,12 +118,12 @@ const ProjectListing = ({ projectEdges }) => (
         backgroundImage: 'radial-gradient(circle at top center,transparent 0,rgba(17,17,17,.75))'
       };
       return (
-        <Item key={project.node.fields.slug}>
+        <Item key={project.node.parent.name}>
           <Content>
             <ImageWrapper>
               <Img fluid={project.node.frontmatter.cover.childImageSharp.fluid} />
             </ImageWrapper>
-            <OverlayLink to={project.node.fields.slug} style={overlayStyle}>
+            <OverlayLink to={project.node.parent.sourceInstanceName + "/" + project.node.parent.name} style={overlayStyle}>
             <header>
               <p>{project.node.frontmatter.client}</p>
               <h2>{project.node.frontmatter.title}</h2>

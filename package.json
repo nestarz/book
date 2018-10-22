@@ -8,6 +8,8 @@
     "type": "git"
   },
   "dependencies": {
+    "@mdx-js/mdx": "^0.15.5",
+    "@mdx-js/tag": "^0.15.0",
     "@vx/brush": "0.0.179",
     "@vx/clip-path": "0.0.165",
     "@vx/curve": "0.0.165",
@@ -27,6 +29,7 @@
     "gatsby": "^2.0.0",
     "gatsby-cli": "^2.4.3",
     "gatsby-image": "^2.0.5",
+    "gatsby-mdx": "^0.2.0",
     "gatsby-plugin-catch-links": "^2.0.2",
     "gatsby-plugin-emotion": "^2.0.5",
     "gatsby-plugin-google-analytics": "^2.0.5",
@@ -44,6 +47,7 @@
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^2.0.1",
     "gatsby-remark-responsive-iframe": "^2.0.5",
+    "gatsby-remark-smartypants": "^2.0.5",
     "gatsby-source-filesystem": "^2.0.1",
     "gatsby-transformer-remark": "^2.1.1",
     "gatsby-transformer-sharp": "^2.1.1",
@@ -61,6 +65,7 @@
     "react-slick": "^0.23.2",
     "react-spring": "^5.9.2",
     "react-typography": "^0.16.13",
+    "slick-carousel": "^1.8.1",
     "three": "^0.97.0",
     "three-obj-mtl-loader": "^1.0.3",
     "three-stl-loader": "^1.0.6",

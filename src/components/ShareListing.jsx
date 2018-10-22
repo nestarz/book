@@ -122,12 +122,12 @@ const ShareListing = ({ projectEdges }) => (
       };
       return (
         <WrapperItem>
-        <Item key={project.node.fields.slug}>
+        <Item key={project.node.parent.name}>
           <Content>
             <ImageWrapper>
               <Img fluid={project.node.frontmatter.cover.childImageSharp.fluid} />
             </ImageWrapper>
-            <OverlayLink to={project.node.fields.slug} style={overlayStyle}>
+            <OverlayLink to={project.node.parent.sourceInstanceName + "/" + project.node.parent.name} style={overlayStyle}>
             </OverlayLink>
           </Content>
         </Item>
