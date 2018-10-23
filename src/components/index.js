@@ -10,9 +10,11 @@ import Layout from './Layout';
 import Navigation from './Navigation';
 import ProjectListing from './ProjectListing';
 import ShareListing from './ShareListing';
+import ExperiencesListing from './ExperiencesListing';
 import SEO from './SEO';
 import HamburgerMenu from './HamburgerMenu';
 import FocusOnSelect from './FocusOnSelect';
+import P5Wrapper from './P5Wrapper';
 
 export { 
     Container, 
@@ -27,7 +29,9 @@ export {
     Navigation, 
     ProjectListing,
     ShareListing,
+    ExperiencesListing,
     SEO,
     HamburgerMenu,
-    FocusOnSelect
+    FocusOnSelect,
+    P5Wrapper
 };

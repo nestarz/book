@@ -69,6 +69,16 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
+            allFile(
+              filter: { sourceInstanceName: { eq: "sketches" } }
+              ) {
+                edges {
+                  node {
+                    name
+                    sourceInstanceName
+                  }
+                }
+              }
           }
         `
       ).then(result => {
@@ -90,6 +100,16 @@ exports.createPages = ({ graphql, actions }) => {
             }
           });
         });
+        // Create sketch pages.
+        result.data.allFile.edges.forEach(({ node }) => {
+          createPage({
+            path: `/${node.sourceInstanceName}/${node.name}`,
+            component: path.resolve(`src/templates/sketch.jsx`),
+            context: {
+              name: node.name,
+            },
+          })
+        })
       })
     );
   });

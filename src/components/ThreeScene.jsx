@@ -22,19 +22,22 @@ class ThreeScene extends Component{
     this.renderer.setSize(width, height)
     this.mount.appendChild(this.renderer.domElement)
     //ADD CUBE
-    const geometry = new THREE.BoxGeometry(1, 1, 1)
-    const material = new THREE.MeshBasicMaterial({ color: this.props.theme.colors.bg_color })
+    const geometry = new THREE.BoxGeometry(10, 0.5, 1)
+    console.log(this.props.theme.theme.colors.bg_color);
+    const material = new THREE.MeshBasicMaterial({ color: this.props.theme.theme.colors.bg_color })
     this.cube = new THREE.Mesh(geometry, material)
+    this.cube.rotation.z += 10
     this.scene.add(this.cube)
 
     // //ADD TEAPOT
     this.loader = new STLLoader();
     this.loader.load('assets/models/teapot.stl', (geometry) => {
       var material = new THREE.MeshNormalMaterial()
-      var material = new THREE.MeshBasicMaterial({ color: this.props.theme.brand.primary });
+      //var material = new THREE.MeshBasicMaterial({ color: this.props.theme.theme.brand.primary });
       var mesh = new THREE.Mesh(geometry, material)
       mesh.rotation.set( Math.PI * 1.5, 0, 0 );
-      mesh.position.z -= 20;
+      mesh.position.z -= 7;
+      mesh.position.y -= 4;
       this.cube = mesh;
       this.scene.add(this.cube);
     });
@@ -54,8 +57,8 @@ stop = () => {
     cancelAnimationFrame(this.frameId)
   }
 animate = () => {
-   this.cube.rotation.x += 0.005
-   this.cube.rotation.y += 0.005
+   this.cube.rotation.x += 0.001
+   this.cube.rotation.y += 0.0005
    this.renderScene()
    this.frameId = window.requestAnimationFrame(this.animate)
  }
@@ -65,7 +68,7 @@ renderScene = () => {
 render(){
     return(
       <div
-        style={{ width: this.width + 'px', height: this.height + 'px' }}
+        style={{ width: this.width + 'px', height: this.height + 'px', position: "fixed", zIndex: -1, top: 0, left: 0, filter: 'blur(30px)' }}
         ref={(mount) => { this.mount = mount }}
       />
     )

@@ -1,15 +1,23 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import { ProjectListing, Layout } from 'components';
+import { ProjectListing, P5Wrapper, Layout } from 'components';
 import theme from '../../config/theme';
+import { files } from "../../content/sketches";
+import styled from 'react-emotion';
+
+const Wrapper = styled.div`
+`;
 
 const Index = ({
   data: {
     allMdx: { edges: projectEdges },
   },
 }) => (
-  <Layout theme={theme.light} chart={false}>
+  <Layout theme={theme.light} absoluteNav={false} chart={false}>
+    {/* <Wrapper>
+      <P5Wrapper sketch={files['s002']} theme={theme} />
+    </Wrapper> */}
     <ProjectListing projectEdges={projectEdges} />
   </Layout>
 );

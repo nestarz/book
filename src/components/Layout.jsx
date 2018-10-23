@@ -15,6 +15,12 @@ let ThreeBackground = withScreenSize(
   )
 );
 
+const AbsoluteNav = styled.div`
+    position:absolute;
+    left:0;
+    right: 0;
+`;
+
 const WrapperChart = styled.div`
   & {
     position: fixed;
@@ -22,7 +28,7 @@ const WrapperChart = styled.div`
   }
 `;
 
-const Layout = ({ theme, chart, children }) => (
+const Layout = ({ theme, absoluteNav, chart, withFooter, children }) => (
   <ThemeProvider theme={theme}>
     <React.Fragment>
       <Helmet>
@@ -37,9 +43,15 @@ const Layout = ({ theme, chart, children }) => (
       {/* <WrapperChart>
         <ThreeBackground theme={theme} />
       </WrapperChart> */}
-      <Navigation />
+      { absoluteNav ?
+        <AbsoluteNav>
+          <Navigation theme={theme}/>
+        </AbsoluteNav>
+        :
+        <Navigation theme={theme}/>
+      }
       {children}
-      <Footer />
+      {withFooter ? '' : <Footer/>}
       <ScrollUpButton 
       style={{
         backgroundColor: theme.colors.bg_color,

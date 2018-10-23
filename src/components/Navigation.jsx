@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { FaInstagram, FaBehance, FaPinterest, FaGithub, FaUnderline } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaPinterest, FaGithub, FaUnderline } from 'react-icons/fa';
 import styled, { css } from 'react-emotion';
 import config from '../../config/website';
-import theme from '../../config/theme';
-import { HamburgerMenu } from '../components';
+import { ThreeScene, HamburgerMenu } from '../components';
 
 
 const Wrapper = styled.header`
@@ -33,11 +32,11 @@ const Wrapper = styled.header`
   }
 `;
 
-const active = css`
-  color: ${theme.light.brand.primary} !important;
+const active = styled.css`
+  color: ${props => props.theme.brand.primary} !important;
   position: relative;
   &:after {
-    background-color: ${theme.light.brand.primary};
+    background-color: ${props => props.theme.brand.primary};
     border-radius: 10px;
     bottom: -10px;
     content: '';
@@ -67,6 +66,10 @@ flex-basis: auto; /* default value */
 text-align: center;
   padding: 0 ${props => props.theme.spacer.horizontal};
   font-size: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   a {
     font-family: ${`${config.headerFontFamily}, sans-serif`};
     &:hover,
@@ -104,11 +107,11 @@ justify-content: center;
 margin-top: 20px;
 `
 
-const Navigation = () => (
+const Navigation = (theme) => (
   <Wrapper>
     {/* <HamburgerMenu/> */}
     <Name>
-    {/* <ThreeScene width={80} height={80} theme={theme} /> */}
+    <ThreeScene width={window.innerWidth} height={window.innerHeight} theme={theme} />
     <div><Link to="/">{config.siteTitle}</Link> — {config.siteDescription}</div>
     </Name>
     <RightGroup>
@@ -130,6 +133,14 @@ const Navigation = () => (
           Share
         </Link>
         <Link
+          to="/experiences"
+          activeClassName={css`
+            ${active};
+          `}
+        >
+          Fun
+        </Link>
+        <Link
           to="/info"
           activeClassName={css`
             ${active};
@@ -145,11 +156,8 @@ const Navigation = () => (
         <a href="https://www.instagram.com/eliasrhouzlane" target="_blank" rel="noopener noreferrer">
           <FaInstagram />
         </a>
-        <a href="https://pinterest.com/eliasrhouzlane" target="_blank" rel="noopener noreferrer">
-          <FaPinterest />
-        </a>
-        <a href="https://www.behance.net/eliasrhouzlane" target="_blank" rel="noopener noreferrer">
-          <FaBehance />
+        <a href="https://linkedin.com/in/elias-rhouzlane-56070197/" target="_blank" rel="noopener noreferrer">
+          <FaLinkedin />
         </a>
       </SocialMedia>
     </RightGroup>

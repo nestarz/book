@@ -25,6 +25,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'sketches',
+        path: `${__dirname}/content/sketches`,
+        ignore: [`**/index.js`], // ignore files starting with a dot
+      },
+    },
+    {
       resolve: 'gatsby-mdx',
       options: {
         extensions: [".mdx", ".md"],
@@ -55,7 +63,11 @@ module.exports = {
               related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
               noIframeBorder: true //Optional: Disable insertion of <style> border: 0
             }
-          }
+          },
+          // {
+          //   resolve: "gatsby-remark-responsive-iframe",
+          //   options: {}
+          // },
         ]
       }
     },

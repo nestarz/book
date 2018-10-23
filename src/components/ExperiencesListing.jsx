@@ -6,38 +6,55 @@ import Img from 'gatsby-image';
 import sample from 'lodash/sample';
 import { overlay } from '../../config/theme';
 
+const WrapperItem = styled.div`
+border: 1px solid white;
+padding: 1rem;
+margin-left: -1px;
+margin-top: -1px;
+header {
+  padding: 1.2rem 1rem;
+  background-color : white;
+  color: ${props => props.theme.colors.body_color};
+  letter-spacing: calc(-3 / 1000 * 1em);
+  font-weight: 500;
+  font-size: calc(1.2 * .5rem);
+  line-height: calc(2 * .5rem);
+  div {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+  }
+  h2 {
+    font-size: 1.3rem;
+    line-height: 50px;
+    margin-bottom: 0rem;
+    margin-top: .5rem;
+    font-weight: 500;
+    letter-spacing: calc(-23 / 1000 * 1em);
+  }
+  p {
+    font-size: 1rem;
+    letter-spacing: calc(-6 / 1000 * 1em);
+    font-weight: 400;
+  }
+}
+`;
+
 const Item = styled.div`
   position: relative;
-  min-width: 300px;
-  max-height: 40vh;
-  margin: 1.5vw;
-  opacity: 1;
-  &:hover {
-    opacity: 1
-  }
-  
-  flex-grow: 1;
-  width: 33%;
   &:before {
     content: '';
     display: block;
-    padding-top: 40vh;
+    padding-top: 100%;
   }
 `;
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  z-index:1;
-  padding: 0rem 2rem;
-  margin-top: 0vh;
-  flex: 0 0 50%;
-  & ${Item}:nth-child(1)  { flex-grow: 100;  }
-  & ${Item}:nth-child(2)  { flex-grow: 2; }
-  & ${Item}:nth-child(3)  { flex-grow: 1; }
-  & ${Item}:nth-child(4)  { flex-grow: 1; }
-  & ${Item}:nth-child(5)  { flex-grow: 3; }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  padding: 0 5%;
 `;
 
 const Content = styled.div`
@@ -68,25 +85,6 @@ const Content = styled.div`
       text-decoration: none;
     }
   }
-  header {
-    margin: 0rem 0rem;
-    //background-color : ${props => props.theme.colors.bg_color};
-    color: ${props => props.theme.colors.bg_color};
-    pointer-events: none;
-    display: block;
-    h2 {
-      font-size: 44px;
-      line-height: 50px;
-      margin-bottom: 1rem;
-      font-weight: 500;
-      letter-spacing: calc(-23 / 1000 * 1em);
-    }
-    p {
-      font-size: 22px;
-      letter-spacing: calc(-6 / 1000 * 1em);
-      font-weight: 400;
-    }
-  }
 `;
 
 const ImageWrapper = styled.div`
@@ -115,7 +113,7 @@ const OverlayLink = styled(Link)`
   filter: blur(0px);
 `
 
-const ProjectListing = ({ projectEdges }) => (
+const ExperiencesListing = ({ projectEdges }) => (
   <Wrapper>
     {projectEdges.map(project => {
       const overlayColor = sample(overlay);
@@ -123,26 +121,23 @@ const ProjectListing = ({ projectEdges }) => (
         backgroundImage: 'radial-gradient(circle at top center,transparent 0,rgba(17,17,17,.75))'
       };
       return (
-        <Item key={project.node.parent.name}>
-          <Content>
-            <ImageWrapper>
-              <Img fluid={project.node.frontmatter.cover.childImageSharp.fluid} />
-            </ImageWrapper>
-            <OverlayLink to={project.node.parent.sourceInstanceName + "/" + project.node.parent.name} style={overlayStyle}>
+        <WrapperItem>
+            <Link to={project.node.sourceInstanceName + "/" + project.node.name} style={overlayStyle}>
             <header>
-              <p>{project.node.frontmatter.client}</p>
-              <h2>{project.node.frontmatter.title}</h2>
-            </header>
-            </OverlayLink>
-          </Content>
-        </Item>
+           <div>
+            <span>{project.node.sourceInstanceName}</span>
+          </div>
+          <h2>{project.node.name}</h2>
+        </header>
+            </Link>
+        </WrapperItem>
       );
     })}
   </Wrapper>
 );
 
-export default ProjectListing;
+export default ExperiencesListing;
 
-ProjectListing.propTypes = {
+ExperiencesListing.propTypes = {
   projectEdges: PropTypes.array.isRequired,
 };
