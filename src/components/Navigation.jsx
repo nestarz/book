@@ -63,7 +63,6 @@ const Nav = styled.nav`
 `;
 
 const Name = styled.div`
-min-width: 400px;
 flex-basis: auto; /* default value */
 text-align: center;
   padding: 0 ${props => props.theme.spacer.horizontal};
