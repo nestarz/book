@@ -36,7 +36,7 @@ class ThreeScene extends Component{
       //var material = new THREE.MeshBasicMaterial({ color: this.props.theme.theme.brand.primary });
       var mesh = new THREE.Mesh(geometry, material)
       mesh.rotation.set( Math.PI * 1.5, 0, 0 );
-      mesh.position.z -= 7;
+      mesh.position.z -= 5;
       mesh.position.y -= 4;
       this.cube = mesh;
       this.scene.add(this.cube);
@@ -57,10 +57,13 @@ stop = () => {
     cancelAnimationFrame(this.frameId)
   }
 animate = () => {
-   this.cube.rotation.x += 0.001
-   this.cube.rotation.y += 0.0005
+   this.cube.rotation.x += 0.01
+   this.cube.rotation.y += 0.005
    this.renderScene()
-   this.frameId = window.requestAnimationFrame(this.animate)
+   let animateF = this.animate;
+   setTimeout( function() {
+    this.frameId = window.requestAnimationFrame(animateF)
+   }, 350 );
  }
 renderScene = () => {
   this.renderer.render(this.scene, this.camera)
@@ -68,7 +71,7 @@ renderScene = () => {
 render(){
     return(
       <div
-        style={{ width: this.width + 'px', height: this.height + 'px', position: "fixed", zIndex: -1, top: 0, left: 0, filter: 'blur(30px)' }}
+        style={{ width: this.width + 'px', height: this.height + 'px', position: "fixed", zIndex: -1, top: 0, left: 0, filter: 'blur(60px) contrast(4) saturate(3)' }}
         ref={(mount) => { this.mount = mount }}
       />
     )
