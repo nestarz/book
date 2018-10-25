@@ -155,10 +155,22 @@ exports.createPages = ({ graphql, actions }) => {
 // };
 
 /* Allow us to use something like: import { X } from 'directory' instead of '../../folder/directory' */
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
+exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, actions }) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     },
   });
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: path.resolve(__dirname, 'node_modules/p5/lib/p5.js'),
+            use: 'null-loader',
+          },
+        ],
+      },
+    })
+  }
 };

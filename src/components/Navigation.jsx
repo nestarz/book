@@ -4,7 +4,13 @@ import { FaInstagram, FaLinkedin, FaPinterest, FaGithub, FaUnderline } from 'rea
 import styled, { css } from 'react-emotion';
 import config from '../../config/website';
 import { ThreeScene, HamburgerMenu } from '../components';
+import { withScreenSize } from '@vx/responsive';
 
+let ThreeBackground = withScreenSize(
+  ({ screenWidth, screenHeight, ...rest }) => (
+    <ThreeScene width={screenWidth} height={screenHeight} {...rest} />
+  )
+);
 
 const Wrapper = styled.header`
   align-items: baseline;
@@ -107,11 +113,12 @@ justify-content: center;
 margin-top: 20px;
 `
 
-const Navigation = (theme) => (
+const Navigation = (theme) => {
+  return (
   <Wrapper>
     {/* <HamburgerMenu/> */}
     <Name>
-    <ThreeScene width={window.innerWidth} height={window.innerHeight} theme={theme} />
+    <ThreeBackground theme={theme} />
     <div><Link to="/">{config.siteTitle}</Link> — {config.siteDescription}</div>
     </Name>
     <RightGroup>
@@ -162,6 +169,6 @@ const Navigation = (theme) => (
       </SocialMedia>
     </RightGroup>
   </Wrapper>
-);
+)};
 
 export default Navigation;
