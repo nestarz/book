@@ -1,16 +1,16 @@
 import { darken } from 'polished';
 
 const brand = {
-  primary: '#410099',
-  secondary: '#00af69',
+  primary: '#1F67F6',
+  secondary: '#FFF',
 };
 
 const colors = {
   grey: '#25252',
   black: '#111',
   red: '#eb1c24',
-  bg_color: '#f4f4f4',
-  body_color: '#111',
+  bg_color: '#FFFFFF',
+  body_color: '#1F67F6',
   link_color: brand.primary,
   link_color_hover: `${darken(0.15, brand.primary)}`,
 };

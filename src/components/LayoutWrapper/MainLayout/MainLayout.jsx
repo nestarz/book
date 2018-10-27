@@ -10,10 +10,13 @@ import Navigation from "../../Navigation"
 import SEO from "../../SEO";
 import Footer from "../../Footer";
 
+import { Wrapper } from "./styles";
+
 const LayoutWrapper = props => {
   const { theme, children } = props;
 
   return (
+    <Wrapper>
     <ThemeProvider theme={theme}>
     <React.Fragment>
       <Helmet>
@@ -37,6 +40,7 @@ const LayoutWrapper = props => {
       />
     </React.Fragment>
   </ThemeProvider>
+  </Wrapper>
   );
 };
 
