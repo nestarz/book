@@ -1,26 +1,23 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import { ProjectListing, P5Wrapper, Layout } from 'components';
-import theme from '../../config/theme';
-import { files } from "../../content/sketches";
 import styled from 'react-emotion';
 
-const Wrapper = styled.div`
-`;
+import theme from '../../config/theme';
+import LayoutWrapper from '../components/LayoutWrapper';
+import Listing from '../components/Listing';
 
 const Index = ({
   data: {
     allMdx: { edges: projectEdges },
   },
-}) => (
-  <Layout theme={theme.light} absoluteNav={false} chart={false}>
-    {/* <Wrapper>
-      <P5Wrapper sketch={files['s002']} theme={theme} />
-    </Wrapper> */}
-    <ProjectListing projectEdges={projectEdges} />
-  </Layout>
-);
+}) => {
+  return (
+    <LayoutWrapper layoutType={"main"} theme={theme.light}>
+      <Listing listingType={"main"} projectEdges={projectEdges} />
+    </LayoutWrapper>
+  )
+};
 
 export default Index;
 
@@ -45,6 +42,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             service
+            date(formatString: "DD MMMM YYYY", locale: "en")
             client
             title
             cover {

@@ -45,75 +45,75 @@ exports.onCreateNode = ({ node, actions }) => {
   }
 };
 
-const componentWithMDXScope = require("gatsby-mdx/component-with-mdx-scope");
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
-  return new Promise((resolve, reject) => {
-    resolve(
-      graphql(
-        `
-          {
-            allMdx {
-              edges {
-                node {
-                  id
-                  parent {
-                    ... on File {
-                      name
-                      sourceInstanceName
-                    }
-                  }
-                  code {
-                    scope
-                  }
-                }
-              }
-            }
-            allFile(
-              filter: { sourceInstanceName: { eq: "sketches" } }
-              ) {
-                edges {
-                  node {
-                    name
-                    sourceInstanceName
-                  }
-                }
-              }
-          }
-        `
-      ).then(result => {
-        if (result.errors) {
-          console.log(result.errors);
-          reject(result.errors);
-        }
-        // Create blog posts pages.
-        result.data.allMdx.edges.forEach(({ node }) => {
-          createPage({
-            path: `/${node.parent.sourceInstanceName}/${node.parent.name}`,
-            component: componentWithMDXScope(
-              path.resolve("src/templates/project.jsx"),
-              node.code.scope
-            ),
-            context: { 
-              id: node.id, 
-              name: node.parent.name 
-            }
-          });
-        });
-        // Create sketch pages.
-        result.data.allFile.edges.forEach(({ node }) => {
-          createPage({
-            path: `/${node.sourceInstanceName}/${node.name}`,
-            component: path.resolve(`src/templates/sketch.jsx`),
-            context: {
-              name: node.name,
-            },
-          })
-        })
-      })
-    );
-  });
-};
+// const componentWithMDXScope = require("gatsby-mdx/component-with-mdx-scope");
+// exports.createPages = ({ graphql, actions }) => {
+//   const { createPage } = actions;
+//   return new Promise((resolve, reject) => {
+//     resolve(
+//       graphql(
+//         `
+//           {
+//             allMdx {
+//               edges {
+//                 node {
+//                   id
+//                   parent {
+//                     ... on File {
+//                       name
+//                       sourceInstanceName
+//                     }
+//                   }
+//                   code {
+//                     scope
+//                   }
+//                 }
+//               }
+//             }
+//             allFile(
+//               filter: { sourceInstanceName: { eq: "sketches" } }
+//               ) {
+//                 edges {
+//                   node {
+//                     name
+//                     sourceInstanceName
+//                   }
+//                 }
+//               }
+//           }
+//         `
+//       ).then(result => {
+//         if (result.errors) {
+//           console.log(result.errors);
+//           reject(result.errors);
+//         }
+//         // Create blog posts pages.
+//         result.data.allMdx.edges.forEach(({ node }) => {
+//           createPage({
+//             path: `/${node.parent.sourceInstanceName}/${node.parent.name}`,
+//             component: componentWithMDXScope(
+//               path.resolve("src/templates/project.jsx"),
+//               node.code.scope
+//             ),
+//             context: { 
+//               id: node.id, 
+//               name: node.parent.name 
+//             }
+//           });
+//         });
+//         // Create sketch pages.
+//         result.data.allFile.edges.forEach(({ node }) => {
+//           createPage({
+//             path: `/${node.sourceInstanceName}/${node.name}`,
+//             component: path.resolve(`src/templates/sketch.jsx`),
+//             context: {
+//               name: node.name,
+//             },
+//           })
+//         })
+//       })
+//     );
+//   });
+// };
 
 // exports.createPages = ({ graphql, actions }) => {
 //   const { createPage } = actions;
