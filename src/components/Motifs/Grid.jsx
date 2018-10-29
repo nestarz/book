@@ -18,10 +18,10 @@ export default ({
   if (width < 10) return null;
   return (
     <svg width={width} height={height}>
-      <PatternWaves
+      <PatternCircles
         id='dhLines'
-        height={50}
-        width={50}
+        height={20}
+        width={20}
         stroke={theme.brand.primary}
         strokeWidth={1}
         orientation={['horizontal']}
@@ -31,7 +31,7 @@ export default ({
         height={yMax}
         width={xMax}
         x={0}
-        y={0}
+        y={yMax/6}
         rx={0}
       />
     </svg>

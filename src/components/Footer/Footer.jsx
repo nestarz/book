@@ -4,8 +4,8 @@ import { Spring, config } from 'react-spring';
 import { TimingAnimation, Easing } from 'react-spring/dist/addons';
 
 const Wrapper = styled.footer`
-  margin: 3rem 0;
-  padding: 1rem ${props => props.theme.spacer.horizontal};
+  margin: 0rem 0;
+  padding: 0rem ${props => props.theme.spacer.horizontal};
   text-align: center;
   font-size: 40px;
   a {

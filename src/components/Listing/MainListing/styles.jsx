@@ -1,21 +1,11 @@
 import { Link } from 'gatsby';
 import styled from 'react-emotion';
 
-export const MotifWrapper = styled.div`
-position: fixed;
-top:0;
-left:0;
-right:0;
-bottom:0;
-pointer-events: none;
-z-index:-1;
-`;
-
 export const Item = styled.div`
   position: relative;
   min-width: 300px;
   max-height: 40vh;
-  margin: 0 2vw 3vw 2vw;
+  margin: 0vh 2vw 3vw 2vw;
   //border-right: 5px dotted ${props => props.theme.colors.body_color};
   //border-bottom: 5px dotted ${props => props.theme.colors.body_color};
   padding: 10px;
@@ -39,7 +29,7 @@ export const Wrapper = styled.div`
   position: relative;
   z-index:1;
   padding: 1rem 2rem;
-  margin-top: 0vh;
+  margin-top: 5vh;
   flex: 0 0 50%;
   & ${Item}:nth-child(1)  { flex-grow: 100;  }
   & ${Item}:nth-child(2)  { flex-grow: 2; }
@@ -69,11 +59,13 @@ export const Content = styled.div`
     z-index: 10;
     transition: all 0.3s ease-in-out;
     text-decoration: none;
+    filter: grayscale(100%);
 
     &:hover {
       color: #fff;
       opacity: 1;
       text-decoration: none;
+      filter: grayscale(0%) !important;
     }
   }
   header {

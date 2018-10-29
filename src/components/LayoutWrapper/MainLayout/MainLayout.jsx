@@ -5,12 +5,26 @@ import "circular-std";
 import Helmet from 'react-helmet';
 import { ThemeProvider } from 'emotion-theming';
 import { CircleArrow as ScrollUpButton } from "react-scroll-up-button";
+import { withScreenSize } from '@vx/responsive';
 
 import Navigation from "../../Navigation"
 import SEO from "../../SEO";
 import Footer from "../../Footer";
+import { Grid as Motif } from '../../Motifs';
+//import { AnimatedSurface as Motif } from '../../Shaders';
+//import { GameofLife as Motif } from '../../Shaders';
+//import { DesertPassage as Motif } from '../../Shaders';
 
-import { Wrapper } from "./styles";
+import { 
+  Wrapper,
+  MotifWrapper,
+ } from "./styles";
+
+let MotifResponsive = withScreenSize(
+  ({ screenWidth, screenHeight, ...rest }) => (
+    <Motif width={screenWidth} height={screenHeight} {...rest} />
+  )
+);
 
 const LayoutWrapper = props => {
   const { theme, children } = props;
@@ -28,6 +42,9 @@ const LayoutWrapper = props => {
       `}</style>
       </Helmet>
       <SEO />
+      {/* <MotifWrapper>
+        <MotifResponsive theme={theme}/>
+      </MotifWrapper> */}
       <Navigation theme={theme}/>
       {children}
       <Footer/>

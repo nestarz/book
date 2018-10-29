@@ -46,9 +46,15 @@ export const pageQuery = graphql`
             client
             title
             cover {
+              childImageDeepAi {
+                id
+                fixed {
+                  src
+                }
+              }
               childImageSharp {
                 fluid(
-                    duotone: { shadow: "#1F67F6", highlight: "#FFFFFF"},
+                    duotone: { shadow: "#059008", highlight: "#FFFFFF"},
                     quality: 80
                 ){
                     ...GatsbyImageSharpFluid

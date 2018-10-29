@@ -15,25 +15,26 @@ void main () {
   for (int i=0; i<3; i++) {
     vec4 c = colors[i];
     vec2 p = particles[i];
-    float d = c.a * smoothstep(0.6, 0.2, distance(p, uv));
+    float d = c.a * smoothstep(0.9, 0.5, distance(p, uv));
     sum += d * vec4(c.a * c.rgb, c.a);
   }
   if (sum.a > 1.0) {
     sum.rgb /= sum.a;
     sum.a = 1.0;
   }
-  gl_FragColor = vec4(sum.a * sum.rgb, 1.0);
+  gl_FragColor = vec4(sum.a * sum.rgb, sum.a * 1.);
 }
 `}
 });
 
+const blue = [31. / 255., 103. / 255., 246. / 255.];
 // Alternative syntax using React stateless function component
 const Gradients = ({ time }) =>
   <Node
     shader={shaders.gradients}
     uniforms={{
       colors: [
-        [ Math.cos(0.002*time), Math.sin(0.002*time), 0.2, 1 ],
+        [ Math.cos(0.0002*time), Math.sin(0.0002*time), 0.2, 1 ],
         [ Math.sin(0.002*time), -Math.cos(0.002*time), 0.1, 1 ],
         [ 0.3, Math.sin(3+0.002*time), Math.cos(1+0.003*time), 1 ]
       ],
@@ -47,8 +48,8 @@ const Gradients = ({ time }) =>
 
 const GradientsLoop = timeLoop(Gradients);
 
-export default () =>
-  <Surface width={300} height={300}>
+export default ({width, height}) =>
+  <Surface width={width} height={height}>
     <GradientsLoop />
   </Surface>;
 

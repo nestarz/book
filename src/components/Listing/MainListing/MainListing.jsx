@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import { withScreenSize } from '@vx/responsive';
 
-import { Chords as Motif } from '../../Motifs';
-import { AnimatedSurface } from '../../Shaders';
 import theme from '../../../../config/theme';
 
 import { 
@@ -13,14 +10,7 @@ import {
     ImageWrapper,
     OverlayLink,
     Item,
-    MotifWrapper,
 } from "./styles";
-
-let MotifResponsive = withScreenSize(
-  ({ screenWidth, screenHeight, ...rest }) => (
-    <AnimatedSurface width={screenWidth} height={screenHeight} {...rest} />
-  )
-);
 
 const MainListing = props => {
   const { projectEdges } = props;
@@ -29,13 +19,15 @@ const MainListing = props => {
     <Wrapper>
       {projectEdges.map(project => {
         const overlayStyle = {
-          backgroundImage: 'radial-gradient(circle at bottom right, transparent 0, #1F67F6)'
+          backgroundImage: 'radial-gradient(circle at center center, transparent 0, #B8DAB4)'
         };
+        console.log(project.node.frontmatter.cover.childImageDeepAi);
         return (
           <Item key={project.node.parent.name}>
           <Content>
             <ImageWrapper>
-              <Img fluid={project.node.frontmatter.cover.childImageSharp.fluid} />
+              {/* <Img fluid={project.node.frontmatter.cover.childImageSharp.fluid} /> */}
+              <img src={project.node.frontmatter.cover.childImageDeepAi.fixed.src}/>
             </ImageWrapper>
             <OverlayLink to={project.node.parent.sourceInstanceName + "/" + project.node.parent.name} style={overlayStyle}>
             <header>
@@ -47,9 +39,6 @@ const MainListing = props => {
         </Item>
         );
       })}
-      <MotifWrapper>
-        <MotifResponsive theme={theme.light}/>
-      </MotifWrapper>
     </Wrapper>
   );  
 }

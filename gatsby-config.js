@@ -3,11 +3,16 @@ const config = require('./config/website');
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
 
 module.exports = {
+  proxy: {
+    prefix: "/api/deepdream",
+    url: "https://api.deepai.org",
+  },
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     siteUrl: config.siteUrl + pathPrefix,
   },
   plugins: [
+    'gatsby-plugin-deepai', // own library
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-netlify-cms',
     {
