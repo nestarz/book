@@ -1,3 +1,6 @@
+const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
+const util = require('util')
+
 const supportedExtensions = {
     jpeg: true,
     jpg: true,
@@ -7,7 +10,7 @@ const supportedExtensions = {
     tiff: true,
   }
 
-module.exports = async function onCreateNode({ node, actions, createNodeId }) {
+module.exports = async function onCreateNode({ node, actions, store, cache, createNodeId }) {
     const { createNode, createParentChildLink } = actions
 
     // Only get MarkdownRemark nodes
