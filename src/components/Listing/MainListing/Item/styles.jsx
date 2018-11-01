@@ -5,7 +5,8 @@ export const DeepImg = styled.img`
 display: none;
 &.hover {
   display: block;
-  max-height: 30vh;
+  mix-blend-mode: overlay;
+  filter: blur(30px);
 }
 `;
 

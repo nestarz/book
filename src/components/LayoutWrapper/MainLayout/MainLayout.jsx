@@ -27,7 +27,7 @@ let MotifResponsive = withScreenSize(
 );
 
 const LayoutWrapper = props => {
-  const { theme, children } = props;
+  const { theme, navType, children } = props;
 
   return (
     <Wrapper>
@@ -45,7 +45,7 @@ const LayoutWrapper = props => {
       {/* <MotifWrapper>
         <MotifResponsive theme={theme}/>
       </MotifWrapper> */}
-      <Navigation theme={theme}/>
+      <Navigation navType={navType} theme={theme}/>
       {children}
       <Footer/>
       <ScrollUpButton 
@@ -63,6 +63,7 @@ const LayoutWrapper = props => {
 
 LayoutWrapper.propTypes = {
   theme: PropTypes.object.isRequired,
+  navType: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
 };
 export default LayoutWrapper;

@@ -13,28 +13,43 @@ import {
 } from "./styles";
 
 class Item extends React.Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
       isHovering: false,
-      isActive: false
+      isActive: false,
+      currentCount: Math.trunc(Math.random() * 100)
     };
   }
 
-  // GOOD: set this.state.isHovering to true on mouse over
-  handleMouseOver () {
+  onMouseOver () {
     this.setState({ isHovering: true });
   }
 
-  // GOOD: set this.state.isHovering to false on mouse leave
-  handleMouseOut () {
+  onMouseOut () {
     this.setState({ isHovering: false });
   }
 
-  // GOOD: toggle this.state.isActive on click
-  handleClick () {
+  onClick () {
     var active = !this.state.isActive;
     this.setState({ isActive: active });
+  }
+
+  timer() {
+    this.setState({
+      currentCount: this.state.currentCount - 1
+    })
+    if(this.state.currentCount < 1) { 
+      this.state.currentCount = 10;
+    }
+  }
+
+  componentDidMount() {
+    this.intervalId = setInterval(this.timer.bind(this), 2000);
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.intervalId);
   }
 
   render() {
@@ -46,15 +61,16 @@ class Item extends React.Component {
 
     // use the classSet addon to concat an array of class names together
     var classes = classNames([
-      this.state.isHovering && 'hover',
+      //this.state.isHovering && 'hover',
+      (this.state.currentCount % 5) && 'hover',
       this.state.isActive && 'active'
     ]);
 
     return (
       <Wrapper 
-        onClick={this.handleClick.bind(this)}
-        onMouseOver={this.handleMouseOver.bind(this)}
-        onMouseOut={this.handleMouseOut.bind(this)}
+        onClick={this.onClick.bind(this)}
+        onMouseOver={this.onMouseOver.bind(this)}
+        onMouseOut={this.onMouseOut.bind(this)}
         >
           <Content>
           <ImageWrapper>

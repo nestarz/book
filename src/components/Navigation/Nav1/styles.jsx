@@ -1,5 +1,5 @@
 import styled from 'react-emotion';
-import config from '../../../config/website';
+import config from '../../../../config/website';
 
 
 export const Wrapper = styled.header`
