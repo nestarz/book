@@ -55,7 +55,7 @@ class Item extends React.Component {
   render() {
     const { project } = this.props;
     const overlayStyle = {
-      backgroundImage: 'radial-gradient(circle at center center, transparent 0, #B8DAB4)'
+      backgroundImage: 'radial-gradient(circle at center center, #5B9982)'
     };
     console.log(project.node.frontmatter.cover.childImageDeepAi);
 
@@ -75,10 +75,10 @@ class Item extends React.Component {
           <Content>
           <ImageWrapper>
               <Img fluid={project.node.frontmatter.cover.childImageSharp.fluid}/>
-              <DeepImg 
+              {/* <DeepImg 
                 src={project.node.frontmatter.cover.childImageDeepAi.fixed.src}
                 className={classNames(classes)}
-                />
+                /> */}
           </ImageWrapper>
           <OverlayLink to={project.node.parent.sourceInstanceName + "/" + project.node.parent.name} style={overlayStyle}>
           <header>

@@ -17,14 +17,7 @@ const Navigation = (theme) => {
   return (
   <Wrapper>
     <Name>
-    <svg viewBox="0 0 525 300">
-            <path id="bigArc" d="M6,150C49.63,93,105.79,36.65,156.2,47.55,207.89,58.74,213,131.91,264,150c40.67,14.43,108.57-6.91,229-145" stroke="#059008" fill="transparent"/>
-        <text>
-            <textPath xlinkHref="#bigArc" startOffset="49%" text-anchor="middle">
-              <Link to="/">{config.siteTitle}</Link> — {config.siteDescription}
-            </textPath>
-        </text>
-    </svg>
+    <Link to="/">{config.siteTitle}</Link> — {config.siteDescription}
     </Name>
     <RightGroup>
       <Nav>
@@ -45,7 +38,7 @@ const Navigation = (theme) => {
           Share
         </Link>
         <Link
-          to="/sketch_test"
+          to="/sketches"
           activeClassName={css`
             ${active};
           `}

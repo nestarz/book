@@ -8,13 +8,13 @@ const NavigationRouter = props => {
   const { navType, theme, children } = props;
   switch (navType) {
     case "front":
+    default:
         return (
             <Nav1 theme={theme}>
                 {children}
             </Nav1>
         )
     case "main":
-    default:
       return (
         <Nav2 theme={theme}>
             {children}

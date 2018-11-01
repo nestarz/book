@@ -15,14 +15,11 @@ class SketchApp extends React.Component {
         return (
             <LayoutWrapper layoutType={"main"} theme={theme.light}>
                 <Helmet title={`Sketch1 | ${config.siteTitle}`} />
-                <div style={{ width: '100%', height: '100%' }} onClick={() => { this.setState({ value: (this.state.value + 5)%256 }) }}>
-                    <p>
-                        A simple demonstration of how this component wrapper for p5 works. See <a href='https://github.com/JobLeonard/p5-react'>source code on github</a> for more information.
-                    </p>
+                <div onClick={() => { this.setState({ value: (this.state.value + 5)%256 }) }}>
                     <Sketch
                         sketch={sketchtest}
-                        width={'80%'}
-                        height={'80%'}
+                        width={'100%'}
+                        height={'70vh'}
                         sketchProps={{ value: this.state.value}}
                     />
                     <p>

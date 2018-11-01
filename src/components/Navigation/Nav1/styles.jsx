@@ -4,16 +4,16 @@ import config from '../../../../config/website';
 
 export const Wrapper = styled.header`
   align-items: baseline;
-  position: fixed;
-  z-index: 99999;
-  pointer-events: none;
   display: flex;
   flex: 1 0 auto;
   flex-wrap: wrap;
+  //transform: skew(20deg) scale(0.8, 1);
   justify-content: space-around; /* ADJUSTMENT */
   @media (min-width: ${props => props.theme.breakpoints.m}) {
+    justify-content: space-between; /* ADJUSTMENT */
+    flex-wrap: nowrap;
   }
-  padding: 3.5rem 0 4.7rem 0;
+  padding: 0rem 0 0rem 0;
   letter-spacing: calc(-6 / 1000 * 1em);
   a {
     color: ${props => props.theme.colors.body_color};
@@ -48,9 +48,8 @@ export const active = styled.css`
 export const Nav = styled.nav`
   display: flex;
   flex: 1;
-  pointer-events:all;        
   justify-content: flex-end;
-  font-size: 22px;
+  font-size: 32px;
   a:not(:first-child) {
     margin-left: 1rem;
   }
@@ -60,18 +59,10 @@ export const Nav = styled.nav`
 `;
 
 export const Name = styled.div`
-pointer-events:none;        
-  svg {
-    height: 100%;
-    width: 100%;
-    width: 90vw;
-    max-height: 70vh;
-    font-size: 85%;
-  }
-  flex-basis: auto; /* default value */
-  text-align: center;
-  padding: 0 ${props => props.theme.spacer.horizontal};
-  font-size: 22px;
+flex-basis: auto; /* default value */
+text-align: center;
+  padding: 0 0;
+  font-size: 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;

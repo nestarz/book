@@ -6,7 +6,7 @@ display: none;
 &.hover {
   display: block;
   mix-blend-mode: overlay;
-  filter: blur(30px);
+  filter: blur(0px);
 }
 `;
 
@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
   position: relative;
   min-width: 300px;
   max-height: 40vh;
-  margin: 0vh 2vw 3vw 2vw;
+  margin: 0vh 2vw 2vw 0vw;
   //border-right: 5px dotted ${props => props.theme.colors.body_color};
   //border-bottom: 5px dotted ${props => props.theme.colors.body_color};
   padding: 10px;
@@ -48,7 +48,8 @@ export const Content = styled.div`
     color: #fff;
     height: 100%;
     left: 0;
-    opacity: 0;
+    opacity: 0.1;
+    mix-blend-mode: saturate;
     padding-bottom: calc(2 * calc(2 * .5rem));
     padding-left: 22px;
     padding-right: 22px;
@@ -59,11 +60,13 @@ export const Content = styled.div`
     z-index: 10;
     transition: all 0.3s ease-in-out;
     text-decoration: none;
-    filter: grayscale(100%);
+    border: 1px dashed #5B9982;
+    border-radius: 0px;
 
     &:hover {
       color: #fff;
       opacity: 1;
+      mix-blend-mode: overlay;
       text-decoration: none;
       filter: grayscale(0%) !important;
     }
@@ -96,6 +99,7 @@ export const ImageWrapper = styled.div`
     position: absolute !important;
     top: 0;
     width: 100%;
+    //transform: rotate(${Math.random()*10}deg);
     z-index: -1;
     > div {
       position: static !important;
