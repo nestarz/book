@@ -3,6 +3,14 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import classNames from 'classnames/bind';
 
+import { RotateOne } from '../../../Scenes3D';
+import { withScreenSize } from '@vx/responsive';
+
+let ThreeBackground = withScreenSize(
+  ({ screenWidth, screenHeight, ...rest }) => (
+    <ThreeScene width={screenWidth} height={screenHeight} {...rest} />
+  )
+);
 
 import { 
     Content,
@@ -86,6 +94,7 @@ class Item extends React.Component {
           <header>
               <p>{project.node.frontmatter.client}</p>
           </header>
+          <ThreeBackground theme={theme} />
           </OverlayLink>
           </Content>
       </Wrapper>    
