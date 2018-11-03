@@ -49,7 +49,6 @@ export const Content = styled.div`
     height: 100%;
     left: 0;
     opacity: 0.1;
-    mix-blend-mode: saturate;
     padding-bottom: calc(2 * calc(2 * .5rem));
     padding-left: 22px;
     padding-right: 22px;
@@ -60,39 +59,52 @@ export const Content = styled.div`
     z-index: 10;
     transition: all 0.3s ease-in-out;
     text-decoration: none;
-    border: 1px dashed #5B9982;
     border-radius: 0px;
-
+    filter: blur(5px);
     &:hover {
       color: #fff;
       opacity: 1;
-      mix-blend-mode: overlay;
       text-decoration: none;
       filter: grayscale(0%) !important;
     }
   }
   header {
     margin: 0rem 0rem;
-    //background-color : ${props => props.theme.colors.bg_color};
-    color: ${props => props.theme.colors.bg_color};
+    background-color : ${props => props.theme.colors.bg_color};
+    color: ${props => props.theme.colors.body_color};
     pointer-events: none;
+    position: absolute;
+    bottom: 0;
     display: block;
     h2 {
-      font-size: 44px;
+      font-size: 24px;
       line-height: 50px;
-      margin-bottom: 1rem;
+      margin-bottom: 0rem;
       font-weight: 500;
       letter-spacing: calc(-23 / 1000 * 1em);
     }
     p {
-      font-size: 22px;
+      font-size: 12px;
       letter-spacing: calc(-6 / 1000 * 1em);
       font-weight: 400;
+      margin-bottom: 0rem;
     }
   }
 `;
 
 export const ImageWrapper = styled.div`
+  > header {
+    left: 22px;
+    margin: 10px;
+    padding: 2px 10px;
+    h2 {
+      font-size: 10px;
+      margin: 0;
+      padding: 0;
+      line-height: 12px;
+      font-size: 18px;
+    }
+  }
   > div {
     height: 100%;
     left: 0;

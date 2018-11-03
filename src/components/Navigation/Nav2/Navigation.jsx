@@ -38,7 +38,7 @@ const Navigation = (theme) => {
           Share
         </Link>
         <Link
-          to="/sketch_test"
+          to="/sketches"
           activeClassName={css`
             ${active};
           `}

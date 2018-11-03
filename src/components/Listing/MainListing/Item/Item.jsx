@@ -57,7 +57,6 @@ class Item extends React.Component {
     const overlayStyle = {
       backgroundImage: 'radial-gradient(circle at center center, #5B9982)'
     };
-    console.log(project.node.frontmatter.cover.childImageDeepAi);
 
     // use the classSet addon to concat an array of class names together
     var classes = classNames([
@@ -74,6 +73,9 @@ class Item extends React.Component {
         >
           <Content>
           <ImageWrapper>
+              <header>
+              <h2>{project.node.frontmatter.title}</h2>
+              </header>
               <Img fluid={project.node.frontmatter.cover.childImageSharp.fluid}/>
               {/* <DeepImg 
                 src={project.node.frontmatter.cover.childImageDeepAi.fixed.src}
@@ -83,7 +85,6 @@ class Item extends React.Component {
           <OverlayLink to={project.node.parent.sourceInstanceName + "/" + project.node.parent.name} style={overlayStyle}>
           <header>
               <p>{project.node.frontmatter.client}</p>
-              <h2>{project.node.frontmatter.title}</h2>
           </header>
           </OverlayLink>
           </Content>

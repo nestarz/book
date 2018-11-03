@@ -2,17 +2,18 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
-import sketchtest from '../components/P5_Sketches';
-import { Sketch } from '../../plugins/p5-react/src/components/sketch';
+import { SketchComponent, Sketch1 } from '../components/P5js';
 import theme from '../../config/theme';
 import LayoutWrapper from '../components/LayoutWrapper';
 import Listing from '../components/Listing';
 
-const StyledSketch = styled(Sketch)`
+const StyledSketch = styled(SketchComponent)`
 position: fixed;
 top: 0;
 bottom: 0;
 pointer-events: none;
+z-index: 1000;
+mix-blend-mode: screen;
 `;
 
 const Index = ({
@@ -21,15 +22,17 @@ const Index = ({
   },
 }) => {
   return (
+    <div>
     <LayoutWrapper navType={"front"} layoutType={"main"} theme={theme.light}>
-      {/* <StyledSketch
-          sketch={sketchtest}
-          width={'100%'}
-          height={'100vh'}
-          sketchProps={{ value:10}}
-      /> */}
       <Listing listingType={"main"} projectEdges={projectEdges} />
     </LayoutWrapper>
+      <StyledSketch
+      sketch={Sketch1}
+      width={'100%'}
+      height={'100vh'}
+      sketchProps={{ value:10}}
+  />
+  </div>
   )
 };
 
