@@ -11,7 +11,9 @@ import {
 	NoiseEffect,
   SMAAEffect,
   PixelationEffect,
-  BloomEffect
+  BloomEffect,
+  BlurPass,
+  KernelSize
 } from "postprocessing";
 
 var STLLoader = require('three-stl-loader')(THREE)
@@ -41,19 +43,21 @@ class ThreeScene extends Component{
     //ADD CUBE
     const geometry = new THREE.BoxGeometry(1,1,1)
     // //console.log(this.props.theme.theme.colors.bg_color);
+    //var material = new THREE.MeshNormalMaterial()
     const material = new THREE.MeshBasicMaterial({ color: this.props.main_color })
     this.cube = new THREE.Mesh(geometry, material)
-    this.cube.rotation.z += 10
+    this.cube.position.z -= 5
+    this.cube.rotation.y -= 10
     //this.scene.add(this.cube)
 
     // //ADD TEAPOT
     this.loader = new STLLoader();
     this.loader.load('assets/models/teapot.stl', (geometry) => {
-      //var material = new THREE.MeshNormalMaterial()
-      var material = new THREE.MeshBasicMaterial({ color: "yellow" });
+      var material = new THREE.MeshNormalMaterial({})
+      //var material = new THREE.MeshBasicMaterial({ color: "#202121" });
       var mesh = new THREE.Mesh(geometry, material)
       mesh.rotation.set( Math.PI * 1.5, 0, 0 );
-      mesh.position.z -= 10;
+      mesh.position.z -= 3;
       mesh.position.y -= 4;
       this.cube = mesh;
       this.scene.add(this.cube);
@@ -79,14 +83,17 @@ class ThreeScene extends Component{
     pixelEffect.blendMode.opacity.value = 1;
     const glitchPass = new EffectPass(
       this.camera, 
-      chromaticAberrationEffect, 
-      //glitchEffect, 
-      // noiseEffect, 
+      //chromaticAberrationEffect, 
+      glitchEffect, 
+      noiseEffect, 
       bloomEffect,
-      pixelEffect
+      //pixelEffect
       );
     glitchPass.renderToScreen = true;
     this.composer.addPass(new RenderPass(this.scene, this.camera));
+    this.composer.addPass(new BlurPass({
+      kernelSize: KernelSize.HUGE
+    }));
     this.composer.addPass(glitchPass);
     this.start()
   }

@@ -14,17 +14,14 @@ import { Grid as Motif } from '../../Motifs';
 //import { AnimatedSurface as Motif } from '../../Shaders';
 //import { GameofLife as Motif } from '../../Shaders';
 //import { DesertPassage as Motif } from '../../Shaders';
+import { RotateOne as Scene3D } from '../../Scenes3D';
+import { ParentSize } from '@vx/responsive';
+import ContainerDimensions from 'react-container-dimensions'
 
 import { 
   Wrapper,
-  MotifWrapper,
+  MotifWrapper as Holder3D,
  } from "./styles";
-
-let MotifResponsive = withScreenSize(
-  ({ screenWidth, screenHeight, ...rest }) => (
-    <Motif width={screenWidth} height={screenHeight} {...rest} />
-  )
-);
 
 const LayoutWrapper = props => {
   const { theme, navType, children } = props;
@@ -42,9 +39,18 @@ const LayoutWrapper = props => {
       `}</style>
       </Helmet>
       <SEO />
-      {/* <MotifWrapper>
-        <MotifResponsive theme={theme}/>
-      </MotifWrapper> */}
+      <Holder3D>
+        <ContainerDimensions>
+          {parent => (
+            <Scene3D 
+              height={parent.height}
+              width={parent.width}
+              bg_color={"red"} 
+              main_color={"blue"}
+            />)
+          }
+        </ContainerDimensions>
+      </Holder3D>
       <Navigation navType={navType} theme={theme}/>
       {children}
       <Footer/>
