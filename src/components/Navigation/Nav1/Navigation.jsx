@@ -17,10 +17,11 @@ const Navigation = (theme) => {
   return (
   <Wrapper>
     <Name>
-    <Link to="/">{config.siteTitle}</Link> — {config.siteDescription}
+    <Link to="/">{config.siteTitle},</Link>
+    <span>{config.siteDescription}</span>
     </Name>
     <RightGroup>
-      <Nav>
+      {/* <Nav>
         <Link
           to="/"
           activeClassName={css`
@@ -53,16 +54,19 @@ const Navigation = (theme) => {
         >
           Info
         </Link>
-      </Nav>
+      </Nav> */}
       <SocialMedia>
       <a href="https://github.com/nestarz" target="_blank" rel="noopener noreferrer">
-          <FaGithub />
+          GitHub
+        </a>
+        <a href="https://are.na/elias-rhouzlane/" target="_blank" rel="noopener noreferrer">
+          Are.na
         </a>
         <a href="https://www.instagram.com/eliasrhouzlane" target="_blank" rel="noopener noreferrer">
-          <FaInstagram />
+          Instagram
         </a>
         <a href="https://linkedin.com/in/elias-rhouzlane-56070197/" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin />
+          LinkedIn
         </a>
       </SocialMedia>
     </RightGroup>

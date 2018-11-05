@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   position: relative;
   z-index:1;
   padding: 1rem 0rem 1rem 1rem;
-  margin-top: 0vh;
+  margin: 0 7vw;
   flex: 0 0 50%;
   & > div, & > section:nth-child(1)  { flex-grow: 100;  }
   & > div, & > section:nth-child(2)  { flex-grow: 2; }

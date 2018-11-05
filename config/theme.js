@@ -9,8 +9,8 @@ const colors = {
   grey: '#25252',
   black: '#111',
   red: '#eb1c24',
-  bg_color: '#FFFFFF',
-  body_color: '#000000',
+  bg_color: '#202121',
+  body_color: '#ebebeb',
   link_color: brand.primary,
   link_color_hover: `${darken(0.15, brand.primary)}`,
 };

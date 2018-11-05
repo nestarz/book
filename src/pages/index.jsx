@@ -17,34 +17,70 @@ const StyledSketch = styled(SketchComponent)`
 `;
 
 const IndexWrapper = styled.div`
-  @media (min-width: ${props => props.theme.breakpoints.m}) {
+flex: 1;
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+align-content: space-between;
+  h2 {
+    font-size: 1.4em;
+    font-weight: normal;
+  }
+  nav {
+    padding-bottom: 3em;
+  }
+  ul { list-style-type: none; margin: 0 }
+  li {
+    font-size: 1.4em;
+    margin: 0;
+  }
+  .cvli {
     display: grid;
-    grid-template-columns: 20vw 1fr; /* 250px + "largeur restante" */
+    grid-template-columns: 100px 1fr;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    max-width: 600px;
   }
 `;
 
 const InfoSection = styled.div`
-  color: #111;
-  text-align: justify;
+  padding: 0rem;
+  padding-bottom: 3em;
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
   position: relative;
   @media (max-width: ${props => props.theme.breakpoints.m}) {
     display: none;
   }
   header, 
   section {
-    background: radial-gradient(circle at 100%, ${theme.light.brand.primary}, ${theme.light.brand.primary} 50%, transparent 15%, transparent 75%);
+    //background: radial-gradient(circle at 100%, ${theme.light.brand.primary}, ${theme.light.brand.primary} 50%, transparent 15%, transparent 75%);
     width: 100%;
     height: 100%;
     z-index: -1;
     top:-80px;
     position: absolute;
-    filter: blur(10px);
+    //filter: blur(10px);
   }
   a {
     color: #aaa;
   }
   p {
-    padding: 10px 0;
+    font-size: 2.4em;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #ebebeb;
+    line-height: 1.7em;
+    margin: 0em;
+    padding-top: 3em;
   }
 `;
 
@@ -53,23 +89,114 @@ const Index = ({
     allMdx: { edges: projectEdges },
   },
 }) => {
+  let school = [
+    {
+      from: "2018",
+      to: "",
+      title: "DNMADE Objet(s) et système(s) d'objet(s) céramiques",
+      etablishment: "LTAA Auguste Renoir",
+      location: "Paris, France"
+    },
+    {
+      from: "2015",
+      to: "2017",
+      title: "Master Informatique Spécialité IMA (Image, vision par ordinateur, informatique graphique)",
+      etablishment: "Sorbonne Universités × Télécom ParisTech",
+      location: "Paris, France"
+    },
+    {
+      from: "2012",
+      to: "2015",
+      title: "Licence Mathématiques et Informatique Appliquées aux Sciences Humaines et Sociales, Parcours Sciences Cognitives",
+      etablishment: "Université de Bordeaux",
+      location: "Bordeaux, France"
+
+    }
+  ]
+  let work = [
+    {
+      from: "2018",
+      to: "",
+      title: "Freelance",
+      etablishment: "",
+      location: "Paris, France"
+    },
+    {
+      from: "2018",
+      to: "",
+      title: "Hubstairs",
+      etablishment: "Hubstairs",
+      location: "Paris, France"
+    },
+    {
+      from: "2017",
+      to: "",
+      title: "Rakuten",
+      etablishment: "Rakuten",
+      location: "Paris, France"
+    }
+  ]
   return (
     <div>
     <LayoutWrapper navType={"front"} layoutType={"main"} theme={theme.light}>
       <IndexWrapper>
-        <InfoSection>
-					<p>I'm an artist and designer exploring the interaction of objects, people, art and technology using form and code with a mix of analog and digital materials.</p> 
-					<p>Want me to create something for you? Wonderful&nbsp;— <a href="/contact/">let's talk.</a></p>
-					<p>Find out more <a href="/about/">about me.</a></p>
-					<p>Explore my work: <a href="/filter:data">data</a> / <a href="/filter:electronic">electronic</a> / <a href="/filter:web">web</a> / <a href="/filter:paper">paper</a> / <a href="/filter:plastic">plastic</a> / <a href="/filter:pixels">pixels</a> / <a href="/filter:iot">iot</a> / <a href="/filter:interface">interface</a> / <a href="/filter:time">time</a> / <a href="/filter:memories">memories</a> / <a href="/">everything</a></p>
-					<p>Explore my <a href="/blog/">process blog.</a></p>
-					{/* <p><a href="/events/">Talk</a> in Namur / <a href="https://www.kikk.be/2018/en/home">KIKK Festival</a> / Nov 1 2018–Nov 4 2018  </p>
-					<p><a href="/events/">Talk</a> in Belfast / <a href="https://pixelpioneers.co">Pixel Pioneers</a> / Nov 23 2018  </p>
-					<p><a href="/events/">Talk</a> in Nottingham / <a href="https://newadventuresconf.com/2019/">New Adventures</a> / Jan 23 2019–Jan 25 2019  </p> */}
-          <header></header>
-          <section></section>
-        </InfoSection>
-        <Listing listingType={"main"} projectEdges={projectEdges} />
+          <InfoSection>
+            <p>
+              Currently studying Ceramics and Object Design at LTAA Auguste Renoir under a DNMADE OC until 2021 exploring the interaction of objects, people, art and technology using form and code with a mix of analog and digital materials.
+            </p>
+            {/* <p>I'm an artist and designer exploring the interaction of objects, people, art and technology using form and code with a mix of analog and digital materials.</p> 
+            <p>Want me to create something for you? Wonderful&nbsp;— <a href="/contact/">let's talk.</a></p>
+            <p>Find out more <a href="/about/">about me.</a></p>
+            <p>Explore my work: <a href="/filter:data">data</a> / <a href="/filter:electronic">electronic</a> / <a href="/filter:web">web</a> / <a href="/filter:paper">paper</a> / <a href="/filter:plastic">plastic</a> / <a href="/filter:pixels">pixels</a> / <a href="/filter:iot">iot</a> / <a href="/filter:interface">interface</a> / <a href="/filter:time">time</a> / <a href="/filter:memories">memories</a> / <a href="/">everything</a></p>
+            <p>Explore my <a href="/blog/">process blog.</a></p> */}
+            {/* <p><a href="/events/">Talk</a> in Namur / <a href="https://www.kikk.be/2018/en/home">KIKK Festival</a> / Nov 1 2018–Nov 4 2018  </p>
+            <p><a href="/events/">Talk</a> in Belfast / <a href="https://pixelpioneers.co">Pixel Pioneers</a> / Nov 23 2018  </p>
+            <p><a href="/events/">Talk</a> in Nottingham / <a href="https://newadventuresconf.com/2019/">New Adventures</a> / Jan 23 2019–Jan 25 2019  </p> */}
+            <header></header>
+            <section></section>
+          </InfoSection>
+          <div className="container">
+          <nav>
+          <h2>
+            Projects
+          </h2>
+          <ul>
+            {projectEdges.map((project, index) => {
+              return (
+                <li>{project.node.frontmatter.title}</li>
+              );
+            })}
+          </ul>
+          </nav>
+          <nav>
+          <h2>
+            Work
+          </h2>
+          <ul>
+            {
+              work.map((project, index) => {
+              return (
+                <li className="cvli"><span>{project.from} {project.to ? "à" : ""} {project.to}</span> <span>{project.title}</span></li>
+              );
+            })
+            }
+          </ul>
+          </nav>
+          <nav>
+          <h2>
+            School
+          </h2>
+          <ul>
+            {
+              school.map((project, index) => {
+              return (
+                <li className="cvli"><span>{project.from} {project.to ? "à" : ""} {project.to}</span> <span>{project.title}</span></li>
+              );
+            })
+            }
+          </ul>
+          </nav>
+        </div>
       </IndexWrapper>
     </LayoutWrapper>
       <StyledSketch

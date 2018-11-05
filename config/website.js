@@ -5,7 +5,7 @@ module.exports = {
   siteUrl: 'https://eliasrhouzlane.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: '/logos/logo-1024.png', // Used for SEO and manifest
-  siteDescription: 'Ceramics Designer Student & Deep Learning Engineer',
+  siteDescription: 'Ceramics designer student and Deep Learning engineer',
   author: 'Elias Rhouzlane', // Author for schemaORGJSONLD
   // siteFBAppID: '123456789', // Facebook App ID - Optional
   userTwitter: '@nestarz', // Twitter Username

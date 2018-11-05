@@ -6,15 +6,17 @@ export const Wrapper = styled.header`
   align-items: baseline;
   display: flex;
   flex: 1 0 auto;
+  flex-direction: column;
   flex-wrap: wrap;
-  font-size: 2.1vw;
+  font-size: 2em;
   //transform: skew(20deg) scale(0.8, 1);
   justify-content: space-around; /* ADJUSTMENT */
   @media (min-width: ${props => props.theme.breakpoints.m}) {
     justify-content: space-between; /* ADJUSTMENT */
     flex-wrap: nowrap;
   }
-  padding: 0rem 0 0rem 0;
+  padding: 0rem;
+  flex: 0;
   letter-spacing: calc(-6 / 1000 * 1em);
   a {
     color: ${props => props.theme.colors.body_color};
@@ -66,9 +68,10 @@ flex-basis: auto; /* default value */
 text-align: center;
   padding: 0 0;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items:flex-start ;
   flex-wrap: wrap;
+  line-height: 40px;
   a {
     font-family: ${`${config.headerFontFamily}, sans-serif`};
     &:hover,
@@ -83,10 +86,6 @@ text-align: center;
 `;
 
 export const SocialMedia = styled.div`
-  display: flex;
-  flex: 0;
-  justify-content: flex-end;
-  padding: 0 ${props => props.theme.spacer.horizontal};
   a {
     font-size: 1.25rem;
     line-height: 20px;
@@ -103,5 +102,5 @@ export const RightGroup = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
-margin-top: 20px;
+// margin-top: 20px;
 `

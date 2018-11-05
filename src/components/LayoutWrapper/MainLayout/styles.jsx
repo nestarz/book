@@ -1,6 +1,12 @@
 import styled from 'react-emotion';
 
 export const Wrapper = styled.div`
+padding: 30px;
+padding-bottom: 0;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+width: 100%;
 `;
 export const Item = styled.div``;
 

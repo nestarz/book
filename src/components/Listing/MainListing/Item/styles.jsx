@@ -21,7 +21,7 @@ export const ItemInfo = styled.div`
 export const TestWrapper = styled.div`
 position: relative;
 min-width: 300px;
-margin: 0vh 1rem 1rem 0vw;
+margin: 0;
 flex-grow: 1;
 width: 33%;
 header {
