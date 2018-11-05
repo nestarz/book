@@ -1,8 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import LayoutWrapper from '../components/LayoutWrapper';
-import sketchtest from '../components/P5_Sketches';
-import { Sketch } from '../../plugins/p5-react/src/components/sketch';
+import { SketchComponent, Sketch1 } from '../components/P5js';
 import config from '../../config/website';
 import theme from '../../config/theme';
 
@@ -16,8 +15,8 @@ class SketchApp extends React.Component {
             <LayoutWrapper layoutType={"main"} theme={theme.light}>
                 <Helmet title={`Sketch1 | ${config.siteTitle}`} />
                 <div onClick={() => { this.setState({ value: (this.state.value + 5)%256 }) }}>
-                    <Sketch
-                        sketch={sketchtest}
+                    <SketchComponent
+                        sketch={Sketch1}
                         width={'100%'}
                         height={'70vh'}
                         sketchProps={{ value: this.state.value}}

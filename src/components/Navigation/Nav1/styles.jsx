@@ -7,6 +7,7 @@ export const Wrapper = styled.header`
   display: flex;
   flex: 1 0 auto;
   flex-wrap: wrap;
+  font-size: 2.1vw;
   //transform: skew(20deg) scale(0.8, 1);
   justify-content: space-around; /* ADJUSTMENT */
   @media (min-width: ${props => props.theme.breakpoints.m}) {
@@ -26,6 +27,9 @@ export const Wrapper = styled.header`
   @media (max-width: ${props => props.theme.breakpoints.s}) {
     padding: 1rem 0 3rem 0;
     flex-wrap: wrap;
+  }
+  @media (max-width: ${props => props.theme.breakpoints.m}) {
+    font-size: 20px;
   }
 `;
 
@@ -49,7 +53,6 @@ export const Nav = styled.nav`
   display: flex;
   flex: 1;
   justify-content: flex-end;
-  font-size: 32px;
   a:not(:first-child) {
     margin-left: 1rem;
   }
@@ -62,7 +65,6 @@ export const Name = styled.div`
 flex-basis: auto; /* default value */
 text-align: center;
   padding: 0 0;
-  font-size: 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;

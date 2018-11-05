@@ -11,9 +11,9 @@ const MainListing = props => {
   
   return (
     <Wrapper>
-      {projectEdges.map(project => {
+      {projectEdges.map((project, index) => {
         return (
-          <Item project={project} key={project.node.parent.name} />
+          <Item index={index} project={project} key={project.node.parent.name} />
         );
       })}
     </Wrapper>

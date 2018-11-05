@@ -3,21 +3,19 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import classNames from 'classnames/bind';
 
-import { RotateOne } from '../../../Scenes3D';
-import { withScreenSize } from '@vx/responsive';
-
-let ThreeBackground = withScreenSize(
-  ({ screenWidth, screenHeight, ...rest }) => (
-    <ThreeScene width={screenWidth} height={screenHeight} {...rest} />
-  )
-);
+import { RotateOne as Scene3D } from '../../../Scenes3D';
+import { ParentSize } from '@vx/responsive';
+import ContainerDimensions from 'react-container-dimensions'
 
 import { 
     Content,
     ImageWrapper,
     OverlayLink,
-    Wrapper,
-    DeepImg
+    ItemWrapper,
+    DeepImg,
+    TestWrapper,
+    ItemInfo,
+    Holder3D
 } from "./styles";
 
 class Item extends React.Component {
@@ -61,7 +59,7 @@ class Item extends React.Component {
   }
 
   render() {
-    const { project } = this.props;
+    const { index, project } = this.props;
     const overlayStyle = {
       backgroundImage: 'radial-gradient(circle at center center, #5B9982)'
     };
@@ -73,31 +71,57 @@ class Item extends React.Component {
       this.state.isActive && 'active'
     ]);
 
+    let infoBox;
+    if (index > 2) {
+      infoBox = (
+        <ItemInfo>
+          <h2>{project.node.excerpt}</h2>
+        </ItemInfo>
+      )
+    }
+
     return (
-      <Wrapper 
+      <>
+      <TestWrapper>
+      <header>
+        <h2>{project.node.frontmatter.title}</h2>
+        {/* <p>{project.node.frontmatter.client}</p> */}
+      </header>
+      <ItemWrapper 
         onClick={this.onClick.bind(this)}
         onMouseOver={this.onMouseOver.bind(this)}
         onMouseOut={this.onMouseOut.bind(this)}
         >
           <Content>
-          <ImageWrapper>
-              <header>
-              <h2>{project.node.frontmatter.title}</h2>
-              </header>
-              <Img fluid={project.node.frontmatter.cover.childImageSharp.fluid}/>
-              {/* <DeepImg 
-                src={project.node.frontmatter.cover.childImageDeepAi.fixed.src}
-                className={classNames(classes)}
-                /> */}
-          </ImageWrapper>
-          <OverlayLink to={project.node.parent.sourceInstanceName + "/" + project.node.parent.name} style={overlayStyle}>
-          <header>
-              <p>{project.node.frontmatter.client}</p>
-          </header>
-          <ThreeBackground theme={theme} />
-          </OverlayLink>
+            <ImageWrapper>
+                <Img fluid={project.node.frontmatter.cover.childImageSharp.fluid}/>
+                <DeepImg 
+                  src={project.node.frontmatter.cover.childImageDeepAi.fixed.src}
+                  // className={classNames(classes)}
+                  />
+            </ImageWrapper>
+            <OverlayLink to={project.node.parent.sourceInstanceName + "/" + project.node.parent.name} style={overlayStyle}>
+              {/* <section>
+                  <p>{project.node.frontmatter.client}</p>
+              </section> */}
+              <Holder3D>
+                <ContainerDimensions>
+                  {parent => (
+                    <Scene3D 
+                      height={parent.height}
+                      width={parent.width}
+                      bg_color={"red"} 
+                      main_color={"blue"}
+                    />)
+                  }
+                </ContainerDimensions>
+              </Holder3D>
+            </OverlayLink>
           </Content>
-      </Wrapper>    
+      </ItemWrapper>   
+      </TestWrapper>
+      {infoBox}
+      </>
     )
   }
 }

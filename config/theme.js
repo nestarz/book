@@ -1,7 +1,7 @@
 import { darken } from 'polished';
 
 const brand = {
-  primary: '#000000',
+  primary: 'yellow',
   secondary: '#FFF',
 };
 

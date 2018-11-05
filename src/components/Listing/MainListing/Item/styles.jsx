@@ -1,73 +1,75 @@
 import { Link } from 'gatsby';
 import styled from 'react-emotion';
 
-export const DeepImg = styled.img`
-display: none;
-&.hover {
-  display: block;
-  mix-blend-mode: overlay;
-  filter: blur(0px);
+export const ItemInfo = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  max-width: 23%;
+  h2 {
+    font-size: 17px;
+    line-height: 18px;
+    font-weight: 100;
+    letter-spacing: calc(-23 / 1000 * 1em);
+    &:hover {
+      border-bottom: 1px solid ${props => props.theme.colors.body_color};
+    }
+  }
+  
+`;
+
+export const TestWrapper = styled.div`
+position: relative;
+min-width: 300px;
+margin: 0vh 1rem 1rem 0vw;
+flex-grow: 1;
+width: 33%;
+header {
+  margin-bottom: 7px;
+  h2 {
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 100;
+    letter-spacing: calc(-23 / 1000 * 1em);
+    &:hover {
+      border-bottom: 1px solid ${props => props.theme.colors.body_color};
+    }
+    display: inline;
+  }
+  p {
+    margin: 0;
+  }
 }
 `;
 
-export const Wrapper = styled.div`
-&:nth-child(1)  { flex-grow: 100;  }
-&:nth-child(2)  { flex-grow: 2; }
-&:nth-child(3)  { flex-grow: 1; }
-&:nth-child(4)  { flex-grow: 1; }
-&:nth-child(5)  { flex-grow: 3; }
-
-  position: relative;
-  min-width: 300px;
-  max-height: 40vh;
-  margin: 0vh 2vw 2vw 0vw;
-  //border-right: 5px dotted ${props => props.theme.colors.body_color};
-  //border-bottom: 5px dotted ${props => props.theme.colors.body_color};
-  padding: 10px;
-  opacity: 1;
-  &:hover {
-    opacity: 1
-  }
-  
-  flex-grow: 1;
-  width: 33%;
-  &:before {
-    content: '';
+export const DeepImg = styled.img`
+  display: none;
+  &.hover {
     display: block;
-    padding-top: 40vh;
+    mix-blend-mode: overlay;
   }
+`;
+
+export const ItemWrapper = styled.div`
+  position: relative;
 `;
 
 export const Content = styled.div`
   height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
   width: 100%;
+
   a {
-    color: #fff;
-    height: 100%;
-    left: 0;
-    opacity: 0.1;
-    padding-bottom: calc(2 * calc(2 * .5rem));
-    padding-left: 22px;
-    padding-right: 22px;
-    padding-top: calc(2 * .5rem);
-    position: absolute;
-    top: 0;
-    width: 100%;
+    opacity: 0;
     z-index: 10;
-    transition: all 0.3s ease-in-out;
+    transition: all 0s ease-in-out;
     text-decoration: none;
     border-radius: 0px;
-    filter: blur(5px);
     &:hover {
-      color: #fff;
       opacity: 1;
       text-decoration: none;
-      filter: grayscale(0%) !important;
     }
   }
+    
   header {
     margin: 0rem 0rem;
     background-color : ${props => props.theme.colors.bg_color};
@@ -106,11 +108,7 @@ export const ImageWrapper = styled.div`
     }
   }
   > div {
-    height: 100%;
-    left: 0;
-    position: absolute !important;
-    top: 0;
-    width: 100%;
+    min-height: 40vh;
     //transform: rotate(${Math.random()*10}deg);
     z-index: -1;
     > div {
@@ -129,4 +127,24 @@ export const OverlayLink = styled(Link)`
   width: 100%;
   z-index: -1;
   filter: blur(0px);
+  color: ${props => props.theme.colors.body_color};
+  section {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    right: 0;
+    left: 0;
+    p {
+      background-color: ${props => props.theme.colors.bg_color};
+    }
+  }
 `
+
+export const Holder3D = styled.div`
+position: absolute;
+z-index: 999;
+top: 0;
+bottom: 0;
+right: 0;
+left: 0;
+`;
