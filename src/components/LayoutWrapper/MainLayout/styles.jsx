@@ -2,7 +2,6 @@ import styled from 'react-emotion';
 
 export const Wrapper = styled.div`
 padding: 30px;
-padding-bottom: 0;
 display: flex;
 flex-direction: column;
 min-height: 100vh;
@@ -18,4 +17,5 @@ right:0;
 bottom:0;
 pointer-events: none;
 z-index:-1;
+//filter: contrast(2) hue-rotate(0deg)
 `;

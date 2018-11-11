@@ -44,20 +44,24 @@ class ThreeScene extends Component{
     const geometry = new THREE.BoxGeometry(1,1,1)
     // //console.log(this.props.theme.theme.colors.bg_color);
     //var material = new THREE.MeshNormalMaterial()
-    const material = new THREE.MeshBasicMaterial({ color: this.props.main_color })
+    const material = new THREE.MeshBasicMaterial({ color: "red" })
     this.cube = new THREE.Mesh(geometry, material)
-    this.cube.position.z -= 5
+    this.cube.position.z -= 1
+    this.cube.position.x += 2;
+    this.cube.position.y += 1;
     this.cube.rotation.y -= 10
     //this.scene.add(this.cube)
 
     // //ADD TEAPOT
     this.loader = new STLLoader();
     this.loader.load('assets/models/teapot.stl', (geometry) => {
+      // var modifier = new THREE.SimpifyModifier();
+      // geometry = modifier.modify(geometry, 10);
       var material = new THREE.MeshNormalMaterial({})
-      //var material = new THREE.MeshBasicMaterial({ color: "#202121" });
+      //var material = new THREE.MeshBasicMaterial({ color: "#FFF" });
       var mesh = new THREE.Mesh(geometry, material)
       mesh.rotation.set( Math.PI * 1.5, 0, 0 );
-      mesh.position.z -= 3;
+      mesh.position.z -= 6;
       mesh.position.y -= 4;
       this.cube = mesh;
       this.scene.add(this.cube);
@@ -69,24 +73,26 @@ class ThreeScene extends Component{
 		const glitchEffect = new GlitchEffect({
 			//perturbationMap: assets.get("perturbation-map"),
       chromaticAberrationOffset: chromaticAberrationEffect.offset,
-      ratio: 1
+      ratio: 1,
+      delay: new THREE.Vector2(1, 3),
+      columns: 0
 		});
 		const noiseEffect = new NoiseEffect({
 			blendFunction: BlendFunction.COLOR_DODGE
 		});
-		noiseEffect.blendMode.opacity.value = 1;
+		noiseEffect.blendMode.opacity.value = 0.8;
     const bloomEffect = new BloomEffect({
 			blendFunction: BlendFunction.LIGHTEN
     })
     bloomEffect.blendMode.opacity.value = 1;
-    const pixelEffect = new PixelationEffect(3)
-    pixelEffect.blendMode.opacity.value = 1;
+    const pixelEffect = new PixelationEffect(2)
+    pixelEffect.blendMode.opacity.value = 0.2;
     const glitchPass = new EffectPass(
       this.camera, 
       //chromaticAberrationEffect, 
       glitchEffect, 
       noiseEffect, 
-      bloomEffect,
+      //bloomEffect,
       //pixelEffect
       );
     glitchPass.renderToScreen = true;
@@ -110,13 +116,13 @@ stop = () => {
     cancelAnimationFrame(this.frameId)
   }
 animate = () => {
-   this.cube.rotation.x += 0.0001
+   this.cube.rotation.x += 0.00001
    this.cube.rotation.z += Math.random() * 0.01
    this.renderScene()
    let animateF = this.animate;
    setTimeout( function() {
     this.frameId = window.requestAnimationFrame(animateF)
-   }, 1 );
+   }, 1000 );
  }
 renderScene = () => {
   this.renderer.render(this.scene, this.camera);

@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import styled from 'react-emotion';
 import { SketchComponent, Sketch1 } from '../components/P5js';
 import theme from '../../config/theme';
@@ -27,28 +28,33 @@ align-content: space-between;
     font-weight: normal;
   }
   nav {
-    padding-bottom: 3em;
+    padding-bottom: 0em;
   }
   ul { list-style-type: none; margin: 0 }
   li {
     font-size: 1.4em;
     margin: 0;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
   }
   .cvli {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 1fr 150px;
   }
   .container {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     max-width: 600px;
+    text-align: right;
   }
 `;
 
 const InfoSection = styled.div`
   padding: 0rem;
-  padding-bottom: 3em;
+  padding-bottom: 0em;
   justify-content: flex-end;
   display: flex;
   flex-direction: column;
@@ -77,7 +83,6 @@ const InfoSection = styled.div`
     font-stretch: normal;
     letter-spacing: 0.01em;
     text-align: left;
-    color: #ebebeb;
     line-height: 1.7em;
     margin: 0em;
     padding-top: 3em;
@@ -90,59 +95,59 @@ const Index = ({
   },
 }) => {
   let school = [
-    {
-      from: "2018",
-      to: "",
-      title: "DNMADE Objet(s) et système(s) d'objet(s) céramiques",
-      etablishment: "LTAA Auguste Renoir",
-      location: "Paris, France"
-    },
-    {
-      from: "2015",
-      to: "2017",
-      title: "Master Informatique Spécialité IMA (Image, vision par ordinateur, informatique graphique)",
-      etablishment: "Sorbonne Universités × Télécom ParisTech",
-      location: "Paris, France"
-    },
-    {
-      from: "2012",
-      to: "2015",
-      title: "Licence Mathématiques et Informatique Appliquées aux Sciences Humaines et Sociales, Parcours Sciences Cognitives",
-      etablishment: "Université de Bordeaux",
-      location: "Bordeaux, France"
+    // {
+    //   from: "2018",
+    //   to: "",
+    //   title: "DNMADE Objet(s) et système(s) d'objet(s) céramiques",
+    //   etablishment: "LTAA Auguste Renoir",
+    //   location: "Paris, France"
+    // },
+    // {
+    //   from: "2015",
+    //   to: "2017",
+    //   title: "Master Informatique Spécialité IMA (Image, vision par ordinateur, informatique graphique)",
+    //   etablishment: "Sorbonne Universités × Télécom ParisTech",
+    //   location: "Paris, France"
+    // },
+    // {
+    //   from: "2012",
+    //   to: "2015",
+    //   title: "Licence Mathématiques et Informatique Appliquées aux Sciences Humaines et Sociales, Parcours Sciences Cognitives",
+    //   etablishment: "Université de Bordeaux",
+    //   location: "Bordeaux, France"
 
-    }
+    // }
   ]
   let work = [
-    {
-      from: "2018",
-      to: "",
-      title: "Freelance",
-      etablishment: "",
-      location: "Paris, France"
-    },
-    {
-      from: "2018",
-      to: "",
-      title: "Hubstairs",
-      etablishment: "Hubstairs",
-      location: "Paris, France"
-    },
-    {
-      from: "2017",
-      to: "",
-      title: "Rakuten",
-      etablishment: "Rakuten",
-      location: "Paris, France"
-    }
+    // {
+    //   from: "2018",
+    //   to: "",
+    //   title: "Freelance",
+    //   etablishment: "",
+    //   location: "Paris, France"
+    // },
+    // {
+    //   from: "2018",
+    //   to: "",
+    //   title: "Hubstairs",
+    //   etablishment: "Hubstairs",
+    //   location: "Paris, France"
+    // },
+    // {
+    //   from: "2017",
+    //   to: "",
+    //   title: "Rakuten",
+    //   etablishment: "Rakuten",
+    //   location: "Paris, France"
+    // }
   ]
   return (
     <div>
-    <LayoutWrapper navType={"front"} layoutType={"main"} theme={theme.light}>
-      <IndexWrapper>
+      <LayoutWrapper navType={"front"} layoutType={"main"} theme={theme.light}>
+        <IndexWrapper>
           <InfoSection>
             <p>
-              Currently studying Ceramics and Object Design at LTAA Auguste Renoir under a DNMADE OC until 2021 exploring the interaction of objects, people, art and technology using form and code with a mix of analog and digital materials.
+              Currently studying Ceramics and Object Design at LTAA Auguste Renoir exploring the interaction of objects, people, art and technology using form and code with a mix of analog and digital materials.
             </p>
             {/* <p>I'm an artist and designer exploring the interaction of objects, people, art and technology using form and code with a mix of analog and digital materials.</p> 
             <p>Want me to create something for you? Wonderful&nbsp;— <a href="/contact/">let's talk.</a></p>
@@ -156,56 +161,56 @@ const Index = ({
             <section></section>
           </InfoSection>
           <div className="container">
-          <nav>
-          <h2>
-            Projects
+            <nav>
+              <h2>
+                Projects
           </h2>
-          <ul>
-            {projectEdges.map((project, index) => {
-              return (
-                <li>{project.node.frontmatter.title}</li>
-              );
-            })}
-          </ul>
-          </nav>
-          <nav>
-          <h2>
-            Work
+              <ul>
+                {projectEdges.map((project, index) => {
+                  // return (
+                  //   <li><Link to={project.node.parent.sourceInstanceName + "/" + project.node.parent.name}>{project.node.frontmatter.title}</Link></li>
+                  // );
+                })}
+              </ul>
+            </nav>
+            <nav>
+              <h2>
+                Work
           </h2>
-          <ul>
-            {
-              work.map((project, index) => {
-              return (
-                <li className="cvli"><span>{project.from} {project.to ? "à" : ""} {project.to}</span> <span>{project.title}</span></li>
-              );
-            })
-            }
-          </ul>
-          </nav>
-          <nav>
-          <h2>
-            School
+              <ul>
+                {
+                  work.map((project, index) => {
+                    return (
+                      <li className="cvli"><span>{project.from} {project.to ? "à" : ""} {project.to}</span> <span>{project.title}</span></li>
+                    );
+                  })
+                }
+              </ul>
+            </nav>
+            <nav>
+              <h2 style={{ padding: 0, margin: 0 }}>
+                School
           </h2>
-          <ul>
-            {
-              school.map((project, index) => {
-              return (
-                <li className="cvli"><span>{project.from} {project.to ? "à" : ""} {project.to}</span> <span>{project.title}</span></li>
-              );
-            })
-            }
-          </ul>
-          </nav>
-        </div>
-      </IndexWrapper>
-    </LayoutWrapper>
+              <ul>
+                {
+                  school.map((project, index) => {
+                    return (
+                      <li className="cvli"><span>{project.title}</span> <span>{project.from} {project.to ? "à" : ""} {project.to}</span></li>
+                    );
+                  })
+                }
+              </ul>
+            </nav>
+          </div>
+        </IndexWrapper>
+      </LayoutWrapper>
       <StyledSketch
-      sketch={Sketch1}
-      width={'100%'}
-      height={'100vh'}
-      sketchProps={{ value: 10 }}
-  />
-  </div>
+        sketch={Sketch1}
+        width={'100%'}
+        height={'100vh'}
+        sketchProps={{ value: 10 }}
+      />
+    </div>
   )
 };
 
