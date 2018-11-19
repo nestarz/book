@@ -33,6 +33,7 @@ z-index:-1;
 const IndexWrapper = styled.div`
 flex: 1;
 display: flex;
+color: white;
 justify-content: space-between;
 flex-direction: row;
 align-content: space-between;
@@ -124,7 +125,7 @@ const Index = ({
 }) => {
   return (
     <div>
-      <LayoutWrapper navType={"front"} layoutType={"main"} theme={theme.light} style={{padding: "30px"}}>
+      <LayoutWrapper navType={"front"} layoutType={"main"} theme={theme.dark} style={{padding: "30px"}}>
       <Holder3D>
         <ContainerDimensions>
           {parent => (
@@ -137,7 +138,7 @@ const Index = ({
           }
         </ContainerDimensions>
       </Holder3D>
-      <Navigation navType={"front"} theme={theme.light}/>
+      <Navigation navType={"front"} theme={theme.dark}/>
         <IndexWrapper>
           <InfoSection>
             <header></header>
