@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react';
 
-import { RemountOnResize } from './remount';
-
 import p5 from 'p5';
+//import { RemountOnResize } from './remount';
 
 // A helper component, wrapping retina logic for canvas and
 // auto-resizing the sketch to fill its parent container.
@@ -125,23 +124,29 @@ class SketchComponentRaw extends PureComponent {
 
 export class SketchComponent extends PureComponent {
 	render() {
-		const { props } = this;
+		if (typeof window !== 'undefined') {
+			const { props } = this;
+			const RemountOnResize = require( './remount' );
+			return (
+				<RemountOnResize
+					/* Since canvas interferes with CSS layouting,
+					we unmount and remount it on resize events */
+					watchedVal={props.watchedVal}
+				>
+					<SketchComponentRaw
+						sketch={props.sketch}
+						sketchProps={props.sketchProps}
+						noCanvas={props.noCanvas}
+						width={props.width}
+						height={props.height}
+						style={props.style}
+						className={props.className}
+					/>
+				</RemountOnResize>
+			);
+		}
 		return (
-			<RemountOnResize
-				/* Since canvas interferes with CSS layouting,
-				we unmount and remount it on resize events */
-				watchedVal={props.watchedVal}
-			>
-				<SketchComponentRaw
-					sketch={props.sketch}
-					sketchProps={props.sketchProps}
-					noCanvas={props.noCanvas}
-					width={props.width}
-					height={props.height}
-					style={props.style}
-					className={props.className}
-				/>
-			</RemountOnResize>
-		);
+			<div></div>
+		)
 	}
 }

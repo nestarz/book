@@ -3,11 +3,10 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'react-emotion';
-import { SketchComponent, Sketch1 } from '../components/P5js';
+//import { SketchComponent, Sketch1 } from '../components/P5js';
 import theme from '../../config/theme';
 import website from '../../config/website';
 import LayoutWrapper from '../components/LayoutWrapper';
-import Listing from '../components/Listing';
 import Navigation from '../components/Navigation';
 import { RotateOne as Scene3D } from '../components/Scenes3D';
 import ContainerDimensions from 'react-container-dimensions'
@@ -161,12 +160,12 @@ const Index = ({
           </div>
         </IndexWrapper>
       </LayoutWrapper>
-      <StyledSketch
+      {/* <StyledSketch
         sketch={Sketch1}
         width={'100%'}
         height={'100vh'}
         sketchProps={{ value: 10 }}
-      />
+      /> */}
     </div>
   )
 };

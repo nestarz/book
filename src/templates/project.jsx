@@ -178,7 +178,7 @@ const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
           </InformationWrapper>
         </FlexHeader>
         <ImageWrapper>
-          {project.cover.childImageSharp.fluid && <Img fluid={project.cover.childImageSharp.fluid} />}
+          {project.cover && project.cover.childImageSharp.fluid && <Img fluid={project.cover.childImageSharp.fluid} />}
         </ImageWrapper>
       </Wrapper>
       <Nav>

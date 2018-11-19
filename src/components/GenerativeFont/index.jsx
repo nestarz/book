@@ -9,8 +9,11 @@ import Swap from './swap';
 
 const fontStore = new Font();
 fontStore.loadFont(require('./CircularStd-Medium.woff'));
-window.font = fontStore;
 var fontN = true;
+
+if (typeof window != 'undefined') {
+  window.font = fontStore;
+}
 
 @observer
 class App extends React.Component {
@@ -35,6 +38,6 @@ class App extends React.Component {
   }
 }
 
-window.font = fontStore;
+
 
 export default App;
