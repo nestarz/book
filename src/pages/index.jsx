@@ -115,6 +115,7 @@ const InfoSection = styled.div`
     line-height: 1.7em;
     margin: 0em;
     padding-top: 3em;
+    color: white;
   }
 `;
 

@@ -65,6 +65,7 @@ export const Nav = styled.nav`
 
 export const Name = styled.div`
 flex-basis: auto; /* default value */
+color: white;
 text-align: center;
   padding: 0 0;
   display: flex;
