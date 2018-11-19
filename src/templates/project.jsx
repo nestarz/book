@@ -133,7 +133,7 @@ const ImageWrapper = styled.div`
 flex-grow: 1;
 display: flex;
 flex-direction: column;
-background-color: red;
+background-color: ${props => props.theme.brand.primary};
 min-width: 20vw;
   > div { 
     margin: 0rem auto 0 auto;
@@ -163,18 +163,24 @@ const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
           <h1>{project.title}</h1>
           <p>{postNode.excerpt}</p>
           <InformationWrapper>
+            {project.client && 
             <InfoBlock>
               <Top>Where</Top>
               <Bottom>{project.client}</Bottom>
             </InfoBlock>
+            }
+            {project.date && 
             <InfoBlock>
               <Top>Date</Top>
               <Bottom>{project.date}</Bottom>
             </InfoBlock>
+            }
+            {project.service && 
             <InfoBlock>
               <Top>Service</Top>
               <Bottom>{project.service}</Bottom>
             </InfoBlock>
+            }
           </InformationWrapper>
         </FlexHeader>
         <ImageWrapper>
