@@ -3,6 +3,8 @@ import { Link } from 'gatsby';
 import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { css } from 'react-emotion';
 
+import GenerativeFont from '../../../components/GenerativeFont';
+
 import config from '../../../../config/website';
 import { 
     Wrapper,
@@ -59,14 +61,14 @@ const Navigation = (theme) => {
       <a href="https://github.com/nestarz" target="_blank" rel="noopener noreferrer">
           GitHub
         </a>
-        <a href="https://are.na/elias-rhouzlane/" target="_blank" rel="noopener noreferrer">
-          Are.na
-        </a>
         <a href="https://www.instagram.com/eliasrhouzlane" target="_blank" rel="noopener noreferrer">
           Instagram
         </a>
         <a href="https://linkedin.com/in/elias-rhouzlane-56070197/" target="_blank" rel="noopener noreferrer">
           LinkedIn
+        </a>
+        <a href="https://are.na/elias-rhouzlane/" target="_blank" rel="noopener noreferrer">
+          Are.na
         </a>
       </SocialMedia>
     </RightGroup>

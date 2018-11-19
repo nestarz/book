@@ -1,7 +1,7 @@
 import styled from 'react-emotion';
 
 export const Wrapper = styled.div`
-padding: 30px;
+/*padding: 30px;*/
 display: flex;
 flex-direction: column;
 min-height: 100vh;

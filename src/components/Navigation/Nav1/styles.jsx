@@ -73,7 +73,6 @@ text-align: center;
   flex-wrap: wrap;
   line-height: 40px;
   a {
-    font-family: ${`${config.headerFontFamily}, sans-serif`};
     &:hover,
     &:focus {
       text-decoration: none;

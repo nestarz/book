@@ -94,11 +94,11 @@ class Item extends React.Component {
         >
           <Content>
             <ImageWrapper>
-                <Img fluid={project.node.frontmatter.cover.childImageSharp.fluid}/>
-                <DeepImg 
+                {/* <Img fluid={project.node.frontmatter.cover.childImageSharp.fluid}/> */}
+                {/* <DeepImg 
                   src={project.node.frontmatter.cover.childImageDeepAi.fixed.src}
                   // className={classNames(classes)}
-                  />
+                  /> */}
             </ImageWrapper>
             <OverlayLink to={project.node.parent.sourceInstanceName + "/" + project.node.parent.name} style={overlayStyle}>
               {/* <section>

@@ -24,10 +24,10 @@ import {
  } from "./styles";
 
 const LayoutWrapper = props => {
-  const { theme, navType, children } = props;
+  const { theme, navType, children, style } = props;
 
   return (
-    <Wrapper>
+    <Wrapper style={style}>
     <ThemeProvider theme={theme}>
     <React.Fragment>
       <Helmet>
@@ -39,19 +39,6 @@ const LayoutWrapper = props => {
       `}</style>
       </Helmet>
       <SEO />
-      <Holder3D>
-        <ContainerDimensions>
-          {parent => (
-            <Scene3D 
-              height={parent.height}
-              width={parent.width}
-              bg_color={"red"} 
-              main_color={"blue"}
-            />)
-          }
-        </ContainerDimensions>
-      </Holder3D>
-      <Navigation navType={navType} theme={theme}/>
       {children}
       <Footer/>
       <ScrollUpButton 

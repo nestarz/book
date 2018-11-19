@@ -5,8 +5,22 @@ import { Link } from 'gatsby';
 import styled from 'react-emotion';
 import { SketchComponent, Sketch1 } from '../components/P5js';
 import theme from '../../config/theme';
+import website from '../../config/website';
 import LayoutWrapper from '../components/LayoutWrapper';
 import Listing from '../components/Listing';
+import Navigation from '../components/Navigation';
+import { RotateOne as Scene3D } from '../components/Scenes3D';
+import ContainerDimensions from 'react-container-dimensions'
+
+const Holder3D = styled.div`
+position: fixed;
+top:0;
+left:0;
+right:0;
+bottom:0;
+pointer-events: none;
+z-index:-1;
+`;
 
 const StyledSketch = styled(SketchComponent)`
   position: fixed;
@@ -24,8 +38,23 @@ justify-content: space-between;
 flex-direction: row;
 align-content: space-between;
   h2 {
-    font-size: 1.4em;
+    font-size: 2em;
     font-weight: normal;
+    margin: 0;
+  }
+  h3 {
+    font-size: 1.5em;
+    font-weight: normal;
+    margin: 0;
+    a {
+      &:hover {
+        color: blue;
+        &:before {
+          content: "↘ ";
+        }
+      }
+      color: inherit;
+    }
   }
   nav {
     padding-bottom: 0em;
@@ -77,7 +106,7 @@ const InfoSection = styled.div`
     color: #aaa;
   }
   p {
-    font-size: 2.4em;
+    font-size: 1.5em;
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
@@ -94,113 +123,41 @@ const Index = ({
     allMdx: { edges: projectEdges },
   },
 }) => {
-  let school = [
-    // {
-    //   from: "2018",
-    //   to: "",
-    //   title: "DNMADE Objet(s) et système(s) d'objet(s) céramiques",
-    //   etablishment: "LTAA Auguste Renoir",
-    //   location: "Paris, France"
-    // },
-    // {
-    //   from: "2015",
-    //   to: "2017",
-    //   title: "Master Informatique Spécialité IMA (Image, vision par ordinateur, informatique graphique)",
-    //   etablishment: "Sorbonne Universités × Télécom ParisTech",
-    //   location: "Paris, France"
-    // },
-    // {
-    //   from: "2012",
-    //   to: "2015",
-    //   title: "Licence Mathématiques et Informatique Appliquées aux Sciences Humaines et Sociales, Parcours Sciences Cognitives",
-    //   etablishment: "Université de Bordeaux",
-    //   location: "Bordeaux, France"
-
-    // }
-  ]
-  let work = [
-    // {
-    //   from: "2018",
-    //   to: "",
-    //   title: "Freelance",
-    //   etablishment: "",
-    //   location: "Paris, France"
-    // },
-    // {
-    //   from: "2018",
-    //   to: "",
-    //   title: "Hubstairs",
-    //   etablishment: "Hubstairs",
-    //   location: "Paris, France"
-    // },
-    // {
-    //   from: "2017",
-    //   to: "",
-    //   title: "Rakuten",
-    //   etablishment: "Rakuten",
-    //   location: "Paris, France"
-    // }
-  ]
   return (
     <div>
-      <LayoutWrapper navType={"front"} layoutType={"main"} theme={theme.light}>
+      <LayoutWrapper navType={"front"} layoutType={"main"} theme={theme.light} style={{padding: "30px"}}>
+      <Holder3D>
+        <ContainerDimensions>
+          {parent => (
+            <Scene3D 
+              height={parent.height}
+              width={parent.width}
+              bg_color={"red"} 
+              main_color={"blue"}
+            />)
+          }
+        </ContainerDimensions>
+      </Holder3D>
+      <Navigation navType={"front"} theme={theme.light}/>
         <IndexWrapper>
           <InfoSection>
-            <p>
-              Currently studying Ceramics and Object Design at LTAA Auguste Renoir exploring the interaction of objects, people, art and technology using form and code with a mix of analog and digital materials.
-            </p>
-            {/* <p>I'm an artist and designer exploring the interaction of objects, people, art and technology using form and code with a mix of analog and digital materials.</p> 
-            <p>Want me to create something for you? Wonderful&nbsp;— <a href="/contact/">let's talk.</a></p>
-            <p>Find out more <a href="/about/">about me.</a></p>
-            <p>Explore my work: <a href="/filter:data">data</a> / <a href="/filter:electronic">electronic</a> / <a href="/filter:web">web</a> / <a href="/filter:paper">paper</a> / <a href="/filter:plastic">plastic</a> / <a href="/filter:pixels">pixels</a> / <a href="/filter:iot">iot</a> / <a href="/filter:interface">interface</a> / <a href="/filter:time">time</a> / <a href="/filter:memories">memories</a> / <a href="/">everything</a></p>
-            <p>Explore my <a href="/blog/">process blog.</a></p> */}
-            {/* <p><a href="/events/">Talk</a> in Namur / <a href="https://www.kikk.be/2018/en/home">KIKK Festival</a> / Nov 1 2018–Nov 4 2018  </p>
-            <p><a href="/events/">Talk</a> in Belfast / <a href="https://pixelpioneers.co">Pixel Pioneers</a> / Nov 23 2018  </p>
-            <p><a href="/events/">Talk</a> in Nottingham / <a href="https://newadventuresconf.com/2019/">New Adventures</a> / Jan 23 2019–Jan 25 2019  </p> */}
             <header></header>
             <section></section>
+            <p>{website.bio}</p>
           </InfoSection>
           <div className="container">
-            <nav>
-              <h2>
-                Projects
-          </h2>
-              <ul>
-                {projectEdges.map((project, index) => {
-                  // return (
-                  //   <li><Link to={project.node.parent.sourceInstanceName + "/" + project.node.parent.name}>{project.node.frontmatter.title}</Link></li>
-                  // );
-                })}
-              </ul>
-            </nav>
-            <nav>
-              <h2>
-                Work
-          </h2>
-              <ul>
-                {
-                  work.map((project, index) => {
-                    return (
-                      <li className="cvli"><span>{project.from} {project.to ? "à" : ""} {project.to}</span> <span>{project.title}</span></li>
-                    );
-                  })
-                }
-              </ul>
-            </nav>
-            <nav>
-              <h2 style={{ padding: 0, margin: 0 }}>
-                School
-          </h2>
-              <ul>
-                {
-                  school.map((project, index) => {
-                    return (
-                      <li className="cvli"><span>{project.title}</span> <span>{project.from} {project.to ? "à" : ""} {project.to}</span></li>
-                    );
-                  })
-                }
-              </ul>
-            </nav>
+            <h2>Projects</h2>
+            {projectEdges.map((project, index) => {
+              return (
+                <h3>
+                  <Link
+                    to={project.node.parent.sourceInstanceName + "/" + project.node.parent.name}
+                  >
+                    {project.node.frontmatter.title}
+                  </Link>
+                </h3>
+              );
+            })}
           </div>
         </IndexWrapper>
       </LayoutWrapper>
