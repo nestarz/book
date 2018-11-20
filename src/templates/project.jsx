@@ -194,7 +194,7 @@ const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
       <Wrapper>
         <FlexHeader>
           <h1>{project.title}</h1>
-          <p>{postNode.excerpt}</p>
+          <p>{project.subtitle ? project.subtitle : postNode.excerpt}</p>
           <InformationWrapper>
             {project.client && 
             <InfoBlock>
@@ -277,6 +277,7 @@ export const pageQuery = graphql`
         date(formatString: "DD.MM.YYYY")
         client
         service
+        subtitle
         cover {
           childImageSharp {
             resize(width: 800) {
