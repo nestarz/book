@@ -43,6 +43,12 @@ module.exports = {
         extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [
           {
+            resolve: "gatsby-remark-attr",
+            options: {
+              allowDangerousDOMEventHandlers: true
+            },
+          },
+          {
             resolve: 'gatsby-remark-toc',
             options: {
               mdastUtilTocOptions: {

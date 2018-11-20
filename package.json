@@ -51,6 +51,7 @@
     "gatsby-plugin-sharp": "^2.0.12",
     "gatsby-plugin-sitemap": "^2.0.2",
     "gatsby-plugin-typography": "^2.2.1",
+    "gatsby-remark-attr": "0.0.2",
     "gatsby-remark-embed-video": "^1.4.0",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^2.0.6",

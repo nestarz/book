@@ -22,6 +22,9 @@ padding-left: 30px;
 background-color: ${props => props.theme.brand.primary};
 font-family: monospace;
 font-size: 2em;
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    font-size: 4.5vw;
+  }
 a{
   color: white;
   margin: 10px;
@@ -41,6 +44,35 @@ const Container = styled.section`
   & {
     font-size: 110%;
     letter-spacing: calc(-16 / 1000 * 1em);
+  }
+  a {
+  text-decoration: none;
+  color: ${props => props.theme.brand.primary};
+  }
+  h2:first-child + ul {
+    column-span: all;
+    margin-top: 10px;
+    background-color: black;
+    padding: 30px;
+    margin-bottom: 30px;
+    column-width: 350px;
+column-fill: auto;
+-webkit-perspective:1;
+	-webkit-column-count: 2; /* Chrome, Safari, Opera */
+	-moz-column-count:    2; /* Firefox */
+	column-count:         2;
+  	-webkit-column-gap:   30px; /* Chrome, Safari, Opera */ 
+	-moz-column-gap:      30px; /* Firefox */
+	column-gap:           30px;
+	column-rule-color: #eee; /* Optional */
+	column-rule-style:solid; /* Optional */
+	column-rule-width: 0px; /* Optional */
+    a {
+      color: white;
+    }
+    ul {
+      margin-left: 10px;
+    }
   }
   ul {
   list-style-type: none;
@@ -67,7 +99,7 @@ const Container = styled.section`
     column-span: all;
     font-size: 270%;
     color: ${props => props.theme.colors.black};
-    margin-top: 50px;
+    margin-top: 20px;
   }
   h1:first-child{
     margin-top: 0;
@@ -109,7 +141,8 @@ column-width: 350px;
 	column-rule-color: #eee; /* Optional */
 	column-rule-style:solid; /* Optional */
 	column-rule-width: 0px; /* Optional */
-	text-align: left; /* Optional */
+  text-align: left; /* Optional */
+  orphans: 3;
 `;
 const Wrapper = styled.section`
   text-align: left;
