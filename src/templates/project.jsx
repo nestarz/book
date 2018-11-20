@@ -101,7 +101,11 @@ column-fill: auto;
     color: ${props => props.theme.colors.black};
     margin-top: 20vh;
   }
-  h1:nth-child(3){
+  h1:nth-child(0),
+  h1:nth-child(1),
+  h1:nth-child(2),
+  h1:nth-child(3),
+  h1:nth-child(4){
     margin-top: 30px;
   }
   p {

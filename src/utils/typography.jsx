@@ -1,6 +1,7 @@
 import Typography from 'typography';
 
 import "circular-std";
+import "typeface-yrsa";
 
 const config = require('../../config/website');
 

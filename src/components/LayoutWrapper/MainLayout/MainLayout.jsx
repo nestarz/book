@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import "circular-std";
+import "typeface-yrsa";
+
 import Helmet from 'react-helmet';
 import { ThemeProvider } from 'emotion-theming';
 import { CircleArrow as ScrollUpButton } from "react-scroll-up-button";

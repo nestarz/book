@@ -95,6 +95,7 @@
     "three-effectcomposer": "0.0.1",
     "three-obj-mtl-loader": "^1.0.3",
     "three-stl-loader": "^1.0.6",
+    "typeface-yrsa": "0.0.54",
     "typography": "^0.16.17"
   },
   "keywords": [
