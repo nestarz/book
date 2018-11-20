@@ -52,7 +52,7 @@ const Container = styled.section`
   h2:first-child + ul {
     column-span: all;
     margin-top: 10px;
-    background-color: black;
+    background-color: ${props => props.theme.colors.black};
     padding: 30px;
     margin-bottom: 30px;
     column-width: 350px;
@@ -131,7 +131,7 @@ iframe {
 }
 background-color: white;
 color: ${props => props.theme.colors.black};
-max-width: 1600px;
+max-width: 1120px;
 margin-top: 0px;
 padding: 30px;
 column-width: 350px;
