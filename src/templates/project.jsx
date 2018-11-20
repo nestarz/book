@@ -99,10 +99,10 @@ column-fill: auto;
     column-span: all;
     font-size: 270%;
     color: ${props => props.theme.colors.black};
-    margin-top: 20px;
+    margin-top: 20vh;
   }
-  h1:first-child{
-    margin-top: 0;
+  h1:nth-child(3){
+    margin-top: 30px;
   }
   p {
     font-weight: 100;
