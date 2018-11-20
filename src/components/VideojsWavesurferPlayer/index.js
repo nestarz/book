@@ -30,10 +30,11 @@ height: calc(150px + 30px);
 }
 
 .video-js .vjs-control-bar {
-    background-color: ${props => props.theme.colors.black};
+    background-color: ${props => props.theme.colors.white};
 }
 .video-js {
-    background-color: ${props => props.theme.colors.black};
+    background-color: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.black};
 }
 `;
 
@@ -53,12 +54,12 @@ export default class VideojsWavesurferPlayer extends React.Component {
                     peaks: this.props.peaks,
                     msDisplayMax: 10,
                     debug: true,
-                    waveColor: 'white',
+                    waveColor: theme.light.colors.black,
                     progressColor: '#111',
-                    cursorColor: 'white',
+                    cursorColor: theme.light.brand.primary,
                     hideScrollbar: true,
                     height: 10,
-                    barWidth: 2,
+                    barWidth: 5,
                     responsive: false,
                     partialRender: false,
                     backend: 'MediaElement',
