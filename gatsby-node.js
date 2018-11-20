@@ -1,5 +1,6 @@
 const path = require('path');
 const _ = require('lodash');
+const webpack = require(`webpack`);
 
 const locales = require('./src/constants/locales')
 exports.onCreatePage = ({ page, actions }) => {
@@ -50,7 +51,16 @@ exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, actions }) 
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+      alias: {
+        videojs: 'video.js',
+        WaveSurfer: 'wavesurfer.js',
+    }
     },
+    plugins: [
+      new webpack.ProvidePlugin({
+          videojs: path.resolve(__dirname, 'node_modules/video.js/dist/video.cjs.js'),
+      })
+  ]
   });
   if (stage === "build-html") {
     actions.setWebpackConfig({
