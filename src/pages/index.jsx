@@ -48,7 +48,7 @@ align-content: space-between;
     margin: 0;
     a {
       &:hover {
-        color: blue;
+        color: ${props => props.theme.brand.primary};
         &:before {
           content: "↘ ";
         }

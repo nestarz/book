@@ -61,7 +61,7 @@ class ThreeScene extends Component{
     const geometry = new THREE.BoxGeometry(1,1,1)
     // //console.log(this.props.theme.theme.colors.bg_color);
     //var material = new THREE.MeshNormalMaterial()
-    const material = new THREE.MeshBasicMaterial({ color: "blue" })
+    const material = new THREE.MeshBasicMaterial({ color: "#3CD670" })
     this.cube = new THREE.Mesh(geometry, material)
     this.cube.position.z = 1
     this.cube.position.x += 1;

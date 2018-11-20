@@ -1,7 +1,7 @@
 import { darken } from 'polished';
 
 const brand = {
-  primary: '#0000ff',
+  primary: '#3CD670',//'#0000ff',
   secondary: '#FFF',
 };
 
@@ -9,7 +9,8 @@ const colors = {
   grey: '#25252',
   black: '#111',
   red: '#eb1c24',
-  bg_color: "#000",//'#202121',
+  white: '#ffffff',
+  bg_color: "#24292e",//'#202121',
   body_color: "#fff",//'#ebebeb',
   link_color: brand.primary,
   link_color_hover: `${darken(0.15, brand.primary)}`,

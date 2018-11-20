@@ -39,14 +39,47 @@ padding: 30px 30px 0 30px;
 
 const Container = styled.section`
   & {
-    font-size: 120%;
+    font-size: 110%;
     letter-spacing: calc(-16 / 1000 * 1em);
+  }
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  }
+  li {
+    margin: 0;
+    margin-bottom: 2px;
+  }
+  li:last-child {
+    margin-bottom:25px;
+  }
+
+  li a {
+  text-decoration: none;
+  color: ${props => props.theme.brand.primary};
+  display: block;
+  }
+  li a:hover {
+    text-decoration: underline;
+  }
+  h1 {
+    column-span: all;
+    font-size: 270%;
+    color: ${props => props.theme.colors.black};
+    margin-top: 50px;
+  }
+  h1:first-child{
+    margin-top: 0;
   }
   p {
     font-weight: 100;
   }
   h1,h2,h3,h4,h5,h6 {
     font-weight: 500;
+  }
+  h3 {
+    font-size: 120%;
   }
 iframe {
   max-width: 100%;
@@ -61,7 +94,7 @@ iframe {
   display: inline-block;
 }
 background-color: white;
-color: black;
+color: ${props => props.theme.colors.black};
 max-width: 1600px;
 margin-top: 0px;
 padding: 30px;
@@ -133,7 +166,7 @@ const ImageWrapper = styled.div`
 flex-grow: 1;
 display: flex;
 flex-direction: column;
-background-color: ${props => props.theme.brand.primary};
+/* background-color: ${props => props.theme.brand.primary}; */
 min-width: 20vw;
   > div { 
     margin: 0rem auto 0 auto;
@@ -249,7 +282,7 @@ export const pageQuery = graphql`
             resize(width: 800) {
               src
             }
-            fluid(maxWidth: 850, maxHeight: 400, quality: 90, duotone: { highlight: "#0000FF", shadow: "#111111" }, cropFocus: CENTER) {
+            fluid(maxWidth: 850, maxHeight: 400, quality: 90, duotone: { highlight: "#3CD670", shadow: "#111111" }, cropFocus: CENTER) {
               ...GatsbyImageSharpFluid_tracedSVG
             }
           }
