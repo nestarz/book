@@ -49,16 +49,21 @@ export default class VideojsWavesurferPlayer extends React.Component {
             plugins: {
                 wavesurfer: {
                     src: this.props.src,
+                    // Pre-rendered JSON
+                    peaks: this.props.peaks,
                     msDisplayMax: 10,
-                    debug: false,
+                    debug: true,
                     waveColor: 'white',
                     progressColor: '#111',
                     cursorColor: 'white',
                     hideScrollbar: true,
                     height: 10,
                     barWidth: 2,
-                    responsive: true,
-                    partialRender: true
+                    responsive: false,
+                    partialRender: false,
+                    backend: 'MediaElement',
+                    normalize: true,
+                    pixelRatio: 1,
                 }
             }
         }
