@@ -53,7 +53,7 @@ export default class VideojsWavesurferPlayer extends React.Component {
                     // Pre-rendered JSON
                     peaks: this.props.peaks,
                     msDisplayMax: 10,
-                    debug: true,
+                    debug: false,
                     waveColor: theme.light.colors.black,
                     progressColor: '#111',
                     cursorColor: theme.light.brand.primary,

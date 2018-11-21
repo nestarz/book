@@ -55,7 +55,7 @@ module.exports = {
                 tight: true,
                 maxDepth: 2
               },
-              header: 'Table of Contents', // the custom header text
+              header: 'Table des matières', // the custom header text
               include: [
                 'content/**/*.md', // an include glob to match against
                 'content/**/*.mdx' // an include glob to match against
