@@ -6,19 +6,6 @@ import theme from '../../../config/theme';
 import 'video.js/dist/video-js.css';
 import 'videojs-wavesurfer/dist/css/videojs.wavesurfer.css';
 
-import videojs from 'video.js';
-import WaveSurfer from 'wavesurfer.js';
-
-/*
-// the following import is only needed when you're using 
-// the microphone plugin     
-import MicrophonePlugin from 'wavesurfer.js/dist/plugin/wavesurfer.microphone.js';
-WaveSurfer.microphone = MicrophonePlugin;
-*/
-
-// register videojs-wavesurfer plugin with this import
-import Wavesurfer from '../../../node_modules/videojs-wavesurfer/dist/videojs.wavesurfer.js';
-
 const VjsPlayer = styled.div`
 column-span: all;
 position: relative;
@@ -41,6 +28,20 @@ height: calc(150px + 30px);
 export default class VideojsWavesurferPlayer extends React.Component {
     componentDidMount() {
         // instantiate Video.js
+
+        const videojs = require('video.js');
+        const WaveSurfer = require('wavesurfer.js');
+
+        /*
+        // the following import is only needed when you're using 
+        // the microphone plugin     
+        import MicrophonePlugin from 'wavesurfer.js/dist/plugin/wavesurfer.microphone.js';
+        WaveSurfer.microphone = MicrophonePlugin;
+        */
+
+        // register videojs-wavesurfer plugin with this import
+        const Wavesurfer = require('../../../node_modules/videojs-wavesurfer/dist/videojs.wavesurfer.js');
+
         this.config = {
             controls: true,
             autoplay: false,
