@@ -29,9 +29,9 @@ export default class VideojsWavesurferPlayer extends React.Component {
     componentDidMount() {
         // instantiate Video.js
 
-        const videojs = require('video.js');
+        const videojs = require('video.js').default;
         const WaveSurfer = require('wavesurfer.js');
-
+        console.log(videojs);
         /*
         // the following import is only needed when you're using 
         // the microphone plugin     
