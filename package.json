@@ -89,6 +89,7 @@
     "react-scroll-up-button": "^1.6.4",
     "react-slick": "^0.23.2",
     "react-spring": "^5.9.2",
+    "react-sticky-header": "^0.2.0",
     "react-typography": "^0.16.13",
     "request-promise": "^4.2.2",
     "slick-carousel": "^1.8.1",

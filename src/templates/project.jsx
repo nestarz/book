@@ -12,28 +12,10 @@ import theme from '../../config/theme';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import { MDXProvider } from '@mdx-js/tag'
 import LayoutWrapper from '../components/LayoutWrapper/MainLayout';
+import Navigation from '../components/Navigation/NavProjects';
 import { Link } from 'gatsby';
 
 //const overlayColor = sample(overlay);
-
-const Nav = styled.nav`
-padding: 0px;
-padding-left: 30px;
-background-color: ${props => props.theme.brand.primary};
-font-family: monospace;
-font-size: 2em;
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
-    font-size: 4.5vw;
-  }
-a{
-  color: white;
-  margin: 10px;
-}
-a:first-child{
-  color: white;
-  margin-left: 0px;
-}
-`;
 
 const FlexHeader = styled.section`
 flex-grow: 1;
@@ -257,31 +239,7 @@ const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
           {project.cover && project.cover.childImageSharp.fluid && <Img fluid={project.cover.childImageSharp.fluid} />}
         </ImageWrapper>
       </Wrapper>
-      <Nav>
-        <Link
-          to="../"
-        >
-          ←
-        </Link>
-        /
-        <Link
-          to="../"
-        >
-          Home
-        </Link>
-        /
-        <Link
-          to="../"
-        >
-          Projects
-        </Link>
-        /
-        <Link
-          to="../"
-        >
-          {project.title}
-        </Link>
-      </Nav>
+      <Navigation project={project}/>
       <Container>
         <MDXRenderer>
           {postNode.code.body}
