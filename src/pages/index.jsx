@@ -133,8 +133,8 @@ const Index = ({
             <Scene3D 
               height={parent.height}
               width={parent.width}
-              bg_color={"red"} 
-              main_color={"blue"}
+              main_color={theme.dark.brand.primary} 
+              bg_color={theme.dark.colors.black}
             />)
           }
         </ContainerDimensions>

@@ -14,6 +14,8 @@ import { MDXProvider } from '@mdx-js/tag'
 import LayoutWrapper from '../components/LayoutWrapper/MainLayout';
 import Navigation from '../components/Navigation/NavProjects';
 import { Link } from 'gatsby';
+import { RotateOne as Scene3D } from '../components/Scenes3D';
+import ContainerDimensions from 'react-container-dimensions'
 
 //const overlayColor = sample(overlay);
 
@@ -23,38 +25,10 @@ padding: 30px 30px 0 30px;
 `;
 
 const Container = styled.section`
-  & {
-    font-size: 110%;
-    letter-spacing: calc(-16 / 1000 * 1em);
-  }
-  a {
+margin-top: 0px;
+a {
   text-decoration: none;
   color: ${props => props.theme.brand.primary};
-  }
-  h2:first-child + ul {
-    column-span: all;
-    margin-top: 10px;
-    background-color: ${props => props.theme.colors.black};
-    padding: 30px;
-    margin-bottom: 30px;
-    column-width: 350px;
-column-fill: auto;
--webkit-perspective:1;
-	-webkit-column-count: 2; /* Chrome, Safari, Opera */
-	-moz-column-count:    2; /* Firefox */
-	column-count:         2;
-  	-webkit-column-gap:   30px; /* Chrome, Safari, Opera */ 
-	-moz-column-gap:      30px; /* Firefox */
-	column-gap:           30px;
-	column-rule-color: #eee; /* Optional */
-	column-rule-style:solid; /* Optional */
-	column-rule-width: 0px; /* Optional */
-    a {
-      color: white;
-    }
-    ul {
-      margin-left: 10px;
-    }
   }
   ul {
   list-style-type: none;
@@ -83,13 +57,6 @@ column-fill: auto;
     color: ${props => props.theme.colors.black};
     margin-top: 20vh;
   }
-  h1:nth-child(0),
-  h1:nth-child(1),
-  h1:nth-child(2),
-  h1:nth-child(3),
-  h1:nth-child(4){
-    margin-top: 30px;
-  }
   p {
     font-weight: 100;
   }
@@ -98,6 +65,66 @@ column-fill: auto;
   }
   h3 {
     font-size: 120%;
+  }
+`
+const ContainerHeader = styled.section`
+display: flex;
+flex-wrap: wrap-reverse;
+`;
+const Holder3D = styled.section`
+margin-bottom: -6px;
+min-width: 200px;
+max-height: 200px;
+`;
+const TOC = styled.section`
+flex-grow: 1;
+max-width: 1120px;
+padding: 30px;
+  column-span: all;
+  background-color: ${props => props.theme.colors.black};
+  padding: 30px;
+  ul {
+  column-width: 250px;
+  /*border-right: 45px solid ${props => props.theme.brand.primary};*/
+column-fill: auto;
+-webkit-perspective:1;
+-webkit-column-count: 3; /* Chrome, Safari, Opera */
+-moz-column-count:    3; /* Firefox */
+column-count:         3;
+  -webkit-column-gap:   30px; /* Chrome, Safari, Opera */ 
+-moz-column-gap:      30px; /* Firefox */
+column-gap:           30px;
+column-rule-color: #eee; /* Optional */
+column-rule-style:solid; /* Optional */
+column-rule-width: 0px; /* Optional */
+}
+  li a {
+    color: white;
+  }
+  ul {
+    margin-left: 10px;
+  }
+  h2 {
+    column-span: all;
+  }
+  h3,h4,h5,h6 {
+    font-weight: 100;
+  }
+`
+
+const MDXContent = styled.section`
+  & {
+    max-width: 1120px;
+    padding: 30px;
+    font-size: 110%;
+    letter-spacing: calc(-16 / 1000 * 1em);
+  }
+  h1:nth-child(0),
+  h1:nth-child(1),
+  h1:nth-child(2),
+  h1:nth-child(3),
+  h1:nth-child(4){
+    margin-top: 30px;
   }
 iframe {
   max-width: 100%;
@@ -113,9 +140,6 @@ iframe {
 }
 background-color: white;
 color: ${props => props.theme.colors.black};
-max-width: 1120px;
-margin-top: 0px;
-padding: 30px;
 column-width: 350px;
 -webkit-perspective:1;
 	-webkit-column-count: 3; /* Chrome, Safari, Opera */
@@ -199,6 +223,8 @@ min-width: 20vw;
 
 const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
   const project = postNode.frontmatter;
+  const tableOfContents = postNode.tableOfContents;
+  console.log(postNode);
   return (
     <LayoutWrapper theme={theme.dark}>
       <Helmet title={`${project.title} | ${config.siteTitle}`} />
@@ -241,9 +267,48 @@ const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
       </Wrapper>
       <Navigation project={project}/>
       <Container>
-        <MDXRenderer>
-          {postNode.code.body}
-        </MDXRenderer>
+        <ContainerHeader>
+          <TOC>
+            <h2>Table des matières</h2>
+            <ul>
+            {tableOfContents.items.map((heading, index) => {
+                return (
+                  <li>
+                    <h3>
+                      <a href={heading.url}>{heading.title}</a>
+                    </h3>
+                    {heading.items && heading.items.map((heading2, index) => {
+                        return (
+                          <li>
+                            <h4>
+                              <a href={heading2.url}>{heading2.title}</a>
+                            </h4>
+                          </li>
+                        );
+                      })}
+                  </li>
+                );
+              })}
+            </ul>
+          </TOC>
+          <Holder3D>
+            <ContainerDimensions>
+              {parent => (
+                <Scene3D 
+                  height={parent.height}
+                  width={parent.width}
+                  bg_color={theme.dark.brand.primary} 
+                  main_color={theme.dark.colors.black}
+                />)
+              }
+            </ContainerDimensions>
+          </Holder3D>
+        </ContainerHeader>
+        <MDXContent>
+          <MDXRenderer>
+            {postNode.code.body}
+          </MDXRenderer>
+        </MDXContent>
       </Container>
     </LayoutWrapper>
   );
@@ -267,6 +332,7 @@ export const pageQuery = graphql`
       code {
         body
       }
+      tableOfContents
       frontmatter {
         title
         date(formatString: "DD.MM.YYYY")

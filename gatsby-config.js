@@ -53,6 +53,7 @@ module.exports = {
             options: {
               mdastUtilTocOptions: {
                 tight: true,
+                heading: "zzzzzzzzzzzzz",
                 maxDepth: 2
               },
               header: 'Table des matières', // the custom header text

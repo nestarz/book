@@ -42,9 +42,12 @@ class ThreeScene extends Component{
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
   componentDidMount(){
+    const { bg_color, main_color } = this.props;
+
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);  
     document.addEventListener('mousemove', this.handleMouseMove);
+    console.log(this.props);
     const width = this.props.width 
     const height = this.props.height
     //ADD CLOCK
@@ -61,7 +64,8 @@ class ThreeScene extends Component{
     this.camera.position.z = 2
     //ADD RENDERER
     this.renderer = new THREE.WebGLRenderer({ antialias: false, alpha: false })
-    this.renderer.setClearColor(0x111111, 1)
+    let color = new THREE.Color(bg_color).getHex();
+    this.renderer.setClearColor(color, 1)
     this.renderer.setSize(width, height)
     this.mount.appendChild(this.renderer.domElement)
     //ADD CUBE
@@ -69,10 +73,10 @@ class ThreeScene extends Component{
     const geometry = new THREE.CylinderGeometry( 5, 5, 10, 10 );
     // //console.log(this.props.theme.theme.colors.bg_color);
     //var material = new THREE.MeshNormalMaterial()
-    const material = new THREE.MeshBasicMaterial({ color: "#3CD670" })
+    const material = new THREE.MeshBasicMaterial({ color: main_color })
     this.cube = new THREE.Mesh(geometry, material)
     this.cube.position.z = -15
-    this.cube.position.x += 2;
+    this.cube.position.x += 0;
     //this.cube.position.y += 1;
     this.cube.rotation.z -= 10;
     this.savedVertices = this.cube.geometry.vertices.map(a => ({...a}));
