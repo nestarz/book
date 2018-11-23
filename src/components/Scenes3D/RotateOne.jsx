@@ -18,6 +18,14 @@ import {
 
 var STLLoader = require('three-stl-loader')(THREE)
 
+// Standard Normal variate using Box-Muller transform.
+function randn_bm() {
+  var u = 0, v = 0;
+  while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
+  while(v === 0) v = Math.random();
+  return Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
+}
+
 class ThreeScene extends Component{
   constructor(props) {
     super(props);
@@ -37,7 +45,6 @@ class ThreeScene extends Component{
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);  
     document.addEventListener('mousemove', this.handleMouseMove);
-    console.log(this.props.height, this.props.width);
     const width = this.props.width 
     const height = this.props.height
     //ADD CLOCK
@@ -58,15 +65,17 @@ class ThreeScene extends Component{
     this.renderer.setSize(width, height)
     this.mount.appendChild(this.renderer.domElement)
     //ADD CUBE
-    const geometry = new THREE.BoxGeometry(1,1,1)
+    //const geometry = new THREE.BoxGeometry(1,1,1)
+    const geometry = new THREE.CylinderGeometry( 5, 5, 10, 10 );
     // //console.log(this.props.theme.theme.colors.bg_color);
     //var material = new THREE.MeshNormalMaterial()
     const material = new THREE.MeshBasicMaterial({ color: "#3CD670" })
     this.cube = new THREE.Mesh(geometry, material)
-    this.cube.position.z = 1
-    this.cube.position.x += 1;
+    this.cube.position.z = -15
+    this.cube.position.x += 2;
     //this.cube.position.y += 1;
-    this.cube.rotation.z -= 10
+    this.cube.rotation.z -= 10;
+    this.savedVertices = this.cube.geometry.vertices.map(a => ({...a}));
     this.scene.add(this.cube)
 
     // //ADD TEAPOT
@@ -140,6 +149,16 @@ animate = () => {
    this.cube.rotation.x += 0.00001
    this.cube.rotation.z += Math.random() * 0.01
    //this.cube.position.z = this.state.x - 100;
+  //  //let indexVt = Math.floor(Math.random() * this.cube.geometry.vertices.length);
+  //  for (let index = 0; index < this.savedVertices.length; index++) {
+  //   this.cube.geometry.vertices[index].y = this.savedVertices[index].y;
+  //  }
+  //  if (Math.random() > 0.5) {
+  //   let indexVt = Math.floor((Math.sin(this.cube.rotation.x * 10000) + 1)*.5 * this.cube.geometry.vertices.length);
+  //   this.cube.geometry.vertices[indexVt].y = this.savedVertices[indexVt].y + (-1 + randn_bm() * 2) * Math.random() * 0.5;
+  //   this.cube.geometry.verticesNeedUpdate = true;
+  // }
+
    this.cube.rotation.y = Math.PI * Math.sin((-this.state.y + this.state.x)/2);
    this.cube.rotation.z = Math.PI * Math.sin(this.state.x);
    this.renderScene()
