@@ -31,6 +31,7 @@ export default class VideojsWavesurferPlayer extends React.Component {
 
         const videojs = require('video.js').default;
         const WaveSurfer = require('wavesurfer.js');
+        console.log(videojs);
         /*
         // the following import is only needed when you're using 
         // the microphone plugin     
@@ -53,7 +54,7 @@ export default class VideojsWavesurferPlayer extends React.Component {
                     // Pre-rendered JSON
                     peaks: this.props.peaks,
                     msDisplayMax: 10,
-                    debug: false,
+                    debug: true,
                     waveColor: theme.light.colors.black,
                     progressColor: '#111',
                     cursorColor: theme.light.brand.primary,
@@ -77,11 +78,11 @@ export default class VideojsWavesurferPlayer extends React.Component {
         });
 
         this.player.on('waveReady', (event) => {
-            videojs.log('waveform: ready!');
+            console.log('waveform: ready!');
         });
 
         this.player.on('playbackFinish', (event) => {
-            videojs.log('playback finished.');
+            console.log('playback finished.');
         });
 
         // error handling

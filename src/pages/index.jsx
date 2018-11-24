@@ -33,7 +33,7 @@ z-index:-1;
 const IndexWrapper = styled.div`
 flex: 1;
 display: flex;
-color: white;
+color: ${props => props.theme.colors.body_color};
 justify-content: space-between;
 flex-direction: row;
 align-content: space-between;
@@ -115,7 +115,7 @@ const InfoSection = styled.div`
     line-height: 1.7em;
     margin: 0em;
     padding-top: 3em;
-    color: white;
+    color: ${props => props.theme.colors.body_color};
   }
 `;
 
@@ -134,7 +134,7 @@ const Index = ({
               height={parent.height}
               width={parent.width}
               main_color={theme.dark.brand.primary} 
-              bg_color={theme.dark.colors.black}
+              bg_color={theme.dark.colors.bg_color}
             />)
           }
         </ContainerDimensions>

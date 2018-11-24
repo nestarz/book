@@ -10,8 +10,6 @@ const colors = {
   black: '#111',
   red: '#eb1c24',
   white: '#ffffff',
-  bg_color: "#24292e",//'#202121',
-  body_color: "#fff",//'#ebebeb',
   link_color: brand.primary,
   link_color_hover: `${darken(0.15, brand.primary)}`,
 };
@@ -21,6 +19,11 @@ export const overlay = ['#111'];
 const light = {
   brand,
   colors,
+  colors: { 
+    ...colors, 
+    bg_color: "#fff",//'#202121',
+    body_color: "#111",//'#ebebeb',  
+  },
   breakpoints: {
     xs: '400px',
     s: '600px',

@@ -65,7 +65,7 @@ export const Nav = styled.nav`
 
 export const Name = styled.div`
 flex-basis: auto; /* default value */
-color: white;
+color: ${props => props.theme.colors.body_color};
 text-align: center;
   padding: 0 0;
   display: flex;
@@ -74,6 +74,7 @@ text-align: center;
   flex-wrap: wrap;
   line-height: 40px;
   a {
+    color: ${props => props.theme.colors.body_color};
     &:hover,
     &:focus {
       text-decoration: none;

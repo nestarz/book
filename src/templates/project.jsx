@@ -54,7 +54,6 @@ a {
   h1 {
     column-span: all;
     font-size: 270%;
-    color: ${props => props.theme.colors.black};
     margin-top: 20vh;
   }
   p {
@@ -81,7 +80,6 @@ flex-grow: 1;
 max-width: 1120px;
 padding: 30px;
   column-span: all;
-  background-color: ${props => props.theme.colors.black};
   padding: 30px;
   ul {
   column-width: 250px;
@@ -99,7 +97,7 @@ column-rule-style:solid; /* Optional */
 column-rule-width: 0px; /* Optional */
 }
   li a {
-    color: white;
+    color: inherit;
   }
   ul {
     margin-left: 10px;
@@ -158,7 +156,6 @@ const Wrapper = styled.section`
   text-align: left;
   position: relative;
   width: 100%;
-  color: white;
   padding: 0;
   color: ${props => props.theme.colors.body_color};
   font-size: 1.5em;
