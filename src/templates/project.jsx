@@ -271,7 +271,7 @@ const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
           <TOC>
             <h2>Table des matières</h2>
             <ul>
-            {tableOfContents.items.map((heading, index) => {
+            {tableOfContents && tableOfContents.items && tableOfContents.items.map((heading, index) => {
                 return (
                   <li>
                     <h3>
