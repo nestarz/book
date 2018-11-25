@@ -66,7 +66,6 @@ export const Nav = styled.nav`
 export const Name = styled.div`
 flex-basis: auto; /* default value */
 color: ${props => props.theme.colors.body_color};
-text-align: center;
   padding: 0 0;
   display: flex;
   flex-direction: column;
@@ -95,7 +94,11 @@ export const SocialMedia = styled.div`
     margin-left: 1rem;
   }
   @media (max-width: ${props => props.theme.breakpoints.s}) {
-    padding: 0 1rem;
+    a {
+    font-size: 20px;
+    line-height: 20px;
+  }
+    padding: 1rem 0rem;
   }
 `;
 

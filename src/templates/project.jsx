@@ -47,6 +47,7 @@ a {
   text-decoration: none;
   color: ${props => props.theme.brand.primary};
   display: block;
+  font-size: 120%;
   }
   li a:hover {
     text-decoration: underline;
@@ -69,6 +70,7 @@ a {
 const ContainerHeader = styled.section`
 display: flex;
 flex-wrap: wrap-reverse;
+justify-content: space-between;
 `;
 const Holder3D = styled.section`
 margin-bottom: -6px;
@@ -113,8 +115,9 @@ column-rule-width: 0px; /* Optional */
 const MDXContent = styled.section`
   & {
     max-width: 1120px;
+    margin: auto;
     padding: 30px;
-    font-size: 110%;
+    font-size: 100%;
     letter-spacing: calc(-16 / 1000 * 1em);
   }
   h1:nth-child(0),
