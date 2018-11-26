@@ -72,12 +72,6 @@ export const pageQuery = graphql`
             client
             title
             cover {
-              childImageDeepAi {
-                id
-                fixed {
-                  src
-                }
-              }
               childImageSharp {
                 fluid(
                     quality: 80
