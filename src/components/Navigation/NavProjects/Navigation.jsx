@@ -16,7 +16,12 @@ function isScrolledIntoView(el) {
   //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
   return isVisible;
 }
+function clone(hash) {
+  var json = JSON.stringify(hash);
+  var object = JSON.parse(json);
 
+  return object;
+}
 class Navigation extends React.Component {
   constructor(props) {
     super(props);
@@ -24,8 +29,10 @@ class Navigation extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.nav.current.firstChild);
     window.addEventListener('scroll', this.handleScroll);
     this.baseNavTop = 0;
+    this.initialNav = clone(this.nav.current.firstChild.style);
   };
   
   componentWillUnmount() {
@@ -33,16 +40,27 @@ class Navigation extends React.Component {
   };
   
   handleScroll = (event) =>  {
-    if (!isScrolledIntoView(this.nav.current)) {
-      this.baseNavTop = this.nav.current.getBoundingClientRect().top + window.scrollY;
-      this.nav.current.style.position = `fixed`;
-      this.nav.current.style.top = 0;
-      this.nav.current.style.right = 0;
-      this.nav.current.style.left = 0;
-      this.nav.current.style.zIndex = 999;
+    let navBar = this.nav.current.firstChild;
+    if (!isScrolledIntoView(navBar)) {
+      this.baseNavTop = navBar.getBoundingClientRect().top + window.scrollY;
+      navBar.style.position = `fixed`;
+      navBar.style.top = 0;
+      navBar.style.right = 0;
+      navBar.style.left = 0;
+      navBar.style.zIndex = 999;
+      navBar.style.backgroundColor = "white";
+      navBar.style.color = "black";
+      navBar.style.borderBottom = "1px solid black";
+      navBar.querySelectorAll('a').forEach(function(node) {
+        node.style.color = "black";
+      });
     }
     if (window.scrollY < this.baseNavTop) {
-      this.nav.current.style.position = `initial`;
+      navBar.style.position = `initial`;
+      navBar.style = this.initialNav;
+      navBar.querySelectorAll('a').forEach(function(node) {
+        node.style.color = "white";
+      });
     }
   };
 
