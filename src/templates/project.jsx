@@ -71,9 +71,9 @@ const ContainerHeader = styled.section`
 display: flex;
 flex-wrap: wrap-reverse;
 justify-content: space-between;
+background-color:${props => props.theme.brand.primary};
 `;
 const Holder3D = styled.section`
-margin-bottom: -6px;
 min-width: 200px;
 max-height: 200px;
 `;
@@ -98,8 +98,8 @@ column-rule-color: #eee; /* Optional */
 column-rule-style:solid; /* Optional */
 column-rule-width: 0px; /* Optional */
 }
-  li a {
-    color: inherit;
+  li a, h2 {
+    color: white;
   }
   ul {
     margin-left: 10px;
@@ -226,12 +226,12 @@ const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
   const tableOfContents = postNode.tableOfContents;
   console.log(postNode);
   return (
-    <LayoutWrapper theme={theme.dark}>
+    <LayoutWrapper theme={theme.light}>
       <Helmet title={`${project.title} | ${config.siteTitle}`} />
       <Helmet>
         <style type="text/css">{`
           body {
-            background-color : ${theme.dark.colors.bg_color};
+            background-color : ${theme.light.colors.bg_color};
           }
     `}</style>
       </Helmet>
@@ -297,8 +297,8 @@ const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
                 <Scene3D 
                   height={parent.height}
                   width={parent.width}
-                  bg_color={theme.dark.brand.primary} 
-                  main_color={theme.dark.colors.black}
+                  bg_color={theme.light.brand.primary} 
+                  main_color={theme.light.colors.black}
                 />)
               }
             </ContainerDimensions>

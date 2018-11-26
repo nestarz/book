@@ -4,6 +4,7 @@ import config from '../../../../config/website';
 
 export const Wrapper = styled.header`
   align-items: baseline;
+  color: ${props => props.theme.brand.primary};
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
@@ -55,6 +56,7 @@ export const Nav = styled.nav`
   display: flex;
   flex: 1;
   justify-content: flex-end;
+  color: ${props => props.theme.brand.primary};
   a:not(:first-child) {
     margin-left: 1rem;
   }
@@ -65,7 +67,7 @@ export const Nav = styled.nav`
 
 export const Name = styled.div`
 flex-basis: auto; /* default value */
-color: ${props => props.theme.colors.body_color};
+color: ${props => props.theme.brand.primary};
   padding: 0 0;
   display: flex;
   flex-direction: column;
@@ -73,7 +75,7 @@ color: ${props => props.theme.colors.body_color};
   flex-wrap: wrap;
   line-height: 40px;
   a {
-    color: ${props => props.theme.colors.body_color};
+    color: ${props => props.theme.brand.primary};
     &:hover,
     &:focus {
       text-decoration: none;

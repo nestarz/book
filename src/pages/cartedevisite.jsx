@@ -29,7 +29,7 @@ const Index = ({
 }) => {
   return (
     <PagedMedia>
-      <LayoutWrapper navType={"front"} layoutType={"main"} theme={theme.dark} style={{padding: "30px"}}>
+      <LayoutWrapper navType={"front"} layoutType={"main"} theme={theme.light} style={{padding: "30px"}}>
       Elias Rhouzlane
       Elias Rhouzlane
       Elias Rhouzlane

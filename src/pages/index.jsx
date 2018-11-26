@@ -126,20 +126,20 @@ const Index = ({
 }) => {
   return (
     <div>
-      <LayoutWrapper navType={"front"} layoutType={"main"} theme={theme.dark} style={{padding: "30px"}}>
+      <LayoutWrapper navType={"front"} layoutType={"main"} theme={theme.light} style={{padding: "30px"}}>
       <Holder3D>
         <ContainerDimensions>
           {parent => (
             <Scene3D 
               height={parent.height}
               width={parent.width}
-              main_color={theme.dark.brand.primary} 
-              bg_color={theme.dark.colors.bg_color}
+              main_color={theme.light.brand.primary} 
+              bg_color={theme.light.colors.bg_color}
             />)
           }
         </ContainerDimensions>
       </Holder3D>
-      <Navigation navType={"front"} theme={theme.dark}/>
+      <Navigation navType={"front"} theme={theme.light}/>
         <IndexWrapper>
           <InfoSection>
             <header></header>

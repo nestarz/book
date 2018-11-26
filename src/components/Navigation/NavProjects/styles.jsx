@@ -7,6 +7,7 @@ padding-left: 30px;
 background-color: ${props => props.theme.brand.primary};
 font-family: monospace;
 font-size: 2em;
+color: white;
   @media (max-width: ${props => props.theme.breakpoints.s}) {
     font-size: 4.5vw;
   }
