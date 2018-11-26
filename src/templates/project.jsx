@@ -139,12 +139,6 @@ iframe {
   break-inside: avoid-column; /* W3C */ 
   display: inline-block;
 }
-h1, h2, h3 {
-    column-span: all;
-}
-h2, h3 {
-  margin-top: 30px;
-}
 background-color: white;
 color: ${props => props.theme.colors.black};
 column-width: 350px;
