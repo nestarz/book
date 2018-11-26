@@ -79,7 +79,6 @@ max-height: 200px;
 `;
 const TOC = styled.section`
 flex-grow: 1;
-max-width: 1120px;
 padding: 30px;
   column-span: all;
   padding: 30px;
@@ -104,8 +103,12 @@ column-rule-width: 0px; /* Optional */
   ul {
     margin-left: 10px;
   }
-  h2 {
-    column-span: all;
+  ul > li {
+    column-fill: auto;
+    break-inside: avoid;
+    &:first-child {
+      margin-top: 0;
+    }
   }
   h3,h4,h5,h6 {
     font-weight: 100;
@@ -119,6 +122,10 @@ const MDXContent = styled.section`
     padding: 30px;
     font-size: 100%;
     letter-spacing: calc(-16 / 1000 * 1em);
+  }
+  li {
+    break-inside: avoid;
+    break-before: avoid;
   }
   h1:nth-child(0),
   h1:nth-child(1),
