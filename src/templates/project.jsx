@@ -80,6 +80,7 @@ max-height: 200px;
 const TOC = styled.section`
 flex-grow: 1;
 padding: 30px;
+max-width: 80%;
   column-span: all;
   padding: 30px;
   ul {
@@ -112,6 +113,9 @@ column-rule-width: 0px; /* Optional */
   }
   h3,h4,h5,h6 {
     font-weight: 100;
+  }
+  h3 {
+    font-weight: 500;
   }
 `
 
