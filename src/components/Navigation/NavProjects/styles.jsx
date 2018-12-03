@@ -84,7 +84,8 @@ a {
   }
 position: absolute;
 left: 0;
-height: 100vh;
+padding: 30px 0;
+max-height: 100vh;
 font-size: 15px;
 max-width: 30px;
 border-right: 1px solid white;
@@ -116,6 +117,8 @@ border-right: 1px solid white;
     font-weight: 500;
   }
   &:hover {
+    padding: 0px 0;
+    padding-bottom: 30px;
   max-width: 300px;
   overflow: scroll;
   z-index: 999;

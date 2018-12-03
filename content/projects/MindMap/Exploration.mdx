@@ -4,7 +4,7 @@ import Graph from "react-graph-vis";
 export const frontmatter = {
     title: 'The Ceramist Scientist Mindmap',
     subtitle: '',
-    date: '2018-10-07T22:55:56.925Z',
+    date: '2018-12-03T22:55:56.925Z',
     client: '',
     service: 'Ressources',
     cover: './DSC00111.jpg',
@@ -13,7 +13,10 @@ export const frontmatter = {
 
 # Exploration des possibles
 
+Projet de Mindmap pour la définition des axes de recherches en design et arts.
+
 ## Explorer les interactions possibles entre objets céramiques, personnes, design et technologies. 
+
 Lancé dans une aventure pour développer une démarche qui combine sciences et arts, sciences et design. 
 Plus spécifiquement comment centrer ma recherche sur les systèmes d'objets et leurs usages, les repenser avec mes aptitudes et appétits scientifiques, avec par exemple l'état de l'art en apprentissage machine, en design génératif (GAN, etc...) ou en analyse d'images.
 L'objectif étant d'intégrer l'objet, sa forme et son usage dans son environnement sensible et in-sensible (virtuel) de manière nouvelle et politique (éthique, responsable, ...).
@@ -24,7 +27,7 @@ Cette méthode permet d’organiser visuellement les différents éléments d’
 
 export const graph = {
   nodes: [
-    { id: 1, label: "Ceramique", mass: 100 },
+    { id: 1, label: "Ceramique", mass: 100, value: 100 },
     { id: 2, label: "Impression Numérique", group: "digital" },
     { id: 3, label: "Formes", group: "digital" },
     { id: 4, label: "Intéractions", group: "digital" },
@@ -100,7 +103,9 @@ export const options = {
   physics: {
     solver: "repulsion",
     repulsion: {
-      avoidOverlap: 1
+      avoidOverlap: 1,
+      springConstant: 0.225,
+      centralGravity: 0,
     },
   },
   interaction:{
@@ -122,7 +127,7 @@ export const options = {
     zoomView: false
   },
   layout: {
-    randomSeed: 29,
+    //randomSeed: 29,
     hierarchical: {
       enabled:false,
       levelSeparation: 550,
@@ -196,17 +201,15 @@ export const events = {
   }
 };
 
-<div style={{ height: "100vh",columnSpan: "all" }}>
-<div style={{ columnSpan: 'all', width: "100vw", position: "relative", marginLeft: "-53vw",marginRight: "-53vw", left: "50%", right: "50%", top: "0" }}>
+<div style={{ columnSpan: 'all' }}>
 <ContainerDimensions>
     {parent => (
         <Graph 
         graph={graph} 
         options={options} 
         events={events}
-        style={{ height: "100vh", width: parent.width }} 
+        style={{ height: "110vh", width: parent.width }} 
     />)
     }
 </ContainerDimensions>
-</div>
 </div>
