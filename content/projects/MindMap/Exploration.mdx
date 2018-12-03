@@ -5,15 +5,15 @@ export const frontmatter = {
     title: 'The Ceramist Scientist Mindmap',
     subtitle: '',
     date: '2018-10-07T22:55:56.925Z',
-    client: 'LTAA Auguste Renoir',
-    service: '',
+    client: '',
+    service: 'Ressources',
     cover: './DSC00111.jpg',
-    subtitle: 'Explorer les interactions possibles entre objets, céramiques, personnes, design et technologies'
+    subtitle: 'Explorer les interactions possibles entre objets céramiques, personnes, design et technologies'
 }
 
 # Exploration des possibles
 
-## Explorer les interactions possibles entre objets, céramiques, personnes, design et technologies. 
+## Explorer les interactions possibles entre objets céramiques, personnes, design et technologies. 
 Lancé dans une aventure pour développer une démarche qui combine sciences et arts, sciences et design. 
 Plus spécifiquement comment centrer ma recherche sur les systèmes d'objets et leurs usages, les repenser avec mes aptitudes et appétits scientifiques, avec par exemple l'état de l'art en apprentissage machine, en design génératif (GAN, etc...) ou en analyse d'images.
 L'objectif étant d'intégrer l'objet, sa forme et son usage dans son environnement sensible et in-sensible (virtuel) de manière nouvelle et politique (éthique, responsable, ...).
@@ -35,26 +35,51 @@ export const graph = {
     { id: 9, label: "Open Source", group: "digital" },
     { id: 10, label: "Design Génératif", group: "digital" },
     { id: 11, label: "Generative adversarial network (GAN)", group: "digital" },
-    { id: 12, label: "Megumi Naitoh", group: "digital" },
+    { id: 12, label: "Megumi Naitoh", group: "people" },
     { id: 13, label: "APIs", group: "digital" },
     { id: 14, label: "Machines", group: "digital" },
     { id: 15, label: "Imprimante 3D", group: "digital" },
     { id: 16, label: "Open Food Facts", group: "digital" },
     { id: 17, label: "Caméra", group: "digital" },
+    { id: 18, label: "Microphone", group: "digital" },
+    { id: 19, label: "Vases#44", group: "project" },
+    { id: 20, label: "Francois Brument", group: "people" },
+    { id: 21, label: "Mouvements", group: "digital" },
+    { id: 22, label: "Plotter 2D", group: "digital" },
+    { id: 23, label: "The Power of Love", group: "project" },
+    { id: 24, label: "Mosaic Virus\nBitcoin per hour", group: "project" },
+    { id: 25, label: "L'artisan électronique", group: "project" },
+    { id: 26, label: "Tim Knapen", group: "people" },
+    { id: 27, label: "Roue de potterie virtuelle", group: "digital" },
+    { id: 28, label: "Interfaces\nCorps–Machine", group: "digital" },
     { id: 100, label: "Usages" },
     { id: 101, label: "Design Culinaire", group: "culinaire" },
+    { id: 102, label: "Restaurant Belafonte", group: "people" },
+    { id: 200, label: "Santé" },
   ],
   edges: [
+    { from: 16, to: 200, label: ""}, 
     { from: 2, to: 1, label: ""}, 
     { from: 2, to: 9, label: ""}, 
     { from: 12, to: 9, label: "Ceramics Commons:\nSending ceramic works\nelectronically for a show"}, 
     { from: 3, to: 1 }, 
     { from: 4, to: 3 }, 
     { from: 10, to: 3 }, 
+    { from: 5, to: 28 }, 
+    { from: 25, to: 26 }, 
+    { from: 25, to: 27 }, 
     { from: 4, to: 2, label: "Contrôle" }, 
     { from: 4, to: 5 },
     { from: 5, to: 17 },
+    { from: 5, to: 18 },
+    { from: 19, to: 18 },
+    { from: 19, to: 20 },
+    { from: 23, to: 20 },
+    { from: 24, to: 13 },
+    { from: 27, to: 5 },
+    { from: 14, to: 22, label: "Découpe sur plaque\nà consistance cuir" },
     { from: 8, to: 10 },
+    { from: 21, to: 17 },
     { from: 5, to: 6, label: "Traduction du mouvement\nvers l'imprimante 3D" },
     { from: 5, to: 7, label: "" },
     { from: 11, to: 10, label: "" },
@@ -63,6 +88,7 @@ export const graph = {
     { from: 14, to: 15, label: "" },
     { from: 100, to: 1, label: "" },
     { from: 101, to: 100, label: "" },
+    { from: 101, to: 102, label: "" },
     { from: 13, to: 16, label: "" },
     { from: 16, to: 101, label: "" },
     ]
@@ -115,6 +141,14 @@ export const options = {
       },
       culinaire: {
           color: {background:'red'},
+          shape: 'box',
+      },
+      people: {
+          color: {background:'black'},
+          shape: 'box',
+      },
+      project: {
+          color: {background:'#999999'},
           shape: 'box',
       }
   },
