@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { 
-    Nav
+    Nav,
+    TOC
 } from "./styles";
 
 
@@ -26,6 +27,9 @@ class Navigation extends React.Component {
   constructor(props) {
     super(props);
     this.nav = React.createRef();
+    this.state = {
+      minimalHeader: true
+    }
   }
 
   componentDidMount() {
@@ -42,6 +46,7 @@ class Navigation extends React.Component {
   handleScroll = (event) =>  {
     let navBar = this.nav.current.firstChild;
     if (!isScrolledIntoView(navBar)) {
+      this.setState({ minimalHeader: true });
       this.baseNavTop = navBar.getBoundingClientRect().top + window.scrollY;
       navBar.style.position = `fixed`;
       navBar.style.top = 0;
@@ -56,6 +61,7 @@ class Navigation extends React.Component {
       });
     }
     if (window.scrollY < this.baseNavTop) {
+      this.setState({ minimalHeader: true });
       navBar.style.position = `initial`;
       navBar.style = this.initialNav;
       navBar.querySelectorAll('a').forEach(function(node) {
@@ -65,6 +71,8 @@ class Navigation extends React.Component {
   };
 
   render() {
+    console.log(this.props);
+    var tableOfContents = this.props.tableOfContents;
     return (
       <div ref={this.nav}>
         <Nav>
@@ -91,6 +99,30 @@ class Navigation extends React.Component {
           >
             {this.props.project.title}
           </Link>
+          {this.state.minimalHeader && (
+          <TOC>
+          <ul>
+            {tableOfContents && tableOfContents.items && tableOfContents.items.map((heading, index) => {
+                return (
+                  <li>
+                    <h3>
+                      <a href={heading.url}>{heading.title}</a>
+                    </h3>
+                    {heading.items && heading.items.map((heading2, index) => {
+                        return (
+                          <li>
+                            <h4>
+                              <a href={heading2.url}>{heading2.title}</a>
+                            </h4>
+                          </li>
+                        );
+                      })}
+                  </li>
+                );
+              })}
+            </ul>
+          </TOC>
+          )}
         </Nav>
       </div>
     );

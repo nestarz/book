@@ -1,0 +1,174 @@
+import ContainerDimensions from 'react-container-dimensions'
+import Graph from "react-graph-vis";
+
+export const frontmatter = {
+    title: 'The Ceramist Scientist Mindmap',
+    subtitle: '',
+    date: '2018-10-07T22:55:56.925Z',
+    client: 'LTAA Auguste Renoir',
+    service: '',
+    cover: './DSC00111.jpg',
+    subtitle: 'Explorer les interactions possibles entre objets, céramiques, personnes, design et technologies'
+}
+
+# Exploration des possibles
+
+## Explorer les interactions possibles entre objets, céramiques, personnes, design et technologies. 
+Lancé dans une aventure pour développer une démarche qui combine sciences et arts, sciences et design. 
+Plus spécifiquement comment centrer ma recherche sur les systèmes d'objets et leurs usages, les repenser avec mes aptitudes et appétits scientifiques, avec par exemple l'état de l'art en apprentissage machine, en design génératif (GAN, etc...) ou en analyse d'images.
+L'objectif étant d'intégrer l'objet, sa forme et son usage dans son environnement sensible et in-sensible (virtuel) de manière nouvelle et politique (éthique, responsable, ...).
+
+## La Mindmap
+Cette méthode permet d’organiser visuellement les différents éléments d’un problème complexe pour mieux le comprendre. Elle se base sur le fonctionnement du cerveau qui procède par liens et ramifications pour conduire son raisonnement.
+
+
+export const graph = {
+  nodes: [
+    { id: 1, label: "Ceramique" },
+    { id: 2, label: "Impression Numérique", group: "digital" },
+    { id: 3, label: "Formes", group: "digital" },
+    { id: 4, label: "Intéractions", group: "digital" },
+    { id: 5, label: "Instruments", group: "digital" },
+    { id: 6, label: "Thérémine", group: "digital" },
+    { id: 7, label: "Piano", group: "digital" },
+    { id: 8, label: "Données En-ligne", group: "digital" },
+    { id: 9, label: "Open Source", group: "digital" },
+    { id: 10, label: "Design Génératif", group: "digital" },
+    { id: 11, label: "Generative adversarial network (GAN)", group: "digital" },
+    { id: 12, label: "Megumi Naitoh", group: "digital" },
+    { id: 13, label: "APIs", group: "digital" },
+    { id: 14, label: "Machines", group: "digital" },
+    { id: 15, label: "Imprimante 3D", group: "digital" },
+    { id: 16, label: "Open Food Facts", group: "digital" },
+    { id: 17, label: "Caméra", group: "digital" },
+    { id: 100, label: "Usages" },
+    { id: 101, label: "Design Culinaire", group: "culinaire" },
+  ],
+  edges: [
+    { from: 2, to: 1, label: ""}, 
+    { from: 2, to: 9, label: ""}, 
+    { from: 12, to: 9, label: "Ceramics Commons:\nSending ceramic works\nelectronically for a show"}, 
+    { from: 3, to: 1 }, 
+    { from: 4, to: 3 }, 
+    { from: 10, to: 3 }, 
+    { from: 4, to: 2, label: "Contrôle" }, 
+    { from: 4, to: 5 },
+    { from: 5, to: 17 },
+    { from: 8, to: 10 },
+    { from: 5, to: 6, label: "Traduction du mouvement\nvers l'imprimante 3D" },
+    { from: 5, to: 7, label: "" },
+    { from: 11, to: 10, label: "" },
+    { from: 13, to: 8, label: "" },
+    { from: 2, to: 14, label: "Peut-on penser d'autres\ntypologies d'imprimantes ?" },
+    { from: 14, to: 15, label: "" },
+    { from: 100, to: 1, label: "" },
+    { from: 101, to: 100, label: "" },
+    { from: 13, to: 16, label: "" },
+    { from: 16, to: 101, label: "" },
+    ]
+};
+
+export const options = {
+  physics: {
+    solver: "repulsion",
+    repulsion: {
+      avoidOverlap: 1
+    },
+  },
+  interaction:{
+    dragNodes:true,
+    dragView: false,
+    hideEdgesOnDrag: false,
+    hideNodesOnDrag: false,
+    hover: false,
+    hoverConnectedEdges: true,
+    keyboard: {
+      enabled: false,
+      speed: {x: 10, y: 10, zoom: 0.02},
+      bindToWindow: true
+    },
+    multiselect: false,
+    navigationButtons: true,
+    selectable: true,
+    selectConnectedEdges: true,
+    tooltipDelay: 300,
+    zoomView: false
+  },
+  layout: {
+    randomSeed: 29,
+    hierarchical: {
+      enabled:false,
+      levelSeparation: 550,
+      nodeSpacing: 1000,
+      treeSpacing: 200,
+      blockShifting: true,
+      edgeMinimization: true,
+      parentCentralization: true,
+      direction: 'UD',        // UD, DU, LR, RL
+      sortMethod: 'hubsize'   // hubsize, directed
+    }
+  },
+  groups: {
+      digital: {
+          color: {background:'#3CD670'},
+          shape: 'box',
+      },
+      culinaire: {
+          color: {background:'red'},
+          shape: 'box',
+      }
+  },
+  nodes: {
+      shape: 'box',
+      margin: 10,
+      widthConstraint: {
+        maximum: 200
+      },
+      size: 30,
+      font: {
+          size: 22,
+          color: '#ffffff'
+      },
+      color: {
+        background:'#000000',
+        hover: '#000000',
+      },
+      borderWidth: 0
+  },
+  edges: {
+        smooth: {
+          forceDirection: "none",
+          roundness: 0.4
+        },
+        color: {
+            color:'#000000',
+            highlight:'#3CD670',
+            inherit: false,
+            opacity:1.0
+        },      
+        width: 2
+  }
+};
+
+export const events = {
+  select: function(event) {
+    var { nodes, edges } = event;
+    console.log("Selected nodes:");
+    console.log(nodes);
+    console.log("Selected edges:");
+    console.log(edges);
+  }
+};
+
+<div style={{ columnSpan: 'all' }}>
+<ContainerDimensions>
+    {parent => (
+        <Graph 
+        graph={graph} 
+        options={options} 
+        events={events}
+        style={{ height: "100vh", width: parent.width }} 
+    />)
+    }
+</ContainerDimensions>
+</div>

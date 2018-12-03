@@ -276,11 +276,10 @@ const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
           {project.cover && project.cover.childImageSharp.fluid && <Img fluid={project.cover.childImageSharp.fluid} />}
         </ImageWrapper>
       </Wrapper>
-      <Navigation project={project}/>
+      <Navigation project={project} tableOfContents={tableOfContents} />
       <Container>
         <ContainerHeader>
           <TOC>
-            <h2>Table des matières</h2>
             <ul>
             {tableOfContents && tableOfContents.items && tableOfContents.items.map((heading, index) => {
                 return (
@@ -288,15 +287,6 @@ const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
                     <h3>
                       <a href={heading.url}>{heading.title}</a>
                     </h3>
-                    {heading.items && heading.items.map((heading2, index) => {
-                        return (
-                          <li>
-                            <h4>
-                              <a href={heading2.url}>{heading2.title}</a>
-                            </h4>
-                          </li>
-                        );
-                      })}
                   </li>
                 );
               })}

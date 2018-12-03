@@ -18,6 +18,15 @@ import {
 
 var STLLoader = require('three-stl-loader')(THREE)
 
+// const jscad = require('@jscad/openjscad')
+// const csg = require('csg').CSG
+// const input = csg.cube([1, 1, 1]) // one of many ways to create a CSG object
+ 
+// const outputData = jscad.generateOutput('stlb', input)
+ 
+// // hurray ,we can now write an stl file from our raw CSG objects
+// console.log(outputData)
+
 // Standard Normal variate using Box-Muller transform.
 function randn_bm() {
   var u = 0, v = 0;

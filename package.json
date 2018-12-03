@@ -8,6 +8,7 @@
     "type": "git"
   },
   "dependencies": {
+    "@jscad/openjscad": "^1.6.1",
     "@mdx-js/mdx": "^0.15.7",
     "@mdx-js/tag": "^0.15.6",
     "@tensorflow/tfjs": "^0.13.5",
@@ -16,6 +17,7 @@
     "@vx/curve": "0.0.165",
     "@vx/gradient": "0.0.165",
     "@vx/group": "0.0.170",
+    "@vx/hierarchy": "0.0.181",
     "@vx/mock-data": "0.0.179",
     "@vx/pattern": "0.0.179",
     "@vx/responsive": "0.0.179",
@@ -29,7 +31,9 @@
     "circular-std": "^1.0.0",
     "classnames": "^2.2.6",
     "client-request": "^2.3.0",
+    "csg": "^1.0.1",
     "d3-array": "^1.2.4",
+    "d3-hierarchy": "^1.1.8",
     "emotion": "^9.2.9",
     "emotion-server": "^9.2.9",
     "emotion-theming": "^9.2.9",
@@ -81,6 +85,7 @@
     "react-container-dimensions": "^1.4.1",
     "react-dom": "^16.6.3",
     "react-emotion": "^9.2.9",
+    "react-graph-vis": "^1.0.2",
     "react-helmet": "^5.2.0",
     "react-howler": "^3.7.3",
     "react-icons": "^3.2.2",

@@ -12,7 +12,7 @@ import { withScreenSize } from '@vx/responsive';
 import Navigation from "../../Navigation"
 import SEO from "../../SEO";
 import Footer from "../../Footer";
-import { Grid as Motif } from '../../Motifs';
+import { Grid as Motif } from '../../Vx';
 //import { AnimatedSurface as Motif } from '../../Shaders';
 //import { GameofLife as Motif } from '../../Shaders';
 //import { DesertPassage as Motif } from '../../Shaders';
