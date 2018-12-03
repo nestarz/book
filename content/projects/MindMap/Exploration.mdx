@@ -24,7 +24,7 @@ Cette méthode permet d’organiser visuellement les différents éléments d’
 
 export const graph = {
   nodes: [
-    { id: 1, label: "Ceramique" },
+    { id: 1, label: "Ceramique", mass: 100 },
     { id: 2, label: "Impression Numérique", group: "digital" },
     { id: 3, label: "Formes", group: "digital" },
     { id: 4, label: "Intéractions", group: "digital" },
@@ -52,12 +52,14 @@ export const graph = {
     { id: 26, label: "Tim Knapen", group: "people" },
     { id: 27, label: "Roue de potterie virtuelle", group: "digital" },
     { id: 28, label: "Interfaces\nCorps–Machine", group: "digital" },
+    { id: 29, label: "MOOC Design Numérique", group: "project" },
     { id: 100, label: "Usages" },
     { id: 101, label: "Design Culinaire", group: "culinaire" },
     { id: 102, label: "Restaurant Belafonte", group: "people" },
     { id: 200, label: "Santé" },
   ],
   edges: [
+    { from: 29, to: 20, label: "http://moocdigitalmedia.paris/cours/design-numerique/"}, 
     { from: 16, to: 200, label: ""}, 
     { from: 2, to: 1, label: ""}, 
     { from: 2, to: 9, label: ""}, 
@@ -106,7 +108,7 @@ export const options = {
     dragView: false,
     hideEdgesOnDrag: false,
     hideNodesOnDrag: false,
-    hover: false,
+    hover: true,
     hoverConnectedEdges: true,
     keyboard: {
       enabled: false,
@@ -114,10 +116,9 @@ export const options = {
       bindToWindow: true
     },
     multiselect: false,
-    navigationButtons: true,
-    selectable: true,
+    navigationButtons: false,
+    selectable: false,
     selectConnectedEdges: true,
-    tooltipDelay: 300,
     zoomView: false
   },
   layout: {
@@ -164,8 +165,9 @@ export const options = {
           color: '#ffffff'
       },
       color: {
-        background:'#000000',
+        background:'#707290',
         hover: '#000000',
+        highlight: '#000000'
       },
       borderWidth: 0
   },
@@ -194,7 +196,8 @@ export const events = {
   }
 };
 
-<div style={{ columnSpan: 'all' }}>
+<div style={{ height: "100vh",columnSpan: "all" }}>
+<div style={{ columnSpan: 'all', width: "100vw", position: "relative", marginLeft: "-53vw",marginRight: "-53vw", left: "50%", right: "50%", top: "0" }}>
 <ContainerDimensions>
     {parent => (
         <Graph 
@@ -205,4 +208,5 @@ export const events = {
     />)
     }
 </ContainerDimensions>
+</div>
 </div>
