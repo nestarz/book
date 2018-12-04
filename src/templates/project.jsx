@@ -25,6 +25,7 @@ padding: 30px 30px 0 30px;
 `;
 
 const Container = styled.section`
+overflow-x: hidden;
 margin-top: 0px;
 a {
   text-decoration: none;

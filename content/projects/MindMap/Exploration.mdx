@@ -13,13 +13,13 @@ export const frontmatter = {
 
 # Exploration des possibles
 
-Projet de Mindmap pour la définition des axes de recherches en design et arts.
+Projet de Mindmap pour la définition des axes de recherches en sciences, design et arts.
 
 ## Explorer les interactions possibles entre objets céramiques, personnes, design et technologies. 
 
-Lancé dans une aventure pour développer une démarche qui combine sciences et arts, sciences et design. 
-Plus spécifiquement comment centrer ma recherche sur les systèmes d'objets et leurs usages, les repenser avec mes aptitudes et appétits scientifiques, avec par exemple l'état de l'art en apprentissage machine, en design génératif (GAN, etc...) ou en analyse d'images.
-L'objectif étant d'intégrer l'objet, sa forme et son usage dans son environnement sensible et in-sensible (virtuel) de manière nouvelle et politique (éthique, responsable, ...).
+En partant du bagage acquis dans l'appréhension de systèmes techniques et numériques, l'idée est de faire de la technique un outil pour réfléchir la forme. Une démarche qui combine sciences et arts, sciences et design. 
+Il est question d'ouvrir des axes de recherche sur les systèmes d'objets et leurs usages, les repenser avec ses aptitudes et appétits scientifiques, en explorant l'état de l'art en apprentissage machine, en design génératif (GAN, etc...) ou en analyse d'images.
+L'objectif étant d'intégrer l'objet, sa forme et son usage dans son environnement sensible et in-sensible (virtuel) de manière nouvelle et politique (éthique, responsable, social ...).
 
 ## La Mindmap
 Cette méthode permet d’organiser visuellement les différents éléments d’un problème complexe pour mieux le comprendre. Elle se base sur le fonctionnement du cerveau qui procède par liens et ramifications pour conduire son raisonnement.
@@ -55,14 +55,20 @@ export const graph = {
     { id: 26, label: "Tim Knapen", group: "people" },
     { id: 27, label: "Roue de potterie virtuelle", group: "digital" },
     { id: 28, label: "Interfaces\nCorps–Machine", group: "digital" },
-    { id: 29, label: "MOOC Design Numérique", group: "project" },
+    { id: 29, label: "MOOC Design Numérique", group: "project", url: "http://moocdigitalmedia.paris/cours/design-numerique/" },
+    { id: 30, label: "Matteo Nasini", group: "people" },
+    { id: 31, label: "Électroencéphalo\n-graphie (EEG)", group: "digital" },
+    { id: 32, label: "Sparkling Matter", group: "project", url: "http://www.makery.info/2018/02/20/la-nuit-je-reve-en-ceramique/" },
     { id: 100, label: "Usages" },
     { id: 101, label: "Design Culinaire", group: "culinaire" },
     { id: 102, label: "Restaurant Belafonte", group: "people" },
     { id: 200, label: "Santé" },
   ],
   edges: [
-    { from: 29, to: 20, label: "http://moocdigitalmedia.paris/cours/design-numerique/"}, 
+    { from: 31, to: 28, label: ""}, 
+    { from: 30, to: 32, label: ""}, 
+    { from: 31, to: 32, label: ""}, 
+    { from: 29, to: 20}, 
     { from: 16, to: 200, label: ""}, 
     { from: 2, to: 1, label: ""}, 
     { from: 2, to: 9, label: ""}, 
@@ -122,7 +128,7 @@ export const options = {
     },
     multiselect: false,
     navigationButtons: false,
-    selectable: false,
+    selectable: true,
     selectConnectedEdges: true,
     zoomView: false
   },
@@ -198,18 +204,44 @@ export const events = {
     console.log(nodes);
     console.log("Selected edges:");
     console.log(edges);
+    if (nodes.length === 1) {
+        var node = graph.nodes[nodes[0] - 1];
+        console.log(node, graph.nodes, nodes[0]);
+        window.open(node.url, '_blank');
+    }
   }
 };
 
-<div style={{ columnSpan: 'all' }}>
+<div style={{ 
+  columnSpan: 'all',  
+  width: "100vw",
+  position: "relative",
+  left: "50%",
+  right: "50%",
+  marginLeft: "-50vw",
+  marginRight: "-50vw",
+  height: "150vh",
+  minHeight: "600px"
+  }}>
 <ContainerDimensions>
     {parent => (
         <Graph 
         graph={graph} 
         options={options} 
         events={events}
-        style={{ height: "110vh", width: parent.width }} 
+        style={{ height: "100%", width: parent.width }} 
     />)
     }
 </ContainerDimensions>
 </div>
+
+
+## Pistes
+
+De manière synthétique, est affiché une volonté dans la relfexion de nouvelles typologies de création de la céramique. 
+
+En détournant les processus dictés de l'imprimante 3D, en associant la forme et l'usage à des données numériques, en imaginant des typologies d'objets par générations paramétriques aléatoires et enfin en pensant de nouvelles intéractions dans la création avec des instruments *apriori* non liés à la céramique traditionnelle, du piano à la caméra et jusqu'aux interfaces cervaux machines.
+
+1. Open Source et Collaboratif (Creative Commons, Social Design, ...)
+2. Intégration de la donnée numérique (Capteurs, Bases de données publiques, ...)
+3. Détournement de machines (hacking) et de matériaux de l'inerte jusqu'au vivant (biohacking)
