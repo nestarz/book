@@ -125,7 +125,8 @@ const MDXContent = styled.section`
     max-width: 1120px;
     margin: auto;
     padding: 30px;
-    font-size: 100%;
+    font-size: 120%;
+    line-height: 30px;
     letter-spacing: calc(-16 / 1000 * 1em);
   }
   li {
