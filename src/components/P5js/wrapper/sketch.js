@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 
 import p5 from 'p5';
-//import { RemountOnResize } from './remount';
+import { RemountOnResize } from './remount';
 
 // A helper component, wrapping retina logic for canvas and
 // auto-resizing the sketch to fill its parent container.
@@ -126,7 +126,7 @@ export class SketchComponent extends PureComponent {
 	render() {
 		if (typeof window !== 'undefined') {
 			const { props } = this;
-			const RemountOnResize = require( './remount' );
+			//const RemountOnResize = require( './remount' );
 			return (
 				<RemountOnResize
 					/* Since canvas interferes with CSS layouting,

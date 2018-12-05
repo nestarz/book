@@ -1,3 +1,7 @@
+import ContainerDimensions from 'react-container-dimensions'
+import { SketchComponent } from 'components/P5js';
+import sketch from 'components/P5js/projects/decorationFloral/sketch1';
+
 export const frontmatter = {
     title: 'Floral Decoration Project',
     subtitle: '',
@@ -8,3 +12,63 @@ export const frontmatter = {
     subtitle: 'Sérigraphie, décoration, et environnement floral'
 }
 
+# Expérimentations florales
+
+Un paysage est une vue d'une portion de l'espace terrestre, perçue par les sens humains ou la photo, vidéo... et représentée ou observée, dans la majorité des cas à l'horizontale et photographiquement par un observateur ; il implique donc un point de vue. Son caractère « résulte de l'action et de l'interaction de facteurs naturels et/ou humains » ajoute le Conseil de l'Europe1.
+
+## Références
+
+- [BRRCH](http://www.brrch.com/home) BRRCH is the NY based floral project of Brittany Asch. founded in 2013, on the principle of delivering flowers as art to heighten the appreciation of the natural world around us.  With a deep respect For natural landscapes, Brittany aims to create Floral climates from worlds that do no exist, often elevating the flower Elements she shares into the realm of fantasy and Surreality. Her work with Flowers was once described as, "What love would look like if love could materialize into floral form." 
+
+## Outil P5.js
+
+P5.js est en quelque sorte une bibliothèque pour javascript permettant de faire des applications graphiques. Pour la
+découvrir on utilisera le site https://www.openprocessing.org ou https://alpha.editor.p5js.org/ (pour du javascript
+pur on pourra utiliser codepen.io ou jsfiddle.net). Plus tard on verra comment intégrer nos programmes dans une
+page écrite en html/css/javascript.
+
+Plusieurs solutions existent pour coder en p5.js En ligne en utilisant l’éditeur https://alpha.editor.p5js.org/ ou celui du site openprocessing.org. Il possible d’utiliser Processing 3, à télécharger sur le site processing.
+
+<div style={{ 
+  height: "600px",
+  width: "100%"
+  }}>
+<ContainerDimensions>
+    {parent => (
+        <SketchComponent
+            sketch={ sketch }
+            width={parent.width}
+            height={parent.height}
+            sketchProps={{ value: 10 }}
+        />
+    )
+    }
+</ContainerDimensions>
+</div>
+
+
+<div style={{ 
+  columnSpan: 'all',  
+  width: "100vw",
+  position: "relative",
+  left: "50%",
+  right: "50%",
+  marginLeft: "-50vw",
+  marginRight: "-50vw",
+  height: "60vh",
+  minHeight: "600px",
+  marginTop: "20px",
+  marginBottom: "20px",
+  }}>
+<ContainerDimensions>
+    {parent => (
+        <SketchComponent
+            sketch={ sketch }
+            width={parent.width}
+            height={parent.height}
+            sketchProps={{ value: 10 }}
+        />
+    )
+    }
+</ContainerDimensions>
+</div>
