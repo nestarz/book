@@ -1,4 +1,4 @@
-# Elias Rhouzlane Gatsby Portfolio
+A record of works from summer 2018 when I joined Renoir and started to play with clay, code and interactive media. Feel free to tweak and make your own version. [https://eliasrhouzlane.com](https://eliasrhouzlane.com)
 
 ## Features
 
@@ -36,65 +36,3 @@ scoop install npm
 npm install windows-build-tools -g
 npm install --global gatsby-cl
 ```
-
-
-### Adding new features/plugins
-
-You can add other features by having a look at the offical [plugins page](https://www.gatsbyjs.org/docs/plugins/)
-
-### Building your site
-
-```
-npm run build
-```
-Copy the content of the ``public`` folder to your webhost or use a website like Netlify which automates that for you.
-
-## Configuration
-
-You can configure your setup in ``config/website.js``:
-
-You can also configure the styling of the site by editing the theme variables in ``config/theme.js``. `overlay` are the colors that get randomly selected for the Index page and the project detail view.
-
-```JS
-import { darken } from 'polished';
-
-const brand = {
-  primary: '#cf1993',
-  secondary: '#7b8acc',
-};
-
-const colors = {
-  grey: '#25252',
-  black: '#000',
-  bg_color: '#f3f3f3',
-  body_color: '#222',
-  link_color: brand.primary,
-  link_color_hover: `${darken(0.15, brand.primary)}`,
-};
-
-export const overlay = ['#f76262', '#216583', '#65c0ba', '#35477d', '#6c5b7b', '#203541', '#9951ff', '#480032'];
-
-const theme = {
-  brand,
-  colors,
-  breakpoints: {
-    xs: '400px',
-    s: '600px',
-    m: '900px',
-    l: '1200px',
-  },
-  container: {
-    base: '100rem',
-    text: '55rem',
-  },
-  spacer: {
-    horizontal: '2rem',
-    vertical: '3rem',
-  },
-};
-
-export default theme;
-
-```
-
-**Attention:** You also need to edit ``static/robots.txt`` to include your domain!
