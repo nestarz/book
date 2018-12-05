@@ -1,4 +1,4 @@
-Elias's portfolio, a record of works from summer 2018 when he joined Renoir and started to play with clay, code and interactive media. Feel free to tweak and make your own version.
+A record of works from summer 2018 when I joined Renoir and started to play with clay, code and interactive media. Feel free to tweak and make your own version.
 
 ## Features
 
