@@ -18,19 +18,20 @@ const sketch = (width, height, props) => {
             for (let y = 0; y < rows; y++) {
                 let xOffset = 0
                 for (let x = 0; x < columns; x++) {
-                let randomGrey = 255 - p5.noise(xOffset, yOffset, timeOffset) * 255
+                let randomGrey = 300 - p5.noise(xOffset, yOffset, timeOffset) * 255
                 xOffset += increment
                 p5.noStroke()
-                p5.fill(50, randomGrey, 50)
+                p5.fill(randomGrey)
                 p5.rect(
                     x * basePixels,
                     y * basePixels,
                     basePixels,
                     basePixels
                 )
-                p5.ellipse(
+                p5.rect(
                     x * basePixels  + p5.random(-4, 4),
                     y * basePixels  + p5.random(-4, 4),
+                    basePixels,
                     basePixels
                 )
                 

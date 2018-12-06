@@ -101,8 +101,15 @@ const sketch = (width, height, props) => {
       p5.draw = () => {
         t += 0.1;
         p5.strokeWeight(p5.noise(t) * 3);
-        superSimpleTreeDraw(p5.mouseX, p5.mouseY, -90, 10);
-        superSimpleTreeDraw(p5.random() * width, p5.random() * height, -90, 10);
+        var posY = p5.random() * height;
+        if (p5.random() > 0.9) {
+          p5.stroke("green");
+        }
+        else {
+          p5.stroke(255 - posY/height * 255);
+        }
+        //superSimpleTreeDraw(p5.mouseX, p5.mouseY, -90, 10);
+        superSimpleTreeDraw(p5.random() * width, posY, -90, 10);
       };
 
       p5.mouseClicked = () => {
