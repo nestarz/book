@@ -1,6 +1,8 @@
 import ContainerDimensions from 'react-container-dimensions'
 import { SketchComponent } from 'components/P5js';
-import sketch from 'components/P5js/projects/decorationFloral/sketch1';
+import sketch1 from 'components/P5js/projects/decorationFloral/sketch1';
+import sketch2 from 'components/P5js/projects/decorationFloral/sketch2';
+import sketch3 from 'components/P5js/projects/decorationFloral/sketch3';
 
 export const frontmatter = {
     title: 'Floral Decoration Project',
@@ -36,7 +38,7 @@ Plusieurs solutions existent pour coder en p5.js En ligne en utilisant l’édit
 <ContainerDimensions>
     {parent => (
         <SketchComponent
-            sketch={ sketch }
+            sketch={ sketch2 }
             width={parent.width}
             height={parent.height}
             sketchProps={{ value: 10 }}
@@ -63,7 +65,55 @@ Plusieurs solutions existent pour coder en p5.js En ligne en utilisant l’édit
 <ContainerDimensions>
     {parent => (
         <SketchComponent
-            sketch={ sketch }
+            sketch={ sketch2 }
+            width={parent.width}
+            height={parent.height}
+            sketchProps={{ value: 10 }}
+        />
+    )
+    }
+</ContainerDimensions>
+</div>
+
+# Generative Design
+
+P5.js est en quelque sorte une bibliothèque pour javascript permettant de faire des applications graphiques. Pour la découvrir on utilisera le site https://www.openprocessing.org ou https://alpha.editor.p5js.org/ (pour du javascript pur on pourra utiliser codepen.io ou jsfiddle.net). Plus tard on verra comment intégrer nos programmes dans une page écrite en html/css/javascript.
+
+Plusieurs solutions existent pour coder en p5.js En ligne en utilisant l’éditeur https://alpha.editor.p5js.org/ ou celui du site openprocessing.org. Il possible d’utiliser Processing 3, à télécharger sur le site processing.
+
+
+
+<div style={{ 
+  height: "600px",
+  width: "100%"
+  }}>
+<ContainerDimensions>
+    {parent => (
+        <SketchComponent
+            sketch={ sketch1 }
+            width={parent.width}
+            height={parent.height}
+            sketchProps={{ value: 10 }}
+        />
+    )
+    }
+</ContainerDimensions>
+</div>
+
+P5.js est en quelque sorte une bibliothèque pour javascript permettant de faire des applications graphiques. Pour la découvrir on utilisera le site https://www.openprocessing.org ou https://alpha.editor.p5js.org/ (pour du javascript pur on pourra utiliser codepen.io ou jsfiddle.net). Plus tard on verra comment intégrer nos programmes dans une page écrite en html/css/javascript.
+
+Plusieurs solutions existent pour coder en p5.js En ligne en utilisant l’éditeur https://alpha.editor.p5js.org/ ou celui du site openprocessing.org. Il possible d’utiliser Processing 3, à télécharger sur le site processing.
+
+
+
+<div style={{ 
+  height: "600px",
+  width: "100%"
+  }}>
+<ContainerDimensions>
+    {parent => (
+        <SketchComponent
+            sketch={ sketch3 }
             width={parent.width}
             height={parent.height}
             sketchProps={{ value: 10 }}
