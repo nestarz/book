@@ -5,7 +5,7 @@ module.exports = {
   siteUrl: 'https://eliasrhouzlane.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: '/logos/logo-1024.png', // Used for SEO and manifest
-  siteDescription: 'Ceramics designer student and Deep Learning engineer',
+  siteDescription: 'Ceramics Design student and Deep Learning engineer',
   bio: 'Currently studying Ceramics and Object Design at LTAA Auguste Renoir exploring the interaction of objects, people, art and technology using form and code with a mix of analog and digital materials.',
   author: 'Elias Rhouzlane', // Author for schemaORGJSONLD
   // siteFBAppID: '123456789', // Facebook App ID - Optional

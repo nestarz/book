@@ -91,54 +91,6 @@ class ThreeScene extends Component{
     this.savedVertices = this.cube.geometry.vertices.map(a => ({...a}));
     this.scene.add(this.cube)
 
-    // //ADD TEAPOT
-    // this.loader = new STLLoader();
-    // this.loader.load('assets/models/teapot_150.stl', (geometry) => {
-    //   // var modifier = new THREE.SimpifyModifier();
-    //   // geometry = modifier.modify(geometry, 10);
-    //   var material = new THREE.MeshNormalMaterial({})
-    //   //var material = new THREE.MeshBasicMaterial({ color: "red" });
-    //   var mesh = new THREE.Mesh(geometry, material)
-    //   mesh.rotation.set( Math.PI * 1.5, 0, 0 );
-    //   mesh.position.z -= 6;
-    //   mesh.position.y -= 4;
-    //   this.cube = mesh;
-    //   this.scene.add(this.cube);
-    // });
-
-    // PostProcess Effects
-    // this.composer = new EffectComposer(this.renderer);
-		// const chromaticAberrationEffect = new ChromaticAberrationEffect();
-		// const glitchEffect = new GlitchEffect({
-		// 	//perturbationMap: assets.get("perturbation-map"),
-    //   chromaticAberrationOffset: chromaticAberrationEffect.offset,
-    //   ratio: 1,
-    //   delay: new THREE.Vector2(1, 3),
-    //   columns: 0
-		// });
-		// const noiseEffect = new NoiseEffect({
-		// 	blendFunction: BlendFunction.COLOR_DODGE
-		// });
-		// noiseEffect.blendMode.opacity.value = 0.8;
-    // const bloomEffect = new BloomEffect({
-		// 	blendFunction: BlendFunction.LIGHTEN
-    // })
-    // bloomEffect.blendMode.opacity.value = 1;
-    // const pixelEffect = new PixelationEffect(200)
-    // const glitchPass = new EffectPass(
-    //   this.camera, 
-    //   //chromaticAberrationEffect, 
-    //   //glitchEffect, 
-    //   //noiseEffect, 
-    //   //bloomEffect,
-    //   pixelEffect
-    //   );
-    // glitchPass.renderToScreen = true;
-    // this.composer.addPass(new RenderPass(this.scene, this.camera));
-    // //this.composer.addPass(new BlurPass({
-    // //  kernelSize: KernelSize.SMALL
-    // //}));
-    // this.composer.addPass(glitchPass);
     this.start()
   }
 componentWillUnmount(){

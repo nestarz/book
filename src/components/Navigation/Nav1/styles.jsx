@@ -9,8 +9,8 @@ export const Wrapper = styled.header`
   flex: 1 0 auto;
   flex-direction: column;
   flex-wrap: wrap;
-  font-size: 2em;
-  //transform: skew(20deg) scale(0.8, 1);
+  font-size: 300%;
+  /*transform: skew(20deg) scale(0.8, 1);*/
   justify-content: space-around; /* ADJUSTMENT */
   @media (min-width: ${props => props.theme.breakpoints.m}) {
     justify-content: space-between; /* ADJUSTMENT */
@@ -73,7 +73,7 @@ color: ${props => props.theme.brand.primary};
   flex-direction: column;
   align-items:flex-start ;
   flex-wrap: wrap;
-  line-height: 40px;
+  line-height: 60px;
   a {
     color: ${props => props.theme.brand.primary};
     &:hover,
@@ -88,8 +88,9 @@ color: ${props => props.theme.brand.primary};
 `;
 
 export const SocialMedia = styled.div`
+margin-top:-15px;
   a {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     line-height: 20px;
   }
   a:not(:first-child) {
