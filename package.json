@@ -8,6 +8,8 @@
     "type": "git"
   },
   "dependencies": {
+    "@jscad/csg": "github:jscad/csg",
+    "@jscad/csg-viewer": "github:jscad/csg-viewer",
     "@jscad/openjscad": "^1.6.1",
     "@mdx-js/mdx": "^0.15.7",
     "@mdx-js/tag": "^0.15.6",
@@ -102,6 +104,7 @@
     "tfjsx": "^1.0.1",
     "three": "^0.97.0",
     "three-effectcomposer": "0.0.1",
+    "three-js-csg": "^72.0.0",
     "three-obj-mtl-loader": "^1.0.3",
     "three-stl-loader": "^1.0.6",
     "two.js": "^0.7.0-beta.3",

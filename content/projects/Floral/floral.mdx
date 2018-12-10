@@ -1,4 +1,5 @@
 import ContainerDimensions from 'react-container-dimensions'
+import Scene3D from 'components/Scenes3D/RotateOne';
 import { SketchComponent } from 'components/P5js';
 import sketch1 from 'components/P5js/projects/decorationFloral/sketch1';
 import sketch2 from 'components/P5js/projects/decorationFloral/sketch2';
@@ -89,3 +90,28 @@ Plusieurs solutions existent pour coder en p5.js En ligne en utilisant l’édit
 </ContainerDimensions>
 </div>
 
+<div style={{ 
+  columnSpan: 'all',  
+  width: "100vw",
+  position: "relative",
+  left: "50%",
+  right: "50%",
+  marginLeft: "-50vw",
+  marginRight: "-50vw",
+  height: "60vh",
+  minHeight: "600px",
+  marginTop: "20px",
+  marginBottom: "20px",
+  }}>
+<ContainerDimensions>
+    {parent => (
+        <Scene3D 
+            height={parent.height}
+            width={parent.width}
+            main_color="red" 
+            bg_color="black"
+        />
+    )
+    }
+</ContainerDimensions>
+</div>

@@ -134,8 +134,8 @@ const sketch = (width, height, props) => {
       };
 
       p5.receiveProps = (nextProps) => {
-        console.log(nextProps.value)
-        value = nextProps.value;
+        //console.log(nextProps.value)
+        //value = nextProps.value;
       };
   
       p5.unmount = () => {
