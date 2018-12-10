@@ -4,6 +4,7 @@ import sketch1 from 'components/P5js/projects/decorationFloral/sketch1';
 import sketch2 from 'components/P5js/projects/decorationFloral/sketch2';
 import sketch3 from 'components/P5js/projects/decorationFloral/sketch3';
 import sketch4 from 'components/P5js/projects/decorationFloral/sketch4';
+import sketch5 from 'components/P5js/projects/decorationFloral/sketch5';
 
 export const frontmatter = {
     title: 'Floral Decoration Project',
@@ -40,33 +41,6 @@ Plusieurs solutions existent pour coder en p5.js En ligne en utilisant l’édit
     {parent => (
         <SketchComponent
             sketch={ sketch2 }
-            width={parent.width}
-            height={parent.height}
-            sketchProps={{ value: 10 }}
-        />
-    )
-    }
-</ContainerDimensions>
-</div>
-
-
-<div style={{ 
-  columnSpan: 'all',  
-  width: "100vw",
-  position: "relative",
-  left: "50%",
-  right: "50%",
-  marginLeft: "-50vw",
-  marginRight: "-50vw",
-  height: "60vh",
-  minHeight: "600px",
-  marginTop: "20px",
-  marginBottom: "20px",
-  }}>
-<ContainerDimensions>
-    {parent => (
-        <SketchComponent
-            sketch={ sketch4 }
             width={parent.width}
             height={parent.height}
             sketchProps={{ value: 10 }}

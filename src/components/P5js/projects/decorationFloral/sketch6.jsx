@@ -1,25 +1,24 @@
-
 const sketch = (width, height, props) => {
     var Physics = require("../../physics/src/Physics");
 
     return function (p5) {
-        var color = "#3CD670";
+        var color = "#000";
         var w = width, h = height;
-        var vertices_amount = 9
+        var vertices_amount = 400
 
-        var px_offset_x = w * 0.9;    // amplitude
-        var px_offset_y = h / 2.2;    // amplitude
+        var px_offset_x = w / 2;    // amplitude
+        var px_offset_y = h / 2;    // amplitude
 
-        var mass = 10000;
+        var mass = 100;
         var radius_x = width / 3;
-        var radius_y = height / 2;
+        var radius_y = height / 3;
         var strength = 0.0625;
-        var drag = 10.0;
+        var drag = 0;
 
         var physics = new Physics();
         var points = [];
 
-        var organicConstant = 0.01;
+        var organicConstant = 30;
         
         for (var i = 0; i < vertices_amount; i++) {
 
@@ -41,25 +40,29 @@ const sketch = (width, height, props) => {
 
             points.push(particle);
         }
+        var t = 0;
         
         p5.setup = () => {
-            p5.strokeWeight(1);
-            p5.stroke("black");
+            p5.strokeWeight(10);
+            p5.stroke(color);
             p5.smooth();
             p5.noStroke();
             //p5.filter(p5.BLUR,10);
-            p5.frameRate(60);
+            p5.frameRate(25);
 
             physics.play()
         }
 
         p5.draw = () => {
+            t += 0.01;
             p5.clear();
-            p5.colorMode(p5.HSB);
+            //p5.colorMode(p5.HSB);
             physics.update();
             p5.ellipse(particle.position.x, particle.position.y, 5);
             p5.curveTightness(organicConstant);
             p5.fill(color);
+            var colord = p5.color(255, 0, 0);
+            //p5.fill(p5.color(100 + p5.noise(t) * 100, 250, 10));
             p5.beginShape();
             for (let i = 0; i < points.length; i++) {
                 const particle = points[i].position;
