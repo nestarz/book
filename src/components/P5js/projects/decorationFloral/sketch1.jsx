@@ -19,8 +19,8 @@ const sketch = (width, height, props) => {
         let flowerHeight = 160;
         let stepsWidth = p5.int(width / flowerWidth);
         let stepsHeight = p5.int(height / flowerHeight);
-        let marginHeight = flowerHeight/2; //+ flowerHeight * ((height / flowerHeight) - p5.int(height / flowerHeight)) / 2;
-        let marginWidth = flowerWidth/2; //+ flowerWidth * ((width / flowerWidth) - p5.int(width / flowerWidth)) / 2;
+        let marginHeight = flowerHeight/2 + flowerHeight * ((height / flowerHeight) - stepsHeight) / 2;
+        let marginWidth = flowerWidth/2 + flowerWidth * ((width / flowerWidth) - stepsWidth) / 2;
         p5.translate(marginWidth, marginHeight);
         for (let i = 0; i < stepsHeight; i++) {
           for (let j = 0; j < stepsWidth; j++) {

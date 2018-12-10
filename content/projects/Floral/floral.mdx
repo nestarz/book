@@ -1,6 +1,10 @@
 import ContainerDimensions from 'react-container-dimensions'
 import { SketchComponent } from 'components/P5js';
-import sketch from 'components/P5js/projects/decorationFloral/sketch1';
+import sketch1 from 'components/P5js/projects/decorationFloral/sketch1';
+import sketch2 from 'components/P5js/projects/decorationFloral/sketch2';
+import sketch3 from 'components/P5js/projects/decorationFloral/sketch3';
+import sketch4 from 'components/P5js/projects/decorationFloral/sketch4';
+import sketch5 from 'components/P5js/projects/decorationFloral/sketch5';
 
 export const frontmatter = {
     title: 'Floral Decoration Project',
@@ -37,7 +41,7 @@ Plusieurs solutions existent pour coder en p5.js En ligne en utilisant l’édit
 <ContainerDimensions>
     {parent => (
         <SketchComponent
-            sketch={ sketch }
+            sketch={ sketch2 }
             width={parent.width}
             height={parent.height}
             sketchProps={{ mode: 1 }}
@@ -64,7 +68,7 @@ Plusieurs solutions existent pour coder en p5.js En ligne en utilisant l’édit
 <ContainerDimensions>
     {parent => (
         <SketchComponent
-            sketch={ sketch }
+            sketch={ sketch2 }
             width={parent.width}
             height={parent.height}
             sketchProps={{ mode: 0 }}
@@ -73,3 +77,4 @@ Plusieurs solutions existent pour coder en p5.js En ligne en utilisant l’édit
     }
 </ContainerDimensions>
 </div>
+

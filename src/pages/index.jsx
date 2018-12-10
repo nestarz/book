@@ -11,6 +11,9 @@ import Navigation from '../components/Navigation';
 import { RotateOne as Scene3D } from '../components/Scenes3D';
 import ContainerDimensions from 'react-container-dimensions'
 
+import { SketchComponent } from 'components/P5js';
+import sketch1 from 'components/P5js/projects/mainScreen/sketch1';
+
 const Holder3D = styled.div`
 position: fixed;
 top:0;
@@ -18,7 +21,7 @@ left:0;
 right:0;
 bottom:0;
 pointer-events: none;
-z-index:-1;
+mix-blend-mode: overlay;
 `;
 
 // const StyledSketch = styled(SketchComponent)`
@@ -38,12 +41,12 @@ justify-content: space-between;
 flex-direction: row;
 align-content: space-between;
   h2 {
-    font-size: 2em;
+    font-size: 200%;
     font-weight: normal;
     margin: 0;
   }
   h3 {
-    font-size: 1.5em;
+    font-size: 200%;
     font-weight: normal;
     margin: 0;
     a {
@@ -61,7 +64,7 @@ align-content: space-between;
   }
   ul { list-style-type: none; margin: 0 }
   li {
-    font-size: 1.4em;
+    font-size: 200%;
     margin: 0;
     a {
       color: inherit;
@@ -106,7 +109,7 @@ const InfoSection = styled.div`
     color: #aaa;
   }
   p {
-    font-size: 1.5em;
+    font-size: 200%;
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
@@ -125,17 +128,24 @@ const Index = ({
   },
 }) => {
   return (
-    <div>
+    <div style={{overflow: "hidden"}}>
       <LayoutWrapper navType={"front"} layoutType={"main"} theme={theme.light} style={{padding: "30px"}}>
       <Holder3D>
         <ContainerDimensions>
           {parent => (
-            <Scene3D 
-              height={parent.height}
-              width={parent.width}
-              main_color={theme.light.brand.primary} 
-              bg_color={theme.light.colors.bg_color}
-            />)
+            // <Scene3D 
+            //   height={parent.height}
+            //   width={parent.width}
+            //   main_color={theme.light.brand.primary} 
+            //   bg_color={theme.light.colors.bg_color}
+            // />
+            <SketchComponent
+            sketch={ sketch1 }
+            width={parent.width}
+            height={parent.height}
+            sketchProps={{ value: 10 }}
+            />
+            )
           }
         </ContainerDimensions>
       </Holder3D>
