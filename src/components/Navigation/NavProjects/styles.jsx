@@ -1,6 +1,20 @@
 import styled from 'react-emotion';
 import config from '../../../../config/website';
 
+export const WIP = styled.div`
+font-size: 1vw;
+display: inline;
+position: relative;
+right: 0;
+float: right;
+position: relative; 
+bottom: 0;
+background-color: white;
+color: black;
+padding: 2px;
+z-index: 9999;
+`;
+
 export const Nav = styled.nav`
 padding: 0px;
 padding-left: 30px;

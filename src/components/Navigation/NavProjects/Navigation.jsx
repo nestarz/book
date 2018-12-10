@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { 
     Nav,
-    TOC
+    TOC,
+    WIP
 } from "./styles";
 
 
@@ -99,6 +100,9 @@ class Navigation extends React.Component {
           >
             {this.props.project.title}
           </Link>
+          {this.props.project.wip && (
+            <WIP>Cet article est en cours de rédaction.</WIP>
+          )}
           {this.state.minimalHeader && (
           <TOC>
           <ul>

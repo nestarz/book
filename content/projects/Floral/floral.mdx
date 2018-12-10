@@ -9,7 +9,8 @@ export const frontmatter = {
     client: '',
     service: 'Ressources',
     cover: './DSC00111.jpg',
-    subtitle: 'Sérigraphie, décoration, et environnement floral'
+    subtitle: 'Sérigraphie, décoration, et environnement floral',
+    wip: true
 }
 
 # Expérimentations florales
@@ -39,7 +40,7 @@ Plusieurs solutions existent pour coder en p5.js En ligne en utilisant l’édit
             sketch={ sketch }
             width={parent.width}
             height={parent.height}
-            sketchProps={{ value: 10 }}
+            sketchProps={{ mode: 1 }}
         />
     )
     }
@@ -66,7 +67,7 @@ Plusieurs solutions existent pour coder en p5.js En ligne en utilisant l’édit
             sketch={ sketch }
             width={parent.width}
             height={parent.height}
-            sketchProps={{ value: 10 }}
+            sketchProps={{ mode: 0 }}
         />
     )
     }

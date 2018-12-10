@@ -340,6 +340,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "DD.MM.YYYY")
         client
+        wip
         service
         subtitle
         cover {
