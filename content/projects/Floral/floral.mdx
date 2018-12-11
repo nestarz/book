@@ -1,14 +1,18 @@
 import ContainerDimensions from 'react-container-dimensions'
 import Scene3D from 'components/Scenes3D/RotateOne';
 import { SketchComponent } from 'components/P5js';
+import Graph from "react-graph-vis";
+
 import sketch1 from 'components/P5js/projects/decorationFloral/sketch1';
 import sketch2 from 'components/P5js/projects/decorationFloral/sketch2';
 import sketch3 from 'components/P5js/projects/decorationFloral/sketch3';
 import sketch4 from 'components/P5js/projects/decorationFloral/sketch4';
 import sketch5 from 'components/P5js/projects/decorationFloral/sketch5';
+import sketch6 from 'components/P5js/projects/decorationFloral/sketch6';
+import sketch7 from 'components/P5js/projects/decorationFloral/sketch7';
 
 export const frontmatter = {
-    title: 'Floral Decoration Project',
+    title: 'Végétal, Projet Décors Utiles',
     subtitle: '',
     date: '2018-12-05T22:55:56.925Z',
     client: '',
@@ -26,10 +30,6 @@ Un paysage est une vue d'une portion de l'espace terrestre, perçue par les sens
 
 ![image](./IMG_20181206_123125.jpg)
 
-## Références
-
-- [BRRCH](http://www.brrch.com/home) BRRCH is the NY based floral project of Brittany Asch. founded in 2013, on the principle of delivering flowers as art to heighten the appreciation of the natural world around us.  With a deep respect For natural landscapes, Brittany aims to create Floral climates from worlds that do no exist, often elevating the flower Elements she shares into the realm of fantasy and Surreality. Her work with Flowers was once described as, "What love would look like if love could materialize into floral form." 
-- [The Garden.org Plants Database](https://garden.org/apps/calendar/?q=Paris%2C+France) When to Plant Vegetables: The Garden Planting Calendar
 
 ## Idées de design paramétrique
 
@@ -63,6 +63,205 @@ Plusieurs solutions existent pour coder en p5.js En ligne en utilisant l’édit
 </ContainerDimensions>
 </div>
 
+# Références
+
+export const graph = {
+  nodes: [
+    { id: 1, label: "Végétal", mass: 100, value: 100, group: "digital" },
+    { id: 2, label: "Vegetal Chair", group: "project" },
+    { id: 3, label: "Ronan et Erwan Bouroullec", group: "people" },
+    { id: 4, label: "Algaegraphie", group: "digital" },
+    { id: 5, label: "Lia Giraud", group: "people" },
+    { id: 6, label: "Cellulaire", group: "" },
+    { id: 7, label: "Littérature", group: "" },
+    { id: 8, label: "Le Livre des Symboles", group: "ressource" },
+    { id: 9, label: "Jardin", group: "digital" },
+    { id: 10, label: "Racine", group: "digital" },
+    { id: 11, label: "Fleur", group: "digital" },
+    { id: 12, label: "Pomme", group: "digital" },
+    { id: 13, label: "Blanche Neige", group: "project" },
+    { id: 14, label: "Champignon", group: "digital" },
+    { id: 15, label: "Raisin", group: "digital" },
+    { id: 16, label: "Arbre", group: "digital" },
+    { id: 17, label: "Chêne", group: "digital" },
+    { id: 18, label: "Olivier", group: "digital" },
+    { id: 19, label: "Palmier", group: "digital" },
+    { id: 20, label: "Pin", group: "digital" },
+    { id: 21, label: "Arbre kabbalistique", group: "digital"},
+    { id: 22, label: "Atelier Luma", group: "people" },
+    { id: 23, label: "Algae Lab", group: "project" },
+    { id: 24, label: "Algues", group: "digital" },
+    { id: 25, label: "Druides", group: "" },
+    { id: 26, label: "Celtes", group: "" },
+    { id: 27, label: "Médecine Végétale", group: "" },
+    { id: 28, label: "Panoramix (Astérix)", group: "people" },
+    { id: 29, label: "Nausicaä de la vallée du vent", group: "project" },
+    { id: 30, label: "Studio Ghibli", group: "people" },
+    { id: 31, label: "Lady Oscar", group: "project" },
+    { id: 32, label: "Timbres", group: "" },
+    { id: 33, label: "Mode", group: "" },
+    { id: 34, label: "Brittany Asch", group: "people" },
+    { id: 35, label: "Arbre Monde", group: "digital" },
+    { id: 36, label: "Jelte van Abbema", group: "people" },
+    { id: 37, label: "Bactéries", group: "digital" },
+    { id: 38, label: "Symbiosis", group: "project" },
+  ],
+  edges: [
+    { from: 37, to: 6, label: ""},
+    { from: 38, to: 36, label: ""},
+    { from: 36, to: 37, label: ""},
+    { from: 35, to: 16, label: ""},
+    { from: 33, to: 34, label: ""}, 
+    { from: 33, to: 11, label: ""}, 
+    { from: 32, to: 11, label: ""}, 
+    { from: 31, to: 11, label: ""}, 
+    { from: 17, to: 28, label: ""}, 
+    { from: 29, to: 7, label: ""}, 
+    { from: 29, to: 30, label: ""}, 
+    { from: 25, to: 28, label: ""}, 
+    { from: 25, to: 27, label: ""}, 
+    { from: 25, to: 26, label: ""}, 
+    { from: 1, to: 25, label: ""}, 
+    { from: 1, to: 24, label: ""}, 
+    { from: 23, to: 24, label: ""}, 
+    { from: 22, to: 23, label: ""}, 
+    { from: 1, to: 2, label: ""}, 
+    { from: 2, to: 3, label: ""}, 
+    { from: 4, to: 24, label: ""}, 
+    { from: 4, to: 5, label: ""}, 
+    { from: 6, to: 24, label: ""}, 
+    { from: 6, to: 1, label: ""}, 
+    { from: 7, to: 1, label: ""}, 
+    { from: 7, to: 8, label: ""}, 
+    { from: 9, to: 8, label: ""}, 
+    { from: 10, to: 8, label: ""}, 
+    { from: 11, to: 8, label: ""}, 
+    { from: 12, to: 8, label: ""}, 
+    { from: 13, to: 12, label: ""}, 
+    { from: 14, to: 8, label: ""}, 
+    { from: 15, to: 8, label: ""}, 
+    { from: 16, to: 8, label: ""}, 
+    { from: 17, to: 16, label: ""}, 
+    { from: 18, to: 16, label: ""}, 
+    { from: 19, to: 16, label: ""}, 
+    { from: 20, to: 16, label: ""}, 
+    { from: 21, to: 16, label: ""}, 
+    ]
+};
+
+export const options = {
+  physics: {
+    solver: "repulsion",
+    repulsion: {
+      avoidOverlap: 1,
+      springConstant: 0.225,
+      centralGravity: 0,
+      damping: 0.08
+    },
+  },
+  interaction:{
+    dragNodes:true,
+    dragView: false,
+    hideEdgesOnDrag: false,
+    hideNodesOnDrag: false,
+    hover: true,
+    hoverConnectedEdges: true,
+    keyboard: {
+      enabled: false,
+      speed: {x: 10, y: 10, zoom: 0.02},
+      bindToWindow: true
+    },
+    multiselect: false,
+    navigationButtons: true,
+    selectable: true,
+    selectConnectedEdges: true,
+    zoomView: false
+  },
+  layout: {
+    //randomSeed: 29,
+    hierarchical: {
+      enabled:false,
+      levelSeparation: 550,
+      nodeSpacing: 1000,
+      treeSpacing: 200,
+      blockShifting: true,
+      edgeMinimization: true,
+      parentCentralization: true,
+      direction: 'UD',        // UD, DU, LR, RL
+      sortMethod: 'hubsize'   // hubsize, directed
+    }
+  },
+  groups: {
+      digital: {
+          color: {background:'#3CD670'},
+          shape: 'box',
+      },
+      culinaire: {
+          color: {background:'red'},
+          shape: 'box',
+      },
+      people: {
+          color: {background:'black'},
+          shape: 'box',
+      },
+      project: {
+          color: {background:'#999999'},
+          shape: 'box',
+      },
+      ressource: {
+          color: {background:'rgb(10,20,200)'},
+          shape: 'box',
+      },
+  },
+  nodes: {
+      shape: 'box',
+      margin: 10,
+      widthConstraint: {
+        maximum: 200
+      },
+      size: 30,
+      font: {
+          size: 22,
+          color: '#ffffff'
+      },
+      color: {
+        background:'#707290',
+        hover: 'rgb(250,70,10)',
+        highlight: 'rgb(250,70,10)'
+      },
+      borderWidth: 0
+  },
+  edges: {
+        smooth: {
+          forceDirection: "none",
+          roundness: 0.4
+        },
+        color: {
+            color:'#000000',
+            highlight:'#3CD670',
+            inherit: false,
+            opacity:1.0
+        },      
+        width: 2
+  }
+};
+
+export const events = {
+  select: function(event) {
+    var { nodes, edges } = event;
+    console.log("Selected nodes:");
+    console.log(nodes);
+    console.log("Selected edges:");
+    console.log(edges);
+    if (nodes.length === 1) {
+        var node = graph.nodes[nodes[0]];
+        if (node.url) {
+          console.log(node, graph.nodes, nodes[0]);
+          window.open(node.url, '_blank');
+        }
+    }
+  }
+};
 
 <div style={{ 
   columnSpan: 'all',  
@@ -72,10 +271,108 @@ Plusieurs solutions existent pour coder en p5.js En ligne en utilisant l’édit
   right: "50%",
   marginLeft: "-50vw",
   marginRight: "-50vw",
-  height: "60vh",
+  height: "120vh",
   minHeight: "600px",
   marginTop: "20px",
   marginBottom: "20px",
+  }}>
+<ContainerDimensions>
+    {parent => (
+        <Graph 
+        graph={graph} 
+        options={options} 
+        events={events}
+        style={{ height: "100%", width: parent.width }} 
+    />)
+    }
+</ContainerDimensions>
+</div>
+
+
+## Décoration Florale et Vêtement
+
+[BRRCH](http://www.brrch.com/home) is the NY based floral project of Brittany Asch. founded in 2013, on the principle of delivering flowers as art to heighten the appreciation of the natural world around us.
+
+![](https://static1.squarespace.com/static/567a005240667a232e446507/567a0ccb1c12101fd28ef4d9/567a0da1c21b86984b6658fe/1450839492640/Kallmeyer+Presentation2.png?format=1500w)
+
+## Open Data & APIs 
+- [The Garden.org Plants Database](https://garden.org/apps/calendar/?q=Paris%2C+France) When to Plant Vegetables: The Garden Planting Calendar
+- [Food Nutrition Information](https://data.world/adamhelsinger/food-nutrition-information) Nutritional information for raw fruits, vegetables, and seafood.
+
+## Algaegraphie
+
+Les algae-graphies sont des photographies vivantes.
+Elles sont crées par des micro-organismes photosensibles capables de capter la lumière et de "développer" des images selon un principe similaire à la photographie classique.
+
+![](https://cdn-images-1.medium.com/max/1600/1*0vHPD-6NqDHjUNFZljl7Eg.jpeg)
+
+Bouleversant la définition «d’image fixe» habituellement donnée à la photographie, les algae-graphies sont mobiles, autonomes, organique… Une forme ajustée aux mutations d'un médium devenu essentiellement numérique et vivant désormais en symbiose avec l’homme.
+Par [Lia Giraud](http://www.liagiraud.com/videos/cultures/)
+
+`video: https://vimeo.com/40735131`
+`video: https://vimeo.com/33484152`
+
+### Et pourquoi les algues ?
+
+Je cherchais un capteur capable de matérialiser ces phénomènes lumineux, un capteur vivant. Au début, j’étais partie sur des cellules végétales, des chlorelles, qui sont fixes. Mon idée était de faire pousser des images et qu’elles se développent véritablement. J’ai commencé à expérimenter ces algues en inoculant des boites de Pétri et en essayant de faire apparaître des images avec un négatif posé par contact. Ça ne marchait pas très bien. J’obtenais de vagues formes floues, pas vraiment des images. En plus, ces algues sont particulièrement sujettes aux contaminations. C’était donc très compliqué de travailler avec celles-ci. [Extrait de l'entretien réalisé par Strabic.fr](http://strabic.fr/Lia-Giraud-Algae-graphies)
+
+## Épigénétique
+
+L’épigénétique confère à notre génome une certaine plasticité qui permet aux êtres vivants d’apprendre continuellement de leur environnement et de s’y adapter. Peut-on ainsi imaginer optimiser notre code génétique et développer de nouvelles facultés jusqu’alors dormantes? De récentes recherches ont déjà montré les capacités de la sensible Mimosa Pudica  à s’affranchir durablement de sa peur. En développant ses « aptitudes cognitives », la plante télégraphe nous accordera t-elle la prochaine danse?
+
+![](http://liagiraud.com/files/gimgs/38_img2969bis.jpg)
+
+## Flower, Jeu vidéo (thatgamecompany, 2009)
+
+Le jeu met en scène des pétales de fleurs portées par le vent. Le joueur contrôle le vent grâce à la fonction de reconnaissance de mouvement de la manette.
+
+Voilà donc plus d’une semaine qu’autour du globe quelques centaines, ou milliers, de joueurs éberlués se prennent pour un pétale de fleur et batifolent à travers champs numériques et luzernes virtuelles pour butiner tout ce qui ressemble de près ou de loin à un pistil. Extrait, Par [Libération](http://archive.wikiwix.com/cache/?url=http%3A%2F%2Fwww.ecrans.fr%2FFlower-power%2C6498.html)
+
+`video: https://www.youtube.com/watch?v=ubmUJcwor3k`
+
+## Nausicaä, Studio Ghibli (1984)
+
+## Fungus
+
+![Fungus](http://dtm-arts.com/wp-content/uploads/2017/11/Nausicaa_Screenshot_0141.jpg)
+
+Il s'agit d'un champignon dont les cellules sont indépendantes les unes des autres, mais vivent en groupe où chaque cellule est solidaire des autres. Chacun de ces groupes forme une mousse qui dégage des spores, se déplace sans dispersion et semble pourvu d'une certaine intelligence. Si un groupe dégénère ou si la nourriture vient à manquer, le groupe s'unit avec plusieurs autres et, ensemble, ces groupes forment une boule qui finit par exploser et libérer ainsi une très grande quantité de spores. C'est Nausicaä qui en a étudié un petit groupe pendant son enfance et qui utilise ces informations contre le Fongus géant.
+
+### Mushigoyashi
+
+![Mushigoyashi](http://www.buta-connection.net/mangas/images/nausicaa_monde_flore03b.jpg)
+
+Le nom de cette plante veut dire "engrais pour insectes". S'il pousse sur un sol "ordinaire" (pollué), il devient un arbre immense qui peut atteindre 50 mètres de haut. Dans ce cas, les racines sont beaucoup plus développées que la partie supérieure de l'arbre. Il constitue alors la nourriture favorite des Ômus. Sinon, il ne devient qu'un petit arbuste stérile.
+
+## Timbres
+
+![Timbres Marocains](http://idata.over-blog.com/0/04/43/94//Timbres-sur-la-nature/fleur-glaeuil-timbre-maroc.jpg)
+![Timbres](http://informations-documents.com/environnement.ecole/images%202bg/timbres%20fleurs/timbre-guinee-equatoriale-fleur-nerium-oleander.JPG)
+![](https://i.pinimg.com/474x/52/90/38/529038743b0be4cea0ff7aa233f22f62--polish-folk-art-stamp-collecting.jpg)
+
+## Vases
+
+[Vase Brindille](http://azambourg.com/portfolio/vase-brindille/) Dernière collaboration avec le Centre International d’Art Verrier de Meisenthal, le vase Brindille est issu d’une réflexion sur le décor à chaud. Se jouant de l’exercice classique du décor verrier végétal, la brindille est insérée entre le verre et le moule. En brûlant, l’élément végétal s’imprime sur le verre.
+
+![Vase Brindille](http://azambourg.com/wp-content/uploads/2018/10/VaseBrindille-CIAV-Azambourg-web-1.jpg) 
+
+# Manifeste
+
+## OGM: Ingérence humaine dans le végétal
+
+Un OGM (Organisme Génétiquement Modifié) est un organisme vivant (animal, végétal, micro-organisme…) dont on a modifié de façon non naturelle, c’est-à-dire par intervention de la main de l’homme, ses caractéristiques génétiques initiales, soit par addition d’un ou plusieurs gène(s) (provenant généralement d’une autres espèce), soit par suppression, remplacement ou modification d’au moins l’un de ses gènes – ou d’un morceau de son matériel génétique (ADN). Il s’agit là de la définition générale, académique. Elle vaut pour tous les OGM, quels qu’ils soient, et quel que soit leur secteur d’utilisation ou d’application.
+
+
+# Recherches
+
+## Développement du végétal
+
+La reproduction des végétaux est le moyen pour les plantes de se développer et pour les arbres de faire des fruits. Dans un sens plus large, c'est l'ensemble des moyens qu'ont les plantes pour produire de nouvelles plantes.
+
+
+<div style={{ 
+  height: "600px",
+  width: "100%"
   }}>
 <ContainerDimensions>
     {parent => (
@@ -83,35 +380,12 @@ Plusieurs solutions existent pour coder en p5.js En ligne en utilisant l’édit
             sketch={ sketch2 }
             width={parent.width}
             height={parent.height}
-            sketchProps={{ mode: 0 }}
+            sketchProps={{ mode: 1 }}
         />
     )
     }
 </ContainerDimensions>
 </div>
 
-<div style={{ 
-  columnSpan: 'all',  
-  width: "100vw",
-  position: "relative",
-  left: "50%",
-  right: "50%",
-  marginLeft: "-50vw",
-  marginRight: "-50vw",
-  height: "60vh",
-  minHeight: "600px",
-  marginTop: "20px",
-  marginBottom: "20px",
-  }}>
-<ContainerDimensions>
-    {parent => (
-        <Scene3D 
-            height={parent.height}
-            width={parent.width}
-            main_color="red" 
-            bg_color="black"
-        />
-    )
-    }
-</ContainerDimensions>
-</div>
+
+![](https://natureofcode.com/book/imgs/chapter06/ch06_17.png)

@@ -104,12 +104,13 @@ const sketch = (width, height, props) => {
       }
 
       p5.draw = () => {
-        for (let i = 0; i < 500; i++) {
+        let maxiters = 200;
+        for (let i = 0; i < maxiters; i++) {
           p5.colorMode(p5.HSB)
           t += 0.01;
           p5.strokeWeight(p5.noise(t) * 100);
           var posY = p5.random() * height;
-          if (i == 250) {
+          if (i == p5.int(maxiters / 2)) {
             branchRecursive(width / 2, height, -90, 12);
           }
           if (p5.random() > 0.98) {
