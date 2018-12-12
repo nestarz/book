@@ -1,5 +1,5 @@
 import ContainerDimensions from 'react-container-dimensions'
-import Scene3D from 'components/Scenes3D/RotateOne';
+import Scene3D from 'components/Scenes3D/vegetal/Motif';
 import { SketchComponent } from 'components/P5js';
 import Graph from "react-graph-vis";
 
@@ -10,6 +10,7 @@ import sketch4 from 'components/P5js/projects/decorationFloral/sketch4';
 import sketch5 from 'components/P5js/projects/decorationFloral/sketch5';
 import sketch6 from 'components/P5js/projects/decorationFloral/sketch6';
 import sketch7 from 'components/P5js/projects/decorationFloral/sketch7';
+
 
 export const frontmatter = {
     title: 'Végétal, Projet Décors Utiles',
@@ -371,21 +372,30 @@ La reproduction des végétaux est le moyen pour les plantes de se développer e
 
 
 <div style={{ 
-  height: "600px",
-  width: "100%"
+  columnSpan: 'all',  
+  width: "100vw",
+  position: "relative",
+  left: "50%",
+  right: "50%",
+  marginLeft: "-50vw",
+  marginRight: "-50vw",
+  height: "90vh",
+  minHeight: "600px",
+  marginTop: "20px",
+  marginBottom: "20px",
   }}>
 <ContainerDimensions>
-    {parent => (
-        <SketchComponent
-            sketch={ sketch2 }
-            width={parent.width}
-            height={parent.height}
-            sketchProps={{ mode: 1 }}
-        />
-    )
+    {
+        function(parent) {
+            return (
+                <Scene3D 
+                height={parent.height}
+                width={parent.width}
+                main_color={"red"} 
+                bg_color={"white"}
+                />
+            )
+        }
     }
 </ContainerDimensions>
 </div>
-
-
-![](https://natureofcode.com/book/imgs/chapter06/ch06_17.png)

@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 
 import p5 from 'p5';
+import 'p5/lib/addons/p5.dom';
+
 import { RemountOnResize } from './remount';
 
 // A helper component, wrapping retina logic for canvas and

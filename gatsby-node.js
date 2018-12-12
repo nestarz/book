@@ -62,6 +62,21 @@ exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, actions }) 
       })
   ]
   });
+  actions.setWebpackConfig({ //csv-loader
+    module: {
+      rules: [
+        {
+          test: /\.csv$/,
+          loader: 'csv-loader',
+          options: {
+            dynamicTyping: true,
+            header: true,
+            skipEmptyLines: true
+          }
+        }
+      ]
+    }
+  });
   if (stage === "build-html") {
     actions.setWebpackConfig({
       module: {

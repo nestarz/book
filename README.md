@@ -4,6 +4,8 @@ A record of works from summer 2018 when I joined Renoir and started to play with
 
 - Gatsby v2.0.0
 - MDX Support
+- CSV Loader Support
+    - Allow "import csv from "file.csv"
 - Configurable
     - Use the website.js to easily change the most important information
     - Easily change the font
