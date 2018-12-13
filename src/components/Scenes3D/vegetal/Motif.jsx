@@ -79,9 +79,10 @@ class ThreeScene extends Component {
         this.renderer.setSize(width, height);
 
         this.camControls = new OrbitControls(this.camera, this.mount);
+        //this.camControls.enableZoom = false;
 
         var directionalLight = new THREE.DirectionalLight();
-        directionalLight.position.set(-0, 0, 50);
+        directionalLight.position.set(-50, -50, -50);
         this.scene.add(directionalLight);
 
         var directionalLight2 = new THREE.DirectionalLight();
@@ -132,6 +133,7 @@ class ThreeScene extends Component {
             }
         }
         this.scene.add(this.grid);
+        //this.grid.rotation.y = Math.PI / 2;
 
         //var count = this.mymesh.geometry.vertices.length;
         // var mygeo2 = new THREE.ParametricGeometry(kleinBottle2, 100, 100);
