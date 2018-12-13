@@ -4,33 +4,6 @@ import * as THREE from 'three';
 import * as OrbitControls from 'three-orbitcontrols';
 import csv from "./NutritionalFacts_Fruit_Vegetables_Seafood.csv";
 
-function kleinBottle2(u, v, target) {
-    var a = 1;
-    var n = 2;
-    var m = 1.5;
-    var u = u * Math.PI * 4;
-    var v = v * Math.PI * 2;
-    var x = (a + Math.cos(n * u / 2.0) * Math.sin(v) - Math.sin(n * u / 2.0) * Math.sin(2 * v)) * Math.cos(m * u / 2.0);
-    var y = (a + Math.cos(n * u / 2.0) * Math.sin(v) - Math.sin(n * u / 2.0) * Math.sin(2 * v)) * Math.sin(m * u / 2.0);
-    var z = Math.sin(n * u / 2.0) * Math.sin(v) + Math.cos(n * u / 2.0) * Math.sin(2 * v);
-    // 0 <= u <= 4 pi; 0 <= u <= 2 pi
-    target.set(x, y, z);
-}
-
-function kleinBottle(u, v, target) {
-    var a = 4.5;
-    var n = 1;
-    var m = 4;
-    var u = u * Math.PI * 4;
-    var v = v * Math.PI * 2;
-    var x = (a + Math.cos(n * u / 2.0) * Math.sin(v) - Math.sin(n * u / 2.0) * Math.sin(2 * v)) * Math.cos(m * u / 2.0);
-    var y = (a + Math.cos(n * u / 2.0) * Math.sin(v) - Math.sin(n * u / 2.0) * Math.sin(2 * v)) * Math.sin(m * u / 2.0);
-    var z = Math.sin(n * u / 2.0) * Math.sin(v) + Math.cos(n * u / 2.0) * Math.sin(2 * v);
-    // 0 <= u <= 4 pi; 0 <= u <= 2 pi
-    target.set(x, y, z);
-}
-
-
 class ThreeScene extends Component {
     constructor(props) {
         super(props);
@@ -117,7 +90,7 @@ class ThreeScene extends Component {
         for (var h=0; h<hCount; h+=1) {
             for (var v=0; v<vCount; v+=1) {
                 var material = new THREE.MeshLambertMaterial();    
-                var geometry = new THREE.DodecahedronGeometry(csv[h + v*h]["Calcium"], 3);
+                var geometry = new THREE.ConeGeometry(.25, 1* csv[h + v*h]["Calcium"], 6);
                 var theta = v * 139.512 * Math.PI / 180;
                 var radius = 0.25 * Math.sqrt(h);
                 var x = radius * Math.cos(theta);
