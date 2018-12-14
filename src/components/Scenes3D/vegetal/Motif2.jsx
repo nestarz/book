@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import * as THREE from 'three';
 import * as OrbitControls from 'three-orbitcontrols';
-import csv from "./NutritionalFacts_Fruit_Vegetables_Seafood.csv";
+import csv from "csv/NutritionalFacts_Fruit_Vegetables_Seafood.csv";
 
 class ThreeScene extends Component {
     constructor(props) {
