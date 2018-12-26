@@ -57,13 +57,18 @@ const Face4 = styled(Face)`
 mix-blend-mode: color-dodge; 
 background: url(${face1}) no-repeat center center fixed; 
 `;
+const Face5 = styled(Face)`
+mix-blend-mode: color-dodge; 
+background: url(${face1}) no-repeat center center fixed; 
+animation: ${expandHeight} 3s;
+`;
 const Text = styled.div`
 font-size: 40px; 
 font-family: resistanceregular; 
-background-color: yellow; 
-color: black; transform: 
-scale(1, 5);
+color: white; transform: 
+scale(1, 4);
 position: absolute;
+padding: 0 120px;
 top: 50%;
 left: 50%;
 mix-blend-mode: exclusion;
@@ -75,6 +80,7 @@ const Index = () => {
       <Face2/>
       <Face3/>
       <Face4/>
+      <Face5/>
       <Text>Fausse3D</Text>
     </Experiment>
   )
