@@ -44,6 +44,7 @@ align-content: space-between;
     font-size: 200%;
     font-weight: normal;
     margin: 0;
+    margin-top: 20px;
   }
   h3 {
     font-size: 200%;
@@ -127,6 +128,16 @@ const Index = ({
     allMdx: { edges: projectEdges },
   },
 }) => {
+  var selectedPages = [
+    {
+      name: "floral",
+      title: "Floral Experiment"
+    },
+    {
+      name: "fausse3D",
+      title: "Fausse 3D"
+    },
+  ]
   return (
     <div style={{overflow: "hidden"}}>
       <LayoutWrapper navType={"front"} layoutType={"main"} theme={theme.light} style={{padding: "30px"}}>
@@ -157,6 +168,18 @@ const Index = ({
             <p>{website.bio}</p>
           </InfoSection>
           <div className="container">
+            <h2>Experiments</h2>
+            {selectedPages.map((page, index) => {
+              return (
+                <h3>
+                  <Link
+                    to={"/"+page.name}
+                  >
+                    {page.title}
+                  </Link>
+                </h3>
+              );
+            })}            
             <h2>Projects</h2>
             {projectEdges.map((project, index) => {
               return (
