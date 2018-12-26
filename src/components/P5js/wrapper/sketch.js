@@ -1,8 +1,5 @@
 import React, { PureComponent } from 'react';
 
-import p5 from 'p5';
-import 'p5/lib/addons/p5.dom';
-
 import { RemountOnResize } from './remount';
 
 // A helper component, wrapping retina logic for canvas and
@@ -127,6 +124,8 @@ class SketchComponentRaw extends PureComponent {
 export class SketchComponent extends PureComponent {
 	render() {
 		if (typeof window !== 'undefined') {
+			//import p5 from 'p5';
+			//import 'p5/lib/addons/p5.dom';
 			const { props } = this;
 			//const RemountOnResize = require( './remount' );
 			return (
