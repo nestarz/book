@@ -81,9 +81,8 @@ color: ${props => props.theme.brand.primary};
       text-decoration: none;
     }
   }
-  @media (max-width: ${props => props.theme.breakpoints.xs}) {
+  @media (max-width: ${props => props.theme.breakpoints.m}) {
     flex: 1 0 100%;
-    margin-bottom: 0.75rem;
     line-height: initial;
   }
 `;
@@ -97,12 +96,12 @@ margin-top:-15px;
   a:not(:first-child) {
     margin-left: 1rem;
   }
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
+  @media (max-width: ${props => props.theme.breakpoints.m}) {
     a {
     font-size: 20px;
     line-height: 20px;
   }
-    padding: 1rem 0rem;
+    padding: 2rem 0rem;
   }
 `;
 

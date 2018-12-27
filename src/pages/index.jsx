@@ -40,6 +40,10 @@ color: ${props => props.theme.colors.body_color};
 justify-content: space-between;
 flex-direction: row;
 align-content: space-between;
+flex-direction: row;
+@media (max-width: ${props => props.theme.breakpoints.m}) {
+  flex-direction: row-reverse;
+}
   h2 {
     font-size: 200%;
     font-weight: normal;
