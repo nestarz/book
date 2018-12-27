@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 
 import { RemountOnResize } from './remount';
+import p5 from 'p5';
 
 // A helper component, wrapping retina logic for canvas and
 // auto-resizing the sketch to fill its parent container.
