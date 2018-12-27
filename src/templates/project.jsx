@@ -16,6 +16,8 @@ import Navigation from '../components/Navigation/NavProjects';
 import { Link } from 'gatsby';
 import { RotateOne as Scene3D } from '../components/Scenes3D';
 import ContainerDimensions from 'react-container-dimensions'
+import { SketchComponent } from 'components/P5js';
+import sketch1 from 'components/P5js/projects/mainScreen/sketch1bis';
 
 //const overlayColor = sample(overlay);
 
@@ -75,8 +77,12 @@ justify-content: space-between;
 background-color:${props => props.theme.brand.primary};
 `;
 const Holder3D = styled.section`
-min-width: 200px;
-max-height: 200px;
+position: absolute;
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+z-index: -1;
 `;
 const TOC = styled.section`
 flex-grow: 1;
@@ -297,12 +303,19 @@ const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
           <Holder3D>
             <ContainerDimensions>
               {parent => (
-                <Scene3D 
-                  height={parent.height}
-                  width={parent.width}
-                  bg_color={theme.light.brand.primary} 
-                  main_color={theme.light.colors.black}
-                />)
+                // <Scene3D 
+                //   height={parent.height}
+                //   width={parent.width}
+                //   bg_color={theme.light.brand.primary} 
+                //   main_color={theme.light.colors.black}
+                // />
+                <SketchComponent
+                sketch={ sketch1 }
+                width={parent.width}
+                height={parent.height}
+                sketchProps={{ value: 10 }}
+                />
+                )
               }
             </ContainerDimensions>
           </Holder3D>
