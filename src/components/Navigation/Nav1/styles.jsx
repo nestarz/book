@@ -84,6 +84,7 @@ color: ${props => props.theme.brand.primary};
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
     flex: 1 0 100%;
     margin-bottom: 0.75rem;
+    line-height: initial;
   }
 `;
 
