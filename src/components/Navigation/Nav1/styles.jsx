@@ -88,6 +88,9 @@ color: ${props => props.theme.brand.primary};
 `;
 
 export const SocialMedia = styled.div`
+@media print {
+  display: none;
+}
 margin-top:-15px;
   a {
     font-size: 1.5rem;

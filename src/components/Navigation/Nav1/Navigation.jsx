@@ -68,8 +68,12 @@ const Navigation = (theme) => {
           LinkedIn
         </a>
         <a href="https://are.na/elias-rhouzlane/" target="_blank" rel="noopener noreferrer">
-          Are.na
+          Email
         </a>
+        <Link
+          to="/cv"
+        >CV
+        </Link>
       </SocialMedia>
     </RightGroup>
   </Wrapper>

@@ -140,7 +140,7 @@ const Index = ({
     {
       name: "fausse3D",
       title: "Fausse 3D"
-    },
+    }
   ]
   return (
     <div style={{overflow: "hidden"}}>

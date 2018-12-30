@@ -4,21 +4,21 @@ const sketch = (width, height, props) => {
         let t = 0;
         var w = width, h = height;
 
-        var r = (w < h) ? w / 20 : h / 20; // radius is a third of the smaller screen dimension
-        var x_off = 0, y_off = 0, z_off = 1000;
-        var vertices_amount = 15
+        var r = (w < h) ? w / 2 : h / 10; // radius is a third of the smaller screen dimension
+        var x_off = 1000, y_off = 1000, z_off = 1000;
+        var vertices_amount = 100
 
         var px_offset_x = w/2;    // amplitude
         var px_offset_y = h/4;    // amplitude
         var NOISE_SCALE = 60;  // the higher the softer
 
-        var Z_SPEED = .0001; // noise change per frame
+        var Z_SPEED = .001; // noise change per frame
 
-        var X_SPEED = .001;
-        var Y_SPEED = .001;
+        var X_SPEED = .1;
+        var Y_SPEED = .1;
 
 
-        var MOUSE_FORCE = 0.9;
+        var MOUSE_FORCE = 3;
         // positive 'push', negative 'pull'
 
         var prevTime;
@@ -26,7 +26,7 @@ const sketch = (width, height, props) => {
             color_speed = -.25
 
         p5.setup = () => {
-            p5.strokeWeight(20);
+            p5.strokeWeight(0);
             p5.stroke("black");
             p5.smooth();
             //p5.noStroke();
@@ -50,8 +50,8 @@ const sketch = (width, height, props) => {
             p5.translate(w/2, h/2);
             
             p5.background(255);   // bg color
-            p5.stroke("#3CD670");
-            p5.noFill();    // color
+            p5.noStroke();
+            p5.fill("#3CD670");    // color
             p5.beginShape();
             for (var a=0; a<p5.TWO_PI;a+=p5.TWO_PI/vertices_amount) {
               var x = r*p5.sin(a);

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>three.js webgl - gpgpu - flocking</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+<style>
+	body {
+		background-color: #ffffff;
+		margin: 0px;
+		overflow: hidden;
+	}
+</style>
+<body>
+	<script src="https://fastcdn.org/three.js/73/three.min.js"></script>
+	<script src="./OrbitControls.js"></script>
+	<script>
+            var scene = new THREE.Scene();
+            var camera = new THREE.PerspectiveCamera( 1000, window.innerWidth / window.innerHeight, 0.1, 1000 );
+            //var camera = new THREE.OrthographicCamera(-25,25,-25,25, 0.1, 1000 );
+            camera.position.z = 10;
+            
+
+            var renderer = new THREE.WebGLRenderer( { antialias: true } );
+            renderer.setPixelRatio( window.devicePixelRatio );
+            renderer.setSize( window.innerWidth, window.innerHeight );
+            renderer.setClearColor( 0xF9B3D1, 1 );
+            document.body.appendChild( renderer.domElement );
+
+            var orbit = new THREE.OrbitControls( camera, renderer.domElement );
+            orbit.enableZoom = true;
+
+            var ambientLight  = new THREE.AmbientLight( '#FFFFFF' ),
+                hemiLight     = new THREE.HemisphereLight('#FFFFFF', '#FFFFFF', 0 ),
+                light         = new THREE.PointLight( '#FFFFFF', 1, 100 );
+
+            hemiLight.position.set( 0, 0, 0 );
+            light.position.set( 0, 0, 10 );
+
+            scene.add( ambientLight ); 
+            scene.add( hemiLight );
+            scene.add( light );
+
+            var group = new THREE.Group();
+            
+            var h = 6;
+            var initialStart = new THREE.Vector3(0,0,0);
+            // console.log(s,e);
+            branch(h,0,4,0.4);
+
+            var prevFog = true;
+
+            scene.add( group );
+            var render = function () {
+
+                requestAnimationFrame( render );
+                orbit.update();
+                // group.rotation.x += 0.002;
+                group.rotation.y += 0.001;
+                // group.rotation.z += 0.002;
+
+
+                renderer.render( scene, camera );
+
+            };
+
+            window.addEventListener( 'resize', function () {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                
+
+                renderer.setSize( window.innerWidth, window.innerHeight );
+
+            }, false );
+
+            render();
+
+
+
+            function branch(h, theta, b, o) {
+                this.start = new THREE.Vector3(0,0,0);
+                var s = this.start.clone()
+                this.end = s.add(new THREE.Vector3(0,h,0));
+
+                // Draw the actual branch
+                this.geometry = new THREE.Geometry();
+                geometry.vertices.push(this.start);
+                geometry.vertices.push(this.end);
+                this.material = new THREE.LineBasicMaterial( { color : 0xffffff, opacity: o, transparent: false } );
+                this.lineObj = new THREE.Line( geometry, material );
+                lineObj.position.y = h;
+                // lineObj.position.x = h;
+                lineObj.rotation.z = Math.PI+theta;
+                lineObj.rotation.x = theta;
+                lineObj.rotation.y = Math.PI+theta;
+                group.add(this.lineObj);
+                // console.log(this.lineObj.geometry.vertices);
+                // Each branch will be 2/3rds the size of the previous one
+                h *= 0.67;
+                b += 0.2;
+                o-=0.1;
+                // All recursive functions must have an exit condition!!!!
+                // Here, ours is when the length of the branch is 2 pixels or less
+                if (h > 3) {
+                    // A random number of branches
+                    var n = Math.floor((Math.random() * ((10 - 5) + 5)) + 10);
+                    for (var i = 0; i < n; i++) {
+                        // Picking a random angle
+                        var max = Math.PI/b;
+                        var min = -Math.PI/b;
+                        var theta = (Math.random() * ((max - min) + 1)) + min
+                        branch(h, theta, b, o);         // Ok, now call myself to branch again
+                    }   
+                }
+            }
+	</script>
+</body>
+
+</html>
