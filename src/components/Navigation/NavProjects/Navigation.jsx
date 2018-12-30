@@ -34,7 +34,7 @@ class Navigation extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.nav.current.firstChild);
+    //console.log(this.nav.current.firstChild);
     window.addEventListener('scroll', this.handleScroll);
     this.baseNavTop = 0;
     this.initialNav = clone(this.nav.current.firstChild.style);
@@ -72,7 +72,7 @@ class Navigation extends React.Component {
   };
 
   render() {
-    console.log(this.props);
+    //console.log(this.props);
     var tableOfContents = this.props.tableOfContents;
     return (
       <div ref={this.nav}>

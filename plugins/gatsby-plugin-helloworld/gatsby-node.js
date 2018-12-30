@@ -7,7 +7,7 @@ exports.onCreateNode = ({
     if (node.internal.type !== `File`) {
         return
     } else {
-        console.log("Traitement du fichier:", node.internal.type);
+        //console.log("Traitement du fichier:", node.internal.type);
     }
     createNodeField({
       node,

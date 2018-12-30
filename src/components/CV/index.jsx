@@ -37,7 +37,7 @@ class Index extends React.Component {
     }
 
     render() {
-        console.log(skills);
+        //console.log(skills);
         return (
             <Wrapper>
                 <Helmet>

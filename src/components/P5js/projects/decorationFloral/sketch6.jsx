@@ -82,12 +82,12 @@ const sketch = (width, height, props) => {
             p5.endShape();
         };
         p5.receiveProps = (nextProps) => {
-            //console.log(nextProps.value)
+            ////console.log(nextProps.value)
             //value = nextProps.value;
         };
 
         p5.unmount = () => {
-            console.log('The sketch was unmounted. Width was ' + width + ', height was ' + height);
+            //console.log('The sketch was unmounted. Width was ' + width + ', height was ' + height);
         }
     }
 };

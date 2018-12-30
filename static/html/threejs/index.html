@@ -47,7 +47,7 @@
             
             var h = 6;
             var initialStart = new THREE.Vector3(0,0,0);
-            // console.log(s,e);
+            // //console.log(s,e);
             branch(h,0,4,0.4);
 
             var prevFog = true;
@@ -96,7 +96,7 @@
                 lineObj.rotation.x = theta;
                 lineObj.rotation.y = Math.PI+theta;
                 group.add(this.lineObj);
-                // console.log(this.lineObj.geometry.vertices);
+                // //console.log(this.lineObj.geometry.vertices);
                 // Each branch will be 2/3rds the size of the previous one
                 h *= 0.67;
                 b += 0.2;

@@ -174,7 +174,7 @@ export default class extends React.Component {
                         fill="none"
                         key={i}
                         onClick={data => event => {
-                          console.log(data);
+                          //console.log(data);
                         }}
                       />
                     );
@@ -209,7 +209,7 @@ export default class extends React.Component {
                             fill="url('#lg')"
                             onClick={() => {
                               node.data.isExpanded = !node.data.isExpanded;
-                              console.log(node);
+                              //console.log(node);
                               this.forceUpdate();
                             }}
                           />
@@ -228,7 +228,7 @@ export default class extends React.Component {
                             rx={!node.data.children ? 10 : 0}
                             onClick={() => {
                               node.data.isExpanded = !node.data.isExpanded;
-                              console.log(node);
+                              //console.log(node);
                               this.forceUpdate();
                             }}
                           />

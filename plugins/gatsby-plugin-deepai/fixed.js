@@ -32,7 +32,7 @@ const reportError = (message, err, reporter) => {
   
 let totalJobs = 0
 const processFile = (file, jobs, cb, reporter) => {
-  // console.log("totalJobs", totalJobs)
+  // //console.log("totalJobs", totalJobs)
   bar.total = totalJobs
 
   let imagesFinished = 0
@@ -75,12 +75,12 @@ const processFile = (file, jobs, cb, reporter) => {
     .catch(onFinish)
     .then(body => {
         response = JSON.parse(body);
-        console.log(response);
+        //console.log(response);
         var download = function(uri, filename, callback){
             request.head(uri, function(err, res, body){
-              console.log(file, uri, err)
-              console.log('content-type:', res.headers['content-type']);
-              console.log('content-length:', res.headers['content-length']);
+              //console.log(file, uri, err)
+              //console.log('content-type:', res.headers['content-type']);
+              //console.log('content-length:', res.headers['content-length']);
               request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
             }).catch(callback);
           };

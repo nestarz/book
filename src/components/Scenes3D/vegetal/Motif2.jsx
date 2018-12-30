@@ -127,7 +127,7 @@ class ThreeScene extends Component {
 
         // calculate mouse position in normalized device coordinates
         // (-1 to +1) for both components
-        //console.log(this.mouse);
+        ////console.log(this.mouse);
         this.mouse.x = ( (event.screenX - this.mount.getBoundingClientRect().x) / this.props.width ) * 2 - 1;
         this.mouse.y = - ( (event.screenY - this.mount.getBoundingClientRect().y - 80) / this.props.height ) * 2 + 1;
     }
@@ -144,7 +144,7 @@ class ThreeScene extends Component {
             if ( this.INTERSECTED != intersects[ 0 ].object ) {
                 if ( this.INTERSECTED ) this.INTERSECTED.material.emissive.setHex( this.INTERSECTED.currentHex );
                 this.INTERSECTED = intersects[ 0 ].object;
-                console.log(this.INTERSECTED);
+                //console.log(this.INTERSECTED);
                 this.INTERSECTED.currentHex = this.INTERSECTED.material.emissive.getHex();
                 this.INTERSECTED.material.emissive.setHex( 0xff0000 );
             }

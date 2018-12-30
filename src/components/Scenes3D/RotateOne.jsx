@@ -25,7 +25,7 @@ var STLLoader = require('three-stl-loader')(THREE)
 // const outputData = jscad.generateOutput('stlb', input)
  
 // // hurray ,we can now write an stl file from our raw CSG objects
-// console.log(outputData)
+// //console.log(outputData)
 
 // Standard Normal variate using Box-Muller transform.
 function randn_bm() {
@@ -56,7 +56,7 @@ class ThreeScene extends Component{
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);  
     document.addEventListener('mousemove', this.handleMouseMove);
-    console.log(this.props);
+    //console.log(this.props);
     const width = this.props.width 
     const height = this.props.height
     //ADD CLOCK
@@ -80,7 +80,7 @@ class ThreeScene extends Component{
     //ADD CUBE
     //const geometry = new THREE.BoxGeometry(1,1,1)
     const geometry = new THREE.CylinderGeometry( 5, 5, 10, 10 );
-    // //console.log(this.props.theme.theme.colors.bg_color);
+    // ////console.log(this.props.theme.theme.colors.bg_color);
     //var material = new THREE.MeshNormalMaterial()
     const material = new THREE.MeshBasicMaterial({ color: main_color })
     this.cube = new THREE.Mesh(geometry, material)

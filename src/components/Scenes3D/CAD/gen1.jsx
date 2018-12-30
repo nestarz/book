@@ -24,7 +24,7 @@ class CADExample extends Component{
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);  
     document.addEventListener('mousemove', this.handleMouseMove);
-    console.log(this.props);
+    //console.log(this.props);
     const width = this.props.width 
     const height = this.props.height
     this.start()
@@ -38,7 +38,7 @@ class CADExample extends Component{
       fn: 20
     })
     //const outputData = jscad.generateOutput('stlb', cube1)
-    console.log(cube1);
+    //console.log(cube1);
 
   }
 componentWillUnmount(){

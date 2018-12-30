@@ -137,7 +137,7 @@ function renderAGeneration (system, previousGeneration) {
 
         const origin = new Point(width / 2, height);
         let systemState = system.axiom;
-        //console.log(systemState);
+        ////console.log(systemState);
         p5.preload = () => {
         }
 
@@ -154,17 +154,17 @@ function renderAGeneration (system, previousGeneration) {
             systemState = renderAGeneration(system, systemState, drawingState);
             const fragmentIterator = fragmentGenerator(system, systemState);
             drawSystem(system, fragmentIterator, drawingState);
-            console.log(i);
+            //console.log(i);
             i++;
         };
 
         p5.receiveProps = (nextProps) => {
-            //console.log(nextProps.value)
+            ////console.log(nextProps.value)
             //value = nextProps.value;
         };
 
         p5.unmount = () => {
-            console.log('The sketch was unmounted. Width was ' + width + ', height was ' + height);
+            //console.log('The sketch was unmounted. Width was ' + width + ', height was ' + height);
         }
     }
 };

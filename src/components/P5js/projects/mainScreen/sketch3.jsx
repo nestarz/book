@@ -18,7 +18,7 @@ const sketch = (width, height, props) => {
         var Y_SPEED = .001;
 
 
-        var MOUSE_FORCE = 0.9;
+        var MOUSE_FORCE = 0.05;
         // positive 'push', negative 'pull'
 
         var prevTime;
@@ -85,12 +85,12 @@ const sketch = (width, height, props) => {
         };
 
         p5.receiveProps = (nextProps) => {
-            //console.log(nextProps.value)
+            ////console.log(nextProps.value)
             //value = nextProps.value;
         };
 
         p5.unmount = () => {
-            console.log('The sketch was unmounted. Width was ' + width + ', height was ' + height);
+            //console.log('The sketch was unmounted. Width was ' + width + ', height was ' + height);
         }
     }
 };

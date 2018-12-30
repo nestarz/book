@@ -243,7 +243,7 @@ min-width: 20vw;
 const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
   const project = postNode.frontmatter;
   const tableOfContents = postNode.tableOfContents;
-  console.log(postNode);
+  //console.log(postNode);
   return (
     <LayoutWrapper theme={theme.light}>
       <Helmet title={`${project.title} | ${config.siteTitle}`} />
