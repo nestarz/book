@@ -36,6 +36,10 @@ class Index extends React.Component {
         }));
     }
 
+    print = () => {
+        if(typeof window != "undefined") window.print();
+    }
+
     render() {
         //console.log(skills);
         return (
@@ -66,7 +70,7 @@ class Index extends React.Component {
                 </Helmet>
                 <CVPrint>
                     <Link to="/">{this.state.isToggleOn ? 'Retour' : 'Back'}</Link>
-                    <button onClick={window.print}>{this.state.isToggleOn ? 'Imprimer CV' : 'Print CV'}</button>
+                    <button onClick={this.print}>{this.state.isToggleOn ? 'Imprimer CV' : 'Print CV'}</button>
                     <button onClick={this.handleClick}>
                         {this.state.isToggleOn ? 'Go to English Version' : 'Aller vers la Version française'}
                     </button>

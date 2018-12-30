@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const pkg = require('../package.json');
 
 // prettier-ignore
-//console.log(`
+console.log(`
 ${chalk.green('Hey there! 👋')}
 Thanks for giving the ${pkg.name} a try. 🎉
 
