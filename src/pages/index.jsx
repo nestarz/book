@@ -221,7 +221,11 @@ Index.propTypes = {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(
+      filter: { fields: { sourceName: { eq: "projects" } } },
+      sort: { fields: [frontmatter___date], 
+      order: DESC }
+      ) {
       edges {
         node {
           parent {

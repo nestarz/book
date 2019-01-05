@@ -12,7 +12,6 @@ module.exports = {
     siteUrl: config.siteUrl + pathPrefix,
   },
   plugins: [
-    'gatsby-plugin-deepai', // own library
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-netlify-cms',
     {
@@ -27,6 +26,13 @@ module.exports = {
       options: {
         name: 'projects',
         path: `${__dirname}/content/projects`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'cover-letter',
+        path: `${__dirname}/content/coverLetters`
       },
     },
     {

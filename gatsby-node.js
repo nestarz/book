@@ -26,7 +26,7 @@ exports.onCreatePage = ({ page, actions }) => {
     resolve()
   })
 }
-exports.onCreateNode = ({ node, actions }) => {
+exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   let slug;
   if (node.internal.type === 'MarkdownRemark') {
@@ -44,6 +44,16 @@ exports.onCreateNode = ({ node, actions }) => {
     }
     createNodeField({ node, name: 'slug', value: slug });
   }
+  // https://github.com/ChristopherBiscardi/gatsby-mdx/issues/105
+  // Expose filter node on GraphQL
+  if (node.internal.type === `Mdx`) {
+    const parent = getNode(node.parent);
+    createNodeField({
+      name: `sourceName`,
+      node,
+      value: parent.sourceInstanceName
+    });
+  }
 };
 
 /* Allow us to use something like: import { X } from 'directory' instead of '../../folder/directory' */
@@ -54,13 +64,13 @@ exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, actions }) 
       alias: {
         videojs: 'video.js',
         WaveSurfer: 'wavesurfer.js',
-    }
+      }
     },
     plugins: [
       new webpack.ProvidePlugin({
-          videojs: path.resolve(__dirname, 'node_modules/video.js/dist/video.cjs.js'),
+        videojs: path.resolve(__dirname, 'node_modules/video.js/dist/video.cjs.js'),
       })
-  ]
+    ]
   });
   actions.setWebpackConfig({ //csv-loader
     module: {
@@ -134,17 +144,33 @@ exports.createPages = ({ graphql, actions }) => {
         }
         // Create blog posts pages.
         result.data.allMdx.edges.forEach(({ node }) => {
-          createPage({
-            path: `/${node.parent.sourceInstanceName}/${node.parent.name}`,
-            component: componentWithMDXScope(
-              path.resolve("src/templates/project.jsx"),
-              node.code.scope
-            ),
-            context: { 
-              id: node.id, 
-              name: node.parent.name 
-            }
-          });
+          if (node.parent.sourceInstanceName == "cover-letter") {
+            createPage({
+              path: `/${node.parent.sourceInstanceName}/${node.parent.name}`,
+              component: componentWithMDXScope(
+                path.resolve(`src/templates/coverLetter.jsx`),
+                node.code.scope
+              ),
+              context: {
+                id: node.id,
+                name: node.parent.name,
+                sourceName: node.parent.sourceInstanceName
+              }
+            });
+          } else {
+            createPage({
+              path: `/${node.parent.sourceInstanceName}/${node.parent.name}`,
+              component: componentWithMDXScope(
+                path.resolve("src/templates/project.jsx"),
+                node.code.scope
+              ),
+              context: {
+                id: node.id,
+                name: node.parent.name,
+                sourceName: node.parent.sourceInstanceName
+              }
+            });
+          }
         });
         // Create sketch pages.
         // result.data.allFile.edges.forEach(({ node }) => {
