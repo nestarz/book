@@ -1,20 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
+import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import { ThemeProvider } from 'emotion-theming';
 import SEO from '../components/SEO';
-import sample from 'lodash/sample';
 import Img from 'gatsby-image';
 import config from '../../config/website';
 import theme from '../../config/theme';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import { MDXProvider } from '@mdx-js/tag'
-import LayoutWrapper from '../components/LayoutWrapper/MainLayout';
-import Navigation from '../components/Navigation/NavProjects';
+import Layout from '../components/Layout';
+import Navigation from '../components/NavProjects';
 import { Link } from 'gatsby';
-import { RotateOne as Scene3D } from '../components/Scenes3D';
 import ContainerDimensions from 'react-container-dimensions'
 import { SketchComponent } from 'components/P5js';
 import sketch1 from 'components/P5js/projects/mainScreen/sketch1bis';
@@ -245,15 +242,8 @@ const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
   const tableOfContents = postNode.tableOfContents;
   //console.log(postNode);
   return (
-    <LayoutWrapper theme={theme.light}>
+    <Layout theme={theme}>
       <Helmet title={`${project.title} | ${config.siteTitle}`} />
-      <Helmet>
-        <style type="text/css">{`
-          body {
-            background-color : ${theme.light.colors.bg_color};
-          }
-    `}</style>
-      </Helmet>
       <SEO postPath={id} postNode={postNode} postSEO />
       <Wrapper>
         <FlexHeader>
@@ -326,47 +316,49 @@ const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
           </MDXRenderer>
         </MDXContent>
       </Container>
-    </LayoutWrapper>
+    </Layout>
   );
 };
 
-export default Project;
+export default Project
 
 Project.propTypes = {
   pageContext: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
   }).isRequired,
   data: PropTypes.shape({
     mdx: PropTypes.object.isRequired,
   }).isRequired,
-};
+}
 
 export const pageQuery = graphql`
-  query($id: String!) {
-    mdx(id: { eq: $id }) {
-      excerpt(pruneLength: 60)
+  query($slug: String!) {
+    mdx(fields: { slug: { eq: $slug } }) {
       code {
         body
       }
-      tableOfContents
+      excerpt
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "DD.MM.YYYY")
         client
-        wip
-        service
         subtitle
+        service
+        wip
         cover {
           childImageSharp {
+            fluid(maxWidth: 850, maxHeight: 400, quality: 90, duotone: { highlight: "#3CD670", shadow: "#111111" }, cropFocus: CENTER) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
             resize(width: 800) {
               src
-            }
-            fluid(maxWidth: 850, maxHeight: 400, quality: 90, duotone: { highlight: "#3CD670", shadow: "#111111" }, cropFocus: CENTER) {
-              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
       }
     }
   }
-`;
+`

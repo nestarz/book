@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from 'styled-components';
 
 export const CVPrint = styled.div`
 width: 100%;

@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: */imprint/
 
 sitemap: https://eliasrhouzlane.com/sitemap.xml

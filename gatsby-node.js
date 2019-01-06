@@ -1,60 +1,135 @@
-const path = require('path');
 const _ = require('lodash');
+const path = require('path');
 const webpack = require(`webpack`);
 
-const locales = require('./src/constants/locales')
-exports.onCreatePage = ({ page, actions }) => {
-  const { createPage, deletePage } = actions
 
-  return new Promise(resolve => {
-    deletePage(page)
+const wrapper = promise => promise.then(result => ({ result, error: null })).catch(error => ({ error, result: null }))
 
-    Object.keys(locales).map(lang => {
-      const localizedPath = locales[lang].default
-        ? page.path
-        : locales[lang].path + page.path
-
-      return createPage({
-        ...page,
-        path: localizedPath,
-        context: {
-          locale: lang
-        }
-      })
-    })
-
-    resolve()
-  })
-}
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions;
-  let slug;
-  if (node.internal.type === 'MarkdownRemark') {
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  let slug
+  // Only use MDX nodes
+  if (node.internal.type === 'Mdx') {
+    const fileNode = getNode(node.parent)
+    // If the frontmatter contains a "slug", use it
     if (
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug')
     ) {
-      slug = `/${_.kebabCase(node.frontmatter.slug)}`;
+      slug = `/${_.kebabCase(node.frontmatter.slug)}`
     }
+    // Otherwise use the title for the slug
     if (
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
     ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`;
+      slug = `/${_.kebabCase(node.frontmatter.title)}`
     }
-    createNodeField({ node, name: 'slug', value: slug });
+    createNodeField({ node, name: 'slug', value: slug })
+    // Adds the name of "gatsby-source-filesystem" as field (in this case "projects" or "pages")
+    createNodeField({ node, name: 'sourceInstanceName', value: fileNode.sourceInstanceName })
   }
-  // https://github.com/ChristopherBiscardi/gatsby-mdx/issues/105
-  // Expose filter node on GraphQL
-  if (node.internal.type === `Mdx`) {
-    const parent = getNode(node.parent);
-    createNodeField({
-      name: `sourceName`,
-      node,
-      value: parent.sourceInstanceName
-    });
+}
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+
+  const projectPage = require.resolve('./src/templates/project.jsx')
+  const letterPage = require.resolve('./src/templates/letter.jsx')
+  const singlePage = require.resolve('./src/templates/single.jsx')
+
+  const { error, result } = await wrapper(
+    graphql(`
+      {
+        projects: allMdx(filter: { fields: { sourceInstanceName: { eq: "projects" } } }) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              code {
+                scope
+              }
+            }
+          }
+        }
+        letters: allMdx(filter: { fields: { sourceInstanceName: { eq: "letters" } } }) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              code {
+                scope
+              }
+            }
+          }
+        }
+        single: allMdx(filter: { fields: { sourceInstanceName: { eq: "pages" } } }) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              code {
+                scope
+              }
+            }
+          }
+        }
+      }
+    `)
+  )
+
+  if (!error) {
+    result.data.projects.edges.forEach(edge => {
+      createPage({
+        path: edge.node.fields.slug,
+        component: projectPage,
+        context: {
+          slug: edge.node.fields.slug,
+        },
+      })
+    })
+    result.data.letters.edges.forEach(edge => {
+      createPage({
+        path: edge.node.fields.slug,
+        component: letterPage,
+        context: {
+          slug: edge.node.fields.slug,
+        },
+      })
+    })
+    result.data.single.edges.forEach(edge => {
+      createPage({
+        path: edge.node.fields.slug,
+        component: singlePage,
+        context: {
+          slug: edge.node.fields.slug,
+        },
+      })
+    })
+    return
   }
-};
+
+  console.log(error)
+}
+
+// Necessary changes to get gatsby-mdx and Cypress working
+exports.onCreateWebpackConfig = ({ stage, actions, loaders, getConfig }) => {
+  const config = getConfig()
+
+  config.module.rules = [
+    ...config.module.rules.filter(rule => String(rule.test) !== String(/\.jsx?$/)),
+    {
+      ...loaders.js(),
+      test: /\.jsx?$/,
+      exclude: modulePath => /node_modules/.test(modulePath) && !/node_modules\/gatsby-mdx/.test(modulePath),
+    },
+  ]
+
+  actions.replaceWebpackConfig(config)
+}
 
 /* Allow us to use something like: import { X } from 'directory' instead of '../../folder/directory' */
 exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, actions }) => {
@@ -99,90 +174,4 @@ exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, actions }) 
       },
     })
   }
-};
-
-const componentWithMDXScope = require("gatsby-mdx/component-with-mdx-scope");
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
-  return new Promise((resolve, reject) => {
-    resolve(
-      graphql(
-        `
-          {
-            allMdx {
-              edges {
-                node {
-                  id
-                  parent {
-                    ... on File {
-                      name
-                      sourceInstanceName
-                    }
-                  }
-                  code {
-                    scope
-                  }
-                }
-              }
-            }
-            allFile(
-              filter: { sourceInstanceName: { eq: "sketches" } }
-              ) {
-                edges {
-                  node {
-                    name
-                    sourceInstanceName
-                  }
-                }
-              }
-          }
-        `
-      ).then(result => {
-        if (result.errors) {
-          //console.log(result.errors);
-          reject(result.errors);
-        }
-        // Create blog posts pages.
-        result.data.allMdx.edges.forEach(({ node }) => {
-          if (node.parent.sourceInstanceName == "cover-letter") {
-            createPage({
-              path: `/${node.parent.sourceInstanceName}/${node.parent.name}`,
-              component: componentWithMDXScope(
-                path.resolve(`src/templates/coverLetter.jsx`),
-                node.code.scope
-              ),
-              context: {
-                id: node.id,
-                name: node.parent.name,
-                sourceName: node.parent.sourceInstanceName
-              }
-            });
-          } else {
-            createPage({
-              path: `/${node.parent.sourceInstanceName}/${node.parent.name}`,
-              component: componentWithMDXScope(
-                path.resolve("src/templates/project.jsx"),
-                node.code.scope
-              ),
-              context: {
-                id: node.id,
-                name: node.parent.name,
-                sourceName: node.parent.sourceInstanceName
-              }
-            });
-          }
-        });
-        // Create sketch pages.
-        // result.data.allFile.edges.forEach(({ node }) => {
-        //   createPage({
-        //     path: `/${node.sourceInstanceName}/${node.name}`,
-        //     component: path.resolve(`src/templates/sketch.jsx`),
-        //     context: {
-        //       name: node.name,
-        //     },
-        //   })
-        // })
-      })
-    );
-  });
 };

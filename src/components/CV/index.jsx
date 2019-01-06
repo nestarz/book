@@ -6,8 +6,8 @@ import Helmet from 'react-helmet';
 //import { SketchComponent, Sketch1 } from 'components/P5js';
 import theme from '../../../config/theme';
 import { siteUrl2, email, schools, bioCV, works, skills } from '../../../config/website';
-import Navigation from 'components/Navigation';
-import LayoutWrapper from 'components/LayoutWrapper';
+import Navigation from 'components/Nav1';
+import Layout from 'components/Layout';
 import ContainerDimensions from 'react-container-dimensions'
 
 import { SketchComponent } from 'components/P5js';
@@ -75,7 +75,7 @@ class Index extends React.Component {
                         {this.state.isToggleOn ? 'Go to English Version' : 'Aller vers la Version française'}
                     </button>
                       </CVPrint>
-                <LayoutWrapper navType={"front"} layoutType={"main"} theme={theme.light}>
+                <Layout navType={"front"} layoutType={"main"} theme={theme.light}>
                     <IndexWrapper>
                         <Holder3D>
                             <ContainerDimensions>
@@ -117,7 +117,7 @@ class Index extends React.Component {
                                 <ul>
                                     {skills.languages.map((language, index) => {
                                         return (
-                                            <li>{this.state.isToggleOn ? language.name.fr : language.name.en} ({this.state.isToggleOn ? language.score.fr : language.score.en})</li>
+                                            <li key={index}>{this.state.isToggleOn ? language.name.fr : language.name.en} ({this.state.isToggleOn ? language.score.fr : language.score.en})</li>
                                         );
                                     })}
                                 </ul>
@@ -128,7 +128,7 @@ class Index extends React.Component {
                                 <ul>
                                     {skills.main.map((skill, index) => {
                                         return (
-                                            <li>{this.state.isToggleOn ? skill.fr : skill.en}</li>
+                                            <li key={index}>{this.state.isToggleOn ? skill.fr : skill.en}</li>
                                         );
                                     })}
                                 </ul>
@@ -136,7 +136,7 @@ class Index extends React.Component {
                                 <ul>
                                     {skills.ceramicsAndDesign.map((skill, index) => {
                                         return (
-                                            <li>{this.state.isToggleOn ? skill.fr : skill.en}</li>
+                                            <li key={index}>{this.state.isToggleOn ? skill.fr : skill.en}</li>
                                         );
                                     })}
                                 </ul>
@@ -144,7 +144,7 @@ class Index extends React.Component {
                                 <ul>
                                     {skills.computerScience.map((skill, index) => {
                                         return (
-                                            <li>{skill}</li>
+                                            <li key={index}>{skill}</li>
                                         );
                                     })}
                                 </ul>
@@ -154,7 +154,7 @@ class Index extends React.Component {
                                 <ul>
                                     {skills.publications.map((publication, index) => {
                                         return (
-                                            <li><a className="noDecor" href="{publication.url}">{this.state.isToggleOn ? publication.title.fr : publication.title.en}</a></li>
+                                            <li key={index}><a className="noDecor" href="{publication.url}">{this.state.isToggleOn ? publication.title.fr : publication.title.en}</a></li>
                                         );
                                     })}
                                 </ul>
@@ -165,7 +165,7 @@ class Index extends React.Component {
                             <h1>{this.state.isToggleOn ? 'Éducation' : 'Education'}</h1>
                             {schools.map((school, index) => {
                                 return (
-                                    <WorkExperience>
+                                    <WorkExperience key={index}>
                                         <p className="date">{school.from} {school.to ? "—" : ""} {school.to}</p>
                                         <div>
                                             <p style={{ marginBottom: 0 }}><span style={{ fontSize: "120%" }}>{this.state.isToggleOn ? school.title.fr : school.title.en}</span></p>
@@ -178,7 +178,7 @@ class Index extends React.Component {
                             <h1>{this.state.isToggleOn ? 'Éxpérience' : 'Work Experience'}</h1>
                             {works.map((work, index) => {
                                 return (
-                                    <WorkExperience>
+                                    <WorkExperience key={index}>
                                         <p className="date">{work.from} {work.to ? "—" : ""} {work.to}</p>
                                         <div>
                                             <p style={{ marginBottom: 0 }}><span style={{ fontSize: "120%" }}>{this.state.isToggleOn ? work.title.fr : work.title.en}</span></p>
@@ -190,7 +190,7 @@ class Index extends React.Component {
                             })}
                         </div>
                     </IndexWrapper>
-                </LayoutWrapper>
+                </Layout>
             </Wrapper>
         )
     };

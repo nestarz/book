@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled from 'styled-components';
 
 import theme from '../../../config/theme';
 
@@ -55,9 +55,9 @@ export default class VideojsWavesurferPlayer extends React.Component {
                     peaks: this.props.peaks,
                     msDisplayMax: 10,
                     debug: true,
-                    waveColor: theme.light.colors.black,
+                    waveColor: theme.colors.black,
                     progressColor: '#111',
-                    cursorColor: theme.light.brand.primary,
+                    cursorColor: theme.brand.primary,
                     hideScrollbar: true,
                     height: 10,
                     barWidth: 5,

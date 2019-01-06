@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import CV from '../components/CV';
+import CV from 'components/CV';
 
 
 const Index = ({

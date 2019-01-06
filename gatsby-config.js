@@ -1,26 +1,15 @@
-const config = require('./config/website');
+const config = require('./config/website')
 
-const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
+const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
 module.exports = {
-  proxy: {
-    prefix: "/api/deepdream",
-    url: "https://api.deepai.org",
-  },
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     siteUrl: config.siteUrl + pathPrefix,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-netlify-cms',
-    {
-      resolve: 'gatsby-plugin-emotion',
-      options: {
-        autoLabel: process.env.NODE_ENV !== 'production',
-        labelFormat: '[filename]--[local]',
-      },
-    },
+    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -31,52 +20,28 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'cover-letter',
-        path: `${__dirname}/content/coverLetters`
+        name: 'letters',
+        path: `${__dirname}/content/letters`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'sketches',
-        path: `${__dirname}/content/sketches`,
-        ignore: [`**/index.js`], // ignore files starting with a dot
+        name: 'pages',
+        path: `${__dirname}/src/pages`,
       },
     },
     {
       resolve: 'gatsby-mdx',
       options: {
-        extensions: [".mdx", ".md"],
+        extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
-          {
-            resolve: "gatsby-remark-attr",
-            options: {
-              allowDangerousDOMEventHandlers: true
-            },
-          },
-          {
-            resolve: 'gatsby-remark-toc',
-            options: {
-              mdastUtilTocOptions: {
-                tight: true,
-                heading: "zzzzzzzzzzzzz",
-                maxDepth: 2
-              },
-              header: 'Table des matières', // the custom header text
-              include: [
-                'content/**/*.md', // an include glob to match against
-                'content/**/*.mdx' // an include glob to match against
-              ]
-            }
-          },  
           {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 820,
-              quality: 80,
+              quality: 90,
               linkImagesToOriginal: false,
-              withWebp: true,
-              wrapperStyle: "margin-bottom: 10rem"
             },
           },
           {
@@ -87,21 +52,11 @@ module.exports = {
             },
           },
           {
-            resolve: "gatsby-remark-embed-video",
-            options: {
-              width: 800,
-              ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
-              // height: 400, // Optional: Overrides optional.ratio
-              related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
-              noIframeBorder: true //Optional: Disable insertion of <style> border: 0
-            }
+            resolve: 'gatsby-remark-responsive-iframe',
+            options: {},
           },
-          // {
-          //   resolve: "gatsby-remark-responsive-iframe",
-          //   options: {}
-          // },
-        ]
-      }
+        ],
+      },
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
@@ -109,44 +64,36 @@ module.exports = {
         trackingId: config.googleAnalyticsID,
       },
     },
-    {
-      resolve: 'gatsby-plugin-nprogress',
-      options: {
-        color: config.themeColor,
-      },
-    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-lodash',
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography.jsx',
-        omitGoogleFont: true
-      },
-    },
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.siteTitle,
-        short_name: config.siteTitleAlt,
+        short_name: config.siteTitleShort,
         description: config.siteDescription,
         start_url: config.pathPrefix,
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: 'standalone',
-        icon: 'src/favicon.png',
+        icons: [
+          {
+            src: '/favicons/android-chrome-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/favicons/android-chrome-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
       },
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [`gatsby-remark-smartypants`],
-      },
-    },
   ],
-};
+}

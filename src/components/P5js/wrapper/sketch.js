@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 
 import { RemountOnResize } from './remount';
-import p5 from 'p5';
 
 // A helper component, wrapping retina logic for canvas and
 // auto-resizing the sketch to fill its parent container.
@@ -21,45 +20,48 @@ class SketchComponentRaw extends PureComponent {
 	// mounting view, that is: after CSS layouting is done.
 	mountedView(view) {
 		if (view) {
-			const ratio = 1;
-			const width = (view.clientWidth * ratio) | 0;
-			const height = (view.clientHeight * ratio) | 0;
-			let newState = { view, width, height, ratio };
-			let { sketch, sketchProps, noCanvas } = this.props;
-			if (sketch) {
-				const _sketch = (p5) => {
-					sketch(width, height, sketchProps)(p5);
+			import("p5")
+				.then((p5) => {
+					const ratio = 1;
+					const width = (view.clientWidth * ratio) | 0;
+					const height = (view.clientHeight * ratio) | 0;
+					let newState = { view, width, height, ratio };
+					let { sketch, sketchProps, noCanvas } = this.props;
+					if (sketch) {
+						const _sketch = (p5) => {
+							sketch(width, height, sketchProps)(p5);
 
-					// handle creation of canvas
-					const _setup = p5.setup ? p5.setup : () => { };
-					p5.setup = noCanvas ? () => {
-						p5.noCanvas();
-						_setup();
-					} : () => {
-						p5.createCanvas(width, height);
-						_setup();
-					};
+							// handle creation of canvas
+							const _setup = p5.setup ? p5.setup : () => { };
+							p5.setup = noCanvas ? () => {
+								p5.noCanvas();
+								_setup();
+							} : () => {
+								p5.createCanvas(width, height);
+								_setup();
+							};
 
-					// handle removing the sketch if the component unmounts
-					const _unmount = p5.unmount;
-					p5.unmount = () => {
-						if (_unmount) {
-							_unmount();
+							// handle removing the sketch if the component unmounts
+							const _unmount = p5.unmount;
+							p5.unmount = () => {
+								if (_unmount) {
+									_unmount();
+								}
+								p5.remove();
+							}
+
 						}
-						p5.remove();
+						newState.sketch = new p5.default(_sketch, view);
 					}
-
-				}
-				newState.sketch = new p5(_sketch, view);
-			}
-			this.setState(newState);
+					this.setState(newState);
+				})
 		}
 	}
 
 	componentWillReceiveProps(nextProps) {
 		// pass relevant props to sketch
 		const { sketch } = this.state;
-		if (sketch.receiveProps && nextProps.sketchProps) {
+		if (sketch && sketch.receiveProps && nextProps.sketchProps) {
 			sketch.receiveProps(nextProps.sketchProps);
 		}
 	}
