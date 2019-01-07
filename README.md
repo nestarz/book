@@ -11,6 +11,7 @@ A record of works from summer 2018 when I joined Renoir and started to play with
     - Easily change the font
 - Choose a color for your projects highlights
 - Create your subpages with MDX
+- Adds a table of contents to Markdown files using gatsby-remark-toc
 - Uses styled-components for styling
 - [react-spring](https://github.com/react-spring/react-spring) animations
 - Projects in MDX ([gatsby-mdx](https://github.com/ChristopherBiscardi/gatsby-mdx))

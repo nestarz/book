@@ -45,6 +45,21 @@ module.exports = {
             },
           },
           {
+            resolve: 'gatsby-remark-toc',
+            options: {
+              mdastUtilTocOptions: {
+                tight: true,
+                heading: "zzzzzzzzzzzzz",
+                maxDepth: 2
+              },
+              header: 'Table des matières', // the custom header text
+              include: [
+                'content/**/*.md', // an include glob to match against
+                'content/**/*.mdx' // an include glob to match against
+              ]
+            }
+          },
+          {
             resolve: 'gatsby-remark-external-links',
             options: {
               target: '_blank',

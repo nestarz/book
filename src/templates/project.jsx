@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import SEO from '../components/SEO';
+import SEO from 'components/SEO';
 import Img from 'gatsby-image';
 import config from '../../config/website';
 import theme from '../../config/theme';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import { MDXProvider } from '@mdx-js/tag'
-import Layout from '../components/Layout';
-import Navigation from '../components/NavProjects';
+import Layout from 'components/Layout';
+import ProjectHeader from 'components/Navigation/ProjectHeader';
 import { Link } from 'gatsby';
 import ContainerDimensions from 'react-container-dimensions'
 import { SketchComponent } from 'components/P5js';
@@ -277,7 +277,7 @@ const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
           {project.cover && project.cover.childImageSharp.fluid && <Img fluid={project.cover.childImageSharp.fluid} />}
         </ImageWrapper>
       </Wrapper>
-      <Navigation project={project} tableOfContents={tableOfContents} />
+      <ProjectHeader project={project} tableOfContents={tableOfContents} />
       <Container>
         <ContainerHeader>
           <TOC>
@@ -344,6 +344,7 @@ export const pageQuery = graphql`
       fields {
         slug
       }
+      tableOfContents
       frontmatter {
         title
         date(formatString: "DD.MM.YYYY")
