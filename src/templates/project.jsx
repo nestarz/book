@@ -66,6 +66,9 @@ a {
   h3 {
     font-size: 120%;
   }
+  img {
+    width: 100%;
+  }
 `
 const ContainerHeader = styled.section`
 display: flex;
