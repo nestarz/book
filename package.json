@@ -29,6 +29,7 @@
     "@mdx-js/tag": "^0.16.6",
     "babel-plugin-styled-components": "^1.10.0",
     "circular-std": "^1.0.0",
+    "compromise": "^11.12.6",
     "core-js": "^2.6.1",
     "csv-loader": "^3.0.2",
     "gatsby": "^2.0.85",
