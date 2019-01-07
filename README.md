@@ -4,15 +4,17 @@ A record of works from summer 2018 when I joined Renoir and started to play with
 
 ## Features
 
-- Gatsby v2.0.0
-- MDX Support
 - CSV Loader Support
-    - Allow "import csv from "file.csv"
+    - Allow `import csv from "file.csv"`
 - Configurable
     - Use the website.js to easily change the most important information
     - Easily change the font
-- Uses Emotion for styling
-- Projects in Markdown
+- Choose a color for your projects highlights
+- Create your subpages with MDX
+- Uses styled-components for styling
+- [react-spring](https://github.com/react-spring/react-spring) animations
+- Projects in MDX ([gatsby-mdx](https://github.com/ChristopherBiscardi/gatsby-mdx))
+- Cypress for End-to-End testing (+ CircleCI config)
 - Google Analytics Support
 - SEO
     - Sitemap
