@@ -75,10 +75,6 @@
     "gatsby-starter-portfolio",
     "lekoarts"
   ],
-  "repository": {
-    "url": "https://github.com/nestarz/book",
-    "type": "git"
-  },
   "bugs": {
     "url": "https://github.com/nestarz/book/issues"
   },
