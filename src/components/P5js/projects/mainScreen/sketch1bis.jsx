@@ -10,11 +10,11 @@ const sketch = (width, height, props) => {
         var px_offset_x = w * 0.5;    // amplitude
         var px_offset_y = h / 2.2;    // amplitude
 
-        var mass = 10000;
+        var mass = 100;
         var radius_x = width;
-        var radius_y = height / 4;
-        var strength = 0.0125;
-        var drag = 10.0;
+        var radius_y = height / 3.8;
+        var strength = 0.125;
+        var drag = 1.0;
 
         var physics = new Physics();
         var points = [];

@@ -67,7 +67,7 @@ a {
     font-size: 120%;
   }
   img {
-    width: 100%;
+    width: 100% !important;
   }
 `
 const ContainerHeader = styled.section`
@@ -75,12 +75,16 @@ display: flex;
 flex-wrap: wrap-reverse;
 justify-content: space-between;
 background-color:${props => props.theme.brand.primary};
+padding-left: 20px;
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
 `;
 const Holder3D = styled.section`
 position: absolute;
 left: 0;
 right: 0;
-top: 0;
+top: 20%;
 bottom: 0;
 z-index: -1;
 `;
@@ -131,20 +135,30 @@ const MDXContent = styled.section`
     max-width: 1120px;
     margin: auto;
     padding: 30px;
-    font-size: 120%;
-    line-height: 30px;
-    letter-spacing: calc(-16 / 1000 * 1em);
+  }
+  p {
+    font-size: 1.2rem;
+    letter-spacing: -0.003em;
+    line-height: 1.58;
+    --baseline-multiplier: 0.179;
+    --x-height-multiplier: 0.35;
+    @media (max-width: ${props => props.theme.breakpoints.m}), (max-device-width: ${props => props.theme.breakpoints.m}) {
+      font-size: 1rem;
+    }
   }
   li {
     break-inside: avoid;
     break-before: avoid;
+    font-size: 1rem;  
+    letter-spacing: calc(-16 / 1000 * 1em);
+    margin-bottom: 5px;
   }
   h1:nth-child(0),
   h1:nth-child(1),
   h1:nth-child(2),
   h1:nth-child(3),
   h1:nth-child(4){
-    margin-top: 30px;
+    margin-top: 0px;
   }
 iframe {
   max-width: 100%;
@@ -184,6 +198,9 @@ const Wrapper = styled.section`
   @media (max-width: ${props => props.theme.breakpoints.s}) {
     font-size: 3.5vw;
   }
+  h1, h2, h3, h4 {
+    margin: 0;
+  }
   h1 {
     font-size: 200%;
     margin-bottom: 0.5rem;
@@ -192,7 +209,7 @@ const Wrapper = styled.section`
   }
   p {
     font-size: 100%;
-    font-weight: 500;
+    margin: 0;
     letter-spacing: calc(-16 / 1000 * 1em);
   }
   display: flex;
@@ -255,7 +272,7 @@ const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
           <InformationWrapper>
             {project.client && 
             <InfoBlock>
-              <Top>Where</Top>
+              <Top>Où</Top>
               <Bottom>{project.client}</Bottom>
             </InfoBlock>
             }
@@ -267,7 +284,7 @@ const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
             }
             {project.service && 
             <InfoBlock>
-              <Top>Service</Top>
+              <Top>Pour</Top>
               <Bottom>{project.service}</Bottom>
             </InfoBlock>
             }
@@ -340,7 +357,7 @@ export const pageQuery = graphql`
       code {
         body
       }
-      excerpt
+      excerpt(pruneLength: 60)
       fields {
         slug
       }

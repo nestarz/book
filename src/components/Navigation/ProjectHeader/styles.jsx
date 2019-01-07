@@ -20,7 +20,7 @@ padding: 0px;
 padding-left: 30px;
 background-color: ${props => props.theme.brand.primary};
 font-family: monospace;
-font-size: 2em;
+font-size: 1.5rem;
 color: white;
   @media (max-width: ${props => props.theme.breakpoints.s}) {
     font-size: 4.5vw;
@@ -94,6 +94,7 @@ a {
     font-weight: 100;
   }
   h1,h2,h3,h4,h5,h6 {
+    margin: 0;
     font-weight: 500;
   }
 position: absolute;
@@ -125,9 +126,11 @@ border-right: 1px solid white;
     }
   }
   h3,h4,h5,h6 {
+    margin: 0;
     font-weight: 100;
   }
   h3 {
+    margin: 0;
     font-weight: 500;
   }
   &:hover {
@@ -136,5 +139,8 @@ border-right: 1px solid white;
   max-width: 300px;
   overflow: scroll;
   z-index: 999;
+}
+h3 {
+  margin: 0;
 }
 `
