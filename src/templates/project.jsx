@@ -153,6 +153,11 @@ const MDXContent = styled.section`
     letter-spacing: calc(-16 / 1000 * 1em);
     margin-bottom: 5px;
   }
+  ol {
+    margin: 0;
+    padding-top: 1rem;
+    border: 1px solid ${props => props.theme.brand.primary};
+  }
   h1:nth-child(0),
   h1:nth-child(1),
   h1:nth-child(2),

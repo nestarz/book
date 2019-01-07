@@ -35,6 +35,12 @@ const Name = styled.div`
   display: flex;
   flex: 1 0 auto;
   justify-content: flex-start;
+  font-weight: 500;
+  font-weight: 500;
+  -webkit-letter-spacing: calc(-23 / 1000 * 1em);
+  -moz-letter-spacing: calc(-23 / 1000 * 1em);
+  -ms-letter-spacing: calc(-23 / 1000 * 1em);
+  letter-spacing: calc(-23 / 1000 * 1em);
   a {
     font-size: 4vmax;
     line-height: normal;
@@ -64,8 +70,8 @@ const SocialMedia = styled.div`
   a {
     padding-right: 0.5rem;
     margin-right: 0.25rem;
-    font-size: 1.25rem;
-    line-height: 20px;
+    font-size: 180%;
+    line-height: normal;
     margin-bottom: 1rem;
   }
 `
