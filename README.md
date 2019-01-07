@@ -1,5 +1,7 @@
 A record of works from summer 2018 when I joined Renoir and started to play with clay, code and interactive media. Feel free to tweak and make your own version. [https://eliasrhouzlane.com](https://eliasrhouzlane.com)
 
+[![CircleCI](https://circleci.com/gh/nestarz/book.svg?style=svg)](https://circleci.com/gh/nestarz/book)
+
 ## Features
 
 - Gatsby v2.0.0
