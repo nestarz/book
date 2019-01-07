@@ -4,10 +4,12 @@ import { Link, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import { Trail } from 'react-spring'
 import styled from 'styled-components'
-import { Layout, ProjectItem } from 'components'
+import { Layout } from 'components'
 import website from '../../config/website';
 import theme from '../../config/theme';
-import Navigation from 'components/Nav1';
+import NameHeader from 'components/Navigation/NameHeader';
+import ProjectList from 'components/Navigation/ProjectList';
+import ExperimentList from 'components/Navigation/ExperimentList';
 import ContainerDimensions from 'react-container-dimensions'
 import { SketchComponent } from 'components/P5js';
 import sketch1 from 'components/P5js/projects/mainScreen/sketch1';
@@ -40,6 +42,7 @@ const Description = styled.p`
   max-width: 800px;
   position: relative;
   font-size: 180%;
+  min-width: 300px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -48,73 +51,31 @@ const Description = styled.p`
   line-height: 1.7em;
   margin: 0em;
   padding-top: 3em;
+  flex: 1;
 `;
 
 const Wrapper = styled.div`
-flex: 1;
-display: flex;
-color: ${props => props.theme.colors.body_color};
-justify-content: space-between;
-flex-direction: row;
-align-content: space-between;
-flex-direction: row;
-flex-wrap: wrap;
-padding: 30px;
-@media (max-width: ${props => props.theme.breakpoints.m}) {
-  flex-direction: row-reverse;
-}
+  flex: 1;
+  display: flex;
+  color: ${props => props.theme.colors.body_color};
+  justify-content: space-between;
+  flex-direction: row;
+  align-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 30px;
   h2 {
     font-size: 180%;
     font-weight: normal;
-    margin: 0;
-    margin-top: 20px;
-  }
-  h3 {
-    font-size: 180%;
-    font-weight: normal;
-    margin: 0;
-    a {
-      &:hover {
-        color: ${props => props.theme.brand.primary};
-        &:before {
-          content: "↘ ";
-        }
-      }
-      color: inherit;
-    }
-  }
-  nav {
-    padding-bottom: 0em;
-  }
-  ul { list-style-type: none; margin: 0 }
-  li {
-    font-size: 180%;
-    margin: 0;
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-  }
-  .cvli {
-    display: grid;
-    grid-template-columns: 1fr 150px;
+    margin: 20px 0 0 0;
   }
 `;
 
-const Header = styled(Navigation)`
+const Header = styled(NameHeader)`
 flex: 0 0 100%;
 `;
 
-var selectedPages = [
-  {
-    name: "floral",
-    title: "Floral Experiment"
-  },
-  {
-    name: "fausse3D",
-    title: "Fausse 3D",
-  }
-]
+
 const Index = ({
   data: {
     allMdx: { edges: projectEdges },
@@ -141,37 +102,9 @@ const Index = ({
         </Description>
         <ListWrapper>
           <h2>Experiments</h2>
-          <Trail
-            items={selectedPages}
-            keys={page => page.name}
-            from={{ opacity: '0' }}
-            to={{ opacity: '1' }}>
-            {(page, index) => props => (
-              <h3 style={props}>
-                <Link
-                  to={"experiments/" + page.name}
-                >
-                  {page.title}
-                </Link>
-              </h3>
-            )}
-          </Trail>
+          <ExperimentList />
           <h2>Projects</h2>
-          <Trail
-            items={projectEdges}
-            keys={project => project.node.fields.slug}
-            from={{ opacity: '0' }}
-            to={{ opacity: '1' }}>
-            {(project, index) => props => (
-              <h3 style={props}>
-                <Link
-                  to={project.node.fields.slug}
-                >
-                  {project.node.frontmatter.title}
-                </Link>
-              </h3>
-            )}
-          </Trail>
+          <ProjectList />
         </ListWrapper>
       </Wrapper>
     </Layout>

@@ -1,18 +1,15 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import Helmet from 'react-helmet';
-//import { SketchComponent, Sketch1 } from 'components/P5js';
-import theme from '../../../config/theme';
-import { siteUrl2, email, schools, bioCV, works, skills } from '../../../config/website';
-import Navigation from 'components/Nav1';
-import Layout from 'components/Layout';
 import ContainerDimensions from 'react-container-dimensions'
 
+import theme from '../../../config/theme';
+import { siteUrl2, email, schools, bioCV, works, skills } from '../../../config/website';
+import NameHeader from 'components/Navigation/NameHeader';
+import Layout from 'components/Layout';
 import { SketchComponent } from 'components/P5js';
 import sketch1 from 'components/P5js/projects/mainScreen/sketch2';
 import sketch2 from 'components/P5js/projects/mainScreen/sketch3';
+
 import {
     CVPrint,
     Holder3D,
@@ -37,44 +34,19 @@ class Index extends React.Component {
     }
 
     print = () => {
-        if(typeof window != "undefined") window.print();
+        if (typeof window != "undefined") window.print();
     }
 
     render() {
-        //console.log(skills);
         return (
             <Wrapper>
-                <Helmet>
-                    <style type="text/css">{`
-                        @page {
-                            size: 21cm 29.7cm;   /*A4*/
-                            margin: 10mm; /*webkit says no*/
-                        }
-                        @media print
-                        {  
-                        
-                        aside {
-                            display: none;
-                        }
-                        }
-                        @media print {
-
-                        html, body {
-                            height:100%; 
-                            margin: 0 !important; 
-                            padding: 0 !important;
-                            overflow: hidden;
-                        }
-                        }
-                    `}</style>
-                </Helmet>
                 <CVPrint>
                     <Link to="/">{this.state.isToggleOn ? 'Retour' : 'Back'}</Link>
                     <button onClick={this.print}>{this.state.isToggleOn ? 'Imprimer CV' : 'Print CV'}</button>
                     <button onClick={this.handleClick}>
                         {this.state.isToggleOn ? 'Go to English Version' : 'Aller vers la Version française'}
                     </button>
-                      </CVPrint>
+                </CVPrint>
                 <Layout navType={"front"} layoutType={"main"} theme={theme.light}>
                     <IndexWrapper>
                         <Holder3D>
@@ -92,20 +64,20 @@ class Index extends React.Component {
                         </Holder3D>
                         <div className="left" style={{ position: "relative" }}>
 
-                            <Navigation navType={"front"} theme={theme.light} />
+                            <NameHeader navType={"front"} theme={theme.light} />
                             <Holder3D>
-                                    <ContainerDimensions>
-                                        {parent => (
-                                            <SketchComponent
-                                                sketch={sketch2}
-                                                width={parent.width}
-                                                height={parent.height}
-                                                sketchProps={{ value: 10 }}
-                                            />
-                                        )
-                                        }
-                                    </ContainerDimensions>
-                                </Holder3D>
+                                <ContainerDimensions>
+                                    {parent => (
+                                        <SketchComponent
+                                            sketch={sketch2}
+                                            width={parent.width}
+                                            height={parent.height}
+                                            sketchProps={{ value: 10 }}
+                                        />
+                                    )
+                                    }
+                                </ContainerDimensions>
+                            </Holder3D>
                             <div>
                                 <p>
                                     {email}<br />

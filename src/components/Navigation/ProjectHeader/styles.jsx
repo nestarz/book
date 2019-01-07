@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import config from '../../../config/website';
+import config from '../../../../config/website';
 
 export const WIP = styled.div`
 font-size: 1vw;

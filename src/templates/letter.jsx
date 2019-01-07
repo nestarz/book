@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { animated, Spring, config } from 'react-spring'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import { Link, graphql } from 'gatsby'
-import { Container, Layout, BGImage } from '../components'
+import { Container, Layout, BGImage } from 'components'
 import ContainerDimensions from 'react-container-dimensions'
 import { PageA4 } from '../styles/print'
 

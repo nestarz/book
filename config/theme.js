@@ -10,7 +10,7 @@ const colors = {
   black: '#000',
   white: '#fff',
   bg_color: '#fff',
-  body_color: '#444',
+  body_color: '#111',
   link_color: brand.primary,
   link_color_hover: `${darken(0.15, brand.primary)}`,
 }

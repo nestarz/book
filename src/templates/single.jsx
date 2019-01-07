@@ -5,7 +5,7 @@ import { animated, Spring, config } from 'react-spring'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import { SEO, Container, Layout, Hero, BGImage } from '../components'
+import { SEO, Container, Layout, Hero, BGImage } from 'components'
 
 const Content = styled(Container)`
   position: absolute;

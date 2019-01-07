@@ -72,7 +72,7 @@ class Navigation extends React.Component {
   };
 
   render() {
-    //console.log(this.props);
+    console.log(this.props);
     var tableOfContents = this.props.tableOfContents;
     return (
       <div ref={this.nav}>
