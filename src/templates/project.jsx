@@ -149,14 +149,14 @@ const MDXContent = styled.section`
   li {
     break-inside: avoid;
     break-before: avoid;
-    font-size: 1rem;  
-    letter-spacing: calc(-16 / 1000 * 1em);
+    font-size: 1.2rem;  
     margin-bottom: 5px;
   }
   ol {
     margin: 0;
-    padding-top: 1rem;
-    border: 1px solid ${props => props.theme.brand.primary};
+    padding: 0;
+    padding-left: 1rem;
+    margin-bottom: 5px;
   }
   h1:nth-child(0),
   h1:nth-child(1),
