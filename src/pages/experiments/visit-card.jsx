@@ -47,11 +47,15 @@ button,a {
 
 function Index(){
     const [mode, setCount] = useState(0);
+    const [lg, setLanguage] = useState("fr");
     return (
         <>
             <PageVisitCard />
             <Layout>
                 <CVPrint>
+                        <button onClick={() => setLanguage(lg == "fr" ? "en" : "fr")}>
+                            En/Fr
+                        </button>
                         <button onClick={() => setCount(mode + 1)}>
                             Changer la version
                         </button>
@@ -62,7 +66,7 @@ function Index(){
                 <Wrapper>
                     {_.times(6, i => {
                         return (
-                            <VisitCard key={i} mode={mode} />
+                            <VisitCard key={i} mode={mode} lg={lg} />
                         )
                     })}
                 </Wrapper>

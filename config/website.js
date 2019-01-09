@@ -9,6 +9,10 @@ module.exports = {
   siteLogo: '/logo.png', // Used for SEO and manifest
   siteDescription: 'Ceramics Design student and Deep Learning engineer',
   author: 'Elias Rhouzlane', // Author for schemaORGJSONLD
+  authorTitle: {
+    fr: "Étudiant en Design d'Objet Céramique et Ingénieur Deep Learning",
+    en: "Ceramics Design student and Deep Learning engineer"
+  },
 
   // siteFBAppID: '123456789', // Facebook App ID - Optional
   userTwitter: '@nestarz', // Twitter Username

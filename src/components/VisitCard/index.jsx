@@ -109,7 +109,7 @@ class Index extends React.Component {
                         </ContainerDimensions>
                     </SketchContainer>
                     <NameHeader>
-                        {config.siteTitle}, <br /> {config.siteDescription}
+                        {config.author}, <br /> {config.authorTitle[this.props.lg ? this.props.lg : "fr"]}
                     </NameHeader>
                     <Contact>
                         <SocialMedia>
@@ -132,7 +132,7 @@ class Index extends React.Component {
                             </a>
                         </SocialMedia>
                         <div>elias.rhouzlane<span style={{ fontSize: "80%" }}>(@</span>gmail<span style={{ fontSize: "80%" }}>)</span>.com</div>
-                        <div>06 20 40 62 67</div>
+                        <div>{this.props.lg == "fr" ? "0" : "+33"}6 20 40 62 67</div>
                     </Contact>
                 </VisitCard>
                 <VisitCard className={"recto"}>
