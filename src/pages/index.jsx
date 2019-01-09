@@ -1,5 +1,5 @@
 /* eslint react/display-name: 0 */
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import { Trail } from 'react-spring'
@@ -69,6 +69,18 @@ const Wrapper = styled.div`
     font-weight: normal;
     margin: 20px 0 0 0;
   }
+  button {
+    background: none;
+    color: inherit;
+    border: none;
+      padding: 0;
+      text-decoration: underline;
+      font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    font-size: 1.1rem;
+    display: flex;
+  }
 `;
 
 const Header = styled(NameHeader)`
@@ -80,7 +92,12 @@ const Index = ({
   data: {
     allMdx: { edges: projectEdges },
   },
-}) => (
+}) => {
+  const [mode, setCount] = useState(0);
+  var userLang = navigator.language || navigator.userLanguage; 
+  const [lg, setLanguage] = useState(userLang == "fr-FR" ? "fr" : "en");
+  console.log(`User's preferred language: ${userLang}, setting language to ${lg}`);
+  return (
     <Layout>
       <Holder3D>
         <ContainerDimensions>
@@ -96,19 +113,23 @@ const Index = ({
         </ContainerDimensions>
       </Holder3D>
       <Wrapper>
-        <Header theme={theme} />
-        <Description>
-          {website.bioCV.en}
+        <Header theme={theme} lg={lg}/>
+        <Description>          
+          <button onClick={() => setLanguage(lg == "fr" ? "en" : "fr")}>
+          En/Fr
+          </button>
+          {website.bioCV[lg]}
         </Description>
         <ListWrapper>
-          <h2>Experiments</h2>
+          <h2>{lg == "fr" ? "Expériences" : "Experiments"}</h2>
           <ExperimentList />
-          <h2>Projects</h2>
+          <h2>{lg == "fr" ? "Projets" : "Projects"}</h2>
           <ProjectList />
         </ListWrapper>
       </Wrapper>
     </Layout>
   )
+};
 
 export default Index
 

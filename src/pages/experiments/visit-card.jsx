@@ -45,22 +45,24 @@ button,a {
 }
 `;
 
-function Index(){
+function Index() {
     const [mode, setCount] = useState(0);
-    const [lg, setLanguage] = useState("fr");
+    var userLang = navigator.language || navigator.userLanguage;
+    const [lg, setLanguage] = useState(userLang == "fr-FR" ? "fr" : "en");
+    console.log(`User's preferred language: ${userLang}, setting language to ${lg}`);
     return (
         <>
             <PageVisitCard />
             <Layout>
                 <CVPrint>
-                        <button onClick={() => setLanguage(lg == "fr" ? "en" : "fr")}>
-                            En/Fr
+                    <button onClick={() => setLanguage(lg == "fr" ? "en" : "fr")}>
+                        En/Fr
                         </button>
-                        <button onClick={() => setCount(mode + 1)}>
-                            Changer la version
+                    <button onClick={() => setCount(mode + 1)}>
+                        Changer la version
                         </button>
-                        <button onClick={() => window.print()}>
-                            Imprimer
+                    <button onClick={() => window.print()}>
+                        Imprimer
                         </button>
                 </CVPrint>
                 <Wrapper>

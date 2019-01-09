@@ -84,7 +84,8 @@ const SEO = props => {
       <link rel="shortcut icon" href="favicon.ico" />
       <link rel="manifest" href="site.webmanifest" />
       <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#11bc5d" />
-      <meta name="msapplication-TileColor" content="#9f00a7" />
+      <meta name="theme-color" content="#11bc5d" />
+      <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="msapplication-config" content="browserconfig.xml" />
       <meta property="og:locale" content={config.ogLanguage} />
       <meta property="og:site_name" content={config.ogSiteName ? config.ogSiteName : ''} />

@@ -25,7 +25,7 @@ module.exports = {
   backgroundColor: '#2b2e3c',
 
   bioCV: {
-    fr: "Intéressé par de multiples champs : objet, céramique, architecture,  animation, dessin, culture, édition, mode, jeu vidéo, réalité virtuelle, interactions. Je recherche à allier mon profil scientifique en Analyse de données, Informatique Graphique et Traitement de l'Image à des compétences manuelles pour des expérimentations et productions tangibles, éthiques et créatives.",
+    fr: "Intéressé par de multiples champs : objet, céramique, architecture,  animation, dessin, culture, édition, mode, jeu vidéo, réalité virtuelle, interactions. Je recherche à allier mon profil scientifique pour des expérimentations et productions tangibles, éthiques et créatives.",
     en: 'Currently studying Ceramics and Object Design at LTAA Auguste Renoir exploring the interaction of objects, people, art and technology using form and code with a mix of analog and digital materials.',
   },
 
