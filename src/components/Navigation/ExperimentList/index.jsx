@@ -31,7 +31,7 @@ const Nav = styled.nav`
   padding: 0;
   flex-direction: column;
   a {
-    font-size: 180%;
+    font-size: 1.1rem;
     &:hover:before {
         content: "↘ ";
     }
@@ -39,6 +39,11 @@ const Nav = styled.nav`
 `
 
 var experiments = [
+    {
+        url: "experiments/visit-card",
+        slug: "visit-card",
+        title: "Carte de Visite",
+    },
     {
         url: "experiments/floral",
         slug: "floral",
@@ -48,7 +53,7 @@ var experiments = [
         url: "experiments/fausse3D",
         slug: "fausse3D",
         title: "Fausse 3D",
-    }
+    },
 ]
 
 const Navigation = () => (

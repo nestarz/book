@@ -16,3 +16,21 @@ export const PageA4 = createGlobalStyle`
   p
 }
 `
+
+export const PageVisitCard = createGlobalStyle`
+@page {
+  size: 85mm 55mm; /*A4*/
+  margin: 0mm; 
+}
+@media print {
+  html, body {
+    width: 85mm;
+    height: 109mm; 
+    margin: 0 !important; 
+    padding: 0 !important;
+    font-size: 11pt !important;
+    overflow: hidden;
+  }
+  p
+}
+`

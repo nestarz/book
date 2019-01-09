@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
 import ContainerDimensions from 'react-container-dimensions'
 
 import theme from '../../../config/theme';
@@ -17,6 +18,15 @@ import {
     WorkExperience,
     Wrapper
 } from "./styles"
+
+const NameHeaderCv = styled(NameHeader)`
+a {
+    font-size: 22px;
+}
+.name a {
+    font-size: 2rem;
+}
+`;
 
 class Index extends React.Component {
     constructor(props) {
@@ -64,7 +74,7 @@ class Index extends React.Component {
                         </Holder3D>
                         <div className="left" style={{ position: "relative" }}>
 
-                            <NameHeader navType={"front"} theme={theme.light} />
+                            <NameHeaderCv />
                             <Holder3D>
                                 <ContainerDimensions>
                                     {parent => (

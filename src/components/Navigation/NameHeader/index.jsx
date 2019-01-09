@@ -76,12 +76,12 @@ const SocialMedia = styled.div`
   }
 `
 
-const Navigation = () => (
+const Navigation = ({className}) => (
   <StaticQuery
     query={query}
     render={data => (
-      <Wrapper data-testid="navigation">
-        <Name>
+      <Wrapper data-testid="navigation" className={className}>
+        <Name className={"name"}>
           <Link to="/" data-testid="home-title-link">
             {config.siteTitle}, {config.siteDescription}
           </Link>

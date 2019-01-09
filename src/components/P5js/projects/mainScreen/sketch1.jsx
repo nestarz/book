@@ -35,7 +35,7 @@ const sketch = (width, height, props) => {
 
             var origin = physics.makeParticle(mass, ax, ay)
             var particle = physics.makeParticle(Math.random() * mass * 0.66 + mass * 0.33, bx, by);
-            var spring = physics.makeSpring(particle, origin, strength, drag, 0);
+            var spring = physics.makeSpring(particle, origin, strength, drag, 20);
 
             origin.makeFixed();
 
@@ -50,13 +50,13 @@ const sketch = (width, height, props) => {
             //p5.filter(p5.BLUR,10);
             p5.frameRate(60);
 
-            physics.play()
+            //physics.play()
         }
 
         p5.draw = () => {
             p5.clear();
             p5.colorMode(p5.HSB);
-            physics.update();
+            //physics.update();
             p5.ellipse(particle.position.x, particle.position.y, 5);
             p5.curveTightness(organicConstant);
             p5.fill(color);

@@ -105,6 +105,8 @@ h1,h2,h3,h4 {
         padding: 0;
     }
 }
+max-width: 25%;
+
   @media print
   {  
     max-width: 25%;

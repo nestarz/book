@@ -61,6 +61,7 @@ export class RemountOnResize extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
+		console.log(this.props, nextProps)
 		if (this.props.watchedVal !== nextProps.watchedVal) {
 			this.setState({ resizing: true });
 		}
