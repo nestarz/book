@@ -7,42 +7,43 @@ import styled from 'styled-components';
 import _ from 'lodash';
 
 const Wrapper = styled.div`
-@media not print{
-display: flex;
-justify-content: center;
-align-items: center;
-width: 100vw;
-flex-wrap: wrap;
-background-color: #222;
-& > div {
-margin: 5mm;
-}
-}
+    @media not print{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        flex-wrap: wrap;
+        & > div {
+            margin: 5mm;
+            & > div {
+                border: 1px solid black;
+                margin: 5mm;
+            }
+        }
+    }
 `;
 
 export const CVPrint = styled.div`
-width: 100%;
-display: flex;
-justify-content: space-around;  
-border-bottom: 1px solid white;
-background-color: #222;
-color: white;
-padding: 5mm;
-font-size: 2vw;
-@media print
-{   
-  display: none;
-}
-button,a {
-	background: none;
-	color: inherit;
-	border: none;
-    padding: 0;
-    text-decoration: underline;
-    font: inherit;
-	cursor: pointer;
-	outline: inherit;
-}
+    width: 100%;
+    display: flex;
+    justify-content: space-around;  
+    padding: 5mm;
+    font-size: 2vw;
+    @media print
+    {   
+    display: none;
+    }
+    button,a {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        text-decoration: underline;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    }
 `;
 
 function Index() {
@@ -66,7 +67,7 @@ function Index() {
                         </button>
                 </CVPrint>
                 <Wrapper>
-                    {_.times(6, i => {
+                    {_.times(3, i => {
                         return (
                             <VisitCard key={i} mode={mode} lg={lg} />
                         )

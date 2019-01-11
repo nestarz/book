@@ -76,7 +76,8 @@ const Index = (props) => {
     let sketches = [sketch1, sketch2, sketch3, sketch4, sketch5]
     let selectedSketch = sketches[props.mode % sketches.length];
     var userLang = typeof navigator != "undefined" ? navigator.language || navigator.userLanguage : "fr";
-    const [lg, setLanguage] = useState(props.lg ? props.lg : userLang == "fr-FR" ? "fr" : "en");
+    const lg = props.lg ? props.lg : userLang == "fr-FR" ? "fr" : "en";
+    console.log(props.lg, lg)
     return (
         <Wrapper addCSS={props.addCSS}>
             <VisitCard className={"verso"}>
