@@ -28,6 +28,7 @@ color: white;
 a{
   color: white;
   margin: 10px;
+  transition: none !important;
 }
 a:first-child{
   color: white;
