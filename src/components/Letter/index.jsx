@@ -25,8 +25,8 @@ const Holder3D = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    width: 21cm;
-    height: 29.7cm;
+    max-width: 21cm;
+    max-height: 29.7cm;
   }
   position: absolute;
   pointer-events: none;
