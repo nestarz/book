@@ -31,8 +31,8 @@ a {
 const Index = (props) => {
     var userLang = typeof navigator != "undefined" ? navigator.language || navigator.userLanguage: "fr";
     const [lg, setLanguage] = useState(props.lg ? props.lg : userLang == "fr-FR" ? "fr" : "en");
-    console.log(`User's preferred language: ${userLang}, setting language to ${lg}`);
-    console.log(props.addCSS)
+    //console.log(`User's preferred language: ${userLang}, setting language to ${lg}`);
+    //console.log(props.addCSS)
     return (
         <Wrapper addCSS={props.addCSS}>
         {props.hideHeader ? (
@@ -78,7 +78,7 @@ const Index = (props) => {
                         <div>
                             <p>
                                 {email}<br />
-                                {siteUrl2}<br />
+                                {siteUrl2}
                             </p>
                         </div>
                         <div>

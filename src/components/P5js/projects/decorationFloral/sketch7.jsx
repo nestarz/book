@@ -69,15 +69,16 @@ function renderAGeneration (system, previousGeneration) {
             let newX = x + params.length * p5.cos(d);
             let newY = y + params.length * p5.sin(d);
             p5.push();
-            p5.strokeWeight(drawingState.state.strokeWeight + Math.random()/50 - 0.5/50 || 1);
+            p5.strokeWeight(drawingState.state.strokeWeight + Math.random() - 0.5/50 || 1);
             p5.line(x, y, newX, newY);
             if (Math.random() < vitaminA) {
-                p5.fill("red");
-                p5.ellipse(x,y,5,5);
+                p5.strokeWeight(drawingState.state.strokeWeight + Math.random() - 0.5/50 || 1);
+                p5.stroke("red");
             }
             else if (Math.random() < vitaminC) {
-                p5.fill("yellow");
-                p5.ellipse(x,y,5,5);
+                p5.strokeWeight(drawingState.state.strokeWeight + Math.random() - 0.5/50 || 1);
+                p5.stroke("blue");
+
             }
             p5.pop();
             drawingState.state.position.x = newX;
@@ -142,7 +143,7 @@ function renderAGeneration (system, previousGeneration) {
         }
 
         p5.setup = () => {
-            p5.stroke("green");
+            p5.stroke("black");
             p5.angleMode(p5.DEGREES);
         }
 

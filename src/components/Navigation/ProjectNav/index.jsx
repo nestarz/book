@@ -72,7 +72,7 @@ class Navigation extends React.Component {
   };
 
   render() {
-    console.log(this.props);
+    //console.log(this.props);
     var tableOfContents = this.props.tableOfContents;
     return (
       <div ref={this.nav}>
@@ -106,15 +106,15 @@ class Navigation extends React.Component {
           {this.state.minimalHeader && (
           <TOC>
           <ul>
-            {tableOfContents && tableOfContents.items && tableOfContents.items.map((heading, index) => {
+            {tableOfContents && tableOfContents.items && tableOfContents.items.map((heading, index1) => {
                 return (
-                  <li>
+                  <li key={index1}>
                     <h3>
                       <a href={heading.url}>{heading.title}</a>
                     </h3>
-                    {heading.items && heading.items.map((heading2, index) => {
+                    {heading.items && heading.items.map((heading2, index2) => {
                         return (
-                          <li>
+                          <li key={index2}>
                             <h4>
                               <a href={heading2.url}>{heading2.title}</a>
                             </h4>

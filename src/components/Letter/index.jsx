@@ -128,22 +128,22 @@ button,a {
 
 class Nav extends React.Component {
   constructor(props) {
-      super(props);
-      this.print = this.print.bind(this);
+    super(props);
+    this.print = this.print.bind(this);
   }
-  
+
   print() {
-      if (typeof window != "undefined") window.print();
+    if (typeof window != "undefined") window.print();
   }
 
   render() {
-      return (
-          <CVPrint>
-              <Link to="/">Retour</Link>
-              <Link to="/cv">Aller au CV</Link>
-              <button onClick={this.print}>Imprimer</button>
-          </CVPrint>
-      )
+    return (
+      <CVPrint>
+        <Link to="/">Retour</Link>
+        <Link to="/cv">Aller au CV</Link>
+        <button onClick={this.print}>Imprimer</button>
+      </CVPrint>
+    )
   };
 };
 
@@ -157,17 +157,17 @@ const Letter = () => {
     cover: './final6.png',
     object: 'Former Deep Learning engineer and Ceramics Student Internship or Collaboration proposal',
     to: {
-        name: 'Olivier van Herpt',
-        email: 'info@oliviervanherpt.com',
-        address:[
-            'Lodewijkstraat 11',
-            '5652 AC Eindhoven',
-            'The Netherlands',
-            ]
-        },
+      name: 'Olivier van Herpt',
+      email: 'info@oliviervanherpt.com',
+      address: [
+        'Lodewijkstraat 11',
+        '5652 AC Eindhoven',
+        'The Netherlands',
+      ]
+    },
     from: {
-        lieu: "Paris",
-        date: '2019-01-04',
+      lieu: "Paris",
+      date: '2019-01-04',
     }
   };
   const body = <>
@@ -182,10 +182,10 @@ const Letter = () => {
 
     <p>Best,</p>
 
-    <h4>Elias Rhouzlane<br/>
-    Student DNMADE Objets et Systèmes d'Objets en Céramique - Lycée Auguste Renoir<br/>
-    Diplomee MSc. Computer Vision - Sorbonne Université<br/>
-    eliasrhouzlane.com</h4>
+    <h4>Elias Rhouzlane<br />
+      Student DNMADE Objets et Systèmes d'Objets en Céramique - Lycée Auguste Renoir<br />
+      Diplomee MSc. Computer Vision - Sorbonne Université<br />
+      eliasrhouzlane.com</h4>
   </>
   const mainContainer = <Wrapper>
     <Content type="text">
@@ -195,7 +195,7 @@ const Letter = () => {
             <InfoBlock>
               <div>À {letter.to.name}</div>
               {letter.to.address.map((item, index) =>
-                <div>{item}</div>
+                <div key={index}>{item}</div>
               )}
               <div>{letter.to.email}</div>
             </InfoBlock>
@@ -257,16 +257,7 @@ const Letter = () => {
 
 export default Letter
 
-Letter.propTypes = {
-    pageContext: PropTypes.shape({
-      slug: PropTypes.string.isRequired,
-    }).isRequired,
-    data: PropTypes.shape({
-      mdx: PropTypes.object.isRequired,
-    }).isRequired,
-  }
-  
-  export const pageQuery = graphql`
+export const pageQuery = graphql`
     query($slug: String!) {
       mdx(fields: { slug: { eq: $slug } }) {
         code {
@@ -293,4 +284,3 @@ Letter.propTypes = {
       }
     }
   `
-  

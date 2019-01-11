@@ -15,11 +15,16 @@ import { css } from 'styled-components';
 const myCSS = css`
     border: 1px solid black;
     font-size: 10px;
-    max-width: 20cm;
+    @media not print {
+        max-width: 18cm;
+    }
     margin: auto;
     @media print {
         padding: 10pt;
-        font-size: 9pt;
+        font-size: 10pt;
+    }
+    .name {
+        font-size: 140%;
     }
 `;
 const CardCSS = css`
@@ -35,11 +40,11 @@ const CardCSS = css`
 
 # Carte de visite
 
-<VisitCard addCSS={CardCSS} lg={"fr"} mode={0} />
+<VisitCard addCSS={CardCSS} mode={0} />
 
 Conçue grâce à un procédé de design génératif, cette identité fait appel à la programmation, à l’algorithme. Chaque carte de visite reçoit non seulement un logo unique et personnel, mais également pointe vers son équivalent numérique. 
 
-<VisitCard addCSS={CardCSS} lg={"fr"} mode={4} />
+<VisitCard addCSS={CardCSS} mode={4} />
 
 # Curriculum Vitae
 

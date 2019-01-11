@@ -76,7 +76,7 @@ const ProjectHeader = ({ project, postNode }) => {
                     <ul>
                         {tableOfContents && tableOfContents.items && tableOfContents.items.map((heading, index) => {
                             return (
-                                <li>
+                                <li key={index}>
                                     <h3>
                                         <a href={heading.url}>{heading.title}</a>
                                     </h3>

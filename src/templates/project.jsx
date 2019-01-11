@@ -84,7 +84,6 @@ const MDXContent = styled.section`
       }
     }
     li:last-child {
-      margin-bottom: 5em;
     }
   }
 `;

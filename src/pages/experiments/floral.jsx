@@ -21,26 +21,47 @@ flex-grow: 1;
 const Nav = styled.nav`
 border-bottom: 1px solid #3CD670;
 width: 100%;
-min-height: 20px;
+min-height: 50vh;
 padding: 30px;
 font-size: 200%;
 display: flex;
-justify-content: space-between;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+font-size: 5vw;
+color: red;
+transform: scale(1,2);
 p{
     margin: 0;
+    font-size: 2.5vw;
 }
 `;
 
 const Product = styled.div`
 position: relative;
-flex: 1;
-width: 25vw;
-min-width: 200px;
-margin-bottom: 60px;
+flex: 25%;
+height: 25vw;
+border: 0.5vw solid black;
+padding: 0px;
+`;
+
+const HeaderProduct = styled.div`
+width:24vw;
+overflow: hidden;
+height:24vw;
+    color: red;
 h3 {
-    margin-bottom: 2px;
+    margin: 0;
+    margin-top: 10%;
+    font-size: 5vw;
+    transform: scale(1,3);
+    word-break: break-word;
+    text-transform: uppercase;
+    letter-spacing: -0.15em;
+
 }
 ul {
+    display: none;
     padding: 0;
     list-style-type: none;
     margin: 0;
@@ -51,19 +72,20 @@ ul {
     }
 }
 p {
+    display: none;
     font-size: 10px;
     margin-bottom: 5px;
 }
 `;
 
-const HeaderProduct = styled.div`
-margin-right: 20%;
-`;
-
 const BodyProduct = styled.div`
-width: 100%;
-height: 50vh;
-margin-top: 30px;
+position: absolute;
+top:0;
+bottom:0;
+right:0;
+left:0;
+mix-blend-mode: darken;
+background-color: white;
 `;
 
 const Index = ({ }) => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import ContainerDimensions from 'react-container-dimensions'
@@ -72,89 +72,71 @@ const Wrapper = styled.div`
 ${props => props.addCSS}
 `;
 
-class Index extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { isToggleOn: true };
-
-        // This binding is necessary to make `this` work in the callback
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleClick() {
-        this.setState(state => ({
-            isToggleOn: !state.isToggleOn
-        }));
-    }
-
-    print = () => {
-        if (typeof window != "undefined") window.print();
-    }
-
-    render() {
-        let sketches = [sketch1, sketch2, sketch3, sketch4, sketch5]
-        let selectedSketch = sketches[this.props.mode % sketches.length];
-        console.log("addCSS-visitCard", this.props.addCSS);
-        return (
-            <Wrapper addCSS={this.props.addCSS}>
-                <VisitCard className={"verso"}>
-                    <SketchContainer>
-                        <ContainerDimensions>
-                            {parent => (
-                                <SketchComponent
-                                    sketch={selectedSketch}
-                                    width={parent.width}
-                                    height={parent.height}
-                                    sketchProps={{ value: 0 }}
-                                    watchedVal={this.props.mode}
-                                />
-                            )
-                            }
-                        </ContainerDimensions>
-                    </SketchContainer>
-                    <NameHeader>
-                        {config.author}, <br /> {config.authorTitle[this.props.lg ? this.props.lg : "fr"]}
-                    </NameHeader>
-                    <Contact>
-                        <SocialMedia>
-                            <a
-                                href="https://www.instagram.com/eliasrhouzlane"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Instagram"
-                            >
-                                <FaInstagram />
-                            </a>
-                            <a href="https://www.behance.net/eliasrhouzlane" target="_blank" rel="noopener noreferrer" aria-label="Behance">
-                                <FaGithub />
-                            </a>
-                            <a href="https://www.behance.net/eliasrhouzlane" target="_blank" rel="noopener noreferrer" aria-label="Behance">
-                                <FaLinkedin />
-                            </a>
-                            <a href="https://dribbble.com/eliasrhouzlane" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
-                                <FaTwitter />
-                            </a>
-                        </SocialMedia>
-                        <div>eliasrhouzlane<span style={{ fontSize: "80%" }}>(@</span>gmail<span style={{ fontSize: "80%" }}>)</span>.com</div>
-                        <div>{this.props.lg == "fr" ? "0" : "+33"}6 20 40 62 67</div>
-                    </Contact>
-                </VisitCard>
-                <VisitCard className={"recto"}>
-                    <SketchContainer>
-                        <ContainerDimensions>
-                            {parent => (
-                                <SketchComponent
-                                    sketch={selectedSketch}
-                                    width={parent.width}
-                                    height={parent.height}
-                                    sketchProps={{ value: 0 }}
-                                    watchedVal={this.props.mode}
-                                />
-                            )
-                            }
-                        </ContainerDimensions>
-                    </SketchContainer>
-                    {/* <SketchContainer>
+const Index = (props) => {
+    let sketches = [sketch1, sketch2, sketch3, sketch4, sketch5]
+    let selectedSketch = sketches[props.mode % sketches.length];
+    var userLang = typeof navigator != "undefined" ? navigator.language || navigator.userLanguage : "fr";
+    const [lg, setLanguage] = useState(props.lg ? props.lg : userLang == "fr-FR" ? "fr" : "en");
+    return (
+        <Wrapper addCSS={props.addCSS}>
+            <VisitCard className={"verso"}>
+                <SketchContainer>
+                    <ContainerDimensions>
+                        {parent => (
+                            <SketchComponent
+                                sketch={selectedSketch}
+                                width={parent.width}
+                                height={parent.height}
+                                sketchProps={{ value: 0 }}
+                                watchedVal={props.mode}
+                            />
+                        )
+                        }
+                    </ContainerDimensions>
+                </SketchContainer>
+                <NameHeader>
+                    {config.author}, <br /> {config.authorTitle[lg ? lg : "fr"]}
+                </NameHeader>
+                <Contact>
+                    <SocialMedia>
+                        <a
+                            href="https://www.instagram.com/eliasrhouzlane"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                        >
+                            <FaInstagram />
+                        </a>
+                        <a href="https://www.behance.net/eliasrhouzlane" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+                            <FaGithub />
+                        </a>
+                        <a href="https://www.behance.net/eliasrhouzlane" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+                            <FaLinkedin />
+                        </a>
+                        <a href="https://dribbble.com/eliasrhouzlane" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
+                            <FaTwitter />
+                        </a>
+                    </SocialMedia>
+                    <div>eliasrhouzlane<span style={{ fontSize: "80%" }}>(@</span>gmail<span style={{ fontSize: "80%" }}>)</span>.com</div>
+                    <div>{lg == "fr" ? "0" : "+33"}6 20 40 62 67</div>
+                </Contact>
+            </VisitCard>
+            <VisitCard className={"recto"}>
+                <SketchContainer>
+                    <ContainerDimensions>
+                        {parent => (
+                            <SketchComponent
+                                sketch={selectedSketch}
+                                width={parent.width}
+                                height={parent.height}
+                                sketchProps={{ value: 0 }}
+                                watchedVal={props.mode}
+                            />
+                        )
+                        }
+                    </ContainerDimensions>
+                </SketchContainer>
+                {/* <SketchContainer>
                                 <ContainerDimensions>
                                     {parent => (
                                         <Scene3D 
@@ -167,16 +149,16 @@ class Index extends React.Component {
                                     }
                                 </ContainerDimensions>
                             </SketchContainer> */}
-                    <QRCode value={config.siteUrl}
-                        size={59}
-                        bgColor={"#ffffff"}
-                        fgColor={"#000000"}
-                        level={"H"}
-                        includeMargin={true}
-                        renderAs={"svg"} />
-                </VisitCard>
-            </Wrapper>
-        )
-    };
+                <QRCode value={config.siteUrl}
+                    size={59}
+                    bgColor={"#ffffff"}
+                    fgColor={"#000000"}
+                    level={"H"}
+                    includeMargin={true}
+                    renderAs={"svg"} />
+            </VisitCard>
+        </Wrapper>
+    )
 };
+
 export default Index;
