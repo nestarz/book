@@ -94,7 +94,7 @@ const Index = ({
   },
 }) => {
   const [mode, setCount] = useState(0);
-  var userLang = navigator.language || navigator.userLanguage; 
+  var userLang = typeof navigator != "undefined" ? navigator.language || navigator.userLanguage: "fr";
   const [lg, setLanguage] = useState(userLang == "fr-FR" ? "fr" : "en");
   console.log(`User's preferred language: ${userLang}, setting language to ${lg}`);
   return (

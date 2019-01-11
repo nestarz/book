@@ -29,7 +29,7 @@ a {
 `;
 
 const Index = (props) => {
-    var userLang = navigator.language || navigator.userLanguage;
+    var userLang = typeof navigator != "undefined" ? navigator.language || navigator.userLanguage: "fr";
     const [lg, setLanguage] = useState(props.lg ? props.lg : userLang == "fr-FR" ? "fr" : "en");
     console.log(`User's preferred language: ${userLang}, setting language to ${lg}`);
     console.log(props.addCSS)
