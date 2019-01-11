@@ -101,20 +101,20 @@ const Index = (props) => {
                 <Contact>
                     <SocialMedia>
                         <a
-                            href="https://www.instagram.com/eliasrhouzlane"
+                            href={config.instagram}
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Instagram"
                         >
                             <FaInstagram />
                         </a>
-                        <a href="https://www.behance.net/eliasrhouzlane" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+                        <a href={config.github} target="_blank" rel="noopener noreferrer" aria-label="Behance">
                             <FaGithub />
                         </a>
-                        <a href="https://www.behance.net/eliasrhouzlane" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+                        <a href={config.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Behance">
                             <FaLinkedin />
                         </a>
-                        <a href="https://dribbble.com/eliasrhouzlane" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
+                        <a href={config.twitter} target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
                             <FaTwitter />
                         </a>
                     </SocialMedia>
