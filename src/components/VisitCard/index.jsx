@@ -68,6 +68,10 @@ const SocialMedia = styled.div`
   }
 `
 
+const Wrapper = styled.div`
+${props => props.addCSS}
+`;
+
 class Index extends React.Component {
     constructor(props) {
         super(props);
@@ -90,10 +94,10 @@ class Index extends React.Component {
     render() {
         let sketches = [sketch1, sketch2, sketch3, sketch4, sketch5]
         let selectedSketch = sketches[this.props.mode % sketches.length];
-        console.log(this.props.mode);
+        console.log("addCSS-visitCard", this.props.addCSS);
         return (
-            <>
-                <VisitCard>
+            <Wrapper addCSS={this.props.addCSS}>
+                <VisitCard className={"verso"}>
                     <SketchContainer>
                         <ContainerDimensions>
                             {parent => (
@@ -114,24 +118,24 @@ class Index extends React.Component {
                     <Contact>
                         <SocialMedia>
                             <a
-                                href="https://www.instagram.com/lekoarts.de"
+                                href="https://www.instagram.com/eliasrhouzlane"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Instagram"
                             >
                                 <FaInstagram />
                             </a>
-                            <a href="https://www.behance.net/lekoarts" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+                            <a href="https://www.behance.net/eliasrhouzlane" target="_blank" rel="noopener noreferrer" aria-label="Behance">
                                 <FaGithub />
                             </a>
-                            <a href="https://www.behance.net/lekoarts" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+                            <a href="https://www.behance.net/eliasrhouzlane" target="_blank" rel="noopener noreferrer" aria-label="Behance">
                                 <FaLinkedin />
                             </a>
-                            <a href="https://dribbble.com/LeKoArts" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
+                            <a href="https://dribbble.com/eliasrhouzlane" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
                                 <FaTwitter />
                             </a>
                         </SocialMedia>
-                        <div>elias.rhouzlane<span style={{ fontSize: "80%" }}>(@</span>gmail<span style={{ fontSize: "80%" }}>)</span>.com</div>
+                        <div>eliasrhouzlane<span style={{ fontSize: "80%" }}>(@</span>gmail<span style={{ fontSize: "80%" }}>)</span>.com</div>
                         <div>{this.props.lg == "fr" ? "0" : "+33"}6 20 40 62 67</div>
                     </Contact>
                 </VisitCard>
@@ -171,7 +175,7 @@ class Index extends React.Component {
                         includeMargin={true}
                         renderAs={"svg"} />
                 </VisitCard>
-            </>
+            </Wrapper>
         )
     };
 };

@@ -31,7 +31,7 @@ const sketch = (width, height, props) => {
             p5.smooth();
             //p5.noStroke();
             //p5.filter(p5.BLUR,10);
-            p5.frameRate(50);
+            p5.frameRate(23);
         }
 
         p5.draw = () => {

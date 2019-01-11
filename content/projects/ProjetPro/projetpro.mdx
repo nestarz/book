@@ -1,0 +1,50 @@
+---
+title: 'Recherche de stage'
+date: '2019-11-03T22:55:56.925Z'
+client: ''
+service: 'Projet Professionnel'
+cover: './DSC00111.jpg'
+subtitle: 'Rapport'
+---
+
+import Letter from 'components/Letter';   
+import Cv from 'components/CurriculumVitae';
+import VisitCard from 'components/VisitCard';
+import reset from 'reset'
+import { css } from 'styled-components';
+const myCSS = css`
+    border: 1px solid black;
+    font-size: 10px;
+    max-width: 20cm;
+    margin: auto;
+    @media print {
+        padding: 10pt;
+        font-size: 9pt;
+    }
+`;
+const CardCSS = css`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .recto,
+    .verso {
+        margin: 1mm;
+        border: 1px solid #222;
+    }
+`;
+
+# Carte de visite
+
+<VisitCard addCSS={CardCSS} lg={"fr"} mode={0} />
+
+Conçue grâce à un procédé de design génératif, cette identité fait appel à la programmation, à l’algorithme. Chaque carte de visite reçoit non seulement un logo unique et personnel, mais également pointe vers son équivalent numérique. 
+
+<VisitCard addCSS={CardCSS} lg={"fr"} mode={4} />
+
+# Curriculum Vitae
+
+<Cv addCSS={myCSS}/>
+
+# Lettre de motivation
+
+<Letter pageContext={{slug: "oliviervanherpt"}}/>

@@ -135,7 +135,7 @@ exports.onCreateWebpackConfig = ({ stage, actions, loaders, getConfig }) => {
 exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+      modules: [path.resolve(__dirname, 'src'), path.resolve(__dirname, 'src', 'styles'), 'node_modules'],
       alias: {
         videojs: 'video.js',
         WaveSurfer: 'wavesurfer.js',

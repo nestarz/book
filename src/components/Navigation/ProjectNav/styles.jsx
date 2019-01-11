@@ -34,6 +34,9 @@ a:first-child{
   margin-left: 0px;
 }
 justify-content: space-between;
+@media print {
+  display: none;
+}
 `;
 
 

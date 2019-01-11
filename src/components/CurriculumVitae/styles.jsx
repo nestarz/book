@@ -37,12 +37,16 @@ position: relative;
 background-color: white;
 color: ${props => props.theme.colors.black};
 display: flex;
+h1, h2, h3 {
+  position: relative;
+  font-size: 100%;
+}
 @media print
 {  
   justify-content: space-between;
 }
 & > div {
-  margin-right: 50px;
+  margin-right: 1%;
   @media print
   {  
     margin-right: 5mm;
@@ -52,25 +56,11 @@ display: flex;
   margin-right: 0;
 }
 p {
-  font-size: 22px;
-  @media print
-  {  
-    font-size: 10pt;
-  }
-}
-h1,h2,h3,h4 {
-  font-weight: 500;
-  @media print
-  {  
-    font-size: 10pt;
-  }
+  font-size: 100%;
 }
 .bio {
-  font-size: 30px;
-  @media print
-  {  
-    font-size: 10pt;
-  }
+  margin-top: 0;
+  font-size: 100%;
 }
 .left {
   position: relative;
@@ -79,7 +69,6 @@ h1,h2,h3,h4 {
   & > header {
     @media print
     {  
-      font-size: 15pt;
       line-height: 0;
       margin: 0;
       padding: 0;
@@ -92,13 +81,9 @@ h1,h2,h3,h4 {
     text-decoration:none;
   }
   ul {
-    font-size: 22px;
-    @media print
-    {  
-      font-size: 10pt;
-    }
+    font-size: 100%;
     list-style-type: none;
-    margin: 10px 0;
+    margin: 1em 0;
     padding: 0;
     li {
         margin: 0;
@@ -121,27 +106,17 @@ margin: 0 auto;
 width: 100%;
 display: flex;
 .date {
-  flex-basis: 170px;
-  flex-grow: 0;
-  flex-shrink: 0;
-  @media print
-  {  
-    flex-basis: 1.1cm;
-  }
+  flex: 0;
+  min-width: 20%;
 }
 & > div {
   flex-grow: 1;
 }
-font-size: 22px;
-@media print
-{  
-  font-size: 10pt;
-}
+font-size: 100%;
+
 h1 {
-  font-weight: 500;
   letter-spacing: calc(-23 / 1000 * 1em);
   position: relative;
-  font-size: 400%;
 }
 .description {
   @media print
@@ -155,6 +130,7 @@ h1 {
 `
 
 export const Wrapper = styled.div`
+${props => props.addCSS}
 &>div:last-child {
   padding: 30px;
   @media print

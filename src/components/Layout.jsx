@@ -17,13 +17,43 @@ const GlobalStyle = createGlobalStyle`
   .nav-active {
     color: ${theme.brand.primary} !important;
   }
+  html, body {
+    margin: 0;
+    padding: 0;
+    border: none;
+    height: 100%;
+  }
+  #___gatsby, #___gatsby > div {
+    margin: 0;
+    padding: 0;
+    border: none;
+    height: 100%;
+  }
+  p {
+    font-size: 1.2rem;
+    letter-spacing: -0.003em;
+    line-height: 1.58;
+    --baseline-multiplier: 0.179;
+    --x-height-multiplier: 0.35;
+    @media (max-width: ${theme.breakpoints.l}), (max-device-width: ${theme.breakpoints.l}) {
+      font-size: 1.1rem;
+    }
+    @media (max-width: ${theme.breakpoints.m}), (max-device-width: ${theme.breakpoints.m}) {
+      font-size: 1rem;
+    }
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    letter-spacing: calc(-13 / 1000 * 1em);
+  }
 `
 
 const Wrapper = styled.div`
+min-height: 100%;
+width: 100%;
+position: relative;
 display: flex;
 flex-direction: column;
-min-height: 100vh;
-width: 100%;
 `
 
 const Layout = ({ children }) => (

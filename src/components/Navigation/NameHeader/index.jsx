@@ -63,7 +63,7 @@ const SocialMedia = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   padding: 0;
-  margin-top: 1rem;
+  margin-top: 1em;
   @media print {
     display: none;
   }
@@ -72,8 +72,8 @@ const SocialMedia = styled.div`
     margin-right: 0.25rem;
     font-size: 180%;
     line-height: normal;
-    margin-bottom: 1rem;
-  }
+    margin-bottom: 0.1em;
+    }
 `
 
 const Navigation = ({className, lg = 'fr'}) => (
@@ -86,7 +86,7 @@ const Navigation = ({className, lg = 'fr'}) => (
             {config.author}, {config.authorTitle[lg]}
           </Link>
         </Name>
-        <SocialMedia>
+        <SocialMedia className={"socialmedia"}>
           <a href={config.github} target="_blank" rel="noopener noreferrer" aria-label="Github">
             Github
           </a>

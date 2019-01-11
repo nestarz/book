@@ -3,338 +3,101 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
+import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import Layout from 'components/Layout';
 import SEO from 'components/SEO';
-import Img from 'gatsby-image';
+import ProjectHeader from 'components/ProjectHeader';
+import { PageProject } from 'print';
+
 import config from '../../config/website';
 import theme from '../../config/theme';
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
-import { MDXProvider } from '@mdx-js/tag'
-import Layout from 'components/Layout';
-import ProjectHeader from 'components/Navigation/ProjectHeader';
-import { Link } from 'gatsby';
-import ContainerDimensions from 'react-container-dimensions'
-import { SketchComponent } from 'components/P5js';
-import sketch1 from 'components/P5js/projects/mainScreen/sketch1bis';
-
-//const overlayColor = sample(overlay);
-
-const FlexHeader = styled.section`
-flex-grow: 1;
-padding: 30px 30px 0 30px;
-`;
 
 const Container = styled.section`
-overflow-x: hidden;
-margin-top: 0px;
-a {
-  text-decoration: none;
-  color: ${props => props.theme.brand.primary};
+  max-width: 1120px;
+  margin: auto;
+  @media not print {
+    padding: 0px 30px;
   }
-  ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  }
-  li {
-    margin: 0;
-    margin-bottom: 2px;
-  }
-  li:last-child {
-    margin-bottom:25px;
-  }
-
-  li a {
-  text-decoration: none;
-  color: ${props => props.theme.brand.primary};
-  display: block;
-  font-size: 120%;
-  }
-  li a:hover {
-    text-decoration: underline;
-  }
-  h1 {
-    column-span: all;
-    font-size: 270%;
-    margin-top: 20vh;
-  }
-  p {
-    font-weight: 100;
-  }
-  h1,h2,h3,h4,h5,h6 {
-    font-weight: 500;
-  }
-  h3 {
-    font-size: 120%;
-  }
-  img {
-    width: 100% !important;
-  }
-`
-const ContainerHeader = styled.section`
-display: flex;
-flex-wrap: wrap-reverse;
-justify-content: space-between;
-background-color:${props => props.theme.brand.primary};
-padding-left: 20px;
-h1,h2,h3,h4,h5,h6 {
-  margin: 0;
-}
-`;
-const Holder3D = styled.section`
-position: absolute;
-left: 0;
-right: 0;
-top: 20%;
-bottom: 0;
-z-index: -1;
-`;
-const TOC = styled.section`
-flex-grow: 1;
-padding: 30px;
-max-width: 80%;
-  column-span: all;
-  padding: 30px;
-  ul {
-  column-width: 250px;
-  /*border-right: 45px solid ${props => props.theme.brand.primary};*/
-column-fill: auto;
--webkit-perspective:1;
--webkit-column-count: 3; /* Chrome, Safari, Opera */
--moz-column-count:    3; /* Firefox */
-column-count:         3;
-  -webkit-column-gap:   30px; /* Chrome, Safari, Opera */ 
--moz-column-gap:      30px; /* Firefox */
-column-gap:           30px;
-column-rule-color: #eee; /* Optional */
-column-rule-style:solid; /* Optional */
-column-rule-width: 0px; /* Optional */
-}
-  li a, h2 {
-    color: white;
-  }
-  ul {
-    margin-left: 10px;
-  }
-  ul > li {
-    column-fill: auto;
-    break-inside: avoid;
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-  h3,h4,h5,h6 {
-    font-weight: 100;
-  }
-  h3 {
-    font-weight: 500;
-  }
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  page-break-before: always;
 `
 
 const MDXContent = styled.section`
-  & {
-    max-width: 1120px;
-    margin: auto;
-    padding: 30px;
-  }
-  p {
-    font-size: 1.2rem;
-    letter-spacing: -0.003em;
-    line-height: 1.58;
-    --baseline-multiplier: 0.179;
-    --x-height-multiplier: 0.35;
-    @media (max-width: ${props => props.theme.breakpoints.m}), (max-device-width: ${props => props.theme.breakpoints.m}) {
-      font-size: 1rem;
+  @media not print {
+    column-width: 350px;
+    column-fill: balance;
+    column-count: 2;
+    column-gap: 30px;
+    orphans: 3;
+    widows: 3;
+    & > div > div {
+      column-span: all;
+      margin: 20px auto;
     }
   }
-  li {
-    break-inside: avoid;
-    break-before: avoid;
-    font-size: 1.2rem;  
-    margin-bottom: 5px;
+  @media print {
+    & > div > ol,
+    & > div > p,
+    & > div > ul {
+      column-fill: balance;
+      column-count: 2;
+      column-gap: 10pt;
+      orphans: 3;
+      widows: 3;
+    }
   }
-  ol {
+
+  .gatsby-resp-image-wrapper {
+    margin-bottom: 20px !important;
+    -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+    page-break-inside: avoid; /* Firefox */
+    break-inside: avoid; /* IE 10+ */
+    break-inside: avoid-column; /* W3C */ 
+    display: inline-block;
+  }
+
+  & > div div {
+    page-break-inside: avoid;
+  }
+  & > div > h1 {
+    display: block; 
+    page-break-before: always;
+    column-span: all;
+  }
+
+  & > div ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    padding-left: 1rem;
-    margin-bottom: 5px;
-  }
-  h1:nth-child(0),
-  h1:nth-child(1),
-  h1:nth-child(2),
-  h1:nth-child(3),
-  h1:nth-child(4){
-    margin-top: 0px;
-  }
-iframe {
-  max-width: 100%;
-  max-height: 300px;
-}
-.gatsby-resp-image-wrapper {
-  margin-bottom: 20px !important;
-  -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
-  page-break-inside: avoid; /* Firefox */
-  break-inside: avoid; /* IE 10+ */
-  break-inside: avoid-column; /* W3C */ 
-  display: inline-block;
-}
-background-color: white;
-color: ${props => props.theme.colors.black};
-column-width: 350px;
--webkit-perspective:1;
-	-webkit-column-count: 3; /* Chrome, Safari, Opera */
-	-moz-column-count:    3; /* Firefox */
-	column-count:         3;
-  	-webkit-column-gap:   30px; /* Chrome, Safari, Opera */ 
-	-moz-column-gap:      30px; /* Firefox */
-	column-gap:           30px;
-	column-rule-color: #eee; /* Optional */
-	column-rule-style:solid; /* Optional */
-	column-rule-width: 0px; /* Optional */
-  text-align: left; /* Optional */
-  orphans: 3;
-`;
-const Wrapper = styled.section`
-  text-align: left;
-  position: relative;
-  width: 100%;
-  padding: 0;
-  color: ${props => props.theme.colors.body_color};
-  font-size: 1.5em;
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
-    font-size: 3.5vw;
-  }
-  h1, h2, h3, h4 {
-    margin: 0;
-  }
-  h1 {
-    font-size: 200%;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    letter-spacing: calc(-23 / 1000 * 1em);
-  }
-  p {
-    font-size: 100%;
-    margin: 0;
-    letter-spacing: calc(-16 / 1000 * 1em);
-  }
-  display: flex;
-  justify-content: space-between;
-`;
-
-const InformationWrapper = styled.div`
-max-width: 1000px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-`;
-
-const InfoBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 2rem 0;
-`;
-
-const Top = styled.div`
-  font-size: 80%;
-  margin-bottom: 0.5rem;
-  position: relative;
-  text-transform: uppercase;
-`;
-
-const Bottom = styled.div`
-  font-size: 125%;
-`;
-
-const ImageWrapper = styled.div`
-flex-grow: 1;
-display: flex;
-flex-direction: column;
-/* background-color: ${props => props.theme.brand.primary}; */
-min-width: 20vw;
-  > div { 
-    margin: 0rem auto 0 auto;
-    height: 100%;
-    width: 100%;
-    > div {
-      position: static !important;
+    li {
+      margin: 0;
+      margin-bottom: 0.0em;
+      a {
+        text-decoration: none;
+        display: block;
+        font-size: 120%;
+        }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+    li:last-child {
+      margin-bottom: 5em;
     }
   }
 `;
 
 const Project = ({ pageContext: { id }, data: { mdx: postNode } }) => {
   const project = postNode.frontmatter;
-  const tableOfContents = postNode.tableOfContents;
-  //console.log(postNode);
   return (
     <Layout theme={theme}>
+      <PageProject />
       <Helmet title={`${project.title} | ${config.siteTitle}`} />
       <SEO postPath={id} postNode={postNode} postSEO />
-      <Wrapper>
-        <FlexHeader>
-          <h1>{project.title}</h1>
-          <p>{project.subtitle ? project.subtitle : postNode.excerpt}</p>
-          <InformationWrapper>
-            {project.client && 
-            <InfoBlock>
-              <Top>Où</Top>
-              <Bottom>{project.client}</Bottom>
-            </InfoBlock>
-            }
-            {project.date && 
-            <InfoBlock>
-              <Top>Date</Top>
-              <Bottom>{project.date}</Bottom>
-            </InfoBlock>
-            }
-            {project.service && 
-            <InfoBlock>
-              <Top>Pour</Top>
-              <Bottom>{project.service}</Bottom>
-            </InfoBlock>
-            }
-          </InformationWrapper>
-        </FlexHeader>
-        <ImageWrapper>
-          {project.cover && project.cover.childImageSharp.fluid && <Img fluid={project.cover.childImageSharp.fluid} />}
-        </ImageWrapper>
-      </Wrapper>
-      <ProjectHeader project={project} tableOfContents={tableOfContents} />
+      <ProjectHeader project={project} postNode={postNode} />
       <Container>
-        <ContainerHeader>
-          <TOC>
-            <ul>
-            {tableOfContents && tableOfContents.items && tableOfContents.items.map((heading, index) => {
-                return (
-                  <li>
-                    <h3>
-                      <a href={heading.url}>{heading.title}</a>
-                    </h3>
-                  </li>
-                );
-              })}
-            </ul>
-          </TOC>
-          <Holder3D>
-            <ContainerDimensions>
-              {parent => (
-                // <Scene3D 
-                //   height={parent.height}
-                //   width={parent.width}
-                //   bg_color={theme.light.brand.primary} 
-                //   main_color={theme.light.colors.black}
-                // />
-                <SketchComponent
-                sketch={ sketch1 }
-                width={parent.width}
-                height={parent.height}
-                sketchProps={{ value: 10 }}
-                />
-                )
-              }
-            </ContainerDimensions>
-          </Holder3D>
-        </ContainerHeader>
         <MDXContent>
           <MDXRenderer>
             {postNode.code.body}

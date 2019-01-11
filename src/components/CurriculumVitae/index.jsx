@@ -21,19 +21,21 @@ import {
 
 const NameHeaderCv = styled(NameHeader)`
 a {
-    font-size: 22px;
+    font-size: 100%;
 }
 .name a {
-    font-size: 2rem;
+    font-size: 100%;
 }
 `;
 
-function Index() {
+const Index = (props) => {
     var userLang = navigator.language || navigator.userLanguage;
-    const [lg, setLanguage] = useState(userLang == "fr-FR" ? "fr" : "en");
+    const [lg, setLanguage] = useState(props.lg ? props.lg : userLang == "fr-FR" ? "fr" : "en");
     console.log(`User's preferred language: ${userLang}, setting language to ${lg}`);
+    console.log(props.addCSS)
     return (
-        <Wrapper>
+        <Wrapper addCSS={props.addCSS}>
+        {props.hideHeader ? (
             <CVPrint>
                 <Link to="/">{lg == "fr" ? 'Retour' : 'Back'}</Link>
                 <button onClick={() => window.print()}>{lg == "fr" ? 'Imprimer CV' : 'Print CV'}</button>
@@ -41,6 +43,7 @@ function Index() {
                     En/Fr
                 </button>
             </CVPrint>
+        ) : ""}
             <Layout navType={"front"} layoutType={"main"} theme={theme.light}>
                 <IndexWrapper>
                     <Holder3D>
@@ -135,7 +138,7 @@ function Index() {
                                     <p className="date">{school.from} {school.to ? "—" : ""} {school.to}</p>
                                     <div>
                                         <p style={{ marginBottom: 0 }}><span style={{ fontSize: "120%" }}>{lg == "fr" ? school.title.fr : school.title.en}</span></p>
-                                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 20 }}><div>{school.etablishment}</div><div>{school.location}</div></div>
+                                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "1em" }}><div>{school.etablishment}</div><div style={{textAlign: 'right', alignSelf: 'stretch'}}>{school.location}</div></div>
                                         <p className="description">{school.description && (lg == "fr" ? school.description.fr : school.description.en)}</p>
                                     </div>
                                 </WorkExperience>
@@ -148,7 +151,7 @@ function Index() {
                                     <p className="date">{work.from} {work.to ? "—" : ""} {work.to}</p>
                                     <div>
                                         <p style={{ marginBottom: 0 }}><span style={{ fontSize: "120%" }}>{lg == "fr" ? work.title.fr : work.title.en}</span></p>
-                                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 20 }}><div>{work.etablishment}</div><div>{work.location}</div></div>
+                                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "1em"}}><div>{work.etablishment}</div><div style={{textAlign: 'right', alignSelf: 'stretch'}}>{work.location}</div></div>
                                         <p className="description">{work.description && (lg == "fr" ? work.description.fr : work.description.en)}</p>
                                     </div>
                                 </WorkExperience>
