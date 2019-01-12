@@ -6,7 +6,7 @@ import Webcam from "react-webcam";
 import ContainerDimensions from 'react-container-dimensions'
 
 import Stats from 'react-canvas-stats';
-import { canny, threshold } from "./opencv_functions/filters";
+import { canny, threshold } from "components/OpenCV/opencv_functions/filters";
 import face2 from "../fausse3Dimgs/3Dfaces_2.png";
 
 const Face = styled.div`
