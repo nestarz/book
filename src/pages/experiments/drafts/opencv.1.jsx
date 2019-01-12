@@ -89,10 +89,9 @@ function onOpenCvReady(inputVideo, outputCanvas) {
         let begin = Date.now();
         // start processing.
         cap.read(src);
-        cv.resize(src, src, new cv.Size(30, scaledVideo.height));
         cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY);
         //dst = threshold(dst, dst, 60);
-        dst = canny(src, dst, 100, 100, 3, false);
+        dst = canny(src, dst, 20, 100, 3, false);
         cv.resize(dst, dst, new cv.Size(scaledVideo.width, scaledVideo.height));
         cv.imshow(outputCanvas, dst);
         // schedule the next one.
@@ -151,7 +150,7 @@ const Index = () => {
                     </div>
                     <canvas ref={canvasOutputRef} />
                     <Face2 />
-                    <h1>you are bits</h1>
+                    <h1>Végétal</h1>
                 </div>
             </Wrapper>
         </Layout>
