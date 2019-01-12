@@ -12,10 +12,28 @@ justify-content: center;
 align-items: center;
 `;
 
+function videoDimensions(video) {
+    // Ratio of the video's intrisic dimensions
+    var videoRatio = video.videoWidth / video.videoHeight;
+    // The width and height of the video element
+    var width = video.offsetWidth, height = video.offsetHeight;
+    // The ratio of the element's width to its height
+    var elementRatio = width / height;
+    // If the video element is short and wide
+    if (elementRatio > videoRatio) width = height * videoRatio;
+    // It must be tall and thin, or exactly equal to the original ratio
+    else height = width / videoRatio;
+    return {
+        width: width,
+        height: height
+    };
+}
+
 function onOpenCvReady(inputVideo, outputCanvas) {
     let video = inputVideo.video;
+    let scaledVideo = videoDimensions(video);
     let src = new cv.Mat(video.height, video.width, cv.CV_8UC4);
-    let dst = new cv.Mat(video.height, video.width, cv.CV_8UC1);
+    let dst = new cv.Mat(scaledVideo.height, scaledVideo.width, cv.CV_8UC1);
     let cap = new cv.VideoCapture(video);
     const FPS = 30;
     function processVideo() {
@@ -27,17 +45,22 @@ function onOpenCvReady(inputVideo, outputCanvas) {
                 dst.delete();
                 return;
             }
+            if (src.cols != video.width || src.rows != video.height) {
+                scaledVideo = videoDimensions(video);
+                src = new cv.Mat(video.height, video.width, cv.CV_8UC4);
+                dst = new cv.Mat(scaledVideo.height, scaledVideo.width, cv.CV_8UC1);
+            }
             let begin = Date.now();
             // start processing.
             cap.read(src);
             cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY);
+            cv.resize(dst, dst, new cv.Size(scaledVideo.width, scaledVideo.height));
             cv.imshow(outputCanvas, dst);
             // schedule the next one.
             let delay = 1000 / FPS - (Date.now() - begin);
             setTimeout(processVideo, delay);
         } catch (err) {
             console.log(err);
-            //utils.printError(err);
         }
     };
     // schedule the first one.
@@ -63,8 +86,9 @@ const Index = () => {
                 <p>Basic Example. Copy Me.</p>
                 <Webcam
                     ref={webcamRef}
+                    width={"400px"}
                 />
-                <canvas ref={canvasOutputRef} width={640} height={425} />
+                <canvas ref={canvasOutputRef} />
             </Wrapper>
         </Layout>
     )
