@@ -42,7 +42,8 @@ const Wrapper = styled.div`
         flex-direction: row;
         justify-content: space-around;
         .videoContainer {
-            width: 49.5vw;
+            @media screen and (orientation:portrait) { width: 49.5vmin; }
+            @media screen and (orientation:landscape) { width: 49.5vmax; }           
             height: 100%;
         }
     }
