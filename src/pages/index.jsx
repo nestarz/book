@@ -13,6 +13,7 @@ import ExperimentList from 'components/Navigation/ExperimentList';
 import ContainerDimensions from 'react-container-dimensions'
 import { SketchComponent } from 'components/P5js';
 import sketch1 from 'components/P5js/projects/mainScreen/sketch1';
+// import SpringAnimation from 'components/SpringAnimation/animation1';
 
 const Holder3D = styled.div`
 position: fixed;
@@ -107,6 +108,10 @@ const Index = ({
               height={parent.height}
               sketchProps={{ value: 10 }}
             />
+            // <SpringAnimation
+            //   width={parent.width}
+            //   height={parent.height}
+            // />
           )
           }
         </ContainerDimensions>
