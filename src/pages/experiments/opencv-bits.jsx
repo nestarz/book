@@ -157,7 +157,7 @@ const Index = () => {
                     </div>
                     <canvas ref={canvasOutputRef} />
                     <Face2 />
-                    <h1>you are bits</h1>
+                    <h1>En Clair ou Crypté ?</h1>
                 </div>
             </Wrapper>
         </Layout>
