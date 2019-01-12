@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import theme from '../../../../config/theme';
+import theme from '../../../config/theme';
 import styled from 'styled-components';
 import Layout from 'components/Layout';
 import Webcam from "react-webcam";
@@ -7,7 +7,7 @@ import ContainerDimensions from 'react-container-dimensions'
 
 import Stats from 'react-canvas-stats';
 import { canny, threshold } from "components/OpenCV/opencv_functions/filters";
-import face2 from "../fausse3Dimgs/3Dfaces_2.png";
+import face2 from "./fausse3Dimgs/3Dfaces_2.png";
 
 const Face = styled.div`
 background-size: cover;
@@ -33,7 +33,7 @@ const Wrapper = styled.div`
     &, & > div {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         flex-direction: column;
         flex: 1;
@@ -41,9 +41,14 @@ const Wrapper = styled.div`
     & > div {
         flex-direction: row;
         justify-content: space-around;
+        align-items: space-around;
+        width: 100%;
         .videoContainer {
-            width: 49.5vw;
-            height: 100%;
+            @media screen and (orientation:portrait) { width: 49.5vmin; }
+            @media screen and (orientation:landscape) { width: 49.5vmin; } 
+            video {
+                height: 100%;
+            }          
         }
     }
 `;
@@ -89,9 +94,10 @@ function onOpenCvReady(inputVideo, outputCanvas) {
         let begin = Date.now();
         // start processing.
         cap.read(src);
+        cv.resize(src, src, new cv.Size(30, scaledVideo.height));
         cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY);
         //dst = threshold(dst, dst, 60);
-        dst = canny(src, dst, 20, 100, 3, false);
+        dst = canny(src, dst, 100, 100, 3, false);
         cv.resize(dst, dst, new cv.Size(scaledVideo.width, scaledVideo.height));
         cv.imshow(outputCanvas, dst);
         // schedule the next one.
@@ -111,15 +117,16 @@ const Index = () => {
 
     useEffect(() => {
         const script = document.createElement("script");
-        script.src = "https://docs.opencv.org/master/opencv.js";
+        script.src = "/assets/js/opencv.js";
         script.async = true;
         script.onload = () => setOpenCvRunning(true)
         document.body.appendChild(script);
+        console.log("opencv appended !")
     }, []);
 
     useEffect(() => {
         if (openCvRunning && cameraRunning) {
-            if (webcamRef.current.video.readyState > 2) {
+            if (webcamRef.current.video.readyState > 3) {
                 onOpenCvReady(webcamRef.current, canvasOutputRef.current);
             } else {
                 webcamRef.current.video.oncanplay = function () {
@@ -150,7 +157,7 @@ const Index = () => {
                     </div>
                     <canvas ref={canvasOutputRef} />
                     <Face2 />
-                    <h1>Végétal</h1>
+                    <h1>you are bits</h1>
                 </div>
             </Wrapper>
         </Layout>

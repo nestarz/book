@@ -23,6 +23,7 @@ overflow: hidden;
 `;
 const Face2 = styled(Face)`
 mix-blend-mode: lighten; 
+background: url(${face2}) no-repeat center center fixed; 
 `;
 const Wrapper = styled.div`
     flex-grow: 1;
@@ -48,6 +49,8 @@ const Wrapper = styled.div`
             @media screen and (orientation:landscape) { width: 49.5vmin; } 
             video {
                 height: 100%;
+                visibility: hidden;
+                width: 100px;
             }          
         }
     }
@@ -70,10 +73,10 @@ function videoDimensions(video) {
     };
 }
 
-function onOpenCvReady(inputVideo, outputCanvas) {
+function onOpenCvReady(inputVideo, outputCanvas, height, width) {
     let video = inputVideo.video;
     let scaledVideo = videoDimensions(video);
-    console.log(video.height, video.width, scaledVideo.height, scaledVideo.width);
+    console.log(video.height, video.width, height ? height: scaledVideo.height, width ? width : scaledVideo.width);
     let src = new cv.Mat(video.height, video.width, cv.CV_8UC4);
     let dst = new cv.Mat(video.height, video.width, cv.CV_8UC1);
     let cap = new cv.VideoCapture(video);
@@ -89,16 +92,16 @@ function onOpenCvReady(inputVideo, outputCanvas) {
         if (src.cols != video.width || src.rows != video.height) {
             scaledVideo = videoDimensions(video);
             src = new cv.Mat(video.height, video.width, cv.CV_8UC4);
-            dst = new cv.Mat(scaledVideo.height, scaledVideo.width, cv.CV_8UC1);
+            dst = new cv.Mat(height ? height: scaledVideo.height, width ? width : scaledVideo.width, cv.CV_8UC1);
         }
         let begin = Date.now();
         // start processing.
         cap.read(src);
-        cv.resize(src, src, new cv.Size(30, scaledVideo.height));
+        //cv.resize(src, src, new cv.Size(30, scaledVideo.height));
         cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY);
-        //dst = threshold(dst, dst, 60);
-        dst = canny(src, dst, 100, 100, 3, false);
-        cv.resize(dst, dst, new cv.Size(scaledVideo.width, scaledVideo.height));
+        dst = threshold(dst, dst, 60);
+        //dst = canny(src, dst, 100, 100, 3, false);
+        cv.resize(dst, dst, new cv.Size(height ? height: scaledVideo.height, width ? width : scaledVideo.width));
         cv.imshow(outputCanvas, dst);
         // schedule the next one.
         let delay = 1000 / FPS - (Date.now() - begin);
@@ -121,15 +124,16 @@ const Index = () => {
         script.async = true;
         script.onload = () => setOpenCvRunning(true)
         document.body.appendChild(script);
+        console.log("opencv appended !")
     }, []);
 
     useEffect(() => {
         if (openCvRunning && cameraRunning) {
             if (webcamRef.current.video.readyState > 3) {
-                onOpenCvReady(webcamRef.current, canvasOutputRef.current);
+                onOpenCvReady(webcamRef.current, canvasOutputRef.current, 200, 200);
             } else {
                 webcamRef.current.video.oncanplay = function () {
-                    onOpenCvReady(webcamRef.current, canvasOutputRef.current);
+                    onOpenCvReady(webcamRef.current, canvasOutputRef.current, 500, 500);
                 };
             }
         } else {
@@ -155,7 +159,6 @@ const Index = () => {
                         </ContainerDimensions>
                     </div>
                     <canvas ref={canvasOutputRef} />
-                    <Face2 />
                     <h1>you are bits</h1>
                 </div>
             </Wrapper>

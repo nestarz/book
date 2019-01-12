@@ -40,6 +40,11 @@ const Nav = styled.nav`
 
 var experiments = [
     {
+        url: "experiments/opencv-bits",
+        slug: "opencv-bits",
+        title: "En clair ou crypté",
+    },
+    {
         url: "experiments/visit-card",
         slug: "visit-card",
         title: "Carte de Visite",
