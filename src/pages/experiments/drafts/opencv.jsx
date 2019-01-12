@@ -42,7 +42,7 @@ const Wrapper = styled.div`
         flex-direction: row;
         justify-content: space-around;
         align-items: space-around;
-        width: 100%;up
+        width: 100%;
         .videoContainer {
             @media screen and (orientation:portrait) { width: 49.5vmin; }
             @media screen and (orientation:landscape) { width: 49.5vmin; } 
@@ -117,7 +117,7 @@ const Index = () => {
 
     useEffect(() => {
         const script = document.createElement("script");
-        script.src = "https://docs.opencv.org/master/opencv.js";
+        script.src = "/assets/js/opencv.js";
         script.async = true;
         script.onload = () => setOpenCvRunning(true)
         document.body.appendChild(script);
@@ -125,7 +125,7 @@ const Index = () => {
 
     useEffect(() => {
         if (openCvRunning && cameraRunning) {
-            if (webcamRef.current.video.readyState > 2) {
+            if (webcamRef.current.video.readyState > 3) {
                 onOpenCvReady(webcamRef.current, canvasOutputRef.current);
             } else {
                 webcamRef.current.video.oncanplay = function () {
