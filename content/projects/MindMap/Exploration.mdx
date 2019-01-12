@@ -158,10 +158,14 @@ export const graph = {
 };
 
 export const options = {
+  autoResize: true,
+  height: '100%',
+  width: '100%',
+  clickToUse: true,
   physics: {
+    enabled: true,
     solver: "repulsion",
     repulsion: {
-      avoidOverlap: 1,
       springConstant: 0.225,
       centralGravity: 0,
       damping: 0.08
@@ -290,7 +294,14 @@ export const events = {
         graph={graph} 
         options={options} 
         events={events}
-        style={{ height: "100%", width: parent.width }} 
+        style={{ height: "100%", width: parent.width }}
+        getNetwork={network => window.onresize = function() {
+          network.fit();
+          network.refresh();
+          network.resize();
+          network.activate();
+          console.log("OK", network);
+          }}
     />)
     }
 </ContainerDimensions>
