@@ -80,6 +80,9 @@ p {
   a {
     text-decoration:none;
   }
+  .email {
+    color: initial;
+  }
   ul {
     font-size: 100%;
     list-style-type: none;

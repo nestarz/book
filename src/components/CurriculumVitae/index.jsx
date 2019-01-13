@@ -31,19 +31,10 @@ a {
 const Index = (props) => {
     var userLang = typeof navigator != "undefined" ? navigator.language || navigator.userLanguage: "fr";
     const [lg, setLanguage] = useState(props.lg ? props.lg : userLang == "fr-FR" ? "fr" : "en");
+    if (props.lg != lg && props.lg) setLanguage(props.lg ? props.lg : lg);
     //console.log(`User's preferred language: ${userLang}, setting language to ${lg}`);
-    //console.log(props.addCSS)
     return (
         <Wrapper addCSS={props.addCSS}>
-        {props.hideHeader ? (
-            <CVPrint>
-                <Link to="/">{lg == "fr" ? 'Retour' : 'Back'}</Link>
-                <button onClick={() => window.print()}>{lg == "fr" ? 'Imprimer CV' : 'Print CV'}</button>
-                <button onClick={() => setLanguage(lg == "fr" ? "en" : "fr")}>
-                    En/Fr
-                </button>
-            </CVPrint>
-        ) : ""}
             <Layout navType={"front"} layoutType={"main"} theme={theme.light}>
                 <IndexWrapper>
                     <Holder3D>
@@ -77,7 +68,7 @@ const Index = (props) => {
                         </Holder3D>
                         <div>
                             <p>
-                                {email}<br />
+                                <a className={"email"} href={"mailto:" + email}>{email}</a><br />
                                 {siteUrl2}
                             </p>
                         </div>
