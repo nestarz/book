@@ -25,6 +25,7 @@ const Face2 = styled(Face)`
 mix-blend-mode: lighten; 
 `;
 const Wrapper = styled.div`
+background-color: #3CD670;
     flex-grow: 1;
     color: white;
     h1 {
