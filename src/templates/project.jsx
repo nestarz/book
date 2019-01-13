@@ -35,6 +35,12 @@ const MDXContent = styled.section`
     widows: 3;
   }
 
+  img {
+    margin: auto;
+    display: table-cell;
+    max-width: 100%;
+  }
+
   .gatsby-resp-image-wrapper {
     margin-bottom: 20px !important;
     -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
@@ -59,6 +65,7 @@ const MDXContent = styled.section`
     li {
       margin: 0;
       margin-bottom: 0.0em;
+      column-break-inside : avoid;
       a {
         text-decoration: none;
         display: block;
@@ -66,6 +73,9 @@ const MDXContent = styled.section`
         }
       a:hover {
         text-decoration: underline;
+      }
+      & > a + img {
+        margin-top: 1.5em;
       }
     }
     li:last-child {
