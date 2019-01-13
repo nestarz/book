@@ -47,10 +47,11 @@ export const TOC = styled.section`
   padding: 30px;
   max-width: 80%;
   ul {
-    column-width: 250px;
-    column-fill: auto;
+    column-fill: balance;
     column-count: 3;
-    column-gap: 30px;
+    column-gap: 3px;
+    orphans: 3;
+    widows: 3;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -59,7 +60,6 @@ export const TOC = styled.section`
       color: white;
     }
     & > li {
-      column-fill: auto;
       break-inside: avoid;
       &:first-child {
         margin-top: 0;

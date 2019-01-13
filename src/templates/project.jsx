@@ -16,7 +16,7 @@ const Container = styled.section`
   max-width: 1120px;
   margin: auto;
   @media not print {
-    padding: 0px 30px;
+    padding: 0px 30px 60px 30px;
   }
   background-color: #fff;
   display: flex;
@@ -25,28 +25,14 @@ const Container = styled.section`
 `
 
 const MDXContent = styled.section`
-  @media not print {
-    column-width: 350px;
+  & > div > ol,
+  & > div > p,
+  & > div > ul {
     column-fill: balance;
     column-count: 2;
-    column-gap: 30px;
+    column-gap: 10pt;
     orphans: 3;
     widows: 3;
-    & > div > div {
-      column-span: all;
-      margin: 20px auto;
-    }
-  }
-  @media print {
-    & > div > ol,
-    & > div > p,
-    & > div > ul {
-      column-fill: balance;
-      column-count: 2;
-      column-gap: 10pt;
-      orphans: 3;
-      widows: 3;
-    }
   }
 
   .gatsby-resp-image-wrapper {
@@ -64,7 +50,6 @@ const MDXContent = styled.section`
   & > div > h1 {
     display: block; 
     page-break-before: always;
-    column-span: all;
   }
 
   & > div ul {
