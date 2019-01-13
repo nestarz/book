@@ -52,7 +52,7 @@ var experiments = [
     {
         url: "experiments/floral",
         slug: "floral",
-        title: "Floral Experiment"
+        title: "Végétal, Décors Utiles"
     },
     {
         url: "experiments/fausse3D",

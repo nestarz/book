@@ -26,9 +26,9 @@ mix-blend-mode: lighten;
 `;
 const Wrapper = styled.div`
     flex-grow: 1;
+    color: white;
     h1 {
         z-index: 1;
-        color: white;
     }
     &, & > div {
         display: flex;
@@ -157,7 +157,10 @@ const Index = () => {
                     </div>
                     <canvas ref={canvasOutputRef} />
                     <Face2 />
+                    <div>
                     <h1>En Clair ou Crypté ?</h1>
+                    <h5>Nécessite une caméra. C'est tout.</h5>
+                    </div>
                 </div>
             </Wrapper>
         </Layout>
