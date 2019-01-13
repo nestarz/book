@@ -16,7 +16,7 @@ const Container = styled.section`
   max-width: 1120px;
   margin: auto;
   @media not print {
-    padding: 0px 30px 60px 30px;
+    padding: 0px 30px 60px 30px ;
   }
   background-color: #fff;
   display: flex;
