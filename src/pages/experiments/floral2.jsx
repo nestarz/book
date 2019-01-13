@@ -10,8 +10,16 @@ import { SketchComponent } from 'components/P5js';
 import sketch from 'components/P5js/projects/decorationFloral/sketch7';
 
 import csv from "csv/NutritionalFacts_Fruit_Vegetables_Seafood.csv";
-import barcode from "./06-barcode.png"
-//console.log(csv);
+
+const importAll = require =>
+  require.keys().reduce((acc, next) => {
+    acc[next.replace("./", "")] = require(next);
+    return acc;
+  }, {});
+
+const images = importAll(
+  require.context("./barcodes", false, /\.(png|jpe?g|svg)$/)
+);
 
 
 const Wrapper = styled.div`
@@ -62,7 +70,7 @@ h1{
 
 const Product = styled.div`
     position: relative;
-    background: url(${barcode}); 
+    background: url(${props => props.backgroundUrl});
     background-size: contain;
     margin: 5px;
     color: white;
@@ -72,8 +80,9 @@ const Product = styled.div`
     flex: 1 0 auto;
     height:auto;
     width: 20%;
-    box-shadow: inset 0 0 20px #eee, inset 0 0 20px #eee, inset 0 0 20px #eee;
-    border: 1px solid black;
+    /*box-shadow: inset 0 0 20px #eee, inset 0 0 20px #eee, inset 0 0 20px #eee;*/
+    padding: 20px;
+    border: 2px solid #3CD670;
     &:before {
         content:'';
         float:left;
@@ -131,7 +140,7 @@ const Index = ({ }) => {
                         let mainName = name.substr(0, name.indexOf(',')) ? name.substr(0, name.indexOf(',')) : name;
                         let subName = name.substr(0, name.indexOf(',')) ? name.split(",").pop() : "";
                         return (
-                            <Product>
+                            <Product backgroundUrl={images[i + ".png"]}>
                             </Product>
                         )
                     })}
