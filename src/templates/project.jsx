@@ -76,6 +76,7 @@ const MDXContent = styled.section`
       }
       & > a + img {
         margin-top: 1.5em;
+        margin-bottom: 1.5em;
       }
     }
     li:last-child {
