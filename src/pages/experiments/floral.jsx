@@ -39,13 +39,29 @@ flex-direction: column;
 align-items: center;
 padding: 1em;
 h1{
+    position: relative;
+    color: white;
+    &:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0.45em;
+        bottom: 0.15em;
+        -webkit-transform: rotateZ(-2deg);
+        -ms-transform: rotate(-2deg);
+        transform: rotateZ(-2deg);
+        background: #3CD670;
+        z-index: -1;
+    }
+    z-index: 1;
     margin: 0;
 }
 `;
 
 const Product = styled.div`
     position: relative;
-    background: tomato;
+    background: #3CD670;
     margin: 5px;
     color: white;
     font-weight: bold;
@@ -70,6 +86,14 @@ display: none;
 const BodyProduct = styled.div`
 position: absolute;
 top: 0; right: 0; left: 0; bottom: 0;
+&.nav {
+    & > div > canvas {
+    transform: scale(2);
+    margin-top: -50vh;
+    margin-left: -23vw;
+}
+    z-index: -2;
+}
 `;
 
 const Index = ({ }) => {
@@ -82,6 +106,22 @@ const Index = ({ }) => {
                     <p>
                         Le calcium ça fait grandir, les calories grossir et le sucre trembler !
                     </p>
+                    <BodyProduct className="nav">
+                        <ContainerDimensions>
+                            {
+                                function (parent) {
+                                    return (
+                                        <SketchComponent
+                                            sketch={sketch}
+                                            width={parent.width}
+                                            height={parent.height}
+                                            sketchProps={{ product: csv[4], color: "#3CD670" }}
+                                        />
+                                    )
+                                }
+                            }
+                        </ContainerDimensions>
+                    </BodyProduct>
                 </Nav>
                 <TilesWrapper>
                     {csv.slice(1, 17).map((object, i) => {

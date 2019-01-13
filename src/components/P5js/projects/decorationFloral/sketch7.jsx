@@ -1,5 +1,5 @@
 const sketch = (width, height, props) => {
-    var color = "red";
+    var color = props.color ? props.color : "black";
     var product = props.product;
     var rawName = product["Food and Serving"].substr(0, product["Food and Serving"].indexOf(','));
     var sugar = product['Sugars'] * 10;
@@ -143,7 +143,7 @@ function renderAGeneration (system, previousGeneration) {
         }
 
         p5.setup = () => {
-            p5.stroke("black");
+            p5.stroke(color);
             p5.angleMode(p5.DEGREES);
         }
 
