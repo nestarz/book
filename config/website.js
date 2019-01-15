@@ -7,11 +7,11 @@ module.exports = {
   siteUrlShort: 'eliasrhouzlane.com', // Domain of your site. No trailing slash!
   siteLanguage: 'fr', // Language Tag on <html> element
   siteLogo: '/logo.png', // Used for SEO and manifest
-  siteDescription: 'Ceramics Design student and Deep Learning engineer',
+  siteDescription: 'Interaction Design and Deep Learning engineer',
   author: 'Elias Rhouzlane', // Author for schemaORGJSONLD
   authorTitle: {
-    fr: "Étudiant en Design d'Objet Céramique et Ingénieur Deep Learning",
-    en: "Ceramics Design student and Deep Learning engineer"
+    fr: "Design d'interaction et Ingénieur Deep Learning",
+    en: "Interaction Design and Deep Learning engineer"
   },
 
   // siteFBAppID: '123456789', // Facebook App ID - Optional
@@ -26,7 +26,7 @@ module.exports = {
 
   bioCV: {
     fr: "Intéressé par de multiples champs : objet, céramique, architecture,  animation, dessin, culture, édition, mode, jeu vidéo, réalité virtuelle, interactions. Je recherche à allier mon profil scientifique pour des expérimentations et productions tangibles, éthiques et créatives.",
-    en: 'Currently studying Ceramics and Object Design at LTAA Auguste Renoir exploring the interaction of objects, people, art and technology using form and code with a mix of analog and digital materials.',
+    en: 'Currently focusing on Interaction and Object Design exploring the interaction of objects, people, art, technology and science using form and code with a mix of analog and digital materials.',
   },
 
   // Social Links
