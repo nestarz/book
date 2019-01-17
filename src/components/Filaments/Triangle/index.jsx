@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Filament from 'filament';
 import TriangleScene from './triangle' // tweaked tutorial_triangle.js as shown above.
 import styled from 'styled-components';
@@ -13,9 +13,9 @@ const Index = () => {
     var scene;
     let canvasRef = useRef();
     let assets = ['/assets/filamat/triangle.filamat'];
-    Filament.init(assets, () => {
+    useEffect(() => Filament.init(assets, () => {
         scene = new TriangleScene(canvasRef.current, assets)
-    });
+    }), [])
     return <Canvas ref={canvasRef}/>
 };
 

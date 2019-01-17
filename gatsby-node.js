@@ -188,6 +188,16 @@ exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, actions }) 
           },
         ],
       },
+    });
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: path.resolve(__dirname, 'node_modules/filament/filament.js'),
+            use: 'null-loader',
+          },
+        ],
+      },
     })
   }
 };
