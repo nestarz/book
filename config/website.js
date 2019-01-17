@@ -21,8 +21,8 @@ module.exports = {
   googleAnalyticsID: 'UA-127385143-1',
 
   // Manifest and Progress color
-  themeColor: '#3CD670',
-  backgroundColor: '#2b2e3c',
+  themeColor: '#FFFFFF',
+  backgroundColor: '#3CD670',
 
   bioCV: {
     fr: "Intéressé par de multiples champs : objet, céramique, architecture,  animation, dessin, culture, édition, mode, jeu vidéo, réalité virtuelle, interactions. Je recherche à allier mon profil scientifique pour des expérimentations et productions tangibles, éthiques et créatives.",
