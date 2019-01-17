@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import OpenCvWebcam from "components/OpenCV/Webcam";
+import OpenCvWebcam from "components/OpenCV/webcam";
 import startOpenCvProgram from "components/OpenCV/crypted";
 import ContainerDimensions from 'react-container-dimensions';
 
