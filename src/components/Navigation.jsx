@@ -90,7 +90,7 @@ const Navigation = () => (
         <Nav>
           {data.nav.edges.map((nav, index) => (
             <Link
-              key={nav.node.fields.slug}
+              key={`${nav.node.fields.slug}-${index}`}
               to={nav.node.fields.slug}
               data-testid={`navItem-${index}`}
               activeClassName="nav-active"

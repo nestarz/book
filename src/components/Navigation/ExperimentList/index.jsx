@@ -80,10 +80,10 @@ const Navigation = () => (
                 from={{ opacity: '0' }}
                 to={{ opacity: '1' }}>
                 {(experiment, index) => props => (
-                    <div>
+                    <div key={index}>
                         <Link
                             style={props}
-                            key={experiment.slug}
+                            key={`${experiment.slug}`}
                             to={experiment.url}
                             data-testid={`navItem-${index}`}
                             activeClassName="nav-active"
@@ -91,8 +91,8 @@ const Navigation = () => (
                             {experiment.title}
                         </Link>
                         {experiment.versions ? experiment.versions.map((url, i) => (
-                            <>
-                                <span>{" "} — </span> 
+                            <span key={index}>
+                                <span>{" "} — </span>
                                 <Link
                                     style={props}
                                     key={i}
@@ -102,7 +102,7 @@ const Navigation = () => (
                                 >
                                     v{i + 2}
                                 </Link>
-                            </>
+                            </span>
                         )
                         ) : ""}
                     </div>

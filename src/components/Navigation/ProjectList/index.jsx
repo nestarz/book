@@ -51,7 +51,7 @@ const Navigation = () => (
                         {(project, index) => props => (
                             <Link
                                 style={props}
-                                key={project.node.fields.slug}
+                                key={`${project.node.fields.slug}-${index}`}
                                 to={project.node.fields.slug}
                                 data-testid={`navItem-${index}`}
                                 activeClassName="nav-active"

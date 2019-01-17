@@ -81,7 +81,7 @@ const SEO = props => {
       <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-      <link rel="shortcut icon" href="favicon.ico" />
+      <link rel="shortcut icon" href="/favicon.ico" />
       <link rel="manifest" href="site.webmanifest" />
       <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#11bc5d" />
       <meta name="theme-color" content="#11bc5d" />
