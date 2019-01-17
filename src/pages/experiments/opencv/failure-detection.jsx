@@ -17,6 +17,18 @@ button {
     outline: inherit;
     text-decoration: underline;
 }
+video {
+    position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+width: 100vw;
+height: 100vh;
+mix-blend-mode: difference;
+pointer-events: none;
+filter: saturate(0);
+}
 `;
 const Canvas = styled.canvas`
 position: fixed;
@@ -26,7 +38,7 @@ left: 0;
 right: 0;
 width: 100vw;
 height: 100vh;
-mix-blend-mode: difference;
+mix-blend-mode: multiply;
 pointer-events: none;`;
 
 
