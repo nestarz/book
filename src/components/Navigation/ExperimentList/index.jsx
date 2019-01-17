@@ -31,7 +31,6 @@ const Nav = styled.nav`
   padding: 0;
   flex-direction: column;
   a {
-    font-size: 1.1rem;
     &:hover:before {
         content: "↘ ";
     }

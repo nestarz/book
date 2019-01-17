@@ -32,6 +32,12 @@ flex-direction: column;
 justify-content: flex-end;
 max-width: 600px;
 text-align: right;
+flex: 1;
+font-size: 115%;
+@media (max-width: 600px), (max-device-width: 600px) {
+  font-size: 150%;
+  text-align: left;
+}
 `
 
 const Description = styled.p`
