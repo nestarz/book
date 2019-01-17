@@ -104,7 +104,7 @@ const Navigation = ({className, lg = 'fr'}) => (
           <a href={config.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Linkedin">
             Linkedin
           </a>
-          <Link to="/cv" data-testid="cv-link">
+          <Link to="/about/cv" data-testid="cv-link">
             Contact/CV
           </Link>
         </SocialMedia>

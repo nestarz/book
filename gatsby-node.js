@@ -147,6 +147,9 @@ exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, actions }) 
       })
     ]
   });
+  actions.setWebpackConfig({
+
+  });
   actions.setWebpackConfig({ //csv-loader
     module: {
       rules: [

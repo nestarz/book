@@ -73,7 +73,7 @@ ${props => props.addCSS}
 `;
 
 const Index = (props) => {
-    let sketches = [sketch1, sketch2, sketch3, sketch4, sketch5]
+    let sketches = [sketch1, sketch3, sketch4, sketch5]
     let selectedSketch = sketches[props.mode % sketches.length];
     var userLang = typeof navigator != "undefined" ? navigator.language || navigator.userLanguage : "fr";
     const lg = props.lg ? props.lg : userLang == "fr-FR" ? "fr" : "en";

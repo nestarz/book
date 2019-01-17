@@ -140,7 +140,7 @@ class Nav extends React.Component {
     return (
       <CVPrint>
         <Link to="/">Retour</Link>
-        <Link to="/cv">Aller au CV</Link>
+        <Link to="/about/cv">Aller au CV</Link>
         <button onClick={this.print}>Imprimer</button>
       </CVPrint>
     )

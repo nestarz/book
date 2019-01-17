@@ -40,22 +40,28 @@ const Nav = styled.nav`
 
 var experiments = [
     {
-        url: "experiments/opencv-bits",
+        url: "experiments/opencv/failure-detection",
+        slug: "failure-detection",
+        title: "Détection d'échec",
+    },
+    {
+        url: "experiments/opencv/opencv-bits",
         slug: "opencv-bits",
         title: "En clair ou crypté",
     },
     {
-        url: "experiments/visit-card",
+        url: "about/visit-card",
         slug: "visit-card",
         title: "Carte de Visite",
     },
     {
-        url: "experiments/floral",
+        url: "experiments/floral/floral",
         slug: "floral",
-        title: "Végétal, Décors Utiles"
+        title: "Végétal, Décors Utiles",
+        versions: ["experiments/floral/floral2",]
     },
     {
-        url: "experiments/fausse3D",
+        url: "experiments/fausse3D/fausse3D",
         slug: "fausse3D",
         title: "Fausse 3D",
     },
@@ -70,15 +76,32 @@ const Navigation = () => (
                 from={{ opacity: '0' }}
                 to={{ opacity: '1' }}>
                 {(experiment, index) => props => (
-                    <Link
-                        style={props}
-                        key={experiment.slug}
-                        to={experiment.url}
-                        data-testid={`navItem-${index}`}
-                        activeClassName="nav-active"
-                    >
-                        {experiment.title}
-                    </Link>
+                    <div>
+                        <Link
+                            style={props}
+                            key={experiment.slug}
+                            to={experiment.url}
+                            data-testid={`navItem-${index}`}
+                            activeClassName="nav-active"
+                        >
+                            {experiment.title}
+                        </Link>
+                        {experiment.versions ? experiment.versions.map((url, i) => (
+                            <>
+                                <span>{" "} — </span> 
+                                <Link
+                                    style={props}
+                                    key={i}
+                                    to={url}
+                                    data-testid={`navItem-${index}-${i}`}
+                                    activeClassName="nav-active"
+                                >
+                                    v{i + 2}
+                                </Link>
+                            </>
+                        )
+                        ) : ""}
+                    </div>
                 )}
             </Trail>
         </Nav>
