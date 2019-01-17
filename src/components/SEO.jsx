@@ -15,7 +15,7 @@ const SEO = props => {
     const postMeta = postNode.frontmatter
     title = `${postMeta.title} | ${config.siteTitle}`
     description = postNode.excerpt
-    image = postMeta.cover.childImageSharp.resize.src
+    image = postMeta.cover ? postMeta.cover.childImageSharp.resize.src : config.siteLogo
     postURL = config.siteUrl + realPrefix + postPath
   } else {
     title = config.siteTitleAlt

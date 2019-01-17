@@ -28,7 +28,7 @@ const Single = ({ pageContext: { slug }, data: { mdx } }) => {
       <SEO postPath={slug} postNode={mdx} postSingle />
       <Hero single>
         <BGImage single>
-          <Img fluid={single.cover.childImageSharp.fluid} alt="" />
+          <Img fluid={single.cover && single.cover.childImageSharp.fluid} alt="" />
         </BGImage>
         <Content type="text">
           <Spring
