@@ -1,6 +1,7 @@
 const _ = require('lodash');
 const path = require('path');
 const webpack = require(`webpack`);
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 const wrapper = promise => promise.then(result => ({ result, error: null })).catch(error => ({ error, result: null }))
@@ -148,7 +149,19 @@ exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, actions }) 
     ]
   });
   actions.setWebpackConfig({
-
+      // We do not actually use the following modules, but emscripten emits JS bindings that
+      // conditionally uses them. Therefore we need to tell webpack to skip over their "require"
+      // statements.
+      externals: {
+        fs: 'fs',
+        crypto: 'crypto',
+        path: 'path'
+    },
+    plugins: [
+      new CopyWebpackPlugin([
+          { from: path.resolve(__dirname, 'node_modules/filament/filament.wasm') },
+      ])
+  ],
   });
   actions.setWebpackConfig({ //csv-loader
     module: {
