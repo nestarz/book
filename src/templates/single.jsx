@@ -15,6 +15,13 @@ const Content = styled(Container)`
   padding-top: 2rem;
   padding-bottom: 2rem;
   z-index: 3;
+  max-width: 50rem;
+  margin: auto;
+`
+
+const Container2 = styled(Container)`
+  max-width: 50rem;
+  margin: auto;
 `
 
 const Title = styled(animated.h1)`
@@ -45,7 +52,7 @@ const Single = ({ pageContext: { slug }, data: { mdx } }) => {
           </Spring>
         </Content>
       </Hero>
-      <Container type="text">
+      <Container2 type="text">
         <Spring native config={config.slow} delay={500} from={{ opacity: 0 }} to={{ opacity: 1 }}>
           {props => (
             <animated.div style={props}>
@@ -53,7 +60,7 @@ const Single = ({ pageContext: { slug }, data: { mdx } }) => {
             </animated.div>
           )}
         </Spring>
-      </Container>
+      </Container2>
     </Layout>
   )
 }
