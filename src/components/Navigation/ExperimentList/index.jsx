@@ -41,7 +41,12 @@ var experiments = [
     {
         url: "experiments/opencv/failure-detection",
         slug: "failure-detection",
-        title: "Détection d'échec",
+        title: "Soustraction de fond",
+    },
+    {
+        url: "experiments/filaments/suzanne",
+        slug: "suzanne",
+        title: "Suzanne",
     },
     {
         url: "experiments/opencv/opencv-bits",
