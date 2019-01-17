@@ -9,13 +9,13 @@ width: 100%;
 height: 100%;
 `;
 
-const assets_path = "/assets/filamat"
-const ibl_suffix = Filament.getSupportedFormatSuffix('etc s3tc');
-const albedo_suffix= Filament.getSupportedFormatSuffix('astc s3tc');
-const texture_suffix= Filament.getSupportedFormatSuffix('etc');
-const environ = 'syferfontein_18d_clear_2k';
-
 const Index = () => {
+    const assets_path = "/assets/filamat"
+    const ibl_suffix = Filament.getSupportedFormatSuffix('etc s3tc');
+    const albedo_suffix= Filament.getSupportedFormatSuffix('astc s3tc');
+    const texture_suffix= Filament.getSupportedFormatSuffix('etc');
+    const environ = 'syferfontein_18d_clear_2k';
+
     var scene;
     let canvasRef = useRef();
     let assets = {
