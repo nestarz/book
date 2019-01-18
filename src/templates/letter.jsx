@@ -62,6 +62,15 @@ const Double = styled.div`
   position: relative;
   max-width: 55rem;
   font-size: 200%;
+  a {
+    color: inherit !important;
+    text-decoration: underline;
+  }
+  @media print {  
+    a {
+      color: inherit !important;
+    }
+  }
   & > div:first-child {
     flex: 1;
     position: absolute;
