@@ -115,6 +115,11 @@ const Wrapper = styled.div`
 display: flex;
 justify-content: space-around;
 flex: 1;
+@media not print {
+  @media (max-width: 60rem), (max-device-width: 60rem) {
+    padding: 0 2rem;
+  }
+}
 flex-direction: column; /*Try column,row*/
 height:100%;
 & > div:last-child {
