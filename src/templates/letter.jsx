@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { animated, Spring, config } from 'react-spring'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import { Link, graphql } from 'gatsby'
@@ -8,8 +8,33 @@ import { Container, Layout, BGImage } from 'components'
 import ContainerDimensions from 'react-container-dimensions'
 import { PageA4 } from '../styles/print'
 
+import VisitCard from 'components/VisitCard';
+
 import { SketchComponent } from 'components/P5js'
 import sketch from 'components/P5js/projects/mainScreen/sketch4'
+
+const CardCSS = css`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    .recto,
+    .verso {
+        margin: -10px 0mm;
+        border: 1px solid #222;
+    }
+    .recto {
+      display: none;
+    }
+`;
+
+const VisitCardHolder = styled.div`
+margin: 0 auto;
+position: relative;
+width: 55rem;
+@media not print {
+margin-bottom: 10mm;
+}
+`;
 
 const Holder3D = styled.div`
   @media print {  
@@ -23,6 +48,7 @@ const Holder3D = styled.div`
     right: 0;
     width: 21cm;
     height: 29.7cm;
+    filter: contrast(0);
   }
   position: absolute;
   pointer-events: none;
@@ -35,6 +61,7 @@ const Double = styled.div`
   margin: 0 auto;
   position: relative;
   max-width: 55rem;
+  font-size: 200%;
   & > div:first-child {
     flex: 1;
     position: absolute;
@@ -43,7 +70,6 @@ const Double = styled.div`
     right: 0;
     bottom: 0;
     color: black;
-    font-size: 100%;
     z-index: -1;
     margin: auto;
   }
@@ -54,6 +80,7 @@ const Double = styled.div`
     mix-blend-mode: overlay;
     z-index: 1;
     margin: auto;
+    
   }
 `
 
@@ -67,6 +94,13 @@ const Content = styled(Container)`
   margin-left: 0;
   margin-right: 0;
 `
+
+const LetterContent = styled.div`
+p{
+  font-size: 1.1rem;
+}
+`
+
 
 const Wrapper = styled.div`
 display: flex;
@@ -124,22 +158,22 @@ button,a {
 
 class Nav extends React.Component {
   constructor(props) {
-      super(props);
-      this.print = this.print.bind(this);
+    super(props);
+    this.print = this.print.bind(this);
   }
-  
+
   print() {
-      if (typeof window != "undefined") window.print();
+    if (typeof window != "undefined") window.print();
   }
 
   render() {
-      return (
-          <CVPrint>
-              <Link to="/">Retour</Link>
-              <Link to="/about/cv">Aller au CV</Link>
-              <button onClick={this.print}>Imprimer</button>
-          </CVPrint>
-      )
+    return (
+      <CVPrint>
+        <Link to="/">Retour</Link>
+        <Link to="/about/cv">Aller au CV</Link>
+        <button onClick={this.print}>Imprimer</button>
+      </CVPrint>
+    )
   };
 };
 
@@ -177,7 +211,7 @@ const Letter = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
         )}
       </Spring>
     </Content>
-    <Container type="text">
+    <LetterContent type="text">
       <Spring native config={config.slow} delay={1000} from={{ opacity: 0 }} to={{ opacity: 1 }}>
         {props => (
           <animated.div style={props}>
@@ -185,12 +219,12 @@ const Letter = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
           </animated.div>
         )}
       </Spring>
-    </Container>
+    </LetterContent>
   </Wrapper>
   return (
     <Layout>
-      <PageA4/>
-      <Nav/>
+      <PageA4 />
+      <Nav />
       {/* <SEO postPath={slug} postNode={postNode} postSEO /> */}
       <>
         <Double>
@@ -210,6 +244,9 @@ const Letter = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
           </Holder3D>
           {mainContainer}
         </Double>
+        {/* <VisitCardHolder>
+          <VisitCard addCSS={CardCSS} mode={4} />
+        </VisitCardHolder> */}
       </>
     </Layout>
   )

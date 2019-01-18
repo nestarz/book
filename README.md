@@ -44,3 +44,6 @@ scoop install npm
 npm install windows-build-tools -g
 npm install --global gatsby-cl
 ```
+
+## Todo
+- app-193e7b265f42671e4d39.js is 2.14 MB, and won't be precached. Configure maximumFileSizeToCacheInBytes to change this limit.
