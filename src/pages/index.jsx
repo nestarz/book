@@ -23,6 +23,7 @@ right:0;
 bottom:0;
 pointer-events: none;
 mix-blend-mode: multiply;
+transform: rotate(90deg);
 `;
 
 
@@ -33,32 +34,20 @@ justify-content: flex-end;
 max-width: 600px;
 text-align: right;
 flex: 1;
-font-size: 115%;
-@media (max-width: 600px), (max-device-width: 600px) {
+font-size: 130%;
+flex: 45%;
+@media (max-width: 1000px), (max-device-width: 1000px) {
   font-size: 150%;
   text-align: left;
 }
 `
 
 const Description = styled.p`
-  padding: 0rem;
-  padding-bottom: 0em;
-  justify-content: flex-end;
-  display: flex;
-  flex-direction: column;
+  margin: 0;
   max-width: 800px;
-  position: relative;
-  font-size: 180%;
   min-width: 300px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 0.01em;
-  text-align: left;
+  font-size: 180%;
   line-height: 1.7em;
-  margin: 0em;
-  padding-top: 3em;
-  flex: 1;
 `;
 
 const Wrapper = styled.div`
@@ -68,9 +57,10 @@ const Wrapper = styled.div`
   justify-content: space-between;
   flex-direction: row;
   align-content: space-between;
-  flex-direction: row;
-  flex-wrap: wrap;
   padding: 30px;
+  @media (max-width: 1000px), (max-device-width: 1000px) {
+    flex-wrap: wrap;
+  }
   h2 {
     font-size: 180%;
     font-weight: normal;
@@ -88,10 +78,14 @@ const Wrapper = styled.div`
     font-size: 1.1rem;
     display: flex;
   }
+  &>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 `;
 
 const Header = styled(NameHeader)`
-flex: 0 0 100%;
 `;
 
 
@@ -100,7 +94,7 @@ const Index = ({
     allMdx: { edges: projectEdges },
   },
 }) => {
-  var userLang = typeof navigator != "undefined" ? navigator.language || navigator.userLanguage: "fr";
+  var userLang = typeof navigator != "undefined" ? navigator.language || navigator.userLanguage : "fr";
   const [lg, setLanguage] = useState(userLang == "fr-FR" ? "fr" : "en");
   //console.log(`User's preferred language: ${userLang}, setting language to ${lg}`);
   return (
@@ -123,13 +117,15 @@ const Index = ({
         </ContainerDimensions>
       </Holder3D>
       <Wrapper>
-        <Header theme={theme} lg={lg}/>
-        <Description>          
-          <button onClick={() => setLanguage(lg == "fr" ? "en" : "fr")}>
-          En/Fr
+        <div>
+          <Header theme={theme} lg={lg} />
+          <Description>
+            <button onClick={() => setLanguage(lg == "fr" ? "en" : "fr")}>
+              En/Fr
           </button>
-          {website.bioCV[lg]}
-        </Description>
+            {website.bioCV[lg]}
+          </Description>
+        </div>
         <ListWrapper>
           <h2>{lg == "fr" ? "Expériences" : "Experiments"}</h2>
           <ExperimentList />

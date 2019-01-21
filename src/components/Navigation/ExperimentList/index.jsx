@@ -39,6 +39,16 @@ const Nav = styled.nav`
 
 var experiments = [
     {
+        url: "experiments/films/film",
+        slug: "films",
+        title: "Filmographie",
+    },
+    {
+        url: "experiments/generativeArt/xp1/",
+        slug: "recart",
+        title: "Recurrent Art",
+    },
+    {
         url: "experiments/opencv/failure-detection",
         slug: "failure-detection",
         title: "Soustraction de fond",

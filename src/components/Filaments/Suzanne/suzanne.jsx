@@ -1,11 +1,13 @@
 import Filament from 'filament';
 import Trackball from 'gltumble';
+import { mat4 } from 'gl-matrix';
 
 export default class App {
-    constructor(canvas, assets) {
-        let {filamat_url, filamesh_url, sky_small_url, ibl_url, 
-            sky_large_url, albedo_url, roughness_url, metallic_url, 
-            normal_url, ao_url} = assets;
+    constructor(canvas, assets, lookAt = 0) {
+        let { filamat_url, filamesh_url, sky_small_url, ibl_url,
+            sky_large_url, albedo_url, roughness_url, metallic_url,
+            normal_url, ao_url } = assets;
+        this.lookAt = lookAt;
         this.canvas = canvas;
         this.engine = Filament.Engine.create(canvas);
         this.scene = this.engine.createScene();
@@ -49,6 +51,7 @@ export default class App {
         this.view = this.engine.createView();
         this.view.setCamera(this.camera);
         this.view.setScene(this.scene);
+        this.view.setClearColor([0, 0, 0, 0.0]); // blue-green background
         this.render = this.render.bind(this);
         this.resize = this.resize.bind(this);
         window.addEventListener('resize', this.resize);
@@ -62,9 +65,13 @@ export default class App {
     render() {
         const tcm = this.engine.getTransformManager();
         const inst = tcm.getInstance(this.suzanne);
+        //const radians = this.lookAt * 10000;
+        //const newMat = mat4.create();
         tcm.setTransform(inst, this.trackball.getMatrix());
-        inst.delete();
+        //const transform = mat4.add(newMat, this.trackball.getMatrix(), mat4.fromRotation(mat4.create(), radians, [1, 0, 1]));
+        //tcm.setTransform(inst, transform);
         this.renderer.render(this.swapChain, this.view);
+        inst.delete();
         window.requestAnimationFrame(this.render);
     }
     resize() {

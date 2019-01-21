@@ -9,7 +9,7 @@ import Layout from 'components/Layout';
 import { SketchComponent } from 'components/P5js';
 import sketch from 'components/P5js/projects/decorationFloral/sketch7';
 
-import csv from "csv/NutritionalFacts_Fruit_Vegetables_Seafood.csv";
+import csv from "data/nutrition/csv/NutritionalFacts_Fruit_Vegetables_Seafood.csv";
 
 const importAll = require =>
   require.keys().reduce((acc, next) => {

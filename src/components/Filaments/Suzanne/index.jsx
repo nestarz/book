@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Filament from 'filament';
 import Scene from './suzanne' // tweaked tutorial_triangle.js as shown above.
 import styled from 'styled-components';
@@ -9,9 +9,10 @@ width: 100%;
 height: 100%;
 `;
 
-const Index = () => {
-    var scene, assets;
-    let canvasRef = useRef();
+const Index = ({ className, children, lookAt }) => {
+    var assets;
+    const canvasRef = useRef();
+    const [scene, setScene] = useState(null);
     useEffect(() => {
         const assets_path = "/assets/filamat"
         const ibl_suffix = Filament.getSupportedFormatSuffix('etc s3tc');
@@ -32,11 +33,16 @@ const Index = () => {
             filamesh_url: `${assets_path}/suzanne.filamesh`,
         }
         Filament.init(Object.values(assets), () => {
-            scene = new Scene(canvasRef.current, assets)
+            setScene(new Scene(canvasRef.current, assets, lookAt));
         })
     }, [])
+    useEffect(() => {
+        if (scene) {
+            scene.lookAt = lookAt; 
+        }
+    }, [lookAt, scene]);
 
-    return <Canvas ref={canvasRef} />
+    return <Canvas ref={canvasRef} className={className}/>
 };
 
 export default Index;
