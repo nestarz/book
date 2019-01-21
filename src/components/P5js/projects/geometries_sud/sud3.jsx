@@ -1,6 +1,6 @@
 const sketch = (width, height, props) => {
     return function (p5) {
-        var leaves;
+        var leaves, seed;
         var container_scale = 195;
         var unit_scale = 0.5;
 
@@ -21,17 +21,19 @@ const sketch = (width, height, props) => {
                 p5.scale(this.scale)
                 for (var i = -p5.PI / 4; i <= p5.PI / 4; i = i + p5.PI / 20) {
                     var length_offset = p5.map(p5.abs(i), p5.PI / 4, 0, 0, container_scale * 0.75);
+                    var rand = p5.random(900);
                     p5.push()
-                    p5.fill(this.c)
-                    p5.stroke(this.c)
-                    p5.strokeWeight(0.5)
+                    //p5.fill(this.c)
+                    p5.fill(p5.random(100), 80, 100, p5.random(100));
+                    p5.stroke(p5.random(100), 80, 100, p5.random(100))
+                    p5.strokeWeight(p5.random())
                     p5.rotate(i)
                     p5.beginShape()
                     p5.curveVertex(1, 0)
                     p5.curveVertex(1, container_scale * this.ratio)
                     p5.curveVertex(this.wid, container_scale + length_offset)
-                    p5.curveVertex(p5.map(p5.mouseX, 0, width, this.wid + this.wid / 2, -this.wid - this.wid / 2),
-                    p5.map(p5.mouseY, 0, height, container_scale - container_scale / 2 + length_offset, container_scale + container_scale / 2 + length_offset))
+                    p5.curveVertex(p5.map(rand, 0, width, this.wid + this.wid / 2, -this.wid - this.wid / 2),
+                    p5.map(rand, 0, height, container_scale - container_scale / 2 + length_offset, container_scale + container_scale / 2 + length_offset))
                     p5.curveVertex(-this.wid, container_scale + length_offset)
                     p5.curveVertex(-1, container_scale * this.ratio)
                     p5.curveVertex(-1, 0)
@@ -44,7 +46,9 @@ const sketch = (width, height, props) => {
 
         p5.setup = () => {
             p5.background(0);
-
+            p5.noLoop();
+            p5.colorMode(p5.HSB, 360, 100, 100, 100);
+            seed = p5.random(9999)
             leaves = [];
             for (var i = container_scale / 2; i < width; i += container_scale) {
                 for (var j = container_scale; j < height; j += container_scale) {
@@ -58,6 +62,7 @@ const sketch = (width, height, props) => {
 
         p5.draw = () => {
             p5.background(255)
+            p5.randomSeed(seed)
 
             for (var i = 0; i < leaves.length; i++) {
                 leaves[i].draw()
@@ -65,6 +70,7 @@ const sketch = (width, height, props) => {
         };
 
         p5.mousePressed = () => {
+            seed = p5.random(9999)
         }
 
         p5.receiveProps = (nextProps) => {
