@@ -14,7 +14,7 @@ width: 100vw;
 height: 100vh;
 mix-blend-mode: screen;
 pointer-events: none;
-mix-blend-mode: color;
+mix-blend-mode: color-dodge;
 background-color: darkblue;
 `
 const Wrapper = styled.div`

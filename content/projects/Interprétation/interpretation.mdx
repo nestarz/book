@@ -6,6 +6,53 @@ client: 'LTAA Auguste Renoir'
 service: 'Techniques et Savoir-faire'
 cover: './Sud/IMG_20181123_124433.jpg'
 ---
+import ContainerDimensions from 'react-container-dimensions'
+import { SketchComponent } from 'components/P5js';
+import sud1 from 'components/P5js/projects/geometries_sud/sud1';
+import sud2 from 'components/P5js/projects/geometries_sud/sud2';
+import sud3 from 'components/P5js/projects/geometries_sud/sud3';
+
+# Essais de motifs
+
+## Essai 1 - Génération de motifs floraux 
+
+Chaque motif floral est déterminé par un génome et est composé uniquement à partir de cercle. Un premier ensemble de cercle composé autour d'un cercle central symbolise les sépales, un deuxième ensemble de cercle symbolise les pétales ou les étamines et enfin le cercle central représente le pistil.
+Le génome code pour l'opacité, la taille, la couleur et la quantité des pétales, sépales et du pistil central.
+
+<div style={{ 
+  height: "600px",
+  width: "auto"
+  }}>
+<ContainerDimensions>
+    {parent => (
+        <SketchComponent
+            sketch={ sud2 }
+            width={parent.width}
+            height={parent.height}
+        />
+    )
+    }
+</ContainerDimensions>
+</div>
+
+## Essai 2 - Génération de motifs floraux 
+
+<div style={{ 
+  height: "600px",
+  width: "auto"
+  }}>
+<ContainerDimensions>
+    {parent => (
+        <SketchComponent
+            sketch={ sud3 }
+            width={parent.width}
+            height={parent.height}
+        />
+    )
+    }
+</ContainerDimensions>
+</div>
+
 
 # Géométries Sud, du Mexique à la Terre de Feu
 
