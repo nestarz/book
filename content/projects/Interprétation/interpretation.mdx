@@ -7,6 +7,7 @@ service: 'Techniques et Savoir-faire'
 cover: './Sud/IMG_20181123_124433.jpg'
 ---
 import ContainerDimensions from 'react-container-dimensions'
+import Webcam from "react-webcam";
 import { SketchComponent } from 'components/P5js';
 import sud1 from 'components/P5js/projects/geometries_sud/sud1';
 import sud2 from 'components/P5js/projects/geometries_sud/sud2';
@@ -41,6 +42,8 @@ Le génome code pour l'opacité, la taille, la couleur et la quantité des péta
 </div>
 
 ## Essai 2
+
+Sur cet essai, chaque plante est composée de onze feuilles, espacées de 45 degrés chacune. Chaque feuille est dédoublée avec une taille de feuille et un ratio feuille/branche variable. La couleur est elle aussi aléatoire dans un espace de couleur restreint.
 
 <div style={{ 
   height: "600px",
@@ -77,6 +80,10 @@ Le génome code pour l'opacité, la taille, la couleur et la quantité des péta
 </div>
 
 ## Essai 4
+
+![Chladni](./Sud/figures-accoustiques-de-chladni1.jpg)
+Les nœuds de vibration d'une plaque élastique mince dessinent des lignes caractéristiques de la fréquence propre excitée. La matérialisation de ces lignes avec une poudre, généralement de la poudre de lycopode, forme les figures dites de Chladni.
+« Au préalable de toutes les recherches contemporaines autour des plaques sonores, impossible de ne pas citer le nom d’Ernst Chladni. Ernst Florens Friedrich Chladni, né le 30 novembre 1756 à Wittenberg, mort le 3 avril 1857 à Breslau, est un physicien allemand qui étudiait expérimentalement les vibrations de plaques en les saupoudrant de sable fin. Il obtenait ainsi des figures acoustiques auxquelles son nom est associé aujourd’hui. A la suite des travaux de Chladni, cette traduction du son en images a donné lieu à de nouvelles recherches, synthétisées par Hans Jenny sous le nom de cymatique. » (cit. chercheursdesons)
 
 <div style={{ 
   height: "600px",
@@ -134,8 +141,20 @@ Le génome code pour l'opacité, la taille, la couleur et la quantité des péta
 
 <div style={{ 
   height: "600px",
-  width: "auto"
+  width: "auto",
+  position: "relative",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
   }}>
+<Webcam
+    width={parent.width}
+    height={parent.height}
+    style={{
+        position: "absolute",
+        mixBlendMode: "lighten"
+    }}
+/>
 <ContainerDimensions>
     {parent => (
         <SketchComponent
