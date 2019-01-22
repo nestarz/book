@@ -54,8 +54,6 @@ const sketch = (width, height, props) => {
                 for (var j = container_scale; j < height; j += container_scale) {
                     leaves.push(new PalmLeaf(i, j, container_scale, unit_scale, 0.85, 15));
                     leaves.push(new PalmLeaf(i, j, container_scale, unit_scale, 0.5, 5));
-
-
                 }
             }
         }
