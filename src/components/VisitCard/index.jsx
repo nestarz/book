@@ -79,7 +79,7 @@ const Index = (props) => {
     const lg = props.lg ? props.lg : userLang == "fr-FR" ? "fr" : "en";
     //console.log(props.lg, lg)
     return (
-        <Wrapper addCSS={props.addCSS}>
+        <Wrapper className={props.className} addCSS={props.addCSS}>
             <VisitCard className={"verso"}>
                 <SketchContainer>
                     <ContainerDimensions>

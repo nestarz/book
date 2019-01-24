@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { animated, Spring, config } from 'react-spring'
@@ -42,9 +42,9 @@ const Holder3D = styled.div`
     height: 29.7cm;
   }
   @media not print {
-    top: 0;
+    top: 0%;    
     bottom: 0;
-    left: 0;
+    left: -170%;
     right: 0;
     width: 21cm;
     height: 29.7cm;
@@ -60,7 +60,7 @@ const Holder3D = styled.div`
 const Double = styled.div`
   margin: 0 auto;
   position: relative;
-  max-width: 55rem;
+  max-width: 52rem;
   font-size: 200%;
   a {
     color: inherit !important;
@@ -106,7 +106,7 @@ const Content = styled(Container)`
 
 const LetterContent = styled.div`
 p{
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 `
 
@@ -192,6 +192,8 @@ class Nav extends React.Component {
 };
 
 const Letter = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
+  var userLang = typeof navigator != "undefined" ? navigator.language || navigator.userLanguage : "fr";
+  const [lg, setLanguage] = useState(userLang == "fr-FR" ? "fr" : "en");
   const letter = postNode.frontmatter;
   const mainContainer = <Wrapper>
     <Content type="text">
@@ -199,15 +201,15 @@ const Letter = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
         {props => (
           <InformationWrapper style={props}>
             <InfoBlock>
-              <div>À {letter.to.name}</div>
+              <div>{lg=="fr" ? "À" : ""} {letter.to.name}</div>
               {letter.to.address.map((item, index) =>
                 <div>{item}</div>
               )}
               <div>{letter.to.email}</div>
             </InfoBlock>
             <InfoBlock>
-              <div>À {letter.from.lieu},</div>
-              <div>Le {letter.date}</div>
+              <div>{lg=="fr" ? "À" : ""} {letter.from.lieu},</div>
+              <div>{lg=="fr" ? "Le" : ""} {letter.date}</div>
             </InfoBlock>
           </InformationWrapper>
         )}

@@ -16,6 +16,22 @@ export const PageA4 = createGlobalStyle`
   }
 }
 `
+export const PageA3_Paysage = createGlobalStyle`
+@page {
+  size: 420mm 297mm;
+  margin: 10mm;
+}
+@media print {
+  html, body {
+    min-height: 100%;
+    width: 420mm;
+    margin: 0 !important; 
+    padding: 0 !important;
+    font-size: 11pt !important;
+  }
+}
+`
+
 
 export const PageProject = createGlobalStyle`
 @page {

@@ -12,7 +12,7 @@ const Wrapper = styled.div`
     css`
       p {
         font-size: 1.2rem;
-        letter-spacing: -0.003em;
+        letter-spacing: -0.018em;
         line-height: 1.58;
         --baseline-multiplier: 0.179;
         --x-height-multiplier: 0.35;

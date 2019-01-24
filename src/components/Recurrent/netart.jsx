@@ -103,7 +103,8 @@ const sketch = (width, height, props) => {
             mask = Utils.zeros(nImage);
             img = p5.createImage(sizeh, sizew);
             p5.pixelDensity(1);
-            p5.frameRate(5);
+            p5.frameRate(props.frameRate ? props.frameRate : 5);
+            console.log(props.frameRate ? props.frameRate : 5);
         }
 
         p5.draw = () => {

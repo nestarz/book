@@ -81,6 +81,9 @@ const Wrapper = styled.div`
   &>div {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+  }
+  &>div:first-child {
     justify-content: space-between;
   }
 `;

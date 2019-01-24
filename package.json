@@ -25,6 +25,7 @@
     "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run:ci"
   },
   "dependencies": {
+    "@antv/g6": "^2.2.6",
     "@mdx-js/mdx": "^0.16.6",
     "@mdx-js/tag": "^0.16.6",
     "@react-pdf/renderer": "^1.2.0",
@@ -73,9 +74,11 @@
     "react-canvas-stats": "^0.4.0",
     "react-container-dimensions": "^1.4.1",
     "react-dom": "^16.8.0-alpha.1",
+    "react-g6": "0.0.2",
     "react-graph-vis": "^1.0.2",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.3.0",
+    "react-resize-detector": "^3.4.0",
     "react-shadow": "^16.3.2",
     "react-spring": "^7.2.9",
     "react-use": "^5.2.1",
