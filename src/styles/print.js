@@ -19,7 +19,7 @@ export const PageA4 = createGlobalStyle`
 export const PageA3_Paysage = createGlobalStyle`
 @page {
   size: 420mm 297mm;
-  margin: 10mm;
+  margin: 0mm;
 }
 @media print {
   html, body {

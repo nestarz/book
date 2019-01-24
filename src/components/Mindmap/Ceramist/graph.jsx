@@ -136,8 +136,6 @@ export const graph = {
 
 export const options = {
     autoResize: true,
-    height: '100%',
-    width: '100%',
     clickToUse: true,
     physics: {
         enabled: true,

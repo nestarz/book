@@ -18,9 +18,9 @@ import dispositif4 from "./IMG_20181019_172338.jpg";
 import dispositif5 from "./IMG_20181130_120008.jpg";
 import dispositif6 from "./IMG_20181207_114851.jpg";
 //EEG
-import eeg1 from "./DSC04325.jpg";
+import eeg1 from "./DSC04416.jpg";
 import eeg2 from "./DSC04416.jpg";
-import eeg3 from "./DSC04411.jpg";
+import eeg3 from "./DSC04416.jpg";
 import eeg4 from "./DSC04437.jpg";
 
 const StyledVisitCard = styled(VisitCard)`
@@ -47,7 +47,8 @@ counter-increment: mon-compteur;
 display: flex;
 justify-content: center;
 align-items: center;
-height: 100vh;
+height: 297mm;
+width: 420mm;
 @media not print {border-bottom: 1px solid black;}
 h1 {
     margin: 0;
