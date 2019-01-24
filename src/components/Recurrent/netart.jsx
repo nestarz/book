@@ -1,6 +1,5 @@
 import { Graph, Mat, R, RandMat, Utils } from 'recurrent-js';
-import * as Rd from 'recurrent-js';
-console.log(Rd);
+
 // settings of nnet:
 let networkSize = 16;
 let nHidden = 4;
