@@ -20,6 +20,10 @@ justify-content: center;
 align-items: center;
 flex-wrap: wrap;
 overflow: hidden;
+ol {
+    margin: 1vw;
+    padding: 0vw;
+}
 img {
     max-height: 22.5vw;
     margin-top: 0;
