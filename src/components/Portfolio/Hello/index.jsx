@@ -14,6 +14,9 @@ border: 1px solid black;
 margin: 5mm;
 mix-blend-mode: darken;
 overflow: hidden;
+width: 25vw;
+height: 15.4vw;
+font-size: 1.2vw;
 }
 .verso {
     position: absolute;
