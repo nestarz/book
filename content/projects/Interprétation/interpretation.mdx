@@ -7,7 +7,7 @@ service: 'Techniques et Savoir-faire'
 cover: './Sud/IMG_20181123_124433.jpg'
 ---
 import ContainerDimensions from 'react-container-dimensions'
-import Webcam from "react-webcam";
+//import Webcam from "react-webcam";
 import { SketchComponent } from 'components/P5js';
 import sud1 from 'components/P5js/projects/geometries_sud/sud1';
 import sud2 from 'components/P5js/projects/geometries_sud/sud2';
@@ -147,14 +147,14 @@ Les nœuds de vibration d'une plaque élastique mince dessinent des lignes carac
   justifyContent: "center",
   alignItems: "center",
   }}>
-<Webcam
+{/* <Webcam
     width={parent.width}
     height={parent.height}
     style={{
         position: "absolute",
         mixBlendMode: "lighten"
     }}
-/>
+/> */}
 <ContainerDimensions>
     {parent => (
         <SketchComponent

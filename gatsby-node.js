@@ -37,7 +37,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const projectPage = require.resolve('./src/templates/project.jsx')
   const letterPage = require.resolve('./src/templates/letter.jsx')
-  const singlePage = require.resolve('./src/templates/single.jsx')
+  //const singlePage = require.resolve('./src/templates/single.jsx')
 
   const { error, result } = await wrapper(
     graphql(`
@@ -55,18 +55,6 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
         letters: allMdx(filter: { fields: { sourceInstanceName: { eq: "letters" } } }) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              code {
-                scope
-              }
-            }
-          }
-        }
-        single: allMdx(filter: { fields: { sourceInstanceName: { eq: "pages" } } }) {
           edges {
             node {
               fields {
@@ -101,15 +89,15 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       })
     })
-    result.data.single.edges.forEach(edge => {
-      createPage({
-        path: edge.node.fields.slug,
-        component: singlePage,
-        context: {
-          slug: edge.node.fields.slug,
-        },
-      })
-    })
+    // result.data.single.edges.forEach(edge => {
+    //   createPage({
+    //     path: edge.node.fields.slug,
+    //     component: singlePage,
+    //     context: {
+    //       slug: edge.node.fields.slug,
+    //     },
+    //   })
+    // })
     return
   }
 
@@ -201,3 +189,4 @@ exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, actions }) 
     })
   }
 };
+
