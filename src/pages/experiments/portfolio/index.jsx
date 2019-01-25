@@ -4,10 +4,11 @@ import OpenCvWebcam from "components/OpenCV/webcam";
 import Layout from "components/Layout";
 import VisitCard from 'components/VisitCard';
 import startOpenCvProgram from "components/OpenCV/basic";
+import Nav from 'components/Navigation/PrintHeader'
 import { PageA3_Paysage, PageVisitCard } from '../../../styles/print';
 import ContainerDimensions from 'react-container-dimensions'
 import { SketchComponent } from 'components/P5js';
-import ArtSketch from "components/Recurrent/netart";
+import ArtSketch from "components/Recurrent/netart2";
 import Scene from "components/Filaments/Suzanne";
 import CeramistMindMap from 'components/Mindmap/Ceramist'
 //Dispositif
@@ -24,8 +25,6 @@ import eeg3 from "./DSC04416.jpg";
 import eeg4 from "./DSC04437.jpg";
 
 const StyledVisitCard = styled(VisitCard)`
-transform: scale(1.5) rotate(0deg);
-transform-origin: left;
 .verso, .recto {
 border: 1px solid black;
 margin: 5mm;
@@ -43,13 +42,23 @@ counter-increment: mon-compteur;
     position: absolute;
     bottom: 0;
     left: 10mm;
+    font-size: 1vw;
 }
 display: flex;
 justify-content: center;
 align-items: center;
-height: 297mm;
-width: 420mm;
-@media not print {border-bottom: 1px solid black;}
+background-color: white;
+@media not print {
+    margin:5vw auto;
+    margin-bottom:0;
+    width: 90vw;
+    height: calc(90vw / 1.4141);
+    box-shadow: 0px 0px 0.8vw black;
+}
+@media print {
+    width: 90vw;
+    height: calc(90vw / 1.4141);
+}
 h1 {
     margin: 0;
     font-size: 10vw;
@@ -63,7 +72,7 @@ video, button {
 #meVideo {
     /*flex: 1;*/
     canvas {
-        border: 2px solid black;
+        border: px solid black;
     }
 }
 .info {
@@ -72,24 +81,27 @@ video, button {
     background-color: white;
     padding: 20px;
     border: 1px solid black;
-    max-width: 300px;
+    max-width: 27vw;
+    font-size: 1vw;
     h2 {
         margin: 0;
+        font-size: 2vw;
+
     }
 }
 .info2 {
-    top: 0;
-    right: 0;
+    top: 2vw;
+    right: 2vw;
 }
 .info3 {
     position: relative;
 }
 .info4 {
-    right: 0;
+    right: 2vw;
 }
 flex-wrap: wrap;
 img {
-    max-height: 100mm;
+    max-height: 22.5vw;
     margin-top: 0;
     margin-right: 10mm;
     &.dessin {
@@ -112,7 +124,8 @@ const Index = () => {
     return (
         <>
             <PageA3_Paysage />
-            <Layout>
+            <Layout style={{backgroundColor: "grey", paddingBottom: "5vw"}}>
+                <Nav/>
                 <Wrapper>
                     <StyledVisitCard mode={Math.floor(Math.random() * 4)} />
                     <div id="meVideo">
@@ -134,7 +147,7 @@ const Index = () => {
                                 sketch={ArtSketch}
                                 width={parent.width}
                                 height={parent.height}
-                                sketchProps={{ frameRate: .5 }}
+                                sketchProps={{ frameRate: 3 }}
                             />
                         )
                         }

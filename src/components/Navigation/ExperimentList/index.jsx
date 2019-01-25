@@ -39,6 +39,11 @@ const Nav = styled.nav`
 
 var experiments = [
     {
+        url: "experiments/portfolio",
+        slug: "portfolio",
+        title: "Portfolio A3",
+    },
+    {
         url: "experiments/films/film",
         slug: "films",
         title: "Filmographie",

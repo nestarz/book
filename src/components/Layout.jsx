@@ -56,9 +56,9 @@ display: flex;
 flex-direction: column;
 `
 
-const Layout = ({ children }) => (
+const Layout = ({ children, style }) => (
   <ThemeProvider theme={theme}>
-    <Wrapper>
+    <Wrapper style={style}>
       <SEO />
       <GlobalStyle />
       <noscript>To browse this site, please enable JavaScript.</noscript>

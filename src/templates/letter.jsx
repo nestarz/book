@@ -7,7 +7,7 @@ import { Link, graphql } from 'gatsby'
 import { Container, Layout, BGImage } from 'components'
 import ContainerDimensions from 'react-container-dimensions'
 import { PageA4 } from '../styles/print'
-
+import Nav from 'components/Navigation/PrintHeader'
 import VisitCard from 'components/VisitCard';
 
 import { SketchComponent } from 'components/P5js'
@@ -146,50 +146,6 @@ const InfoBlock = styled.div`
   flex-direction: column;
   margin-bottom: 1rem;
 `
-
-const CVPrint = styled.div`
-width: 100%;
-display: flex;
-justify-content: space-around;
-border-bottom: 1px solid black;
-padding: 30px;
-font-size: 2vw;
-@media print
-{   
-  display: none;
-}
-button,a {
-	background: none;
-	color: inherit;
-	border: none;
-    padding: 0;
-    text-decoration: underline;
-    font: inherit;
-	cursor: pointer;
-	outline: inherit;
-}
-`;
-
-class Nav extends React.Component {
-  constructor(props) {
-    super(props);
-    this.print = this.print.bind(this);
-  }
-
-  print() {
-    if (typeof window != "undefined") window.print();
-  }
-
-  render() {
-    return (
-      <CVPrint>
-        <Link to="/">Retour</Link>
-        <Link to="/about/cv">Aller au CV</Link>
-        <button onClick={this.print}>Imprimer</button>
-      </CVPrint>
-    )
-  };
-};
 
 const Letter = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
   var userLang = typeof navigator != "undefined" ? navigator.language || navigator.userLanguage : "fr";
