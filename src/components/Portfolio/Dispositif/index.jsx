@@ -11,30 +11,13 @@ import dispositif5 from "./img/IMG_20181130_120008.jpg";
 import dispositif6 from "./img/IMG_20181207_114851.jpg";
 
 const LocalWrapper = styled(Wrapper)`
-grid-template-areas:    ". . . . . . . . . . . . . . . . ." 
-                        ". . . . . . . . . . . . . . . . ." 
-                        ". . . . . . . . . . . . . . . . ." 
-                        ". . . . . . . . . . . . . . . . ." 
-                        ". . . . . . . . . . . . . . . . ." 
-                        ". . . . . . . . . . . . . . . . ." 
-                        ". . . . . . . . . . . . . . . . ." 
-                        ". . . . . . . . . . . . . . . . ." 
-                        ". . . . . . . . . . . . . . . . ." 
-                        ". . . . . . . . . . . . . . . . ." 
-                        ". . . . . . . . . . . . . . . . ." 
-                        ". . . . . . . . . . . . . . . . ." 
-                        ". . . . . . . . . . . . . . . . ." 
-                        ". . . . . . . . . . . . . . . . ." 
-                        ". . . . . . . . . . . . . . . . ." 
-                        ". . . . . . . . . . . . . . . . ." 
-                        ". . . . . . . . . . . . . . . . .";
 `;
 
 const Index = () => {
     return (
         <LocalWrapper>
             <PageA3_Paysage />
-            <img src={dispositif2} />
+            <img className={"ok"} src={dispositif2} />
             <img src={dispositif1} />
             <img className="dessin" src={dispositif3} />
             <img src={dispositif4} />

@@ -15,9 +15,10 @@ export const Wrapper = styled.div`
 position: relative;
 counter-increment: mon-compteur;
 background-color: white;
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
 overflow: hidden;
 img {
     max-height: 22.5vw;
