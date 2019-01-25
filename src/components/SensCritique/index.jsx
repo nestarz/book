@@ -64,7 +64,6 @@ const Index = () => {
         r[a.directors].push(a);
         return r;
     }, Object.create(null));
-    console.log(filmsGroupByReal);
     let avgRatingPage = films.length > 0 ? films.map(obj => obj.rating)
         .reduce((a, b) => a + b) / films.length : 1;
     avgRatingPage = avgRatingPage / 9;
