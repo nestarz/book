@@ -54,8 +54,12 @@ const Index = () => {
             <img src={eeg6} />
             <img src={eeg7} />
             <Info>
-                <h1>Frustration Detection</h1>
-                In the spirit of generative neural network art, I hacked together a quick and dirty script that attempts to generate random art pieces by randomly assigning weights to a not-so-shallow neural network using p5.js and recurrent.js libraries, just to see what can get drawn randomly without any training of the network.
+                <h1>Frustration detection</h1>
+                The purpose of this study is to determine what changes occur when a participant experiences frustration when completing a learning task. We measured individual behaviour and neurophysiological markers correlated with frustration level. 
+            </Info>
+            <Info>
+                <h1>New protocol</h1>
+                Contrary to previous studies which have used questionnaires to assess frustration, we propose a new protocol where we induce frustration during a learning task. Participants were asked to achieve a 3D orientation task in a low or highly frustrative environment. We then compared the neurophysiological response between the two conditions to find the correlate of frustration.            
             </Info>
         </LocalWrapper>
     )

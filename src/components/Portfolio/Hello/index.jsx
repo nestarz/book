@@ -76,7 +76,7 @@ const Index = () => {
                     startOpenCvProgram={startOpenCvProgram}
                     canvasOutputRef={canvasOutputRef}
                     buttonToggleStopRef={buttonToggleStopRef}
-                    webcamWidth={640}
+                    webcamWidth={"10vw"}
                 />
             </VideoHolder>
         </LocalWrapper>

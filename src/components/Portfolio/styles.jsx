@@ -6,6 +6,7 @@ padding: 1vw;
 border: 1px solid black;
 max-width: 27vw;
 font-size: 1vw;
+z-index: 99999;
 h1 {
     margin: 0;
     font-size: 2vw;
