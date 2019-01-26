@@ -10,7 +10,7 @@ import { SketchComponent } from 'components/P5js';
 import sketch from 'components/P5js/projects/decorationFloral/sketch7';
 
 import csv from "data/nutrition/csv/NutritionalFacts_Fruit_Vegetables_Seafood.csv";
-//console.log(csv);
+////console.log(csv);
 
 
 const Wrapper = styled.div`

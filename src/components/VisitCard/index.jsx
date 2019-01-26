@@ -72,12 +72,11 @@ const Wrapper = styled.div`
 ${props => props.addCSS}
 `;
 
+const sketches = [sketch1, sketch3, sketch4, sketch5]
 const Index = (props) => {
-    let sketches = [sketch1, sketch3, sketch4, sketch5]
-    let selectedSketch = sketches[props.mode % sketches.length];
+    const [selectedSketch, setSelectedSketch] = useState(() => sketches[props.mode % sketches.length]);
     var userLang = typeof navigator != "undefined" ? navigator.language || navigator.userLanguage : "fr";
     const lg = props.lg ? props.lg : userLang == "fr-FR" ? "fr" : "en";
-    //console.log(props.lg, lg)
     return (
         <Wrapper className={props.className} addCSS={props.addCSS}>
             <VisitCard className={"verso"}>

@@ -196,7 +196,7 @@ const Letter = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
   return (
     <Layout>
       <PageA4 />
-      <Nav />
+      <Nav setLanguage={setLanguage} lg={lg} />
       {/* <SEO postPath={slug} postNode={postNode} postSEO /> */}
       <>
         <Double>

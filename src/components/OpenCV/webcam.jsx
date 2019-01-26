@@ -26,7 +26,7 @@ const Index = ({ startOpenCvProgram, canvasOutputRef, buttonToggleStopRef, webca
     }, []);
 
     if (buttonToggleStopRef.current) {
-        console.log(buttonToggleStopRef.current)
+        //console.log(buttonToggleStopRef.current)
         buttonToggleStopRef.current.onclick = () => setToggleStop(!getToggleStop())
     }
 

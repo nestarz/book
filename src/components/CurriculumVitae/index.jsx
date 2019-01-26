@@ -32,7 +32,7 @@ const Index = (props) => {
     var userLang = typeof navigator != "undefined" ? navigator.language || navigator.userLanguage: "fr";
     const [lg, setLanguage] = useState(props.lg ? props.lg : userLang == "fr-FR" ? "fr" : "en");
     if (props.lg != lg && props.lg) setLanguage(props.lg ? props.lg : lg);
-    //console.log(`User's preferred language: ${userLang}, setting language to ${lg}`);
+    ////console.log(`User's preferred language: ${userLang}, setting language to ${lg}`);
     return (
         <Wrapper addCSS={props.addCSS}>
             <Layout navType={"front"} layoutType={"main"} theme={theme.light}>

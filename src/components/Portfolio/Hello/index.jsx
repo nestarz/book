@@ -8,13 +8,13 @@ import startOpenCvProgram from "components/OpenCV/basic";
 import { PageA3_Paysage } from '../../../styles/print';
 import { Wrapper, Info } from '../styles';
 import {useGeolocation} from 'react-use';
+import { convertToTesserae } from '../../../styles/fonts';
 
 const StyledVisitCard = styled(VisitCard)`
 .verso, .recto {
-border: 1px solid black;
-mix-blend-mode: darken;
-overflow: hidden;
-font-size: 1.2vw;
+    border: 1px solid black;
+    mix-blend-mode: darken;
+    overflow: hidden;
 }
 .verso {
     margin-bottom: 5mm;
@@ -40,7 +40,7 @@ video {
 }
 &:after,
 &:before {
-    background-color: #d63c3c;
+    background-color: #3CD670;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -48,35 +48,38 @@ video {
     right: 0;
     word-break: break-word;
     content: '';
-    mix-blend-mode: lighten;
-    font-size: 1vw;
+    mix-blend-mode: color;
+    font-size: 6vw;
+    text-align:center;
     line-height: 1vw;
     z-index: 1;
 }
 &:after {
-    mix-blend-mode: hue;
+    mix-blend-mode: color;
     z-index: 2;
-    content: '${props => props.content.repeat(1000)}';
-    line-height: 1vw;
-    background-color: green;
+    content: ' ${props => props.content.repeat(5)} ';
+    line-height: 6vw;
+    background-color: #3CD670;
+    font-family: "Tesserae";
 }
 `;
 
 const LocalWrapper = styled(Wrapper)`
 `;
 
-const Index = () => {
+
+const Index = ({lg}) => {
     let canvasOutputRef = useRef(),
         buttonToggleStopRef = useRef(),
         OpenCvWebcamRef = useRef();
-    let [stopped, setStopped] = useState(false);
-    const state = useGeolocation();
-    console.log(state);
+    //const geoLocation = useGeolocation();
+    const xGlyphs = convertToTesserae(Math.floor(Math.random() * 1000), "0123456789.");
+    const yGlyphs = convertToTesserae(Math.floor(Math.random() * 1000), "0123456789.");
     return (
         <LocalWrapper>
             <PageA3_Paysage />
-            <StyledVisitCard mode={Math.floor(Math.random() * 4)} />
-            <VideoHolder content={state.longitude + "°"}>
+            <StyledVisitCard lg={lg} mode={Math.floor(Math.random() * 4)} />
+            <VideoHolder content={`${xGlyphs} ${yGlyphs}`}>
                 <Webcam
                     ref={OpenCvWebcamRef}
                     startOpenCvProgram={startOpenCvProgram}

@@ -6,9 +6,12 @@ padding: 1vw;
 border: 1px solid black;
 font-size: 1vw;
 z-index: 99999;
+letter-spacing: -0.03vw;
 h1 {
     margin: 0;
     font-size: 2vw;
+    margin-bottom:0.5vw;
+    letter-spacing: -0.08vw;
 }`;
 
 export const Wrapper = styled.div`

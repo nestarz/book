@@ -236,14 +236,14 @@ export const options = {
 export const events = {
     select: function (event) {
         var { nodes, edges } = event;
-        //console.log("Selected nodes:");
-        //console.log(nodes);
-        //console.log("Selected edges:");
-        //console.log(edges);
+        ////console.log("Selected nodes:");
+        ////console.log(nodes);
+        ////console.log("Selected edges:");
+        ////console.log(edges);
         if (nodes.length === 1) {
             var node = graph.nodes[nodes[0]];
             if (node.url) {
-                //console.log(node, graph.nodes, nodes[0]);
+                ////console.log(node, graph.nodes, nodes[0]);
                 window.open(node.url, '_blank');
             }
         }

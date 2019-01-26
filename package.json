@@ -64,6 +64,7 @@
     "gltumble": "^1.0.1",
     "lodash": "^4.17.11",
     "mobile-detect": "^1.4.3",
+    "opentype.js": "^0.11.0",
     "p5": "^0.7.2",
     "papaparse": "^4.6.3",
     "polished": "^2.3.3",
@@ -92,6 +93,7 @@
     "three-stl-loader": "^1.0.6",
     "typeface-merriweather": "^0.0.54",
     "typeface-roboto": "^0.0.54",
+    "use-events": "^1.1.9",
     "video.js": "^7.4.1",
     "videojs-wavesurfer": "^2.6.3"
   },

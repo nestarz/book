@@ -29,7 +29,29 @@ const LocalWrapper = styled(Wrapper)`
 }
 `;
 
-const Index = () => {
+const protocol = {
+    "fr": <>
+        <h1>Nouveau protocole</h1>
+        Contrairement aux études précédentes qui utilisaient des questionnaires pour évaluer la frustration, nous proposons un nouveau protocole dans lequel nous induisons de la frustration lors d’une tâche d’apprentissage. Les participants ont été invités à réaliser une tâche d’orientation 3D dans un environnement peu frustrant ou très frustrant. Nous avons ensuite comparé la réponse neurophysiologique entre les deux conditions pour trouver le corrélat de la frustration.
+    </>,
+    "en": <>
+        <h1>New protocol</h1>
+        Contrary to previous studies which have used questionnaires to assess frustration, we propose a new protocol where we induce frustration during a learning task. Participants were asked to achieve a 3D orientation task in a low or highly frustrative environment. We then compared the neurophysiological response between the two conditions to find the correlate of frustration.
+    </>
+}
+
+const frustration = {
+    "fr": <>
+        <h1>Detection de la frustration</h1>
+        Le but de cette étude est de déterminer quels changements se produisent lorsqu'un participant éprouve de la frustration lorsqu'il termine une tâche d'apprentissage. Nous avons mesuré le comportement individuel et les marqueurs neurophysiologiques en corrélation avec le niveau de frustration.    
+    </>,
+    "en": <>
+        <h1>Frustration detection</h1>
+        The purpose of this study is to determine what changes occur when a participant experiences frustration when completing a learning task. We measured individual behaviour and neurophysiological markers correlated with frustration level.    
+    </>
+}
+
+const Index = ({ lg = "fr" }) => {
     return (
         <LocalWrapper>
             <img src={eeg1} />
@@ -40,12 +62,10 @@ const Index = () => {
             <img src={eeg6} />
             <img src={eeg7} />
             <Info className="info1">
-                <h1>New protocol</h1>
-                Contrary to previous studies which have used questionnaires to assess frustration, we propose a new protocol where we induce frustration during a learning task. Participants were asked to achieve a 3D orientation task in a low or highly frustrative environment. We then compared the neurophysiological response between the two conditions to find the correlate of frustration.            
+                {protocol[lg]}
             </Info>
             <Info className="info2">
-                <h1>Frustration detection</h1>
-                The purpose of this study is to determine what changes occur when a participant experiences frustration when completing a learning task. We measured individual behaviour and neurophysiological markers correlated with frustration level. 
+                {frustration[lg]}
             </Info>
         </LocalWrapper>
     )

@@ -1,0 +1,112 @@
+{
+  "_args": [
+    [
+      "react-live-clock@^3.0.0",
+      "/home/elias/Projects/book"
+    ]
+  ],
+  "_from": "react-live-clock@>=3.0.0 <4.0.0",
+  "_hasShrinkwrap": false,
+  "_id": "react-live-clock@3.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/react-live-clock",
+  "_nodeVersion": "7.6.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/react-live-clock_3.0.0_1541248190189_0.28968304411080226"
+  },
+  "_npmUser": {
+    "email": "pavlo.vozniuk@gmail.com",
+    "name": "pvoznyuk"
+  },
+  "_npmVersion": "4.1.2",
+  "_phantomChildren": {
+    "fbjs": "0.8.17",
+    "loose-envify": "1.4.0"
+  },
+  "_requested": {
+    "name": "react-live-clock",
+    "raw": "react-live-clock@^3.0.0",
+    "rawSpec": "^3.0.0",
+    "scope": null,
+    "spec": ">=3.0.0 <4.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-live-clock/-/react-live-clock-3.0.0.tgz",
+  "_shasum": "0fc9cd25d8adb7721edd8a02b77076f0319bf1f1",
+  "_shrinkwrap": null,
+  "_spec": "react-live-clock@^3.0.0",
+  "_where": "/home/elias/Projects/book",
+  "author": {
+    "email": "pavlo.vozniuk@gmail.com",
+    "name": "Pavlo Vozniuk"
+  },
+  "bugs": {
+    "url": "https://github.com/pvoznyuk/react-live-clock/issues"
+  },
+  "config": {
+    "component": "ReactLiveClock"
+  },
+  "dependencies": {
+    "moment": "2.19.3",
+    "moment-timezone": "0.5.13",
+    "prop-types": "15.5.10"
+  },
+  "description": "React Live Clock",
+  "devDependencies": {
+    "cf-react-component-template": "0.1.8",
+    "react-component-template": "0.1.8",
+    "react-fittext": "1.0.0",
+    "react-highlight.js": "1.0.5"
+  },
+  "directories": {},
+  "dist": {
+    "fileCount": 28,
+    "integrity": "sha512-O8RzHC928sejDKhguT/u//8nI4YcFZDmAGQUfG/jY+mbCPSYm2TiHdQWXe0QbxbCyioLddzgG2/JISeE6K66gA==",
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb3ZS+CRA9TVsSAnZWagAAXNAQAIVj0Q9wdXJ8E3+aq4xQ\nCSKiGNOzJ7x6JqsCX/2a3slPCZPwjZ7DmZVTTN6j5NmnO2Jna68cU2nGd+a5\nx3xcgSft/89h+OkObnf0fwQqbj6yFpCraUQR8W898vqp8wGp38z8DaT0UU+s\nU3RCr92LMuqxHj6uaJKNmPxVucgk4awRN87A3BmPVW+44ZRsBjoqmnR46ilD\nSi/cfW6FLq1wmY4uG+Ls1x/CRqLo9y+PVuCBoWo+rmG8lRSqy6QE66gtF83z\nwziqVu/4tRNM29VCBs6Gqu7TdQcStDyP11ewb/FOBVffJw1FT3JwCs26/5i8\nqsjV9Y3UwGc7+xGwCDFehVf2Mx0qDpyOhQ7avrfIROcmuUoJD9etB7eerWgu\nfzN0E46QerF45V3uqJiruRkuC02hrTtYA6st7kbzhEw64PEZ/iGwfJPRyYY5\nU196atJuBk17g2fhxJuwXrjS490DiM6Vm3YA+VrtessDZz894vL6Vkm8pk3q\ndgkVfkuMjgO097AmXGYGt/crhK0Kchev2a8cYhLmtsaMcJX/2y86evWCqmue\n3h2RVoK5huTe2bXeM1AfOaNkRXfNB6tCHPdzUaCvad2XJyItrHQYWymET4VT\nUiNfGVffnAbTu5kCctBncV18iOcKbRABSrkDvLEMTZ640Ynw6jbFzynFKhju\ngqAS\r\n=eoeN\r\n-----END PGP SIGNATURE-----\r\n",
+    "shasum": "0fc9cd25d8adb7721edd8a02b77076f0319bf1f1",
+    "tarball": "https://registry.npmjs.org/react-live-clock/-/react-live-clock-3.0.0.tgz",
+    "unpackedSize": 9016822
+  },
+  "gitHead": "c195140d2c5db88cdd5dc9a470bc188c542023d1",
+  "homepage": "https://github.com/pvoznyuk/react-live-clock",
+  "keywords": [
+    "clock",
+    "date",
+    "react",
+    "time",
+    "timezones"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "maintainers": [
+    {
+      "name": "pvoznyuk",
+      "email": "pavlo.vozniuk@gmail.com"
+    }
+  ],
+  "name": "react-live-clock",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "react": "^0.14 || ^15"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pvoznyuk/react-live-clock.git"
+  },
+  "scripts": {
+    "postversion": "npm start postversion",
+    "precommit": "npm start precommit",
+    "prepublish": "npm start prepublish",
+    "prepush": "npm start prepush",
+    "start": "react-component-template",
+    "template": "cf-react-component-template",
+    "test": "npm start test"
+  },
+  "version": "3.0.0"
+}

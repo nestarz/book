@@ -3,9 +3,9 @@ import DataFrame from "dataframe-js";
 function loadImgErrFix(errEvt) {
     const pic = errEvt.target;
 
-    if (!pic.crossOrigin) return //console.log(`Failed to reload ${pic.src}!`);
+    if (!pic.crossOrigin) return ////console.log(`Failed to reload ${pic.src}!`);
 
-    //console.log(`Attempting to reload ${pic.src} as a tainted image now...`);
+    ////console.log(`Attempting to reload ${pic.src} as a tainted image now...`);
     pic.crossOrigin = null, pic.src = pic.src;
 }
 
@@ -27,9 +27,9 @@ const sketch = (width, height, props) => {
                 },
                 function (res) {
                     let json = JSON.parse(res);
-                    //console.log(json, json.value);
-                    if (json.value.length == 0) return //console.log('No hits');
-                    //res.value.map((hit, i) => { //console.log(hit.url); });
+                    ////console.log(json, json.value);
+                    if (json.value.length == 0) return ////console.log('No hits');
+                    //res.value.map((hit, i) => { ////console.log(hit.url); });
                     URL = json.value[0].thumbnail ? json.value[0].thumbnail : json.value[0].url;
                     URL = URL.replace(/(^\w+:|^)\/\//, '');
                     URL = "https://images.weserv.nl/?url=" + URL;
@@ -51,12 +51,12 @@ const sketch = (width, height, props) => {
         };
 
         p5.receiveProps = (nextProps) => {
-            ////console.log(nextProps.value)
+            //////console.log(nextProps.value)
             //value = nextProps.value;
         };
 
         p5.unmount = () => {
-            //console.log('The sketch was unmounted. Width was ' + width + ', height was ' + height);
+            ////console.log('The sketch was unmounted. Width was ' + width + ', height was ' + height);
         }
     }
 };

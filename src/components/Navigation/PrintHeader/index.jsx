@@ -8,7 +8,10 @@ display: flex;
 justify-content: space-around;
 border-bottom: 1px solid black;
 padding: 30px;
-font-size: 2vw;
+font-size: 1.8rem;
+@media (min-width: 1600px) {
+  font-size: 2vw;
+}
 @media print
 {   
   display: none;
@@ -25,25 +28,16 @@ button,a {
 }
 `;
 
-class Nav extends React.Component {
-  constructor(props) {
-    super(props);
-    this.print = this.print.bind(this);
-  }
-
-  print() {
-    if (typeof window != "undefined") window.print();
-  }
-
-  render() {
-    return (
-      <CVPrint>
-        <Link to="/">Retour</Link>
-        <Link to="/about/cv">Aller au CV</Link>
-        <button onClick={this.print}>Imprimer</button>
-      </CVPrint>
-    )
-  };
-};
+const Nav = ({lg, setLanguage}) => {
+  return (
+    <CVPrint>
+      <Link to="/">{lg == "fr" ? 'Retour' : 'Back'}</Link>
+      <button onClick={() => window.print()}>{lg == "fr" ? 'Imprimer' : 'Print'}</button>
+      <button onClick={() => setLanguage(lg == "fr" ? "en" : "fr")}>
+        En/Fr
+      </button>
+    </CVPrint>
+  )
+}
 
 export default Nav;

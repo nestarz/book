@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styled from "styled-components";
-import Clock from 'react-live-clock';
+import Clock from 'components/react-live-clock/src/Component';
 import Layout from "components/Layout";
 import Nav from 'components/Navigation/PrintHeader'
 import HelloPage from 'components/Portfolio/Hello';
@@ -10,13 +10,34 @@ import DispositifPage from 'components/Portfolio/Dispositif';
 import EegPage from 'components/Portfolio/Eeg';
 import MindmapPage from 'components/Portfolio/Mindmap';
 import { PageA3_Paysage } from '../../../styles/print';
+import { convertToTesserae } from '../../../styles/fonts';
 
 const Header = styled.div`
-font-size: 5vw;
+font-size: 1vw;
 align-self: center;
 margin-top: 5vw;
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 @media print {
     display: none;
+}
+time:first-child {
+    font-family: Tesserae;
+    font-size:5vw;
+}
+span {
+    transform: scale(2,1);
+}
+@media (max-width: 1600px) {
+    time:first-child {
+        font-size: 3.8rem;
+    }
+    span {
+        transform: scale(2,1);
+        font-size: 1.5rem;
+    }
 }
 `;
 
@@ -33,24 +54,33 @@ padding: 0;
 `;
 
 const Index = () => {
-    return (
+    var userLang = typeof navigator != "undefined" ? navigator.language || navigator.userLanguage : "fr";
+    const [lg, setLanguage] = useState(userLang == "fr-FR" ? "fr" : "en");
+    const clockRef = useRef();
+    //const xGlyphs = convertToTesserae(x, "0123456789.");
+    //const yGlyphs = convertToTesserae(y, "0123456789.");
+    console.log(clockRef);
+      return (
         <Layout>
             <PageA3_Paysage />
             <Wrapper>
-                <Nav />
+                <Nav lg={lg} setLanguage={setLanguage} />
                 <Header>
-                    <Clock
-                        format={'SS:HH:mm:ss:SS'}
+                <Clock
+                        format={'ss:HH:mm:ss'}
                         ticking={true}
                         timezone={'Europe/Paris'}
-                        interval={10} />
+                        interval={1000} 
+                        filter={(x) => convertToTesserae(x, "0123456789")} 
+                    />
+                <span>Portfolio</span>
                 </Header>
-                <HelloPage />
-                <NetartPage />
-                <RenderPage />
-                <DispositifPage />
-                <EegPage />
-                <MindmapPage />
+                <HelloPage lg={lg} />
+                <NetartPage lg={lg} />
+                <RenderPage lg={lg} />
+                <DispositifPage lg={lg} />
+                <EegPage lg={lg} />
+                <MindmapPage lg={lg} />
             </Wrapper>
         </Layout>
     )

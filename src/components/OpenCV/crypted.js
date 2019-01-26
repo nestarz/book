@@ -4,7 +4,7 @@ const cv = require("./src/opencv");
 
 export default function crypted(video, canvasOutput, isStopped) {
     let scaledVideo = videoDimensions(video);
-    console.log(video.height, video.width, scaledVideo.height, scaledVideo.width);
+    //console.log(video.height, video.width, scaledVideo.height, scaledVideo.width);
     let src = new cv.Mat(video.height, video.width, cv.CV_8UC4);
     let dst = new cv.Mat(video.height, video.width, cv.CV_8UC1);
     let cap = new cv.VideoCapture(video);

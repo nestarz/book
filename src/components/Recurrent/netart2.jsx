@@ -103,7 +103,7 @@ const sketch = (width, height, props) => {
             img = p5.createImage(sizeh, sizew);
             p5.pixelDensity(1);
             p5.frameRate(props.frameRate ? props.frameRate : 5);
-            console.log(props.frameRate ? props.frameRate : 5);
+            //console.log(props.frameRate ? props.frameRate : 5);
         }
 
         p5.draw = () => {
@@ -113,16 +113,16 @@ const sketch = (width, height, props) => {
             var row = Math.floor(n / nW);
             var col = n % nW;
             p5.image(img, col * sizew, row * sizeh);
-            console.log(img);
+            //console.log(img);
         };
 
         p5.receiveProps = (nextProps) => {
-            ////console.log(nextProps.value)
+            //////console.log(nextProps.value)
             //value = nextProps.value;
         };
 
         p5.unmount = () => {
-            //console.log('The sketch was unmounted. Width was ' + width + ', height was ' + height);
+            ////console.log('The sketch was unmounted. Width was ' + width + ', height was ' + height);
         }
     }
 };

@@ -101,7 +101,7 @@ exports.createPages = async ({ graphql, actions }) => {
     return
   }
 
-  console.log(error)
+  //console.log(error)
 }
 
 // Necessary changes to get gatsby-mdx and Cypress working

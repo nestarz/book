@@ -14,7 +14,7 @@ export function LSystem(p5, _alphabet, _axiom, _rules, _angle, _edgelength = 10)
 	
 	this.init = function()
 	{
-		////console.log("Compare? "+(this.Rules[0].left==this.Axiom));
+		//////console.log("Compare? "+(this.Rules[0].left==this.Axiom));
 	}
 	this.init();
 	
@@ -59,7 +59,7 @@ export function LSystem(p5, _alphabet, _axiom, _rules, _angle, _edgelength = 10)
 		ss = new String();
 		for(var c=0; c<this.Axiom.length; c++)
 		{
-			////console.log("Axiom " + this.Axiom);
+			//////console.log("Axiom " + this.Axiom);
 			switch(this.Axiom.charAt(c))
 			{
 				case('F'):
@@ -78,7 +78,7 @@ export function LSystem(p5, _alphabet, _axiom, _rules, _angle, _edgelength = 10)
 					break;
 			}
 		}
-		//console.log(ss);
+		////console.log(ss);
 	}
 	
 	this.Execute01 = function(initialPosition, initialAngle)
@@ -119,11 +119,11 @@ export function LSystem(p5, _alphabet, _axiom, _rules, _angle, _edgelength = 10)
 				case(']'):		
 					col += 3;	
 					if(positions.length == 0)
-						//console.log("ERROR Empty position buffer.");
+						////console.log("ERROR Empty position buffer.");
 					currentPosition = positions.pop();
 					break;
 				default:
-					////console.log("Unlisted character");
+					//////console.log("Unlisted character");
 					break;
 			}
 		}

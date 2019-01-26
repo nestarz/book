@@ -3,9 +3,9 @@ import { mat4 } from 'gl-matrix';
 
 export default class App {
     constructor(canvas, assets) {
-        console.log("Starting triangle tutorial")
+        //console.log("Starting triangle tutorial")
         this.canvas = canvas;
-        console.log(canvas);
+        //console.log(canvas);
         const engine = this.engine = Filament.Engine.create(this.canvas);
         this.scene = engine.createScene();
         this.triangle = Filament.EntityManager.get()

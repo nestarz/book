@@ -1,13 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
-import "circular-std"
+import "circular-std";
 import SEO from './SEO'
 import theme from '../../config/theme'
 import reset from '../styles/reset'
+import { LocalFonts } from '../styles/fonts'
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
+  ${LocalFonts}
   html {
     font-family: "CircularStd", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
