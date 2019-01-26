@@ -55,8 +55,8 @@ img {
     box-shadow: 0px 0px 0.8vw black;
 }
 @media print {
-    width: 100vw;
-    height: 297mm;
-    overflow: hidden;
+    width: 420mm !important;
+    height: 296.8mm !important;
+    overflow: hidden !important;
 }
 `;

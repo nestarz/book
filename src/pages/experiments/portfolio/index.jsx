@@ -21,10 +21,15 @@ margin-top: 5vw;
 `;
 
 const Wrapper = styled.div`
-background-color: grey;
-padding-bottom: 5vw;
-display: flex;
-flex-direction: column;
+margin: 0;
+padding: 0;
+@media not print {
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5vw;
+    background-color: grey;
+}
 `;
 
 const Index = () => {
