@@ -4,7 +4,6 @@ export const Info = styled.div`
 background-color: white;
 padding: 1vw;
 border: 1px solid black;
-max-width: 27vw;
 font-size: 1vw;
 z-index: 99999;
 h1 {
@@ -16,11 +15,19 @@ export const Wrapper = styled.div`
 position: relative;
 counter-increment: mon-compteur;
 background-color: white;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-wrap: wrap;
 overflow: hidden;
+display: grid;
+grid-gap: 1vw;
+grid-template-columns: repeat(5, 1fr);
+grid-auto-rows: minmax(10vw, auto) minmax(14vw, auto);
+counter-reset:div;
+grid-auto-flow: dense;
+padding:2vw;
+& > *:nth-child(6n + 4),
+& > *:nth-child(6n + 1) {
+    grid-column: auto /span 2;
+    grid-row: auto /span 2;
+}
 ol {
     margin: 1vw;
     padding: 0vw;
@@ -37,16 +44,19 @@ img {
         filter: blur(1px) contrast(100);
     }
 }
+& > div, & > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
 &:after {
     content: "Elias Rhouzlane. Page " counter(mon-compteur);
-    background-color: #efff00;
     transform: scale(1.5, 1);
     position: absolute;
     bottom: 0;
     left: 10vw;
     font-size: 1vw;
     padding: 0 1vw;
-    mix-blend-mode: luminosity;
 }
 @media not print {
     margin:5vw auto;

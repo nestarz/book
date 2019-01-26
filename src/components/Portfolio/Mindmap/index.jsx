@@ -5,18 +5,21 @@ import { PageA3_Paysage } from '../../../styles/print';
 import { Wrapper, Info } from '../styles';
 
 const LocalWrapper = styled(Wrapper)`
-grid-template-areas: "pic1 pic1 pic2 pic2" "pic1 pic1 pic5 pic5" "pic4 pic4 pic5 pic5";
 `;
 const CustomInfo = styled(Info)`
-position: absolute;
-right: 2vw;
+grid-column: auto /span 2;
+grid-row: auto /span 1;
+`;
+const CeramistMindMapGrid = styled(CeramistMindMap)`
+grid-column: auto /span 3 !important;
+grid-row: auto /span 2 !important;
 `;
 
 const Index = () => {
     return (
         <LocalWrapper>
             <PageA3_Paysage />
-            <CeramistMindMap />
+            <CeramistMindMapGrid />
             <CustomInfo>
                 <h1>Ceramist Mind Map</h1>
                 Volonté de rélfexion de nouvelles typologies de création de la céramique.

@@ -10,37 +10,23 @@ import eeg1 from "./img/DSC04422.jpg";
 import eeg6 from "./img/DSC04413.jpg";
 
 const LocalWrapper = styled(Wrapper)`
-    display: grid;
-    grid-gap: 1vw;
-    grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: 10vw;
-    counter-reset:div;
-    padding:2vw;
-
-    & > *:nth-child(6n + 4),
-    & > *:nth-child(6n + 1) {
-        grid-column: auto /span 2;
-        grid-row: auto /span 2;
+& > img:nth-child(2n + 1) {
+    &:hover {
+        filter: none;
     }
-    & > *:before {
-        counter-increment:div;
-        content:counter(div);
-        margin:auto;
-    }
-    img {
-        object-fit: cover;
-        width: 100%;
-        max-height: 100%;
-    }
-    & > img:nth-child(2n + 1) {
-        &:hover {
-            filter: none;
-        }
-        filter: saturate(0)
-    }
-    & > img:nth-child(2n):hover {
-        filter: saturate(0)
-    }
+    filter: saturate(0)
+}
+& > img:nth-child(2n):hover {
+    filter: saturate(0)
+}
+.info1 {
+    grid-column: 2;
+    grid-row: 1 / 4;
+}
+.info2 {
+    grid-column: 3;
+    grid-row: 2 / 4;
+}
 `;
 
 const Index = () => {
@@ -53,13 +39,13 @@ const Index = () => {
             <img src={eeg5} />
             <img src={eeg6} />
             <img src={eeg7} />
-            <Info>
-                <h1>Frustration detection</h1>
-                The purpose of this study is to determine what changes occur when a participant experiences frustration when completing a learning task. We measured individual behaviour and neurophysiological markers correlated with frustration level. 
-            </Info>
-            <Info>
+            <Info className="info1">
                 <h1>New protocol</h1>
                 Contrary to previous studies which have used questionnaires to assess frustration, we propose a new protocol where we induce frustration during a learning task. Participants were asked to achieve a 3D orientation task in a low or highly frustrative environment. We then compared the neurophysiological response between the two conditions to find the correlate of frustration.            
+            </Info>
+            <Info className="info2">
+                <h1>Frustration detection</h1>
+                The purpose of this study is to determine what changes occur when a participant experiences frustration when completing a learning task. We measured individual behaviour and neurophysiological markers correlated with frustration level. 
             </Info>
         </LocalWrapper>
     )

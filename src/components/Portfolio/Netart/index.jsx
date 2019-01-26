@@ -7,11 +7,9 @@ import { PageA3_Paysage } from '../../../styles/print';
 import { Wrapper, Info } from '../styles';
 
 const LocalWrapper = styled(Wrapper)`
-grid-template-areas: "pic1 pic1 pic2 pic2" "pic1 pic1 pic5 pic5" "pic4 pic4 pic5 pic5";
 `;
 
 const CustomInfo = styled(Info)`
-position: absolute;
 `;
 
 

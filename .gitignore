@@ -1,5 +1,6 @@
 # issue with ubuntu
 .babelrc 
+.DS_Store
 
 ### Node ###
 # Logs
