@@ -9,7 +9,9 @@ import { Wrapper, Info } from '../styles';
 const LocalWrapper = styled(Wrapper)`
 `;
 
-const CustomInfo = styled(Info)`
+const ArtContainer = styled.div`
+grid-column: auto /span 4 !important;
+grid-row: auto /span 2 !important;
 `;
 
 const neural = {
@@ -26,6 +28,7 @@ const Index = ({ lg = "fr" }) => {
     return (
         <LocalWrapper>
             <PageA3_Paysage />
+            <ArtContainer>
             <ContainerDimensions>
                 {parent => (
                     <SketchComponent
@@ -37,9 +40,10 @@ const Index = ({ lg = "fr" }) => {
                 )
                 }
             </ContainerDimensions>
-            <CustomInfo>
+            </ArtContainer>
+            <Info>
                 {neural[lg]}
-            </CustomInfo>
+            </Info>
         </LocalWrapper>
     )
 };

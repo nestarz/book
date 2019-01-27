@@ -15,11 +15,18 @@ const StyledVisitCard = styled(VisitCard)`
     border: 1px solid black;
     mix-blend-mode: darken;
     overflow: hidden;
-    width: 20.2vw;
-    height: 12.3vw;
+    width: 30.2vw;
+    height: 20.3vw;
+    padding: 3.89% 3.89%;
 }
 .verso {
     margin-bottom: 5mm;
+}
+.name {
+    font-size: 1.5vw;
+}
+.cv_contact {
+    font-size: 1vw;
 }
 `;
 
@@ -57,7 +64,7 @@ video {
     z-index: 1;
 }
 &:after {
-    mix-blend-mode: color;
+    mix-blend-mode: difference;
     z-index: 2;
     content: ' ${props => props.content.repeat(5)} ';
     line-height: 6vw;

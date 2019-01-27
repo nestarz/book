@@ -37,7 +37,7 @@ const Index = ({ className, children, lookAt, width, height }) => {
         })
     }, [])
     useEffect(() => {
-        if (scene) {
+        if (scene && lookAt) {
             scene.lookAt = lookAt; 
         }
     }, [lookAt, scene]);

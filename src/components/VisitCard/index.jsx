@@ -94,10 +94,10 @@ const Index = (props) => {
                         }
                     </ContainerDimensions>
                 </SketchContainer>
-                <NameHeader>
+                <NameHeader className={"name"}>
                     {config.author}, <br /> {config.authorTitle[lg ? lg : "fr"]}
                 </NameHeader>
-                <Contact>
+                <Contact className="cv_contact">
                     <SocialMedia>
                         <a
                             href={config.instagram}

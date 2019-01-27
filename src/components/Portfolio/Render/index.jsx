@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from "styled-components";
 import ContainerDimensions from 'react-container-dimensions'
-import Scene from "components/Filaments/Suzanne";
+import Scene from "components/Filaments/SuzanneTracksYou";
 import { PageA3_Paysage } from '../../../styles/print';
 import { Wrapper, Info } from '../styles';
 

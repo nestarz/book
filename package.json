@@ -38,6 +38,7 @@
     "compromise": "^11.13.0",
     "core-js": "^2.6.2",
     "csv-loader": "^3.0.2",
+    "face-api.js": "^0.17.1",
     "filament": "^1.1.0",
     "gatsby": "^2.0.91",
     "gatsby-cli": "^2.4.8",
