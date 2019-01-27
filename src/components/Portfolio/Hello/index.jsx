@@ -15,6 +15,8 @@ const StyledVisitCard = styled(VisitCard)`
     border: 1px solid black;
     mix-blend-mode: darken;
     overflow: hidden;
+    width: 20.2vw;
+    height: 12.3vw;
 }
 .verso {
     margin-bottom: 5mm;
