@@ -9,7 +9,7 @@ width: 100%;
 height: 100%;
 `;
 
-const Index = ({ className, children, lookAt }) => {
+const Index = ({ className, children, lookAt, width, height }) => {
     var assets;
     const canvasRef = useRef();
     const [scene, setScene] = useState(null);
@@ -41,7 +41,11 @@ const Index = ({ className, children, lookAt }) => {
             scene.lookAt = lookAt; 
         }
     }, [lookAt, scene]);
-
+    useEffect(() => {
+        if (scene) {
+            scene.resize(width, height); 
+        }
+    }, [width, height, scene]);
     return <Canvas ref={canvasRef} className={className}/>
 };
 

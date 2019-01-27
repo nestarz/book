@@ -54,12 +54,12 @@ export default class App {
         this.view.setClearColor([0, 0, 0, 0.0]); // blue-green background
         this.render = this.render.bind(this);
         this.resize = this.resize.bind(this);
-        window.addEventListener('resize', this.resize);
+        //window.addEventListener('resize', this.resize);
         const eye = [0, 0, 4],
             center = [0, 0, 0],
             up = [0, 1, 0];
         this.camera.lookAt(eye, center, up);
-        this.resize();
+        this.resize(window.innerWidth, window.innerHeight);
         window.requestAnimationFrame(this.render);
     }
     render() {
@@ -74,10 +74,10 @@ export default class App {
         inst.delete();
         window.requestAnimationFrame(this.render);
     }
-    resize() {
+    resize(parentWidth, parentHeight) {
         const dpr = window.devicePixelRatio;
-        const width = this.canvas.width = window.innerWidth * dpr;
-        const height = this.canvas.height = window.innerHeight * dpr;
+        const width = this.canvas.width = parentWidth * dpr;
+        const height = this.canvas.height = parentHeight * dpr;
         this.view.setViewport([0, 0, width, height]);
         const aspect = width / height;
         const Fov = Filament.Camera$Fov,

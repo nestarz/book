@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from "styled-components";
+import ContainerDimensions from 'react-container-dimensions'
 import Scene from "components/Filaments/Suzanne";
 import { PageA3_Paysage } from '../../../styles/print';
 import { Wrapper, Info } from '../styles';
@@ -8,7 +9,7 @@ const LocalWrapper = styled(Wrapper)`
 `;
 const CustomInfo = styled(Info)`
 `;
-const SceneGrid = styled(Scene)`
+const SceneContainer = styled.div`
 grid-column: auto /span 4 !important;
 grid-row: auto /span 2 !important;
 `;
@@ -26,7 +27,11 @@ const Index = ({ lg = "fr" }) => {
     return (
         <LocalWrapper>
             <PageA3_Paysage />
-            <SceneGrid />
+            <SceneContainer>
+            <ContainerDimensions>
+                {parent => <Scene width={parent.width} height={parent.height}/>}
+            </ContainerDimensions>
+            </SceneContainer>
             <CustomInfo>
                 {render[lg]}
             </CustomInfo>

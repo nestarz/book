@@ -32,11 +32,11 @@ span {
 }
 @media (max-width: 1600px) {
     time:first-child {
-        font-size: 3.8rem;
+        font-size: 10vw;
     }
     span {
         transform: scale(2,1);
-        font-size: 1.5rem;
+        font-size: 7vw;
     }
 }
 `;
