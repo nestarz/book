@@ -62,14 +62,22 @@ export default class App {
         this.resize(window.innerWidth, window.innerHeight);
         window.requestAnimationFrame(this.render);
     }
+    trackballTransform() {
+        const radians = this.lookAt * 10000;
+        const newMat = mat4.create();
+        const transform = mat4.add(newMat, this.trackball.getMatrix(), mat4.fromRotation(mat4.create(), radians, [1, 0, 1]));
+        return transform;
+    }
+    rotateTransform() {
+        const radians = this.lookAt * 2 * 3.1414;
+        return mat4.fromRotation(mat4.create(), radians, [0, 1, 0]);
+    }
     render() {
         const tcm = this.engine.getTransformManager();
         const inst = tcm.getInstance(this.suzanne);
-        //const radians = this.lookAt * 10000;
-        //const newMat = mat4.create();
-        tcm.setTransform(inst, this.trackball.getMatrix());
-        //const transform = mat4.add(newMat, this.trackball.getMatrix(), mat4.fromRotation(mat4.create(), radians, [1, 0, 1]));
-        //tcm.setTransform(inst, transform);
+        //const transform = this.trackballTransform(tcm, inst);
+        const transform = this.rotateTransform(tcm, inst);
+        tcm.setTransform(inst, transform);
         this.renderer.render(this.swapChain, this.view);
         inst.delete();
         window.requestAnimationFrame(this.render);

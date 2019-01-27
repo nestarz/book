@@ -14,7 +14,7 @@ const Face = styled.div`
     left:0;
     right:0;
     bottom: 0;
-    mix-blend-mode: difference;
+    mix-blend-mode: hard-light;
     background-color: #3CD670;
     opacity: 1;
     overflow: hidden;
