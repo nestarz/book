@@ -7,6 +7,7 @@ border: 1px solid black;
 font-size: 1vw;
 z-index: 99999;
 letter-spacing: -0.03vw;
+max-height: none !important;
 h1 {
     margin: 0;
     font-size: 2vw;
@@ -26,6 +27,11 @@ grid-auto-rows: minmax(10vw, auto) minmax(14vw, auto);
 counter-reset:div;
 grid-auto-flow: dense;
 padding:2vw;
+p {
+    line-height: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+}
 & > *:nth-child(6n + 4),
 & > *:nth-child(6n + 1) {
     grid-column: auto /span 2;
@@ -51,6 +57,7 @@ img {
     object-fit: cover;
     width: 100%;
     height: 100%;
+    max-height: 100%;
 }
 &:after {
     content: "Elias Rhouzlane. Page " counter(mon-compteur);

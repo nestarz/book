@@ -72,7 +72,7 @@ function getColorAt(G, model, x, y) {
 const sketch = (width, height, props) => {
     return function (p5) {
         // actual size of generated image
-        var sizeh = p5.min(10*6, Math.floor(width / (12*6)));
+        var sizeh = p5.min(10*6, Math.floor(width / (6*6)));
         var sizew = sizeh;
 
         var G = new Graph(false);

@@ -21,12 +21,17 @@ overflow: hidden;
 `;
 const render = {
     "en":<>
-        <h1>Rendering in Javascript</h1>
-        In the spirit of generative neural network art, I hacked together a quick and dirty script that attempts to generate random art pieces by randomly assigning weights to a not-so-shallow neural network using p5.js and recurrent.js libraries, just to see what can get drawn randomly without any training of the network.
-    </>,
+        <h1>Rendering and Face Detection on the Web</h1>
+        <p> Web technologies now allow real-time rendering and image analysis directly on the browser.
+        In addition to opening up new possibilities for the dissemination of interactive experiences, it is necessary to make sense in the design of these experiments. </p>
+        <p> How to appropriate these tools and make expression of political, poetic and aesthetic sense? What can this virtual land offer us in the reinvestigation of reality?
+        Here, the head of Suzanne, famous 3D model who reacts to the political disscussion of Evgeny Morozov, Suzanne is interested and follows the gaze of Morozov. We see what she sees, Morozov talking to her. </p>    </>,
     "fr":<>
-        <h1>Rendu en Javascript</h1>
-        Dans l'esprit de l'art des réseaux de neurones génératifs, j'ai concocté un script rapide et sale qui tente de générer des œuvres d'art aléatoires en attribuant de manière aléatoire des poids à un réseau de neurones peu profond utilisant les bibliothèques p5.js et recurrent.js, juste pour voir. ce qui peut être dessiné au hasard sans aucune formation du réseau.
+        <h1>Rendu et détection de visage sur le Web</h1>
+        <p>Les technologies web permettent désormais de faire du rendu et de l'analyse d'image en temps réel, directement sur le navigateur. 
+        Outre l'ouverture de nouveaux possibles dans la diffusion d'expériences intéractives, il est nécessaire de faire sens dans la conception de ces expériences.</p>
+        <p>Comment s'approprier ces outils et faire expression de sens politique, poétique et esthétique ? Que peut nous offrir ce terrain virtuel dans la réinvestigation du réel ?
+        Ici, la tête de Suzanne, célébre modèle 3D qui réagit à la disscussion politique de Evgeny Morozov, Suzanne est intéressé et suit le regard de Morozov. On voit ce qu'elle voit, Morozov qui lui parle.</p>
     </>,
 }
 const Index = ({ lg = "fr" }) => {

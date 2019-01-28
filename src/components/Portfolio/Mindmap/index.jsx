@@ -7,12 +7,12 @@ import { Wrapper, Info } from '../styles';
 const LocalWrapper = styled(Wrapper)`
 `;
 const CustomInfo = styled(Info)`
-grid-column: auto /span 2;
-grid-row: auto /span 1;
+grid-column: auto /span 1 !important;
+grid-row: auto /span 2 !important;
 `;
 const CeramistMindMapGrid = styled(CeramistMindMap)`
-grid-column: auto /span 3 !important;
-grid-row: auto /span 2 !important;
+grid-column: auto /span 4 !important;
+grid-row: auto /span 3 !important;
 `;
 
 const mindmap = {

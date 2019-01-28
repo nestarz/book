@@ -15,8 +15,8 @@ const StyledVisitCard = styled(VisitCard)`
     border: 1px solid black;
     mix-blend-mode: darken;
     overflow: hidden;
-    width: 30.2vw;
-    height: 20.3vw;
+    width: 100%;
+    height: calc(50% - 2.5mm);
     padding: 3.89% 3.89%;
 }
 .verso {
@@ -52,24 +52,27 @@ video {
     background-color: #3CD670;
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: -10vw;
     top: 0;
-    right: 0;
+    right: -10vw;
     word-break: break-word;
     content: '';
     mix-blend-mode: color;
-    font-size: 6vw;
+    font-size: 3vw;
     text-align:center;
     line-height: 1vw;
     z-index: 1;
 }
 &:after {
-    mix-blend-mode: difference;
+    mix-blend-mode: darken;    
     z-index: 2;
-    content: ' ${props => props.content.repeat(5)} ';
-    line-height: 6vw;
+    content: ' ${props => props.content} ';
+    line-height: 2.25vw;
     background-color: #3CD670;
+    word-break: break-all;
     font-family: "Tesserae";
+    padding: 0;
+    margin: 0;
 }
 `;
 
@@ -82,8 +85,9 @@ const Index = ({lg}) => {
         buttonToggleStopRef = useRef(),
         OpenCvWebcamRef = useRef();
     //const geoLocation = useGeolocation();
-    const xGlyphs = convertToTesserae(Math.floor(Math.random() * 1000), "0123456789.");
-    const yGlyphs = convertToTesserae(Math.floor(Math.random() * 1000), "0123456789.");
+    const randomChars = () => Array.from({length: 40}, () => Math.random()).join('');
+    const xGlyphs = convertToTesserae(randomChars(), "0123456789.");
+    const yGlyphs = convertToTesserae(randomChars(), "0123456789.");
     return (
         <LocalWrapper>
             <PageA3_Paysage />
