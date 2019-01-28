@@ -10,7 +10,7 @@ position: relative;
 video {
     object-fit: cover;
 }
-span {
+span, button {
     position: absolute;
     bottom: 10px;
     left: 10px;
@@ -18,6 +18,9 @@ span {
     background-color: white;
     border: 1px solid;
     padding: 0.5vw 1vw;
+}
+button {
+    bottom: 6vw;
 }
 `;
 const VideoContainer = styled.div`
@@ -57,6 +60,7 @@ async function loadModel() {
 
 const Index = ({ width, height, interval = 200 }) => {
     const webcamRef = useRef();
+    const buttonToggleStopRef = useRef();
     const overlayCanvasRef = useRef();
     const [video, state, controls, videoRef] = useVideo(
         <video width={"100%"} height={"100%"} autoPlay loop>
@@ -72,7 +76,7 @@ const Index = ({ width, height, interval = 200 }) => {
     const [lookAtY, setLookAtY] = useState(null);
     const [input, setInput] = useState(null);
     const SuzanneElt = (hovered) => (<div>
-        <Suzanne width={width} height={height} lookAt={lookAtX} />
+        <Suzanne width={width} height={height} lookAtX={lookAtX} lookAtY={lookAtY} />
     </div>)
     const [SuzanneEltHoverable, hovered] = useHover(SuzanneElt);
     useEffect(() => {
@@ -83,14 +87,20 @@ const Index = ({ width, height, interval = 200 }) => {
         loadModel().then(w => setModelReady(true))
     }, []);
     useEffect(() => {
-        if (cameraRunning) {
+        if (webcamRef.current && cameraRunning) {
+            console.log("1? assigning input to", webcamRef.current.video)
             setInput(webcamRef.current.video);
         }
         else if (state.isPlaying) {
+            console.log("2? assigning input to", videoRef.current)
             setInput(videoRef.current)
             controls.mute();
         }
-    }, [cameraRunning, state.isPlaying])
+    }, [cameraRunning, webcamRef.current, state.isPlaying])
+    useEffect(() => {
+        if (cameraRunning) setVideoFallback(false);
+        else setVideoFallback(true);
+    }, [cameraRunning])
     useEffect(() => {
         if (input && modelReady) {
             setInterval(async () => {
@@ -124,13 +134,15 @@ const Index = ({ width, height, interval = 200 }) => {
                 {!videoFallback && <Webcam
                     ref={webcamRef}
                     onUserMedia={() => setCameraRunning(true)}
-                    onUserMediaError={() => {setCameraRunning(false);setVideoFallback(true)}}
-                    width={640}
+                    onUserMediaError={() => setCameraRunning(false)}
+                    width={"100%"}
+                    height={"100%"}
                 />}
                 {videoFallback && video}
                 <OverlayCanvas ref={overlayCanvasRef}/>
             </VideoContainer>
             <span>{hovered ? "Audio playing..." : "Hover to play audio!" }</span>
+            <button ref={buttonToggleStopRef} onClick={() => setCameraRunning(!cameraRunning)}>{cameraRunning ? "Démarrer" : "Stopper"}</button>
         </Wrapper>
     )
 };

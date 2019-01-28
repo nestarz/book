@@ -2,12 +2,18 @@ import Filament from 'filament';
 import Trackball from 'gltumble';
 import { mat4 } from 'gl-matrix';
 
+const scale = (num, in_min, in_max, out_min, out_max) => {
+    return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
 export default class App {
-    constructor(canvas, assets, lookAt = 0) {
+    constructor(canvas, assets, lookAt = null) {
         let { filamat_url, filamesh_url, sky_small_url, ibl_url,
             sky_large_url, albedo_url, roughness_url, metallic_url,
             normal_url, ao_url } = assets;
-        this.lookAt = lookAt;
+        this.lookAt = lookAt ? lookAt : {
+            x: 0, y: 0, z: 0
+        };
         this.canvas = canvas;
         this.engine = Filament.Engine.create(canvas);
         this.scene = this.engine.createScene();
@@ -16,7 +22,7 @@ export default class App {
         const filamesh = this.engine.loadFilamesh(filamesh_url, this.matinstance);
         this.suzanne = filamesh.renderable;
         this.skybox = this.engine.createSkyFromKtx(sky_small_url);
-        this.scene.setSkybox(this.skybox);
+        //this.scene.setSkybox(this.skybox);
         this.indirectLight = this.engine.createIblFromKtx(ibl_url);
         this.indirectLight.setIntensity(100000);
         this.scene.setIndirectLight(this.indirectLight);
@@ -42,7 +48,7 @@ export default class App {
                 // Replace low-res skybox with high-res skybox.
                 this.engine.destroySkybox(this.skybox);
                 this.skybox = this.engine.createSkyFromKtx(sky_large_url);
-                this.scene.setSkybox(this.skybox);
+                //this.scene.setSkybox(this.skybox);
                 this.scene.addEntity(this.suzanne);
             });
         this.swapChain = this.engine.createSwapChain();
@@ -51,7 +57,7 @@ export default class App {
         this.view = this.engine.createView();
         this.view.setCamera(this.camera);
         this.view.setScene(this.scene);
-        this.view.setClearColor([0, 0, 0, 0.0]); // blue-green background
+        this.view.setClearColor([255, 0, 0, 1]); // blue-green background
         this.render = this.render.bind(this);
         this.resize = this.resize.bind(this);
         //window.addEventListener('resize', this.resize);
@@ -63,14 +69,17 @@ export default class App {
         window.requestAnimationFrame(this.render);
     }
     trackballTransform() {
-        const radians = this.lookAt * 10000;
+        const radians = this.lookAt.x * 10000;
         const newMat = mat4.create();
         const transform = mat4.add(newMat, this.trackball.getMatrix(), mat4.fromRotation(mat4.create(), radians, [1, 0, 1]));
         return transform;
     }
     rotateTransform() {
-        const radians = this.lookAt * 2 * 3.1414;
-        return mat4.fromRotation(mat4.create(), radians, [0, 1, 0]);
+        const radiansX = scale(this.lookAt.x, 0, 1, -0.25*Math.PI, 0.55*Math.PI);
+        const radiansY = scale(this.lookAt.y, 0, 1, -0.25*Math.PI, 0.55*Math.PI);
+        const rotationXmat = mat4.fromRotation(mat4.create(), radiansX, [0, 1, 0]);
+        const rotationYmat = mat4.fromRotation(mat4.create(), radiansY, [1, 0, 0]);
+        return mat4.multiply(mat4.create(), rotationXmat, rotationYmat);
     }
     render() {
         const tcm = this.engine.getTransformManager();

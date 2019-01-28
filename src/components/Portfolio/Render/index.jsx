@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from "styled-components";
 import ContainerDimensions from 'react-container-dimensions'
-import Scene from "components/Filaments/SuzanneTracksYou";
+import SuzanneTracksYou from "components/TrackingExperiences/SuzanneTracksYou";
 import { PageA3_Paysage } from '../../../styles/print';
 import { Wrapper, Info } from '../styles';
 
@@ -17,6 +17,7 @@ width: 100%;
 height: 100%;
 max-width: 100%;
 max-height: 100%;
+overflow: hidden;
 `;
 const render = {
     "en":<>
@@ -34,7 +35,7 @@ const Index = ({ lg = "fr" }) => {
             <PageA3_Paysage />
             <SceneContainer>
             <ContainerDimensions>
-                {parent => <Scene width={parent.width} height={parent.height}/>}
+                {parent => <SuzanneTracksYou width={parent.width} height={parent.height}/>}
             </ContainerDimensions>
             </SceneContainer>
             <CustomInfo>
