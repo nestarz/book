@@ -23,7 +23,7 @@ overflow: hidden;
 display: grid;
 grid-gap: 1vw;
 grid-template-columns: repeat(5, 1fr);
-grid-auto-rows: minmax(10vw, auto) minmax(14vw, auto);
+grid-auto-rows: minmax(10vw, auto) minmax(13vw, auto);
 counter-reset:div;
 grid-auto-flow: dense;
 padding:2vw;

@@ -12,21 +12,23 @@ import { convertToTesserae } from '../../../styles/fonts';
 
 const StyledVisitCard = styled(VisitCard)`
 .verso, .recto {
-    border: 1px solid black;
     mix-blend-mode: darken;
     overflow: hidden;
     width: 100%;
-    height: calc(50% - 2.5mm);
+    height: 100%;
     padding: 3.89% 3.89%;
 }
-.verso {
-    margin-bottom: 5mm;
+.recto {
+    display: none;
 }
 .name {
     font-size: 1.5vw;
 }
 .cv_contact {
     font-size: 1vw;
+    a {
+        margin-right: 1vw;
+    }
 }
 `;
 
@@ -64,13 +66,20 @@ video {
     z-index: 1;
 }
 &:after {
-    mix-blend-mode: darken;    
+    mix-blend-mode: lighten;    
     z-index: 2;
-    content: ' ${props => props.content} ';
+    content: '${props => props.content}';
     line-height: 2.25vw;
-    background-color: #3CD670;
-    word-break: break-all;
+    word-break: break-word;
     font-family: "Tesserae";
+    padding: 0;
+    margin: 0;
+    line-height: 0.5;
+    background-color: white;
+    word-break: break-word;
+    font-family: "Tesserae";
+    color: #3CD670;
+    letter-spacing: 13.1px;
     padding: 0;
     margin: 0;
 }
@@ -85,7 +94,7 @@ const Index = ({lg}) => {
         buttonToggleStopRef = useRef(),
         OpenCvWebcamRef = useRef();
     //const geoLocation = useGeolocation();
-    const randomChars = () => Array.from({length: 40}, () => Math.random()).join('');
+    const randomChars = () => Array.from({length: 40}, () => Math.random()).join(' ');
     const xGlyphs = convertToTesserae(randomChars(), "0123456789.");
     const yGlyphs = convertToTesserae(randomChars(), "0123456789.");
     return (

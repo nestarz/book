@@ -67,10 +67,10 @@ const Index = () => {
                 <Nav lg={lg} setLanguage={setLanguage} />
                 <Header>
                 <Clock
-                        format={'ss:HH:mm:ss'}
+                        format={'SS:ss:HH:mm:ss:SS'}
                         ticking={true}
                         timezone={'Europe/Paris'}
-                        interval={1000} 
+                        interval={10} 
                         filter={(x) => convertToTesserae(x, "0123456789")} 
                     />
                 <span>Portfolio</span>
