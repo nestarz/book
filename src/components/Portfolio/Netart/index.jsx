@@ -5,6 +5,7 @@ import { SketchComponent } from 'components/P5js';
 import ArtSketch from "components/Recurrent/netart2";
 import { PageA3_Paysage } from '../../../styles/print';
 import { Wrapper, Info } from '../styles';
+import { randomTesseraeString } from '../../../styles/fonts';
 
 const LocalWrapper = styled(Wrapper)`
 `;
@@ -13,7 +14,11 @@ const ArtContainer = styled.div`
 grid-column: auto /span 4 !important;
 grid-row: auto /span 2 !important;
 `;
-
+const CustomInfo = styled(Info)`
+&:after {
+    content: "${randomTesseraeString(1)}";
+}
+`;
 const neural = {
     "fr": <>
         <h1>Art génératif en Javascript</h1>
@@ -41,9 +46,9 @@ const Index = ({ lg = "fr" }) => {
                 }
             </ContainerDimensions>
             </ArtContainer>
-            <Info>
+            <CustomInfo>
                 {neural[lg]}
-            </Info>
+            </CustomInfo>
         </LocalWrapper>
     )
 };

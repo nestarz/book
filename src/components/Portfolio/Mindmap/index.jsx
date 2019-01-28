@@ -3,12 +3,16 @@ import styled from "styled-components";
 import CeramistMindMap from 'components/Mindmap/Ceramist'
 import { PageA3_Paysage } from '../../../styles/print';
 import { Wrapper, Info } from '../styles';
+import { randomTesseraeString } from '../../../styles/fonts';
 
 const LocalWrapper = styled(Wrapper)`
 `;
 const CustomInfo = styled(Info)`
 grid-column: auto /span 1 !important;
 grid-row: auto /span 2 !important;
+&:after {
+    content: "${randomTesseraeString(1)}";
+}
 `;
 const CeramistMindMapGrid = styled(CeramistMindMap)`
 grid-column: auto /span 4 !important;

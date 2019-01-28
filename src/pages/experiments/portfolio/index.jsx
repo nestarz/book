@@ -25,18 +25,18 @@ align-items: center;
 }
 time:first-child {
     font-family: Tesserae;
-    font-size:5vw;
+    font-size:3vw;
 }
 span {
     transform: scale(2,1);
 }
 @media (max-width: 1600px) {
     time:first-child {
-        font-size: 10vw;
+        font-size: 8vw;
     }
     span {
         transform: scale(2,1);
-        font-size: 7vw;
+        font-size: 5vw;
     }
 }
 `;

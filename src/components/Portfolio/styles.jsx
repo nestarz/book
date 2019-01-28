@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import { randomTesseraeString } from '../../styles/fonts';
 
 export const Info = styled.div`
 background-color: white;
+position: relative;
 padding: 1vw;
 border: 1px solid black;
 font-size: 1vw;
@@ -13,6 +15,16 @@ h1 {
     font-size: 2vw;
     margin-bottom:0.5vw;
     letter-spacing: -0.08vw;
+}
+&:after {
+    content: "${randomTesseraeString(1)}"; /**/
+    color: #3CD670;
+    position: absolute;
+    bottom: -1vw;
+    right: -1vw;
+    font-family: "Tesserae";
+    font-size: 5vw;
+    mix-blend-mode: screen;
 }`;
 
 export const Wrapper = styled.div`

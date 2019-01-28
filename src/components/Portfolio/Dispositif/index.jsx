@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import styled from "styled-components";
 import { PageA3_Paysage } from '../../../styles/print';
 import { Wrapper, Info } from '../styles';
+import { randomTesseraeString } from '../../../styles/fonts';
 //Dispositif
 import dispositif1 from "./img/final2.png";
 import dispositif2 from "./img/final6.png";
@@ -21,6 +22,10 @@ const LocalWrapper = styled(Wrapper)`
         filter: saturate(0)
     }
 `;
+const CustomInfo = styled(Info)`
+&:after {
+    content: "${randomTesseraeString(1)}";
+}`;
 
 const clay = {
     "fr": <>
@@ -43,9 +48,9 @@ const Index = ({ lg = "fr" }) => {
             <img src={dispositif4} />
             <img src={dispositif5} />
             <img src={dispositif6} />
-            <Info>
+            <CustomInfo>
                 {clay[lg]}
-            </Info>
+            </CustomInfo>
         </LocalWrapper>
     )
 };

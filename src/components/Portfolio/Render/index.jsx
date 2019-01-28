@@ -4,10 +4,14 @@ import ContainerDimensions from 'react-container-dimensions'
 import SuzanneTracksYou from "components/TrackingExperiences/SuzanneTracksYou";
 import { PageA3_Paysage } from '../../../styles/print';
 import { Wrapper, Info } from '../styles';
+import { randomTesseraeString } from '../../../styles/fonts';
 
 const LocalWrapper = styled(Wrapper)`
 `;
 const CustomInfo = styled(Info)`
+&:after {
+    content: "${randomTesseraeString(1)}";
+}
 `;
 const SceneContainer = styled.div`
 grid-column: auto /span 4 !important;

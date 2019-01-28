@@ -66,7 +66,7 @@ video {
     z-index: 1;
 }
 &:after {
-    mix-blend-mode: lighten;    
+    mix-blend-mode: color;/*lighten;*/    
     z-index: 2;
     content: '${props => props.content}';
     line-height: 2.25vw;

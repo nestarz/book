@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from "styled-components";
 import { Wrapper, Info } from '../styles';
+import { randomTesseraeString } from '../../../styles/fonts';
 import eeg7 from "./img/DSC04325.jpg";
 import eeg4 from "./img/DSC04398.jpg";
 import eeg3 from "./img/DSC04416.jpg";
@@ -22,10 +23,16 @@ const LocalWrapper = styled(Wrapper)`
 .info1 {
     grid-column: 2;
     grid-row: 1 / 4;
+    &:after {
+        content: "${randomTesseraeString(1)}";
+    }
 }
 .info2 {
     grid-column: 3;
     grid-row: 2 / 4;
+    &:after {
+        content: "${randomTesseraeString(1)}";
+    }
 }
 `;
 
@@ -43,11 +50,11 @@ const protocol = {
 const frustration = {
     "fr": <>
         <h1>Detection de la frustration</h1>
-        Le but de cette étude est de déterminer quels changements se produisent lorsqu'un participant éprouve de la frustration lorsqu'il termine une tâche d'apprentissage. Nous avons mesuré le comportement individuel et les marqueurs neurophysiologiques en corrélation avec le niveau de frustration.    
+        Le but de cette étude est de déterminer quels changements se produisent lorsqu'un participant éprouve de la frustration lorsqu'il termine une tâche d'apprentissage. Nous avons mesuré le comportement individuel et les marqueurs neurophysiologiques en corrélation avec le niveau de frustration.
     </>,
     "en": <>
         <h1>Frustration detection</h1>
-        The purpose of this study is to determine what changes occur when a participant experiences frustration when completing a learning task. We measured individual behaviour and neurophysiological markers correlated with frustration level.    
+        The purpose of this study is to determine what changes occur when a participant experiences frustration when completing a learning task. We measured individual behaviour and neurophysiological markers correlated with frustration level.
     </>
 }
 

@@ -21,5 +21,12 @@ export const convertToTesserae = (string, sourceCharSet) => {
   return result;
 }
 
+export const randomTesseraeString = (stringLength = 1) => {
+  var res = '';
+  for (let i = 0; i < stringLength; i++) {
+    res = res + String.fromCharCode(TesseraeUnicodes[Math.floor(TesseraeUnicodes.length * Math.random())]);
+  }
+  return res;
+}
 
 //const selectChar = (sourceChar, sourceCharSet) => String.fromCharCode(TesseraeUnicodes[Math.floor(TesseraeUnicodes.length * sourceUnicodeSet.index(sourceUnicodeChar) / sourceUnicodeSet.length)]);
