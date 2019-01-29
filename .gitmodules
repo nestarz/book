@@ -1,3 +1,0 @@
-[submodule "src/hooks"]
-	path = src/hooks
-	url = git://github.com/nestarz/react-hooks-collection.git
