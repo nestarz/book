@@ -9,15 +9,13 @@ height: 100vh;
 width: 100vw;
 `;
 const Index = () => {
+    let wrapperRef = useRef(null)
+    let wrapperSize = useComponentSize(wrapperRef)
     return (
-        <Wrapper>
-            <ContainerDimensions>
-                {parent =>
-                    <FaceDetection>
-                        <Suzanne width={parent.width} height={parent.height} />
-                    </FaceDetection>
-                }
-            </ContainerDimensions>
+        <Wrapper ref={wrapperRef}>
+            <FaceDetection>
+                <Suzanne width={wrapperSize.width} height={wrapperSize.height} />
+            </FaceDetection>
         </Wrapper>
     )
 };

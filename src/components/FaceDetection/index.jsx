@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useList, useVideo, useHover } from 'react-use';
 import styled from "styled-components";
-import { useFaceApiDetection, useFaceApiOverlay } from 'components/FaceDetection/hooks';
+import { useFaceApiDetection, useFaceApiOverlay } from 'hooks/faceapi.js';
 import { useWebcam } from 'components/Webcam';
 
 const Wrapper = styled.div`

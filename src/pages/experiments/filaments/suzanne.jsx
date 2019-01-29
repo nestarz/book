@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
+import useComponentSize from '@rehooks/component-size';
 import styled from "styled-components";
-import ContainerDimensions from 'react-container-dimensions'
 import Layout from "components/Layout";
 import SuzanneTracksYou from "components/TrackingExperiences/SuzanneTracksYou";
 
@@ -10,16 +10,18 @@ width: 100vw;
 max-height: 100vh;
 max-width: 100vw;
 `;
+
 const Index = () => {
-    return (
-        <Layout>
-            <Wrapper>
-                <ContainerDimensions>
-                    {parent => <SuzanneTracksYou width={parent.width} height={parent.height} />}
-                </ContainerDimensions>
-            </Wrapper>
-        </Layout>
-    )
+    let wrapperRef = useRef(null)
+    let wrapperSize = useComponentSize(wrapperRef)
+    return <Layout>
+        <Wrapper ref={wrapperRef}>
+            <SuzanneTracksYou
+                width={wrapperSize.width}
+                height={wrapperSize.height}
+            />
+        </Wrapper>
+    </Layout>
 };
 
 export default Index;
