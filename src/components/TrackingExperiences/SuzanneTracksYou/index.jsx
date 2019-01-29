@@ -1,12 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
 import FaceDetection from 'components/FaceDetection';
-import Suzanne from "components/Filaments/Suzanne";
+import Scene from "components/Three/Cube";
 
-
+const StyledScene = styled(Scene)`
+width: 100%;
+height: 100%;
+`;
 const Index = ({ width, height }) => {
     return (
         <FaceDetection>
-            <Suzanne width={width} height={height} />
+            <StyledScene />
         </FaceDetection>
     )
 };

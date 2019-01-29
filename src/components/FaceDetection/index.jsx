@@ -5,10 +5,14 @@ import { useFaceApiDetection, useFaceApiOverlay } from 'hooks/faceapi.js';
 import { useWebcam } from 'components/Webcam';
 
 const Wrapper = styled.div`
+height: 100%;
+width: 100%;
+position: relative;
 span {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    bottom: 1vw;
+    left: 1vw;
+    font-size: 1vw;
     z-index: 999;
     background-color: white;
     border: 1px solid;
@@ -78,25 +82,21 @@ const Index = ({ children, width, height, interval = 100 }) => {
             lookAt: lookAt
         });
     })
-    const childrenElt = (hovered) => <div>
+    const childrenElt = (hovered) => <Wrapper>
         {childrenWithLookAtProps}
-    </div>;
+        <span>
+            <div onClick={() => setIndexSource(i => (i + 1) % sources.length)}>Source suivante</div>
+            <div>{hovered ? "Audio playing..." : "Hover to play audio!"}</div>
+        </span>
+        <SourceWrapper>{source.elt}</SourceWrapper>
+        <BoxCanvas ref={boxDetectionsCanvasRef} />
+    </Wrapper>;
     const [childrenHoverable, hovered] = useHover(childrenElt);
     useEffect(() => {
         if (videoControls) hovered ? videoControls.unmute() : videoControls.mute()
         console.log(hovered);
     }, [hovered])
-    return (
-        <Wrapper>
-            {childrenHoverable}
-            <span>
-                <div onClick={() => setIndexSource(i => (i + 1) % sources.length)}>Source suivante</div>
-                <div>{hovered ? "Audio playing..." : "Hover to play audio!"}</div>
-            </span>
-            <SourceWrapper>{source.elt}</SourceWrapper>
-            <BoxCanvas ref={boxDetectionsCanvasRef} />
-        </Wrapper>
-    )
+    return childrenHoverable
 };
 
 export default Index;

@@ -2,6 +2,7 @@ const _ = require('lodash');
 const path = require('path');
 const webpack = require(`webpack`);
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { StatsWriterPlugin } = require("webpack-stats-plugin")
 
 
 const wrapper = promise => promise.then(result => ({ result, error: null })).catch(error => ({ error, result: null }))
@@ -189,4 +190,3 @@ exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, actions }) 
     })
   }
 };
-

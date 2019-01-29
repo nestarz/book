@@ -1,13 +1,9 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import styled from "styled-components";
-//import OpenCvWebcam from "components/OpenCV/webcam";
-//import startOpenCvProgram from "components/OpenCV/basic";
 import Webcam from "react-webcam";
 import VisitCard from 'components/VisitCard';
-import startOpenCvProgram from "components/OpenCV/basic";
 import { PageA3_Paysage } from '../../../styles/print';
-import { Wrapper, Info } from '../styles';
-import {useGeolocation} from 'react-use';
+import { Wrapper } from '../styles';
 import { convertToTesserae } from '../../../styles/fonts';
 
 const StyledVisitCard = styled(VisitCard)`
@@ -43,11 +39,12 @@ border: 1px solid black;
 grid-column: 5;
 grid-row: auto /span 2;
 video {
-    transform: rotate(90deg);
+    /*transform: rotate(90deg);*/
     object-fit: cover;
     width: 100%;
     height: 100%;
     overflow: hidden;
+    filter: grayscale(1) contrast(3);
 }
 &:after,
 &:before {
@@ -59,15 +56,16 @@ video {
     right: -10vw;
     word-break: break-word;
     content: '';
-    mix-blend-mode: color;
+    mix-blend-mode: exclusion;
     font-size: 3vw;
     text-align:center;
     line-height: 1vw;
     z-index: 1;
 }
 &:after {
-    mix-blend-mode: color;/*lighten;*/    
+    /*mix-blend-mode: color;/*lighten;*/    
     z-index: 2;
+    mix-blend-mode: multiply;
     content: '${props => props.content}';
     line-height: 2.25vw;
     word-break: break-word;
@@ -90,10 +88,6 @@ const LocalWrapper = styled(Wrapper)`
 
 
 const Index = ({lg}) => {
-    let canvasOutputRef = useRef(),
-        buttonToggleStopRef = useRef(),
-        OpenCvWebcamRef = useRef();
-    //const geoLocation = useGeolocation();
     const randomChars = () => Array.from({length: 40}, () => Math.random()).join(' ');
     const xGlyphs = convertToTesserae(randomChars(), "0123456789.");
     const yGlyphs = convertToTesserae(randomChars(), "0123456789.");
@@ -102,13 +96,7 @@ const Index = ({lg}) => {
             <PageA3_Paysage />
             <StyledVisitCard lg={lg} mode={Math.floor(Math.random() * 4)} />
             <VideoHolder content={`${xGlyphs} ${yGlyphs}`}>
-                <Webcam
-                    ref={OpenCvWebcamRef}
-                    startOpenCvProgram={startOpenCvProgram}
-                    canvasOutputRef={canvasOutputRef}
-                    buttonToggleStopRef={buttonToggleStopRef}
-                    webcamWidth={"10vw"}
-                />
+                <Webcam width={"100%"} />
             </VideoHolder>
         </LocalWrapper>
     )

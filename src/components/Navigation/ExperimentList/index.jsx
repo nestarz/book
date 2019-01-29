@@ -53,21 +53,21 @@ var experiments = [
         slug: "recart",
         title: "Recurrent Art",
     },
-    {
-        url: "experiments/opencv/failure-detection",
-        slug: "failure-detection",
-        title: "Soustraction de fond",
-    },
+    // {
+    //     url: "experiments/opencv/failure-detection",
+    //     slug: "failure-detection",
+    //     title: "Soustraction de fond",
+    // },
     {
         url: "experiments/filaments/suzanne",
         slug: "suzanne",
         title: "Suzanne",
     },
-    {
-        url: "experiments/opencv/opencv-bits",
-        slug: "opencv-bits",
-        title: "En clair ou crypté",
-    },
+    // {
+    //     url: "experiments/opencv/opencv-bits",
+    //     slug: "opencv-bits",
+    //     title: "En clair ou crypté",
+    // },
     {
         url: "about/visit-card",
         slug: "visit-card",

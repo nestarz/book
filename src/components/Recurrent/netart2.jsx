@@ -72,7 +72,7 @@ function getColorAt(G, model, x, y) {
 const sketch = (width, height, props) => {
     return function (p5) {
         // actual size of generated image
-        var sizeh = p5.min(10*6, Math.floor(width / (6*6)));
+        var sizeh = p5.min(10 * 6, Math.floor(width / (6 * 6)));
         var sizew = sizeh;
 
         var G = new Graph(false);
@@ -81,18 +81,20 @@ const sketch = (width, height, props) => {
         let model;
 
         function genImage(img, model) {
-            img.loadPixels();
-            for (var y = 0; y < img.height; y++) {
-                for (var x = 0; x < img.width; x++) {
-                    var c = getColorAt(G, model, x / sizeh - 0.5, y / sizew - 0.5);
-                    var index = (x + y * img.width) * 4;
-                    img.pixels[index + 0] = c[0];
-                    img.pixels[index + 1] = c[1];
-                    img.pixels[index + 2] = c[2];
-                    img.pixels[index + 3] = 255;
+            if (width && height) {
+                img.loadPixels();
+                for (var y = 0; y < img.height; y++) {
+                    for (var x = 0; x < img.width; x++) {
+                        var c = getColorAt(G, model, x / sizeh - 0.5, y / sizew - 0.5);
+                        var index = (x + y * img.width) * 4;
+                        img.pixels[index + 0] = c[0];
+                        img.pixels[index + 1] = c[1];
+                        img.pixels[index + 2] = c[2];
+                        img.pixels[index + 3] = 255;
+                    }
                 }
+                img.updatePixels();
             }
-            img.updatePixels();
         }
 
         p5.setup = () => {

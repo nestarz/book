@@ -114,5 +114,12 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
+    // {
+    //   resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+    //   options: {
+    //     analyzerPort: 3000,
+    //     production: true,
+    //   },
+    // },
   ],
 }
