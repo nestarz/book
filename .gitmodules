@@ -3,4 +3,4 @@
 	url = https://github.com/nestarz/react-hooks-collection.git
 [submodule "src/data/personal-data"]
 	path = src/data/personal-data
-	url = https://8c2d97fad4cfed9c24bd23987eedd05fdbd73f05:x-oauth-basic@github.com/nestarz/personal-data
+	url = https://${PRIVATE_REPO_ACCESS_TOKEN}:x-oauth-basic@github.com/nestarz/personal-data
