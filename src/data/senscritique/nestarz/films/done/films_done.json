@@ -1,0 +1,3917 @@
+[
+    {
+        "frenchTitle": "La La Land",
+        "originalTitle": "La La Land",
+        "year": 2017,
+        "directors": [
+            "Damien Chazelle"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Black Mirror : Bandersnatch",
+        "originalTitle": "Black Mirror : Bandersnatch",
+        "year": 2018,
+        "directors": [
+            "David Slade"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Miraï, ma petite soeur",
+        "originalTitle": "Mirai no Mirai",
+        "year": 2018,
+        "directors": [
+            "Mamoru Hosoda"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Night Is Short, Walk on Girl",
+        "originalTitle": "Yoru wa Mijikashi Aruke yo Otome",
+        "year": 2017,
+        "directors": [
+            "Masaaki Yuasa"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Midnight Special",
+        "originalTitle": "Midnight Special",
+        "year": 2016,
+        "directors": [
+            "Jeff Nichols"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Réalité",
+        "originalTitle": "Réalité",
+        "year": 2015,
+        "directors": [
+            "Quentin Dupieux"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Le Nom de la rose",
+        "originalTitle": "The Name of the Rose",
+        "year": 1986,
+        "directors": [
+            "Jean-Jacques Annaud"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Assassin's Creed",
+        "originalTitle": "Assassin's Creed",
+        "year": 2016,
+        "directors": [
+            "Justin Kurzel"
+        ],
+        "rating": 2
+    },
+    {
+        "frenchTitle": "L'Assassinat de Jesse James par le lâche Robert Ford",
+        "originalTitle": "The Assassination of Jesse James by the Coward Robert Ford",
+        "year": 2007,
+        "directors": [
+            "Andrew Dominik"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "L'Île aux chiens",
+        "originalTitle": "Isle of Dogs",
+        "year": 2018,
+        "directors": [
+            "Wes Anderson"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Snatch, tu braques ou tu raques",
+        "originalTitle": "Snatch",
+        "year": 2000,
+        "directors": [
+            "Guy Ritchie"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "La Cité de la peur",
+        "originalTitle": "La Cité de la peur",
+        "year": 1994,
+        "directors": [
+            "Alain Berbérian"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Logan",
+        "originalTitle": "Logan",
+        "year": 2017,
+        "directors": [
+            "James Mangold"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Mad Max : Fury Road",
+        "originalTitle": "Mad Max : Fury Road",
+        "year": 2015,
+        "directors": [
+            "George Miller"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Rester vertical",
+        "originalTitle": "Rester vertical",
+        "year": 2016,
+        "directors": [
+            "Alain Guiraudie"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "3 Billboards, les panneaux de la vengeance",
+        "originalTitle": "Three Billboards Outside Ebbing, Missouri",
+        "year": 2018,
+        "directors": [
+            "Martin McDonagh"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Le Monde est à toi",
+        "originalTitle": "Le Monde est à toi",
+        "year": 2018,
+        "directors": [
+            "Romain Gavras"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Burning",
+        "originalTitle": "Beoning",
+        "year": 2018,
+        "directors": [
+            "Lee Chang-Dong"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "In My Room",
+        "originalTitle": "In My Room",
+        "year": 2019,
+        "directors": [
+            "Ulrich Köhler"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Freaky Friday, dans la peau de ma mère",
+        "originalTitle": "Freaky Friday",
+        "year": 2003,
+        "directors": [
+            "Mark Waters"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "The Florida Project",
+        "originalTitle": "The Florida Project",
+        "year": 2017,
+        "directors": [
+            "Sean Baker"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Akira",
+        "originalTitle": "Akira",
+        "year": 1988,
+        "directors": [
+            "Katsuhiro Ôtomo"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Ratatouille",
+        "originalTitle": "Ratatouille",
+        "year": 2007,
+        "directors": [
+            "Brad Bird",
+            "Jan Pinkava"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Hellboy",
+        "originalTitle": "Hellboy",
+        "year": 2004,
+        "directors": [
+            "Guillermo del Toro"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "X-Men : Le Commencement",
+        "originalTitle": "X-Men: First Class",
+        "year": 2011,
+        "directors": [
+            "Matthew Vaughn"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Sense8 : A Christmas Special",
+        "originalTitle": "Sense8 : A Christmas Special",
+        "year": 2016,
+        "directors": [
+            "Lana Wachowski"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Le Prestige",
+        "originalTitle": "The Prestige",
+        "year": 2006,
+        "directors": [
+            "Christopher Nolan"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Sword of the Stranger",
+        "originalTitle": "Sutorenjia Mukō Hadan",
+        "year": 2007,
+        "directors": [
+            "Masahiro Andô"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Il faut sauver le soldat Ryan",
+        "originalTitle": "Saving Private Ryan",
+        "year": 1998,
+        "directors": [
+            "Steven Spielberg"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Berserk : L'Âge d'or - Partie 1 : L'Œuf du roi conquérant",
+        "originalTitle": "Beruseruku : Ougon jidai-hen I - Haou no tamago",
+        "year": 2012,
+        "directors": [
+            "Toshiyuki Kubooka"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Taxi Driver",
+        "originalTitle": "Taxi Driver",
+        "year": 1976,
+        "directors": [
+            "Martin Scorsese"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Titan A.E.",
+        "originalTitle": "Titan A.E.",
+        "year": 2000,
+        "directors": [
+            "Don Bluth",
+            "Gary Goldman"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Tropa de Elite (Troupe d'élite)",
+        "originalTitle": "Tropa de Elite",
+        "year": 2007,
+        "directors": [
+            "José Padilha"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Berserk : L'Âge d'or - Partie 2 : La Bataille pour Doldrey",
+        "originalTitle": "Beruseruku : Ougon jidai-hen II - Dorudorei koryaku",
+        "year": 2012,
+        "directors": [
+            "Toshiyuki Kubooka",
+            "Michael Sinterniklaas"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Polisse",
+        "originalTitle": "Polisse",
+        "year": 2011,
+        "directors": [
+            "Maïwenn"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Incendies",
+        "originalTitle": "Incendies",
+        "year": 2010,
+        "directors": [
+            "Denis Villeneuve"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Time of Eve, le film",
+        "originalTitle": "Eve no Jikan Gekijôban",
+        "year": 2010,
+        "directors": [
+            "Yasuhiro Yoshiura"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Lord of War",
+        "originalTitle": "Lord of War",
+        "year": 2005,
+        "directors": [
+            "Andrew Niccol"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Là-haut",
+        "originalTitle": "Up",
+        "year": 2009,
+        "directors": [
+            "Pete Docter",
+            "Bob Peterson"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Inception",
+        "originalTitle": "Inception",
+        "year": 2010,
+        "directors": [
+            "Christopher Nolan"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Tampopo",
+        "originalTitle": "Tampopo",
+        "year": 1985,
+        "directors": [
+            "Jûzô Itami"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Moon",
+        "originalTitle": "Moon",
+        "year": 2009,
+        "directors": [
+            "Duncan Jones"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Les filles au Moyen Âge",
+        "originalTitle": "Les filles au Moyen Âge",
+        "year": 2016,
+        "directors": [
+            "Hubert Viel"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Les Proies",
+        "originalTitle": "The Beguiled",
+        "year": 2017,
+        "directors": [
+            "Sofia Coppola"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Zootopie",
+        "originalTitle": "Zootopia",
+        "year": 2016,
+        "directors": [
+            "Byron Howard",
+            "Rich Moore",
+            "Jared Bush"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Les Gardiens de la galaxie",
+        "originalTitle": "Guardians of the Galaxy",
+        "year": 2014,
+        "directors": [
+            "James Gunn"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Piano Forest",
+        "originalTitle": "Piano no Mori",
+        "year": 2009,
+        "directors": [
+            "Masayuki Kojima"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Kiss Kiss Bang Bang",
+        "originalTitle": "Kiss Kiss Bang Bang",
+        "year": 2005,
+        "directors": [
+            "Shane Black"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Cloverfield",
+        "originalTitle": "Cloverfield",
+        "year": 2008,
+        "directors": [
+            "Matt Reeves"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Captain Fantastic",
+        "originalTitle": "Captain Fantastic",
+        "year": 2016,
+        "directors": [
+            "Matt Ross"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Song to Song",
+        "originalTitle": "Song to Song",
+        "year": 2017,
+        "directors": [
+            "Terrence Malick"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Kingsman : Services secrets",
+        "originalTitle": "Kingsman: The Secret Service",
+        "year": 2015,
+        "directors": [
+            "Matthew Vaughn"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Le Chant de la mer",
+        "originalTitle": "Song of the Sea",
+        "year": 2014,
+        "directors": [
+            "Tomm Moore"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Les Fils de l'homme",
+        "originalTitle": "Children of Men",
+        "year": 2006,
+        "directors": [
+            "Alfonso Cuarón"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Oblivion",
+        "originalTitle": "Oblivion",
+        "year": 2013,
+        "directors": [
+            "Joseph Kosinski"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "The Raid 2",
+        "originalTitle": "The Raid 2 : Berandal",
+        "year": 2014,
+        "directors": [
+            "Gareth Evans"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "States of Grace",
+        "originalTitle": "Short Term 12",
+        "year": 2013,
+        "directors": [
+            "Destin Cretton"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Le Labyrinthe",
+        "originalTitle": "The Maze Runner",
+        "year": 2014,
+        "directors": [
+            "Wes Ball"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Dracula Untold",
+        "originalTitle": "Dracula Untold",
+        "year": 2014,
+        "directors": [
+            "Gary Shore"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Sicario",
+        "originalTitle": "Sicario",
+        "year": 2015,
+        "directors": [
+            "Denis Villeneuve"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Deadpool",
+        "originalTitle": "Deadpool",
+        "year": 2016,
+        "directors": [
+            "Tim Miller"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Le Hobbit : Un voyage inattendu",
+        "originalTitle": "The Hobbit : An Unexpected Journey",
+        "year": 2012,
+        "directors": [
+            "Peter Jackson"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Mardock Scramble : The Third Exhaust",
+        "originalTitle": "Marudukku sukuranburu : Haiki",
+        "year": 2012,
+        "directors": [
+            "Susumu Kudo"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Nerawareta Gakuen",
+        "originalTitle": "Nerawareta Gakuen",
+        "year": 2012,
+        "directors": [
+            "Ryosuke Nakamura"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Tron : L'Héritage",
+        "originalTitle": "Tron : Legacy",
+        "year": 2010,
+        "directors": [
+            "Joseph Kosinski"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "La Stratégie Ender",
+        "originalTitle": "Ender's Game",
+        "year": 2013,
+        "directors": [
+            "Gavin Hood"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Le Hobbit : La Désolation de Smaug",
+        "originalTitle": "The Hobbit: The Desolation of Smaug",
+        "year": 2013,
+        "directors": [
+            "Peter Jackson"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Des hommes sans loi",
+        "originalTitle": "Lawless",
+        "year": 2012,
+        "directors": [
+            "John Hillcoat"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Arve Rezzle : Kikaijikake no Yoseitachi",
+        "originalTitle": "Arve Rezzle : Kikaijikake no Yoseitachi",
+        "year": 2013,
+        "directors": [
+            "Tatsuya Yoshihara"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Mission : Impossible - Rogue Nation",
+        "originalTitle": "Mission: Impossible - Rogue Nation",
+        "year": 2015,
+        "directors": [
+            "Christopher McQuarrie"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Expelled from Paradise",
+        "originalTitle": "Rakuen Tsuihō",
+        "year": 2014,
+        "directors": [
+            "Seiji Mizushima"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "X-Men : Days of Future Past",
+        "originalTitle": "X-Men : Days of Future Past",
+        "year": 2014,
+        "directors": [
+            "Bryan Singer"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Captain America : Le Soldat de l'hiver",
+        "originalTitle": "Captain America : The Winter Soldier",
+        "year": 2014,
+        "directors": [
+            "Anthony Russo",
+            "Joe Russo"
+        ],
+        "rating": 2
+    },
+    {
+        "frenchTitle": "Les Cinq Légendes",
+        "originalTitle": "Rise of the Guardians",
+        "year": 2012,
+        "directors": [
+            "Peter Ramsey"
+        ],
+        "rating": 2
+    },
+    {
+        "frenchTitle": "Valérian et la Cité des mille planètes",
+        "originalTitle": "Valerian and the City of a Thousand Planets",
+        "year": 2017,
+        "directors": [
+            "Luc Besson"
+        ],
+        "rating": 1
+    },
+    {
+        "frenchTitle": "Le Roi Arthur : La Légende d'Excalibur",
+        "originalTitle": "King Arthur: Legend of the Sword",
+        "year": 2017,
+        "directors": [
+            "Guy Ritchie"
+        ],
+        "rating": 2
+    },
+    {
+        "frenchTitle": "Predestination",
+        "originalTitle": "Predestination",
+        "year": 2014,
+        "directors": [
+            "Michael Spierig",
+            "Peter Spierig"
+        ],
+        "rating": 2
+    },
+    {
+        "frenchTitle": "Cosmopolis",
+        "originalTitle": "Cosmopolis",
+        "year": 2012,
+        "directors": [
+            "David Cronenberg"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Noé",
+        "originalTitle": "Noah",
+        "year": 2014,
+        "directors": [
+            "Darren Aronofsky"
+        ],
+        "rating": 2
+    },
+    {
+        "frenchTitle": "Iron Man 3",
+        "originalTitle": "Iron Man 3",
+        "year": 2013,
+        "directors": [
+            "Shane Black"
+        ],
+        "rating": 2
+    },
+    {
+        "frenchTitle": "Man of Steel",
+        "originalTitle": "Man of Steel",
+        "year": 2013,
+        "directors": [
+            "Zack Snyder"
+        ],
+        "rating": 2
+    },
+    {
+        "frenchTitle": "Divergente",
+        "originalTitle": "Divergent",
+        "year": 2014,
+        "directors": [
+            "Neil Burger"
+        ],
+        "rating": 1
+    },
+    {
+        "frenchTitle": "Le Labyrinthe : La Terre brûlée",
+        "originalTitle": "Maze Runner: The Scorch Trials",
+        "year": 2015,
+        "directors": [
+            "Wes Ball"
+        ],
+        "rating": 2
+    },
+    {
+        "frenchTitle": "This is England",
+        "originalTitle": "This is England",
+        "year": 2007,
+        "directors": [
+            "Shane Meadows"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Aviator",
+        "originalTitle": "The Aviator",
+        "year": 2004,
+        "directors": [
+            "Martin Scorsese"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Monty Python : Sacré Graal !",
+        "originalTitle": "Monty Python and the Holy Grail",
+        "year": 1975,
+        "directors": [
+            "Terry Gilliam",
+            "Terry Jones"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Iron Man",
+        "originalTitle": "Iron Man",
+        "year": 2008,
+        "directors": [
+            "Jon Favreau"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Les Infiltrés",
+        "originalTitle": "The Departed",
+        "year": 2006,
+        "directors": [
+            "Martin Scorsese"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Le Garçon et la Bête",
+        "originalTitle": "Bakemono no Ko",
+        "year": 2015,
+        "directors": [
+            "Mamoru Hosoda"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Le vent se lève",
+        "originalTitle": "Kaze Tachinu",
+        "year": 2013,
+        "directors": [
+            "Hayao Miyazaki"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Dragons 2",
+        "originalTitle": "How to Train Your Dragon 2",
+        "year": 2014,
+        "directors": [
+            "Dean Deblois"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Dallas Buyers Club",
+        "originalTitle": "Dallas Buyers Club",
+        "year": 2013,
+        "directors": [
+            "Jean-Marc Vallée"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Chronicle",
+        "originalTitle": "Chronicle",
+        "year": 2012,
+        "directors": [
+            "Josh Trank"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Baby Driver",
+        "originalTitle": "Baby Driver",
+        "year": 2017,
+        "directors": [
+            "Edgar Wright"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Les Dissociés",
+        "originalTitle": "Les Dissociés",
+        "year": 2015,
+        "directors": [
+            "Raphaël Descraques"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Time Out",
+        "originalTitle": "In Time",
+        "year": 2011,
+        "directors": [
+            "Andrew Niccol"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Limitless",
+        "originalTitle": "Limitless",
+        "year": 2011,
+        "directors": [
+            "Neil Burger"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Star Wars : Le Réveil de la Force",
+        "originalTitle": "Star Wars: The Force Awakens",
+        "year": 2015,
+        "directors": [
+            "J. J. Abrams"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Source Code",
+        "originalTitle": "Source Code",
+        "year": 2011,
+        "directors": [
+            "Duncan Jones"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Avril et le Monde truqué",
+        "originalTitle": "Avril et le Monde truqué",
+        "year": 2015,
+        "directors": [
+            "Christian Desmares",
+            "Franck Ekinci"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Hannibal",
+        "originalTitle": "Hannibal",
+        "year": 2001,
+        "directors": [
+            "Ridley Scott"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Gangs of New York",
+        "originalTitle": "Gangs of New York",
+        "year": 2002,
+        "directors": [
+            "Martin Scorsese"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "The Mask",
+        "originalTitle": "The Mask",
+        "year": 1994,
+        "directors": [
+            "Chuck Russell"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Terminator : Renaissance",
+        "originalTitle": "Terminator : Salvation",
+        "year": 2009,
+        "directors": [
+            "McG"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Slumdog Millionaire",
+        "originalTitle": "Slumdog Millionaire",
+        "year": 2008,
+        "directors": [
+            "Danny Boyle",
+            "Loveleen Tandan"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Je suis une légende",
+        "originalTitle": "I Am Legend",
+        "year": 2007,
+        "directors": [
+            "Francis Lawrence"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Star Trek Into Darkness",
+        "originalTitle": "Star Trek Into Darkness",
+        "year": 2013,
+        "directors": [
+            "J.J. Abrams"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Imitation Game",
+        "originalTitle": "The Imitation Game",
+        "year": 2014,
+        "directors": [
+            "Morten Tyldum"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Mulholland Drive",
+        "originalTitle": "Mulholland Dr.",
+        "year": 2001,
+        "directors": [
+            "David Lynch"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "The End of Evangelion",
+        "originalTitle": "Shin Seiki Evangelion Gekijô-Ban : Air/magokoro Wo, Kimi Ni",
+        "year": 1997,
+        "directors": [
+            "Hideaki Anno",
+            "Kazuya Tsurumaki"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Shaolin Soccer",
+        "originalTitle": "Siu Lam Juk Kau",
+        "year": 2001,
+        "directors": [
+            "Stephen Chow",
+            "Lee Lik-Chi"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "La Cabane dans les bois",
+        "originalTitle": "The Cabin in the Woods",
+        "year": 2012,
+        "directors": [
+            "Drew Goddard"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "The Machinist",
+        "originalTitle": "The Machinist",
+        "year": 2004,
+        "directors": [
+            "Brad Anderson"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Warcraft : Le Commencement",
+        "originalTitle": "Warcraft",
+        "year": 2016,
+        "directors": [
+            "Duncan Jones"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Fargo",
+        "originalTitle": "Fargo",
+        "year": 1996,
+        "directors": [
+            "Ethan Coen",
+            "Joel Coen"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "John Carter",
+        "originalTitle": "John Carter",
+        "year": 2012,
+        "directors": [
+            "Andrew Stanton"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Scott Pilgrim",
+        "originalTitle": "Scott Pilgrim Vs. The World",
+        "year": 2010,
+        "directors": [
+            "Edgar Wright"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Jumanji",
+        "originalTitle": "Jumanji",
+        "year": 1995,
+        "directors": [
+            "Joe Johnston"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Bienvenue à Gattaca",
+        "originalTitle": "Gattaca",
+        "year": 1997,
+        "directors": [
+            "Andrew Niccol"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Pour le réconfort",
+        "originalTitle": "Pour le réconfort",
+        "year": 2017,
+        "directors": [
+            "Vincent Macaigne"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Eternal Sunshine of the Spotless Mind",
+        "originalTitle": "Eternal Sunshine of the Spotless Mind",
+        "year": 2004,
+        "directors": [
+            "Michel Gondry"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Shutter Island",
+        "originalTitle": "Shutter Island",
+        "year": 2010,
+        "directors": [
+            "Martin Scorsese"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Shaun of the Dead",
+        "originalTitle": "Shaun of the Dead",
+        "year": 2004,
+        "directors": [
+            "Edgar Wright"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Summer Wars",
+        "originalTitle": "Sama Wozu",
+        "year": 2009,
+        "directors": [
+            "Mamoru Hosoda"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Trainspotting",
+        "originalTitle": "Trainspotting",
+        "year": 1996,
+        "directors": [
+            "Danny Boyle"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Vers la forêt des lucioles",
+        "originalTitle": "Hotarubi no Mori e",
+        "year": 2011,
+        "directors": [
+            "Takahiro Omori"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Berserk : L'Âge d'or - Partie 3 : Descent",
+        "originalTitle": "Beruseruku : Ougon jidai-hen III - Kourin",
+        "year": 2013,
+        "directors": [
+            "Toshiyuki Kubooka",
+            "Michael Sinterniklaas"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "La Ligne verte",
+        "originalTitle": "The Green Mile",
+        "year": 1999,
+        "directors": [
+            "Frank Darabont"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Prometheus",
+        "originalTitle": "Prometheus",
+        "year": 2012,
+        "directors": [
+            "Ridley Scott"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Death Billiards",
+        "originalTitle": "Death Billiards",
+        "year": 2013,
+        "directors": [
+            "Yuzuru Tachikawa"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Ghost in the Shell 2: Innocence",
+        "originalTitle": "Inosensu",
+        "year": 2004,
+        "directors": [
+            "Mamoru Oshii"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Léon",
+        "originalTitle": "The Professional",
+        "year": 1994,
+        "directors": [
+            "Luc Besson"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Millénium : Les hommes qui n'aimaient pas les femmes",
+        "originalTitle": "The Girl with the Dragon Tattoo",
+        "year": 2011,
+        "directors": [
+            "David Fincher"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Steamboy",
+        "originalTitle": "Suchîmubôi",
+        "year": 2004,
+        "directors": [
+            "Katsuhiro Ôtomo"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "La Traversée du temps",
+        "originalTitle": "Toki o kakeru shôjo",
+        "year": 2006,
+        "directors": [
+            "Mamoru Hosoda"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Koyaanisqatsi",
+        "originalTitle": "Koyaanisqatsi",
+        "year": 1983,
+        "directors": [
+            "Godfrey Reggio"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Arrietty, le petit monde des chapardeurs",
+        "originalTitle": "Karigurashi no Arrietty",
+        "year": 2010,
+        "directors": [
+            "Hiromasa Yonebayashi"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Inglourious Basterds",
+        "originalTitle": "Inglourious Basterds",
+        "year": 2009,
+        "directors": [
+            "Quentin Tarantino"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Black Swan",
+        "originalTitle": "Black Swan",
+        "year": 2010,
+        "directors": [
+            "Darren Aronofsky"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Démineurs",
+        "originalTitle": "The Hurt Locker",
+        "year": 2009,
+        "directors": [
+            "Kathryn Bigelow"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Kick-Ass",
+        "originalTitle": "Kick-Ass",
+        "year": 2010,
+        "directors": [
+            "Matthew Vaughn"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Pacific Rim",
+        "originalTitle": "Pacific Rim",
+        "year": 2013,
+        "directors": [
+            "Guillermo del Toro"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Fate/stay night : Unlimited Blade Works",
+        "originalTitle": "Fate/stay night : Unlimited Blade Works",
+        "year": 2010,
+        "directors": [
+            "Yuji Yamaguchi"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "The Social Network",
+        "originalTitle": "The Social Network",
+        "year": 2010,
+        "directors": [
+            "David Fincher"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Mahou Shoujo Madoka Magika Movie 2 : Eien no Monogatari",
+        "originalTitle": "Puella Magi Madoka ☆ Magica : Eternal Story",
+        "year": 2012,
+        "directors": [
+            "Akiyuki Shinbo",
+            "Gen Urobuchi",
+            "Yukihiro Miyamoto"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "District 9",
+        "originalTitle": "District 9",
+        "year": 2009,
+        "directors": [
+            "Neill Blomkamp"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Watchmen : Les Gardiens",
+        "originalTitle": "Watchmen",
+        "year": 2009,
+        "directors": [
+            "Zack Snyder"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Crazy Kung-Fu",
+        "originalTitle": "Kung Fu Hustle",
+        "year": 2004,
+        "directors": [
+            "Stephen Chow",
+            "Wellson Chin"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Gone Girl",
+        "originalTitle": "Gone Girl",
+        "year": 2014,
+        "directors": [
+            "David Fincher"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Le Cercle des poètes disparus",
+        "originalTitle": "Dead Poets Society",
+        "year": 1989,
+        "directors": [
+            "Peter Weir"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Batman",
+        "originalTitle": "Batman",
+        "year": 1989,
+        "directors": [
+            "Tim Burton"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Aliens : Le Retour",
+        "originalTitle": "Aliens",
+        "year": 1986,
+        "directors": [
+            "James Cameron"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Sunshine",
+        "originalTitle": "Sunshine",
+        "year": 2007,
+        "directors": [
+            "Danny Boyle"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Blade Runner",
+        "originalTitle": "Blade Runner",
+        "year": 1982,
+        "directors": [
+            "Ridley Scott"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Le Retour du Jedi",
+        "originalTitle": "Star Wars Episode VI: Return of the Jedi",
+        "year": 1983,
+        "directors": [
+            "Richard Marquand"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "La Guerre des Étoiles",
+        "originalTitle": "Star Wars",
+        "year": 1977,
+        "directors": [
+            "George Lucas"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "La Planète au trésor, un nouvel univers",
+        "originalTitle": "Treasure Planet",
+        "year": 2002,
+        "directors": [
+            "John Musker",
+            "Ron Clements"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Fight Club",
+        "originalTitle": "Fight Club",
+        "year": 1999,
+        "directors": [
+            "David Fincher"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Monster",
+        "originalTitle": "Monster",
+        "year": 2003,
+        "directors": [
+            "Patty Jenkins"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "La Taupe",
+        "originalTitle": "Tinker Tailor Soldier Spy",
+        "year": 2011,
+        "directors": [
+            "Tomas Alfredson"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Le Discours d'un roi",
+        "originalTitle": "The King's Speech",
+        "year": 2010,
+        "directors": [
+            "Tom Hooper"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "The Dark Knight, le chevalier noir",
+        "originalTitle": "The Dark Knight",
+        "year": 2008,
+        "directors": [
+            "Christopher Nolan"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Perfect Sense",
+        "originalTitle": "Perfect Sense",
+        "year": 2011,
+        "directors": [
+            "David Mackenzie"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Les Gardiens de la galaxie Vol. 2",
+        "originalTitle": "Guardians of the Galaxy Vol. 2",
+        "year": 2017,
+        "directors": [
+            "James Gunn"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "The Descendants",
+        "originalTitle": "The Descendants",
+        "year": 2011,
+        "directors": [
+            "Alexander Payne"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Les Simpson, le film",
+        "originalTitle": "The Simpsons Movie",
+        "year": 2007,
+        "directors": [
+            "David Silverman"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Only God Forgives",
+        "originalTitle": "Only God Forgives",
+        "year": 2013,
+        "directors": [
+            "Nicolas Winding Refn"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Mary et la Fleur de la sorcière",
+        "originalTitle": "Meari to majo no hana",
+        "year": 2018,
+        "directors": [
+            "Hiromasa Yonebayashi"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "The Impossible",
+        "originalTitle": "Lo imposible",
+        "year": 2012,
+        "directors": [
+            "J.A. Bayona"
+        ],
+        "rating": 2
+    },
+    {
+        "frenchTitle": "Kirikou et la Sorcière",
+        "originalTitle": "Kirikou et la Sorcière",
+        "year": 1998,
+        "directors": [
+            "Michel Ocelot"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Edge of Tomorrow",
+        "originalTitle": "Edge of Tomorrow",
+        "year": 2014,
+        "directors": [
+            "Doug Liman"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Notre petite sœur",
+        "originalTitle": "Umimachi Diary",
+        "year": 2015,
+        "directors": [
+            "Hirokazu Kore-eda"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Au poste !",
+        "originalTitle": "Au poste !",
+        "year": 2018,
+        "directors": [
+            "Quentin Dupieux"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Bonjour",
+        "originalTitle": "Ohayô",
+        "year": 1959,
+        "directors": [
+            "Yasujirô Ozu"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Une affaire de famille",
+        "originalTitle": "Manbiki Kazoku",
+        "year": 2018,
+        "directors": [
+            "Hirokazu Kore-eda"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Santa & Cie",
+        "originalTitle": "Santa & Cie",
+        "year": 2017,
+        "directors": [
+            "Alain Chabat"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Les Frères Sisters",
+        "originalTitle": "The Sisters Brothers",
+        "year": 2018,
+        "directors": [
+            "Jacques Audiard"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Lady Bird",
+        "originalTitle": "Lady Bird",
+        "year": 2018,
+        "directors": [
+            "Greta Gerwig"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Obvious Child",
+        "originalTitle": "Obvious Child",
+        "year": 2014,
+        "directors": [
+            "Gillian Robespierre"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Le Sens de la fête",
+        "originalTitle": "Le Sens de la fête",
+        "year": 2017,
+        "directors": [
+            "Olivier Nakache",
+            "Eric Toledano"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Birdman",
+        "originalTitle": "Birdman or (The Unexpected Virtue of Ignorance)",
+        "year": 2014,
+        "directors": [
+            "Alejandro González Inárritu"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "L'Étrange Histoire de Benjamin Button",
+        "originalTitle": "The Curious Case of Benjamin Button",
+        "year": 2008,
+        "directors": [
+            "David Fincher"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Avatar",
+        "originalTitle": "Avatar",
+        "year": 2009,
+        "directors": [
+            "James Cameron"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Le Projet Blair Witch",
+        "originalTitle": "The Blair Witch Project",
+        "year": 1999,
+        "directors": [
+            "Daniel Myrick",
+            "Eduardo Sanchez"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Dunkerque",
+        "originalTitle": "Dunkirk",
+        "year": 2017,
+        "directors": [
+            "Christopher Nolan"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "The Chaser",
+        "originalTitle": "Chugyeogja",
+        "year": 2008,
+        "directors": [
+            "Na Hong-Jin"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Chicken Run",
+        "originalTitle": "Chicken Run",
+        "year": 2000,
+        "directors": [
+            "Peter Lord",
+            "Nick Park"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Okja",
+        "originalTitle": "Okja",
+        "year": 2017,
+        "directors": [
+            "Bong Joon-ho"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Les Indestructibles",
+        "originalTitle": "The Incredibles",
+        "year": 2004,
+        "directors": [
+            "Brad Bird"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "The Lost City of Z",
+        "originalTitle": "The Lost City of Z",
+        "year": 2017,
+        "directors": [
+            "James Gray"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Tout en haut du monde",
+        "originalTitle": "Tout en haut du monde",
+        "year": 2016,
+        "directors": [
+            "Rémi Chayé"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Piper",
+        "originalTitle": "Piper",
+        "year": 2016,
+        "directors": [
+            "Alan Barillaro"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Insomnia",
+        "originalTitle": "Insomnia",
+        "year": 2002,
+        "directors": [
+            "Christopher Nolan"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Le Conte de la princesse Kaguya",
+        "originalTitle": "Kaguyahime no Monogatari",
+        "year": 2013,
+        "directors": [
+            "Isao Takahata"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Bleeder",
+        "originalTitle": "Bleeder",
+        "year": 1999,
+        "directors": [
+            "Nicolas Winding Refn"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Uncanny Valley",
+        "originalTitle": "Uncanny Valley",
+        "year": 2015,
+        "directors": [
+            "Federico Heller"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "A Bigger Splash",
+        "originalTitle": "A Bigger Splash",
+        "year": 2016,
+        "directors": [
+            "Luca Guadagnino"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Macbeth",
+        "originalTitle": "Macbeth",
+        "year": 2015,
+        "directors": [
+            "Justin Kurzel"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Le Seigneur des Anneaux : Le Retour du roi",
+        "originalTitle": "The Lord of the Rings: The Return of the King",
+        "year": 2003,
+        "directors": [
+            "Peter Jackson"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Alien : Le 8ème Passager",
+        "originalTitle": "Alien",
+        "year": 1979,
+        "directors": [
+            "Ridley Scott"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Pale Cocoon",
+        "originalTitle": "Aoi Tamago",
+        "year": 2006,
+        "directors": [
+            "Yasuhiro Yoshiura"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Tucker & Dale fightent le mal",
+        "originalTitle": "Tucker & Dale vs. Evil",
+        "year": 2012,
+        "directors": [
+            "Eli Craig"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Sleepy Hollow, la légende du cavalier sans tête",
+        "originalTitle": "Sleepy Hollow",
+        "year": 1999,
+        "directors": [
+            "Tim Burton"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Nausicaä de la vallée du vent",
+        "originalTitle": "Kaze no tani no Naushika",
+        "year": 1984,
+        "directors": [
+            "Hayao Miyazaki"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "La Cité de Dieu",
+        "originalTitle": "Cidade de Deus",
+        "year": 2002,
+        "directors": [
+            "Fernando Meirelles",
+            "Katia Lund"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "I Wish, nos vœux secrets",
+        "originalTitle": "Kiseki",
+        "year": 2011,
+        "directors": [
+            "Hirokazu Kore-eda"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Dragons",
+        "originalTitle": "How to Train Your Dragon",
+        "year": 2010,
+        "directors": [
+            "Chris Sanders",
+            "Dean Deblois"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Final Fantasy : Les Créatures de l'esprit",
+        "originalTitle": "Final Fantasy: The Spirits Within",
+        "year": 2001,
+        "directors": [
+            "Monotori Sakakibara",
+            "Hironobu Sakaguchi"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Projet X",
+        "originalTitle": "Project X",
+        "year": 2012,
+        "directors": [
+            "Nima Nourizadeh"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Super Nacho",
+        "originalTitle": "Nacho Libre",
+        "year": 2006,
+        "directors": [
+            "Jared Hess"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Anna Karénine",
+        "originalTitle": "Anna Karenina",
+        "year": 2012,
+        "directors": [
+            "Joe Wright"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "A Scanner Darkly",
+        "originalTitle": "A Scanner Darkly",
+        "year": 2006,
+        "directors": [
+            "Richard Linklater"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "An American Crime",
+        "originalTitle": "An American Crime",
+        "year": 2007,
+        "directors": [
+            "Tommy O'Haver"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Le Parrain",
+        "originalTitle": "The Godfather",
+        "year": 1972,
+        "directors": [
+            "Francis Ford Coppola"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Collatéral",
+        "originalTitle": "Collateral",
+        "year": 2004,
+        "directors": [
+            "Michael Mann"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Nobody Knows",
+        "originalTitle": "Dare mo shiranai",
+        "year": 2004,
+        "directors": [
+            "Hirokazu Kore-eda"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "The Garden of Sinners 3 : Persistante Douleur",
+        "originalTitle": "Kara no Kyōkai : Tsuukaku Zanryuu",
+        "year": 2008,
+        "directors": [
+            "Obunai Mitsuru"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "OSS 117 : Le Caire, nid d'espions",
+        "originalTitle": "OSS 117 : Le Caire, nid d'espions",
+        "year": 2006,
+        "directors": [
+            "Michel Hazanavicius"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "The Garden of Sinners 7 : Enquête criminelle 2.0",
+        "originalTitle": "Kara no Kyōkai : Satsujin Kousatsu (Kou)",
+        "year": 2009,
+        "directors": [
+            "Shinsuke Takizawa"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Redline",
+        "originalTitle": "Redline",
+        "year": 2010,
+        "directors": [
+            "Takeshi Koike"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Paprika",
+        "originalTitle": "Papurika",
+        "year": 2006,
+        "directors": [
+            "Satoshi Kon"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "La Route",
+        "originalTitle": "The Road",
+        "year": 2009,
+        "directors": [
+            "John Hillcoat"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "The Backwater Gospel",
+        "originalTitle": "The Backwater Gospel",
+        "year": 2011,
+        "directors": [
+            "Bo Mathorne"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Paperman",
+        "originalTitle": "Paperman",
+        "year": 2012,
+        "directors": [
+            "John Kahrs"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Animatrix",
+        "originalTitle": "The Animatrix",
+        "year": 2003,
+        "directors": [
+            "Peter Chung",
+            "Andrew R. Jones",
+            "Yoshiaki Kawajiri"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Numéro 9",
+        "originalTitle": "9",
+        "year": 2009,
+        "directors": [
+            "Shane Acker"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "2001 : L'Odyssée de l'espace",
+        "originalTitle": "2001: A Space Odyssey",
+        "year": 1968,
+        "directors": [
+            "Stanley Kubrick"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Old Boy",
+        "originalTitle": "Oldeuboi",
+        "year": 2003,
+        "directors": [
+            "Park Chan-wook"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "La Haine",
+        "originalTitle": "La Haine",
+        "year": 1995,
+        "directors": [
+            "Mathieu Kassovitz"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "The Fountain",
+        "originalTitle": "The Fountain",
+        "year": 2006,
+        "directors": [
+            "Darren Aronofsky"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "2046",
+        "originalTitle": "2046",
+        "year": 2004,
+        "directors": [
+            "Wong Kar-Wai"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Origine",
+        "originalTitle": "Gin-iro no kami no Agito",
+        "year": 2006,
+        "directors": [
+            "Keiichi Sugiyama"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Ghost in the Shell 2.0",
+        "originalTitle": "Kōkaku kidōtai 2.0",
+        "year": 2008,
+        "directors": [
+            "Mamoru Oshii"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Cowboy Bebop, le film",
+        "originalTitle": "Gekijōban Kaubōi Bibappu : Tengoku no Tobira",
+        "year": 2001,
+        "directors": [
+            "Shinichirô Watanabe"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Valse avec Bachir",
+        "originalTitle": "Vals Im Bashir",
+        "year": 2008,
+        "directors": [
+            "Ari Folman"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Elephant",
+        "originalTitle": "Elephant",
+        "year": 2003,
+        "directors": [
+            "Gus Van Sant"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Looper",
+        "originalTitle": "Looper",
+        "year": 2012,
+        "directors": [
+            "Rian Johnson"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Seul sur Mars",
+        "originalTitle": "The Martian",
+        "year": 2015,
+        "directors": [
+            "Ridley Scott"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "King Kong",
+        "originalTitle": "King Kong",
+        "year": 2005,
+        "directors": [
+            "Peter Jackson"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "28 semaines plus tard",
+        "originalTitle": "28 Weeks Later",
+        "year": 2007,
+        "directors": [
+            "Juan Carlos Fresnadillo"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Vice-Versa",
+        "originalTitle": "Inside Out",
+        "year": 2015,
+        "directors": [
+            "Pete Docter",
+            "Ronnie del Carmen"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Bienvenue à Zombieland",
+        "originalTitle": "Zombieland",
+        "year": 2009,
+        "directors": [
+            "Ruben Fleischer"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Pirates des Caraïbes : Jusqu'au bout du monde",
+        "originalTitle": "Pirates of the Caribbean: At World's End",
+        "year": 2007,
+        "directors": [
+            "Gore Verbinski"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Pirates des Caraïbes : La Malédiction du Black Pearl",
+        "originalTitle": "Pirates of the Caribbean: The Curse of the Black Pearl",
+        "year": 2003,
+        "directors": [
+            "Gore Verbinski"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "The Raid",
+        "originalTitle": "The Raid : Redemption",
+        "year": 2012,
+        "directors": [
+            "Gareth Evans"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Trigun : Badlands Rumbles",
+        "originalTitle": "Trigun : Badlands Rumbles",
+        "year": 2010,
+        "directors": [
+            "Nishimura Satoshi",
+            "Yasuhiro Nightow"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Star Wars : Épisode III - La Revanche des Sith",
+        "originalTitle": "Star Wars: Episode III - Revenge of the Sith",
+        "year": 2005,
+        "directors": [
+            "George Lucas"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Whiplash",
+        "originalTitle": "Whiplash",
+        "year": 2014,
+        "directors": [
+            "Damien Chazelle"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "12 Years a Slave",
+        "originalTitle": "12 Years a Slave",
+        "year": 2013,
+        "directors": [
+            "Steve McQueen"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "A Most Violent Year",
+        "originalTitle": "A Most Violent Year",
+        "year": 2014,
+        "directors": [
+            "J.C. Chandor"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Evangelion 3.0 : You Can (Not) Redo",
+        "originalTitle": "Evangerion Shin Gekijōban: Q",
+        "year": 2012,
+        "directors": [
+            "Hideaki Anno",
+            "Mahiro Maeda"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Princesse Mononoké",
+        "originalTitle": "Mononoke Hime",
+        "year": 1997,
+        "directors": [
+            "Hayao Miyazaki"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Good Time",
+        "originalTitle": "Good Time",
+        "year": 2017,
+        "directors": [
+            "Ben Safdie",
+            "Joshua Safdie"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Dans la peau de John Malkovich",
+        "originalTitle": "Being John Malkovich",
+        "year": 1999,
+        "directors": [
+            "Spike Jonze"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "La Loi de la jungle",
+        "originalTitle": "La Loi de la jungle",
+        "year": 2016,
+        "directors": [
+            "Antonin Peretjatko"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "L'homme qui tua Don Quichotte",
+        "originalTitle": "The Man Who Killed Don Quixote",
+        "year": 2018,
+        "directors": [
+            "Terry Gilliam"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "The Big Lebowski",
+        "originalTitle": "The Big Lebowski",
+        "year": 1998,
+        "directors": [
+            "Joel Coen",
+            "Ethan Coen"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Les Enfants loups, Ame & Yuki",
+        "originalTitle": "Ōkami Kodomo no Ame to Yuki",
+        "year": 2012,
+        "directors": [
+            "Mamoru Hosoda"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "L'Empire contre-attaque",
+        "originalTitle": "Star Wars Episode V: The Empire Strikes Back",
+        "year": 1980,
+        "directors": [
+            "Irvin Kershner"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Gladiator",
+        "originalTitle": "Gladiator",
+        "year": 2000,
+        "directors": [
+            "Ridley Scott"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Ex Machina",
+        "originalTitle": "Ex Machina",
+        "year": 2015,
+        "directors": [
+            "Alex Garland"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Seven",
+        "originalTitle": "Se7en",
+        "year": 1995,
+        "directors": [
+            "David Fincher"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Pulp Fiction",
+        "originalTitle": "Pulp Fiction",
+        "year": 1994,
+        "directors": [
+            "Quentin Tarantino"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Django Unchained",
+        "originalTitle": "Django Unchained",
+        "year": 2012,
+        "directors": [
+            "Quentin Tarantino"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Prisoners",
+        "originalTitle": "Prisoners",
+        "year": 2013,
+        "directors": [
+            "Denis Villeneuve"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Requiem for a Dream",
+        "originalTitle": "Requiem for a Dream",
+        "year": 2000,
+        "directors": [
+            "Darren Aronofsky"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "V pour Vendetta",
+        "originalTitle": "V for Vendetta",
+        "year": 2005,
+        "directors": [
+            "James McTeigue"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Million Dollar Baby",
+        "originalTitle": "Million Dollar Baby",
+        "year": 2004,
+        "directors": [
+            "Clint Eastwood"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Gran Torino",
+        "originalTitle": "Gran Torino",
+        "year": 2008,
+        "directors": [
+            "Clint Eastwood"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Wall-E",
+        "originalTitle": "Wall-E",
+        "year": 2008,
+        "directors": [
+            "Andrew Stanton"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Les Animaux fantastiques",
+        "originalTitle": "Fantastic Beasts and Where to Find Them",
+        "year": 2016,
+        "directors": [
+            "David Yates"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Contagion",
+        "originalTitle": "Contagion",
+        "year": 2011,
+        "directors": [
+            "Steven Soderbergh"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Argo",
+        "originalTitle": "Argo",
+        "year": 2012,
+        "directors": [
+            "Ben Affleck"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Le Territoire des loups",
+        "originalTitle": "The Grey",
+        "year": 2012,
+        "directors": [
+            "Joe Carnahan"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Public Enemies",
+        "originalTitle": "Public Enemies",
+        "year": 2009,
+        "directors": [
+            "Michael Mann"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Final Fantasy VII : Advent Children Complete",
+        "originalTitle": "Final Fantasy VII : Advent Children Complete",
+        "year": 2005,
+        "directors": [
+            "Takeshi Nozue",
+            "Tetsuya Nomura"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Final Fantasy VII : Advent Children",
+        "originalTitle": "Fainaru Fantajî Sebun Adobento Chirudoren",
+        "year": 2005,
+        "directors": [
+            "Tetsuya Nomura",
+            "Takeshi Nozue"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "5 centimètres par seconde",
+        "originalTitle": "Byōsoku Go Senchimētoru",
+        "year": 2007,
+        "directors": [
+            "Makoto Shinkai"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Elysium",
+        "originalTitle": "Elysium",
+        "year": 2013,
+        "directors": [
+            "Neill Blomkamp"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Conjuring : Les Dossiers Warren",
+        "originalTitle": "The Conjuring",
+        "year": 2013,
+        "directors": [
+            "James Wan"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Kick-Ass 2",
+        "originalTitle": "Kick-Ass 2",
+        "year": 2013,
+        "directors": [
+            "Jeff Wadlow"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Insaisissables",
+        "originalTitle": "Now You See Me",
+        "year": 2013,
+        "directors": [
+            "Louis Leterrier"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Le Dernier Pub avant la fin du monde",
+        "originalTitle": "The World's End",
+        "year": 2013,
+        "directors": [
+            "Edgar Wright"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Jurassic World",
+        "originalTitle": "Jurassic World",
+        "year": 2015,
+        "directors": [
+            "Colin Trevorrow"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Chappie",
+        "originalTitle": "Chappie",
+        "year": 2015,
+        "directors": [
+            "Neill Blomkamp"
+        ],
+        "rating": 2
+    },
+    {
+        "frenchTitle": "Kung Fury",
+        "originalTitle": "Kung Fury",
+        "year": 2015,
+        "directors": [
+            "David Sandberg"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Du sang et des larmes",
+        "originalTitle": "Lone Survivor",
+        "year": 2013,
+        "directors": [
+            "Peter Berg"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Godzilla",
+        "originalTitle": "Godzilla",
+        "year": 2014,
+        "directors": [
+            "Gareth Edwards"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Juste la fin du monde",
+        "originalTitle": "Juste la fin du monde",
+        "year": 2016,
+        "directors": [
+            "Xavier Dolan"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "The Strangers",
+        "originalTitle": "Goksung",
+        "year": 2016,
+        "directors": [
+            "Na Hong-jin"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Margin Call",
+        "originalTitle": "Margin Call",
+        "year": 2011,
+        "directors": [
+            "J.C. Chandor"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Skyfall",
+        "originalTitle": "Skyfall",
+        "year": 2012,
+        "directors": [
+            "Sam Mendes"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "You're Next",
+        "originalTitle": "You're Next",
+        "year": 2013,
+        "directors": [
+            "Adam Wingard"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Hana-bi",
+        "originalTitle": "Hana-bi",
+        "year": 1997,
+        "directors": [
+            "Takeshi Kitano"
+        ],
+        "rating": null
+    },
+    {
+        "frenchTitle": "Tel père, tel fils",
+        "originalTitle": "Soshite Chichi ni Naru",
+        "year": 2013,
+        "directors": [
+            "Hirokazu Kore-eda"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Retour vers le futur 2",
+        "originalTitle": "Back to the Future Part II",
+        "year": 1989,
+        "directors": [
+            "Robert Zemeckis"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Qui veut la peau de Roger Rabbit ?",
+        "originalTitle": "Who Framed Roger Rabbit",
+        "year": 1988,
+        "directors": [
+            "Robert Zemeckis"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Retour vers le futur",
+        "originalTitle": "Back to the Future",
+        "year": 1985,
+        "directors": [
+            "Robert Zemeckis"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Orange mécanique",
+        "originalTitle": "A Clockwork Orange",
+        "year": 1971,
+        "directors": [
+            "Stanley Kubrick"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Fury",
+        "originalTitle": "Fury",
+        "year": 2014,
+        "directors": [
+            "David Ayer"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Super Size Me",
+        "originalTitle": "Super Size Me",
+        "year": 2004,
+        "directors": [
+            "Morgan Spurlock"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Urbance",
+        "originalTitle": "Urbance",
+        "year": 2015,
+        "directors": [
+            "Joël Dos Reis Viegas",
+            "Sébastien Larroudé"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Les Aventures de Tintin : Le Secret de la Licorne",
+        "originalTitle": "The Adventures of Tintin : The Secret of the Unicorn",
+        "year": 2011,
+        "directors": [
+            "Steven Spielberg"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Le facteur sonne toujours deux fois",
+        "originalTitle": "The Postman Always Rings Twice",
+        "year": 1946,
+        "directors": [
+            "Tay Garnett"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Silent Hill",
+        "originalTitle": "Silent Hill",
+        "year": 2006,
+        "directors": [
+            "Christophe Gans"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "L'Exorciste",
+        "originalTitle": "The Exorcist",
+        "year": 1973,
+        "directors": [
+            "William Friedkin"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Kingdom of Heaven",
+        "originalTitle": "Kingdom of Heaven",
+        "year": 2005,
+        "directors": [
+            "Ridley Scott"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Exodus : Gods and Kings",
+        "originalTitle": "Exodus : Gods and Kings",
+        "year": 2014,
+        "directors": [
+            "Ridley Scott"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Kuzco, l'empereur mégalo",
+        "originalTitle": "The Emperor's New Groove",
+        "year": 2000,
+        "directors": [
+            "Mark Dindal"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Lettres d'Iwo Jima",
+        "originalTitle": "Letters from Iwo Jima",
+        "year": 2006,
+        "directors": [
+            "Clint Eastwood"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Good Morning England",
+        "originalTitle": "The Boat That Rocked",
+        "year": 2009,
+        "directors": [
+            "Richard Curtis"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Le Stratège",
+        "originalTitle": "Moneyball",
+        "year": 2011,
+        "directors": [
+            "Bennett Miller"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Hot Shots !",
+        "originalTitle": "Hot Shots !",
+        "year": 1991,
+        "directors": [
+            "Jim Abrahams"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Le Château ambulant",
+        "originalTitle": "Hauru no Ugoku Shiro",
+        "year": 2004,
+        "directors": [
+            "Hayao Miyazaki"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Le Seigneur des Anneaux : Les Deux Tours",
+        "originalTitle": "The Lord of the Rings : The Two Towers",
+        "year": 2002,
+        "directors": [
+            "Peter Jackson"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Le Château dans le ciel",
+        "originalTitle": "Tenkū no shiro Rapyuta",
+        "year": 1986,
+        "directors": [
+            "Hayao Miyazaki"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Ghost in the Shell",
+        "originalTitle": "Kôkaku kidôtai",
+        "year": 1995,
+        "directors": [
+            "Mamoru Oshii"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Asura",
+        "originalTitle": "Ashura",
+        "year": 2012,
+        "directors": [
+            "Kei'ichi Sato"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Tonnerre sous les tropiques",
+        "originalTitle": "Tropic Thunder",
+        "year": 2008,
+        "directors": [
+            "Ben Stiller"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Drive",
+        "originalTitle": "Drive",
+        "year": 2011,
+        "directors": [
+            "Nicolas Winding Refn"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "The Thing",
+        "originalTitle": "The Thing",
+        "year": 1982,
+        "directors": [
+            "John Carpenter"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "The Garden of Sinners 1 : Thanatos",
+        "originalTitle": "Kara no Kyoukai: Fukan Fuukei",
+        "year": 2007,
+        "directors": [
+            "Ei Aoki"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "28 jours plus tard",
+        "originalTitle": "28 Days Later",
+        "year": 2002,
+        "directors": [
+            "Danny Boyle"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Le Silence des agneaux",
+        "originalTitle": "The Silence of the Lambs",
+        "year": 1991,
+        "directors": [
+            "Jonathan Demme"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "The Revenant",
+        "originalTitle": "The Revenant",
+        "year": 2015,
+        "directors": [
+            "Alejandro González Inárritu"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Hunger",
+        "originalTitle": "Hunger",
+        "year": 2008,
+        "directors": [
+            "Steve McQueen"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Le Pianiste",
+        "originalTitle": "The Pianist",
+        "year": 2002,
+        "directors": [
+            "Roman Polanski"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Persepolis",
+        "originalTitle": "Persepolis",
+        "year": 2007,
+        "directors": [
+            "Marjane Satrapi",
+            "Vincent Paronnaud (Winshluss)"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Minority Report",
+        "originalTitle": "Minority Report",
+        "year": 2002,
+        "directors": [
+            "Steven Spielberg"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "I, Pet Goat II",
+        "originalTitle": "I, Pet Goat II",
+        "year": 2012,
+        "directors": [
+            "Heliofant"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "A Dangerous Method",
+        "originalTitle": "A Dangerous Method",
+        "year": 2011,
+        "directors": [
+            "David Cronenberg"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Burn After Reading",
+        "originalTitle": "Burn After Reading",
+        "year": 2008,
+        "directors": [
+            "Joel Coen",
+            "Ethan Coen"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Une nuit en enfer",
+        "originalTitle": "From Dusk till Dawn",
+        "year": 1996,
+        "directors": [
+            "Robert Rodriguez"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Mr. Nobody",
+        "originalTitle": "Mr. Nobody",
+        "year": 2009,
+        "directors": [
+            "Jaco van Dormael"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Interstellar",
+        "originalTitle": "Interstellar",
+        "year": 2014,
+        "directors": [
+            "Christopher Nolan"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Dog Pound",
+        "originalTitle": "Dog Pound",
+        "year": 2010,
+        "directors": [
+            "Kim Chapiron"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Les 8 Salopards",
+        "originalTitle": "The Hateful Eight",
+        "year": 2015,
+        "directors": [
+            "Quentin Tarantino"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Harry Potter et les Reliques de la Mort : 2ème partie",
+        "originalTitle": "Harry Potter and the Deathly Hallows: Part 2",
+        "year": 2011,
+        "directors": [
+            "David Yates"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "The Dark Knight Rises",
+        "originalTitle": "The Dark knight rises",
+        "year": 2012,
+        "directors": [
+            "Christopher Nolan"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Batman Begins",
+        "originalTitle": "Batman Begins",
+        "year": 2005,
+        "directors": [
+            "Christopher Nolan"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Casino Royale",
+        "originalTitle": "Casino Royale",
+        "year": 2006,
+        "directors": [
+            "Martin Campbell"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Match Point",
+        "originalTitle": "Match Point",
+        "year": 2005,
+        "directors": [
+            "Woody Allen"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Astérix & Obélix : Mission Cléopâtre",
+        "originalTitle": "Astérix & Obélix : Mission Cléopâtre",
+        "year": 2002,
+        "directors": [
+            "Alain Chabat"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Battle Royale",
+        "originalTitle": "Batoru rowaiaru",
+        "year": 2000,
+        "directors": [
+            "Kinji Fukasaku"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Colorful",
+        "originalTitle": "Karafuru",
+        "year": 2010,
+        "directors": [
+            "Keiichi Hara"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Sweeney Todd, le diabolique barbier de Fleet Street",
+        "originalTitle": "Sweeney Todd - The Demon Barber of Fleet Street",
+        "year": 2007,
+        "directors": [
+            "Tim Burton"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Mars Attacks !",
+        "originalTitle": "Mars Attacks !",
+        "year": 1996,
+        "directors": [
+            "Tim Burton"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "The Grudge",
+        "originalTitle": "The Grudge",
+        "year": 2004,
+        "directors": [
+            "Takashi Shimizu"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Le Monde de Narnia : Chapitre 2 - Le Prince Caspian",
+        "originalTitle": "The Chronicles of Narnia : Prince Caspian",
+        "year": 2008,
+        "directors": [
+            "Andrew Adamson"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Harry Potter et les Reliques de la Mort : 1ère partie",
+        "originalTitle": "Harry Potter and the Deathly Hallows : Part 1",
+        "year": 2010,
+        "directors": [
+            "David Yates"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Rebelle",
+        "originalTitle": "Brave",
+        "year": 2012,
+        "directors": [
+            "Mark Andrews",
+            "Brenda Chapman",
+            "Steve Purcell (II)"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "A.I. Intelligence Artificielle",
+        "originalTitle": "A.I. Artificial Intelligence",
+        "year": 2001,
+        "directors": [
+            "Steven Spielberg"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "OSS 117 : Rio ne répond plus",
+        "originalTitle": "OSS 117 : Rio ne répond plus",
+        "year": 2009,
+        "directors": [
+            "Michel Hazanavicius"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Mardock Scramble : The First Compression",
+        "originalTitle": "Marudukku sukuranburu: Asshuku",
+        "year": 2010,
+        "directors": [
+            "Susumu Kudo"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "The Garden of Sinners: Future Gospel",
+        "originalTitle": "Kara no Kyoukai: Mirai Fukuin",
+        "year": 2013,
+        "directors": [
+            "Tomonori Sudou"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Kara no Kyoukai : Epilogue",
+        "originalTitle": "Kara no Kyoukai : Shuushou",
+        "year": 2011,
+        "directors": [],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Las Vegas Parano",
+        "originalTitle": "Fear and Loathing in Las Vegas",
+        "year": 1998,
+        "directors": [
+            "Terry Gilliam"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Saw",
+        "originalTitle": "Saw",
+        "year": 2004,
+        "directors": [
+            "James Wan"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "The Garden of Sinners 4 : L'Abîme du temple",
+        "originalTitle": "Kara no Kyoukai 4: Garan no Dou",
+        "year": 2008,
+        "directors": [
+            "Teiichi Takigushi"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Hot Fuzz",
+        "originalTitle": "Hot Fuzz",
+        "year": 2007,
+        "directors": [
+            "Edgar Wright"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Dernier train pour Busan",
+        "originalTitle": "Busanhaeng",
+        "year": 2016,
+        "directors": [
+            "Yeon Sang-Ho"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Toy Story",
+        "originalTitle": "Toy Story",
+        "year": 1995,
+        "directors": [
+            "John Lasseter"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "La Part des anges",
+        "originalTitle": "The Angels' Share",
+        "year": 2012,
+        "directors": [
+            "Ken Loach"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Cloud Atlas",
+        "originalTitle": "Cloud Atlas",
+        "year": 2012,
+        "directors": [
+            "Lilly Wachowski",
+            "Lana Wachowski",
+            "Tom Tykwer"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Ernest et Célestine",
+        "originalTitle": "Ernest et Célestine",
+        "year": 2012,
+        "directors": [
+            "Benjamin Renner",
+            "Vincent Patar",
+            "Stéphane Aubier"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Star Wars : Les Derniers Jedi",
+        "originalTitle": "Star Wars: The Last Jedi",
+        "year": 2017,
+        "directors": [
+            "Rian Johnson"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "Faute d'amour",
+        "originalTitle": "Nelyubov",
+        "year": 2017,
+        "directors": [
+            "Andrei Zvyagintsev"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Detroit",
+        "originalTitle": "Detroit",
+        "year": 2017,
+        "directors": [
+            "Kathryn Bigelow"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Kramer contre Kramer",
+        "originalTitle": "Kramer vs. Kramer",
+        "year": 1979,
+        "directors": [
+            "Robert Benton"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Happy End",
+        "originalTitle": "Happy End",
+        "year": 2017,
+        "directors": [
+            "Michael Haneke"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Otaku, fils de l'empire du virtuel",
+        "originalTitle": "Otaku, fils de l'empire du virtuel",
+        "year": 1994,
+        "directors": [
+            "Jackie Bastide",
+            "Jean-Jacques Beineix"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Death Note",
+        "originalTitle": "Death Note",
+        "year": 2017,
+        "directors": [
+            "Adam Wingard"
+        ],
+        "rating": 2
+    },
+    {
+        "frenchTitle": "La Crème de la crème",
+        "originalTitle": "La Crème de la crème",
+        "year": 2014,
+        "directors": [
+            "Kim Chapiron"
+        ],
+        "rating": 1
+    },
+    {
+        "frenchTitle": "Le Redoutable",
+        "originalTitle": "Le Redoutable",
+        "year": 2017,
+        "directors": [
+            "Michel Hazanavicius"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "L'Exercice de l'État",
+        "originalTitle": "L'Exercice de l'État",
+        "year": 2011,
+        "directors": [
+            "Pierre Schoeller"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Memories of Murder",
+        "originalTitle": "Salinui Chueok",
+        "year": 2003,
+        "directors": [
+            "Bong Joon-ho"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Another Earth",
+        "originalTitle": "Another Earth",
+        "year": 2011,
+        "directors": [
+            "Mike Cahill"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Warrior",
+        "originalTitle": "Warrior",
+        "year": 2011,
+        "directors": [
+            "Gavin O'Connor"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Le Royaume",
+        "originalTitle": "The Kingdom",
+        "year": 2007,
+        "directors": [
+            "Peter Berg"
+        ],
+        "rating": 2
+    },
+    {
+        "frenchTitle": "Le Hobbit : La Bataille des cinq armées",
+        "originalTitle": "The Hobbit: The Battle of the Five Armies",
+        "year": 2014,
+        "directors": [
+            "Peter Jackson"
+        ],
+        "rating": 2
+    },
+    {
+        "frenchTitle": "Machete Kills",
+        "originalTitle": "Machete Kills",
+        "year": 2013,
+        "directors": [
+            "Robert Rodriguez"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Fast & Furious 6",
+        "originalTitle": "Furious 6",
+        "year": 2013,
+        "directors": [
+            "Justin Lin"
+        ],
+        "rating": 4
+    },
+    {
+        "frenchTitle": "Evil Dead",
+        "originalTitle": "Evil Dead",
+        "year": 2013,
+        "directors": [
+            "Fede Alvarez"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "World War Z",
+        "originalTitle": "World War Z",
+        "year": 2013,
+        "directors": [
+            "Marc Forster"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Hunger Games : L'Embrasement",
+        "originalTitle": "The Hunger Games : Catching Fire",
+        "year": 2013,
+        "directors": [
+            "Francis Lawrence"
+        ],
+        "rating": 1
+    },
+    {
+        "frenchTitle": "Rush",
+        "originalTitle": "Rush",
+        "year": 2013,
+        "directors": [
+            "Ron Howard"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Zero Dark Thirty",
+        "originalTitle": "Zero Dark Thirty",
+        "year": 2012,
+        "directors": [
+            "Kathryn Bigelow"
+        ],
+        "rating": 1
+    },
+    {
+        "frenchTitle": "Le Loup de Wall Street",
+        "originalTitle": "The Wolf of Wall Street",
+        "year": 2013,
+        "directors": [
+            "Martin Scorsese"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Gravity",
+        "originalTitle": "Gravity",
+        "year": 2013,
+        "directors": [
+            "Alfonso Cuarón"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Dark City",
+        "originalTitle": "Dark City",
+        "year": 1998,
+        "directors": [
+            "Alex Proyas"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Renaissances",
+        "originalTitle": "Self/less",
+        "year": 2015,
+        "directors": [
+            "Tarsem Singh"
+        ],
+        "rating": 1
+    },
+    {
+        "frenchTitle": "Hunger Games : La Révolte, partie 1",
+        "originalTitle": "The Hunger Games: Mockingjay, Part 1",
+        "year": 2014,
+        "directors": [
+            "Francis Lawrence"
+        ],
+        "rating": 1
+    },
+    {
+        "frenchTitle": "Take Shelter",
+        "originalTitle": "Take Shelter",
+        "year": 2011,
+        "directors": [
+            "Jeff Nichols"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "No Country for Old Men",
+        "originalTitle": "No Country for Old Men",
+        "year": 2007,
+        "directors": [
+            "Ethan Coen",
+            "Joel Coen"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Le Royaume des chats",
+        "originalTitle": "Neko no ongaeshi",
+        "year": 2002,
+        "directors": [
+            "Hiroyuki Morita"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Wanderers",
+        "originalTitle": "Wanderers",
+        "year": 2014,
+        "directors": [
+            "Erik Wernquist"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Les Nouveaux Héros",
+        "originalTitle": "Big Hero 6",
+        "year": 2014,
+        "directors": [
+            "Chris Williams",
+            "Don Hall"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Memento",
+        "originalTitle": "Memento",
+        "year": 2000,
+        "directors": [
+            "Christopher Nolan"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "My Blueberry Nights",
+        "originalTitle": "My Blueberry Nights",
+        "year": 2007,
+        "directors": [
+            "Wong Kar-Wai"
+        ],
+        "rating": null
+    },
+    {
+        "frenchTitle": "Hancock",
+        "originalTitle": "Hancock",
+        "year": 2008,
+        "directors": [
+            "Peter Berg"
+        ],
+        "rating": 2
+    },
+    {
+        "frenchTitle": "Non-Stop",
+        "originalTitle": "Non-Stop",
+        "year": 2014,
+        "directors": [
+            "Jaume Collet-Serra"
+        ],
+        "rating": null
+    },
+    {
+        "frenchTitle": "Babysitting",
+        "originalTitle": "Babysitting",
+        "year": 2014,
+        "directors": [
+            "Nicolas Benamou",
+            "Philippe Lacheau"
+        ],
+        "rating": null
+    },
+    {
+        "frenchTitle": "Her",
+        "originalTitle": "Her",
+        "year": 2013,
+        "directors": [
+            "Spike Jonze"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "La possibilité d'être humain",
+        "originalTitle": "La possibilité d'être humain",
+        "year": 2014,
+        "directors": [
+            "Pablo Girault",
+            "Thierry Kruger"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Snowpiercer, le Transperceneige",
+        "originalTitle": "Seolgungnyeolcha",
+        "year": 2013,
+        "directors": [
+            "Bong Joon-ho"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Reservoir Dogs",
+        "originalTitle": "Reservoir Dogs",
+        "year": 1992,
+        "directors": [
+            "Quentin Tarantino"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Evangelion 2.0 : You Can (Not) Advance",
+        "originalTitle": "Evangerion Shin Gekijōban: Ha",
+        "year": 2009,
+        "directors": [
+            "Hideaki Anno",
+            "Masayuki",
+            "Kazuya Tsurumaki"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Evangelion 1.0 : You Are (Not) Alone",
+        "originalTitle": "Evangerion Shin Gekijōban : Jo",
+        "year": 2007,
+        "directors": [
+            "Hideaki Anno",
+            "Masayuki",
+            "Kazuya Tsurumaki"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Un monde sans humains ?",
+        "originalTitle": "Un monde sans humains ?",
+        "year": 2012,
+        "directors": [
+            "Philippe Borrel"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Memories",
+        "originalTitle": "Memorîzu",
+        "year": 1995,
+        "directors": [
+            "Koji Morimoto",
+            "Tensai Okamura",
+            "Katsuhiro Ôtomo"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "La Dame de Fer",
+        "originalTitle": "The Iron Lady",
+        "year": 2012,
+        "directors": [
+            "Phyllida Lloyd"
+        ],
+        "rating": 2
+    },
+    {
+        "frenchTitle": "Harakiri",
+        "originalTitle": "Seppuku",
+        "year": 1962,
+        "directors": [
+            "Masaki Kobayashi"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Perfect Blue",
+        "originalTitle": "Pāfekuto Burū",
+        "year": 1998,
+        "directors": [
+            "Satoshi Kon"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Capitaine Phillips",
+        "originalTitle": "Captain Phillips",
+        "year": 2013,
+        "directors": [
+            "Paul Greengrass"
+        ],
+        "rating": 5
+    },
+    {
+        "frenchTitle": "Night Call",
+        "originalTitle": "Nightcrawler",
+        "year": 2014,
+        "directors": [
+            "Dan Gilroy"
+        ],
+        "rating": 6
+    },
+    {
+        "frenchTitle": "Kill Bill : Volume 1",
+        "originalTitle": "Kill Bill: Vol. 1",
+        "year": 2003,
+        "directors": [
+            "Quentin Tarantino"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Donnie Darko",
+        "originalTitle": "Donnie Darko",
+        "year": 2001,
+        "directors": [
+            "Richard Kelly"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Le Seigneur des Anneaux : La Communauté de l'anneau",
+        "originalTitle": "The Lord of the Rings: The Fellowship of the Ring",
+        "year": 2001,
+        "directors": [
+            "Peter Jackson"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Lost in Translation",
+        "originalTitle": "Lost in Translation",
+        "year": 2003,
+        "directors": [
+            "Sofia Coppola"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Porco Rosso",
+        "originalTitle": "Kurenai no Buta",
+        "year": 1992,
+        "directors": [
+            "Hayao Miyazaki"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Tokyo Godfathers",
+        "originalTitle": "Tōkyō Goddofāzāzu",
+        "year": 2003,
+        "directors": [
+            "Satoshi Kon",
+            "Shôgo Furuya"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Shining",
+        "originalTitle": "The Shining",
+        "year": 1980,
+        "directors": [
+            "Stanley Kubrick"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Matrix",
+        "originalTitle": "The Matrix",
+        "year": 1999,
+        "directors": [
+            "Lilly Wachowski",
+            "Lana Wachowski"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Vol au-dessus d'un nid de coucou",
+        "originalTitle": "One Flew Over the Cuckoo's Nest",
+        "year": 1975,
+        "directors": [
+            "Milos Forman"
+        ],
+        "rating": 8
+    },
+    {
+        "frenchTitle": "Le Tombeau des lucioles",
+        "originalTitle": "Hotaru no Haka",
+        "year": 1988,
+        "directors": [
+            "Isao Takahata"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "Le Voyage de Chihiro",
+        "originalTitle": "Sen to Chihiro no Kamikakushi",
+        "year": 2001,
+        "directors": [
+            "Hayao Miyazaki"
+        ],
+        "rating": 9
+    },
+    {
+        "frenchTitle": "American Bluff",
+        "originalTitle": "American Hustle",
+        "year": 2013,
+        "directors": [
+            "David O. Russell"
+        ],
+        "rating": 3
+    },
+    {
+        "frenchTitle": "The Grand Budapest Hotel",
+        "originalTitle": "The Grand Budapest Hotel",
+        "year": 2014,
+        "directors": [
+            "Wes Anderson"
+        ],
+        "rating": 7
+    },
+    {
+        "frenchTitle": "Only Lovers Left Alive",
+        "originalTitle": "Only Lovers Left Alive",
+        "year": 2013,
+        "directors": [
+            "Jim Jarmusch"
+        ],
+        "rating": 7
+    }
+]
