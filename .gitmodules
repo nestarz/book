@@ -1,3 +1,6 @@
 [submodule "src/hooks"]
 	path = src/hooks
 	url = https://github.com/nestarz/react-hooks-collection.git
+[submodule "src/data/personal-data"]
+	path = src/data/personal-data
+	url = https://github.com/nestarz/personal-data
