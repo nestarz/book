@@ -44,6 +44,11 @@ var experiments = [
         title: "Portfolio A3",
     },
     {
+        url: "experiments/twitter/eindhoven",
+        slug: "twitter-nlp",
+        title: "Twitter x NLP",
+    },
+    {
         url: "experiments/films/film",
         slug: "films",
         title: "Filmographie",

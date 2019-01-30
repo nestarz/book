@@ -8,6 +8,7 @@ import NetartPage from 'components/Portfolio/Netart';
 import RenderPage from 'components/Portfolio/Render';
 import DispositifPage from 'components/Portfolio/Dispositif';
 import EegPage from 'components/Portfolio/Eeg';
+import ApiWorld from 'components/Portfolio/ApiWorld';
 import MindmapPage from 'components/Portfolio/Mindmap';
 import { PageA3_Paysage } from '../../../styles/print';
 import { convertToTesserae } from '../../../styles/fonts';
@@ -76,6 +77,7 @@ const Index = () => {
                 <span>Portfolio</span>
                 </Header>
                 <HelloPage lg={lg} />
+                <ApiWorld lg={lg} />
                 <NetartPage lg={lg} />
                 <RenderPage lg={lg} />
                 <DispositifPage lg={lg} />
