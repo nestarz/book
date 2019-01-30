@@ -66,6 +66,8 @@ bundle-stats.json
 
 .env.development
 .env.production
+.env*
+.env
 
 # Cypress
 cypress/videos

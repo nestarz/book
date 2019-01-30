@@ -57,10 +57,6 @@ padding: 0;
 const Index = () => {
     var userLang = typeof navigator != "undefined" ? navigator.language || navigator.userLanguage : "fr";
     const [lg, setLanguage] = useState(userLang == "fr-FR" ? "fr" : "en");
-    const clockRef = useRef();
-    //const xGlyphs = convertToTesserae(x, "0123456789.");
-    //const yGlyphs = convertToTesserae(y, "0123456789.");
-    console.log(clockRef);
       return (
         <Layout>
             <PageA3_Paysage />
