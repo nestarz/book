@@ -3,6 +3,7 @@ import { useList, useVideo, useHover } from 'react-use';
 import styled from "styled-components";
 import { useFaceApiDetection, useFaceApiOverlay } from 'hooks/faceapi.js';
 import { useWebcam } from 'components/Webcam';
+import * as faceapi from 'face-api.js';
 
 const Wrapper = styled.div`
 height: 100%;
@@ -55,8 +56,9 @@ video {
 
 const Index = ({ children, width, height, interval = 100 }) => {
     const boxDetectionsCanvasRef = useRef();
-    const [detections, setFaceApiInput] = useFaceApiDetection(interval);
+    const [results, setFaceApiInput] = useFaceApiDetection(interval);
     const [lookAt, setLookAt] = useState(null);
+    const [expressions, setExpressions] = useState(null);
     const [camElt, camState, camControls, camRef] = useWebcam();
     const [videoElt, videoState, videoControls, videoRef] = useVideo(
         <video width={"100%"} height={"100%"} autoPlay loop>
@@ -74,12 +76,16 @@ const Index = ({ children, width, height, interval = 100 }) => {
             setFaceApiInput(sources[indexSource].ref.current.video ? sources[indexSource].ref.current.video : sources[indexSource].ref.current)
         }
     }, [indexSource, sources[indexSource].ref.current])
-    useEffect(() => { if (detections) setLookAt(detections.lookAt) }, [detections]);
-    useFaceApiOverlay(detections, boxDetectionsCanvasRef);
+    useEffect(() => { if (results) {
+        setLookAt(results.detection.lookAt)
+        setExpressions(results.expressions)
+    } }, [results]);
+    useFaceApiOverlay(results, boxDetectionsCanvasRef);
     const childrenWithLookAtProps = React.Children.map(children, (child, index) => {
         return React.cloneElement(child, {
             index,
-            lookAt: lookAt
+            lookAt: lookAt,
+            expressions: expressions
         });
     })
     const childrenElt = (hovered) => <Wrapper>

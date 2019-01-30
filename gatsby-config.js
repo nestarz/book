@@ -32,6 +32,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'emotion-assets',
+        path: `${__dirname}/src/components/EmotionalFace/assets`,
+      },
+    },
+    {
       resolve: 'gatsby-mdx',
       options: {
         extensions: ['.mdx', '.md'],

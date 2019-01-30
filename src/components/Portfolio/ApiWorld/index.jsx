@@ -94,9 +94,8 @@ const mindmap = {
         En détournant les processus dictés de l'imprimante 3D, en associant la forme et l'usage à des données numériques, en imaginant des typologies d'objets par générations paramétriques aléatoires et enfin en pensant de nouvelles intéractions dans la création avec des instruments a priori non liés à la céramique traditionnelle, du piano à la caméra et jusqu'aux interfaces cervaux machines.
     </>,
     "en": <>
-        <h1>Ceramist Mind Map</h1>
-        Willingness to refer new types of ceramic creation.
-        By diverting the dictated processes of the 3D printer, by combining form and use with digital data, by imagining typologies of objects by random parametric generations and finally by thinking of new interactions in the creation with instruments a priori not related to traditional ceramics, from the piano to the camera and to the machine brain interfaces.
+        <h1>An Application Programming Interface world</h1>
+        Developers must often build new applications that pull together multiple back-end services delivered via APIs. Here we hijack a Twitter API to use last Ceramics tweets, we process them using some Natural Language Processing to analyze them <strong>live</strong> ! For example in this unique board you only see, we can extract the unseen and tell that Ceramics is trendy in Japan.
     </>
 }
 
