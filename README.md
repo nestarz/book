@@ -30,6 +30,7 @@ A record of works from summer 2018 when I joined Renoir and started to play with
     - Traced SVG loading (lazy-loading)
     - WebP support
 - Filament Mobile-first library for physically based rendering support
+- Dotenv manage sensitive api keys
 
 ## Getting Started
 
