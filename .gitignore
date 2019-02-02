@@ -1,7 +1,3 @@
-# issue with ubuntu
-.babelrc 
-.DS_Store
-
 ### Node ###
 # Logs
 logs
@@ -66,8 +62,6 @@ bundle-stats.json
 
 .env.development
 .env.production
-.env*
-.env
 
 # Cypress
 cypress/videos

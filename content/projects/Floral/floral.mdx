@@ -8,17 +8,9 @@ subtitle: 'Sérigraphie, décoration, et environnement floral'
 wip: true
 ---
 
-import ContainerDimensions from 'react-container-dimensions'
 import FloralMindmap from 'components/Mindmap/Floral'
-import { SketchComponent } from 'components/P5js';
-import sketch1 from 'components/P5js/projects/decorationFloral/sketch1';
-import sketch2 from 'components/P5js/projects/decorationFloral/sketch2';
-import sketch3 from 'components/P5js/projects/decorationFloral/sketch3';
-import sketch4 from 'components/P5js/projects/decorationFloral/sketch4';
-import sketch5 from 'components/P5js/projects/decorationFloral/sketch5';
-import sketch6 from 'components/P5js/projects/decorationFloral/sketch6';
-import sketch7 from 'components/P5js/projects/decorationFloral/sketch7';
-
+import { SketchComponent } from 'components/Visual/P5js';
+import sketch2 from 'components/Visual/P5js/projects/decorationFloral/sketch2';
 
 # Expérimentations florales
 
@@ -33,7 +25,7 @@ Un paysage est une vue d'une portion de l'espace terrestre, perçue par les sens
 
 - Création en fonction de la saison de floraison des végétaux, des légumes et fruits.
 - Création en fonction des prévisions des scientifiques sur la végétation donc en fonction du lieu et de l'année.
-- 
+-
 
 ## Outil P5.js
 
@@ -44,22 +36,7 @@ page écrite en html/css/javascript.
 
 Plusieurs solutions existent pour coder en p5.js En ligne en utilisant l’éditeur https://alpha.editor.p5js.org/ ou celui du site openprocessing.org. Il possible d’utiliser Processing 3, à télécharger sur le site processing.
 
-<div style={{ 
-  height: "600px",
-  width: "auto"
-  }}>
-<ContainerDimensions>
-    {parent => (
-        <SketchComponent
-            sketch={ sketch2 }
-            width={parent.width}
-            height={parent.height}
-            sketchProps={{ mode: 1 }}
-        />
-    )
-    }
-</ContainerDimensions>
-</div>
+<SketchComponent style={{height: "600px"}} sketch={ sketch2 } />
 
 # Références
 
@@ -76,7 +53,7 @@ Plusieurs solutions existent pour coder en p5.js En ligne en utilisant l’édit
 - [xie-emily](http://xie-emily.com/code_art/algorithmic_plants/index.html) Algorithmic plants
 - [dkandalov](https://dkandalov.github.io/lsystem/) L-system
 
-## Open Data & APIs 
+## Open Data & APIs
 - [The Garden.org Plants Database](https://garden.org/apps/calendar/?q=Paris%2C+France) When to Plant Vegetables: The Garden Planting Calendar
 - [Food Nutrition Information](https://data.world/adamhelsinger/food-nutrition-information) Nutritional information for raw fruits, vegetables, and seafood.
 - [Open Climate Data](https://github.com/openclimatedata) This webpage is maintained by Robert Gieseke at the Potsdam Institute for Climate Impact Research.

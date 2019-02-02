@@ -1,46 +1,70 @@
-/* eslint react/display-name: 0 */
-import React, { useState } from 'react'
-import { Link, graphql } from 'gatsby'
-import PropTypes from 'prop-types'
-import { Trail } from 'react-spring'
-import styled from 'styled-components'
-import { Layout } from 'components'
-import website from '../../config/website';
-import theme from '../../config/theme';
-import NameHeader from 'components/Navigation/NameHeader';
-import ProjectList from 'components/Navigation/ProjectList';
-import ExperimentList from 'components/Navigation/ExperimentList';
-import ContainerDimensions from 'react-container-dimensions'
-import { SketchComponent } from 'components/P5js';
-import sketch1 from 'components/P5js/projects/mainScreen/sketch1';
-// import SpringAnimation from 'components/SpringAnimation/animation1';
+import Layout from 'components/Layout';
+import Contact from 'components/Layout/Contact';
+import Header from 'components/Layout/Header/Name';
+import ExperimentList from 'components/Layout/List/BasicExperimentList';
+import ProjectList from 'components/Layout/List/BasicProjectList';
+import { SketchComponentFixedBackground } from 'components/Visual/P5js';
+import backgroundSketch from 'components/Visual/P5js/projects/mainScreen/sketch1';
+import { graphql, StaticQuery } from "gatsby";
+import { useToggleGlobalLanguage } from 'hooks/useLanguage';
+import PropTypes from 'prop-types';
+import React from 'react';
+import styled from 'styled-components';
 
-const Holder3D = styled.div`
-position: fixed;
-top:0;
-left:0;
-right:0;
-bottom:0;
-pointer-events: none;
-mix-blend-mode: multiply;
-transform: rotate(90deg);
+const Wrapper = styled.div`
+  flex: 1;
+  height: 100%;
+  display: flex;
+  color: ${props => props.theme.colors.body_color};
+  justify-content: space-between;
+  flex-direction: row;
+  align-content: space-between;
+  padding: 30px;
+  font-size: 1.6vmin;
+  @media (max-width: 1000px) {
+    flex-wrap: wrap;
+    font-size: 1.3vmax;
+  }
+  &>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-content: space-between;
+  }
+  button {
+    all: inherit;
+    margin-top: 1em;
+    font-size: 180%;
+    cursor: pointer;
+    text-decoration: underline;
+  }
 `;
 
-
-const ListWrapper = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: flex-end;
-max-width: 600px;
-text-align: right;
-flex: 1;
-font-size: 130%;
-flex: 45%;
-@media (max-width: 1000px), (max-device-width: 1000px) {
-  font-size: 150%;
-  text-align: left;
-}
-`
+const Navigation = styled.nav`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 45%;
+  max-width: 600px;
+  text-align: right;
+  font-size: 180%;
+  @media (max-width: 1000px) {
+    font-size: 150%;
+    text-align: left;
+  }
+  .category {
+    font-weight: 500;
+    margin-top: 1em;
+  }
+  a{
+    &:hover:before {
+      content: "↘ ";
+    }
+    &:not(:hover) {
+      color: inherit;
+    }
+  }
+`;
 
 const Description = styled.p`
   margin: 0;
@@ -48,126 +72,73 @@ const Description = styled.p`
   min-width: 300px;
   font-size: 180%;
   line-height: 1.7em;
+  margin-top: 0.5em;
 `;
 
-const Wrapper = styled.div`
-  flex: 1;
-  display: flex;
-  color: ${props => props.theme.colors.body_color};
-  justify-content: space-between;
-  flex-direction: row;
-  align-content: space-between;
-  padding: 30px;
-  @media (max-width: 1000px), (max-device-width: 1000px) {
-    flex-wrap: wrap;
-  }
-  h2 {
-    font-size: 180%;
-    font-weight: normal;
-    margin: 20px 0 0 0;
-  }
-  button {
-    background: none;
-    color: inherit;
-    border: none;
-      padding: 0;
-      text-decoration: underline;
-      font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    font-size: 1.1rem;
-    display: flex;
-  }
-  &>div {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-  &>div:first-child {
-    justify-content: space-between;
-  }
-`;
-
-const Header = styled(NameHeader)`
-`;
-
-
-const Index = ({
-  data: {
-    allMdx: { edges: projectEdges },
-  },
-}) => {
-  var userLang = typeof navigator != "undefined" ? navigator.language || navigator.userLanguage : "fr";
-  const [lg, setLanguage] = useState(userLang == "fr-FR" ? "fr" : "en");
-  ////console.log(`User's preferred language: ${userLang}, setting language to ${lg}`);
+const Index = ({ data, location }) => {
+  const [language, toggleLanguage] = useToggleGlobalLanguage()
+  const description = data.site.siteMetadata.authorCv.shortBio[language];
   return (
-    <Layout>
-      <Holder3D>
-        <ContainerDimensions>
-          {parent => (
-            <SketchComponent
-              sketch={sketch1}
-              width={parent.width}
-              height={parent.height}
-              sketchProps={{ value: 10 }}
-            />
-            // <SpringAnimation
-            //   width={parent.width}
-            //   height={parent.height}
-            // />
-          )
-          }
-        </ContainerDimensions>
-      </Holder3D>
+    <Layout pathname={location.pathname}>
       <Wrapper>
+        <SketchComponentFixedBackground style={{height: "99%"}} sketch={backgroundSketch} />
         <div>
-          <Header theme={theme} lg={lg} />
-          <Description>
-            <button onClick={() => setLanguage(lg == "fr" ? "en" : "fr")}>
-              En/Fr
-          </button>
-            {website.bioCV[lg]}
-          </Description>
+          <div>
+            <Header style={{ fontSize: "400%" }} />
+            <Contact style={{ fontSize: "200%" }}
+              withIcons={false}
+              withPhone={false}
+              withEmail={false}
+            />
+          </div>
+          <div>
+            <button onClick={() => toggleLanguage()}>En/Fr</button>
+            <Description>
+              {description}
+            </Description>
+          </div>
         </div>
-        <ListWrapper>
-          <h2>{lg == "fr" ? "Expériences" : "Experiments"}</h2>
-          <ExperimentList />
-          <h2>{lg == "fr" ? "Projets" : "Projects"}</h2>
+        <Navigation>
           <ProjectList />
-        </ListWrapper>
+          <ExperimentList />
+        </Navigation>
       </Wrapper>
     </Layout>
   )
-};
-
-export default Index
-
-Index.propTypes = {
-  data: PropTypes.shape({
-    allMdx: PropTypes.shape({
-      edges: PropTypes.array.isRequired,
-    }),
-  }).isRequired,
 }
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { sourceInstanceName: { eq: "projects" } } }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            service
-            client
-            title
+export default props => (
+  <StaticQuery
+    query={graphql`
+    query {
+      site {
+        siteMetadata {
+          authorCv {
+            shortBio {
+              fr
+              en
+            }
           }
         }
       }
     }
-  }
-`
+    `}
+    render={data => <Index data={data} {...props} />}
+  />
+)
+
+Index.propTypes = {
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        authorCv: PropTypes.shape({
+          shortBio: PropTypes.shape({
+            en: PropTypes.string.isRequired,
+            fr: PropTypes.string.isRequired,
+          }).isRequired,
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+  location: PropTypes.object.isRequired,
+}

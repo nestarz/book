@@ -45,44 +45,44 @@ export const graph = {
       { from: 38, to: 36, label: ""},
       { from: 36, to: 37, label: ""},
       { from: 35, to: 16, label: ""},
-      { from: 33, to: 34, label: ""}, 
-      { from: 33, to: 11, label: ""}, 
-      { from: 32, to: 11, label: ""}, 
-      { from: 31, to: 11, label: ""}, 
-      { from: 17, to: 28, label: ""}, 
-      { from: 29, to: 7, label: ""}, 
-      { from: 29, to: 30, label: ""}, 
-      { from: 25, to: 28, label: ""}, 
-      { from: 25, to: 27, label: ""}, 
-      { from: 25, to: 26, label: ""}, 
-      { from: 1, to: 25, label: ""}, 
-      { from: 1, to: 24, label: ""}, 
-      { from: 23, to: 24, label: ""}, 
-      { from: 22, to: 23, label: ""}, 
-      { from: 1, to: 2, label: ""}, 
-      { from: 2, to: 3, label: ""}, 
-      { from: 4, to: 24, label: ""}, 
-      { from: 4, to: 5, label: ""}, 
-      { from: 6, to: 24, label: ""}, 
-      { from: 6, to: 1, label: ""}, 
-      { from: 7, to: 1, label: ""}, 
-      { from: 7, to: 8, label: ""}, 
-      { from: 9, to: 8, label: ""}, 
-      { from: 10, to: 8, label: ""}, 
-      { from: 11, to: 8, label: ""}, 
-      { from: 12, to: 8, label: ""}, 
-      { from: 13, to: 12, label: ""}, 
-      { from: 14, to: 8, label: ""}, 
-      { from: 15, to: 8, label: ""}, 
-      { from: 16, to: 8, label: ""}, 
-      { from: 17, to: 16, label: ""}, 
-      { from: 18, to: 16, label: ""}, 
-      { from: 19, to: 16, label: ""}, 
-      { from: 20, to: 16, label: ""}, 
-      { from: 21, to: 16, label: ""}, 
+      { from: 33, to: 34, label: ""},
+      { from: 33, to: 11, label: ""},
+      { from: 32, to: 11, label: ""},
+      { from: 31, to: 11, label: ""},
+      { from: 17, to: 28, label: ""},
+      { from: 29, to: 7, label: ""},
+      { from: 29, to: 30, label: ""},
+      { from: 25, to: 28, label: ""},
+      { from: 25, to: 27, label: ""},
+      { from: 25, to: 26, label: ""},
+      { from: 1, to: 25, label: ""},
+      { from: 1, to: 24, label: ""},
+      { from: 23, to: 24, label: ""},
+      { from: 22, to: 23, label: ""},
+      { from: 1, to: 2, label: ""},
+      { from: 2, to: 3, label: ""},
+      { from: 4, to: 24, label: ""},
+      { from: 4, to: 5, label: ""},
+      { from: 6, to: 24, label: ""},
+      { from: 6, to: 1, label: ""},
+      { from: 7, to: 1, label: ""},
+      { from: 7, to: 8, label: ""},
+      { from: 9, to: 8, label: ""},
+      { from: 10, to: 8, label: ""},
+      { from: 11, to: 8, label: ""},
+      { from: 12, to: 8, label: ""},
+      { from: 13, to: 12, label: ""},
+      { from: 14, to: 8, label: ""},
+      { from: 15, to: 8, label: ""},
+      { from: 16, to: 8, label: ""},
+      { from: 17, to: 16, label: ""},
+      { from: 18, to: 16, label: ""},
+      { from: 19, to: 16, label: ""},
+      { from: 20, to: 16, label: ""},
+      { from: 21, to: 16, label: ""},
       ]
   };
-  
+
   export const options = {
     physics: {
       solver: "repulsion",
@@ -174,25 +174,19 @@ export const graph = {
               highlight:'#3CD670',
               inherit: false,
               opacity:1.0
-          },      
+          },
           width: 2
     }
   };
-  
+
   export const events = {
     select: function(event) {
       var { nodes, edges } = event;
-      ////console.log("Selected nodes:");
-      ////console.log(nodes);
-      ////console.log("Selected edges:");
-      ////console.log(edges);
       if (nodes.length === 1) {
           var node = graph.nodes[nodes[0]];
           if (node.url) {
-            ////console.log(node, graph.nodes, nodes[0]);
             window.open(node.url, '_blank');
           }
       }
     }
   };
-  

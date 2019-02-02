@@ -1,18 +1,18 @@
-import React, { useRef, useState } from 'react';
-import styled from "styled-components";
-import Clock from 'components/react-live-clock/src/Component';
+import Clock from 'components/Custom/react-live-clock/src/Component';
+import ApiWorld from 'components/Experiments/Portfolio/ApiWorld';
+import HelloPage from 'components/Experiments/Portfolio/Hello';
+import NetartPage from 'components/Experiments/Portfolio/Netart';
 import Layout from "components/Layout";
-import Nav from 'components/Navigation/PrintHeader'
-import HelloPage from 'components/Portfolio/Hello';
-import NetartPage from 'components/Portfolio/Netart';
-import RenderPage from 'components/Portfolio/Render';
-import DispositifPage from 'components/Portfolio/Dispositif';
-import EegPage from 'components/Portfolio/Eeg';
-import ApiWorld from 'components/Portfolio/ApiWorld';
-import MindmapPage from 'components/Portfolio/Mindmap';
-import { PageA3_Paysage } from '../../../styles/print';
-import { convertToTesserae } from '../../../styles/fonts';
+import PrintHeader from 'components/Layout/Header/Print';
+import PropTypes from "prop-types";
+import React from 'react';
+import styled, { createGlobalStyle } from "styled-components";
+import { convertToTesserae, LocalFonts } from 'styles/fonts';
+import { PageA3_Paysage } from 'styles/print';
 
+const GlobalStyle = createGlobalStyle`
+  ${LocalFonts}
+`
 const Header = styled.div`
 font-size: 1vw;
 align-self: center;
@@ -26,18 +26,18 @@ align-items: center;
 }
 time:first-child {
     font-family: Tesserae;
-    font-size:3vw;
+    font-size:2vw;
 }
 span {
     transform: scale(2,1);
 }
 @media (max-width: 1600px) {
     time:first-child {
-        font-size: 8vw;
+        font-size: 7vw;
     }
     span {
         transform: scale(2,1);
-        font-size: 5vw;
+        font-size: 4vw;
     }
 }
 `;
@@ -54,31 +54,30 @@ padding: 0;
 }
 `;
 
-const Index = () => {
-    var userLang = typeof navigator != "undefined" ? navigator.language || navigator.userLanguage : "fr";
-    const [lg, setLanguage] = useState(userLang == "fr-FR" ? "fr" : "en");
-      return (
-        <Layout>
+const Index = ({location}) => {
+    return (
+        <Layout pathname={location.pathname}>
+            <GlobalStyle />
             <PageA3_Paysage />
             <Wrapper>
-                <Nav lg={lg} setLanguage={setLanguage} />
+                <PrintHeader />
                 <Header>
                 <Clock
                         format={'SS:ss:HH:mm:ss:SS'}
                         ticking={true}
                         timezone={'Europe/Paris'}
-                        interval={10} 
-                        filter={(x) => convertToTesserae(x, "0123456789")} 
+                        interval={10}
+                        filter={(x) => convertToTesserae(x, "0123456789")}
                     />
                 <span>Portfolio</span>
                 </Header>
-                <HelloPage lg={lg} />
-                <ApiWorld lg={lg} />
-                <NetartPage lg={lg} />
-                <RenderPage lg={lg} />
-                <DispositifPage lg={lg} />
-                <EegPage lg={lg} />
-                <MindmapPage lg={lg} />
+                <HelloPage />
+                <ApiWorld />
+                <NetartPage />
+                <RenderPage />
+                <DispositifPage />
+                <EegPage />
+                <MindmapPage />
             </Wrapper>
         </Layout>
     )
@@ -86,4 +85,16 @@ const Index = () => {
 
 export default Index;
 
-Index.propTypes = {};
+Index.propTypes = {
+  location: PropTypes.object.isRequired,
+}
+
+export const frontmatter = {
+  title: "Portfolio",
+  written: "2017-05-04",
+  layoutType: "post",
+  path: "sd-sdd-d3v4",
+  category: "experiments",
+  description: "Things about the choropleth.",
+  updated: false
+}
