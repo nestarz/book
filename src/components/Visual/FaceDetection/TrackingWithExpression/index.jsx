@@ -3,10 +3,10 @@ import React from 'react';
 import { TrackFaces } from '../TrackFaces';
 
 
-export const TrackFacesWithExpressions = ({ withBoxes }) => (
+export const TrackFacesWithExpressions = ({ withBoxes, input, detectionOptions, ...props }) => (
   <TrackFaces
-    {...this.props}
+    {...props}
     displayOptions={{ withBoxes, withScore: false }}
-    runTask={async () => faceapi.detectAllFaces(this.props.input.element, this.props.detectionOptions).withFaceExpressions()}
+    runTask={async () => faceapi.detectAllFaces(input.element, detectionOptions).withFaceExpressions()}
   />
 )

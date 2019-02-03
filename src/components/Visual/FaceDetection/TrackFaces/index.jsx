@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { displayResults } from '../../face-api.js-react';
+import { displayResults } from 'external/face-api.js-react';
 
 
 export const TrackFaces = ({ input, overlay, displayOptions, runTask }) => {
