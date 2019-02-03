@@ -1,4 +1,4 @@
-import { findBestExpression, useFaceApiDetection } from 'hooks/face-api.js';
+import { findBestExpression, useFaceApiDetection } from 'hooks/faceapi.js';
 import React from 'react';
 import { StyledEmotionalFace, StyledScene } from './styles';
 

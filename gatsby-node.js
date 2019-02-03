@@ -6,13 +6,17 @@ exports.onCreateWebpackConfig = ({actions}) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+      alias: {
+        videojs: 'video.js',
+        WaveSurfer: 'wavesurfer.js',
+      }
     },
   });
 };
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const fragments = require('./graphql/createPages')
+  const fragments = require('./src/fragments/createPages')
   const { result } = await wrapper(graphql(fragments.pages))
   if (result.errors) throw result.errors
   const pages = [

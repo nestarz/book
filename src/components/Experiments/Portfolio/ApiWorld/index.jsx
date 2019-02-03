@@ -4,7 +4,7 @@ import { useToggleGlobalLanguage } from 'hooks/useLanguage';
 import { randomTesseraeString } from 'styles/fonts';
 import { StaticQuery, graphql } from "gatsby"
 import * as nlp from "compromise";
-import Clock from 'components/Custom/react-live-clock/src/Component';
+import Clock from 'external/react-live-clock/src/Component';
 import { TweetsTextfit, CustomInfo, LocalWrapper } from './styles';
 
 const mindmap = {

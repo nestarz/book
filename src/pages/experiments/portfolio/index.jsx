@@ -1,4 +1,4 @@
-import Clock from 'components/Custom/react-live-clock/src/Component';
+import Clock from 'external/react-live-clock/src/Component';
 import ApiWorld from 'components/Experiments/Portfolio/ApiWorld';
 import HelloPage from 'components/Experiments/Portfolio/Hello';
 import NetartPage from 'components/Experiments/Portfolio/Netart';
