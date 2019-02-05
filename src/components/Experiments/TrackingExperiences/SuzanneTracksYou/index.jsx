@@ -1,6 +1,6 @@
 import * as faceapi from 'face-api.js';
-import { useFaceApiDetection } from 'hooks/faceapi.js';
-import React from 'react';
+import { useFaceApiDetection, useFaceApiOverlay } from 'hooks/faceapi.js';
+import React, { useRef } from 'react';
 import { StyledEmotionalFace, StyledScene, Canvas } from './styles';
 
 const faceApiConfig = {
@@ -18,17 +18,18 @@ const faceApiConfig = {
   withScore: true,
   withExpression: true,
   singleDetection: true,
-  interval: 200,
+  interval: 400,
 }
 
 const Index = ({ mediaInput }) => {
+  const detectionCanvasRef = useRef();
   if (mediaInput && mediaInput.video) mediaInput = mediaInput.video
-  const { bboxCenter, bestFaceExpression } = useFaceApiDetection({
+  const { results, bboxCenter, bestFaceExpression } = useFaceApiDetection({
     input: mediaInput,
-    canvas: displayCanvas,
+    canvas: detectionCanvasRef,
     ...faceApiConfig
   })
-  useFaceApiOverlay(results, boxDetectionsCanvasRef);
+  useFaceApiOverlay(results, detectionCanvasRef);
   return <>
     <StyledScene lookAt={bboxCenter} />
     <Canvas ref={detectionCanvasRef} />

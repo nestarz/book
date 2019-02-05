@@ -4,8 +4,9 @@ import { useShortcutEffect } from 'use-shortcut';
 const nextPage = (curr, max) => {
   return curr < max ? curr + 1 : 1
 }
-const prevPage = (curr, min = 1) => {
-  return curr == min ? 1 : curr - 1
+const prevPage = (curr, max) => {
+  const min = 1;
+  return curr == min ? max : curr - 1
 }
 
 const Pagination = ({ children,
@@ -15,22 +16,23 @@ const Pagination = ({ children,
                    keysGoNext }) => {
   const [todos, setTodos] = useState(children);
   const [currentPage, setCurrentPage] = useState(defaultCurrentPage);
-  const [todosPerPage, setTodosPerPage] = useState(amountPerPage);
 
   // Controls Events
   const handleClick = (e) => setCurrentPage(Number(e.target.id));
   useShortcutEffect(() => {
-    const prevIndex = prevPage(currentPage);
+    const maxPage = Math.ceil(todos.length / amountPerPage);
+    const prevIndex = prevPage(currentPage, maxPage);
     setCurrentPage(prevIndex);
   }, keysGoPrevious)
   useShortcutEffect(() => {
-    const nextIndex = nextPage(currentPage, Math.ceil(todos.length / todosPerPage));
+    const maxPage = Math.ceil(todos.length / amountPerPage);
+    const nextIndex = nextPage(currentPage, maxPage);
     setCurrentPage(nextIndex);
   }, keysGoNext);
 
   // Logic for displaying todos
-  const indexOfLastTodo = currentPage * todosPerPage;
-  const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
+  const indexOfLastTodo = currentPage * amountPerPage;
+  const indexOfFirstTodo = indexOfLastTodo - amountPerPage;
   const currentTodos = todos.slice(indexOfFirstTodo, indexOfLastTodo);
 
   const renderTodos = currentTodos.map((todo, index) => (
@@ -39,7 +41,7 @@ const Pagination = ({ children,
 
   // Logic for displaying page numbers
   const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(todos.length / todosPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(todos.length / amountPerPage); i++) {
     pageNumbers.push(i);
   }
 
@@ -56,7 +58,7 @@ const Pagination = ({ children,
 
   return (
     <>
-      <ul className={className} style={{width: "100%"}}>
+      <ul className={`pagination-content ${className}`} style={{width: "100%"}}>
         {renderTodos}
       </ul>
       <ul className={"page-numbers"}>

@@ -8,18 +8,20 @@ import { PageA3_Paysage } from 'styles/print';
 import PortfolioWrapper from '../';
 
 const StyledVisitCard = styled(VisitCard)`
+grid-column: auto /span 4 !important;
 .verso, .recto {
     mix-blend-mode: darken;
     overflow: hidden;
     width: 100%;
     height: 100%;
     padding: 3.89% 3.89%;
+    font-size: 1.5em;
 }
 .verso {
     display: none;
 }
 .name {
-    font-size: 1.5vw;
+    font-size: 3em;
 }
 .cv_contact {
     font-size: 1vw;
@@ -36,7 +38,6 @@ width: 100%;
 height: 100%;
 overflow: hidden;
 filter: saturate(1.6);
-border: 1px solid black;
 grid-column: 5;
 grid-row: auto /span 2;
 video {
@@ -47,26 +48,30 @@ video {
     overflow: hidden;
     filter: grayscale(1) contrast(3);
 }
+`;
+
+const LocalWrapper = styled(PortfolioWrapper)`
 &:after,
 &:before {
     background-color: #3CD670;
     position: absolute;
     bottom: 0;
-    left: -10vw;
+    left: 0em;
     top: 0;
-    right: -10vw;
+    right: 0em;
     word-break: break-word;
     content: '';
-    mix-blend-mode: exclusion;
+    mix-blend-mode: hue;
     font-size: 3vw;
     text-align:center;
     line-height: 1vw;
     z-index: 1;
+    pointer-events: none;
 }
 &:after {
     /*mix-blend-mode: color;/*lighten;*/
     z-index: 2;
-    mix-blend-mode: multiply;
+    mix-blend-mode: soft-light;
     content: '${props => props.content}';
     line-height: 2.25vw;
     word-break: break-word;
@@ -78,13 +83,10 @@ video {
     word-break: break-word;
     font-family: "Tesserae";
     color: #3CD670;
-    letter-spacing: 13.1px;
+    letter-spacing: 0.3em;
     padding: 0;
     margin: 0;
 }
-`;
-
-const LocalWrapper = styled(PortfolioWrapper)`
 `;
 
 
@@ -94,10 +96,10 @@ const Index = () => {
     const xGlyphs = convertToTesserae(randomChars(), "0123456789.");
     const yGlyphs = convertToTesserae(randomChars(), "0123456789.");
     return (
-        <LocalWrapper>
+        <LocalWrapper content={`${xGlyphs} ${yGlyphs}`}>
             <PageA3_Paysage />
             <StyledVisitCard mode={Math.floor(Math.random() * 4)} />
-            <VideoHolder content={`${xGlyphs} ${yGlyphs}`}>
+            <VideoHolder>
                 <Webcam width={"100%"} />
             </VideoHolder>
         </LocalWrapper>

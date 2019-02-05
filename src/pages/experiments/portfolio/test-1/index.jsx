@@ -10,7 +10,7 @@ import PrintHeader from 'components/Layout/Header/Print';
 import Pagination from 'components/Pagination';
 import Clock from 'external/react-live-clock/src/Component';
 import PropTypes from "prop-types";
-import React from 'react';
+import React, { useState } from 'react';
 import { convertToTesserae } from 'styles/fonts';
 import { PageA3_Paysage } from 'styles/print';
 import { GlobalStyle, Header, PaginationWrapper } from './styles';
@@ -26,6 +26,7 @@ export const frontmatter = {
 }
 
 const Index = ({ location }) => {
+  const [continuousScroll, setContinuousScroll] = useState(false);
   return (
     <Layout pathname={location.pathname}>
       <GlobalStyle />
@@ -41,10 +42,11 @@ const Index = ({ location }) => {
           />
           <span>Portfolio</span>
         </Header>
+        <button onClick={() => setContinuousScroll(!continuousScroll)}>Scrolling {continuousScroll ? "ON" : "OFF"}</button>
       </PrintHeader>
       <PaginationWrapper>
         <Pagination
-          amountPerPage={1}
+          amountPerPage={continuousScroll ? 7 : 1}
           keysGoPrevious={'left-arrow'}
           keysGoNext={'right-arrow'}
           >

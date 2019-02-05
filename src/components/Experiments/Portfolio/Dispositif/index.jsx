@@ -14,13 +14,13 @@ import dispositif5 from "./img/IMG_20181130_120008.jpg";
 import dispositif6 from "./img/IMG_20181207_114851.jpg";
 
 const LocalWrapper = styled(PortfolioWrapper)`
-    & > img:nth-child(2n + 1) {
+    & > div:nth-child(2n + 1) > img {
         &:hover {
             filter: none;
         }
         filter: saturate(0)
     }
-    & > img:nth-child(2n):hover {
+    & > div:nth-child(2n) > img:hover {
         filter: saturate(0)
     }
 `;

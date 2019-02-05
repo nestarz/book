@@ -2,27 +2,46 @@ import styled, { createGlobalStyle } from "styled-components";
 import { LocalFonts } from 'styles/fonts';
 
 export const PaginationWrapper = styled.div`
-ul { list-style-type: none; }
+font-size: 1.4vmin;
 display: flex;
 width: 100%;
-max-width: 1400px;
 margin: 0 auto;
 flex: 1;
 align-items: center;
-ul.page-numbers {
-  color: #aaa;
-  padding: 20px;
-  font-size: 16px;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding:0;
+}
+@media print {
+  width: 42cm;
+  height: 24cm;
+  ul.page-numbers {
+    display: none;
+  }
   li {
-    cursor: pointer;
-    padding: 1vw;
-    &.active {
-      font-weight: 600;
-      color: black;
+    page-break-after: always;
+  }
+}
+@media not print {
+  max-width: 140vh;
+  ul.pagination-content > li {
+    margin-bottom: 3em;
+  }
+  ul.page-numbers {
+    color: #aaa;
+    padding: 20px;
+    font-size: 16px;
+    li {
+      cursor: pointer;
+      padding: 1vw;
+      &.active {
+        font-weight: 600;
+        color: black;
+      }
     }
   }
 }
-font-size: 1vw;
 `;
 
 export const GlobalStyle = createGlobalStyle`

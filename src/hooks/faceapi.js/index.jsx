@@ -32,7 +32,7 @@ export const useFaceApiDetection = (faceApiConfig) => {
 
   useInterval(async () => {
     if (!(modelReady && faceApiConfig.input && isActive)) {
-      console.log("not ok")
+      console.log("modelReady && faceApiConfig.input && isActive: not ready yet")
       return
     }
     await fetchFaces(faceApiConfig.input)
@@ -62,7 +62,7 @@ export const useFaceApiDetection = (faceApiConfig) => {
     }
   }, [results])
 
-  return { bboxCenter, bestFaceExpression };
+  return { results, bboxCenter, bestFaceExpression };
 }
 
 function clearCanvas(canvas) {

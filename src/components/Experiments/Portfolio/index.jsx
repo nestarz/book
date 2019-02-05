@@ -1,11 +1,11 @@
 import React from 'react';
 import { Wrapper, Content } from './styles';
 
-const Index = ({children}) => {
+const Index = ({children, className}) => {
     return (
       <Wrapper>
         <div className={"container position padding"}>
-          <Content className={"content"}>
+          <Content className={`content ${className}`}>
             {children}
           </Content>
         </div>

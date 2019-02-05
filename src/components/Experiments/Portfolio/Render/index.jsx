@@ -8,6 +8,7 @@ import { randomTesseraeString } from 'styles/fonts';
 import { PageA3_Paysage } from 'styles/print';
 import PortfolioWrapper from '../';
 import { Info } from '../styles';
+import { GoUnmute, GoMute } from 'react-icons/go';
 
 const LocalWrapper = styled(PortfolioWrapper)`
 `;
@@ -20,13 +21,31 @@ const SceneContainer = styled.div`
 grid-column: auto /span 4 !important;
 grid-row: auto /span 2 !important;
 position: relative;
+overflow: hidden;
+filter: saturate(0);
 .emotion-face {
-  right: 0;
+  right: 0px;
   bottom: 0;
 }
-button {
-  position: absolute;
-left:0;bottom:0;
+span {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    font-size: 1em;
+    z-index: 999;
+    background-color: white;
+    border: 1px solid;
+    padding: 0;
+    display: flex;
+    cursor : pointer;
+    div:first-child {
+        background-color: black;
+        color: white;
+        text-decoration: underline;
+    }
+    div {
+        padding: 0.5em 1em;
+    }
 }
 `;
 const MediaBackground = styled.div`
@@ -52,7 +71,6 @@ const render = {
 }
 const Index = () => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
-  const detectionCanvasRef = useRef()
   const camraw = useWebcam();
   const videoraw  = useVideo(
       <video width={"100%"} height={"100%"} autoPlay loop>
@@ -65,19 +83,24 @@ const Index = () => {
   let cam = sourceKeys.reduce((obj, k, i) => ({...obj, [k]: camraw[i] }), {})
   const sources = [video, cam]
   const [indexSource, setIndexSource] = useState(0)
+  const [mute, setMute] = useState(true);
   let currSource = sources[indexSource];
+  if (currSource.controls && mute) currSource.controls.mute()
+  if (currSource.controls && !mute) currSource.controls.unmute()
   return (
     <LocalWrapper>
       <PageA3_Paysage />
       <SceneContainer>
         <SuzanneTracksYou
           mediaInput={currSource.ref.current}
-          displayCanvas={detectionCanvasRef.current}
         />
         <MediaBackground>
           {currSource.elt}
         </MediaBackground>
-        <button onClick={() => setIndexSource(i => (i+1) % sources.length)}>Next</button>
+        <span>
+          <div onClick={() => setIndexSource(i => (i+1) % sources.length)}>Next Source</div>
+          <div onClick={() => setMute(!mute)}>{mute ? <GoMute/> : <GoUnmute/>}</div>
+        </span>
       </SceneContainer>
       <CustomInfo>
         {render[language]}

@@ -13,17 +13,18 @@ import eeg1 from "./img/DSC04422.jpg";
 import eeg2 from "./img/DSC04437.jpg";
 
 
-const LocalWrapper = styled(PortfolioWrapper)`& > img:nth-child(2n + 1) {
+const LocalWrapper = styled(PortfolioWrapper)`
+& > div:nth-child(2n + 1) > img {
     &:hover {
         filter: none;
     }
     filter: saturate(0)
 }
-& > img:nth-child(2n):hover {
+& > div:nth-child(2n) > img:hover {
     filter: saturate(0)
 }
 .info1 {
-    grid-column: 2;
+    grid-column: 2 / auto;
     grid-row: 1 / 4;
     &:after {
         content: "${randomTesseraeString(1)}";
@@ -71,7 +72,7 @@ const Index = () => {
             <div><img src={eeg5} /></div>
             <div><img src={eeg6} /></div>
             <div><img src={eeg7} /></div>
-            <Info className="info1">
+            <Info className={"info1"}>
                 {protocol[language]}
             </Info>
             <Info className="info2">

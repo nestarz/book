@@ -13,6 +13,7 @@ const LocalWrapper = styled(PortfolioWrapper)`
 `;
 
 const ArtContainer = styled.div`
+position: relative;
 grid-column: auto /span 4 !important;
 grid-row: auto /span 2 !important;
 `;

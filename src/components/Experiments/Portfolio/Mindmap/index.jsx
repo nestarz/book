@@ -16,7 +16,7 @@ grid-row: auto /span 2 !important;
     content: "${randomTesseraeString(1)}";
 }
 `;
-const CeramistMindMapGrid = styled(CeramistMindMap)`
+const MindmapWrapper = styled.div`
 grid-column: auto /span 4 !important;
 grid-row: auto /span 3 !important;
 `;
@@ -51,7 +51,9 @@ const Index = () => {
     return (
         <LocalWrapper>
             <PageA3_Paysage />
-            <CeramistMindMapGrid />
+            <MindmapWrapper>
+              <CeramistMindMap />
+            </MindmapWrapper>
             <CustomInfo>
                 {mindmap[language]}
             </CustomInfo>
