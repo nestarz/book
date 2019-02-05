@@ -1,6 +1,7 @@
-import { findBestExpression, useFaceApiDetection } from 'hooks/faceapi.js';
+import * as faceapi from 'face-api.js';
+import { useFaceApiDetection } from 'hooks/faceapi.js';
 import React from 'react';
-import { StyledEmotionalFace, StyledScene } from './styles';
+import { StyledEmotionalFace, StyledScene, Canvas } from './styles';
 
 const faceApiConfig = {
   models: [
@@ -17,28 +18,25 @@ const faceApiConfig = {
   withScore: true,
   withExpression: true,
   singleDetection: true,
+  interval: 200,
 }
 
 const Index = ({ mediaInput }) => {
-  const { bboxResults, expressionsResults } = useFaceApiDetection({input: mediaInput, ...faceApiConfig})
-  const [ bestExpressionName, bestExpressionScore ] = findBestExpression(expressionsResults);
-
-  let lookAt;
-  if(bboxResults.length == 1) {
-    lookAt = getNormalizedBoxCenter(bboxResults[0])
-  }
-  else if(bboxResults.length > 1) {
-    throw "Received more than one result. This example dont need them."
-  }
-  else {
-    lookAt = {x: 0, y: 0, z: 0}
-  }
+  if (mediaInput && mediaInput.video) mediaInput = mediaInput.video
+  const { bboxCenter, bestFaceExpression } = useFaceApiDetection({
+    input: mediaInput,
+    canvas: displayCanvas,
+    ...faceApiConfig
+  })
+  useFaceApiOverlay(results, boxDetectionsCanvasRef);
   return <>
-      <StyledScene lookAt={lookAt} />
-      <StyledEmotionalFace
-        expressionName={bestExpressionName}
-        expressionScore={bestExpressionScore}
-      />
+    <StyledScene lookAt={bboxCenter} />
+    <Canvas ref={detectionCanvasRef} />
+    <StyledEmotionalFace
+      className={"emotion-face"}
+      expressionName={bestFaceExpression.name}
+      expressionScore={bestFaceExpression.score}
+    />
   </>
 };
 

@@ -9,13 +9,27 @@ max-width: 1400px;
 margin: 0 auto;
 flex: 1;
 align-items: center;
+ul.page-numbers {
+  color: #aaa;
+  padding: 20px;
+  font-size: 16px;
+  li {
+    cursor: pointer;
+    padding: 1vw;
+    &.active {
+      font-weight: 600;
+      color: black;
+    }
+  }
+}
+font-size: 1vw;
 `;
 
 export const GlobalStyle = createGlobalStyle`
   ${LocalFonts}
 `
 export const Header = styled.div`
-font-size: 1vw;
+font-size: 0.5em;
 align-self: center;
 margin: 0;
 display:flex;
@@ -27,17 +41,17 @@ align-items: center;
 }
 time:first-child {
     font-family: Tesserae;
-    font-size:3vw;
+    font-size:2em;
 }
 span {
   transform: scale(2,1);
 }
 @media (max-width: 1600px) {
     time:first-child {
-        font-size: 3vw;
+        font-size: 1.5em;
     }
     span {
-        font-size: 3vw;
+        font-size: 1em;
     }
 }
 `;

@@ -45,12 +45,12 @@ const Index = () => {
     return (
         <LocalWrapper>
             <PageA3_Paysage />
-            <img src={dispositif2} />
-            <img src={dispositif1} />
-            <img src={dispositif3} />
-            <img src={dispositif4} />
-            <img src={dispositif5} />
-            <img src={dispositif6} />
+            <div><img src={dispositif2} /></div>
+            <div><img src={dispositif1} /></div>
+            <div><img src={dispositif3} /></div>
+            <div><img src={dispositif4} /></div>
+            <div><img src={dispositif5} /></div>
+            <div><img src={dispositif6} /></div>
             <CustomInfo>
                 {clay[language]}
             </CustomInfo>

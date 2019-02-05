@@ -22,9 +22,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     border: none;
-    height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
+    flex: 1;
   }
   .nav-active {
     color: ${theme.brand.primary} !important;

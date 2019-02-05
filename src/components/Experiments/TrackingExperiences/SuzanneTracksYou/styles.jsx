@@ -15,3 +15,9 @@ bottom: 5vw;
 height: 10vw;
 width: 10vw;
 `;
+
+export const Canvas = styled.canvas`
+position: absolute;
+width: 100%;
+height: 100%;
+`;

@@ -1,6 +1,5 @@
 import React from 'react';
 import Highlight from 'react-highlight.js';
-import FitText from '@kennethormandy/react-fittext'
 import Clock from '../..';
 import css from './App.css';
 

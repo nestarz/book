@@ -1,4 +1,3 @@
-import FitText from '@kennethormandy/react-fittext'
 import styled from "styled-components";
 import { randomTesseraeString } from 'styles/fonts';
 import PortfolioWrapper from '../';
@@ -8,7 +7,7 @@ export const LocalWrapper = styled(PortfolioWrapper)`
   grid-auto-rows: 10vw 8vw;
 }`;
 
-export const TweetsTextfit = styled(FitText)`
+export const Info = styled.div`
 background-color: white;
 position: relative;
 padding: 1vw;
@@ -76,7 +75,7 @@ span.nl-Ceramics:before {
 }
 `;
 
-export const CustomInfo = styled(TweetsTextfit)`
+export const CustomInfo = styled(Info)`
 grid-column: 2 /span 2 !important;
 grid-row: 2 /span 2 !important;
 &:after {

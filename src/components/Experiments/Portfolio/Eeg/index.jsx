@@ -64,13 +64,13 @@ const Index = () => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
     return (
         <LocalWrapper>
-            <img src={eeg1} />
-            <img src={eeg2} />
-            <img src={eeg3} />
-            <img src={eeg4} />
-            <img src={eeg5} />
-            <img src={eeg6} />
-            <img src={eeg7} />
+            <div><img src={eeg1} /></div>
+            <div><img src={eeg2} /></div>
+            <div><img src={eeg3} /></div>
+            <div><img src={eeg4} /></div>
+            <div><img src={eeg5} /></div>
+            <div><img src={eeg6} /></div>
+            <div><img src={eeg7} /></div>
             <Info className="info1">
                 {protocol[language]}
             </Info>

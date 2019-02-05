@@ -1,14 +1,14 @@
-import Clock from 'external/react-live-clock/src/Component';
-import HelloPage from 'components/Experiments/Portfolio/Hello';
-import NetartPage from 'components/Experiments/Portfolio/Netart';
-import RenderPage from 'components/Experiments/Portfolio/Render';
+import ApiWorld from 'components/Experiments/Portfolio/ApiWorld';
 import DispositifPage from 'components/Experiments/Portfolio/Dispositif';
 import EegPage from 'components/Experiments/Portfolio/Eeg';
-import ApiWorld from 'components/Experiments/Portfolio/ApiWorld';
+import HelloPage from 'components/Experiments/Portfolio/Hello';
 import MindmapPage from 'components/Experiments/Portfolio/Mindmap';
+import NetartPage from 'components/Experiments/Portfolio/Netart';
+import RenderPage from 'components/Experiments/Portfolio/Render';
 import Layout from "components/Layout";
 import PrintHeader from 'components/Layout/Header/Print';
 import Pagination from 'components/Pagination';
+import Clock from 'external/react-live-clock/src/Component';
 import PropTypes from "prop-types";
 import React from 'react';
 import { convertToTesserae } from 'styles/fonts';
@@ -43,7 +43,11 @@ const Index = ({ location }) => {
         </Header>
       </PrintHeader>
       <PaginationWrapper>
-        <Pagination amountPerPage={1}>
+        <Pagination
+          amountPerPage={1}
+          keysGoPrevious={'left-arrow'}
+          keysGoNext={'right-arrow'}
+          >
           <HelloPage />
           <ApiWorld />
           <NetartPage />

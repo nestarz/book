@@ -6,7 +6,7 @@ background-color: white;
 position: relative;
 padding: 1vw;
 border: 1px solid black;
-font-size: 1vmin;
+font-size: 1em;
 z-index: 99999;
 letter-spacing: -0.03vw;
 max-height: none !important;
@@ -22,11 +22,13 @@ h1 {
     bottom: -1vw;
     right: -1vw;
     font-family: "Tesserae";
-    font-size: 5vw;
+    font-size: 2em;
     mix-blend-mode: screen;
 }`;
 
 export const Wrapper = styled.div`
+max-width: 80vw;
+margin: auto;
 /*https://medium.com/@marveloo/by-replacing-grid-width-inline-grid-and-adding-height-100-to-its-child-elements-now-its-possible-c801fec4abe6*/
 /*https://codepen.io/cssence/pen/BJMwwN*/
 .svg::before {
@@ -56,6 +58,7 @@ export const Wrapper = styled.div`
 .grid .content {
   grid-area: 1 / 1 / 2 / 2;
 }
+
 `;
 
 export const Content = styled.div`
@@ -64,10 +67,10 @@ counter-increment: mon-compteur;
 background-color: white;
 overflow: hidden;
 display: grid;
-grid-gap: 1vw;
-grid: auto-flow dense / 40% 40% 1fr;
-counter-reset:div;
+grid-gap: 1em;
+grid-template-columns: repeat(5, 1fr);
 grid-auto-flow: dense;
+counter-reset:div;
 padding:2vw;
 p {
     line-height: inherit;
@@ -95,11 +98,18 @@ img {
         filter: blur(1px) contrast(100);
     }
 }
-& > div, & > img {
-    object-fit: cover;
+& > div {
+  overflow: hidden;
+  min-width: 0;
+  max-height: 100%;
+  & div, & span {
+    max-height: 100%;
+  }
+  & > img {
+    overflow: hidden;
+    min-width: 0;
     width: 100%;
-    height: 100%;
-    max-height: 100% !important;
+  }
 }
 &:after {
     content: "Elias Rhouzlane. Page " counter(mon-compteur);

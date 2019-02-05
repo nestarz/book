@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
-import { PageA3_Paysage } from 'styles/print';
-import { useToggleGlobalLanguage } from 'hooks/useLanguage';
-import { randomTesseraeString } from 'styles/fonts';
-import { StaticQuery, graphql } from "gatsby"
 import * as nlp from "compromise";
 import Clock from 'external/react-live-clock/src/Component';
-import { TweetsTextfit, CustomInfo, LocalWrapper } from './styles';
+import { graphql, StaticQuery } from "gatsby";
+import { useToggleGlobalLanguage } from 'hooks/useLanguage';
+import React, { useEffect } from 'react';
+import { randomTesseraeString } from 'styles/fonts';
+import { PageA3_Paysage } from 'styles/print';
+import { CustomInfo, LocalWrapper, Info } from './styles';
+import FitText from '@kennethormandy/react-fittext'
 
 const mindmap = {
   "fr": <>
@@ -35,13 +36,17 @@ const ApiWorld = ({ data }) => {
           //doc.replace('#Person', 'Anonyme')
           //doc.replace('design', 'shit')
           const text = doc.sentences().out('html')
-          return <TweetsTextfit css={`&:after{content: "${randomTesseraeString(1)}";}`} key={i} mode="multi">
+          return <Info css={`&:after{content: "${randomTesseraeString(1)}";}`}>
+            <FitText key={i} mode="multi" vertical>
+          <>
             <span dangerouslySetInnerHTML={{ __html: text.replace(/&nbsp;/g, '') }}></span>
             <div className={"userName"}>@{v.node.user.name}</div>
             <div className={"created_at"}>
               <Clock format={'MMMM Do YYYY, h:mm:ss:SS a'} interval={100} ticking={true} timezone={'Europe/Paris'} date={v.node.created_at} />
             </div>
-          </TweetsTextfit>
+            </>
+          </FitText>
+          </Info>
         })
         : null}
       <CustomInfo>
