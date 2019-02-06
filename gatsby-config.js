@@ -1,8 +1,8 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
-console.log(process.env.NODE_ENV);
 const config = require('./config/website')
+const text = require('./config/text')
 
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
@@ -10,10 +10,50 @@ module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     siteUrl: config.siteUrl + pathPrefix,
+    siteConfig: config,
+    authorInfo: config.authorInfo,
+    authorCv: text,
   },
   plugins: [
+    {
+      resolve: 'gatsby-remark-toc',
+      options: {
+        mdastUtilTocOptions: {
+          tight: true,
+          heading: "",
+          maxDepth: 2,
+          orderedList: true
+        },
+        orderedList: true,
+        reuseExistingHeader: true,
+        header: 'Table des matières', // the custom header text
+        include: [
+          'content/**/*.md', // an include glob to match against
+          'content/**/*.mdx' // an include glob to match against
+        ]
+      }
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'emotion-assets',
+        path: `${__dirname}/src/components/Visual/EmotionalFace/assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-twitter`,
+      options: {
+        q: `ceramics`,
+        credentials: {
+          consumer_key: process.env.TWITTER_CONSUMER_KEY,
+          consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+          bearer_token: process.env.TWITTER_BEARER_TOKEN
+        },
+        tweet_mode: 'extended'
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -36,16 +76,19 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'emotion-assets',
-        path: `${__dirname}/src/components/EmotionalFace/assets`,
+        name: `experiments`,
+        path: `${__dirname}/src/files`,
       },
     },
     {
       resolve: 'gatsby-mdx',
       options: {
         extensions: ['.mdx', '.md'],
+        defaultLayouts: {
+          default: require.resolve('./src/components/Layout/index.jsx'),
+        },
         gatsbyRemarkPlugins: [
           {
             resolve: 'gatsby-remark-images',
@@ -54,25 +97,6 @@ module.exports = {
               quality: 90,
               linkImagesToOriginal: false,
             },
-          },
-          {
-            resolve: "gatsby-remark-copy-linked-files",
-            options: {}
-          },
-          {
-            resolve: 'gatsby-remark-toc',
-            options: {
-              mdastUtilTocOptions: {
-                tight: true,
-                heading: "zzzzzzzzzzzzz",
-                maxDepth: 2
-              },
-              header: 'Table des matières', // the custom header text
-              include: [
-                'content/**/*.md', // an include glob to match against
-                'content/**/*.mdx' // an include glob to match against
-              ]
-            }
           },
           {
             resolve: 'gatsby-remark-external-links',
@@ -96,6 +120,7 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    "gatsby-transformer-javascript-frontmatter",
     'gatsby-plugin-lodash',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
@@ -125,24 +150,5 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
-    // {
-    //   resolve: 'gatsby-plugin-webpack-bundle-analyzer',
-    //   options: {
-    //     analyzerPort: 3000,
-    //     production: true,
-    //   },
-    // },
-    {
-      resolve: `gatsby-source-twitter`,
-      options: {
-        q: `ceramics`,
-        credentials: {
-          consumer_key: process.env.TWITTER_CONSUMER_KEY,
-          consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-          bearer_token: process.env.TWITTER_BEARER_TOKEN
-        },
-        tweet_mode: 'extended'
-      }
-    }
   ],
 }
