@@ -11,10 +11,10 @@ height: calc(150px + 30px);
 }
 
 .video-js .vjs-control-bar {
-    background-color: ${props => props.theme.colors.white};
+    background-color: transparent;
 }
 .video-js {
-    background-color: ${props => props.theme.colors.white};
+    background-color: transparent;
     color: ${props => props.theme.colors.black};
 }
 `;

@@ -31,7 +31,7 @@ margin: auto;
 /*https://medium.com/@marveloo/by-replacing-grid-width-inline-grid-and-adding-height-100-to-its-child-elements-now-its-possible-c801fec4abe6*/
 /*https://codepen.io/cssence/pen/BJMwwN*/
 .svg::before {
-	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E");
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 280'%3E%3C/svg%3E");
   display: block;
   line-height: 0; /* needed for certain browsers */
 }
@@ -51,13 +51,23 @@ margin: auto;
   left: 0;
 }
 .grid {
-  display: grid;
+  display: inline-grid;
 }
 .grid::before,
 .grid .content {
   grid-area: 1 / 1 / 2 / 2;
+  height: 100%;
 }
 
+.viewport,
+.viewport .content
+{
+  --width: 70vw;
+  width: var(--width);
+  height: calc(var(--width) / 1.4141);
+  margin-left: auto;
+  margin-right: auto;
+}
 `;
 
 export const Content = styled.div`
@@ -71,10 +81,16 @@ grid-template-columns: repeat(5, 1fr);
 grid-auto-flow: dense;
 counter-reset:div;
 padding:2em;
+min-height: 0;  /* NEW */
+min-width: 0;   /* NEW; needed for Firefox */
 p {
     line-height: inherit;
     font-size: inherit;
     letter-spacing: inherit;
+}
+& > * {
+  overflow: hidden;  /* NEW */
+  min-width: 0;      /* NEW; needed for Firefox */
 }
 & > *:nth-child(6n + 4),
 & > *:nth-child(6n + 1) {

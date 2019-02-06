@@ -11,7 +11,9 @@ const TOC = ({ tableOfContents }) => <Wrapper>
       top: "-10%",
       transform: "scale(1, 1.2)"
     }}
-    sketch={backgroundSketch} />
+    sketch={backgroundSketch}
+    sketchProps={{ frameRate: 0.1, noLoop: true }}
+    />
   <Content>
     <ol>
       {tableOfContents.items.map((heading, index) => {

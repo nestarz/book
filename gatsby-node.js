@@ -7,8 +7,8 @@ exports.onCreateWebpackConfig = ({actions}) => {
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
       alias: {
-        videojs: 'video.js',
         WaveSurfer: 'wavesurfer.js',
+        videojs: 'video.js',
       }
     },
   });

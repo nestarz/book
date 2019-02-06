@@ -4,7 +4,7 @@ import { Wrapper, Content } from './styles';
 const Index = ({children, className}) => {
     return (
       <Wrapper>
-        <div className={"container position padding"}>
+        <div className={"container viewport"}>
           <Content className={`content ${className}`}>
             {children}
           </Content>

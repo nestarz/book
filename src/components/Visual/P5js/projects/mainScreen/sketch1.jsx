@@ -47,9 +47,11 @@ const sketch = (width, height, props) => {
             p5.stroke("black");
             p5.smooth();
             p5.noStroke();
-            p5.frameRate(25);
-
+            p5.frameRate((props && props.frameRate) ? props.frameRate : 25);
             physics.play()
+            if (props && props.noLoop) {
+              p5.noLoop();
+            }
         }
 
         p5.draw = () => {

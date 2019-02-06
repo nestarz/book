@@ -43,7 +43,7 @@ export const Content = styled.section`
     flex-direction: column;
   }
   ol > li {
-    padding: 0.5vw 0.5vw;
+    padding: 0.5vw 5vw;
     min-width: 10vw;
   }
   ol {

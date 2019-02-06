@@ -2,7 +2,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import { LocalFonts } from 'styles/fonts';
 
 export const PaginationWrapper = styled.div`
-font-size: 1.4vmin;
+font-size: 0.8vw;
 display: flex;
 width: 100%;
 margin: 0 auto;
@@ -24,7 +24,6 @@ ul {
   }
 }
 @media not print {
-  max-width: 140vh;
   ul.pagination-content > li {
     margin-bottom: 3em;
   }

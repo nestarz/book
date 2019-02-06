@@ -8,10 +8,10 @@ const randomSelect = a => a[Math.floor(Math.random() * a.length)];
 const sketchSelection = (sketch, sketchIndex) => sketch ? sketch :
 ((sketchIndex || sketchIndex == 0) ? sketches[sketchIndex % sketches.length] : randomSelect(sketches))
 
-const Index = ({className, sketch = null, sketchIndex = null}) => {
+const Index = ({className, style, sketch = null, sketchIndex = null}) => {
   const selectedSketch = sketchSelection(sketch, sketchIndex);
   return (
-    <div className={className}>
+    <div className={className} style={style}>
       <Recto bgSketch={selectedSketch} />
       <Verso bgSketch={selectedSketch} />
     </div>

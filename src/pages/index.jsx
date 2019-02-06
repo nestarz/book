@@ -81,7 +81,10 @@ const Index = ({ data, location }) => {
   return (
     <Layout pathname={location.pathname}>
       <Wrapper>
-        <SketchComponentFixedBackground style={{height: "99%"}} sketch={backgroundSketch} />
+        <SketchComponentFixedBackground
+          style={{height: "99%"}}
+          sketch={backgroundSketch}
+        />
         <div>
           <div>
             <Header style={{ fontSize: "400%" }} />

@@ -3,14 +3,17 @@ import {ImageWrapper, InfoBlock, Wrapper, Frontmatter } from './styles'
 import TimeAgo from 'react-timeago'
 import frenchStrings from 'react-timeago/lib/language-strings/fr'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
+import PrintHeader from 'components/Layout/Header/Print'
 
 const formatter = buildFormatter(frenchStrings)
 const Header = ({ birthtime, birthtimeTimeStamp, mtime, frontmatter, excerpt }) => {
   return <Wrapper>
     <Frontmatter>
+    <PrintHeader withToggleLanguage={false}>
       <h1>{frontmatter.title}</h1>
       <p>{frontmatter.subtitle ? frontmatter.subtitle : excerpt}</p>
-      <ImageWrapper>
+      </PrintHeader>
+      {/* <ImageWrapper>
       <InfoBlock>
       <div>{birthtime}</div>
       <div>modifié <TimeAgo formatter={formatter}  date={birthtimeTimeStamp}/></div>
@@ -35,7 +38,7 @@ const Header = ({ birthtime, birthtimeTimeStamp, mtime, frontmatter, excerpt }) 
             <div>{frontmatter.service}</div>
           </InfoBlock>
         }
-      </>
+      </> */}
     </Frontmatter>
   </Wrapper>
 }

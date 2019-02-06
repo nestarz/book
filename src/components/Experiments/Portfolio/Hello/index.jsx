@@ -10,7 +10,7 @@ import PortfolioWrapper from '../';
 const StyledVisitCard = styled(VisitCard)`
 grid-column: auto /span 4 !important;
 .verso, .recto {
-    mix-blend-mode: darken;
+    mix-blend-mode: normal;
     overflow: hidden;
     width: 100%;
     height: 100%;
@@ -21,12 +21,12 @@ grid-column: auto /span 4 !important;
     display: none;
 }
 .name {
-    font-size: 3em;
+    font-size: 2em;
 }
 .cv_contact {
-    font-size: 1vw;
+    font-size: 1em;
     a {
-        margin-right: 1vw;
+        margin-right: 1em;
     }
 }
 `;
@@ -53,7 +53,7 @@ video {
 const LocalWrapper = styled(PortfolioWrapper)`
 &:after,
 &:before {
-    background-color: #3CD670;
+    background-color: white;
     position: absolute;
     bottom: 0;
     left: 0em;
@@ -61,11 +61,11 @@ const LocalWrapper = styled(PortfolioWrapper)`
     right: 0em;
     word-break: break-word;
     content: '';
-    mix-blend-mode: hue;
+    mix-blend-mode: saturate;
     font-size: 3vw;
     text-align:center;
     line-height: 1vw;
-    z-index: 1;
+    z-index: 0;
     pointer-events: none;
 }
 &:after {
@@ -79,10 +79,10 @@ const LocalWrapper = styled(PortfolioWrapper)`
     padding: 0;
     margin: 0;
     line-height: 0.5;
-    background-color: white;
+    background-color: #3CD670;
     word-break: break-word;
     font-family: "Tesserae";
-    color: #3CD670;
+    color: white;
     letter-spacing: 0.3em;
     padding: 0;
     margin: 0;
