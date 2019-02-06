@@ -1,9 +1,13 @@
 {
-  "name": "gatsby-starter-portfolio-emma",
-  "description": "Full-width grid-layout with large images and a light theme. Animations & Page transitions. MDX.",
+  "name": "eliasrhouzlane-book",
+  "description": "Gatsby Portfolio",
   "version": "3.0.0",
+  "author": "Elias Rhouzlane <elias.rhouzlane@gmail.com> (https://www.eliasrhouzlane.com)",
+  "repository": {
+    "url": "https://github.com/nestarz/book",
+    "type": "git"
+  },
   "private": true,
-  "author": "LekoArts <hello@lekoarts.de> (https://www.lekoarts.de)",
   "scripts": {
     "develop": "gatsby develop",
     "dev": "gatsby develop -o",
