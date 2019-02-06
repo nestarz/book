@@ -79,8 +79,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `experiments`,
-        path: `${__dirname}/src/files`,
-        ignore: [`**/\.*`],
+        path: `${__dirname}/src/files`
       },
     },
     {
@@ -91,6 +90,10 @@ module.exports = {
           default: require.resolve('./src/components/Layout/index.jsx'),
         },
         gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+            options: {}
+          },
           {
             resolve: 'gatsby-remark-images',
             options: {
