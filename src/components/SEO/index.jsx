@@ -157,7 +157,7 @@ const Head = props => {
       <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-      <link rel="shortcut icon" href="favicon.ico" />
+      <link rel="shortcut icon" href="/favicon.ico" />
       <meta name="msapplication-TileColor" content="#e3c05d" />
       <meta name="msapplication-config" content="browsersiteConfig.xml" />
       <meta property="og:locale" content={siteConfig.ogLanguage} />

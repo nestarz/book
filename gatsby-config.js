@@ -80,6 +80,7 @@ module.exports = {
       options: {
         name: `experiments`,
         path: `${__dirname}/src/files`,
+        ignore: [`**/\.*`],
       },
     },
     {

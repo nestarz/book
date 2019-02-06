@@ -1,6 +1,6 @@
-import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import {Face1, Face2, Face3, Face4, Face5, Text, Experiment} from './styles'
+import { graphql, StaticQuery } from "gatsby";
+import React from "react";
+import { Experiment, Face1, Face2, Face3, Face4, Text } from './styles';
 
 const Fausse3d = ({ data }) => {
   return (
@@ -18,7 +18,7 @@ export default props => (
   <StaticQuery
     query={graphql`
       query {
-        allFile(filter: {extension: {eq: "png"}, relativeDirectory: {eq: "fausse3d\\img"}}) {
+        allFile(filter: {extension: {eq: "png"}, relativeDirectory: {eq: "fausse3d/img"}}) {
           edges {
             node {
               childImageSharp {
