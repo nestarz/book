@@ -47,7 +47,7 @@ export const Content = styled.section`
     flex-direction: column;
   }
   ol > li {
-    list-style-type: trad-chinese-formal;
+    list-style-type: hiragana;
     padding: 0.5em 1em;
     min-width: 12em;
     list-style-position: inside;
