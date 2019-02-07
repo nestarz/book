@@ -22,6 +22,9 @@ const Wrapper = styled.div`
   display: flex;
   @media (max-width: 700px) {
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
   h1, h2, h3 {
     position: relative;

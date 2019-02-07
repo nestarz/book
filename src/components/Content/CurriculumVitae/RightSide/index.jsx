@@ -31,6 +31,7 @@ p {
     --baseline-multiplier: 0.179;
     --x-height-multiplier: 0.35;
 }
+text-align: left !important;
 `;
 const RightCv = ({ data }) => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
