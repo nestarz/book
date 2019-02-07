@@ -9,9 +9,9 @@ const TOC = ({ tableOfContents }) => <Wrapper>
   <SketchComponentAbsoluteBackground
     style={{
       zIndex: -1,
-      filter: "blur(50px)",
+      filter: "blur(40px)",
       top: "0",
-      transform: "scale(2, 2)"
+      transform: "scale(2, 2.35)"
     }}
     sketch={backgroundSketch}
     sketchProps={{ frameRate: 0.1, noLoop: true }}

@@ -28,6 +28,9 @@ page-break-before: always;
     display: list-item;
     list-style-type: arabic-indic;
     list-style-position: initial;
+    @media (max-width: 700px) {
+      list-style-position: inside;
+    }
   }
 }
 p {
