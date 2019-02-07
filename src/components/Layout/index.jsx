@@ -3,6 +3,7 @@ import SEO from 'components/SEO';
 import { usePrint } from 'hooks/usePrint';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
+import { useGlobal } from 'reactn';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { dark_theme, theme } from '../../../config/theme';
 import reset from '../../styles/reset';
@@ -65,7 +66,7 @@ const Layout = ({ children, pathname, customSEO }) => {
   const [alwaysOn, setAlwaysOn] = useState(false);
   useEffect(() => { if (printing) setAlwaysOn(true) }, [printing])
   const themes = [theme, dark_theme];
-  const [currThemeIndex, setCurrThemeIndex] = useState(0);
+  const [currThemeIndex, setCurrThemeIndex] = useGlobal('currThemeIndex');
   return (
     <ThemeProvider theme={themes[currThemeIndex]}>
       <>

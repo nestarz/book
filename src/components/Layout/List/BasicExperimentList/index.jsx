@@ -20,7 +20,7 @@ const BasicExperimentList = ({ data }) => {
     <div className={"category"}>{titleLocale[language]}</div>
     {trail.map(({ x, height, ...rest }, index) => (
       <animated.div
-        key={edges[index]}
+        key={index}
         className="trails-text"
         style={{ ...rest, transform: x.interpolate(x => `translate3d(0,${x}px,0)`) }}>
         <animated.div style={{ height }}>

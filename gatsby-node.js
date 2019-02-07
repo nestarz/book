@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const wrapper = promise => promise.then(result => ({ result, error: null })).catch(error => ({ error, result: null }))
 
@@ -9,8 +10,14 @@ exports.onCreateWebpackConfig = ({actions}) => {
       alias: {
         WaveSurfer: 'wavesurfer.js',
         videojs: 'video.js',
+        'window.videojs': 'video.js',
       }
     },
+    plugins: [
+      new webpack.ProvidePlugin({
+          videojs: 'video.js/dist/video.cjs.js'
+      })
+    ],
   });
 };
 

@@ -26,11 +26,11 @@ const TOC = ({ tableOfContents }) => <Wrapper>
       <SpringPosition wrapper={animated.li}>
         {tableOfContents.items.map((heading, index) => {
           return (
-            <>
-              <h3>
+            <React.Fragment key={index}>
+              <h3 key={`h3-${index}`}>
                 <a href={heading.url}>{heading.title}</a>
               </h3>
-              <ul>
+              <ul key={`ul-${index}`}>
                 {heading.items && heading.items.map((subheading, j) => {
                   return (
                     <li key={j}>
@@ -41,7 +41,7 @@ const TOC = ({ tableOfContents }) => <Wrapper>
                   );
                 })}
               </ul>
-            </>
+            </React.Fragment>
           );
         })}
       </SpringPosition>
