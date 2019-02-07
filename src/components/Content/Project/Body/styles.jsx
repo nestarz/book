@@ -47,7 +47,7 @@ p {
 & > div ul {
   column-fill: balance;
   column-count: 2;
-  column-gap: 10pt;
+  column-gap: 2em;
   orphans: 3;
   widows: 3;
   overflow: hidden;
@@ -73,7 +73,9 @@ p {
     }
   }
 }
-
+& > div ul {
+  column-gap: 1em;
+}
 img {
   margin: auto;
   display: table-cell;
