@@ -3,22 +3,24 @@ const webpack = require('webpack');
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const wrapper = promise => promise.then(result => ({ result, error: null })).catch(error => ({ error, result: null }))
 
-exports.onCreateWebpackConfig = ({actions}) => {
+exports.onCreateWebpackConfig = ({stage, loaders, actions}) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-      alias: {
-        WaveSurfer: 'wavesurfer.js',
-        videojs: 'video.js',
-        'window.videojs': 'video.js',
-      }
     },
-    plugins: [
-      new webpack.ProvidePlugin({
-          videojs: 'video.js/dist/video.cjs.js'
-      })
-    ],
   });
+  if (stage === "build-html" || stage === "develop-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /react-audio-waveform/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
 };
 
 exports.createPages = async ({ graphql, actions }) => {
