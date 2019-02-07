@@ -1,5 +1,4 @@
 import { css } from 'styled-components'
-import theme from '../../config/theme'
 
 const reset = css`
   *,
@@ -35,7 +34,7 @@ const reset = css`
     h5 {
       font-size: 1rem;
     }
-    @media (max-width: ${theme.breakpoints.l}), (max-device-width: ${theme.breakpoints.l}) {
+    @media (max-width: ${props => props.theme.breakpoints.l}), (max-device-width: ${props => props.theme.breakpoints.l}) {
       font-size: 18px !important;
       h1 {
         font-size: 2.074rem;
@@ -50,10 +49,10 @@ const reset = css`
         font-size: 1.2rem;
       }
     }
-    @media (max-width: ${theme.breakpoints.m}), (max-device-width: ${theme.breakpoints.m}) {
+    @media (max-width: ${props => props.theme.breakpoints.m}), (max-device-width: ${props => props.theme.breakpoints.m}) {
       font-size: 16px !important;
     }
-    @media (max-width: ${theme.breakpoints.s}), (max-device-width: ${theme.breakpoints.s}) {
+    @media (max-width: ${props => props.theme.breakpoints.s}), (max-device-width: ${props => props.theme.breakpoints.s}) {
       h1 {
         font-size: 1.602rem;
       }
@@ -69,20 +68,20 @@ const reset = css`
     }
   }
   body {
-    color: ${theme.colors.body_color};
-    background-color: ${theme.colors.bg_color};
+    color: ${props => props.theme.colors.body_color};
+    background-color: ${props => props.theme.colors.bg_color};
   }
   ::selection {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.link_color};
+    color: ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.link_color};
   }
   a {
-    color: ${theme.colors.link_color};
+    color: ${props => props.theme.colors.link_color};
     transition: all 0.3s ease-in-out;
     text-decoration: none;
     &:hover,
     &:focus {
-      color: ${theme.colors.link_color_hover};
+      color: ${props => props.theme.colors.link_color_hover};
     }
   }
   a:not([href]):not([tabindex]) {
@@ -98,7 +97,7 @@ const reset = css`
     }
   }
   blockquote {
-    border-left: 5px solid ${theme.colors.link_color};
+    border-left: 5px solid ${props => props.theme.colors.link_color};
     padding-left: 1rem !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -137,12 +136,12 @@ const reset = css`
   }
   table {
     border-collapse: collapse;
-    background-color: ${theme.colors.bg_color};
+    background-color: ${props => props.theme.colors.bg_color};
   }
   caption {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    color: ${theme.colors.body_color};
+    color: ${props => props.theme.colors.body_color};
     text-align: center;
     caption-side: bottom;
   }

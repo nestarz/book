@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import 'video.js/dist/video-js.min.css';
 import 'videojs-wavesurfer/dist/css/videojs.wavesurfer.min.css';
-import theme from '../../../../config/theme';
 import { VjsPlayer } from './styles';
+import { withTheme } from 'styled-components'
 
-const VideojsWavesurferPlayer = ({ src, peaks }) => {
+const VideojsWavesurferPlayer = ({ src, peaks, ...props }) => {
   const audioNode = useRef();
   const [config, setConfig] = useState({
     controls: true,
@@ -19,9 +19,9 @@ const VideojsWavesurferPlayer = ({ src, peaks }) => {
         peaks: peaks,
         msDisplayMax: 10,
         debug: true,
-        waveColor: theme.colors.black,
+        waveColor: props.theme.colors.black,
         progressColor: '#111',
-        cursorColor: theme.brand.primary,
+        cursorColor: props.theme.brand.primary,
         hideScrollbar: true,
         height: 10,
         barWidth: 5,
@@ -72,4 +72,4 @@ const VideojsWavesurferPlayer = ({ src, peaks }) => {
   )
 }
 
-export default VideojsWavesurferPlayer;
+export default withTheme(VideojsWavesurferPlayer);

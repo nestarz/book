@@ -64,7 +64,7 @@ ul {
       padding: 1vw;
       &.active {
         font-weight: 600;
-        color: black;
+        color: ${props => props.theme.colors.body_color};
       }
     }
   }

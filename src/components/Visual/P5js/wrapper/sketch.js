@@ -165,7 +165,7 @@ const Wrapper = styled.div`
 export const SketchOff = styled.div`
 width: 100%;
 height: 100%;
-background-color: #eee;
+background-color: ${props => props.theme.colors.grey};
 display: flex;
 justify-content: center;
 align-items: center;

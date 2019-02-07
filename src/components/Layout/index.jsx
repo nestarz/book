@@ -3,10 +3,10 @@ import SEO from 'components/SEO';
 import { usePrint } from 'hooks/usePrint';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import theme from '../../../config/theme';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { dark_theme, theme } from '../../../config/theme';
 import reset from '../../styles/reset';
-
+import { IoIosMoon, IoIosSunny } from 'react-icons/io';
 const GlobalStyle = createGlobalStyle`
   ${reset}
   html {
@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
     flex: 1;
   }
   .nav-active {
-    color: ${theme.brand.primary} !important;
+    color: ${props => props.theme.brand.primary} !important;
   }
   h1, h2, h3, h4 {
     font-weight: 500;
@@ -49,19 +49,32 @@ const GlobalPrintStyle = createGlobalStyle`
     position: initial !important;
   }
 `
+
+const LumiereToggle = styled.div`
+position: fixed;
+top: 2px; right: 10px;
+font-size: 2em;
+cursor: pointer;
+z-index: 999;
+`;
+
 // We can pass customSEO here to not include the <SEO> component twice. This prop is 'true' on the project template
 // as the SEO component there passes in some additional things. Otherwise things would be inserted two times
 const Layout = ({ children, pathname, customSEO }) => {
   const [printing, togglePrint] = usePrint(2000);
   const [alwaysOn, setAlwaysOn] = useState(false);
   useEffect(() => { if (printing) setAlwaysOn(true) }, [printing])
-  const btn = <button onClick={togglePrint}>Print {printing.toString()}</button>
+  const themes = [theme, dark_theme];
+  const [currThemeIndex, setCurrThemeIndex] = useState(0);
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themes[currThemeIndex]}>
       <>
         {!customSEO && <SEO pathname={pathname} />}
         <GlobalStyle />
         {alwaysOn && <GlobalPrintStyle />}
+        <LumiereToggle onClick={() => setCurrThemeIndex((currThemeIndex + 1) % themes.length)}>
+        {currThemeIndex == 1 ? <IoIosMoon/> : <IoIosSunny/>}
+        </LumiereToggle>
         {children}
       </>
     </ThemeProvider>

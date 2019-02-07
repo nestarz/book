@@ -60,7 +60,7 @@ animation: ${expandHeight} 3s;
 export const Text = styled.div`
 font-size: 2vw;
 font-family: serif;
-color: white;
+color: ${props => props.theme.colors.bg_color};
 position: absolute;
 padding: 0 120px;
 top: 50%;

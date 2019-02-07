@@ -33,7 +33,7 @@ export const Content = styled.section`
       text-align: center;
     }
     li a {
-      color: black;
+      color: ${props => props.theme.colors.body_color};
     }
     & > li {
       break-inside: avoid;

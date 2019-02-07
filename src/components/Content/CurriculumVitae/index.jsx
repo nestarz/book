@@ -15,8 +15,8 @@ const Wrapper = styled.div`
   }
   padding: 2em;
   position: relative;
-  background-color: white;
-  color: ${props => props.theme.colors.black};
+  background-color: ${props => props.theme.colors.bg_color};
+  color: ${props => props.theme.colors.body_color};
   max-width: 60rem;
   margin: auto;
   display: flex;

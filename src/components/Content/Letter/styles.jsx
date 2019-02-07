@@ -21,14 +21,14 @@ export const Wrapper = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    color: black;
+    color: ${props => props.theme.colors.body_color};
     z-index: -1;
     margin: auto;
   }
   & > div:last-child {
     flex: 1;
     top: 0;
-    color: white;
+    color: ${props => props.theme.colors.bg_color};
     mix-blend-mode: overlay;
     z-index: 1;
     margin: auto;

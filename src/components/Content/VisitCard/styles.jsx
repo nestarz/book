@@ -43,7 +43,7 @@ const SocialMedia = styled.div`
   width: 47%;
   margin-bottom: 1%;
   a {
-      color: #111;
+      color: ${props => props.theme.colors.body_color};
       margin-right: 5pt;
   }
   @media (max-width: ${props => props.theme.breakpoints.s}) {

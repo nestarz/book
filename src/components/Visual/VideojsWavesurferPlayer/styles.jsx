@@ -15,6 +15,6 @@ height: calc(150px + 30px);
 }
 .video-js {
     background-color: transparent;
-    color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.body_color};
 }
 `;

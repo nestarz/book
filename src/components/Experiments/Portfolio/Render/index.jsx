@@ -33,14 +33,14 @@ span {
     left: 1em;
     font-size: 1em;
     z-index: 999;
-    background-color: white;
+    background-color: ${props => props.theme.colors.bg_color};
     border: 1px solid;
     padding: 0;
     display: flex;
     cursor : pointer;
     div:first-child {
-        background-color: black;
-        color: white;
+        background-color: ${props => props.theme.colors.body_color};
+        color: ${props => props.theme.colors.bg_color};
         text-decoration: underline;
     }
     div {

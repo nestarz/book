@@ -8,7 +8,7 @@ export const Wrapper = styled.header`
   flex-direction: column;
   z-index: 1000;
   a {
-    color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.body_color};
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     z-index: 100;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { randomTesseraeString } from 'styles/fonts';
+import { transparentize } from 'polished'
 
 export const Info = styled.div`
 background-color: white;
@@ -27,6 +28,7 @@ h1 {
 }`;
 
 export const Wrapper = styled.div`
+color: black;
 margin: auto;
 /*https://medium.com/@marveloo/by-replacing-grid-width-inline-grid-and-adding-height-100-to-its-child-elements-now-its-possible-c801fec4abe6*/
 /*https://codepen.io/cssence/pen/BJMwwN*/
@@ -145,6 +147,6 @@ img {
     font-weight: 100;
 }
 @media not print {
-  box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 20px ${props => transparentize('0.8', props.theme.colors.body_color)};
 }
 `;
