@@ -4,16 +4,22 @@ import { SketchComponentAbsoluteBackground } from 'components/Visual/P5js';
 import backgroundSketch from 'components/Visual/P5js/projects/mainScreen/sketch1_0';
 import SpringPosition from 'components/Layout/SpringPosition';
 import { animated } from 'react-spring';
+import * as sketcheModules from 'components/Visual/P5js/projects/project-header';
+
+const sketches = [backgroundSketch, ...Object.values(sketcheModules)];
+const randomSelect = a => a[Math.floor(Math.random() * a.length)];
+const sketchSelection = (sketch, sketchIndex) => sketch ? sketch :
+((sketchIndex || sketchIndex == 0) ? sketches[sketchIndex % sketches.length] : randomSelect(sketches))
+
 
 const TOC = ({ tableOfContents }) => <Wrapper>
   <SketchComponentAbsoluteBackground
     style={{
       zIndex: -1,
-      filter: "blur(40px)",
       top: "0",
-      transform: "scale(2, 2.35)"
+      transform: "scale(1, 1)"
     }}
-    sketch={backgroundSketch}
+    sketch={sketchSelection()}
     sketchProps={{ frameRate: 0.1, noLoop: true }}
   />
   <Content>

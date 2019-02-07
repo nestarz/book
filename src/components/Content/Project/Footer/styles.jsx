@@ -50,10 +50,10 @@ export const Wrapper = styled.div`
 export const Frontmatter = styled.section`
   flex-grow: 1;
   @media not print {
-    padding: 30px 30px 0 30px;
+    padding: 0;
   }
   @media print {
-    padding-right: 20pt;
+    padding-right: 0pt;
   }
   display: flex;
   justify-content: space-around;
