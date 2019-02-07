@@ -44,25 +44,25 @@ const sketch = (width, height, props) => {
               X_SPEED = mouseVector.x;
               Y_SPEED = mouseVector.y;
             }
-            
+
             // draw shape:
             p5.push();
             p5.translate(w/2, h/2);
-            
+
             //p5.background(255);   // bg color
-            p5.stroke("skyblue");
+            p5.stroke("#3CD670");
             p5.noFill();    // color
             p5.beginShape();
             for (var a=0; a<p5.TWO_PI;a+=p5.TWO_PI/vertices_amount) {
               var x = r*p5.sin(a);
               var y = r*p5.cos(a);
-              
+
               var new_x = x + (
                 p5.noise(
                   ((x_off+x)/NOISE_SCALE),
                   ((y_off+y)/NOISE_SCALE),
                          z_off) * px_offset_x * p5.sin(a));
-              
+
               var new_y = y + (
                 p5.noise(
                   ((x_off+x)/NOISE_SCALE),
@@ -71,10 +71,10 @@ const sketch = (width, height, props) => {
                          p5.vertex(new_x,new_y);
             }
             p5.endShape();
-            
+
             p5.pop();
-            
-            
+
+
             // update NOISE offsets
             z_off += Z_SPEED;
             x_off += X_SPEED;

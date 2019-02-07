@@ -73,7 +73,7 @@ const Index = () => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
   const camraw = useWebcam();
   const videoraw  = useVideo(
-      <video width={"100%"} height={"100%"} autoPlay loop>
+      <video width={"100%"} height={"100%"} autoPlay loop muted>
           <source src="/assets/videos/output3.mp4"
               type="video/mp4" />
       </video>

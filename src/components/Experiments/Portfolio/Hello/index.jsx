@@ -21,7 +21,8 @@ grid-column: auto /span 4 !important;
     display: none;
 }
 .name {
-    font-size: 2em;
+    font-size: 1.5em;
+    width: 70%;
 }
 .cv_contact {
     font-size: 1em;

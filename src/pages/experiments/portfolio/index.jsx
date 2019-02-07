@@ -48,7 +48,11 @@ ul {
   }
 }
 @media not print {
-  ul.pagination-content > li {
+  ul.pagination-content {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  ul.pagination-content > li:not(:last-child) {
     margin-bottom: 3em;
   }
   ul.page-numbers {

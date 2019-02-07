@@ -114,7 +114,7 @@ class SketchComponentRaw extends PureComponent {
       default:
         break;
     }
-
+    style.height = style.height ? style.height : '100%';
     //style.margin = style.margin ? style.margin : '0 auto';
     return (
       <div

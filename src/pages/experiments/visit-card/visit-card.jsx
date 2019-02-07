@@ -44,7 +44,7 @@ export default Index;
 Index.propTypes = {};
 
 export const frontmatter = {
-  title: "VisitCard",
+  title: "Visit card",
   written: "2017-05-04",
   layoutType: "post",
   path: "VisitCardd",

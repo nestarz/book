@@ -62,7 +62,7 @@ margin: auto;
 .viewport,
 .viewport .content
 {
-  --width: 70vw;
+  --width: 63vw;
   width: var(--width);
   height: calc(var(--width) / 1.4141);
   margin-left: auto;
@@ -80,7 +80,7 @@ grid-gap: 1em;
 grid-template-columns: repeat(5, 1fr);
 grid-auto-flow: dense;
 counter-reset:div;
-padding:2em;
+padding:1.5em;
 min-height: 0;  /* NEW */
 min-width: 0;   /* NEW; needed for Firefox */
 p {
@@ -136,7 +136,7 @@ img {
     font-weight: 100;
 }
 &:before {
-    content: "Elias Rhouzlane.";
+    content: "Elias Rhouzlane";
     position: absolute;
     bottom: 0em;
     left: 1em;

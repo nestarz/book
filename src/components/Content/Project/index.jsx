@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header'
 import TOC from './TOC'
 import Body from './Body'
+import Footer from './Footer'
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -24,6 +25,10 @@ export const Project = ({ excerpt, birthtime, birthtimeTimeStamp, mtime, frontma
         }
       </Wrapper>
       <Body body={body} />
+      <Footer           frontmatter={frontmatter}
+          birthtime={birthtime}
+          birthtimeTimeStamp={birthtimeTimeStamp}
+          mtime={mtime} />
     </>
   )
 }

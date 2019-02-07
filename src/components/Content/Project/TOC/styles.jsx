@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap-reverse;
+  canvas {
+    max-height: 100vh !important;
+  }
   justify-content: space-between;
   /*background-color:${props => props.theme.brand.primary};*/
   padding-left: 0px;
@@ -12,6 +15,7 @@ export const Wrapper = styled.div`
   @media print {
     display: none;
   }
+  position: relative;
 `;
 
 export const Content = styled.section`
@@ -43,8 +47,10 @@ export const Content = styled.section`
     flex-direction: column;
   }
   ol > li {
-    padding: 0.5vw 5vw;
-    min-width: 10vw;
+    list-style-type: trad-chinese-formal;
+    padding: 0.5em 1em;
+    min-width: 12em;
+    list-style-position: inside;
   }
   ol {
     padding: 0 20px;

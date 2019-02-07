@@ -7,20 +7,70 @@ letter-spacing: -0.01em;
 
 margin: auto;
 @media not print {
-  padding: 0px 30px 60px 30px ;
+  padding:0px 1em 1em 1em;
 }
 display: flex;
 flex-direction: column;
 page-break-before: always;
 
-& > div > ol,
-& > div > ul {
+& > div div {
+  page-break-inside: avoid;
+}
+& > div {
+  & > h1 {
+    display: list-item;
+    list-style-type: arabic-indic;
+    list-style-position: initial;
+  }
+  & > h1 {
+    display: block;
+    page-break-before: always;
+    display: list-item;
+    list-style-type: arabic-indic;
+    list-style-position: initial;
+  }
+}
+p {
+  line-height: 1.3;
+}
+& > div ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li:last-child {
+  }
+}
+& > div ol,
+& > div ul {
   column-fill: balance;
   column-count: 2;
   column-gap: 10pt;
   orphans: 3;
   widows: 3;
+  overflow: hidden;
+  word-break: break-word;
+  li {
+    margin: 0;
+    margin-bottom: 1.0em;
+    column-break-inside : avoid;
+    & > p {
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      display: block;
+      font-size: 120%;
+      }
+    a:hover {
+      text-decoration: underline;
+    }
+    & > a + img {
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
+    }
+  }
 }
+
 img {
   margin: auto;
   display: table-cell;
@@ -58,39 +108,6 @@ img {
   & > div {
       height: inherit !important;
       width: inherit !important;
-  }
-}
-
-& > div div {
-  page-break-inside: avoid;
-}
-& > div > h1 {
-  display: block;
-  page-break-before: always;
-}
-
-& > div ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  li {
-    margin: 0;
-    margin-bottom: 0.0em;
-    column-break-inside : avoid;
-    a {
-      text-decoration: none;
-      display: block;
-      font-size: 120%;
-      }
-    a:hover {
-      text-decoration: underline;
-    }
-    & > a + img {
-      margin-top: 1.5em;
-      margin-bottom: 1.5em;
-    }
-  }
-  li:last-child {
   }
 }
 `;

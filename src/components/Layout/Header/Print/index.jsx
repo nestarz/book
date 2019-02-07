@@ -1,19 +1,21 @@
-import { Link } from 'gatsby';
 import { useToggleGlobalLanguage } from 'hooks/useLanguage';
 import React from 'react';
 import { Wrapper } from './styles';
+import SpringPosition from 'components/Layout/SpringPosition';
 
 const Nav = (props, context) => {
-  const {children, withToggleLanguage = true} = props;
+  const { children, withToggleLanguage = true } = props;
   const [language, toggleLanguage] = useToggleGlobalLanguage()
   return (
     <Wrapper>
-      <button onClick={() => window.history.back()}>{language == "fr" ? 'Retour' : 'Back'}</button>
-      {children}
-      <button onClick={() => window.print()}>{language == "fr" ? 'Imprimer' : 'Print'}</button>
-      {withToggleLanguage && <button onClick={() => toggleLanguage()}>
-        En/Fr
+      <SpringPosition>
+        <button onClick={() => window.history.back()}>{language == "fr" ? 'Retour' : 'Back'}</button>
+        {children}
+        <button onClick={() => window.print()}>{language == "fr" ? 'Imprimer' : 'Print'}</button>
+        {withToggleLanguage && <button onClick={() => toggleLanguage()}>
+          En/Fr
       </button>}
+      </SpringPosition>
     </Wrapper>
   )
 }

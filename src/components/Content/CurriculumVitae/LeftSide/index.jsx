@@ -7,12 +7,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const AchivementBlock = styled.div`
-  ul {
+  div.achivement-ul {
     font-size: 100%;
     list-style-type: none;
     margin: 1em 0;
     padding: 0;
-    li {
+    div.achivement-li {
         margin: 0;
         padding: 0;
     }
@@ -38,20 +38,20 @@ const LeftCv = ({ data, withToggle = true }) => {
     {withToggle && <button onClick={() => toggleLanguage()}>En/Fr ({language})</button>}
     <AchivementBlock>
       <h1>{data.site.siteMetadata.authorCv.languages.title[language]}</h1>
-      <ul>{data.site.siteMetadata.authorCv.languages.list.map((languageObj, i) =>
-        <li key={i}>{languageObj.name[language]} ({languageObj.score[language]})</li>
-      )}</ul>
+      <div className={"achivement-ul"}>{data.site.siteMetadata.authorCv.languages.list.map((languageObj, i) =>
+        <div className={"achivement-li"} key={i}>{languageObj.name[language]} ({languageObj.score[language]})</div>
+      )}</div>
     </AchivementBlock>
     <AchivementBlock>
       <h1>{data.site.siteMetadata.authorCv.skills.title[language]}</h1>
-      <ul>{data.site.siteMetadata.authorCv.skills.list.map((skillCategory, i) =>
+      <div className={"achivement-ul"}>{data.site.siteMetadata.authorCv.skills.list.map((skillCategory, i) =>
         <AchivementBlock key={i}>
           <h1>{skillCategory.title[language]}</h1>
-          <ul>{skillCategory.list.map((skill, j) =>
-            <li key={j}>{skill.name[language] ? skill.name[language] : skill.name["all"]}</li>
-          )}</ul>
+          <div className={"achivement-ul"}>{skillCategory.list.map((skill, j) =>
+            <div className={"achivement-li"} key={j}>{skill.name[language] ? skill.name[language] : skill.name["all"]}</div>
+          )}</div>
         </AchivementBlock>
-      )}</ul>
+      )}</div>
     </AchivementBlock>
   </Wrapper>
 }
