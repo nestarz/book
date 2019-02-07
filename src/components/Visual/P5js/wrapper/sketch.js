@@ -201,7 +201,6 @@ export const SketchComponentBackground = styled(SketchComponent)`
   right:0;
   bottom:0;
   pointer-events: none;
-  mix-blend-mode: multiply;
 `;
 export const SketchComponentAbsoluteBackground = styled(SketchComponentBackground)`
 `;

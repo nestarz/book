@@ -85,7 +85,7 @@ const Index = ({ data, location }) => {
           style={{height: "99%"}}
           sketch={backgroundSketch}
         />
-        <div>
+        <div style={{zIndex: 99}}>
           <div>
             <Header style={{ fontSize: "400%" }} />
             <Contact style={{ fontSize: "200%" }}
@@ -101,7 +101,7 @@ const Index = ({ data, location }) => {
             </Description>
           </div>
         </div>
-        <Navigation>
+        <Navigation style={{zIndex: 99}}>
           <ProjectList />
           <ExperimentList />
         </Navigation>

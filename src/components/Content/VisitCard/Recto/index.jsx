@@ -8,7 +8,7 @@ const Recto = ({ bgSketch }) => {
   return (
     <Wrapper className={"recto"}>
       <SketchComponentAbsoluteBackground sketch={bgSketch} watchedVal={bgSketch} />
-      <NameHeader />
+      <NameHeader style={{mixBlendMode: "multiply"}}/>
       <Contact withCv={false} style={{fontSize: "80%"}}/>
     </Wrapper>
   )
