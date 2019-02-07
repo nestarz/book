@@ -52,6 +52,7 @@ const WaveformAudio = ({ src, peaks, ...props }) => {
   useInterval(() => {
     setTime(ref.current.currentTime);
   }, 100)
+  if (typeof window === 'undefined') return <></>
   return (
     <>
       <Waveform
