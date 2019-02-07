@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled, { withTheme } from 'styled-components';
 import Waveform from "react-audio-waveform"
-import { useToggle, useAudio } from 'react-use';
+import useAudio from 'react-use/lib/useAudio';
+import useToggle from 'react-use/lib/useToggle';
 import { useInterval } from 'hooks/useInterval';
 import { IoIosPlay, IoIosPause, IoIosVolumeHigh, IoIosVolumeMute } from 'react-icons/io';
 
