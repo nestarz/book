@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
   ${reset}
   html {
     font-family: "CircularStd", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    cursor: crosshair;
   }
   html, body {
     margin: 0;
