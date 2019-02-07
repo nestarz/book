@@ -20,6 +20,9 @@ const Wrapper = styled.div`
   max-width: 60rem;
   margin: auto;
   display: flex;
+  @media (max-width: 700px) {
+    flex-wrap: wrap;
+  }
   h1, h2, h3 {
     position: relative;
     font-size: 100%;
