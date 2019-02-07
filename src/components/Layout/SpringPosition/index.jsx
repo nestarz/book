@@ -4,6 +4,13 @@ import useWindowMousePosition from 'hooks/useWindowMousePosition';
 
 const calc = (x, y) => [x / window.innerWidth - 0.5, y / window.innerHeight - 0.5]
 const trans4 = (x, y, i) => `translate3d(${x*5}%,${(y*i)*5}%,0) rotate(${(x+(i-0.5))*0.5}deg)`
+Object.defineProperty(Array.prototype, 'flat', {
+  value: function(depth = 1) {
+    return this.reduce(function (flat, toFlatten) {
+      return flat.concat((Array.isArray(toFlatten) && (depth-1)) ? toFlatten.flat(depth-1) : toFlatten);
+    }, []);
+  }
+});
 
 const Nav = ({children, wrapper}) => {
   const mouse = useWindowMousePosition()
