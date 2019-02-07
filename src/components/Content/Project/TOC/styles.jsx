@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
 
 export const Content = styled.section`
   flex-grow: 1;
-  padding: 30px 30px;
+  padding: 0.5em 0em;
   ul, ol {
     display: flex;
     flex-wrap: wrap;

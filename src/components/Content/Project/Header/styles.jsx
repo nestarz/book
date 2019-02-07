@@ -47,12 +47,8 @@ export const Wrapper = styled.div`
 
 export const Frontmatter = styled.section`
   flex-grow: 1;
-  @media not print {
-    padding: 30px 30px 0 30px;
-  }
-  @media print {
-    padding-right: 20pt;
-  }
+  padding: 0.5em 0em;
+  padding-bottom: 0;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
