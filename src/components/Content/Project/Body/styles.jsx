@@ -47,6 +47,10 @@ p {
 & > div ul {
   column-fill: balance;
   column-count: 2;
+  @media (max-width: 700px) {
+    column-count: 1;
+    column-gap: 0;
+  }
   column-gap: 2em;
   orphans: 3;
   widows: 3;

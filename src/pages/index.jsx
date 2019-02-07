@@ -49,7 +49,7 @@ const Navigation = styled.nav`
   text-align: right;
   font-size: 180%;
   @media (max-width: 1000px) {
-    font-size: 150%;
+    font-size: 180%;
     text-align: left;
   }
   .category {

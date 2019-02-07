@@ -10,8 +10,8 @@ const Nav = (props, context) => {
     <Wrapper>
       <SpringPosition>
         <button onClick={() => window.history.back()}>{language == "fr" ? 'Retour' : 'Back'}</button>
-        {children}
         <button onClick={() => window.print()}>{language == "fr" ? 'Imprimer' : 'Print'}</button>
+        {children}
         {withToggleLanguage && <button onClick={() => toggleLanguage()}>
           En/Fr
       </button>}
