@@ -76,7 +76,7 @@ export const graph = {
         { from: 49, to: 50, label: "" },
         { from: 49, to: 51, label: "" },
         { from: 49, to: 15, label: "" },
-        //{ from: 49, to: 3, label: ""}, 
+        //{ from: 49, to: 3, label: ""},
         { from: 48, to: 15, label: "" },
         { from: 100, to: 47, label: "" },
         { from: 46, to: 47, label: "" },
@@ -224,7 +224,7 @@ export const options = {
             roundness: 0.4
         },
         color: {
-            color: '#000000',
+            color: '#3CD670',
             highlight: '#3CD670',
             inherit: false,
             opacity: 1.0

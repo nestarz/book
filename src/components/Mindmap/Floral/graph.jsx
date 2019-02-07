@@ -170,7 +170,7 @@ export const graph = {
             roundness: 0.4
           },
           color: {
-              color:'#000000',
+              color:'#3CD670',
               highlight:'#3CD670',
               inherit: false,
               opacity:1.0
