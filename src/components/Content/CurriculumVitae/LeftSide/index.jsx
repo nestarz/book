@@ -22,7 +22,7 @@ const AchivementBlock = styled.div`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 `;
 
 const LeftCv = ({ data, withToggle = true }) => {

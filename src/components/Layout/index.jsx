@@ -8,6 +8,8 @@ import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { dark_theme, theme } from '../../../config/theme';
 import reset from '../../styles/reset';
 import { IoIosMoon, IoIosSunny } from 'react-icons/io';
+import {CircleArrow as ScrollUpButton} from "react-scroll-up-button";
+
 const GlobalStyle = createGlobalStyle`
   ${reset}
   html {
@@ -34,6 +36,14 @@ const GlobalStyle = createGlobalStyle`
   }
   h1, h2, h3, h4 {
     font-weight: 500;
+  }
+  .ScrollUpButton__Container.ScrollUpButton__Toggled {
+    background-color: transparent !important;
+    color: ${props => props.theme.colors.bg_color} !important;
+    border: none !important;
+    path {
+      fill: ${props => props.theme.colors.body_color} !important;
+    }
   }
 `
 
@@ -77,6 +87,9 @@ const Layout = ({ children, pathname, customSEO }) => {
         {currThemeIndex == 1 ? <IoIosMoon/> : <IoIosSunny/>}
         </LumiereToggle>
         {children}
+        <ScrollUpButton
+          AnimationDuration={600}
+        />
       </>
     </ThemeProvider>
   )
