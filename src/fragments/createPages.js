@@ -25,6 +25,18 @@ module.exports = {
         }
       }
     }
+    billets: allMdx(filter: { fields: { sourceInstanceName: { eq: "billets" } } }) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          code {
+            scope
+          }
+        }
+      }
+    }
   }
 `
 }

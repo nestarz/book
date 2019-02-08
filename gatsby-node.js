@@ -34,9 +34,13 @@ exports.createPages = async ({ graphql, actions }) => {
       edges: result.data.projects.edges,
     },
     {
+      component: require.resolve('./src/templates/project.jsx'),
+      edges: result.data.billets.edges,
+    },
+    {
       component: require.resolve('./src/templates/letter.jsx'),
       edges: result.data.letters.edges,
-    }
+    },
   ];
   pages.forEach(({component, edges}) =>
     edges.forEach((edge, index) => {
