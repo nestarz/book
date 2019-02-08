@@ -90,8 +90,6 @@ module.exports = {
           default: require.resolve('./src/components/Layout/index.jsx'),
         },
         gatsbyRemarkPlugins: [
-          'gatsby-plugin-sharp',
-          'gatsby-transformer-sharp',
           {
             resolve: 'gatsby-remark-copy-linked-files',
             options: {}
@@ -128,6 +126,8 @@ module.exports = {
         trackingId: config.googleAnalyticsID,
       },
     },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     "gatsby-transformer-javascript-frontmatter",
     'gatsby-plugin-lodash',
     'gatsby-plugin-catch-links',
