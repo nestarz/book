@@ -90,6 +90,8 @@ module.exports = {
           default: require.resolve('./src/components/Layout/index.jsx'),
         },
         gatsbyRemarkPlugins: [
+          'gatsby-plugin-sharp',
+          'gatsby-transformer-sharp',
           {
             resolve: 'gatsby-remark-copy-linked-files',
             options: {}
@@ -100,6 +102,7 @@ module.exports = {
               maxWidth: 700,
               quality: 90,
               linkImagesToOriginal: false,
+              showCaptions: true,
               withWebp: {
                 quality: 80
               }
@@ -125,8 +128,6 @@ module.exports = {
         trackingId: config.googleAnalyticsID,
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     "gatsby-transformer-javascript-frontmatter",
     'gatsby-plugin-lodash',
     'gatsby-plugin-catch-links',

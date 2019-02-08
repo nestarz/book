@@ -169,6 +169,7 @@ background-color: ${props => props.theme.colors.grey};
 display: flex;
 justify-content: center;
 align-items: center;
+cursor: pointer;
 `;
 export const SketchComponent = props => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()

@@ -37,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4 {
     font-weight: 500;
   }
-  .ScrollUpButton__Container.ScrollUpButton__Toggled {
+  .ScrollUpButton__Container {
     background-color: transparent !important;
     color: ${props => props.theme.colors.bg_color} !important;
     border: none !important;
