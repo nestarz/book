@@ -139,11 +139,21 @@ const Navigation = styled.nav`
       margin-top: 0;
     }
     &.fullViewOn ul.list-items {
+      &:nth-last-child(2):after {
+        padding-bottom: 1em;
+        content: '';
+      }
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-auto-rows: minmax(35vh, 1fr);
       grid-column-gap: 1em;
       grid-row-gap: 1em;
+      &.simple {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        grid-column-gap: 0;
+        grid-row-gap: 0;
+      }
       justify-items: stretch;
       align-items: stretch;
       counter-reset: compteListe;
@@ -157,6 +167,16 @@ const Navigation = styled.nav`
         align-items: center;
         &:nth-child(1n+5) {
           display: flex;
+        }
+      }
+      &.simple li {
+        justify-content: flex-start;
+        align-items: flex-start;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        &::before {
+          padding-right: 1em;
         }
       }
       li:hover .image-wrapper:after {
@@ -175,7 +195,6 @@ const Navigation = styled.nav`
       }
       li:hover a {
         display: block;
-        padding: 0.2em 0.4em;
         text-align: center;
       }
     }
@@ -252,9 +271,9 @@ const Index = ({ data, location }) => {
         </div>
         <Navigation className={`${showFullView ? "fullViewOn" : ""}`} style={{ zIndex: 99 }}>
           <div className={`${showFullView ? "fullViewOn" : ""}`}>
-            <ProjectList fullView={showFullView} />
-              <DigestList fullView={showFullView} />
-              <ExperimentList fullView={showFullView} />
+              <ProjectList fullView={showFullView} />
+              <DigestList className={"simple"} fullView={showFullView} />
+              <ExperimentList className={"simple"} fullView={showFullView} />
             <button
               className={`fullViewBtn`}
               onClick={() => toggleShowFullView()}>

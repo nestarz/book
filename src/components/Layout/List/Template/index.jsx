@@ -5,7 +5,7 @@ import React from "react";
 import { animated, useTrail } from 'react-spring';
 
 const config = { mass: 5, tension: 2000, friction: 200 }
-const ListTemplate = ({ edges, titleLocale, fullView }) => {
+const ListTemplate = ({ edges, titleLocale, fullView, className }) => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
   const trail = useTrail(edges.length, {
     config,
@@ -18,7 +18,7 @@ const ListTemplate = ({ edges, titleLocale, fullView }) => {
     <div className={"category"}>
       {titleLocale[language]}
     </div>
-    <ul className={"list-items"}>
+    <ul className={`list-items ${className}`}>
       {trail.map(({ x, height, ...rest }, index) => (
         <animated.li
           key={index}
