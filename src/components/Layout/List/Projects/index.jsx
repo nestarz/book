@@ -27,7 +27,12 @@ query {
           title
           cover {
             childImageSharp {
-              fluid(maxWidth: 850, quality: 90, traceSVG: { color: "#f3f3f3" }) {
+              fluid(
+                maxWidth: 850,
+                quality: 90,
+                traceSVG: { color: "#f3f3f3" },
+                duotone: { shadow: "#000000", highlight: "#3CD670" }
+                ) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
               }
             }

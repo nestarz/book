@@ -1,8 +1,10 @@
 import { Link } from "gatsby";
 import Img from 'gatsby-image';
+import { useGlobal } from 'reactn';
 import { useToggleGlobalLanguage } from 'hooks/useLanguage';
-import React from "react";
+import React, { useEffect } from "react";
 import { animated, useTrail } from 'react-spring';
+import useHover from 'hooks/useHover';
 
 const config = { mass: 5, tension: 2000, friction: 200 }
 const ListTemplate = ({ edges, titleLocale, fullView, className }) => {
@@ -19,13 +21,22 @@ const ListTemplate = ({ edges, titleLocale, fullView, className }) => {
       {titleLocale[language]}
     </div>
     <ul className={`list-items ${className}`}>
-      {trail.map(({ x, height, ...rest }, index) => (
-        <animated.li
+      {trail.map(({ x, height, ...rest }, index) => {
+          const [hoverRef, isHovered] = useHover();
+          const [globalImageFocus, setGlobalImageFocus] = useGlobal('globalImageFocus');
+          useEffect(() => {
+            if(isHovered && edges[index].node.frontmatter.cover) {
+              setGlobalImageFocus(edges[index].node.frontmatter.cover.childImageSharp.fluid)
+            } else {
+              setGlobalImageFocus(null)
+            }
+          }, [isHovered])
+        return <animated.li
           key={index}
           className="trails-text"
-          style={{ ...rest, transform: x.interpolate(x => `translate3d(0,${x}px,0)`) }}>
+          style={{ ...rest, transform: x.interpolate(x => `translate3d(0,${x}px,0)`) }}
+          ref={hoverRef}>
           <animated.div style={{ height }}>
-
             {fullView && edges[index].node.frontmatter.cover &&
               <div className={"image-wrapper"}>
                 <Img fluid={edges[index].node.frontmatter.cover.childImageSharp.fluid} />
@@ -43,7 +54,7 @@ const ListTemplate = ({ edges, titleLocale, fullView, className }) => {
             </Link>
           </animated.div>
         </animated.li>
-      ))}
+      })}
     </ul>
   </>
 }

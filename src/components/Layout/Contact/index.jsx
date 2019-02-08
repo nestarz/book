@@ -38,7 +38,7 @@ const Contact = ({ data, withIcons = true, withPhone = true, withEmail = true, w
           {withIcons ? <FaTwitter /> : "Twitter"}
         </a>
         {withCv && <Link to="/about/cv" data-testid="cv-link">
-          Contact/CV
+          Contact
         </Link>}
       </SocialMedia>
       {splittedEmail &&
