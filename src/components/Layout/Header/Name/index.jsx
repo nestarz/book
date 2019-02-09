@@ -3,31 +3,33 @@ import { useToggleGlobalLanguage } from 'hooks/useLanguage';
 import PropTypes from "prop-types";
 import React from "react";
 import { Name, Wrapper } from './styles';
-import Typed from 'react-typed';
+import Typed from 'components/Visual/Typed.js';
 
-const Header = ({ data, className, ...props }) => {
+const Header = ({ data, className, withDesc, ...props }) => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
   const siteConfig = data.site.siteMetadata.siteConfig
   const authorInfo = data.site.siteMetadata.authorInfo.title[language]
   const description = data.site.siteMetadata.authorCv.shortBio[language];
+  const iam = language == "fr" ? "Je suis" : "I am";
+  const strings = [
+    language == "fr" ? "Bonjour !" : "Hi !",
+    `${iam} ${siteConfig.siteTitle}`,
+    ...(withDesc ? [
+      `${iam} ${siteConfig.siteTitle}` + `, <span class="desc">${description}</span>`
+    ] : [
+      `${iam} ${siteConfig.siteTitle}` + `, <span class="desc">${authorInfo}</span>`,
+    ])
+  ];
   return (
     <Wrapper data-testid="navigation" className={className} {...props}>
       <Name className={"name"}>
         <Link to="/" data-testid="home-title-link">
-        <Typed
-                    strings={[siteConfig.siteTitle + ","]}
-                    typeSpeed={40}
-                    showCursor={false}
-                />
-          {props.withDesc ? <span className={"desc"}>
           <Typed
-                    strings={["^2000 " + description]}
-                    typeSpeed={40}
-                />
-                </span>:           <Typed
-                    strings={["^1000 " +  authorInfo]}
-                    typeSpeed={40}
-  /> }
+            strings={strings}
+            typeSpeed={40}
+            showCursor={true}
+            smartBackspace={true}
+          />
         </Link>
       </Name>
     </Wrapper>
@@ -71,7 +73,7 @@ Header.propTypes = {
   data: PropTypes.shape({
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
-        authorInfo : PropTypes.shape({
+        authorInfo: PropTypes.shape({
           title: PropTypes.shape({
             en: PropTypes.string.isRequired,
             fr: PropTypes.string.isRequired,

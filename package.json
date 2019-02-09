@@ -56,6 +56,7 @@
     "gatsby-transformer-javascript-frontmatter": "^2.0.8",
     "gatsby-transformer-sharp": "^2.1.13",
     "gl-matrix": "^3.0.0",
+    "jw-canvas-ascii": "^0.1.4",
     "libphonenumber-js": "^1.7.8",
     "lodash": "^4.17.11",
     "mobile-detect": "^1.4.3",

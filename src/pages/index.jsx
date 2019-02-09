@@ -15,6 +15,7 @@ import React from 'react';
 import { useToggle } from "react-use";
 import { useGlobal } from 'reactn';
 import styled from 'styled-components';
+import Typed from 'components/Visual/Typed.js';
 
 
 const Wrapper = styled.div`
@@ -56,7 +57,7 @@ overflow-y: scroll;
 
 const Navigation = styled.nav`
   display: flex;
-  max-width: 1000px;
+  max-width: 800px;
   flex-flow: column nowrap;
   position: relative;
   flex: 73%;
@@ -160,10 +161,8 @@ const Navigation = styled.nav`
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-auto-rows: minmax(35vh, 1fr);
-      grid-column-gap: 2em;
-      grid-row-gap: 2em;
-      margin-right: 1em;
-      margin-top: 1em;
+      grid-column-gap: 0.1em;
+      grid-row-gap: 0.1em;
       &.simple {
         grid-template-columns: 1fr;
         grid-auto-rows: auto;
@@ -188,6 +187,20 @@ const Navigation = styled.nav`
         align-items: center;
         &:nth-child(1n+4) {
           display: flex;
+        }
+      }
+      &:not(.simple) li .image-wrapper {
+        filter: brightness(1.2) contrast(0.8);
+        &:after {
+          background-image: url(data:image/png;base64,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);
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          mix-blend-mode: overlay;
+          opacity: 0.6;
         }
       }
       &.simple li {
@@ -313,7 +326,7 @@ const BackgroundImage2 = styled(BackgroundImage)`
 const Index = ({ data, location }) => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
   const description = data.site.siteMetadata.authorCv.shortBio[language];
-  const [showFullView, toggleShowFullView] = useToggle(true)
+  const [showFullView, toggleShowFullView] = useToggle(false)
   const [globalImageFocus, setGlobalImageFocus] = useGlobal('globalImageFocus');
   return (
     <Layout pathname={location.pathname}>
@@ -324,17 +337,17 @@ const Index = ({ data, location }) => {
         />
         <div className={"content"} style={{ zIndex: 99 }}>
           <div>
-            <Header withDesc={true} style={{maxWidth: "80vw"}} />
+            <Header withDesc={true} style={{ maxWidth: "80vw" }} />
           </div>
           <div>
-          {globalImageFocus &&
-        <BackgroundImage2>
-          <Img fluid={globalImageFocus} />
-        </BackgroundImage2>
-      }
+            {globalImageFocus &&
+              <BackgroundImage2>
+                <Img fluid={globalImageFocus} />
+              </BackgroundImage2>
+            }
             <button onClick={() => toggleLanguage()}>{language == "en" ?
-            <>English <span style={{textDecoration: "line-through"}}>Français</span></> :
-  <><span style={{textDecoration: "line-through"}}>English</span> Français</>} </button>
+              <>English <span style={{ textDecoration: "line-through" }}>Français</span></> :
+              <><span style={{ textDecoration: "line-through" }}>English</span> Français</>} </button>
             {/* <Description>
               {description}
             </Description> */}
@@ -353,7 +366,12 @@ const Index = ({ data, location }) => {
             <button
               className={`fullViewBtn`}
               onClick={() => toggleShowFullView()}>
-              {showFullView ? "ooo" : "ooo"}
+              <Typed
+                strings={["ooo"]}
+                typeSpeed={40}
+                showCursor={false}
+                smartBackspace={true}
+              />
             </button>
           </div>
         </Navigation>
