@@ -38,7 +38,7 @@ overflow-y: scroll;
     flex-wrap: wrap;
     font-size: 1.3vmax;
   }
-  &>div {
+  &>div.content {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -50,7 +50,7 @@ overflow-y: scroll;
     margin-top: 1em;
     font-size: 200%;
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
   }
 `;
 
@@ -60,7 +60,6 @@ const Navigation = styled.nav`
   position: relative;
   flex: 55%;
   padding: 30px;
-  padding-top: 0;
   text-align: right;
   font-size: 200%;
   align-items: flex-end;
@@ -78,17 +77,19 @@ const Navigation = styled.nav`
     margin: 0;
     margin-top: 0.2em;
     font-size: 170%;
+    text-decoration: underline;
   }
   &.fullViewOn {
     background-color: ${props => props.theme.colors.bg_color};
     border-left: 0px dashed black;
     border-color: ${props => props.theme.brand.primary};
+    padding: 0;
     button.fullViewBtn {
       margin: 0;
       position: fixed;
       bottom: 30px;
       right: 30px;
-      background-color: ${props => props.theme.colors.bg_color};
+      /*background-color: ${props => props.theme.colors.bg_color};*/
       padding: 0;
       display: flex;
     }
@@ -106,15 +107,21 @@ const Navigation = styled.nav`
     align-items: stretch;
     & > :first-child {
       margin-top: auto !important;
-      display: none;
     }
-    ul.list-items,
-    ul.list-items li {
+    ul.list-items {
       all: unset;
+      counter-reset: compteListe1;
+      li::after {
+        counter-increment: compteListe1 1;
+        content: "" counter(compteListe1, decimal-leading-zero) " ";
+        padding-left: 1em;
+      }
+      li {
+        flex-direction: row;
+      }
     }
     ul.list-items li {
       display: flex;
-      flex-direction: column;
       justify-content: flex-end;
       align-items: flex-end;
       &:nth-child(1n+4) {
@@ -138,8 +145,9 @@ const Navigation = styled.nav`
     &.fullViewOn .category {
       text-align: left;
       margin-bottom: 1em;
+      padding-left: 1em;
     }
-    &.fullViewOn > div:first-child .category {
+    &.fullViewOn > div:first-child.category {
       margin-top: 0;
       display: none;
     }
@@ -158,6 +166,7 @@ const Navigation = styled.nav`
         grid-auto-rows: auto;
         grid-column-gap: 0;
         grid-row-gap: 0;
+        padding-left: 1em;
       }
       justify-items: stretch;
       align-items: stretch;
@@ -165,6 +174,10 @@ const Navigation = styled.nav`
       li::before {
         counter-increment: compteListe 1;
         content: counter(compteListe, hiragana) " ";
+        padding-right: 1em;
+      }
+      li::after {
+        content: counter(compteListe, decimal-leading-zero) " ";
       }
       li {
         background-color: ${props => darken(0, props.theme.colors.bg_color)};
@@ -210,7 +223,7 @@ const Navigation = styled.nav`
   }
   a{
     &:hover:before {
-      content: "↘ ";
+      /*content: "↘ ";*/
     }
     &:not(:hover) {
       color: inherit;
@@ -255,7 +268,7 @@ const BackgroundImage = styled.div`
   left: 0;
   pointer-events: none;
   mix-blend-mode: soft-light;
-  filter: sepia(1) hue-rotate(416.6deg) saturate(1);
+  filter: grayscale(1) saturate(1);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -263,6 +276,9 @@ const BackgroundImage = styled.div`
     width: 100vw;
     height: 100vh;
     object-fit: cover;
+  }
+  .gatsby-image-wrapper > img {
+    display: none;
   }
 `;
 
@@ -275,23 +291,25 @@ const Index = ({ data, location }) => {
     <Layout pathname={location.pathname}>
       <Wrapper>
         <SketchComponentFixedBackground
-          style={{ height: "99%" }}
+          style={{ height: "100%", display: "none" }}
           sketch={backgroundSketch}
         />
-        <div style={{ zIndex: 99 }}>
+        <div className={"content"} style={{ zIndex: 99 }}>
           <div>
             <Header style={{ fontSize: "320%" }} />
+          </div>
+          <div>
+            <button onClick={() => toggleLanguage()}>{language == "en" ?
+            <>English <span style={{textDecoration: "line-through"}}>Français</span></> :
+  <><span style={{textDecoration: "line-through"}}>English</span> Français</>} </button>
+            <Description>
+              {description}
+            </Description>
             <Contact style={{ fontSize: "200%" }}
               withIcons={false}
               withPhone={false}
               withEmail={false}
             />
-          </div>
-          <div>
-            <button onClick={() => toggleLanguage()}>En/Fr</button>
-            <Description>
-              {description}
-            </Description>
           </div>
         </div>
         <Navigation className={`${showFullView ? "fullViewOn" : ""}`} style={{ zIndex: 99 }}>

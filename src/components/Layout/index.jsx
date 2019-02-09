@@ -63,7 +63,7 @@ const GlobalPrintStyle = createGlobalStyle`
 
 const LumiereToggle = styled.div`
 position: fixed;
-top: 2px; right: 10px;
+top: 0.7em; right: 0.5em;
 font-size: 2em;
 cursor: pointer;
 z-index: 999;
@@ -84,7 +84,7 @@ const Layout = ({ children, pathname, customSEO }) => {
         <GlobalStyle />
         {alwaysOn && <GlobalPrintStyle />}
         <LumiereToggle onClick={() => setCurrThemeIndex((currThemeIndex + 1) % themes.length)}>
-        {currThemeIndex == 1 ? <IoIosMoon/> : <IoIosSunny/>}
+        {currThemeIndex == 1 ? <IoIosSunny/> : <IoIosMoon/>}
         </LumiereToggle>
         {children}
         <ScrollUpButton
