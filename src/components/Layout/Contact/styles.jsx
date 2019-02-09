@@ -29,7 +29,7 @@ flex: 1 0 auto;
 justify-content: flex-start;
 flex-wrap: wrap;
 padding: 0;
-margin-top: 1em;
+margin-top: 0.5em;
 a {
   padding-right: 0.5rem;
   margin-right: 0.25rem;

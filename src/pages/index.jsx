@@ -33,10 +33,10 @@ overflow-y: scroll;
   justify-content: space-between;
   flex-direction: row;
   align-content: space-between;
-  font-size: 1.6vmin;
+  font-size: 3.2vmin;
   @media (max-width: 1000px) {
     flex-wrap: wrap;
-    font-size: 1.3vmax;
+    font-size: 2.6vmax;
   }
   &>div.content {
     display: flex;
@@ -48,7 +48,7 @@ overflow-y: scroll;
   button {
     all: unset;
     margin-top: 1em;
-    font-size: 200%;
+    font-size: 100%;
     cursor: pointer;
     text-decoration: none;
   }
@@ -56,12 +56,13 @@ overflow-y: scroll;
 
 const Navigation = styled.nav`
   display: flex;
+  max-width: 1000px;
   flex-flow: column nowrap;
   position: relative;
-  flex: 55%;
+  flex: 73%;
   padding: 30px;
   text-align: right;
-  font-size: 200%;
+  font-size: 100%;
   align-items: flex-end;
   @media (min-width: 1000px) {
     overflow-y: auto;
@@ -75,8 +76,8 @@ const Navigation = styled.nav`
   }
   button.fullViewBtn {
     margin: 0;
-    margin-top: 0.2em;
-    font-size: 170%;
+    margin-top: 0.6em;
+    font-size: 120%;
     text-decoration: underline;
   }
   &.fullViewOn {
@@ -94,7 +95,7 @@ const Navigation = styled.nav`
       display: flex;
     }
     padding-bottom: 0;
-    flex: 120%;
+    flex: 250%;
   }
   & > div {
     display: flex;
@@ -159,8 +160,10 @@ const Navigation = styled.nav`
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-auto-rows: minmax(35vh, 1fr);
-      grid-column-gap: 0.1em;
-      grid-row-gap: 0.1em;
+      grid-column-gap: 2em;
+      grid-row-gap: 2em;
+      margin-right: 1em;
+      margin-top: 1em;
       &.simple {
         grid-template-columns: 1fr;
         grid-auto-rows: auto;
@@ -235,7 +238,7 @@ const Description = styled.p`
   margin: 0;
   max-width: 800px;
   min-width: 300px;
-  font-size: 200%;
+  font-size: 100%;
   line-height: 1.7em;
   margin-top: 0.5em;
 `;
@@ -282,6 +285,31 @@ const BackgroundImage = styled.div`
   }
 `;
 
+const BackgroundImage2 = styled(BackgroundImage)`
+  position: initial;
+  width: 40vh;
+  height: 40vh;
+  max-width: 100%;
+  max-height: 100%;
+  margin-bottom: 1em;
+  pointer-events: none;
+  mix-blend-mode: normal;
+  filter: grayscale(1);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  display: none;
+  @media (max-width: 1000px) {
+    display: none;
+  }
+  img {
+    object-fit: cover;
+  }
+  .gatsby-image-wrapper > img {
+    display: none;
+  }
+`;
+
 const Index = ({ data, location }) => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
   const description = data.site.siteMetadata.authorCv.shortBio[language];
@@ -296,16 +324,21 @@ const Index = ({ data, location }) => {
         />
         <div className={"content"} style={{ zIndex: 99 }}>
           <div>
-            <Header style={{ fontSize: "320%" }} />
+            <Header withDesc={true} style={{maxWidth: "80vw"}} />
           </div>
           <div>
+          {globalImageFocus &&
+        <BackgroundImage2>
+          <Img fluid={globalImageFocus} />
+        </BackgroundImage2>
+      }
             <button onClick={() => toggleLanguage()}>{language == "en" ?
             <>English <span style={{textDecoration: "line-through"}}>Français</span></> :
   <><span style={{textDecoration: "line-through"}}>English</span> Français</>} </button>
-            <Description>
+            {/* <Description>
               {description}
-            </Description>
-            <Contact style={{ fontSize: "200%" }}
+            </Description> */}
+            <Contact style={{ fontSize: "100%" }}
               withIcons={false}
               withPhone={false}
               withEmail={false}
@@ -327,11 +360,11 @@ const Index = ({ data, location }) => {
       </Wrapper>
       <HiddenContent>
       </HiddenContent>
-      {globalImageFocus &&
+      {/* {globalImageFocus &&
         <BackgroundImage>
           <Img fluid={globalImageFocus} />
         </BackgroundImage>
-      }
+      } */}
     </Layout>
   )
 }

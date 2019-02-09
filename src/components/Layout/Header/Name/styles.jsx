@@ -29,7 +29,7 @@ export const SocialMedia = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   padding: 0;
-  margin-top: 1em;
+  margin-top: 0.5em;
   a {
     padding-right: 0.5rem;
     margin-right: 0.25rem;
@@ -49,6 +49,10 @@ export const Name = styled.div`
     line-height: normal;
     font-weight: 500;
     color: ${props => props.theme.brand.primary};
+    .desc {
+      color: ${props => props.theme.colors.body_color};
+      font-weight: 400;
+    }
     &:hover,
     &:focus {
       color: ${props => props.theme.colors.body_color};
