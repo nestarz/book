@@ -12,7 +12,7 @@ const Header = ({ data, className, withDesc, ...props }) => {
   const description = data.site.siteMetadata.authorCv.shortBio[language];
   const iam = language == "fr" ? "Je suis" : "I am";
   const strings = [
-    language == "fr" ? "Bonjour !" : "Hi !",
+    (language == "fr" ? "Bonjour !" : "Hi !") + " 👋",
     `${iam} ${siteConfig.siteTitle}`,
     ...(withDesc ? [
       `${iam} ${siteConfig.siteTitle}` + `, <span class="desc">${description}</span>`
@@ -26,7 +26,7 @@ const Header = ({ data, className, withDesc, ...props }) => {
         <Link to="/" data-testid="home-title-link">
           <Typed
             strings={strings}
-            typeSpeed={40}
+            typeSpeed={10}
             showCursor={true}
             smartBackspace={true}
           />
