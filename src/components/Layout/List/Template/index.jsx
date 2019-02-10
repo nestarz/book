@@ -2,22 +2,25 @@ import { Link } from "gatsby";
 import Img from 'gatsby-image';
 import { useGlobal } from 'reactn';
 import { useToggleGlobalLanguage } from 'hooks/useLanguage';
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { animated, useTrail } from 'react-spring';
 import useHover from 'hooks/useHover';
 
 const config = { mass: 5, tension: 2000, friction: 200 }
 const ListTemplate = ({ edges, titleLocale, fullView, className }) => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
+  const [rest, setRest] = useState(false)
   const trail = useTrail(edges.length, {
     config,
     opacity: 1,
     x: 0,
     height: "auto",
     from: { opacity: 0, x: 30, height: 0 },
+    delay: 100,
+    onRest: () => setRest(true)
   })
   return <>
-    <div className={"category"}>
+    <div className={"category"} style={{visibility: rest ? "visible" : "hidden"}}>
       {titleLocale[language]}
     </div>
     <ul className={`list-items ${className}`}>
