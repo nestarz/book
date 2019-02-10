@@ -23,6 +23,7 @@ max-height: 100vh;
 overflow-y: scroll;
 justify-content: space-between;
 padding: 1em;
+padding-right: 0;
 `;
 const ContentWrapper = styled.div`
 flex: 50%;

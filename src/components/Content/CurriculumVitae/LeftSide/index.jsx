@@ -45,12 +45,20 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   flex: 1;
+  .email {
+    font-size: 90%;
+  }
   @media (max-width: 700px) {
     flex: 100%;
     flex-wrap: wrap;
+    .email {
+      font-size: 100%;
+    }
   }
-  .email {
-    font-size: 90%;
+  @media (min-width: 1300px) {
+    .email {
+      font-size: 100%;
+    }
   }
   & > div:first-child > header:last-child {
     & > * {
