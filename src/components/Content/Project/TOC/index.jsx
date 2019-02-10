@@ -12,7 +12,7 @@ const sketchSelection = (sketch, sketchIndex) => sketch ? sketch :
 
 
 const TOC = ({ tableOfContents }) => <Wrapper>
-  <SketchComponentAbsoluteBackground
+  {/* <SketchComponentAbsoluteBackground
     style={{
       zIndex: -1,
       top: "0",
@@ -20,10 +20,10 @@ const TOC = ({ tableOfContents }) => <Wrapper>
     }}
     sketch={sketchSelection()}
     sketchProps={{ frameRate: 0.1, noLoop: true }}
-  />
+  /> */}
   <Content>
     <ol>
-      <SpringPosition wrapper={animated.li}>
+      <li>
         {tableOfContents.items.map((heading, index) => {
           return (
             <React.Fragment key={index}>
@@ -44,7 +44,7 @@ const TOC = ({ tableOfContents }) => <Wrapper>
             </React.Fragment>
           );
         })}
-      </SpringPosition>
+      </li>
     </ol>
   </Content>
 </Wrapper>

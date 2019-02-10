@@ -6,7 +6,7 @@ export const Wrapper = styled.nav`
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  padding: 0.5vmax;
+  padding: 0;
   font-size: 1.8rem;
   @media (min-width: 1600px) {
     font-size: 2vw;

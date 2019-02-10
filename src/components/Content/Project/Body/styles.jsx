@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.section`
 max-width: 40rem;
-font-size: 120%;
+font-size: 100%;
 letter-spacing: -0.01em;
 
 margin: auto;
@@ -19,15 +19,15 @@ page-break-before: always;
 & > div {
   & > h1 {
     display: list-item;
-    list-style-type: arabic-indic;
-    list-style-position: initial;
+    list-style-type: decimal-leading-zero;
+    list-style-position: inside;
   }
   & > h1 {
     display: block;
     page-break-before: always;
     display: list-item;
-    list-style-type: arabic-indic;
-    list-style-position: initial;
+    list-style-type: decimal-leading-zero;
+    list-style-position: inside;
     @media (max-width: 700px) {
       list-style-position: inside;
     }
@@ -66,7 +66,7 @@ p {
     a {
       text-decoration: none;
       display: block;
-      font-size: 120%;
+      font-size: 100%;
       }
     a:hover {
       text-decoration: underline;
@@ -94,26 +94,6 @@ img {
   break-inside: avoid-column; /* W3C */
   display: inline-block;
 }
-
-.fullWidth {
-  @media not print {
-    width: 100vw;
-    height: 100vh;
-    margin: auto;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-  }
-  @media print {
-    max-width: 100% !important;
-    width: 100vw !important;
-    height: 100vw !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    position: initial !important;
-  }
   & > div {
       height: inherit !important;
       width: inherit !important;

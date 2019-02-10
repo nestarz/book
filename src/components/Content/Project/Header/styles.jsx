@@ -6,17 +6,16 @@ export const Wrapper = styled.div`
   width: 100%;
   padding: 0;
   color: ${props => props.theme.colors.body_color};
-  font-size: 1.5em;
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
-    font-size: 3.5vw;
-  }
+  font-size: 100%;
   h1, h2, h3, h4 {
     margin: 0;
   }
   h1 {
-    font-size: 200%;
+    color: ${props => props.theme.brand.primary};
+    .desc {
+      color: ${props => props.theme.colors.body_color};
+    }
     @media print {
-      font-size: 300%;
       text-align: center;
       color: ${props => props.theme.brand.primary};
       transform: scale(1,4);
@@ -33,7 +32,7 @@ export const Wrapper = styled.div`
       text-align: center;
     }
     margin: 0;
-    margin-bottom: 2vw;
+    padding: 0;
     letter-spacing: calc(-16 / 1000 * 1em);
   }
   display: flex;
@@ -47,10 +46,10 @@ export const Wrapper = styled.div`
 
 export const Frontmatter = styled.section`
   flex-grow: 1;
-  padding: 0.5em 0em;
+  padding: 0em 0em;
   padding-bottom: 0;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   flex-wrap: wrap;
   &>div {
     padding: 0vw 1vw;

@@ -29,9 +29,14 @@ const ListTemplate = ({ edges, titleLocale, fullView, className }) => {
           const [globalImageFocus, setGlobalImageFocus] = useGlobal('globalImageFocus');
           useEffect(() => {
             if(isHovered && edges[index].node.frontmatter.cover) {
-              setGlobalImageFocus(edges[index].node.frontmatter.cover.childImageSharp.fluid)
+              setGlobalImageFocus({
+                image: edges[index].node.frontmatter.cover.childImageSharp.fluid,
+                text: edges[index].node.excerpt,
+                title: edges[index].node.frontmatter.title,
+                birthtime: edges[index].node.parent.birthtime,
+              })
             } else {
-              setGlobalImageFocus(null)
+              //setGlobalImageFocus(null)
             }
           }, [isHovered])
         return <animated.li

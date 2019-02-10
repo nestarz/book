@@ -4,7 +4,7 @@ import React from "react";
 import ListTemplate from 'components/Layout/List/Template';
 
 const ExperimentList = ({ data, ...props }) => {
-  const titleLocale = { "fr": "Expériences", "en": "Experiments" }
+  const titleLocale = { "fr": "Dernières Expériences", "en": "Latest Experiments" }
   return <ListTemplate
     {...props}
     edges={data.allJavascriptFrontmatter.edges}

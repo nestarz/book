@@ -5,6 +5,7 @@ import frenchStrings from 'react-timeago/lib/language-strings/fr'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
 import styled from 'styled-components';
 import PrintHeader from 'components/Layout/Header/Print'
+import Typed from 'components/Visual/Typed.js';
 
 const StyledPrintHeader = styled(PrintHeader)`
 @media (max-width: 600px) {
@@ -19,12 +20,19 @@ h1, p {
 `;
 const formatter = buildFormatter(frenchStrings)
 const Header = ({ birthtime, birthtimeTimeStamp, mtime, frontmatter, excerpt }) => {
+  const strings = [
+    `${frontmatter.title}`,
+    `${frontmatter.title}` + `, <span class="desc">${frontmatter.subtitle ? frontmatter.subtitle : excerpt}</span>`,
+  ];
   return <Wrapper>
     <Frontmatter>
-    <StyledPrintHeader withToggleLanguage={false}>
-      <h1>{frontmatter.title}</h1>
-      <p>{frontmatter.subtitle ? frontmatter.subtitle : excerpt}</p>
-      </StyledPrintHeader>
+    <h1>
+    <Typed
+      strings={strings}
+      typeSpeed={10}
+      showCursor={true}
+      smartBackspace={true}
+      /></h1>
       {/* <ImageWrapper>
       <InfoBlock>
       <div>{birthtime}</div>

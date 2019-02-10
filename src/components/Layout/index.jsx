@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-family: "CircularStd", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     cursor: crosshair;
+    font-size: 120%;
   }
   html, body {
     margin: 0;
@@ -51,20 +52,12 @@ const GlobalPrintStyle = createGlobalStyle`
   html, body {
     min-width: 240mm;
   }
-  .fullWidth {
-    max-width: 100% !important;
-    width: 100% !important;
-    min-height: 25vh !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    position: initial !important;
-  }
 `
 
 const LumiereToggle = styled.div`
 position: fixed;
-top: 0.7em; right: 0.5em;
-font-size: 2em;
+top: 0.5em; right: 0.5em;
+font-size: 120%;
 cursor: pointer;
 z-index: 999;
 `;

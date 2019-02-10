@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 const ProjectList = ({ data, ...props }) => {
-  const titleLocale = { "fr": "Billets", "en": "Digests" }
+  const titleLocale = { "fr": "Derniers Billets", "en": "Latest Digests" }
   return <ListTemplate
     {...props}
     edges={data.allMdx.edges}

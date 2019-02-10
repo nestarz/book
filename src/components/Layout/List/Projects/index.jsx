@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 const ProjectList = ({ data, ...props }) => {
-  const titleLocale = { "fr": "Projets", "en": "Projects" }
+  const titleLocale = { "fr": "Derniers Projets", "en": "Latest Projects" }
   return <ListTemplate
     {...props}
     edges={data.allMdx.edges}
@@ -23,6 +23,14 @@ query {
         fields {
           slug
         }
+        parent {
+          ... on File {
+            mtime(formatString: "DD.MM.YYYY")
+            birthtimeTimeStamp: birthtime
+            birthtime(formatString: "DD.MM.YYYY")
+          }
+        }
+        excerpt(pruneLength: 70)
         frontmatter {
           title
           cover {

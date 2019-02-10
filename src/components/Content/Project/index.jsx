@@ -1,16 +1,38 @@
 import React from 'react';
-import Header from './Header'
-import TOC from './TOC'
-import Body from './Body'
-import Footer from './Footer'
 import styled from 'styled-components';
+import Body from './Body';
+import Footer from './Footer';
+import Header from './Header';
+import TOC from './TOC';
 
 const Wrapper = styled.div`
+display: flex;
+flex-wrap: wrap;
+& > section {
+  min-width: 60vw;
+}
+h1, h2, h3, h4, h5, p {
+  font-size: 100%;
+}
+`;
+const HeadWrapper = styled.div`
+flex: 1;
+display: flex;
+flex-direction: column;
+max-height: 100vh;
+overflow-y: scroll;
+justify-content: space-between;
+padding: 1em;
+`;
+const ContentWrapper = styled.div`
+flex: 50%;
+max-height: 100vh;
+overflow-y: scroll;
 `;
 export const Project = ({ excerpt, birthtime, birthtimeTimeStamp, mtime, frontmatter, tableOfContents, body }) => {
   return (
-    <>
-      <Wrapper>
+    <Wrapper>
+      <HeadWrapper>
         <Header
           frontmatter={frontmatter}
           birthtime={birthtime}
@@ -18,18 +40,20 @@ export const Project = ({ excerpt, birthtime, birthtimeTimeStamp, mtime, frontma
           mtime={mtime}
 
           excerpt={excerpt}
-          />
+        />
         {tableOfContents &&
           tableOfContents.items &&
           <TOC tableOfContents={tableOfContents} />
         }
-      </Wrapper>
-      <Body body={body} />
-      <Footer           frontmatter={frontmatter}
+      </HeadWrapper>
+      <ContentWrapper>
+        <Body body={body} />
+        <Footer frontmatter={frontmatter}
           birthtime={birthtime}
           birthtimeTimeStamp={birthtimeTimeStamp}
           mtime={mtime} />
-    </>
+      </ContentWrapper>
+    </Wrapper>
   )
 }
 
