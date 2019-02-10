@@ -76,7 +76,7 @@ const Layout = ({ children, pathname, customSEO }) => {
         {!customSEO && <SEO pathname={pathname} />}
         <GlobalStyle />
         {alwaysOn && <GlobalPrintStyle />}
-        <LumiereToggle onClick={() => setCurrThemeIndex((currThemeIndex + 1) % themes.length)}>
+        <LumiereToggle className={'A'} onClick={() => setCurrThemeIndex((currThemeIndex + 1) % themes.length)}>
         {currThemeIndex == 1 ? <IoIosSunny/> : <IoIosMoon/>}
         </LumiereToggle>
         {children}

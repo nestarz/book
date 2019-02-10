@@ -51,6 +51,9 @@ export default props => (
     query {
       site {
         siteMetadata {
+          siteConfig {
+            siteUrl
+          }
           authorInfo {
             email
           }

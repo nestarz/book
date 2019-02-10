@@ -14,6 +14,7 @@ import React from 'react';
 import { useToggle } from "react-use";
 import { useGlobal } from 'reactn';
 import styled from 'styled-components';
+import LineTo from 'react-lineto';
 
 
 const Wrapper = styled.div`
@@ -405,7 +406,7 @@ const Index = ({ data, location }) => {
                 </div>
               </BackgroundImage2>
             }
-            <button onClick={() => toggleLanguage()}>{language == "en" ?
+            <button className={'B'} onClick={() => toggleLanguage()}>{language == "en" ?
               <>Version Française ici</> :
               <>English Version here</>} </button>
             {/* <Description>
@@ -435,6 +436,7 @@ const Index = ({ data, location }) => {
             </button>
           </div>
         </Navigation>
+        {/* <LineTo from="A" to="B" delay={100} borderColor={"#3CD670"} borderStyle={"dashed"}/> */}
       </Wrapper>
       <HiddenContent>
       </HiddenContent>

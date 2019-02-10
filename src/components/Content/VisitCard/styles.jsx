@@ -8,6 +8,9 @@ color: #111;
 a:not(.name a) {
   color: black !important;
 }
+.desc {
+  color: black !important;
+}
 word-wrap: break-word;
 padding: 5mm;
 display: flex;

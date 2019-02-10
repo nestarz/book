@@ -49,33 +49,34 @@ p {
 }
 text-align: left !important;
 `;
-const RightCv = ({ data }) => {
+const RightCv = ({ data, ...props }) => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
+  const siteUrl = data.site.siteMetadata.siteConfig.siteUrl;
   return <Wrapper>
     <Content>
-    <p>{data.site.siteMetadata.authorCv.shortBio[language]}</p>
-    {data.site.siteMetadata.authorCv.records.map((recordCategory, i) =>
-      <div key={i}>
-        <h1>{recordCategory.title[language]}</h1>
-        {recordCategory.list.map((record, j) =>
-          <RecordBlock key={j}>
-            <p className={"recordDate"}>
-              {record.to ? `${record.from} — ${record.to}` : record.from}
-            </p>
-            <div className={"recordMain"}>
-              <div>{record.title[language]}</div>
-              <aside>
-                <span>{record.etablishment}</span>
-                <span>{record.location}</span>
-              </aside>
-              <p className={"recordDescription"}>
-                {record.description && record.description[language]}
+      <p>{data.site.siteMetadata.authorCv.shortBio[language]}</p>
+      {data.site.siteMetadata.authorCv.records.map((recordCategory, i) =>
+        <div key={i}>
+          <h1>{recordCategory.title[language]}</h1>
+          {recordCategory.list.map((record, j) =>
+            <RecordBlock key={j}>
+              <p className={"recordDate"}>
+                {record.to ? `${record.from} — ${record.to}` : record.from}
               </p>
-            </div>
-          </RecordBlock>
-        )}
-      </div>
-    )}
+              <div className={"recordMain"}>
+                <div>{record.title[language]}</div>
+                <aside>
+                  <span>{record.etablishment}</span>
+                  <span>{record.location}</span>
+                </aside>
+                <p className={"recordDescription"}>
+                  {record.description && record.description[language]}
+                </p>
+              </div>
+            </RecordBlock>
+          )}
+        </div>
+      )}
     </Content>
   </Wrapper>
 }

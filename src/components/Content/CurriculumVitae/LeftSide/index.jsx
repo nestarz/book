@@ -2,8 +2,15 @@ import Contact from 'components/Layout/Contact';
 import NameHeader from 'components/Layout/Header/Name';
 import { useToggleGlobalLanguage } from 'hooks/useLanguage';
 import React from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
+import QRCode from 'qrcode.react';
 
+const QRCodeWrapper = styled.div`
+flex: 1;
+display: flex;
+justify-content: flex-start;
+margin-left: -0.25em;
+`;
 const AchivementBlock = styled.div`
 width: 100%;
 & > .achivement-ul {
@@ -53,8 +60,9 @@ const Wrapper = styled.div`
   }
 `;
 
-const LeftCv = ({ data, withToggle = true }) => {
+const LeftCv = ({ data, withToggle = true, ...props }) => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
+  const siteUrl = data.site.siteMetadata.siteConfig.siteUrl;
   return <Wrapper>
     <div>
       <NameHeader style={{ fontSize: "100%" }} />
@@ -78,7 +86,16 @@ const LeftCv = ({ data, withToggle = true }) => {
         </AchivementBlock>
       )}</div>
     </AchivementBlock>
+    <QRCodeWrapper>
+        <QRCode value={siteUrl}
+          size={59}
+          bgColor={props.theme.colors.bg_color}
+          fgColor={props.theme.colors.body_color}
+          level={"H"}
+          includeMargin={true}
+          renderAs={"svg"} />
+        </QRCodeWrapper>
   </Wrapper>
 }
 
-export default LeftCv;
+export default withTheme(LeftCv);

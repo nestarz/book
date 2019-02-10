@@ -3,11 +3,10 @@ import styled from 'styled-components'
 export const Wrapper = styled.header`
   display: flex;
   position: relative;
-  mix-blend-mode: multiply;
   flex-direction: column;
   z-index: 1000;
   a {
-    color: ${props => props.theme.colors.body_color};
+    color: inherit;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     z-index: 100;
