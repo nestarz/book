@@ -13,25 +13,25 @@ const Wrapper = styled.div`
     font-weight: 500;
     letter-spacing: calc(-0.013em);
   }
-  padding: 2em;
+  padding: 1em;
   position: relative;
   background-color: ${props => props.theme.colors.bg_color};
   color: ${props => props.theme.colors.body_color};
-  max-width: 60rem;
-  margin: auto;
   display: flex;
+  justify-content: space-between;
   @media (max-width: 700px) {
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    justify-content: space-around;
+    align-items: space-around;
   }
   h1, h2, h3 {
     position: relative;
     font-size: 100%;
   }
-  & > div:last-child {
-    margin-left: 1em;
+  @media (min-width: 700px) {
+    & > div:last-child {
+      margin-left: 1em;
+    }
   }
   button {
     all: unset;
@@ -40,7 +40,6 @@ const Wrapper = styled.div`
 const CurriculumVitae = ({ data, withToggle = true, ...props }) => {
   return (
     <Wrapper {...props}>
-      <SketchComponentAbsoluteBackground sketch={backgroundSketch} />
       <Left data={data} withToggle={withToggle} />
       <Right data={data} />
     </Wrapper>

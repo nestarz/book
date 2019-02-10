@@ -25,7 +25,15 @@ flex: 1;
 width: 100%;
   flex-grow: 1;
   padding: 0em 0em;
-  margin-top: 1em;
+  & > ul,
+  & > ol {
+    & > li > ul:not(:empty) {
+      margin-bottom: 1em;
+    }
+    & > li:last-child > ul {
+      margin-bottom: 0;
+    }
+  }
   ul, ol {
     overflow-x: scroll;
     display: flex;
@@ -45,9 +53,6 @@ width: 100%;
     }
     & > li {
       break-inside: avoid;
-      &:first-child {
-        margin-top: 0;
-      }
     }
   }
   ul {
@@ -55,7 +60,7 @@ width: 100%;
     flex-direction: column;
   }
   ol > li {
-    list-style-type: hiragana;
+    list-style-type: none;
     padding: 0;
     min-width: 12em;
     list-style-position: inside;

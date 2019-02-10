@@ -406,8 +406,8 @@ const Index = ({ data, location }) => {
               </BackgroundImage2>
             }
             <button onClick={() => toggleLanguage()}>{language == "en" ?
-              <>English <span style={{ textDecoration: "line-through" }}>Français</span></> :
-              <><span style={{ textDecoration: "line-through" }}>English</span> Français</>} </button>
+              <>Version Française ici</> :
+              <>English Version here</>} </button>
             {/* <Description>
               {description}
             </Description> */}

@@ -1,12 +1,26 @@
+import Contact from 'components/Layout/Contact';
 import NameHeader from 'components/Layout/Header/Name';
-import { SketchComponentAbsoluteBackground } from 'components/Visual/P5js';
-import backgroundSketch from 'components/Visual/P5js/projects/mainScreen/sketch3';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import { useToggleGlobalLanguage } from 'hooks/useLanguage';
 import React from 'react';
 import styled from 'styled-components';
 
 const AchivementBlock = styled.div`
+width: 100%;
+& > .achivement-ul {
+  width: 100%;
+@media (max-width: 700px) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: space-between;
+  div.achivement-li {
+    padding: 0 0.4em;
+  }
+  h1 {
+    flex: 1%;
+  }
+}
+}
   div.achivement-ul {
     font-size: 100%;
     list-style-type: none;
@@ -23,19 +37,30 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  flex: 1;
+  @media (max-width: 700px) {
+    flex: 100%;
+    flex-wrap: wrap;
+  }
+  .email {
+    font-size: 90%;
+  }
+  & > div:first-child > header:last-child {
+    & > * {
+      margin-top: 0.25em;
+    }
+    margin: 1em 0;
+  }
 `;
 
 const LeftCv = ({ data, withToggle = true }) => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
   return <Wrapper>
-    <SketchComponentAbsoluteBackground sketch={backgroundSketch} />
     <div>
-      <NameHeader style={{ fontSize: "170%" }} />
-      <OutboundLink className={"email"} href={"mailto:" + data.site.siteMetadata.authorInfo.email}>
-        {data.site.siteMetadata.authorInfo.email}
-      </OutboundLink>
+      <NameHeader style={{ fontSize: "100%" }} />
+      <Contact withCv={false} withIcons={false} style={{fontSize: "100%"}}/>
     </div>
-    {withToggle && <button onClick={() => toggleLanguage()}>En/Fr ({language})</button>}
+    {withToggle && <button onClick={() => toggleLanguage()}>{language == "fr" ? "Version Française" : "English Version"}</button>}
     <AchivementBlock>
       <h1>{data.site.siteMetadata.authorCv.languages.title[language]}</h1>
       <div className={"achivement-ul"}>{data.site.siteMetadata.authorCv.languages.list.map((languageObj, i) =>

@@ -10,18 +10,34 @@ width: 100%;
 display: flex;
 .recordDate {
   flex: 0;
-  min-width: 20%;
+  min-width: 0%;
+  margin: 0;
+  writing-mode: vertical-rl;
+  margin-bottom: 1em;
+text-orientation: mixed;
 }
 .recordMain {
   flex-grow: 1;
+  & > div:first-child {
+    font-weight: 500;
+  }
   aside {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
   }
+}
+.recordDescription {
+  margin-top: 0;
+  font-style: italic;
 }
 `;
 const Wrapper = styled.div`
+flex: 3;
+`;
+const Content = styled.div`
+max-width: 40rem;
+margin: auto;
 & > p {
   margin-top: 0;
 }
@@ -36,6 +52,7 @@ text-align: left !important;
 const RightCv = ({ data }) => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
   return <Wrapper>
+    <Content>
     <p>{data.site.siteMetadata.authorCv.shortBio[language]}</p>
     {data.site.siteMetadata.authorCv.records.map((recordCategory, i) =>
       <div key={i}>
@@ -59,6 +76,7 @@ const RightCv = ({ data }) => {
         )}
       </div>
     )}
+    </Content>
   </Wrapper>
 }
 

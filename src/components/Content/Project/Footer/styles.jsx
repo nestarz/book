@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+max-width: 40rem;
+margin: auto;
   text-align: left;
   width: 100%;
-  padding: 1em;
-  margin-top: 1em;
+  padding: 0 1em;
+  margin-top: 0em;
   h1, h2, h3, h4 {
     margin: 0;
   }
@@ -75,7 +77,7 @@ margin: 0;
 }
 &>div:first-child {
   font-size: 100%;
-  margin: 0.5rem;
+  margin-right: 1rem;
   position: relative;
 }
 &>div:last-child {

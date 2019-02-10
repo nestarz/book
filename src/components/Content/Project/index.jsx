@@ -28,6 +28,12 @@ const ContentWrapper = styled.div`
 flex: 50%;
 max-height: 100vh;
 overflow-y: scroll;
+& > *:first-child {
+  margin-top: 1em;
+}
+& > *:last-child {
+  margin-bottom: 1em;
+}
 `;
 export const Project = ({ excerpt, birthtime, birthtimeTimeStamp, mtime, frontmatter, tableOfContents, body }) => {
   return (
@@ -47,11 +53,11 @@ export const Project = ({ excerpt, birthtime, birthtimeTimeStamp, mtime, frontma
         }
       </HeadWrapper>
       <ContentWrapper>
-        <Body body={body} />
-        <Footer frontmatter={frontmatter}
+      <Footer frontmatter={frontmatter}
           birthtime={birthtime}
           birthtimeTimeStamp={birthtimeTimeStamp}
           mtime={mtime} />
+        <Body body={body} />
       </ContentWrapper>
     </Wrapper>
   )

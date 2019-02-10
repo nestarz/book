@@ -5,7 +5,6 @@ import PrintHeader from 'components/Layout/Header/Print'
 
 const Index = ({location}) => {
   return <Layout pathname={location.pathname}>
-    <PrintHeader />
     <Cv withToggle={false} />
   </Layout>
 };

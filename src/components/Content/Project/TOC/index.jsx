@@ -23,10 +23,9 @@ const TOC = ({ tableOfContents }) => <Wrapper>
   /> */}
   <Content>
     <ol>
-      <li>
         {tableOfContents.items.map((heading, index) => {
           return (
-            <React.Fragment key={index}>
+            <li key={index}>
               <h3 key={`h3-${index}`}>
                 <a href={heading.url}>{heading.title}</a>
               </h3>
@@ -41,10 +40,9 @@ const TOC = ({ tableOfContents }) => <Wrapper>
                   );
                 })}
               </ul>
-            </React.Fragment>
+            </li>
           );
         })}
-      </li>
     </ol>
   </Content>
 </Wrapper>

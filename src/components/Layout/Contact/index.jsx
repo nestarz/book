@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import React from 'react';
 import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { SocialMedia, Wrapper } from './styles';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 const Contact = ({ data, withIcons = true, withPhone = true, withEmail = true, withCv = true, ...props }) => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
@@ -42,13 +43,13 @@ const Contact = ({ data, withIcons = true, withPhone = true, withEmail = true, w
         </Link>}
       </SocialMedia>
       {splittedEmail &&
-        <div>
+        <OutboundLink className={"email"} href={"mailto:" + data.site.siteMetadata.authorInfo.email}>
           {splittedEmail[0].split('.').join('')}
           <span style={{ fontSize: "80%" }}>(@</span>
           {splittedEmail[1].split('.')[0]}
           <span style={{ fontSize: "80%" }}>)</span>
           .{splittedEmail[1].split('.')[1]}
-        </div>
+        </OutboundLink>
       }
       {formtattedPhone && <div>{formtattedPhone}</div>}
     </Wrapper>

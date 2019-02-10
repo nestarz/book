@@ -18,11 +18,9 @@ page-break-before: always;
 }
 & > div {
   & > h1 {
-    display: list-item;
-    list-style-type: decimal-leading-zero;
-    list-style-position: inside;
-  }
-  & > h1 {
+    &:not(:first-child) {
+      margin-top: 2em;
+    }
     display: block;
     page-break-before: always;
     display: list-item;
@@ -43,8 +41,8 @@ p {
   li:last-child {
   }
 }
-& > div ol,
-& > div ul {
+& > div > ol,
+& > div > ul {
   column-fill: balance;
   column-count: 2;
   @media (max-width: 700px) {
@@ -58,7 +56,7 @@ p {
   word-break: break-word;
   li {
     margin: 0;
-    margin-bottom: 1.0em;
+    margin-bottom: 0.4em;
     column-break-inside : avoid;
     & > p {
       margin: 0;
@@ -80,10 +78,41 @@ p {
 & > div ul {
   column-gap: 1em;
 }
+& > div ol {
+  padding: 0;
+  list-style-position: inside;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(6em, 1fr);
+  grid-gap: 0;
+  li {
+    margin: 0;
+  }
+  & > * {
+    border-bottom: 1px solid ${props => props.theme.colors.body_color};
+    padding: 1em;
+  }
+  & > *:last-child, & > *:nth-last-child(2):nth-child(odd) {
+    border-bottom: none;
+  }
+  & > *:nth-child(odd) {
+    border-right: 1px solid ${props => props.theme.colors.body_color};
+  }
+}
 img {
   margin: auto;
   display: table-cell;
   max-width: 100%;
+}
+
+counter-reset: compteFigcaption;
+figcaption,
+figcaption.gatsby-resp-image-figcaption {
+  &:before {
+    counter-increment: compteFigcaption 1;
+    content: counter(compteFigcaption) ". ";
+  }
+  font-style: italic;
 }
 
 .gatsby-resp-image-wrapper {
