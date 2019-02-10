@@ -8,7 +8,7 @@ import ProjectComponent from 'components/Content/Project'
 
 const Project = ({ data: { mdx: postNode, site: {siteMetadata: siteConfig} }, location  }) => {
   return (
-    <Layout pathname={location.pathname} customSEO>
+    <Layout pathname={location.pathname} withNav={true} customSEO>
       <Helmet pathname={location.pathname} title={`${postNode.frontmatter.title} | ${siteConfig.siteTitle}`} />
       <SEO pathname={location.pathname} postNode={postNode} article />
       <ProjectComponent

@@ -24,6 +24,17 @@ overflow-y: scroll;
 justify-content: space-between;
 padding: 1em;
 padding-right: 0;
+position: relative;
+&:hover:after {
+  content: '';
+  writing-mode: vertical-rl;
+  margin-bottom: 1em;
+  font-size: 38vmin;
+  text-orientation: mixed;
+  line-height: 30vmin;
+  position: absolute;
+  top: -0.1em;bottom:0;right:0;left:0;
+}
 `;
 const ContentWrapper = styled.div`
 flex: 50%;
