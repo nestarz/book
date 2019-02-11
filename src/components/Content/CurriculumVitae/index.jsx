@@ -1,11 +1,9 @@
-import React from 'react';
+import { graphql, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
+import React from 'react';
 import styled from 'styled-components';
-import { SketchComponentAbsoluteBackground } from 'components/Visual/P5js';
-import backgroundSketch from 'components/Visual/P5js/projects/mainScreen/sketch2';
-import Right from './RightSide'
-import Left from './LeftSide'
+import Left from './LeftSide';
+import Right from './RightSide';
 
 const Wrapper = styled.div`
   ${props => props.addCSS}

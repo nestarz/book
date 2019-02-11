@@ -3,12 +3,12 @@ import SEO from 'components/SEO';
 import { usePrint } from 'hooks/usePrint';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
+import { IoIosMoon, IoIosSunny } from 'react-icons/io';
+import { MdArrowBack, MdArrowForward, MdClose, MdMenu, MdPrint } from 'react-icons/md';
 import { useGlobal } from 'reactn';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { dark_theme, theme } from '../../../config/theme';
 import reset from '../../styles/reset';
-import { IoIosMoon, IoIosSunny } from 'react-icons/io';
-import { MdArrowForward, MdArrowBack, MdClose, MdPrint, MdMenu } from 'react-icons/md';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -110,9 +110,9 @@ const Layout = ({ children, pathname, customSEO, withNav = false }) => {
           {withNav &&
             <>
               <div>
-              <p onClick={() => window.history.back()}>
-                <MdMenu />
-              </p>
+                <p onClick={() => window.history.back()}>
+                  <MdMenu />
+                </p>
                 <p onClick={() => window.history.back()}><MdClose /></p>
                 <p onClick={() => window.history.back()}><MdArrowBack /></p>
                 <p onClick={() => window.history.forward()}><MdArrowForward /></p>

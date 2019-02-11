@@ -5,10 +5,10 @@ import { Experiment, Face1, Face2, Face3, Face4, Text } from './styles';
 const Fausse3d = ({ data }) => {
   return (
     <Experiment>
-      <Face1 bg={data.allFile.edges[2].node.childImageSharp.fixed.src}/>
-      <Face4 bg={data.allFile.edges[2].node.childImageSharp.fixed.src}/>
-      <Face3 bg={data.allFile.edges[3].node.childImageSharp.fixed.src}/>
-      <Face2 bg={data.allFile.edges[2].node.childImageSharp.fixed.src}/>
+      <Face1 bg={data.allFile.edges[2].node.childImageSharp.fixed.src} />
+      <Face4 bg={data.allFile.edges[2].node.childImageSharp.fixed.src} />
+      <Face3 bg={data.allFile.edges[3].node.childImageSharp.fixed.src} />
+      <Face2 bg={data.allFile.edges[2].node.childImageSharp.fixed.src} />
       <Text>fausse 3d</Text>
     </Experiment>
   )

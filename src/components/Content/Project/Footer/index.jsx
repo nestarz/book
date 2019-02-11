@@ -1,7 +1,7 @@
 import React from 'react';
-import { Frontmatter, ImageWrapper, InfoBlock, Wrapper } from './styles';
+import { Frontmatter, InfoBlock, Wrapper } from './styles';
 
-const Header = ({ birthtime, birthtimeTimeStamp, mtime, frontmatter, excerpt }) => {
+const Header = ({ birthtime, frontmatter }) => {
   return <Wrapper>
     <Frontmatter>
       <>

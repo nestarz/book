@@ -6,7 +6,6 @@ import MindmapPage from 'components/Experiments/Portfolio/Mindmap';
 import NetartPage from 'components/Experiments/Portfolio/Netart';
 import RenderPage from 'components/Experiments/Portfolio/Render';
 import Layout from "components/Layout";
-import PrintHeader from 'components/Layout/Header/Print';
 import Pagination from 'components/Pagination';
 import Clock from 'external/react-live-clock/src/Component';
 import PropTypes from "prop-types";
@@ -109,22 +108,22 @@ const Index = ({ location }) => {
       <GlobalStyle />
       <PageA3_Paysage />
       <Header>
-          <Clock
-            format={'ss:SS'}
-            ticking={true}
-            timezone={'Europe/Paris'}
-            interval={10}
-            filter={(x) => convertToTesserae(x, "0123456789")}
-          />
-          <span>Portfolio</span>
-          <button onClick={() => setContinuousScroll(!continuousScroll)}>Scrolling {continuousScroll ? "ON" : "OFF"}</button>
-        </Header>
+        <Clock
+          format={'ss:SS'}
+          ticking={true}
+          timezone={'Europe/Paris'}
+          interval={10}
+          filter={(x) => convertToTesserae(x, "0123456789")}
+        />
+        <span>Portfolio</span>
+        <button onClick={() => setContinuousScroll(!continuousScroll)}>Scrolling {continuousScroll ? "ON" : "OFF"}</button>
+      </Header>
       <PaginationWrapper>
         <Pagination
           amountPerPage={continuousScroll ? 7 : 1}
           keysGoPrevious={'left-arrow'}
           keysGoNext={'right-arrow'}
-          >
+        >
           <HelloPage />
           <ApiWorld />
           <NetartPage />

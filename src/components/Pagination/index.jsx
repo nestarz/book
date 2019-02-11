@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useKeyPress } from "react-use";
 
 const nextPage = (curr, max) => {
@@ -10,10 +10,10 @@ const prevPage = (curr, max) => {
 }
 
 const Pagination = ({ children,
-                   amountPerPage, defaultCurrentPage = 1,
-                   className, pageNumbersClassName,
-                   keysGoPrevious,
-                   keysGoNext }) => {
+  amountPerPage, defaultCurrentPage = 1,
+  className, pageNumbersClassName,
+  keysGoPrevious,
+  keysGoNext }) => {
   const [todos, setTodos] = useState(children);
   const [currentPage, setCurrentPage] = useState(defaultCurrentPage);
 
@@ -39,7 +39,7 @@ const Pagination = ({ children,
 
   const renderTodos = currentTodos.map((todo, index) => (
     <li key={index} >{todo}</li>)
-    );
+  );
 
   // Logic for displaying page numbers
   const pageNumbers = [];
@@ -48,19 +48,19 @@ const Pagination = ({ children,
   }
 
   const renderPageNumbers = pageNumbers.map(number => (
-      <li
-        key={number}
-        id={number}
-        onClick={handleClick}
-        className={number == currentPage ? "active" : ""}
-      >
-        {number}
-      </li>
-    ));
+    <li
+      key={number}
+      id={number}
+      onClick={handleClick}
+      className={number == currentPage ? "active" : ""}
+    >
+      {number}
+    </li>
+  ));
 
   return (
     <>
-      <ul className={`pagination-content ${className}`} style={{width: "100%"}}>
+      <ul className={`pagination-content ${className}`} style={{ width: "100%" }}>
         {renderTodos}
       </ul>
       <ul className={"page-numbers"}>

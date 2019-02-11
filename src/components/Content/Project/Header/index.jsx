@@ -1,11 +1,10 @@
-import React from 'react';
-import { ImageWrapper, InfoBlock, Wrapper, Frontmatter } from './styles'
-import TimeAgo from 'react-timeago'
-import frenchStrings from 'react-timeago/lib/language-strings/fr'
-import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
-import styled from 'styled-components';
-import PrintHeader from 'components/Layout/Header/Print'
+import PrintHeader from 'components/Layout/Header/Print';
 import Typed from 'components/Visual/Typed.js';
+import React from 'react';
+import buildFormatter from 'react-timeago/lib/formatters/buildFormatter';
+import frenchStrings from 'react-timeago/lib/language-strings/fr';
+import styled from 'styled-components';
+import { Frontmatter, Wrapper } from './styles';
 
 const StyledPrintHeader = styled(PrintHeader)`
 @media (max-width: 600px) {

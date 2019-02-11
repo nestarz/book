@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import styled, { withTheme } from 'styled-components';
-import Waveform from "react-audio-waveform"
+import { useInterval } from 'hooks/useInterval';
+import React, { useEffect, useState } from 'react';
+import Waveform from "react-audio-waveform";
+import { IoIosPause, IoIosPlay, IoIosVolumeHigh, IoIosVolumeMute } from 'react-icons/io';
 import useAudio from 'react-use/lib/useAudio';
 import useToggle from 'react-use/lib/useToggle';
-import { useInterval } from 'hooks/useInterval';
-import { IoIosPlay, IoIosPause, IoIosVolumeHigh, IoIosVolumeMute } from 'react-icons/io';
+import styled, { withTheme } from 'styled-components';
 
 const StyledButton = styled.button`
 all: unset;

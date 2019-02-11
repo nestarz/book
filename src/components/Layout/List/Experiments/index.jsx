@@ -1,7 +1,7 @@
+import ListTemplate from 'components/Layout/List/Template';
 import { graphql, StaticQuery } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
-import ListTemplate from 'components/Layout/List/Template';
 
 const ExperimentList = ({ data, ...props }) => {
   const titleLocale = { "fr": "Dernières Expériences", "en": "Latest Experiments" }

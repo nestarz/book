@@ -58,9 +58,11 @@ const mindmap = {
 
 const ApiWorld = ({ data }) => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
-  useEffect(() => {setTimeout(() => {
-    window.dispatchEvent(new Event('resize'))
-  }, 200)}, [])
+  useEffect(() => {
+    setTimeout(() => {
+      window.dispatchEvent(new Event('resize'))
+    }, 200)
+  }, [])
   return (
     <LocalWrapper>
       <PageA3_Paysage />

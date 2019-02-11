@@ -1,11 +1,11 @@
 import { graphql, Link, StaticQuery } from "gatsby";
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import { useToggleGlobalLanguage } from 'hooks/useLanguage';
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
 import PropTypes from "prop-types";
 import React from 'react';
 import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { SocialMedia, Wrapper } from './styles';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 const Contact = ({ data, withIcons = true, withPhone = true, withEmail = true, withCv = true, ...props }) => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()

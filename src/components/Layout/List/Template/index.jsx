@@ -1,10 +1,10 @@
 import { Link } from "gatsby";
 import Img from 'gatsby-image';
-import { useGlobal } from 'reactn';
+import useHover from 'hooks/useHover';
 import { useToggleGlobalLanguage } from 'hooks/useLanguage';
 import React, { useEffect, useState } from "react";
 import { animated, useTrail } from 'react-spring';
-import useHover from 'hooks/useHover';
+import { useGlobal } from 'reactn';
 
 const config = { mass: 5, tension: 2000, friction: 200 }
 const ListTemplate = ({ edges, titleLocale, fullView, className }) => {
@@ -20,25 +20,25 @@ const ListTemplate = ({ edges, titleLocale, fullView, className }) => {
     onRest: () => setRest(true)
   })
   return <>
-    <div className={"category"} style={{visibility: rest ? "visible" : "hidden"}}>
+    <div className={"category"} style={{ visibility: rest ? "visible" : "hidden" }}>
       {titleLocale[language]}
     </div>
     <ul className={`list-items ${className}`}>
       {trail.map(({ x, height, ...rest }, index) => {
-          const [hoverRef, isHovered] = useHover();
-          const [globalImageFocus, setGlobalImageFocus] = useGlobal('globalImageFocus');
-          useEffect(() => {
-            if(isHovered && edges[index].node.frontmatter.cover) {
-              setGlobalImageFocus({
-                image: edges[index].node.frontmatter.cover.childImageSharp.fluid,
-                text: edges[index].node.excerpt,
-                title: edges[index].node.frontmatter.title,
-                birthtime: edges[index].node.parent.birthtime,
-              })
-            } else {
-              //setGlobalImageFocus(null)
-            }
-          }, [isHovered])
+        const [hoverRef, isHovered] = useHover();
+        const [globalImageFocus, setGlobalImageFocus] = useGlobal('globalImageFocus');
+        useEffect(() => {
+          if (isHovered && edges[index].node.frontmatter.cover) {
+            setGlobalImageFocus({
+              image: edges[index].node.frontmatter.cover.childImageSharp.fluid,
+              text: edges[index].node.excerpt,
+              title: edges[index].node.frontmatter.title,
+              birthtime: edges[index].node.parent.birthtime,
+            })
+          } else {
+            //setGlobalImageFocus(null)
+          }
+        }, [isHovered])
         return <animated.li
           key={index}
           className="trails-text"

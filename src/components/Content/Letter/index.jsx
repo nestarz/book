@@ -1,5 +1,3 @@
-import Layout from 'components/Layout';
-import PrintHeader from 'components/Layout/Header/Print';
 import { SketchComponentAbsoluteBackground } from 'components/Visual/P5js';
 import backgroundSketch from 'components/Visual/P5js/projects/mainScreen/sketch4';
 import React from 'react';
@@ -13,11 +11,11 @@ export const Letter = ({ frontmatter, body }) => {
     <Body body={body} />
   </div>
   return (
-      <Wrapper>
-          {content}
-          <SketchComponentAbsoluteBackground sketch={backgroundSketch} />
-          {content}
-        </Wrapper>
+    <Wrapper>
+      {content}
+      <SketchComponentAbsoluteBackground sketch={backgroundSketch} />
+      {content}
+    </Wrapper>
   )
 }
 

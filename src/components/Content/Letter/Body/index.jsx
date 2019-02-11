@@ -1,7 +1,7 @@
-import React from 'react'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
-import styled from 'styled-components'
-import { animated, useSpring, config } from 'react-spring'
+import MDXRenderer from 'gatsby-mdx/mdx-renderer';
+import React from 'react';
+import { animated, config, useSpring } from 'react-spring';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
 `;
@@ -12,10 +12,10 @@ const Body = ({ body }) => {
     from: { opacity: 0 },
     opacity: 1
   })
-return <Wrapper>
-      <animated.div style={props}>
-        <MDXRenderer>{body}</MDXRenderer>
-      </animated.div>
-</Wrapper>
+  return <Wrapper>
+    <animated.div style={props}>
+      <MDXRenderer>{body}</MDXRenderer>
+    </animated.div>
+  </Wrapper>
 }
 export default Body;

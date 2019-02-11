@@ -1,10 +1,10 @@
+import Typing from 'external/react-typing-animation/src/Typing';
 import React from 'react';
 import styled from 'styled-components';
 import Body from './Body';
 import Footer from './Footer';
 import Header from './Header';
 import TOC from './TOC';
-import Typing from 'external/react-typing-animation/src/Typing';
 
 const Wrapper = styled.div`
 display: flex;
@@ -62,13 +62,13 @@ export const Project = ({ excerpt, birthtime, birthtimeTimeStamp, mtime, frontma
         <path id="myTextPath" d="M 64,0 A 64,64 0 0 1 -64,0 A 64,64 0 0 1 64,0" transform="translate(100,100)" fill="none" stroke="transparent" stroke-width="25" />
         <text stroke-width="0">
           <textPath xlinkHref="#myTextPath">
-          <tspan dy="5">
-            <Typing
-              loop
-              speed={100}
-              cursorElement={'tspan'}>
-              Data visualisation, Design objet, Céramique <Typing.Cursor />
-            </Typing>
+            <tspan dy="5">
+              <Typing
+                loop
+                speed={100}
+                cursorElement={'tspan'}>
+                Data visualisation, Design objet, Céramique <Typing.Cursor />
+              </Typing>
             </tspan>
           </textPath>
         </text>

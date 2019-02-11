@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { useToggleGlobalLanguage } from 'hooks/useLanguage';
 import VisitCard from 'components/Content/VisitCard';
 import Layout from 'components/Layout';
-import PrintHeader from 'components/Layout/Header/Print'
-import styled from 'styled-components';
+import { useToggleGlobalLanguage } from 'hooks/useLanguage';
 import _ from 'lodash';
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
     @media not print{
@@ -28,7 +27,7 @@ const Wrapper = styled.div`
 function Index({ location }) {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
   const [cnt, setCount] = useState(0);
-  const local = {"fr": "Changer la version", "en": "Change version"}
+  const local = { "fr": "Changer la version", "en": "Change version" }
   return <Layout pathname={location.pathname} withNav={true}>
     <Wrapper>
       {_.times(3, i => <VisitCard key={i} sketchIndex={cnt} />)}

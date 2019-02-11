@@ -1,8 +1,8 @@
-import React from 'react';
-import { graphql, StaticQuery } from 'gatsby'
-import QRCode from 'qrcode.react';
 import { SketchComponentAbsoluteBackground } from 'components/Visual/P5js';
-import { Wrapper } from '../styles'
+import { graphql, StaticQuery } from 'gatsby';
+import QRCode from 'qrcode.react';
+import React from 'react';
+import { Wrapper } from '../styles';
 
 const Recto = ({ data, bgSketch }) => {
   const siteUrl = data.site.siteMetadata.siteConfig.siteUrl;

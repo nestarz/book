@@ -1,9 +1,9 @@
 import Contact from 'components/Layout/Contact';
 import NameHeader from 'components/Layout/Header/Name';
 import { useToggleGlobalLanguage } from 'hooks/useLanguage';
+import QRCode from 'qrcode.react';
 import React from 'react';
 import styled, { withTheme } from 'styled-components';
-import QRCode from 'qrcode.react';
 
 const QRCodeWrapper = styled.div`
 flex: 1;
@@ -74,7 +74,7 @@ const LeftCv = ({ data, withToggle = true, ...props }) => {
   return <Wrapper>
     <div>
       <NameHeader style={{ fontSize: "100%" }} />
-      <Contact withCv={false} withIcons={false} style={{fontSize: "100%"}}/>
+      <Contact withCv={false} withIcons={false} style={{ fontSize: "100%" }} />
     </div>
     {withToggle && <button onClick={() => toggleLanguage()}>{language == "fr" ? "Version Française" : "English Version"}</button>}
     <AchivementBlock>
@@ -95,14 +95,14 @@ const LeftCv = ({ data, withToggle = true, ...props }) => {
       )}</div>
     </AchivementBlock>
     <QRCodeWrapper>
-        <QRCode value={siteUrl}
-          size={59}
-          bgColor={props.theme.colors.bg_color}
-          fgColor={props.theme.colors.body_color}
-          level={"H"}
-          includeMargin={true}
-          renderAs={"svg"} />
-        </QRCodeWrapper>
+      <QRCode value={siteUrl}
+        size={59}
+        bgColor={props.theme.colors.bg_color}
+        fgColor={props.theme.colors.body_color}
+        level={"H"}
+        includeMargin={true}
+        renderAs={"svg"} />
+    </QRCodeWrapper>
   </Wrapper>
 }
 

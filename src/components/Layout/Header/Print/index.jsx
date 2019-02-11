@@ -1,7 +1,7 @@
+import SpringPosition from 'components/Layout/SpringPosition';
 import { useToggleGlobalLanguage } from 'hooks/useLanguage';
 import React from 'react';
 import { Wrapper } from './styles';
-import SpringPosition from 'components/Layout/SpringPosition';
 
 const Nav = (props, context) => {
   const { children, withToggleLanguage = true } = props;

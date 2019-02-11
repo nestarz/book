@@ -2,13 +2,13 @@ import SuzanneTracksYou from "components/Experiments/TrackingExperiences/Suzanne
 import { useWebcam } from 'components/Visual/Webcam';
 import { useToggleGlobalLanguage } from 'hooks/useLanguage';
 import React, { useState } from 'react';
+import { GoMute, GoUnmute } from 'react-icons/go';
 import { useVideo } from 'react-use';
 import styled from "styled-components";
 import { randomTesseraeString } from 'styles/fonts';
 import { PageA3_Paysage } from 'styles/print';
 import PortfolioWrapper from '../';
 import { Info } from '../styles';
-import { GoUnmute, GoMute } from 'react-icons/go';
 
 const LocalWrapper = styled(PortfolioWrapper)`
 `;
@@ -72,15 +72,15 @@ const render = {
 const Index = () => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
   const camraw = useWebcam();
-  const videoraw  = useVideo(
-      <video width={"100%"} height={"100%"} autoPlay loop muted>
-          <source src="/assets/videos/output3.mp4"
-              type="video/mp4" />
-      </video>
+  const videoraw = useVideo(
+    <video width={"100%"} height={"100%"} autoPlay loop muted>
+      <source src="/assets/videos/output3.mp4"
+        type="video/mp4" />
+    </video>
   );
   const sourceKeys = ["elt", "state", "controls", "ref"]
-  let video = sourceKeys.reduce((obj, k, i) => ({...obj, [k]: videoraw[i] }), {})
-  let cam = sourceKeys.reduce((obj, k, i) => ({...obj, [k]: camraw[i] }), {})
+  let video = sourceKeys.reduce((obj, k, i) => ({ ...obj, [k]: videoraw[i] }), {})
+  let cam = sourceKeys.reduce((obj, k, i) => ({ ...obj, [k]: camraw[i] }), {})
   const sources = [video, cam]
   const [indexSource, setIndexSource] = useState(0)
   const [mute, setMute] = useState(true);
@@ -98,8 +98,8 @@ const Index = () => {
           {currSource.elt}
         </MediaBackground>
         <span>
-          <div onClick={() => setIndexSource(i => (i+1) % sources.length)}>Next Source</div>
-          <div onClick={() => setMute(!mute)}>{mute ? <GoMute/> : <GoUnmute/>}</div>
+          <div onClick={() => setIndexSource(i => (i + 1) % sources.length)}>Next Source</div>
+          <div onClick={() => setMute(!mute)}>{mute ? <GoMute /> : <GoUnmute />}</div>
         </span>
       </SceneContainer>
       <CustomInfo>

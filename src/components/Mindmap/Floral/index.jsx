@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
+import Graph from 'react-graph-vis';
 import useWindowSize from 'react-use/lib/useWindowSize';
 import styled from 'styled-components';
-import Graph from 'react-graph-vis';
-import { graph, options, events } from "./graph";
+import { events, graph, options } from "./graph";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 const Index = ({ style, className }) => {
   const [network, setNetwork] = useState(null);
   const windowSize = useWindowSize();
-  useEffect(() => { if (network) {network.fit(); network.redraw();} }, [windowSize]);
+  useEffect(() => { if (network) { network.fit(); network.redraw(); } }, [windowSize]);
   return <Wrapper style={style} className={className}>
     <Graph
       graph={graph}

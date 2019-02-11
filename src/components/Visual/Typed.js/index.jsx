@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useState } from "react";
-import styled from 'styled-components'
+import React, { useEffect, useRef, useState } from "react";
+import styled from 'styled-components';
 import Typed from 'typed.js';
 
 const TypedWrapper = styled.span`
@@ -31,23 +31,22 @@ const ReactTyped = ({ className, style, ...options }) => {
   useEffect(() => {
     setTyped(new Typed(spanRef.current, options))
     return function cleanup() {
-      if(typed) typed.destroy();
+      if (typed) typed.destroy();
     }
   }, [])
   useEffect(() => {
-    if(typed &&
+    if (typed &&
       typed.strings.join &&
       options.strings.join &&
-      (typed.strings.join() != options.strings.join()))
-    {
+      (typed.strings.join() != options.strings.join())) {
       typed.strings = options.strings;
       typed.reset();
     }
   }, [options.strings])
   return <TypedWrapper
-      ref={spanRef}
-      className={className}
-      style={style}
+    ref={spanRef}
+    className={className}
+    style={style}
   />
 }
 

@@ -1,7 +1,7 @@
 import * as faceapi from 'face-api.js';
 import { useFaceApiDetection, useFaceApiOverlay } from 'hooks/faceapi.js';
 import React, { useRef } from 'react';
-import { StyledEmotionalFace, StyledScene, Canvas } from './styles';
+import { Canvas, StyledEmotionalFace, StyledScene } from './styles';
 
 const faceApiConfig = {
   models: [

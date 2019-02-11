@@ -1,28 +1,28 @@
-import React, { useState, useEffect } from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { graphql, StaticQuery } from "gatsby";
 import Img from 'gatsby-image';
+import React, { useEffect, useState } from "react";
 
 const formatImagesNames = (images) => {
-    var imageDict = {};
-    images.map((edge, i) => {
-        imageDict[edge.node.name.split("_")[1]] = edge.node
-    })
-    return imageDict
+  var imageDict = {};
+  images.map((edge, i) => {
+    imageDict[edge.node.name.split("_")[1]] = edge.node
+  })
+  return imageDict
 }
-const getMax = (obj) => obj.reduce((obj1,obj2) => obj1.probability > obj2.probability ? obj1 : obj2)
+const getMax = (obj) => obj.reduce((obj1, obj2) => obj1.probability > obj2.probability ? obj1 : obj2)
 const Header = ({ data, className, expressions }) => {
-    const images = data.allFile.edges;
-    const [bestEmotion, setBestEmotion] = useState(null);
-    const imagesSrcDict = formatImagesNames(images);
-    useEffect(() => {if(expressions) setBestEmotion(getMax(expressions))}, [expressions]);
-    return <div className={className}><Img fluid={
-        (imagesSrcDict && bestEmotion && bestEmotion.expression) ? imagesSrcDict[bestEmotion.expression].childImageSharp.fluid : imagesSrcDict["neutral"].childImageSharp.fluid
-    }/></div>
+  const images = data.allFile.edges;
+  const [bestEmotion, setBestEmotion] = useState(null);
+  const imagesSrcDict = formatImagesNames(images);
+  useEffect(() => { if (expressions) setBestEmotion(getMax(expressions)) }, [expressions]);
+  return <div className={className}><Img fluid={
+    (imagesSrcDict && bestEmotion && bestEmotion.expression) ? imagesSrcDict[bestEmotion.expression].childImageSharp.fluid : imagesSrcDict["neutral"].childImageSharp.fluid
+  } /></div>
 }
 
 export default props => (
-    <StaticQuery
-        query={graphql`
+  <StaticQuery
+    query={graphql`
         query AssetsPhotos {
             allFile(filter: {extension: {eq: "png"}, relativeDirectory: {eq: "img"}}) {
             edges {
@@ -42,6 +42,6 @@ export default props => (
             }
         }
     `}
-        render={data => <Header data={data} {...props} />}
-    />
+    render={data => <Header data={data} {...props} />}
+  />
 )

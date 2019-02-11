@@ -4,7 +4,7 @@ import Fausse3d from "components/Experiments/Fausse3d"
 
 const Index = ({ data }) => {
   return (
-      <Fausse3d />
+    <Fausse3d />
   )
 }
 

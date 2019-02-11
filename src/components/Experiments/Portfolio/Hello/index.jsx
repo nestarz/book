@@ -93,18 +93,18 @@ const LocalWrapper = styled(PortfolioWrapper)`
 
 const Index = () => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
-    const randomChars = () => Array.from({length: 40}, () => Math.random()).join(' ');
-    const xGlyphs = convertToTesserae(randomChars(), "0123456789.");
-    const yGlyphs = convertToTesserae(randomChars(), "0123456789.");
-    return (
-        <LocalWrapper content={`${xGlyphs} ${yGlyphs}`}>
-            <PageA3_Paysage />
-            <StyledVisitCard mode={Math.floor(Math.random() * 4)} />
-            <VideoHolder>
-                <Webcam width={"100%"} />
-            </VideoHolder>
-        </LocalWrapper>
-    )
+  const randomChars = () => Array.from({ length: 40 }, () => Math.random()).join(' ');
+  const xGlyphs = convertToTesserae(randomChars(), "0123456789.");
+  const yGlyphs = convertToTesserae(randomChars(), "0123456789.");
+  return (
+    <LocalWrapper content={`${xGlyphs} ${yGlyphs}`}>
+      <PageA3_Paysage />
+      <StyledVisitCard mode={Math.floor(Math.random() * 4)} />
+      <VideoHolder>
+        <Webcam width={"100%"} />
+      </VideoHolder>
+    </LocalWrapper>
+  )
 };
 
 export default Index;

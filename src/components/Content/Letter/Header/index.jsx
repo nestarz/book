@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import { animated, useSpring, config } from 'react-spring'
+import React from 'react';
+import { animated, config, useSpring } from 'react-spring';
+import styled from 'styled-components';
 
 const InformationWrapper = styled(animated.div)`
   display: flex;

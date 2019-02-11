@@ -1,9 +1,9 @@
+import Typed from 'components/Visual/Typed.js';
 import { graphql, Link, StaticQuery } from "gatsby";
 import { useToggleGlobalLanguage } from 'hooks/useLanguage';
 import PropTypes from "prop-types";
 import React from "react";
 import { Name, Wrapper } from './styles';
-import Typed from 'components/Visual/Typed.js';
 
 const Header = ({ data, className, withDesc, ...props }) => {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
@@ -17,8 +17,8 @@ const Header = ({ data, className, withDesc, ...props }) => {
     ...(withDesc ? [
       `${iam} ${siteConfig.siteTitle}` + `, <span class="desc">${description}</span>`
     ] : [
-      `${iam} ${siteConfig.siteTitle}` + `, <span class="desc">${authorInfo}</span>`,
-    ])
+        `${iam} ${siteConfig.siteTitle}` + `, <span class="desc">${authorInfo}</span>`,
+      ])
   ];
   return (
     <Wrapper data-testid="navigation" className={className} {...props}>
