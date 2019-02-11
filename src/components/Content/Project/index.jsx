@@ -4,6 +4,7 @@ import Body from './Body';
 import Footer from './Footer';
 import Header from './Header';
 import TOC from './TOC';
+import Typing from 'external/react-typing-animation/src/Typing';
 
 const Wrapper = styled.div`
 display: flex;
@@ -13,6 +14,13 @@ flex-wrap: wrap;
 }
 h1, h2, h3, h4, h5, p {
   font-size: 100%;
+}
+svg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  stroke: #000000;
+  fill: ${props => props.theme.colors.body_color};
 }
 `;
 const HeadWrapper = styled.div`
@@ -50,6 +58,21 @@ overflow-y: scroll;
 export const Project = ({ excerpt, birthtime, birthtimeTimeStamp, mtime, frontmatter, tableOfContents, body }) => {
   return (
     <Wrapper>
+      <svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px">
+        <path id="myTextPath" d="M 64,0 A 64,64 0 0 1 -64,0 A 64,64 0 0 1 64,0" transform="translate(100,100)" fill="none" stroke="transparent" stroke-width="25" />
+        <text stroke-width="0">
+          <textPath xlinkHref="#myTextPath">
+          <tspan dy="5">
+            <Typing
+              loop
+              speed={100}
+              cursorElement={'tspan'}>
+              Data visualisation, Design objet, Céramique <Typing.Cursor />
+            </Typing>
+            </tspan>
+          </textPath>
+        </text>
+      </svg>
       <HeadWrapper>
         <Header
           frontmatter={frontmatter}
@@ -65,7 +88,7 @@ export const Project = ({ excerpt, birthtime, birthtimeTimeStamp, mtime, frontma
         }
       </HeadWrapper>
       <ContentWrapper>
-      <Footer frontmatter={frontmatter}
+        <Footer frontmatter={frontmatter}
           birthtime={birthtime}
           birthtimeTimeStamp={birthtimeTimeStamp}
           mtime={mtime} />

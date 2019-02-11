@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useShortcutEffect } from 'use-shortcut';
+import { useKeyPress } from "react-use";
 
 const nextPage = (curr, max) => {
   return curr < max ? curr + 1 : 1
@@ -18,17 +18,19 @@ const Pagination = ({ children,
   const [currentPage, setCurrentPage] = useState(defaultCurrentPage);
 
   // Controls Events
+  const hasPressedPrevious = useKeyPress(keysGoPrevious);
+  const hasPressedNext = useKeyPress(keysGoNext);
   const handleClick = (e) => setCurrentPage(Number(e.target.id));
-  useShortcutEffect(() => {
+  useEffect(() => {
     const maxPage = Math.ceil(todos.length / amountPerPage);
     const prevIndex = prevPage(currentPage, maxPage);
     setCurrentPage(prevIndex);
-  }, keysGoPrevious)
-  useShortcutEffect(() => {
+  }, [hasPressedPrevious])
+  useEffect(() => {
     const maxPage = Math.ceil(todos.length / amountPerPage);
     const nextIndex = nextPage(currentPage, maxPage);
     setCurrentPage(nextIndex);
-  }, keysGoNext);
+  }, [hasPressedNext]);
 
   // Logic for displaying todos
   const indexOfLastTodo = currentPage * amountPerPage;

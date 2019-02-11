@@ -45,7 +45,6 @@ export const Name = styled.div`
   justify-content: flex-start;
   letter-spacing: calc(-23 / 1000 * 1em);
   a {
-    font-size: 100%;
     line-height: normal;
     font-weight: 500;
     color: ${props => props.theme.brand.primary};

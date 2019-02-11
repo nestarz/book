@@ -1,5 +1,5 @@
 import React from 'react';
-import {ImageWrapper, InfoBlock, Wrapper, Frontmatter } from './styles'
+import { ImageWrapper, InfoBlock, Wrapper, Frontmatter } from './styles'
 import TimeAgo from 'react-timeago'
 import frenchStrings from 'react-timeago/lib/language-strings/fr'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
@@ -26,13 +26,13 @@ const Header = ({ birthtime, birthtimeTimeStamp, mtime, frontmatter, excerpt }) 
   ];
   return <Wrapper>
     <Frontmatter>
-    <h1>
-    <Typed
-      strings={strings}
-      typeSpeed={10}
-      showCursor={true}
-      smartBackspace={true}
-      /></h1>
+      <h1>
+        <Typed
+          strings={strings}
+          typeSpeed={10}
+          showCursor={true}
+          smartBackspace={true}
+        /></h1>
       {/* <ImageWrapper>
       <InfoBlock>
       <div>{birthtime}</div>

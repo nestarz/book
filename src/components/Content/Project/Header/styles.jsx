@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   font-size: 100%;
   h1, h2, h3, h4 {
     margin: 0;
+
   }
   h1 {
     color: ${props => props.theme.brand.primary};
@@ -53,6 +54,9 @@ export const Frontmatter = styled.section`
   flex-wrap: wrap;
   &>div {
     padding: 0vw 1vw;
+  }
+  @media (min-width: 700px) {
+    font-size: 200%;
   }
 `;
 

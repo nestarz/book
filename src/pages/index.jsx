@@ -4,11 +4,9 @@ import Header from 'components/Layout/Header/Name';
 import DigestList from 'components/Layout/List/Billets';
 import ExperimentList from 'components/Layout/List/Experiments';
 import ProjectList from 'components/Layout/List/Projects';
-import Typed from 'components/Visual/Typed.js';
 import { graphql, StaticQuery } from "gatsby";
 import Img from 'gatsby-image';
 import { useToggleGlobalLanguage } from 'hooks/useLanguage';
-import { transparentize } from 'polished';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useToggle } from "react-use";
@@ -47,13 +45,16 @@ const Main = styled.div`
 const HeaderWrapper = styled.header`
   display: flex;
   flex-direction: column;
+  @media (min-width: ${props => props.theme.breakpoints.s}) {
+    font-size: 200%;
+  }
 `;
 
 const Focus = styled.footer`
   position: fixed;
   height: 50vmin;
   width: 50vmin;
-  top:25%;right:0;left:10%;bottom:0;
+  top:30%;right:0;left:20%;bottom:0;
   display: flex;
   flex: 1;
   z-index:-1;
@@ -127,9 +128,13 @@ const Nav = styled.div`
   padding: 1em;
   @media (max-width: 1000px) {
     padding: 0 1em;
+    margin-top: 1em;
   }
-  max-height: 100vh;
-  overflow: auto;
+  @media (min-width: 1000px) {
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
   button {
     text-decoration: underline;
     font-size: 120%;
@@ -165,7 +170,6 @@ const Nav = styled.div`
         word-spacing: 1em;
         @media (max-width: 1000px) {
           text-align: right;
-          content: counter(list, decimal-leading-zero);
         }
       }
       a {
@@ -185,8 +189,10 @@ const Nav = styled.div`
       .category:first-child {
         display: none;
       }
-      & > :nth-child(n+2) {
-        display: none;
+      @media (min-width: 1000px) {
+        & > :nth-child(n+2) {
+          display: none;
+        }
       }
       button {
         display: block !important;
@@ -292,8 +298,8 @@ const Index = ({ data, location }) => {
             <button onClick={() => toggleLanguage()}>
               {
                 language == "en" ?
-                  "Version Française ici" :
-                  "English Version here"
+                  "Français" :
+                  "English"
               }
             </button>
             <Contact
