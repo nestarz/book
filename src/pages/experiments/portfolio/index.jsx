@@ -105,11 +105,10 @@ span {
 const Index = ({ location }) => {
   const [continuousScroll, setContinuousScroll] = useState(false);
   return (
-    <Layout pathname={location.pathname}>
+    <Layout pathname={location.pathname} withNav={true}>
       <GlobalStyle />
       <PageA3_Paysage />
-      <PrintHeader>
-        <Header>
+      <Header>
           <Clock
             format={'ss:SS'}
             ticking={true}
@@ -118,9 +117,8 @@ const Index = ({ location }) => {
             filter={(x) => convertToTesserae(x, "0123456789")}
           />
           <span>Portfolio</span>
+          <button onClick={() => setContinuousScroll(!continuousScroll)}>Scrolling {continuousScroll ? "ON" : "OFF"}</button>
         </Header>
-        <button onClick={() => setContinuousScroll(!continuousScroll)}>Scrolling {continuousScroll ? "ON" : "OFF"}</button>
-      </PrintHeader>
       <PaginationWrapper>
         <Pagination
           amountPerPage={continuousScroll ? 7 : 1}

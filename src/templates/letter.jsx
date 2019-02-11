@@ -7,7 +7,7 @@ import SEO from 'components/SEO';
 import LetterComponent from 'components/Content/Letter'
 
 const Letter = ({ data: { mdx: postNode, site: siteMetadata }, location }) => {
-  return <Layout pathname={location.pathname} customSEO>
+  return <Layout pathname={location.pathname} withNav={true} customSEO>
     <Helmet pathname={location.pathname} title={`${postNode.frontmatter.title} | ${siteMetadata.siteTitle}`} />
     <SEO pathname={location.pathname} postNode={postNode} article />
     <LetterComponent

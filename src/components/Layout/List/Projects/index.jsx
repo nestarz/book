@@ -36,12 +36,11 @@ query {
           cover {
             childImageSharp {
               fluid(
-                maxWidth: 850,
-                quality: 90,
-                traceSVG: { color: "#f3f3f3" },
-                duotone: { shadow: "#000000", highlight: "#3CD670" }
+                maxWidth: 450,
+                quality: 60,
+                duotone: { shadow: "#000000", highlight: "#FFFFFF" }
                 ) {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }

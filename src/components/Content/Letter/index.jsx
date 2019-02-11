@@ -13,14 +13,11 @@ export const Letter = ({ frontmatter, body }) => {
     <Body body={body} />
   </div>
   return (
-    <Layout pathname={'/'}>
-      <PrintHeader />
       <Wrapper>
           {content}
           <SketchComponentAbsoluteBackground sketch={backgroundSketch} />
           {content}
         </Wrapper>
-    </Layout>
   )
 }
 

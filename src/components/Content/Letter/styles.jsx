@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  margin: 0 auto;
+  margin: 1em auto;
   position: relative;
   max-width: 52rem;
-  font-size: 200%;
+  font-size: 100%;
   a {
     color: inherit !important;
     text-decoration: underline;
@@ -24,9 +24,13 @@ export const Wrapper = styled.div`
     color: ${props => props.theme.colors.body_color};
     z-index: -1;
     margin: auto;
+    padding-left: 1em;
+    padding-right: 1em;
   }
   & > div:last-child {
     flex: 1;
+    padding-left: 1em;
+    padding-right: 1em;
     top: 0;
     color: ${props => props.theme.colors.bg_color};
     mix-blend-mode: overlay;

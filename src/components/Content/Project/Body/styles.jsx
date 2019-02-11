@@ -17,17 +17,18 @@ page-break-before: always;
   page-break-inside: avoid;
 }
 & > div {
+  counter-reset: list;
   & > h1 {
     &:not(:first-child) {
       margin-top: 2em;
     }
     display: block;
     page-break-before: always;
-    display: list-item;
-    list-style-type: decimal-leading-zero;
-    list-style-position: inside;
-    @media (max-width: 700px) {
-      list-style-position: inside;
+    &:before {
+      counter-increment: list 1;
+      content: counter(list, hiragana) " " counter(list, decimal-leading-zero);
+      word-spacing: 1em;
+      padding-right: 1em;
     }
   }
 }
@@ -84,19 +85,28 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: minmax(6em, 1fr);
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
   grid-gap: 0;
   li {
     margin: 0;
   }
-  & > * {
-    border-bottom: 1px solid ${props => props.theme.colors.body_color};
-    padding: 1em;
+  @media (max-width: 700px) {
+    grid-auto-rows: 1fr;
+    grid-gap: 0.15em;
   }
-  & > *:last-child, & > *:nth-last-child(2):nth-child(odd) {
-    border-bottom: none;
-  }
-  & > *:nth-child(odd) {
-    border-right: 1px solid ${props => props.theme.colors.body_color};
+  @media (min-width: 700px) {
+    & > * {
+      border-bottom: 1px solid ${props => props.theme.colors.body_color};
+      padding: 1em;
+    }
+    & > *:last-child, & > *:nth-last-child(2):nth-child(odd) {
+      border-bottom: none;
+    }
+    & > *:nth-child(odd) {
+      border-right: 1px solid ${props => props.theme.colors.body_color};
+    }
   }
 }
 img {
@@ -122,6 +132,7 @@ figcaption.gatsby-resp-image-figcaption {
   break-inside: avoid; /* IE 10+ */
   break-inside: avoid-column; /* W3C */
   display: inline-block;
+  margin: auto;
 }
   & > div {
       height: inherit !important;

@@ -29,10 +29,7 @@ function Index({ location }) {
   const [language, toggleLanguage] = useToggleGlobalLanguage()
   const [cnt, setCount] = useState(0);
   const local = {"fr": "Changer la version", "en": "Change version"}
-  return <Layout pathname={location.pathname}>
-    <PrintHeader >
-      <button onClick={()=>setCount(cnt + 1)}>{local[language]}</button>
-    </PrintHeader>
+  return <Layout pathname={location.pathname} withNav={true}>
     <Wrapper>
       {_.times(3, i => <VisitCard key={i} sketchIndex={cnt} />)}
     </Wrapper>

@@ -8,8 +8,7 @@ import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { dark_theme, theme } from '../../../config/theme';
 import reset from '../../styles/reset';
 import { IoIosMoon, IoIosSunny } from 'react-icons/io';
-import { MdArrowForward, MdArrowBack, MdClose } from 'react-icons/md';
-import { CircleArrow as ScrollUpButton } from "react-scroll-up-button";
+import { MdArrowForward, MdArrowBack, MdClose, MdPrint, MdMenu } from 'react-icons/md';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -57,30 +56,40 @@ const GlobalPrintStyle = createGlobalStyle`
 
 const LumiereToggle = styled.div`
 position: fixed;
-top: 0.5em; right: 0.5em;
+top: 0em; right: 0.5em;
 font-size: 120%;
 cursor: pointer;
 z-index: 999;
+p {
+  margin: 0;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+div > p:not(:first-child) {
+  display: none;
+}
+div:hover{
+  background-color: ${props => props.theme.colors.bg_color};
+  p {
+    display: block !important;
+  }
+  p:first-child {
+    display: none !important;
+  }
+}
+
 `;
 
 const Nav = styled.nav`
 position: fixed;
 bottom: 1rem; right: 1rem;
-p {
-  writing-mode: vertical-rl;
-  margin: 0;
-  padding: 0;
-  margin-top: 0.5rem;
-  font-size: 2rem;
-  text-orientation: mixed;
-}
 cursor: pointer;
 z-index: 999999;
 `;
 
 // We can pass customSEO here to not include the <SEO> component twice. This prop is 'true' on the project template
 // as the SEO component there passes in some additional things. Otherwise things would be inserted two times
-const Layout = ({ children, pathname, customSEO, withNav=false }) => {
+const Layout = ({ children, pathname, customSEO, withNav = false }) => {
   const [printing, togglePrint] = usePrint(2000);
   const [alwaysOn, setAlwaysOn] = useState(false);
   useEffect(() => { if (printing) setAlwaysOn(true) }, [printing])
@@ -92,20 +101,30 @@ const Layout = ({ children, pathname, customSEO, withNav=false }) => {
         {!customSEO && <SEO pathname={pathname} />}
         <GlobalStyle />
         {alwaysOn && <GlobalPrintStyle />}
-        <LumiereToggle className={'A'} onClick={() => setCurrThemeIndex((currThemeIndex + 1) % themes.length)}>
-          {currThemeIndex == 1 ? <IoIosSunny /> : <IoIosMoon />}
+        <LumiereToggle className={'A'}>
+          {!withNav &&
+            <p onClick={() => setCurrThemeIndex((currThemeIndex + 1) % themes.length)}>
+              {currThemeIndex == 1 ? <IoIosSunny /> : <IoIosMoon />}
+            </p>
+          }
+          {withNav &&
+            <>
+              <div>
+              <p onClick={() => window.history.back()}>
+                <MdMenu />
+              </p>
+                <p onClick={() => window.history.back()}><MdClose /></p>
+                <p onClick={() => window.history.back()}><MdArrowBack /></p>
+                <p onClick={() => window.history.forward()}><MdArrowForward /></p>
+                <p onClick={() => window.print()}><MdPrint /></p>
+                <p onClick={() => setCurrThemeIndex((currThemeIndex + 1) % themes.length)}>
+                  {currThemeIndex == 1 ? <IoIosSunny /> : <IoIosMoon />}
+                </p>
+              </div>
+            </>
+          }
         </LumiereToggle>
         {children}
-        {withNav &&
-          <Nav>
-            <p onClick={() => window.history.back()}><MdClose /></p>
-            <p onClick={() => window.history.back()}><MdArrowBack /></p>
-            <p onClick={() => window.history.forward()}><MdArrowForward /></p>
-          </Nav>
-        }
-        <ScrollUpButton
-          AnimationDuration={600}
-        />
       </>
     </ThemeProvider>
   )

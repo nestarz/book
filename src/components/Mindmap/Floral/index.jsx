@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import useComponentSize from '@rehooks/component-size';
+import useWindowSize from 'react-use/lib/useWindowSize';
 import styled from 'styled-components';
 import Graph from 'react-graph-vis';
 import { graph, options, events } from "./graph";
@@ -10,17 +10,16 @@ const Wrapper = styled.div`
     position: relative;
 `;
 
-const Index = ({ height, width, className }) => {
+const Index = ({ style, className }) => {
   const [network, setNetwork] = useState(null);
-  const wrapperRef = useRef(null)
-  const wrapperSize = useComponentSize(wrapperRef)
-  useEffect(() => { if (network) { network.fit(); network.redraw(); } }, [wrapperSize]);
-  return <Wrapper ref={wrapperRef} className={className}>
+  const windowSize = useWindowSize();
+  useEffect(() => { if (network) {network.fit(); network.redraw();} }, [windowSize]);
+  return <Wrapper style={style} className={className}>
     <Graph
       graph={graph}
       options={options}
       events={events}
-      style={{ height: height ? height : "100%", width: width ? width : "100%" }}
+      style={{ height: "100%", width: "100%" }}
       getNetwork={network => setNetwork(network)}
     />
   </Wrapper>
