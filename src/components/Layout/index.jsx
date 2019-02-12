@@ -21,13 +21,15 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-family: "CircularStd", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     cursor: crosshair;
-    font-size: 120%;
   }
   html, body {
     margin: 0;
     padding: 0;
     border: none;
     height: 100%;
+  }
+  body {
+    font-size: 105%;
   }
   #___gatsby, #___gatsby > div {
     margin: 0;

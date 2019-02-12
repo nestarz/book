@@ -9,7 +9,7 @@ import { toKana } from "wanakana";
 import { unescape } from "underscore";
 import JsLingua from "jslingua";
 import Cursor from "external/react-typing-animation/src/Cursor.js";
-import { useVideo } from "react-use";
+import useVideo from "react-use/lib/useVideo";
 
 var araTrans = JsLingua.nserv("trans", "ara");
 araTrans.strans("buckwalter");
