@@ -47,4 +47,8 @@ export const Name = styled.div`
     }
     color: ${props => props.theme.colors.body_color};
   }
+  .bot {
+      font-size: 60%;
+      color: ${props => props.theme.colors.body_color};
+  }
 `;

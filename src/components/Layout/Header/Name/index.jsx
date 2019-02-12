@@ -5,11 +5,17 @@ import PropTypes from "prop-types";
 import React, { useEffect, useRef, useState } from "react";
 import ContentEditable from "react-contenteditable";
 import { Name, Wrapper } from "./styles";
-import { toKana, isRomaji } from "wanakana";
+import { toKana } from "wanakana";
 import { unescape } from "underscore";
+import JsLingua from "jslingua";
 
+var araTrans = JsLingua.nserv("trans", "ara");
+araTrans.strans("buckwalter");
 const Header = ({ data, className, withDesc, ...props }) => {
   const [editableHtml, setEditableHtml] = useState("");
+  const [randomLanguage, setRandomLanguage] = useState(
+    Math.random() > 0.5 ? 1 : 0
+  );
   const contentEditableRef = useRef();
   useEffect(() => {
     contentEditableRef.current.focus();
@@ -19,19 +25,56 @@ const Header = ({ data, className, withDesc, ...props }) => {
   const authorInfo = data.site.siteMetadata.authorInfo.title[language];
   const description = data.site.siteMetadata.authorCv.shortBio[language];
   const iam = language == "fr" ? "Je suis" : "I am";
+  const botIntro =
+    language == "fr"
+      ? "Mon assistant personnel est là pour vous aider. Dites-lui <i>bonjour ! _ </i> "
+      : "You can talk to my bot here ! ^500 Say <i>Hello _ </i>";
   const strings = [
     language == "fr" ? "Bonjour !" : "Hi !",
     `${iam} ${siteConfig.siteTitle}`,
     ...(withDesc
       ? [
           `${iam} ${siteConfig.siteTitle}` +
-            `, <span class="desc">${description}</span> ^1000 You can talk to my bot here ! ^500 Say <i>Hello > </i>`
+            `, <span class="desc">${description}</span> ^1000 ${botIntro}`
         ]
       : [
           `${iam} ${siteConfig.siteTitle}` +
             `, <span class="desc">${authorInfo}</span>`
         ])
   ];
+  const convertedLanguage = [
+    {
+      func: text =>
+        araTrans.untrans(
+          text
+            .replace("e", "")
+            .replace("à", "")
+            .replace("é", "")
+            .replace("c", "")
+        ),
+      en: "Arabic",
+      fr: "Arabe"
+    },
+    {
+      func: text => toKana(text),
+      en: "Japanese",
+      fr: "Japonais"
+    }
+  ];
+  const answer =
+    language == "fr"
+      ? [
+          "J'analyse... ^600",
+          `^500 L'assistant est encore trop jeune pour parler ${
+            convertedLanguage[randomLanguage][language]
+          }... ^200 essayez en français !`
+        ]
+      : [
+          "Processing... ^600",
+          `^500 My assistant is too young to speak ${
+            convertedLanguage[randomLanguage][language]
+          }, ^200 please speak English !`
+        ];
   return (
     <Wrapper data-testid="navigation" className={className} {...props}>
       <Name
@@ -50,15 +93,23 @@ const Header = ({ data, className, withDesc, ...props }) => {
           <ContentEditable
             className={"editable"}
             innerRef={contentEditableRef}
-            html={editableHtml} // innerHTML of the editable div
+            html={convertedLanguage[randomLanguage].func(editableHtml)} // innerHTML of the editable div
             disabled={false} // use true to disable editing
             onChange={evt => {
-              setEditableHtml(
-                toKana(unescape(evt.target.value).replace("&nbsp;", ""))
-              );
+              setEditableHtml(unescape(evt.target.value).replace("&nbsp;", ""));
             }} // handle innerHTML change
             tagName="span" // Use a custom HTML tag (uses a div by default)
           />
+          {editableHtml && (
+            <div className={"bot"}>
+              <Typed
+                strings={answer}
+                typeSpeed={5}
+                showCursor={false}
+                smartBackspace={true}
+              />
+            </div>
+          )}
         </Link>
       </Name>
     </Wrapper>

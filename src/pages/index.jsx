@@ -46,7 +46,7 @@ const HeaderWrapper = styled.header`
   display: flex;
   flex-direction: column;
   @media (min-width: ${props => props.theme.breakpoints.s}) {
-    font-size: 200%;
+    font-size: 160%;
   }
 `;
 
