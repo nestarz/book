@@ -1,38 +1,50 @@
-import PrintHeader from 'components/Layout/Header/Print';
-import Typed from 'components/Visual/Typed.js';
-import React from 'react';
-import buildFormatter from 'react-timeago/lib/formatters/buildFormatter';
-import frenchStrings from 'react-timeago/lib/language-strings/fr';
-import styled from 'styled-components';
-import { Frontmatter, Wrapper } from './styles';
+import PrintHeader from "components/Layout/Header/Print";
+import Typed from "components/Visual/Typed.js";
+import React from "react";
+import buildFormatter from "react-timeago/lib/formatters/buildFormatter";
+import frenchStrings from "react-timeago/lib/language-strings/fr";
+import styled from "styled-components";
+import { Frontmatter, Wrapper } from "./styles";
 
 const StyledPrintHeader = styled(PrintHeader)`
-@media (max-width: 600px) {
-  justify-content: center;
-  h1 {
-    margin-top: 0.1em;
+  @media (max-width: 600px) {
+    justify-content: center;
+    h1 {
+      margin-top: 0.1em;
+    }
   }
-}
-h1, p {
-  text-align: center;
-}
+  h1,
+  p {
+    text-align: center;
+  }
 `;
-const formatter = buildFormatter(frenchStrings)
-const Header = ({ birthtime, birthtimeTimeStamp, mtime, frontmatter, excerpt }) => {
+const formatter = buildFormatter(frenchStrings);
+const Header = ({
+  birthtime,
+  birthtimeTimeStamp,
+  mtime,
+  frontmatter,
+  excerpt
+}) => {
   const strings = [
     `${frontmatter.title}`,
-    `${frontmatter.title}` + `, <span class="desc">${frontmatter.subtitle ? frontmatter.subtitle : excerpt}</span>`,
+    `${frontmatter.title}` +
+      `, <span class="desc">${
+        frontmatter.subtitle ? frontmatter.subtitle : excerpt
+      }</span>`
   ];
-  return <Wrapper>
-    <Frontmatter>
-      <h1>
-        <Typed
-          strings={strings}
-          typeSpeed={10}
-          showCursor={true}
-          smartBackspace={true}
-        /></h1>
-      {/* <ImageWrapper>
+  return (
+    <Wrapper>
+      <Frontmatter>
+        <h1>
+          <Typed
+            strings={strings}
+            typeSpeed={10}
+            showCursor={true}
+            smartBackspace={true}
+          />
+        </h1>
+        {/* <ImageWrapper>
       <InfoBlock>
       <div>{birthtime}</div>
       <div>modifié <TimeAgo formatter={formatter}  date={birthtimeTimeStamp}/></div>
@@ -58,8 +70,9 @@ const Header = ({ birthtime, birthtimeTimeStamp, mtime, frontmatter, excerpt }) 
           </InfoBlock>
         }
       </> */}
-    </Frontmatter>
-  </Wrapper>
-}
+      </Frontmatter>
+    </Wrapper>
+  );
+};
 
 export default Header;

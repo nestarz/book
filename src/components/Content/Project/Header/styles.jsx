@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   text-align: left;
@@ -7,9 +7,11 @@ export const Wrapper = styled.div`
   padding: 0;
   color: ${props => props.theme.colors.body_color};
   font-size: 100%;
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     margin: 0;
-
   }
   h1 {
     color: ${props => props.theme.brand.primary};
@@ -19,7 +21,7 @@ export const Wrapper = styled.div`
     @media print {
       text-align: center;
       color: ${props => props.theme.brand.primary};
-      transform: scale(1,4);
+      transform: scale(1, 4);
     }
     margin-bottom: 0.5rem;
     font-weight: 500;
@@ -43,8 +45,6 @@ export const Wrapper = styled.div`
   }
 `;
 
-
-
 export const Frontmatter = styled.section`
   flex-grow: 1;
   padding: 0em 0em;
@@ -52,7 +52,7 @@ export const Frontmatter = styled.section`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  &>div {
+  & > div {
     padding: 0vw 1vw;
   }
   @media (min-width: 700px) {
@@ -61,34 +61,34 @@ export const Frontmatter = styled.section`
 `;
 
 export const InformationWrapper = styled.div`
-max-width: 1000px;
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: space-between;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 export const InfoBlock = styled.div`
-display: flex;
-flex-direction: row;
-margin: 2rem 0;
-&>div {
-  margin: 1vw;
-}
-&>div:first-child {
-  font-size: 80%;
-  margin-bottom: 0.5rem;
-  position: relative;
-  text-transform: uppercase;
-}
-&>div:last-child {
-  font-size: 125%;
-}
-&.printOnly {
-  @media not print {
-    display: none;
+  display: flex;
+  flex-direction: row;
+  margin: 2rem 0;
+  & > div {
+    margin: 1vw;
   }
-}
+  & > div:first-child {
+    font-size: 80%;
+    margin-bottom: 0.5rem;
+    position: relative;
+    text-transform: uppercase;
+  }
+  & > div:last-child {
+    font-size: 125%;
+  }
+  &.printOnly {
+    @media not print {
+      display: none;
+    }
+  }
 `;
 
 export const ImageWrapper = styled.div`

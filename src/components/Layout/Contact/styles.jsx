@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Wrapper = styled.header`
   display: flex;
@@ -17,23 +17,23 @@ export const Wrapper = styled.header`
   @media (max-width: ${props => props.theme.breakpoints.s}) {
     flex-wrap: wrap;
   }
-`
+`;
 
 export const SocialMedia = styled.div`
-@media print {
-  display: none;
-}
-display: flex;
-flex: 1 0 auto;
-justify-content: flex-start;
-flex-wrap: wrap;
-padding: 0;
-margin-top: 0.5em;
-a {
-  padding-right: 0.5rem;
-  margin-right: 0.25rem;
-  font-size: 100%;
-  line-height: normal;
-  margin-bottom: 0.1em;
-}
-`
+  @media print {
+    display: none;
+  }
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-top: 0.5em;
+  a {
+    padding-right: 0.5rem;
+    margin-right: 0.25rem;
+    font-size: 100%;
+    line-height: normal;
+    margin-bottom: 0.1em;
+  }
+`;

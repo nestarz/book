@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Wrapper = styled.nav`
   width: 100%;
@@ -11,11 +11,11 @@ export const Wrapper = styled.nav`
   @media (min-width: 1600px) {
     font-size: 2vw;
   }
-  @media print
-  {
+  @media print {
     display: none;
   }
-  button,a {
+  button,
+  a {
     background: none;
     color: inherit;
     border: none;

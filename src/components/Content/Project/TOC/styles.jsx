@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   flex: 1;
@@ -20,10 +20,10 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.section`
-display: flex;
-flex: 1;
-width: 100%;
-overflow: hidden;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
   flex-grow: 1;
   padding: 0em 0em;
   & > ul,
@@ -35,7 +35,8 @@ overflow: hidden;
       margin-bottom: 0;
     }
   }
-  ul, ol {
+  ul,
+  ol {
     overflow-x: scroll;
     display: flex;
     flex-direction: column;
@@ -69,4 +70,4 @@ overflow: hidden;
   ol {
     padding: 0 0px;
   }
-`
+`;

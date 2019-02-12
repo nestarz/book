@@ -1,9 +1,9 @@
-import { graphql, StaticQuery } from 'gatsby';
-import PropTypes from 'prop-types';
-import React from 'react';
-import styled from 'styled-components';
-import Left from './LeftSide';
-import Right from './RightSide';
+import { graphql, StaticQuery } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
+import styled from "styled-components";
+import Left from "./LeftSide";
+import Right from "./RightSide";
 
 const Wrapper = styled.div`
   ${props => props.addCSS}
@@ -22,7 +22,9 @@ const Wrapper = styled.div`
     justify-content: space-around;
     align-items: space-around;
   }
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     position: relative;
     font-size: 100%;
   }
@@ -41,47 +43,26 @@ const CurriculumVitae = ({ data, withToggle = true, ...props }) => {
       <Left data={data} withToggle={withToggle} />
       <Right data={data} />
     </Wrapper>
-  )
-}
+  );
+};
 export default props => (
   <StaticQuery
     query={graphql`
-    query {
-      site {
-        siteMetadata {
-          siteConfig {
-            siteUrl
-          }
-          authorInfo {
-            email
-          }
-          authorCv {
-            shortBio {
-              fr
-              en
+      query {
+        site {
+          siteMetadata {
+            siteConfig {
+              siteUrl
             }
-            languages {
-              title {
+            authorInfo {
+              email
+            }
+            authorCv {
+              shortBio {
                 fr
                 en
               }
-              list {
-                name {
-                  fr
-                  en
-                }
-                score {
-                  fr
-                  en
-                }
-              }
-            }
-            skills {
-              title {
-                fr
-                en
-              }
-              list {
+              languages {
                 title {
                   fr
                   en
@@ -90,46 +71,67 @@ export default props => (
                   name {
                     fr
                     en
-                    all # Only if fr/en isn't useful
+                  }
+                  score {
+                    fr
+                    en
                   }
                 }
               }
-            }
-            publications {
-              title {
-                fr
-                en
-              }
-              url
-            }
-            records {
-              title {
-                fr
-                en
-              }
-              list {
-                from
-                to
+              skills {
                 title {
                   fr
                   en
                 }
-                etablishment
-                location
-                description {
+                list {
+                  title {
+                    fr
+                    en
+                  }
+                  list {
+                    name {
+                      fr
+                      en
+                      all # Only if fr/en isn't useful
+                    }
+                  }
+                }
+              }
+              publications {
+                title {
                   fr
                   en
+                }
+                url
+              }
+              records {
+                title {
+                  fr
+                  en
+                }
+                list {
+                  from
+                  to
+                  title {
+                    fr
+                    en
+                  }
+                  etablishment
+                  location
+                  description {
+                    fr
+                    en
+                  }
                 }
               }
             }
           }
         }
       }
-    }
     `}
     render={data => <CurriculumVitae data={data} {...props} />}
   />
-)
+);
 
 CurriculumVitae.propTypes = {
   data: PropTypes.shape({
@@ -138,14 +140,14 @@ CurriculumVitae.propTypes = {
         authorCv: PropTypes.shape({
           shortBio: PropTypes.shape({
             en: PropTypes.string.isRequired,
-            fr: PropTypes.string.isRequired,
-          }).isRequired,
+            fr: PropTypes.string.isRequired
+          }).isRequired
         }).isRequired,
         authorInfo: PropTypes.shape({
-          email: PropTypes.string.isRequired,
-        }).isRequired,
-      }).isRequired,
-    }).isRequired,
+          email: PropTypes.string.isRequired
+        }).isRequired
+      }).isRequired
+    }).isRequired
   }).isRequired,
-  lg: PropTypes.string,
-}
+  lg: PropTypes.string
+};

@@ -1,31 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { useKeyPress } from "react-use";
 
 const nextPage = (curr, max) => {
-  return curr < max ? curr + 1 : 1
-}
+  return curr < max ? curr + 1 : 1;
+};
 const prevPage = (curr, max) => {
   const min = 1;
-  return curr == min ? max : curr - 1
-}
+  return curr == min ? max : curr - 1;
+};
 
-const Pagination = ({ children,
-  amountPerPage, defaultCurrentPage = 1,
-  className, pageNumbersClassName,
+const Pagination = ({
+  children,
+  amountPerPage,
+  defaultCurrentPage = 1,
+  className,
+  pageNumbersClassName,
   keysGoPrevious,
-  keysGoNext }) => {
+  keysGoNext
+}) => {
   const [todos, setTodos] = useState(children);
   const [currentPage, setCurrentPage] = useState(defaultCurrentPage);
 
   // Controls Events
   const hasPressedPrevious = useKeyPress(keysGoPrevious);
   const hasPressedNext = useKeyPress(keysGoNext);
-  const handleClick = (e) => setCurrentPage(Number(e.target.id));
+  const handleClick = e => setCurrentPage(Number(e.target.id));
   useEffect(() => {
     const maxPage = Math.ceil(todos.length / amountPerPage);
     const prevIndex = prevPage(currentPage, maxPage);
     setCurrentPage(prevIndex);
-  }, [hasPressedPrevious])
+  }, [hasPressedPrevious]);
   useEffect(() => {
     const maxPage = Math.ceil(todos.length / amountPerPage);
     const nextIndex = nextPage(currentPage, maxPage);
@@ -38,8 +42,8 @@ const Pagination = ({ children,
   const currentTodos = todos.slice(indexOfFirstTodo, indexOfLastTodo);
 
   const renderTodos = currentTodos.map((todo, index) => (
-    <li key={index} >{todo}</li>)
-  );
+    <li key={index}>{todo}</li>
+  ));
 
   // Logic for displaying page numbers
   const pageNumbers = [];
@@ -60,14 +64,15 @@ const Pagination = ({ children,
 
   return (
     <>
-      <ul className={`pagination-content ${className}`} style={{ width: "100%" }}>
+      <ul
+        className={`pagination-content ${className}`}
+        style={{ width: "100%" }}
+      >
         {renderTodos}
       </ul>
-      <ul className={"page-numbers"}>
-        {renderPageNumbers}
-      </ul>
+      <ul className={"page-numbers"}>{renderPageNumbers}</ul>
     </>
   );
-}
+};
 
 export default Pagination;

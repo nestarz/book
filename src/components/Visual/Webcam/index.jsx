@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useSetState } from 'react-use';
-import Webcam from 'react-webcam';
+import React, { useEffect, useRef, useState } from "react";
+import { useSetState } from "react-use";
+import Webcam from "react-webcam";
 
 export function useWebcam(...props) {
   const ref = useRef();
@@ -10,18 +10,20 @@ export function useWebcam(...props) {
     duration: 0,
     isPlaying: false,
     muted: false,
-    volume: 1,
+    volume: 1
   });
   const [isPlaying, setIsPlaying] = useState(false);
   const onPlay = () => setState({ isPlaying: true }) && setIsPlaying(true);
   const onPause = () => setState({ isPlaying: false }) && setIsPlaying(false);
-  const webcam = <Webcam
-    ref={ref}
-    onUserMedia={() => setIsPlaying(true)}
-    onUserMediaError={() => setIsPlaying(false)}
-    width={props.width ? props.width : "100%"}
-    height={props.height ? props.height : "100%"}
-  />
+  const webcam = (
+    <Webcam
+      ref={ref}
+      onUserMedia={() => setIsPlaying(true)}
+      onUserMediaError={() => setIsPlaying(false)}
+      width={props.width ? props.width : "100%"}
+      height={props.height ? props.height : "100%"}
+    />
+  );
   useEffect(() => {
     if (ref.current && ref.current.video && isPlaying) {
       ref.current.video.oncanplay = onPlay;
@@ -29,6 +31,6 @@ export function useWebcam(...props) {
     } else {
       onPause();
     }
-  }, [ref.current, isPlaying])
+  }, [ref.current, isPlaying]);
   return [webcam, state, null, ref];
 }

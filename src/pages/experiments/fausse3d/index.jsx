@@ -1,17 +1,15 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Fausse3d from "components/Experiments/Fausse3d"
+import React from "react";
+import PropTypes from "prop-types";
+import Fausse3d from "components/Experiments/Fausse3d";
 
 const Index = ({ data }) => {
-  return (
-    <Fausse3d />
-  )
-}
+  return <Fausse3d />;
+};
 
 export default Index;
 
 Index.propTypes = {
-  location: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 };
 
 export const frontmatter = {
@@ -22,4 +20,4 @@ export const frontmatter = {
   category: "experiments",
   description: "Things about the choropleth.",
   updated: false
-}
+};

@@ -1,5 +1,4 @@
-import styled from 'styled-components'
-
+import styled from "styled-components";
 
 export const Wrapper = styled.header`
   display: flex;
@@ -18,7 +17,7 @@ export const Wrapper = styled.header`
   @media (max-width: ${props => props.theme.breakpoints.s}) {
     flex-wrap: wrap;
   }
-`
+`;
 
 export const SocialMedia = styled.div`
   @media print {
@@ -37,7 +36,7 @@ export const SocialMedia = styled.div`
     line-height: normal;
     margin-bottom: 0.1em;
   }
-`
+`;
 
 export const Name = styled.div`
   display: flex;
@@ -61,4 +60,4 @@ export const Name = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
     margin-bottom: 0.75rem;
   }
-`
+`;

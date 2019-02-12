@@ -1,16 +1,14 @@
-import useComponentSize from '@rehooks/component-size';
-import { useToggleGlobalLanguage } from 'hooks/useLanguage';
-import React, { PureComponent, useRef, useState } from 'react';
-import styled from 'styled-components';
-import { RemountOnResize } from './remount';
-
+import useComponentSize from "@rehooks/component-size";
+import { useToggleGlobalLanguage } from "hooks/useLanguage";
+import React, { PureComponent, useRef, useState } from "react";
+import styled from "styled-components";
+import { RemountOnResize } from "./remount";
 
 // A helper component, wrapping retina logic for canvas and
 // auto-resizing the sketch to fill its parent container.
 // To determine size/layout, we just use CSS on the div containing
 // the Sketch component (we might use this with flexbox, for example).
 class SketchComponentRaw extends PureComponent {
-
   constructor(props) {
     super(props);
     this.mountedView = this.mountedView.bind(this);
@@ -23,41 +21,41 @@ class SketchComponentRaw extends PureComponent {
   // mounting view, that is: after CSS layouting is done.
   mountedView(view) {
     if (view) {
-      import("p5")
-        .then((p5) => {
-          const ratio = 1;
-          const width = (view.clientWidth * ratio) | 0;
-          const height = (view.clientHeight * ratio) | 0;
-          let newState = { view, width, height, ratio };
-          let { sketch, sketchProps, noCanvas } = this.props;
-          if (sketch) {
-            const _sketch = (p5) => {
-              sketch(width, height, sketchProps)(p5);
+      import("p5").then(p5 => {
+        const ratio = 1;
+        const width = (view.clientWidth * ratio) | 0;
+        const height = (view.clientHeight * ratio) | 0;
+        let newState = { view, width, height, ratio };
+        let { sketch, sketchProps, noCanvas } = this.props;
+        if (sketch) {
+          const _sketch = p5 => {
+            sketch(width, height, sketchProps)(p5);
 
-              // handle creation of canvas
-              const _setup = p5.setup ? p5.setup : () => { };
-              p5.setup = noCanvas ? () => {
-                p5.noCanvas();
-                _setup();
-              } : () => {
-                p5.createCanvas(width, height);
-                _setup();
-              };
-
-              // handle removing the sketch if the component unmounts
-              const _unmount = p5.unmount;
-              p5.unmount = () => {
-                if (_unmount) {
-                  _unmount();
+            // handle creation of canvas
+            const _setup = p5.setup ? p5.setup : () => {};
+            p5.setup = noCanvas
+              ? () => {
+                  p5.noCanvas();
+                  _setup();
                 }
-                p5.remove();
-              }
+              : () => {
+                  p5.createCanvas(width, height);
+                  _setup();
+                };
 
-            }
-            newState.sketch = new p5.default(_sketch, view);
-          }
-          this.setState(newState);
-        })
+            // handle removing the sketch if the component unmounts
+            const _unmount = p5.unmount;
+            p5.unmount = () => {
+              if (_unmount) {
+                _unmount();
+              }
+              p5.remove();
+            };
+          };
+          newState.sketch = new p5.default(_sketch, view);
+        }
+        this.setState(newState);
+      });
     }
   }
 
@@ -83,60 +81,55 @@ class SketchComponentRaw extends PureComponent {
     let style = Object.assign({}, props.style);
     let { width, height } = props;
     switch (typeof width) {
-      case 'number':
+      case "number":
         width = width | 0;
         style.width = width;
         style.minWidth = width;
         style.maxWidth = width;
         break;
-      case 'string':
+      case "string":
         style.width = width;
         break;
-      case 'undefined':
-        style.width = style.width ? style.width : '100%';
+      case "undefined":
+        style.width = style.width ? style.width : "100%";
         break;
       default:
         break;
     }
     switch (typeof height) {
-      case 'number':
+      case "number":
         height = height | 0;
         style.height = height;
         style.minHeight = height;
         style.maxHeight = height;
         break;
-      case 'string':
+      case "string":
         style.height = height;
         break;
-      case 'undefined':
-        style.height = style.height ? style.height : '100%';
+      case "undefined":
+        style.height = style.height ? style.height : "100%";
         break;
       default:
         break;
     }
-    style.height = style.height ? style.height : '100%';
+    style.height = style.height ? style.height : "100%";
     //style.margin = style.margin ? style.margin : '0 auto';
     return (
-      <div
-        ref={this.mountedView}
-        style={style}
-        className={props.className}
-      />
+      <div ref={this.mountedView} style={style} className={props.className} />
     );
   }
 }
 
-
 class SketchComponentFixed extends PureComponent {
   render() {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       //import p5 from 'p5';
       //import 'p5/lib/addons/p5.dom';
       const { props } = this;
       //const RemountOnResize = require( './remount' );
       return (
         <RemountOnResize
-					/* Since canvas interferes with CSS layouting,
+          /* Since canvas interferes with CSS layouting,
 					we unmount and remount it on resize events */
           watchedVal={props.watchedVal}
         >
@@ -152,9 +145,7 @@ class SketchComponentFixed extends PureComponent {
         </RemountOnResize>
       );
     }
-    return (
-      <div></div>
-    )
+    return <div />;
   }
 }
 
@@ -163,48 +154,53 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 export const SketchOff = styled.div`
-width: 100%;
-height: 100%;
-background-color: ${props => props.theme.colors.grey};
-display: flex;
-justify-content: center;
-align-items: center;
-cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background-color: ${props => props.theme.colors.grey};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 `;
 export const SketchComponent = props => {
-  const [language, toggleLanguage] = useToggleGlobalLanguage()
+  const [language, toggleLanguage] = useToggleGlobalLanguage();
   var { className, style, ...otherProps } = props;
-  const wrapperRef = useRef(null)
-  const wrapperSize = useComponentSize(wrapperRef)
-  const defaultVisible = typeof props.visible == "undefined" ? true : props.visible;
-  const [visible, setVisible] = useState(defaultVisible)
+  const wrapperRef = useRef(null);
+  const wrapperSize = useComponentSize(wrapperRef);
+  const defaultVisible =
+    typeof props.visible == "undefined" ? true : props.visible;
+  const [visible, setVisible] = useState(defaultVisible);
   if (visible) {
-    return <Wrapper style={style} className={className} ref={wrapperRef}>
-      <SketchComponentFixed
-        width={wrapperSize.width}
-        height={wrapperSize.height}
-        {...otherProps}
-      />
-    </Wrapper>
+    return (
+      <Wrapper style={style} className={className} ref={wrapperRef}>
+        <SketchComponentFixed
+          width={wrapperSize.width}
+          height={wrapperSize.height}
+          {...otherProps}
+        />
+      </Wrapper>
+    );
+  } else {
+    return (
+      <Wrapper style={style} className={className} ref={wrapperRef}>
+        <SketchOff onClick={() => setVisible(true)}>
+          <div>{language == "fr" ? "Cliquer pour voir" : "Click to see"}</div>
+        </SketchOff>
+      </Wrapper>
+    );
   }
-  else {
-    return <Wrapper style={style} className={className} ref={wrapperRef}>
-      <SketchOff onClick={() => setVisible(true)}>
-        <div>{language == "fr" ? "Cliquer pour voir" : "Click to see"}</div>
-      </SketchOff>
-    </Wrapper>
-  }
-}
+};
 export const SketchComponentBackground = styled(SketchComponent)`
   position: absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   pointer-events: none;
 `;
-export const SketchComponentAbsoluteBackground = styled(SketchComponentBackground)`
-`;
+export const SketchComponentAbsoluteBackground = styled(
+  SketchComponentBackground
+)``;
 export const SketchComponentFixedBackground = styled(SketchComponentBackground)`
   position: fixed;
 `;

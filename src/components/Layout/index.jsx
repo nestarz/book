@@ -1,14 +1,20 @@
-import 'circular-std';
-import SEO from 'components/SEO';
-import { usePrint } from 'hooks/usePrint';
-import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
-import { IoIosMoon, IoIosSunny } from 'react-icons/io';
-import { MdArrowBack, MdArrowForward, MdClose, MdMenu, MdPrint } from 'react-icons/md';
-import { useGlobal } from 'reactn';
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { dark_theme, theme } from '../../../config/theme';
-import reset from '../../styles/reset';
+import "circular-std";
+import SEO from "components/SEO";
+import { usePrint } from "hooks/usePrint";
+import PropTypes from "prop-types";
+import React, { useEffect, useState } from "react";
+import { IoIosMoon, IoIosSunny } from "react-icons/io";
+import {
+  MdArrowBack,
+  MdArrowForward,
+  MdClose,
+  MdMenu,
+  MdPrint
+} from "react-icons/md";
+import { useGlobal } from "reactn";
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
+import { dark_theme, theme } from "../../../config/theme";
+import reset from "../../styles/reset";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -46,45 +52,46 @@ const GlobalStyle = createGlobalStyle`
       fill: ${props => props.theme.colors.body_color} !important;
     }
   }
-`
+`;
 
 const GlobalPrintStyle = createGlobalStyle`
   html, body {
     min-width: 240mm;
   }
-`
+`;
 
 const LumiereToggle = styled.div`
-position: fixed;
-top: 0em; right: 0.5em;
-font-size: 120%;
-cursor: pointer;
-z-index: 999;
-p {
-  margin: 0;
-  padding: 0;
-  margin-top: 0.5rem;
-}
-div > p:not(:first-child) {
-  display: none;
-}
-div:hover{
-  background-color: ${props => props.theme.colors.bg_color};
+  position: fixed;
+  top: 0em;
+  right: 0.5em;
+  font-size: 120%;
+  cursor: pointer;
+  z-index: 999;
   p {
-    display: block !important;
+    margin: 0;
+    padding: 0;
+    margin-top: 0.5rem;
   }
-  p:first-child {
-    display: none !important;
+  div > p:not(:first-child) {
+    display: none;
   }
-}
-
+  div:hover {
+    background-color: ${props => props.theme.colors.bg_color};
+    p {
+      display: block !important;
+    }
+    p:first-child {
+      display: none !important;
+    }
+  }
 `;
 
 const Nav = styled.nav`
-position: fixed;
-bottom: 1rem; right: 1rem;
-cursor: pointer;
-z-index: 999999;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  z-index: 999999;
 `;
 
 // We can pass customSEO here to not include the <SEO> component twice. This prop is 'true' on the project template
@@ -92,49 +99,67 @@ z-index: 999999;
 const Layout = ({ children, pathname, customSEO, withNav = false }) => {
   const [printing, togglePrint] = usePrint(2000);
   const [alwaysOn, setAlwaysOn] = useState(false);
-  useEffect(() => { if (printing) setAlwaysOn(true) }, [printing])
+  useEffect(() => {
+    if (printing) setAlwaysOn(true);
+  }, [printing]);
   const themes = [theme, dark_theme];
-  const [currThemeIndex, setCurrThemeIndex] = useGlobal('currThemeIndex');
+  const [currThemeIndex, setCurrThemeIndex] = useGlobal("currThemeIndex");
   return (
     <ThemeProvider theme={themes[currThemeIndex]}>
       <>
         {!customSEO && <SEO pathname={pathname} />}
         <GlobalStyle />
         {alwaysOn && <GlobalPrintStyle />}
-        <LumiereToggle className={'A'}>
-          {!withNav &&
-            <p onClick={() => setCurrThemeIndex((currThemeIndex + 1) % themes.length)}>
+        <LumiereToggle className={"A"}>
+          {!withNav && (
+            <p
+              onClick={() =>
+                setCurrThemeIndex((currThemeIndex + 1) % themes.length)
+              }
+            >
               {currThemeIndex == 1 ? <IoIosSunny /> : <IoIosMoon />}
             </p>
-          }
-          {withNav &&
+          )}
+          {withNav && (
             <>
               <div>
                 <p onClick={() => window.history.back()}>
                   <MdMenu />
                 </p>
-                <p onClick={() => window.history.back()}><MdClose /></p>
-                <p onClick={() => window.history.back()}><MdArrowBack /></p>
-                <p onClick={() => window.history.forward()}><MdArrowForward /></p>
-                <p onClick={() => window.print()}><MdPrint /></p>
-                <p onClick={() => setCurrThemeIndex((currThemeIndex + 1) % themes.length)}>
+                <p onClick={() => window.history.back()}>
+                  <MdClose />
+                </p>
+                <p onClick={() => window.history.back()}>
+                  <MdArrowBack />
+                </p>
+                <p onClick={() => window.history.forward()}>
+                  <MdArrowForward />
+                </p>
+                <p onClick={() => window.print()}>
+                  <MdPrint />
+                </p>
+                <p
+                  onClick={() =>
+                    setCurrThemeIndex((currThemeIndex + 1) % themes.length)
+                  }
+                >
                   {currThemeIndex == 1 ? <IoIosSunny /> : <IoIosMoon />}
                 </p>
               </div>
             </>
-          }
+          )}
         </LumiereToggle>
         {children}
       </>
     </ThemeProvider>
-  )
-}
-export default Layout
+  );
+};
+export default Layout;
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
   pathname: PropTypes.string.isRequired,
-  customSEO: PropTypes.bool,
-}
+  customSEO: PropTypes.bool
+};
 Layout.defaultProps = {
-  customSEO: false,
-}
+  customSEO: false
+};

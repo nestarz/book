@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   margin: 1em auto;
@@ -36,4 +36,5 @@ export const Wrapper = styled.div`
     mix-blend-mode: overlay;
     z-index: 1;
     margin: auto;
-  }`;
+  }
+`;

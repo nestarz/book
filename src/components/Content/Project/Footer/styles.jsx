@@ -1,13 +1,16 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
-max-width: 40rem;
-margin: auto;
+  max-width: 40rem;
+  margin: auto;
   text-align: left;
   width: 100%;
   padding: 0 1em;
   margin-top: 0em;
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     margin: 0;
   }
   h1 {
@@ -16,7 +19,7 @@ margin: auto;
       font-size: 100%;
       text-align: center;
       color: ${props => props.theme.brand.primary};
-      transform: scale(1,4);
+      transform: scale(1, 4);
     }
     margin-bottom: 0.2rem;
     font-weight: 500;
@@ -38,12 +41,10 @@ margin: auto;
   @media print {
     height: 110vh;
   }
-  &>:first-child {
+  & > :first-child {
     width: 100%;
   }
 `;
-
-
 
 export const Frontmatter = styled.section`
   flex-grow: 1;
@@ -59,35 +60,35 @@ export const Frontmatter = styled.section`
 `;
 
 export const InformationWrapper = styled.div`
-max-width: 1000px;
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: space-between;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 export const InfoBlock = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-margin: 0;
-&>div {
-  margin: 0em;
-}
-&>div:first-child {
-  font-size: 100%;
-  margin-right: 1rem;
-  position: relative;
-}
-&>div:last-child {
-  font-size: 120%;
-}
-&.printOnly {
-  @media not print {
-    display: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  & > div {
+    margin: 0em;
   }
-}
+  & > div:first-child {
+    font-size: 100%;
+    margin-right: 1rem;
+    position: relative;
+  }
+  & > div:last-child {
+    font-size: 120%;
+  }
+  &.printOnly {
+    @media not print {
+      display: none;
+    }
+  }
 `;
 
 export const ImageWrapper = styled.div`
