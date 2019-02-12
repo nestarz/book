@@ -18,6 +18,10 @@ const StyledButton = styled.button`
     outline: none;
   }
 `;
+const Wrapper = styled.div`
+  height: auto;
+  width: 100%;
+`;
 const WrapperControls = styled.div`
   display: flex;
   justify-content: space-between;
@@ -59,7 +63,7 @@ const WaveformAudio = ({ src, peaks, ...props }) => {
   }, 100);
   if (typeof window === "undefined") return <></>;
   return (
-    <>
+    <Wrapper>
       <Waveform
         barWidth={4}
         peaks={peaksArray}
@@ -88,7 +92,7 @@ const WaveformAudio = ({ src, peaks, ...props }) => {
           {Math.round(state.duration * 10) / 10}
         </span>
       </WrapperControls>
-    </>
+    </Wrapper>
   );
 };
 
