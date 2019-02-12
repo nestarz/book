@@ -44,6 +44,7 @@ const Main = styled.div`
 
 const HeaderWrapper = styled.header`
   display: flex;
+  flex: 1;
   flex-direction: column;
   @media (min-width: ${props => props.theme.breakpoints.s}) {
     font-size: 160%;
@@ -54,9 +55,9 @@ const Focus = styled.footer`
   position: fixed;
   height: 50vmin;
   width: 50vmin;
-  top: 30%;
+  top: 44%;
   right: 0;
-  left: 20%;
+  left: 8%;
   bottom: 0;
   display: flex;
   flex: 1;

@@ -9,6 +9,7 @@ import { toKana } from "wanakana";
 import { unescape } from "underscore";
 import JsLingua from "jslingua";
 import Cursor from "external/react-typing-animation/src/Cursor.js";
+import { useVideo } from "react-use";
 
 var araTrans = JsLingua.nserv("trans", "ara");
 araTrans.strans("buckwalter");
@@ -28,8 +29,8 @@ const Header = ({ data, className, withDesc, ...props }) => {
   const iam = language == "fr" ? "Je suis" : "I am";
   const botIntro =
     language == "fr"
-      ? "Mon assistant personnel est là pour vous aider. Dites-lui <i>bonjour ! _ </i> "
-      : "You can talk to my bot here ! ^500 Say <i>Hello _ </i>";
+      ? "J'ai créé mon avatar virtuel pour vous aider ici, posez lui vos questions! "
+      : "I created an avatar to help around, ask him questions! ";
   const strings = [
     language == "fr" ? "Bonjour !" : "Hi !",
     `${iam} ${siteConfig.siteTitle}`,
@@ -67,17 +68,31 @@ const Header = ({ data, className, withDesc, ...props }) => {
   const answer =
     language == "fr"
       ? [
-          "J'analyse... ^600",
-          `^500 L'assistant est encore trop jeune pour parler ${
+          "> <i>bip</i> ^1000 <i>bip</i> ^1000 ... ^500 <i>bip</i> ^1000",
+          "> Where am I ? ^1000",
+          "> Who am I ?... ^1000",
+          `> ^500 <i>L'avatar semble ne pas parler la langue ${
             convertedLanguage[randomLanguage][language]
-          }... ^200 essayez en français ! ^9000 <i>Solitude...</i>`
+          }... ^200 Il semble perdu... ^200 Il faut lui laisser un peu de temps...</i> ^1200`
         ]
       : [
-          "Processing... ^600",
-          `^500 My assistant is too young to speak ${
+          "> <i>bip</i> ^1000 <i>bip</i> ^1000 ... ^500 <i>bip</i> ^1000",
+          "> Where am I ? ^1000",
+          "> Who am I ?... ^1000",
+          `> ^500 <i>The avatar seems to not speak ${
             convertedLanguage[randomLanguage][language]
-          }, ^200 please speak English! ^9000 <i>Loneliness...</i>`
+          }, ^200 He seems lost... ^200 I need to fix him...</i> ^1200`
         ];
+  const videoraw = useVideo(
+    <video
+      width={"100%"}
+      height={"100%"}
+      autoPlay
+      loop
+    >
+      <source src="/assets/videos/dennett.mp4" type="video/mp4" />
+    </video>
+  );
   return (
     <Wrapper data-testid="navigation" className={className} {...props}>
       <Name
@@ -89,7 +104,7 @@ const Header = ({ data, className, withDesc, ...props }) => {
         <Link to="/" data-testid="home-title-link">
           <Typed
             strings={strings}
-            typeSpeed={10}
+            typeSpeed={5}
             showCursor={false}
             smartBackspace={true}
           />
@@ -108,14 +123,16 @@ const Header = ({ data, className, withDesc, ...props }) => {
             <div className={"bot"}>
               <Typed
                 strings={answer}
-                typeSpeed={5}
+                typeSpeed={30}
                 showCursor={false}
                 smartBackspace={true}
+                loop
               />
             </div>
           )}
         </Link>
       </Name>
+      {editableHtml && <div className={"videoWrapper"}>{videoraw[0]}</div>}
     </Wrapper>
   );
 };
