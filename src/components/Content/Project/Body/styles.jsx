@@ -4,14 +4,25 @@ export const Wrapper = styled.section`
 max-width: 40rem;
 font-size: 100%;
 letter-spacing: -0.01em;
-
 margin: auto;
 @media not print {
-  padding:0px 1em 1em 1em;
+  padding:0 1em;
 }
 display: flex;
 flex-direction: column;
 page-break-before: always;
+counter-reset: compteFigcaption;
+& > div > *:last-child{
+  margin-bottom: 1em;
+}
+figcaption,
+figcaption.gatsby-resp-image-figcaption {
+  &:before {
+    counter-increment: compteFigcaption 1;
+    content: counter(compteFigcaption) ". ";
+  }
+  font-style: italic;
+}
 
 & > div div {
   page-break-inside: avoid;
@@ -114,17 +125,6 @@ img {
   display: table-cell;
   max-width: 100%;
 }
-
-counter-reset: compteFigcaption;
-figcaption,
-figcaption.gatsby-resp-image-figcaption {
-  &:before {
-    counter-increment: compteFigcaption 1;
-    content: counter(compteFigcaption) ". ";
-  }
-  font-style: italic;
-}
-
 .gatsby-resp-image-wrapper {
   margin-bottom: 20px !important;
   -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
@@ -133,7 +133,6 @@ figcaption.gatsby-resp-image-figcaption {
   break-inside: avoid-column; /* W3C */
   display: inline-block;
   margin: auto;
-}
   & > div {
       height: inherit !important;
       width: inherit !important;

@@ -20,10 +20,10 @@ const Wrapper = styled.div`
   p {
     font-size: 100%;
   }
-  svg {
+  svg.stamp {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 1em;
+    bottom: 1em;
     stroke: #000000;
     fill: ${props => props.theme.colors.body_color};
   }
@@ -59,9 +59,6 @@ const ContentWrapper = styled.div`
   & > *:first-child {
     margin-top: 1em;
   }
-  & > *:last-child {
-    margin-bottom: 1em;
-  }
 `;
 export const Project = ({
   excerpt,
@@ -74,11 +71,11 @@ export const Project = ({
 }) => {
   return (
     <Wrapper>
-      <svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px">
+      <svg className={"stamp"} xmlns="http://www.w3.org/2000/svg" height="154px" width="154px">
         <path
           id="myTextPath"
           d="M 64,0 A 64,64 0 0 1 -64,0 A 64,64 0 0 1 64,0"
-          transform="translate(100,100)"
+          transform="translate(80,80)"
           fill="none"
           stroke="transparent"
           stroke-width="25"
@@ -86,7 +83,7 @@ export const Project = ({
         <text stroke-width="0">
           <textPath xlinkHref="#myTextPath">
             <tspan dy="5">
-              <Typing loop speed={100} cursorElement={"tspan"}>
+              <Typing speed={100} element={""} cursorElement={"tspan"}>
                 Data visualisation, Design objet, Céramique <Typing.Cursor />
               </Typing>
             </tspan>

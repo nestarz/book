@@ -19,25 +19,6 @@ export const Wrapper = styled.header`
   }
 `;
 
-export const SocialMedia = styled.div`
-  @media print {
-    display: none;
-  }
-  display: flex;
-  flex: 1 0 auto;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  padding: 0;
-  margin-top: 0.5em;
-  a {
-    padding-right: 0.5rem;
-    margin-right: 0.25rem;
-    font-size: 180%;
-    line-height: normal;
-    margin-bottom: 0.1em;
-  }
-`;
-
 export const Name = styled.div`
   display: flex;
   flex: 1 0 auto;
@@ -59,5 +40,11 @@ export const Name = styled.div`
   }
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
     margin-bottom: 0.75rem;
+  }
+  .editable {
+    *:focus, &:focus {
+      outline: none;
+    }
+    color: ${props => props.theme.colors.body_color};
   }
 `;

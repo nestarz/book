@@ -2,10 +2,18 @@ import Typed from "components/Visual/Typed.js";
 import { graphql, Link, StaticQuery } from "gatsby";
 import { useToggleGlobalLanguage } from "hooks/useLanguage";
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import ContentEditable from "react-contenteditable";
 import { Name, Wrapper } from "./styles";
+import { toKana, isRomaji } from "wanakana";
+import { unescape } from "underscore";
 
 const Header = ({ data, className, withDesc, ...props }) => {
+  const [editableHtml, setEditableHtml] = useState("");
+  const contentEditableRef = useRef();
+  useEffect(() => {
+    contentEditableRef.current.focus();
+  }, []);
   const [language, toggleLanguage] = useToggleGlobalLanguage();
   const siteConfig = data.site.siteMetadata.siteConfig;
   const authorInfo = data.site.siteMetadata.authorInfo.title[language];
@@ -17,7 +25,7 @@ const Header = ({ data, className, withDesc, ...props }) => {
     ...(withDesc
       ? [
           `${iam} ${siteConfig.siteTitle}` +
-            `, <span class="desc">${description}</span>`
+            `, <span class="desc">${description}</span> ^1000 You can talk to my bot here ! ^500 Say <i>Hello > </i>`
         ]
       : [
           `${iam} ${siteConfig.siteTitle}` +
@@ -26,13 +34,30 @@ const Header = ({ data, className, withDesc, ...props }) => {
   ];
   return (
     <Wrapper data-testid="navigation" className={className} {...props}>
-      <Name className={"name"}>
+      <Name
+        className={"name"}
+        onClick={() =>
+          contentEditableRef.current && contentEditableRef.current.focus()
+        }
+      >
         <Link to="/" data-testid="home-title-link">
           <Typed
             strings={strings}
             typeSpeed={10}
-            showCursor={true}
+            showCursor={false}
             smartBackspace={true}
+          />
+          <ContentEditable
+            className={"editable"}
+            innerRef={contentEditableRef}
+            html={editableHtml} // innerHTML of the editable div
+            disabled={false} // use true to disable editing
+            onChange={evt => {
+              setEditableHtml(
+                toKana(unescape(evt.target.value).replace("&nbsp;", ""))
+              );
+            }} // handle innerHTML change
+            tagName="span" // Use a custom HTML tag (uses a div by default)
           />
         </Link>
       </Name>
