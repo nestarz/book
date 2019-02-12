@@ -8,6 +8,7 @@ import { Name, Wrapper } from "./styles";
 import { toKana } from "wanakana";
 import { unescape } from "underscore";
 import JsLingua from "jslingua";
+import Cursor from "external/react-typing-animation/src/Cursor.js";
 
 var araTrans = JsLingua.nserv("trans", "ara");
 araTrans.strans("buckwalter");
@@ -51,6 +52,8 @@ const Header = ({ data, className, withDesc, ...props }) => {
             .replace("à", "")
             .replace("é", "")
             .replace("c", "")
+            .replace("M", "")
+            .toLowerCase()
         ),
       en: "Arabic",
       fr: "Arabe"
@@ -67,13 +70,13 @@ const Header = ({ data, className, withDesc, ...props }) => {
           "J'analyse... ^600",
           `^500 L'assistant est encore trop jeune pour parler ${
             convertedLanguage[randomLanguage][language]
-          }... ^200 essayez en français !`
+          }... ^200 essayez en français ! ^9000 <i>Solitude...</i>`
         ]
       : [
           "Processing... ^600",
           `^500 My assistant is too young to speak ${
             convertedLanguage[randomLanguage][language]
-          }, ^200 please speak English !`
+          }, ^200 please speak English! ^9000 <i>Loneliness...</i>`
         ];
   return (
     <Wrapper data-testid="navigation" className={className} {...props}>
@@ -100,6 +103,7 @@ const Header = ({ data, className, withDesc, ...props }) => {
             }} // handle innerHTML change
             tagName="span" // Use a custom HTML tag (uses a div by default)
           />
+          <Cursor className={"cursor"} />
           {editableHtml && (
             <div className={"bot"}>
               <Typed
