@@ -1,10 +1,10 @@
-import Typing from "external/react-typing-animation/src/Typing";
 import React from "react";
 import styled from "styled-components";
 import Body from "./Body";
 import Footer from "./Footer";
 import Header from "./Header";
 import TOC from "./TOC";
+import Star from "components/SVG/Star";
 
 const Wrapper = styled.div`
   display: flex;
@@ -60,6 +60,11 @@ const ContentWrapper = styled.div`
     margin-top: 1em;
   }
 `;
+const StarFixed = styled(Star)`
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+`;
 export const Project = ({
   excerpt,
   birthtime,
@@ -71,25 +76,6 @@ export const Project = ({
 }) => {
   return (
     <Wrapper>
-      <svg className={"stamp"} xmlns="http://www.w3.org/2000/svg" height="154px" width="154px">
-        <path
-          id="myTextPath"
-          d="M 64,0 A 64,64 0 0 1 -64,0 A 64,64 0 0 1 64,0"
-          transform="translate(80,80)"
-          fill="none"
-          stroke="transparent"
-          stroke-width="25"
-        />
-        <text stroke-width="0">
-          <textPath xlinkHref="#myTextPath">
-            <tspan dy="5">
-              <Typing speed={100} element={""} cursorElement={"tspan"}>
-                Data visualisation, Design objet, Céramique <Typing.Cursor />
-              </Typing>
-            </tspan>
-          </textPath>
-        </text>
-      </svg>
       <HeadWrapper>
         <Header
           frontmatter={frontmatter}
@@ -111,6 +97,7 @@ export const Project = ({
         />
         <Body body={body} />
       </ContentWrapper>
+      <StarFixed/>
     </Wrapper>
   );
 };
