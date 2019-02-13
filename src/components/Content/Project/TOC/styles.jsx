@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   flex: 1;
   display: flex;
-  flex-wrap: wrap-reverse;
   canvas {
     max-height: 100vh !important;
   }
