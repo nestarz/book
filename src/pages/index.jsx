@@ -291,7 +291,7 @@ const Nav = styled.div`
 const Index = ({ data, location }) => {
   const [language, toggleLanguage] = useToggleGlobalLanguage();
   const description = data.site.siteMetadata.authorCv.shortBio[language];
-  const [showFullView, toggleShowFullView] = useToggle(true);
+  const [showFullView, toggleShowFullView] = useToggle(false);
   const [globalImageFocus, setGlobalImageFocus] = useGlobal("globalImageFocus");
   return (
     <Layout pathname={location.pathname}>
