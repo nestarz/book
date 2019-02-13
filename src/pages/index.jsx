@@ -1,6 +1,6 @@
 import Layout from "components/Layout";
 import Contact from "components/Layout/Contact";
-import Header from "components/Layout/Header/Name";
+import Header from "components/Layout/Header/Name2";
 import DigestList from "components/Layout/List/Billets";
 import ExperimentList from "components/Layout/List/Experiments";
 import ProjectList from "components/Layout/List/Projects";
