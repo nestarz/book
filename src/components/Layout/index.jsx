@@ -69,10 +69,17 @@ const LumiereToggle = styled.div`
   font-size: 120%;
   cursor: pointer;
   z-index: 999;
+  & > div {
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  }
   p {
     margin: 0;
     padding: 0;
     margin-top: 0.5rem;
+    text-align: right;
   }
   div > p:not(:first-child) {
     display: none;
@@ -127,6 +134,9 @@ const Layout = ({ children, pathname, customSEO, withNav = false }) => {
               <div>
                 <p onClick={() => window.history.back()}>
                   <MdMenu />
+                </p>
+                <p>
+                  Menu
                 </p>
                 <p onClick={() => window.history.back()}>
                   <MdClose />
