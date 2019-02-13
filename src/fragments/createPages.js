@@ -1,6 +1,21 @@
 module.exports = {
   pages: `
   {
+    listentothis: allMdx(filter: { fields: { sourceInstanceName: { eq: "listentothis" } } }) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            mbid
+          }
+          code {
+            scope
+          }
+        }
+      }
+    }
     projects: allMdx(filter: { fields: { sourceInstanceName: { eq: "projects" } } }) {
       edges {
         node {

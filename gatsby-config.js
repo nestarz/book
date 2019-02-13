@@ -16,6 +16,32 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // This type will contain remote schema Query type
+        typeName: "AniList",
+        // This is field under which it's accessible
+        fieldName: "anilist",
+        // Url to query from
+        url: "https://graphql.anilist.co/",
+        // Additional options to pass to node-fetch
+        fetchOptions: {},
+      },
+    },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // This type will contain remote schema Query type
+        typeName: "GraphBrainz",
+        // This is field under which it's accessible
+        fieldName: "graphbrainz",
+        // Url to query from
+        url: "https://graphbrainz.herokuapp.com/",
+        // Additional options to pass to node-fetch
+        fetchOptions: {},
+      },
+    },
+    {
       resolve: 'gatsby-remark-toc',
       options: {
         mdastUtilTocOptions: {
@@ -53,6 +79,13 @@ module.exports = {
         },
         tweet_mode: 'extended'
       }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'listentothis',
+        path: `${__dirname}/content/listentothis`,
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',

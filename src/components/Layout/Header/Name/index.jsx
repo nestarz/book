@@ -37,7 +37,7 @@ const Header = ({ data, className, withDesc, ...props }) => {
     ...(withDesc
       ? [
           `${iam} ${siteConfig.siteTitle}` +
-            `, <span class="desc">${description}</span> ^1000 ${botIntro}`
+            `, <span class="desc">${description}</span>`
         ]
       : [
           `${iam} ${siteConfig.siteTitle}` +

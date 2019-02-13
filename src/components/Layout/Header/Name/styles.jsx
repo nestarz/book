@@ -72,7 +72,6 @@ export const Name = styled.div`
     line-height: normal;
     font-weight: 500;
     color: ${props => props.theme.brand.primary};
-    pointer-events: none;
     .desc {
       color: ${props => props.theme.colors.body_color};
       font-weight: 400;

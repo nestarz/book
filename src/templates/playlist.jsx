@@ -4,12 +4,26 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "components/Layout";
 import SEO from "components/SEO";
-import ProjectComponent from "components/Content/Project";
+import styled from "styled-components";
 
-const Project = ({
+const Wrapper = styled.div`
+  padding: 1em;
+  h1,
+  h2,
+  h3 {
+    all: unset;
+  }
+`;
+
+const Playlist = ({
   data: {
     mdx: postNode,
-    site: { siteMetadata: siteConfig }
+    site: { siteMetadata: siteConfig },
+    graphbrainz: {
+      lookup: {
+        release
+      }
+    }
   },
   location
 }) => {
@@ -20,22 +34,16 @@ const Project = ({
         title={`${postNode.frontmatter.title} | ${siteConfig.siteTitle}`}
       />
       <SEO pathname={location.pathname} postNode={postNode} article />
-      <ProjectComponent
-        frontmatter={postNode.frontmatter}
-        tableOfContents={postNode.tableOfContents}
-        body={postNode.code.body}
-        birthtime={postNode.parent.birthtime}
-        birthtimeTimeStamp={postNode.parent.birthtimeTimeStamp}
-        mtime={postNode.parent.mtime}
-        excerpt={postNode.excerpt}
-      />
+      <Wrapper>
+        {release.title}
+      </Wrapper>
     </Layout>
   );
 };
 
-export default Project;
+export default Playlist;
 
-Project.propTypes = {
+Playlist.propTypes = {
   data: PropTypes.shape({
     mdx: PropTypes.object.isRequired,
     site: PropTypes.shape({
@@ -50,11 +58,34 @@ Project.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query($slug: String!, $mbid: GraphBrainz_MBID!) {
     site {
       siteMetadata {
         siteConfig {
           siteTitle
+        }
+      }
+    }
+    graphbrainz {
+      lookup {
+        release(mbid: $mbid) {
+          title
+          date
+          coverArtArchive {
+            front
+            back
+          }
+          artistCredits {
+            name
+          }
+          recordings {
+            edges {
+              node {
+                length
+                title
+              }
+            }
+          }
         }
       }
     }
@@ -76,10 +107,6 @@ export const pageQuery = graphql`
       tableOfContents
       frontmatter {
         title
-        date(formatString: "DD.MM.YYYY")
-        client
-        subtitle
-        service
       }
     }
   }

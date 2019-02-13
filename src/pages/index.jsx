@@ -4,7 +4,7 @@ import Header from "components/Layout/Header/Name";
 import DigestList from "components/Layout/List/Billets";
 import ExperimentList from "components/Layout/List/Experiments";
 import ProjectList from "components/Layout/List/Projects";
-import { graphql, StaticQuery } from "gatsby";
+import { graphql, StaticQuery, Link } from "gatsby";
 import Img from "gatsby-image";
 import { useToggleGlobalLanguage } from "hooks/useLanguage";
 import PropTypes from "prop-types";
@@ -130,6 +130,12 @@ const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   padding-top: 1em;
+  & > div {
+    display: flex;
+    & > * {
+      padding-right: 0.8em;
+    }
+  }
 `;
 
 const Nav = styled.div`
@@ -289,7 +295,7 @@ const Index = ({ data, location }) => {
   const [globalImageFocus, setGlobalImageFocus] = useGlobal("globalImageFocus");
   return (
     <Layout pathname={location.pathname}>
-      <Focus>
+      {/* <Focus>
         {!showFullView && globalImageFocus && (
           <Img fluid={globalImageFocus.image} />
         )}
@@ -311,16 +317,21 @@ const Index = ({ data, location }) => {
             />
           </svg>
         </div>
-      </Focus>
+      </Focus> */}
       <Wrapper>
         <Main>
           <HeaderWrapper>
             <Header withDesc={true} style={{ maxWidth: "80vw" }} />
           </HeaderWrapper>
           <Footer>
-            <button onClick={() => toggleLanguage()}>
-              {language == "en" ? "Français" : "English"}
-            </button>
+            <div>
+              <button onClick={() => toggleLanguage()}>
+                {language == "en" ? "Français" : "English"}
+              </button>
+              <Link to={"/listentothis"}>Listen To This</Link>
+              <Link to={"/animelist"}>Animes</Link>
+              <button onClick={() => toggleLanguage()}>Social Media Explorer</button>
+            </div>
             <Contact withIcons={false} withPhone={false} withEmail={false} />
           </Footer>
         </Main>
