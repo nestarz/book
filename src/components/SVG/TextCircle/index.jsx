@@ -4,9 +4,9 @@ import Typing from "external/react-typing-animation/src/Typing";
 
 const SvgHolder = styled.div`
   svg.stamp {
-    position: absolute;
-    right: 1em;
-    bottom: 1em;
+    position: fixed;
+    right: 2em;
+    bottom: 2em;
     stroke: #000000;
     fill: ${props => props.theme.colors.body_color};
   }

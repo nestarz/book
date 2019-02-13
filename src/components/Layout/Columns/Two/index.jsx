@@ -61,7 +61,7 @@ const Wrapper = styled.div`
       max-width: 40rem;
       font-size: 100%;
       letter-spacing: -0.01em;
-      margin-right: auto;
+      margin: auto;
       padding-left: 1em;
       padding-right: 1em;
       display: flex;
@@ -70,6 +70,9 @@ const Wrapper = styled.div`
     }
     & > *:first-child {
       margin-top: 1em;
+    }
+    & > *:last-child {
+      margin-bottom: 1em;
     }
   }
 `;

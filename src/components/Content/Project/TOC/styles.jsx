@@ -23,7 +23,6 @@ export const Content = styled.section`
   display: flex;
   flex: 1;
   width: 100%;
-  overflow: hidden;
   flex-grow: 1;
   padding: 0em 0em;
   & > ul,

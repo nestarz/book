@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Layout from "components/Layout";
+import Star from "components/SVG/Star";
 import TwoColumns from "components/Layout/Columns/Two";
 import PlaylistList from "components/Layout/List/Playlists";
 import styled from "styled-components";
@@ -78,6 +79,11 @@ const Tags = styled.div`
   h3 {
     font-weight: 900;
   }
+`;
+const StarFixed = styled(Star)`
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
 `;
 function count(tags) {
   var dic = {};
@@ -168,6 +174,7 @@ const Index = ({ playlists, location }) => {
           </div>
         </div>
       </Wrapper>
+      <StarFixed>Send me an email if you have suggestions!</StarFixed>
     </Layout>
   );
 };
