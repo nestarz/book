@@ -2,6 +2,12 @@ import { darken } from "polished";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
+  &:after {
+    content: '🐉';
+    font-size: 1400%;
+    position: absolute;
+    left: 80%;
+  }
   display: flex;
   flex-wrap: wrap;
   flex: 1;
@@ -36,7 +42,7 @@ const Wrapper = styled.div`
   }
     h1 {
       @media (min-width: 700px) {
-        font-size: 100%;
+        font-size: 10 0%;
       }
         transform: scale(1.3,0.9);
         margin-right: 5em;
@@ -66,9 +72,13 @@ const Wrapper = styled.div`
     display: block;
   }
   & > *:first-child {
+    min-width: 20vw;
     margin-bottom: 0px;
     /*background-color: ${props => darken(0.02, props.theme.colors.bg_color)};*/
     flex: 1;
+    @media (max-width: 700px) {
+      flex: 1.5;
+    }
     display: flex;
     flex-direction: column;
     max-height: 100vh;
@@ -92,7 +102,7 @@ const Wrapper = styled.div`
       left: 0;
     }
   }
-  & > *:last-child {
+  & > *:nth-child(2) {
     h1, h2 {
       font-weight: 500;
         transform: scale(1.3,0.9);
@@ -117,8 +127,8 @@ const Wrapper = styled.div`
         font-weight: 500 !important;
       }
     }
-    flex: 50%;
-    max-height: 100vh;
+    flex: 4;
+        max-height: 100vh;
     overflow-x: scroll;
     .body {
       flex: 1;

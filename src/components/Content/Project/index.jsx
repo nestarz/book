@@ -7,12 +7,6 @@ import TOC from "./TOC";
 import TwoColumns from "components/Layout/Columns/Two";
 
 const Wrapper = styled(TwoColumns)`
-  &:after {
-    content: "🐉";
-    font-size: 1400%;
-    position: absolute;
-    right: 0;
-  }
   .body {
     overflow: hidden;
     h1 {

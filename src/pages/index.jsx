@@ -25,6 +25,12 @@ const Wrapper = styled(TwoColumns)`
   & > *:first-child {
     background-color: ${props => props.theme.colors.bg_color};
   }
+  &:after {
+    content: '🐉';
+    font-size: 1400%;
+    position: absolute;
+    right: 0;
+  }
   .body {
     .terminalContainer {
       font-weight: 500;
@@ -208,7 +214,7 @@ const Index = ({ data, location }) => {
               interaction of objects, people, art, technology and science using
               form and code with a mix of analog and digital materials.
             </About>
-            <TerminalOk promptSymbol={"A2"} inputStr={"help"} />
+            <TerminalOk promptSymbol={"A2"} inputStr={"help me"} />
             <Focus>
               {projectFocus && (
                 <SpringPosition
