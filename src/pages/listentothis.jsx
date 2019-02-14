@@ -10,6 +10,10 @@ import { GoLinkExternal } from "react-icons/go";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 const Wrapper = styled(TwoColumns)`
+  &:after {
+    content: '🐉';
+    font-size: 1400%;
+  }
   .title {
     margin-bottom: 1em;
   }
@@ -17,6 +21,10 @@ const Wrapper = styled(TwoColumns)`
   h2 {
     &:not(:first-child) {
       margin-top: 2em;
+      &:after {
+    content: '🐉';
+    font-size: 1400%;
+  }
     }
     display: block;
     page-break-before: always;

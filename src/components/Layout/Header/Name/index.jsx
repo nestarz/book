@@ -6,6 +6,11 @@ import styled from "styled-components";
 
 const Wrapper = styled.header`
   position: relative;
+  &:after {
+    content: '🐉';
+    font-size: 1400%;
+    position: absolute;
+  }
   h1 {
     margin: 0;
   }
@@ -16,6 +21,11 @@ const Wrapper = styled.header`
     right: 1em;
     bottom: 0;
     top: 100%;
+  }
+  .name a > span:first-child{
+    transform: scale(1.4,1);
+    display: block;
+    transform-origin: left;
   }
 `;
 

@@ -30,14 +30,26 @@ const Wrapper = styled.div`
   }
   header {
     font-weight: 500;
+    &:after {
+    content: '🐉';
+    font-size: 1400%;
+  }
     h1 {
       @media (min-width: 700px) {
         font-size: 100%;
       }
+        transform: scale(1.3,0.9);
+        margin-right: 5em;
+    display: block;
+    transform-origin: left;
       color: ${props => props.theme.brand.primary};
       .desc {
         color: ${props => props.theme.colors.body_color};
         font-weight: 500;
+        transform: scale(1.3,0.9);
+        margin-right: 5em;
+    display: block;
+    transform-origin: left;
       }
     }
     margin-bottom: 1em;
@@ -81,6 +93,13 @@ const Wrapper = styled.div`
     }
   }
   & > *:last-child {
+    h1, h2 {
+      font-weight: 500;
+        transform: scale(1.3,0.9);
+        margin-right: 5em;
+    display: block;
+    transform-origin: left;
+    }
     h1 {
       page-break-before: always;
       display: grid;
