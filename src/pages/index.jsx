@@ -23,19 +23,20 @@ const Wrapper = styled(TwoColumns)`
     flex-direction: column;
   }
   & > *:first-child {
-    background-color: ${props => props.theme.colors.bg_color};
   }
   &:after {
     content: '🐉';
     font-size: 1400%;
     position: absolute;
     right: 0;
+    filter: grayscale(1) contrast(5) saturate(0);
+
   }
   .body {
     .terminalContainer {
       font-weight: 500;
-      transform: scale(1.3, 0.9);
-      margin-right: 5em;
+      transform: scale(1.2, 0.9);
+      margin-right: 2em;
       display: block;
       transform-origin: left;
     }
@@ -100,11 +101,13 @@ const Focus = styled.div`
     &:after {
     content: '🐉';
     font-size: 1400%;
-    position: absolute;
-    right: -100%;
+    position: fixed;
+    transform: translate(-10vw);
+    right: 0;
     top: 0;
     left: 0;
     bottom: 0;
+    filter: grayscale(1) contrast(5) saturate(0);
   }
   }
   img {

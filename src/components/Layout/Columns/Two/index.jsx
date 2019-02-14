@@ -1,12 +1,25 @@
 import { darken } from "polished";
 import styled from "styled-components";
-
+import griffith from "./berserk-photo-berserk-1009622.jpg";
 const Wrapper = styled.div`
+  &:before {
+    content: '†';
+    background-image: url(${griffith});
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom:0;
+    filter: saturate(21) invert(1) contrast(21);
+    opacity: 0.1;
+    pointer-events: none;
+  }
   &:after {
     content: '🐉';
     font-size: 1400%;
     position: absolute;
     left: 80%;
+    filter: grayscale(1) contrast(5) saturate(0);
   }
   display: flex;
   flex-wrap: wrap;
@@ -39,21 +52,23 @@ const Wrapper = styled.div`
     &:after {
     content: '🐉';
     font-size: 1400%;
+    filter: grayscale(1) contrast(5) saturate(0);
+      position: absolute;
   }
     h1 {
       @media (min-width: 700px) {
         font-size: 10 0%;
       }
-        transform: scale(1.3,0.9);
-        margin-right: 5em;
+        transform: scale(1.2,0.9);
+        margin-right: 2em;
     display: block;
     transform-origin: left;
       color: ${props => props.theme.brand.primary};
       .desc {
         color: ${props => props.theme.colors.body_color};
         font-weight: 500;
-        transform: scale(1.3,0.9);
-        margin-right: 5em;
+        transform: scale(1.2,0.9);
+        margin-right: 2em;
     display: block;
     transform-origin: left;
       }
@@ -105,8 +120,8 @@ const Wrapper = styled.div`
   & > *:nth-child(2) {
     h1, h2 {
       font-weight: 500;
-        transform: scale(1.3,0.9);
-        margin-right: 5em;
+        transform: scale(1.2,0.9);
+        margin-right: 2em;
     display: block;
     transform-origin: left;
     }

@@ -10,6 +10,8 @@ const Wrapper = styled.header`
     content: '🐉';
     font-size: 1400%;
     position: absolute;
+    filter: grayscale(1) contrast(5) saturate(0);
+
   }
   h1 {
     margin: 0;
