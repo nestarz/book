@@ -3,7 +3,7 @@ import { useToggleGlobalLanguage } from "hooks/useLanguage";
 import React from "react";
 import Webcam from "react-webcam";
 import styled from "styled-components";
-import { convertToTesserae } from "styles/fonts";
+import { convertToTesserae } from "styles/fonts/Tesserae";
 import { PageA3_Paysage } from "styles/print";
 import PortfolioWrapper from "../";
 

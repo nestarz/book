@@ -80,6 +80,17 @@ export const pageQuery = graphql`
         client
         subtitle
         service
+        cover {
+          childImageSharp {
+            fluid(
+              maxWidth: 450
+              quality: 60
+              duotone: { shadow: "#000000", highlight: "#FFFFFF" }
+            ) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
       }
     }
   }

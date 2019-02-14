@@ -1,28 +1,32 @@
-import { useRef, useState, useEffect } from 'react';
+'use strict';
+let { useState, useEffect } = require('react');
 
-export default function useHover() {
-    const [value, setValue] = useState(false);
+function useHover(ref) {
+  const [ isHovered, setHover ] = useState(false)
 
-    const ref = useRef(null);
+  function handleMouseEnter () {
+    setHover(true)
+  }
 
-    const handleMouseOver = () => setValue(true);
-    const handleMouseOut = () => setValue(false);
+  function handleMouseLeave () {
+    setHover(false)
+  }
 
-    useEffect(
-        () => {
-            const node = ref.current;
-            if (node) {
-                node.addEventListener('mouseover', handleMouseOver);
-                node.addEventListener('mouseout', handleMouseOut);
+  useEffect(() => {
+    if (ref && ref.current) {
+      ref.current.addEventListener('mouseenter', handleMouseEnter)
+      ref.current.addEventListener('mouseleave', handleMouseLeave)
+    }
 
-                return () => {
-                    node.removeEventListener('mouseover', handleMouseOver);
-                    node.removeEventListener('mouseout', handleMouseOut);
-                };
-            }
-        },
-        [ref.current]
-    );
+    return () => {
+      if (ref && ref.current) {
+        ref.current.removeEventListener('mouseenter', handleMouseEnter)
+        ref.current.removeEventListener('mouseleave', handleMouseLeave)
+      }
+    }
+  })
 
-    return [ref, value];
+  return isHovered
 }
+
+module.exports = useHover;

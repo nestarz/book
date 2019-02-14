@@ -2,7 +2,7 @@ import CeramistMindMap from "components/Mindmap/Ceramist";
 import { useToggleGlobalLanguage } from "hooks/useLanguage";
 import React from "react";
 import styled from "styled-components";
-import { randomTesseraeString } from "styles/fonts";
+import { randomTesseraeString } from "styles/fonts/Tesserae";
 import { PageA3_Paysage } from "styles/print";
 import PortfolioWrapper from "../";
 import { Info } from "../styles";

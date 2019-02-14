@@ -20,7 +20,7 @@ const Head = props => {
 
   if (article || single) {
     const postMeta = postNode.frontmatter;
-    const postImage = postMeta.cover
+    const postImage = postMeta.cover && postMeta.cover.childImageSharp && postMeta.cover.childImageSharp.resize
       ? postMeta.cover.childImageSharp.resize.src
       : siteConfig.siteLogo;
     title = `${postMeta.title} | ${siteConfig.siteTitle}`;

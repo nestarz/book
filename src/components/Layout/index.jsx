@@ -1,4 +1,5 @@
 import "circular-std";
+import NotCourierSansFont from "styles/fonts/NotCourierSans";
 import SEO from "components/SEO";
 import { usePrint } from "hooks/usePrint";
 import PropTypes from "prop-types";
@@ -15,7 +16,12 @@ import { useGlobal } from "reactn";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 import { dark_theme, theme } from "../../../config/theme";
 import reset from "../../styles/reset";
-
+import Star from "components/SVG/Star";
+const StarFixed = styled(Star)`
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+`;
 const GlobalStyle = createGlobalStyle`
   ${reset}
   html {
@@ -64,8 +70,8 @@ const GlobalPrintStyle = createGlobalStyle`
 
 const LumiereToggle = styled.div`
   position: fixed;
-  top: 0em;
-  right: 0.5em;
+  bottom: 1.5em;
+  right: 1.5em;
   font-size: 120%;
   cursor: pointer;
   z-index: 999;
@@ -117,8 +123,10 @@ const Layout = ({ children, pathname, customSEO, withNav = false }) => {
     <ThemeProvider theme={themes[currThemeIndex]}>
       <>
         {!customSEO && <SEO pathname={pathname} />}
+        <NotCourierSansFont/>
         <GlobalStyle />
         {alwaysOn && <GlobalPrintStyle />}
+        <StarFixed/>
         <LumiereToggle className={"A"}>
           {!withNav && (
             <p

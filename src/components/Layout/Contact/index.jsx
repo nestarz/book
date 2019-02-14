@@ -67,7 +67,7 @@ const Contact = ({
         </a>
         {withCv && (
           <Link to="/about/cv" data-testid="cv-link">
-            Contact
+            CV Contact
           </Link>
         )}
       </SocialMedia>
@@ -83,7 +83,7 @@ const Contact = ({
           {splittedEmail[1].split(".")[1]}
         </OutboundLink>
       )}
-      {formtattedPhone && <div>{formtattedPhone}</div>}
+      {formtattedPhone && <div className={"phone"}>{formtattedPhone}</div>}
     </Wrapper>
   );
 };

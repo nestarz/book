@@ -105,7 +105,7 @@ const Index = ({ playlists, location }) => {
   return (
     <Layout pathname={location.pathname} withNav={true}>
       <Wrapper>
-        <div>
+        <header>
           <h1>
             Listen to this,{" "}
             <span className="desc">
@@ -120,14 +120,14 @@ const Index = ({ playlists, location }) => {
               blog.
             </span>
           </h1>
-          <div>
+          <div style={{marginBottom: "1em"}}>
             {count(playlistsTags).map(({ name, count }, i) => (
               <div key={i}>
                 {name} ({count})
               </div>
             ))}
           </div>
-        </div>
+        </header>
         <div>
           <div className={"body"}>
             {playlists.map(({ frontmatter, playlist, body }, i) => (

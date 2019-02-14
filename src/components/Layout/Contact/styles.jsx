@@ -17,6 +17,11 @@ export const Wrapper = styled.header`
   @media (max-width: ${props => props.theme.breakpoints.s}) {
     flex-wrap: wrap;
   }
+  .phone,
+  .email {
+    word-break: break-word;
+    word-wrap: anywhere;
+  }
 `;
 
 export const SocialMedia = styled.div`
@@ -28,7 +33,6 @@ export const SocialMedia = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   padding: 0;
-  margin-top: 0.5em;
   a {
     padding-right: 0.5rem;
     margin-right: 0.25rem;

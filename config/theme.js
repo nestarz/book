@@ -18,6 +18,7 @@ const colors = {
 }
 
 export const theme = {
+  mode: "light",
   noisy_uri,
   brand,
   colors,
@@ -40,6 +41,7 @@ export const theme = {
 export const dark_theme = {
   ...theme,
   //colors: Object.keys(theme.colors).reduce((acc, key) => {acc[key] = `${invert(theme.colors[key])}`; return acc; }, {}),
+  mode: "dark",
   colors: {
     ...theme.colors,
     grey: `${invert("#DDD")}`,

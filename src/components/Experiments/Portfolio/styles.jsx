@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { randomTesseraeString } from "styles/fonts";
+import { randomTesseraeString } from "styles/fonts/Tesserae";
 import { transparentize } from "polished";
 
 export const Info = styled.div`

@@ -3,11 +3,12 @@ import React, { useEffect } from "react";
 import { animated, useSpring } from "react-spring";
 
 const calc = (x, y) => [
-  x / window.innerWidth - 0.5,
-  y / window.innerHeight - 0.5
+  x - 0.5,
+  y - 0.5
 ];
 const trans4 = (x, y, i) =>
-  `translate3d(${x * 5}%,${y * i * 5}%,0) rotate(${(x + (i - 0.5)) * 0.5}deg)`;
+  `translate3d(${x * 5}%,${y * 5}%,0)`;
+
 Object.defineProperty(Array.prototype, "flat", {
   value: function(depth = 1) {
     return this.reduce(function(flat, toFlatten) {
@@ -20,25 +21,24 @@ Object.defineProperty(Array.prototype, "flat", {
   }
 });
 
-const Nav = ({ children, wrapper }) => {
+const Nav = ({ children, wrapper, style }) => {
   const mouse = useWindowMousePosition();
   const [springProps, set] = useSpring(() => ({
     xy: [0, 0],
-    config: { mass: 100, tension: 550, friction: 140 },
-    from: { opacity: 0 },
-    opacity: 1
+    config: { mass: 200, tension: 1000, friction: 140 }
   }));
   useEffect(() => {
-    set({ xy: calc(mouse.x, mouse.y) });
+    set({ xy: calc(Math.random(), Math.random()) });
   }, [mouse]);
   const SpecificDiv = wrapper ? wrapper : animated.div;
-  const flatChildren = children.flat();
+  const flatChildren = Array.isArray(children) ? children.flat() : [children];
   return (
     <>
       {flatChildren.map((child, i) => (
         <SpecificDiv
           key={i}
           style={{
+            ...style,
             ...springProps,
             transform: springProps.xy.interpolate((x, y) =>
               trans4(x, y, i / flatChildren.length)

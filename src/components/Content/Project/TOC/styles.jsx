@@ -1,29 +1,12 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  flex: 1;
-  display: flex;
-  canvas {
-    max-height: 100vh !important;
-  }
-  justify-content: flex-end;
-  /*background-color:${props => props.theme.brand.primary};*/
-  padding-left: 0px;
-  h1,h2,h3,h4,h5,h6 {
-    margin: 0;
-  }
-  @media print {
-    display: none;
-  }
-  position: relative;
-`;
-
 export const Content = styled.section`
   display: flex;
   flex: 1;
   width: 100%;
   flex-grow: 1;
   padding: 0em 0em;
+  padding-bottom: 1em;
   & > ul,
   & > ol {
     & > li > ul:not(:empty) {

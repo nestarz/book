@@ -1,7 +1,7 @@
 import { useToggleGlobalLanguage } from "hooks/useLanguage";
 import React from "react";
 import styled from "styled-components";
-import { randomTesseraeString } from "styles/fonts";
+import { randomTesseraeString } from "styles/fonts/Tesserae";
 import PortfolioWrapper from "../";
 import { Info } from "../styles";
 import eeg7 from "./img/DSC04325.jpg";

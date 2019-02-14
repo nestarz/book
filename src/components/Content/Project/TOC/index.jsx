@@ -1,27 +1,6 @@
-import * as sketcheModules2 from "components/Visual/P5js/projects/visit-card";
 import React from "react";
-import { Content, Wrapper } from "./styles";
-
-const sketches = [...Object.values(sketcheModules2)];
-const randomSelect = a => a[Math.floor(Math.random() * a.length)];
-const sketchSelection = (sketch, sketchIndex) =>
-  sketch
-    ? sketch
-    : sketchIndex || sketchIndex == 0
-    ? sketches[sketchIndex % sketches.length]
-    : randomSelect(sketches);
-
+import { Content } from "./styles";
 const TOC = ({ tableOfContents }) => (
-  <Wrapper>
-    {/* <SketchComponentAbsoluteBackground
-    style={{
-      zIndex: -1,
-      top: "0",
-      transform: "scale(1, 1)"
-    }}
-    sketch={sketchSelection()}
-    sketchProps={{ frameRate: 0.1, noLoop: true }}
-  /> */}
     <Content>
       <ol>
         {tableOfContents.items.map((heading, index) => {
@@ -47,7 +26,6 @@ const TOC = ({ tableOfContents }) => (
         })}
       </ol>
     </Content>
-  </Wrapper>
 );
 
 export default TOC;

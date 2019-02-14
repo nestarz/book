@@ -11,7 +11,7 @@ import Clock from "external/react-live-clock/src/Component";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import styled, { createGlobalStyle } from "styled-components";
-import { convertToTesserae, LocalFonts } from "styles/fonts";
+import { convertToTesserae, TesseraeFont } from "styles/fonts/Tesserae";
 import { PageA3_Paysage } from "styles/print";
 
 export const frontmatter = {
@@ -70,9 +70,6 @@ const PaginationWrapper = styled.div`
   }
 `;
 
-const GlobalStyle = createGlobalStyle`
-  ${LocalFonts}
-`;
 const Header = styled.div`
   font-size: 0.5em;
   align-self: center;
@@ -105,7 +102,7 @@ const Index = ({ location }) => {
   const [continuousScroll, setContinuousScroll] = useState(false);
   return (
     <Layout pathname={location.pathname} withNav={true}>
-      <GlobalStyle />
+      <TesseraeFont />
       <PageA3_Paysage />
       <Header>
         <Clock
