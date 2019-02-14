@@ -157,7 +157,7 @@ const Terminal = props => (
   <ReactTerminal
     {...props}
     theme={{
-      background: props.theme.colors.bg_color,
+      background: "transparent",
       promptSymbolColor: props.theme.colors.body_color,
       commandColor: props.theme.colors.body_color,
       outputColor: props.theme.brand.primary,

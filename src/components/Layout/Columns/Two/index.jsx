@@ -10,9 +10,11 @@ const Wrapper = styled.div`
     right: 0;
     left: 0;
     bottom:0;
-    filter: saturate(21) invert(1) contrast(21);
-    opacity: 0.1;
+    filter: invert(${props => props.theme.mode == "dark" ? 1 : 0}) contrast(30);
+    opacity: 0.03;
     pointer-events: none;
+    background-size: cover;
+    background-position: center;
   }
   &:after {
     content: '🐉';
