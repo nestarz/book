@@ -37,11 +37,12 @@ const Header = ({
   },
   className,
   withDesc,
+  withoutDragon,
   ...props
 }) => {
   const [language, toggleLanguage] = useToggleGlobalLanguage();
   return (
-    <Wrapper className={className} {...props}>
+    <Wrapper withoutDragon={withoutDragon} className={className} {...props}>
       <h1 className={"name"}>
         <Link to="/">
           <span>{siteMetadata.siteConfig.siteTitle}, </span>

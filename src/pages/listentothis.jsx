@@ -98,6 +98,16 @@ function count(tags) {
   return obj;
 }
 
+const concat = (x,y) =>
+  x.concat(y)
+
+const flatMap = (f,xs) =>
+  xs.map(f).reduce(concat, [])
+
+Array.prototype.flatMap = function(f) {
+  return flatMap(f,this)
+}
+
 const Index = ({ playlists, location }) => {
   const playlistsTags = playlists.flatMap(({ frontmatter }, i) =>
     frontmatter.tags.map((tag, i) => tag)

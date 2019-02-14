@@ -24,14 +24,6 @@ const Wrapper = styled(TwoColumns)`
   }
   & > *:first-child {
   }
-  &:after {
-    content: '🐉';
-    font-size: 1400%;
-    position: absolute;
-    right: 0;
-    filter: grayscale(1) contrast(5) saturate(0);
-
-  }
   .body {
     .terminalContainer {
       font-weight: 500;
