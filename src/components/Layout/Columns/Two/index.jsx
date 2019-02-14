@@ -119,13 +119,14 @@ const Wrapper = styled.div`
     }
     flex: 50%;
     max-height: 100vh;
-    overflow-y: scroll;
+    overflow-x: scroll;
     .body {
       flex: 1;
       max-width: 40rem;
       font-size: 100%;
       letter-spacing: -0.01em;
       margin: auto;
+      margin-left: 0;
       padding-left: 1em;
       padding-right: 1em;
       page-break-before: always;

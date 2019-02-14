@@ -21,10 +21,6 @@ const Wrapper = styled(TwoColumns)`
   h2 {
     &:not(:first-child) {
       margin-top: 2em;
-      &:after {
-    content: '🐉';
-    font-size: 1400%;
-  }
     }
     display: block;
     page-break-before: always;
