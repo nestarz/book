@@ -8,6 +8,7 @@ import styled from "styled-components";
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
 import { GoLinkExternal } from "react-icons/go";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
+import Img from "gatsby-image";
 
 const Wrapper = styled(TwoColumns)`
   .title {
@@ -147,7 +148,7 @@ const Index = ({ playlists, location }) => {
                   {playlist.map((release, j) => (
                     <Release key={j}>
                       <div>
-                        <img src={release.coverArtArchive.front} />
+                        <Img fluid={release.cover.childImageSharp.fluid} />
                       </div>
                     </Release>
                   ))}

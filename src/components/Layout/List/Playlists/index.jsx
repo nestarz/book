@@ -14,8 +14,15 @@ const queryProjects = graphql`
             graphbrainz__release {
               title
               date
-              coverArtArchive {
-                front
+              cover {
+                id
+                relativePath
+                absolutePath
+                childImageSharp {
+                  fluid(maxWidth: 700, quality: 90) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
               }
               artistCredits {
                 name
@@ -49,6 +56,7 @@ export default props => {
     <StaticQuery
       query={queryProjects}
       render={data => {
+        console.log(data.allMdx.edges);
         const playlists = data.allMdx.edges.map((edge, i) => ({
           frontmatter: edge.node.frontmatter,
           playlist: edge.node.fields.graphbrainz__release,

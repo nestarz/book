@@ -1,5 +1,6 @@
 const path = require("path");
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const { createRemoteFileNode } = require(`gatsby-source-filesystem`);
 
 const wrapper = promise =>
   promise
@@ -78,8 +79,15 @@ const {
   default_musicBrainzReleaseFields,
   queryMusicBrainzRelease
 } = require("./src/fragments/musicbrainz");
-exports.onCreateNode = async ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
+exports.onCreateNode = async ({
+  node,
+  actions,
+  getNode,
+  createNodeId,
+  store,
+  cache
+}) => {
+  const { createNodeField, createNode } = actions;
   switch (node.internal.type) {
     case `JavascriptFrontmatter`:
     case `Mdx`:
@@ -95,20 +103,35 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
         value: fileNode.sourceInstanceName
       });
       let release_fields = [];
+      let covers = [];
       if (fileNode.sourceInstanceName == `listentothis`) {
+        // Retrieve MusicBrainz Ids from frontmatter post
         const mbids = Array.isArray(node.frontmatter.mbid)
           ? node.frontmatter.mbid
           : [node.frontmatter.mbid];
-        mbids.forEach(async mbid => {
-          const { result } = await wrapper(
-            queryMusicBrainzRelease(mbid)
-          );
-          release_fields.push({
-            ...default_musicBrainzReleaseFields,
-            ...result.lookup.release
-          });
-        });
+        // Query MusicBrainz API to source album information for each ID
+        await Promise.all(
+          mbids.map(async mbid => {
+            const { result } = await wrapper(queryMusicBrainzRelease(mbid));
+            // Download covers and create dedicated node
+            const coverFileNode = await createRemoteFileNode({
+              url: result.lookup.release.coverArtArchive.front,
+              store,
+              cache,
+              createNode,
+              createNodeId
+            });
+            // Add results to a field of Mdx node + a link to cover file
+            covers.push(coverFileNode.id);
+            release_fields.push({
+              ...default_musicBrainzReleaseFields,
+              ...result.lookup.release,
+              cover___NODE: coverFileNode.id
+            });
+          })
+        );
       }
+      // Add everything into a node field named graphbrainz__release
       createNodeField({
         name: "graphbrainz__release",
         node,
