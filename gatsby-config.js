@@ -83,8 +83,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'listentothis',
-        path: `${__dirname}/content/listentothis`,
+        name: 'almusiqa',
+        path: `${__dirname}/content/almusiqa`,
       },
     },
     {

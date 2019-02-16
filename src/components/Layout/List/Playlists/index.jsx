@@ -5,7 +5,7 @@ const queryProjects = graphql`
   query {
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { sourceInstanceName: { eq: "listentothis" } } }
+      filter: { fields: { sourceInstanceName: { eq: "almusiqa" } } }
     ) {
       edges {
         node {

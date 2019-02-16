@@ -1,7 +1,7 @@
 module.exports = {
   pages: `
   {
-    listentothis: allMdx(filter: { fields: { sourceInstanceName: { eq: "listentothis" } } }) {
+    almusiqa: allMdx(filter: { fields: { sourceInstanceName: { eq: "almusiqa" } } }) {
       edges {
         node {
           fields {

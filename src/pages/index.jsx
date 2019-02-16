@@ -91,7 +91,7 @@ const Focus = styled.div`
     width: 100%;
     position: relative;
     &:after {
-    content: '🐉';
+    content: '';
     font-size: 1400%;
     position: fixed;
     transform: translate(-10vw);
@@ -182,7 +182,7 @@ const Index = ({ data, location }) => {
         <div>
           <Name withDesc={true} />
           <div className={"nav"}>
-            <Link to={"/listentothis"}>Listen To This</Link>
+            <Link to={"/almusiqa"}>Almusiqa</Link>
             <Link to={"/animelist"}>Animes</Link>
             <button onClick={() => toggleLanguage()}>
               {language == "en" ? "Passer en Français" : "Switch to English"}

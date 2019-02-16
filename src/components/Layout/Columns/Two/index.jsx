@@ -1,8 +1,8 @@
 import { darken } from "polished";
 import styled from "styled-components";
-import griffith from "./berserk-photo-berserk-1009622.jpg";
+//import griffith from "./berserk-photo-berserk-1009622.jpg";
 const Wrapper = styled.div`
-  &:before {
+  /* &:before {
     content: '†';
     background-image: url(${griffith});
     position: fixed;
@@ -15,9 +15,9 @@ const Wrapper = styled.div`
     pointer-events: none;
     background-size: cover;
     background-position: center;
-  }
+  } */
   &:after {
-    content: '🐉';
+    content: '';
     font-size: 1400%;
     position: absolute;
     left: 80%;
@@ -52,7 +52,7 @@ const Wrapper = styled.div`
   header {
     font-weight: 500;
     &:after {
-    content: '🐉';
+    content: '';
     font-size: 1400%;
     filter: grayscale(1) contrast(5) saturate(0);
       position: absolute;
@@ -61,7 +61,7 @@ const Wrapper = styled.div`
       @media (min-width: 700px) {
         font-size: 10 0%;
       }
-        transform: scale(1.2,0.9);
+        transform: scale(1.1,0.95);
         margin-right: 2em;
     display: block;
     transform-origin: left;
@@ -69,7 +69,7 @@ const Wrapper = styled.div`
       .desc {
         color: ${props => props.theme.colors.body_color};
         font-weight: 500;
-        transform: scale(1.2,0.9);
+        transform: scale(1.1,0.95);
         margin-right: 2em;
     display: block;
     transform-origin: left;
@@ -82,7 +82,7 @@ const Wrapper = styled.div`
     @media print {
       text-align: center;
       color: ${props => props.theme.brand.primary};
-      transform: scale(1, 4);
+      transform: scale(1, 2);
     }
     letter-spacing: calc(-23 / 1000 * 1.2em);
     break-before: page;
@@ -122,7 +122,7 @@ const Wrapper = styled.div`
   & > *:nth-child(2) {
     h1, h2 {
       font-weight: 500;
-        transform: scale(1.2,0.9);
+        transform: scale(1.1,0.95);
         margin-right: 2em;
     display: block;
     transform-origin: left;
@@ -153,7 +153,6 @@ const Wrapper = styled.div`
       font-size: 100%;
       letter-spacing: -0.01em;
       margin: auto;
-      margin-left: 0;
       padding-left: 1em;
       padding-right: 1em;
       page-break-before: always;

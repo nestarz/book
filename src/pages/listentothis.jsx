@@ -118,11 +118,11 @@ const Index = ({ playlists, location }) => {
       <Wrapper>
         <header>
           <h1>
-            Listen to this,{" "}
+            Almusiqa,{" "}
             <span className="desc">
               sharing favorites albums. Inspired by fantastic{" "}
               <OutboundLink
-                href="https://www.listentothis.info"
+                href="https://www.almusiqa.info"
                 target="_blank"
                 rel="noopener noreferrer"
               >

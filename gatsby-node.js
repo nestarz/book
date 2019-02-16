@@ -49,7 +49,7 @@ exports.createPages = async ({ graphql, actions }) => {
     },
     {
       component: require.resolve("./src/templates/playlist.jsx"),
-      edges: result.data.listentothis.edges
+      edges: result.data.almusiqa.edges
     }
   ];
   pages.forEach(({ component, edges }) =>
@@ -103,8 +103,7 @@ exports.onCreateNode = async ({
         value: fileNode.sourceInstanceName
       });
       let release_fields = [];
-      let covers = [];
-      if (fileNode.sourceInstanceName == `listentothis`) {
+      if (fileNode.sourceInstanceName == `almusiqa`) {
         // Retrieve MusicBrainz Ids from frontmatter post
         const mbids = Array.isArray(node.frontmatter.mbid)
           ? node.frontmatter.mbid
@@ -121,8 +120,12 @@ exports.onCreateNode = async ({
               createNode,
               createNodeId
             });
+            coverFileNode.parent = node.id;
+            actions.createParentChildLink({
+              parent: node,
+              child: coverFileNode
+            });
             // Add results to a field of Mdx node + a link to cover file
-            covers.push(coverFileNode.id);
             release_fields.push({
               ...default_musicBrainzReleaseFields,
               ...result.lookup.release,

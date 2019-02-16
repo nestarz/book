@@ -328,7 +328,7 @@ const Index = ({ data, location }) => {
               <button onClick={() => toggleLanguage()}>
                 {language == "en" ? "Français" : "English"}
               </button>
-              <Link to={"/listentothis"}>Listen To This</Link>
+              <Link to={"/almusiqa"}>Listen To This</Link>
               <Link to={"/animelist"}>Animes</Link>
               <button onClick={() => toggleLanguage()}>Social Media Explorer</button>
             </div>
