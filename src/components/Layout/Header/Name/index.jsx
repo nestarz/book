@@ -25,7 +25,6 @@ const Wrapper = styled.header`
     top: 100%;
   }
   .name a > span:first-child{
-    transform: scale(1.4,1);
     display: block;
     transform-origin: left;
   }

@@ -1,4 +1,4 @@
-const sketch = (width, height, props) => {
+const sketch = (width, height, props, theme) => {
     var color = props.color ? props.color : "black";
     var product = props.product;
     var rawName = product["Food and Serving"].substr(0, product["Food and Serving"].indexOf(','));

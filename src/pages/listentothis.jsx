@@ -11,23 +11,6 @@ import { OutboundLink } from "gatsby-plugin-google-analytics";
 import Img from "gatsby-image";
 
 const Wrapper = styled(TwoColumns)`
-  .title {
-    margin-bottom: 1em;
-  }
-  counter-reset: list;
-  h2 {
-    &:not(:first-child) {
-      margin-top: 2em;
-    }
-    display: block;
-    page-break-before: always;
-    &:before {
-      counter-increment: list 1;
-      content: counter(list, hiragana) " " counter(list, decimal-leading-zero);
-      word-spacing: 1em;
-      padding-right: 1em;
-    }
-  }
 `;
 
 const Post = styled.div`
@@ -143,7 +126,7 @@ const Index = ({ playlists, location }) => {
           <div className={"body"}>
             {playlists.map(({ frontmatter, playlist, body }, i) => (
               <React.Fragment key={i}>
-                <h2 className={"title"}>{frontmatter.title}</h2>
+                <h1 className={"title"}>{frontmatter.title}</h1>
                 <Post>
                   {playlist.map((release, j) => (
                     <Release key={j}>

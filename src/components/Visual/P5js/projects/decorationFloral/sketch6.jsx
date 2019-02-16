@@ -1,4 +1,4 @@
-const sketch = (width, height, props) => {
+const sketch = (width, height, props, theme) => {
     var Physics = require("../../physics/src/Physics");
 
     return function (p5) {

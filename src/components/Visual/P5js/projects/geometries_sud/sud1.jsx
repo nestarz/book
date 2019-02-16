@@ -1,4 +1,4 @@
-const sketch = (width, height, props) => {
+const sketch = (width, height, props, theme) => {
     return function (p5) {
         var nLoop = 0;
         var timer =

@@ -22,40 +22,10 @@ const Wrapper = styled(TwoColumns)`
     display: flex;
     flex-direction: column;
   }
-  & > *:first-child {
-  }
   .body {
-    .terminalContainer {
-      font-weight: 500;
-      transform: scale(1.2, 0.9);
-      margin-right: 2em;
-      display: block;
-      transform-origin: left;
-    }
-    .terminalContainer,
-    .terminalContainer,
-    .terminalContainer > * {
-      & * {
-        font-family: "CircularStd" !important;
-        font-weight: 500 !important;
-      }
-    }
-    .terminalOutput {
-      > div > span,
-      > div > input {
-        margin-right: 1.2em;
-        :first-child {
-          font-weight: 300 !important;
-        }
-      }
-    }
-    .terminalInput {
-      > form > span {
-        margin-right: 1.2em;
-        :first-child {
-          font-weight: 300 !important;
-        }
-      }
+    h1,
+    h2 {
+      margin: 0;
     }
   }
 `;
@@ -72,9 +42,11 @@ const Focus = styled.div`
   z-index: 1999;
   display: grid;
   grid-gap: 0;
-  grid-template-columns: repeat(3, 33%);
-  grid-template-rows: 50%;
-  grid-auto-rows: 50%;
+  grid-template-columns: repeat(3, 33vh);
+  grid-template-rows: 33vh;
+  grid-auto-rows: 33vh;
+  margin-left: 30vw;
+  margin-top: 10vh;
   & > div {
     display: grid;
 
@@ -91,16 +63,16 @@ const Focus = styled.div`
     width: 100%;
     position: relative;
     &:after {
-    content: '';
-    font-size: 1400%;
-    position: fixed;
-    transform: translate(-10vw);
-    right: 0;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    filter: grayscale(1) contrast(5) saturate(0);
-  }
+      content: "";
+      font-size: 1400%;
+      position: fixed;
+      transform: translate(-10vw);
+      right: 0;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      filter: grayscale(1) contrast(5) saturate(0);
+    }
   }
   img {
     margin-top: 0;
@@ -134,11 +106,6 @@ const About = styled.h1`
   :before {
     content: "A1" !important;
   }
-`;
-const StarFixed = styled(Star)`
-  position: fixed;
-  bottom: 1em;
-  right: 1em;
 `;
 const ProjectItem = ({ project, onMouseOver, onMouseOut }) => {
   let ref = useRef(null);
@@ -209,7 +176,7 @@ const Index = ({ data, location }) => {
               interaction of objects, people, art, technology and science using
               form and code with a mix of analog and digital materials.
             </About>
-            <TerminalOk promptSymbol={"A2"} inputStr={"help me"} />
+            {/* <TerminalOk promptSymbol={"A2"} inputStr={"help me"} /> */}
             <Focus>
               {projectFocus && (
                 <SpringPosition
@@ -227,7 +194,6 @@ const Index = ({ data, location }) => {
           </div>
         </div>
       </Wrapper>
-      <StarFixed />
     </Layout>
   );
 };

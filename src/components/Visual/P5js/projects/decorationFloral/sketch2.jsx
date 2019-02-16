@@ -1,4 +1,4 @@
-const sketch = (width, height, props) => {
+const sketch = (width, height, props, theme) => {
     return function (p5) {
       var branches = [];//holds a list of p5.Vectors
       var trunkSize = 10.4;

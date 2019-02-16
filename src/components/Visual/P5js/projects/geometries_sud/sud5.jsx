@@ -1,4 +1,4 @@
-const sketch = (width, height, props) => {
+const sketch = (width, height, props, theme) => {
     return function (p5) {
         // http://paulbourke.net/geometry/chladni/
         var m = 10;

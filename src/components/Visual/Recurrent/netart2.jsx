@@ -68,7 +68,7 @@ function getColorAt(G, model, x, y) {
   return [r, g, b];
 }
 
-const sketch = (width, height, props) => {
+const sketch = (width, height, props, theme) => {
   return function(p5) {
     // actual size of generated image
     var sizeh = p5.min(10 * 6, Math.floor(width / (6 * 6)));

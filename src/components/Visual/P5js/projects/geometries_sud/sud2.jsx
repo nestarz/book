@@ -1,4 +1,4 @@
-const sketch = (width, height, props) => {
+const sketch = (width, height, props, theme) => {
     var genome1 = [
         50, 88, 50, // center
         17, 50, 152, 10, //1st row

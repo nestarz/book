@@ -1,4 +1,4 @@
-const sketch = (width, height, props) => {
+const sketch = (width, height, props, theme) => {
     return function (p5) {
         var res = 0
         var recursion = 8;

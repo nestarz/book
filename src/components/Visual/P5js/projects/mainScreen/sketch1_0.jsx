@@ -1,9 +1,9 @@
 
-const sketch = (width, height, props) => {
+const sketch = (width, height, props, theme) => {
     var Physics = require("../../physics/src/Physics");
 
     return function (p5) {
-        var color = "#3CD670";
+        var color = theme.brand.primary;
         var w = width, h = height;
         var vertices_amount = 9
 

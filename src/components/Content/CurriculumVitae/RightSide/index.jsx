@@ -54,7 +54,7 @@ const RightCv = ({ data, ...props }) => {
   const siteUrl = data.site.siteMetadata.siteConfig.siteUrl;
   return (
     <Wrapper>
-      <Content>
+      <Content className={"body"}>
         <p>{data.site.siteMetadata.authorCv.shortBio[language]}</p>
         {data.site.siteMetadata.authorCv.records.map((recordCategory, i) => (
           <div key={i}>

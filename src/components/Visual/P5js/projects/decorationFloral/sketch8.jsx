@@ -9,7 +9,7 @@ function loadImgErrFix(errEvt) {
     pic.crossOrigin = null, pic.src = pic.src;
 }
 
-const sketch = (width, height, props) => {
+const sketch = (width, height, props, theme) => {
     var color = "red";
     var product = props.product;
     var rawName = product["Food and Serving"].substr(0, product["Food and Serving"].indexOf(',')); 

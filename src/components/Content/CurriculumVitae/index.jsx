@@ -4,14 +4,10 @@ import React from "react";
 import styled from "styled-components";
 import Left from "./LeftSide";
 import Right from "./RightSide";
+import TwoColumns from "components/Layout/Columns/Two";
 
-const Wrapper = styled.div`
+const Wrapper = styled(TwoColumns)`
   ${props => props.addCSS}
-  h1, h2 {
-    font-weight: 500;
-    letter-spacing: calc(-0.013em);
-  }
-  padding: 1em;
   position: relative;
   background-color: ${props => props.theme.colors.bg_color};
   color: ${props => props.theme.colors.body_color};
@@ -21,20 +17,6 @@ const Wrapper = styled.div`
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: space-around;
-  }
-  h1,
-  h2,
-  h3 {
-    position: relative;
-    font-size: 100%;
-  }
-  @media (min-width: 700px) {
-    & > div:last-child {
-      margin-left: 1em;
-    }
-  }
-  button {
-    all: unset;
   }
 `;
 const CurriculumVitae = ({ data, withToggle = true, ...props }) => {

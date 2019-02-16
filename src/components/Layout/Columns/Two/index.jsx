@@ -1,31 +1,10 @@
 import { darken } from "polished";
 import styled from "styled-components";
-//import griffith from "./berserk-photo-berserk-1009622.jpg";
 const Wrapper = styled.div`
-  /* &:before {
-    content: '†';
-    background-image: url(${griffith});
-    position: fixed;
-    top:0;
-    right: 0;
-    left: 0;
-    bottom:0;
-    filter: invert(${props => props.theme.mode == "dark" ? 1 : 0}) contrast(30);
-    opacity: 0.03;
-    pointer-events: none;
-    background-size: cover;
-    background-position: center;
-  } */
-  &:after {
-    content: '';
-    font-size: 1400%;
-    position: absolute;
-    left: 80%;
-    filter: grayscale(1) contrast(5) saturate(0);
-  }
   display: flex;
   flex-wrap: wrap;
   flex: 1;
+  counter-reset: list;
   h1,
   h2,
   h3,
@@ -35,12 +14,25 @@ const Wrapper = styled.div`
     padding: 0;
     flex: 0;
   }
+  h1,
+  h2 {
+    letter-spacing: calc(-23 / 1000 * 1.2em);
+    break-before: page;
+    font-weight: 500;
+  }
   button {
-    all: unset;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
     cursor: pointer;
+    outline: inherit;
+    text-align: inherit;
   }
   button,
   a {
+    cursor: pointer;
     font-weight: 500;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
@@ -51,47 +43,16 @@ const Wrapper = styled.div`
   }
   header {
     font-weight: 500;
-    &:after {
-    content: '';
-    font-size: 1400%;
-    filter: grayscale(1) contrast(5) saturate(0);
-      position: absolute;
-  }
+    margin-bottom: 1em;
     h1 {
-      @media (min-width: 700px) {
-        font-size: 10 0%;
-      }
-        transform: scale(1.1,0.95);
-        margin-right: 2em;
-    display: block;
-    transform-origin: left;
       color: ${props => props.theme.brand.primary};
       .desc {
         color: ${props => props.theme.colors.body_color};
-        font-weight: 500;
-        transform: scale(1.1,0.95);
-        margin-right: 2em;
-    display: block;
-    transform-origin: left;
       }
     }
-    margin-bottom: 1em;
-  }
-  counter-reset: list;
-  h1 {
-    @media print {
-      text-align: center;
-      color: ${props => props.theme.brand.primary};
-      transform: scale(1, 2);
-    }
-    letter-spacing: calc(-23 / 1000 * 1.2em);
-    break-before: page;
-    display: block;
   }
   & > *:first-child {
     min-width: 20vw;
-    margin-bottom: 0px;
-    /*background-color: ${props => darken(0.02, props.theme.colors.bg_color)};*/
     flex: 1;
     @media (max-width: 700px) {
       flex: 1.5;
@@ -105,63 +66,44 @@ const Wrapper = styled.div`
     padding: 1em;
     padding-bottom: 0;
     position: relative;
-    &:hover:after {
-      content: "";
-      writing-mode: vertical-rl;
-      margin-bottom: 1em;
-      font-size: 38vmin;
-      text-orientation: mixed;
-      line-height: 30vmin;
-      position: absolute;
-      top: -0.1em;
-      bottom: 0;
-      right: 0;
-      left: 0;
-    }
   }
   & > *:nth-child(2) {
-    h1, h2 {
-      font-weight: 500;
-        transform: scale(1.1,0.95);
-        margin-right: 2em;
-    display: block;
-    transform-origin: left;
+    flex: 4;
+    max-height: 100vh;
+    overflow-x: scroll;
+  }
+  .body {
+    > *:first-child {
+      margin-top: 1em !important;
+    }
+    > *:last-child {
+      margin-bottom: 1em !important;
+    }
+    flex: 1;
+    max-width: 40rem;
+    font-size: 100%;
+    letter-spacing: -0.01em;
+    margin: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    page-break-before: always;
+    h1,
+    h2 {
+      margin: 1em 0;
     }
     h1 {
       page-break-before: always;
       display: grid;
       grid-template-columns: minmax(2.4em, 0.1fr) 9.9fr;
-      font-weight: 500;
-      & > :first-child {
+      & > :first-child,
+      &:before {
         font-weight: 400;
       }
       &:before {
-        font-weight: 400;
         counter-increment: list 1;
+        color: ${props => props.theme.brand.primary};
         content: counter(list, decimal-leading-zero);
       }
-      a {
-        font-weight: 500 !important;
-      }
-    }
-    flex: 4;
-        max-height: 100vh;
-    overflow-x: scroll;
-    .body {
-      flex: 1;
-      max-width: 40rem;
-      font-size: 100%;
-      letter-spacing: -0.01em;
-      margin: auto;
-      padding-left: 1em;
-      padding-right: 1em;
-      page-break-before: always;
-    }
-    & > *:first-child {
-      margin-top: 1em;
-    }
-    & > *:last-child {
-      margin-bottom: 1em;
     }
   }
 `;

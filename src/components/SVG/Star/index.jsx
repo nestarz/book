@@ -12,7 +12,7 @@ const SvgHolder = styled.div`
   }
   svg {
     .st0 {
-      fill: ${props => props.theme.colors.body_color};
+      fill: ${props => props.theme.brand.primary};
     }
     width: 3em;
     height: 3em;

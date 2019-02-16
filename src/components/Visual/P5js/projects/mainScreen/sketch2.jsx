@@ -1,4 +1,4 @@
-const sketch = (width, height, props) => {
+const sketch = (width, height, props, theme) => {
     return function (p5) {
         //let value = props.value;
         let t = 0;
@@ -50,7 +50,7 @@ const sketch = (width, height, props) => {
             p5.translate(w/2, h/2);
 
             p5.clear();   // bg color
-            p5.stroke("#3CD670");
+            p5.stroke(theme.brand.primary);
             p5.noFill();    // color
             p5.beginShape();
             for (var a=0; a<p5.TWO_PI;a+=p5.TWO_PI/vertices_amount) {

@@ -93,6 +93,7 @@ const LumiereToggle = styled.div`
   div:hover {
     background-color: ${props => props.theme.colors.bg_color};
     p {
+      color: ${props => props.theme.brand.primary} !important;
       display: block !important;
     }
     p:first-child {
@@ -126,7 +127,6 @@ const Layout = ({ children, pathname, customSEO, withNav = false }) => {
         <NotCourierSansFont/>
         <GlobalStyle />
         {alwaysOn && <GlobalPrintStyle />}
-        <StarFixed/>
         <LumiereToggle className={"A"}>
           {!withNav && (
             <p
@@ -141,7 +141,7 @@ const Layout = ({ children, pathname, customSEO, withNav = false }) => {
             <>
               <div>
                 <p onClick={() => window.history.back()}>
-                  <MdMenu />
+                  <StarFixed/>
                 </p>
                 <p>
                   Menu

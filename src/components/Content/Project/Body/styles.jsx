@@ -100,14 +100,14 @@ p {
   }
   @media (min-width: 700px) {
     & > * {
-      border-bottom: 1px solid ${props => props.theme.colors.body_color};
+      border-bottom: 0.1em solid ${props => props.theme.brand.primary};
       padding: 1em;
     }
     & > *:last-child, & > *:nth-last-child(2):nth-child(odd) {
       border-bottom: none;
     }
     & > *:nth-child(odd) {
-      border-right: 1px solid ${props => props.theme.colors.body_color};
+      border-right: .1em dotted ${props => props.theme.brand.primary};
     }
   }
 }

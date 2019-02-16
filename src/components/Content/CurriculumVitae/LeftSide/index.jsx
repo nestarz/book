@@ -41,10 +41,6 @@ const AchivementBlock = styled.div`
 `;
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex: 1;
   .email {
     font-size: 90%;
   }
