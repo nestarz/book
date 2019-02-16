@@ -72,14 +72,14 @@ const LumiereToggle = styled.div`
   position: fixed;
   bottom: 1.5em;
   right: 1.5em;
-  font-size: 120%;
   cursor: pointer;
   z-index: 999;
   & > div {
+    font-size: 120%;
     display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
   }
   p {
     margin: 0;
@@ -91,7 +91,6 @@ const LumiereToggle = styled.div`
     display: none;
   }
   div:hover {
-    background-color: ${props => props.theme.colors.bg_color};
     p {
       color: ${props => props.theme.brand.primary} !important;
       display: block !important;
@@ -124,7 +123,7 @@ const Layout = ({ children, pathname, customSEO, withNav = false }) => {
     <ThemeProvider theme={themes[currThemeIndex]}>
       <>
         {!customSEO && <SEO pathname={pathname} />}
-        <NotCourierSansFont/>
+        <NotCourierSansFont />
         <GlobalStyle />
         {alwaysOn && <GlobalPrintStyle />}
         <LumiereToggle className={"A"}>
@@ -141,10 +140,7 @@ const Layout = ({ children, pathname, customSEO, withNav = false }) => {
             <>
               <div>
                 <p onClick={() => window.history.back()}>
-                  <StarFixed/>
-                </p>
-                <p>
-                  Menu
+                  <StarFixed />
                 </p>
                 <p onClick={() => window.history.back()}>
                   <MdClose />

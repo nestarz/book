@@ -3,23 +3,17 @@ import ArtSketch from "components/Visual/Recurrent/netart2";
 import { useToggleGlobalLanguage } from "hooks/useLanguage";
 import React from "react";
 import styled from "styled-components";
-import { randomTesseraeString } from "styles/fonts/Tesserae";
 import { PageA3_Paysage } from "styles/print";
 import PortfolioWrapper from "../";
 import { Info } from "../styles";
-
-const LocalWrapper = styled(PortfolioWrapper)``;
 
 const ArtContainer = styled.div`
   position: relative;
   grid-column: auto / span 4 !important;
   grid-row: auto / span 2 !important;
 `;
-const CustomInfo = styled(Info)`
-&:after {
-    content: "${randomTesseraeString(1)}";
-}
-`;
+const LocalWrapper = styled(PortfolioWrapper)``;
+const CustomInfo = styled(Info)``;
 const neural = {
   fr: (
     <>

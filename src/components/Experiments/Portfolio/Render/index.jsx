@@ -5,17 +5,12 @@ import React, { useState } from "react";
 import { GoMute, GoUnmute } from "react-icons/go";
 import { useVideo } from "react-use";
 import styled from "styled-components";
-import { randomTesseraeString } from "styles/fonts/Tesserae";
 import { PageA3_Paysage } from "styles/print";
 import PortfolioWrapper from "../";
 import { Info } from "../styles";
 
 const LocalWrapper = styled(PortfolioWrapper)``;
-const CustomInfo = styled(Info)`
-&:after {
-    content: "${randomTesseraeString(1)}";
-}
-`;
+const CustomInfo = styled(Info)``;
 const SceneContainer = styled.div`
   grid-column: auto / span 4 !important;
   grid-row: auto / span 2 !important;

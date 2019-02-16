@@ -2,17 +2,16 @@ import Layout from "components/Layout";
 import TwoColumns from "components/Layout/Columns/Two";
 import Contact from "components/Layout/Contact";
 import Name from "components/Layout/Header/Name";
+import ExperimentList from "components/Layout/List/Experiments";
 import ProjectList from "components/Layout/List/Projects";
 import SpringPosition from "components/Layout/SpringPosition";
-import Star from "components/SVG/Star";
-import { Link } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import useHover from "hooks/useHover";
 import { useToggleGlobalLanguage } from "hooks/useLanguage";
 import PropTypes from "prop-types";
 import React, { useEffect, useRef, useState } from "react";
-import ReactTerminal from "react-terminal-component";
-import styled, { withTheme } from "styled-components";
+import styled from "styled-components";
 
 const Wrapper = styled(TwoColumns)`
   .title {
@@ -25,7 +24,7 @@ const Wrapper = styled(TwoColumns)`
   .body {
     h1,
     h2 {
-      margin: 0;
+      margin: 0.1em 0;
     }
   }
 `;
@@ -107,7 +106,7 @@ const About = styled.h1`
     content: "A1" !important;
   }
 `;
-const ProjectItem = ({ project, onMouseOver, onMouseOut }) => {
+const ProjectItem = ({ project, onMouseOver, onMouseOut, i }) => {
   let ref = useRef(null);
   let hover = useHover(ref);
   useEffect(() => {
@@ -120,27 +119,17 @@ const ProjectItem = ({ project, onMouseOver, onMouseOut }) => {
     </h1>
   );
 };
-const Terminal = props => (
-  <ReactTerminal
-    {...props}
-    theme={{
-      background: "transparent",
-      promptSymbolColor: props.theme.colors.body_color,
-      commandColor: props.theme.colors.body_color,
-      outputColor: props.theme.brand.primary,
-      errorOutputColor: props.theme.colors.body_color,
-      fontSize: "100%",
-      spacing: "0%",
-      fontFamily: "monospace",
-      width: "100%",
-      height: "100%"
-    }}
-  />
-);
 
-const TerminalOk = withTheme(Terminal);
-
-const Index = ({ data, location }) => {
+const Index = ({
+  data: {
+    site: {
+      siteMetadata: {
+        authorCv: { shortBio }
+      }
+    }
+  },
+  location
+}) => {
   const [language, toggleLanguage] = useToggleGlobalLanguage();
   const [projectFocus, setProjectFocus] = useState();
   return (
@@ -167,18 +156,28 @@ const Index = ({ data, location }) => {
                     project={project}
                     onMouseOver={() => setProjectFocus(project)}
                     onMouseOut={() => setProjectFocus(null)}
+                    i={i}
                   />
                 ))
               }
             </ProjectList>
-            <About>
-              Currently focusing on Interaction and Object Design exploring the
-              interaction of objects, people, art, technology and science using
-              form and code with a mix of analog and digital materials.
-            </About>
+            <About>{shortBio[language]}</About>
+            <ExperimentList>
+              {projects =>
+                projects.map((project, i) => (
+                  <ProjectItem
+                    key={i}
+                    project={project}
+                    onMouseOver={() => setProjectFocus(project)}
+                    onMouseOut={() => setProjectFocus(null)}
+                    i={9 - i}
+                  />
+                ))
+              }
+            </ExperimentList>
             {/* <TerminalOk promptSymbol={"A2"} inputStr={"help me"} /> */}
             <Focus>
-              {projectFocus && (
+              {projectFocus && projectFocus.frontmatter.cover && (
                 <SpringPosition
                   style={{
                     gridColumnStart: 1 + Math.floor(Math.random() * 3),
@@ -199,6 +198,21 @@ const Index = ({ data, location }) => {
 };
 
 export default Index;
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    site {
+      siteMetadata {
+        authorCv {
+          shortBio {
+            fr
+            en
+          }
+        }
+      }
+    }
+  }
+`;
 
 Index.propTypes = {
   location: PropTypes.object.isRequired

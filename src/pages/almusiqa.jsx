@@ -1,17 +1,15 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
 import Layout from "components/Layout";
-import Star from "components/SVG/Star";
 import TwoColumns from "components/Layout/Columns/Two";
 import PlaylistList from "components/Layout/List/Playlists";
-import styled from "styled-components";
-import MDXRenderer from "gatsby-mdx/mdx-renderer";
-import { GoLinkExternal } from "react-icons/go";
-import { OutboundLink } from "gatsby-plugin-google-analytics";
 import Img from "gatsby-image";
+import MDXRenderer from "gatsby-mdx/mdx-renderer";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
+import PropTypes from "prop-types";
+import React from "react";
+import { GoLinkExternal } from "react-icons/go";
+import styled from "styled-components";
 
-const Wrapper = styled(TwoColumns)`
-`;
+const Wrapper = styled(TwoColumns)``;
 
 const Post = styled.div`
   display: flex;
@@ -64,15 +62,10 @@ const Tags = styled.div`
     font-weight: 900;
   }
 `;
-const StarFixed = styled(Star)`
-  position: fixed;
-  bottom: 1em;
-  right: 1em;
-`;
 function count(tags) {
   var dic = {};
   tags.forEach(function(el, i, arr) {
-    var elStandard = el.toLowerCase()
+    var elStandard = el.toLowerCase();
     dic[elStandard] = dic[elStandard] ? ++dic[elStandard] : 1;
   });
   var obj = [];
@@ -82,15 +75,13 @@ function count(tags) {
   return obj;
 }
 
-const concat = (x,y) =>
-  x.concat(y)
+const concat = (x, y) => x.concat(y);
 
-const flatMap = (f,xs) =>
-  xs.map(f).reduce(concat, [])
+const flatMap = (f, xs) => xs.map(f).reduce(concat, []);
 
 Array.prototype.flatMap = function(f) {
-  return flatMap(f,this)
-}
+  return flatMap(f, this);
+};
 
 const Index = ({ playlists, location }) => {
   const playlistsTags = playlists.flatMap(({ frontmatter }, i) =>
@@ -99,29 +90,33 @@ const Index = ({ playlists, location }) => {
   return (
     <Layout pathname={location.pathname} withNav={true}>
       <Wrapper>
-        <header>
-          <h1>
-            Almusiqa,{" "}
-            <span className="desc">
-              sharing favorites albums. Inspired by fantastic{" "}
-              <OutboundLink
-                href="https://www.almusiqa.info"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Jen Monroe
-              </OutboundLink>{" "}
-              blog.
-            </span>
-          </h1>
-          <div style={{marginBottom: "1em"}}>
+        <div>
+          <header>
+            <h1>
+              <span>
+                Almusiqa,{" "}
+                <span className="desc">
+                  sharing favorites albums. Inspired by fantastic{" "}
+                  <OutboundLink
+                    href="https://www.almusiqa.info"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Jen Monroe
+                  </OutboundLink>{" "}
+                  blog.
+                </span>
+              </span>
+            </h1>
+          </header>
+          <div>
             {count(playlistsTags).map(({ name, count }, i) => (
               <div key={i}>
                 {name} ({count})
               </div>
             ))}
           </div>
-        </header>
+        </div>
         <div>
           <div className={"body"}>
             {playlists.map(({ frontmatter, playlist, body }, i) => (
@@ -168,7 +163,6 @@ const Index = ({ playlists, location }) => {
           </div>
         </div>
       </Wrapper>
-      <StarFixed>Send me an email if you have suggestions!</StarFixed>
     </Layout>
   );
 };

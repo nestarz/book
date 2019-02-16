@@ -1,4 +1,3 @@
-import ApiWorld from "components/Experiments/Portfolio/ApiWorld";
 import DispositifPage from "components/Experiments/Portfolio/Dispositif";
 import EegPage from "components/Experiments/Portfolio/Eeg";
 import HelloPage from "components/Experiments/Portfolio/Hello";
@@ -25,7 +24,7 @@ export const frontmatter = {
 };
 
 const PaginationWrapper = styled.div`
-  font-size: 0.8vw;
+  font-size: 1vw;
   display: flex;
   width: 100%;
   margin: 0 auto;
@@ -70,53 +69,12 @@ const PaginationWrapper = styled.div`
   }
 `;
 
-const Header = styled.div`
-  font-size: 0.5em;
-  align-self: center;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  @media print {
-    display: none;
-  }
-  time:first-child {
-    font-family: Tesserae;
-    font-size: 2em;
-  }
-  span {
-    transform: scale(2, 1);
-  }
-  @media (max-width: 1600px) {
-    time:first-child {
-      font-size: 1.5em;
-    }
-    span {
-      font-size: 1em;
-    }
-  }
-`;
-
 const Index = ({ location }) => {
   const [continuousScroll, setContinuousScroll] = useState(false);
   return (
     <Layout pathname={location.pathname} withNav={true}>
       <TesseraeFont />
       <PageA3_Paysage />
-      <Header>
-        <Clock
-          format={"ss:SS"}
-          ticking={true}
-          timezone={"Europe/Paris"}
-          interval={10}
-          filter={x => convertToTesserae(x, "0123456789")}
-        />
-        <span>Portfolio</span>
-        <button onClick={() => setContinuousScroll(!continuousScroll)}>
-          Scrolling {continuousScroll ? "ON" : "OFF"}
-        </button>
-      </Header>
       <PaginationWrapper>
         <Pagination
           amountPerPage={continuousScroll ? 7 : 1}
@@ -124,7 +82,6 @@ const Index = ({ location }) => {
           keysGoNext={"right-arrow"}
         >
           <HelloPage />
-          <ApiWorld />
           <NetartPage />
           <RenderPage />
           <DispositifPage />

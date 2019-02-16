@@ -5,35 +5,45 @@ import _ from "lodash";
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.div`
-  @media not print {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    flex-wrap: wrap;
-    & > div {
-      margin: 5mm;
-      & > div {
-        border: 1px solid black;
-        margin: 5mm;
-      }
+const ButtonWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  .button {
+    border: 0;
+    background-color: ${props => props.theme.brand.primary};
+    color: white;
+  }
+`;
+const VisitCardBg = styled(VisitCard)`
+  .recto {
+    .name {
+      font-size: 100%;
     }
   }
 `;
-
 function Index({ location }) {
   const [language, toggleLanguage] = useToggleGlobalLanguage();
-  const [cnt, setCount] = useState(0);
+  const [cnt, setCount] = useState(Math.floor(Math.random(11)));
   const local = { fr: "Changer la version", en: "Change version" };
   return (
     <Layout pathname={location.pathname} withNav={true}>
-      <Wrapper>
-        {_.times(3, i => (
-          <VisitCard key={i} sketchIndex={cnt} />
-        ))}
-      </Wrapper>
+      <ButtonWrapper onClick={() => setCount(cnt => cnt + 1)}>
+        <VisitCardBg sketchIndex={cnt} />
+        <VisitCardBg sketchIndex={cnt} />
+        <VisitCardBg sketchIndex={cnt} />
+        <VisitCardBg sketchIndex={cnt} />
+        <VisitCardBg sketchIndex={cnt} />
+        <VisitCardBg sketchIndex={cnt} />
+        <VisitCardBg sketchIndex={cnt} />
+        <VisitCardBg sketchIndex={cnt} />
+      </ButtonWrapper>
     </Layout>
   );
 }
@@ -43,10 +53,10 @@ export default Index;
 Index.propTypes = {};
 
 export const frontmatter = {
-  title: "Visit card",
+  title: "Carte de visite",
   written: "2017-05-04",
   layoutType: "post",
-  path: "VisitCardd",
+  path: "visitcard",
   category: "experiments",
   description: "Things about the choropleth.",
   updated: false

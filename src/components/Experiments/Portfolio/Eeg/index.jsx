@@ -22,20 +22,6 @@ const LocalWrapper = styled(PortfolioWrapper)`
 & > div:nth-child(2n) > img:hover {
     filter: saturate(0)
 }
-.info1 {
-    grid-column: 2 / auto;
-    grid-row: 1 / 4;
-    &:after {
-        content: "${randomTesseraeString(1)}";
-    }
-}
-.info2 {
-    grid-column: 3;
-    grid-row: 2 / 4;
-    &:after {
-        content: "${randomTesseraeString(1)}";
-    }
-}
 `;
 
 const protocol = {

@@ -13,12 +13,22 @@ const Wrapper = styled.div`
     margin: 0;
     padding: 0;
     flex: 0;
+    font-weight: normal;
   }
   h1,
   h2 {
     letter-spacing: calc(-23 / 1000 * 1.2em);
     break-before: page;
-    font-weight: 500;
+  }
+  h1 {
+    page-break-before: always;
+    display: grid;
+    grid-template-columns: minmax(2.4em, 0.1fr) 9.9fr;
+    &:before {
+      counter-increment: list 1;
+      color: ${props => props.theme.brand.primary};
+      content: counter(list, decimal-leading-zero);
+    }
   }
   button {
     background: none;
@@ -33,7 +43,6 @@ const Wrapper = styled.div`
   button,
   a {
     cursor: pointer;
-    font-weight: 500;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     z-index: 100;
@@ -42,7 +51,6 @@ const Wrapper = styled.div`
     }
   }
   header {
-    font-weight: 500;
     margin-bottom: 1em;
     h1 {
       color: ${props => props.theme.brand.primary};
@@ -64,8 +72,15 @@ const Wrapper = styled.div`
     overflow-y: scroll;
     justify-content: space-between;
     padding: 1em;
-    padding-bottom: 0;
     position: relative;
+
+    &,
+    .nav {
+      > *:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
   }
   & > *:nth-child(2) {
     flex: 4;
@@ -90,20 +105,6 @@ const Wrapper = styled.div`
     h1,
     h2 {
       margin: 1em 0;
-    }
-    h1 {
-      page-break-before: always;
-      display: grid;
-      grid-template-columns: minmax(2.4em, 0.1fr) 9.9fr;
-      & > :first-child,
-      &:before {
-        font-weight: 400;
-      }
-      &:before {
-        counter-increment: list 1;
-        color: ${props => props.theme.brand.primary};
-        content: counter(list, decimal-leading-zero);
-      }
     }
   }
 `;

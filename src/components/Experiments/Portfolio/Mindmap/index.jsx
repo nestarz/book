@@ -8,13 +8,7 @@ import PortfolioWrapper from "../";
 import { Info } from "../styles";
 
 const LocalWrapper = styled(PortfolioWrapper)``;
-const CustomInfo = styled(Info)`
-grid-column: auto /span 1 !important;
-grid-row: auto /span 2 !important;
-&:after {
-    content: "${randomTesseraeString(1)}";
-}
-`;
+const CustomInfo = styled(Info)``;
 const MindmapWrapper = styled.div`
   grid-column: auto / span 4 !important;
   grid-row: auto / span 3 !important;

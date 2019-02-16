@@ -12,7 +12,7 @@ const prevPage = (curr, max) => {
 const Pagination = ({
   children,
   amountPerPage,
-  defaultCurrentPage = 1,
+  defaultCurrentPage = 0,
   className,
   pageNumbersClassName,
   keysGoPrevious,

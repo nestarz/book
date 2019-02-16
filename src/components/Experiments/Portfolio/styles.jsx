@@ -1,34 +1,59 @@
 import styled from "styled-components";
-import { randomTesseraeString } from "styles/fonts/Tesserae";
-import { transparentize } from "polished";
 
 export const Info = styled.div`
 background-color: white;
 position: relative;
-padding: 1em;
 font-size: 1em;
 z-index: 99999;
-letter-spacing: -0.03vw;
+letter-spacing: -0.05em;
 max-height: none !important;
 overflow: visible !important;
 h1 {
     margin: 0;
-    font-size: 190%;
     margin-bottom:0.5vmin;
 }
-&:after {
-    content: "${randomTesseraeString(1)}"; /**/
-    color: #3CD670;
-    position: absolute;
-    bottom: -0.5em;
-    right: -0.5em;
-    font-family: "Tesserae";
-    font-size: 8em;
-    mix-blend-mode: screen;
-}`;
+`;
 
 export const Wrapper = styled.div`
-  color: black;
+flex: 1;
+justify-content: center;
+align-items: center;
+display: flex;
+flex-wrap: wrap;
+& > div:first-child {
+  width: 100%;
+  text-align: center;
+  margin-top: -1em;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+  text-decoration: underline;
+}
+  counter-reset: list;
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    flex: 0;
+    font-weight: normal;
+  }
+  h1,
+  h2 {
+    letter-spacing: calc(-23 / 1000 * 1.2em);
+    break-before: page;
+  }
+  h1 {
+    page-break-before: always;
+    display: grid;
+    grid-template-columns: minmax(2.4em, 0.1fr) 9.9fr;
+    &:before {
+      counter-increment: list 1;
+      color: ${props => props.theme.brand.primary};
+      content: counter(list, decimal-leading-zero);
+    }
+  }
   margin: auto;
   /*https://medium.com/@marveloo/by-replacing-grid-width-inline-grid-and-adding-height-100-to-its-child-elements-now-its-possible-c801fec4abe6*/
   /*https://codepen.io/cssence/pen/BJMwwN*/
@@ -63,7 +88,7 @@ export const Wrapper = styled.div`
 
   .viewport,
   .viewport .content {
-    --width: 63vw;
+    --width: 73vw;
     width: var(--width);
     height: calc(var(--width) / 1.4141);
     margin-left: auto;
@@ -72,6 +97,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
+  color: black;
   position: relative;
   counter-increment: mon-compteur;
   background-color: white;
@@ -127,26 +153,7 @@ export const Content = styled.div`
       object-fit: cover;
     }
   }
-  &:after {
-    content: "" counter(mon-compteur);
-    position: absolute;
-    bottom: 0em;
-    right: 0em;
-    font-size: 5em;
-    padding: 0 1em;
-    font-weight: 100;
-  }
-  &:before {
-    content: "Elias Rhouzlane";
-    position: absolute;
-    bottom: 0em;
-    left: 1em;
-    font-size: 1em;
-    padding: 0 1em;
-    font-weight: 100;
-  }
   @media not print {
-    box-shadow: 0px 0px 20px
-      ${props => transparentize("0.8", props.theme.colors.body_color)};
+    border: 1px solid ${props => props.theme.brand.primary};
   }
 `;

@@ -18,22 +18,6 @@ figcaption.gatsby-resp-image-figcaption {
 & > div div {
   page-break-inside: avoid;
 }
-& > div {
-  counter-reset: list;
-  & > h1 {
-    &:not(:first-child) {
-      margin-top: 2em;
-    }
-    display: block;
-    page-break-before: always;
-    &:before {
-      counter-increment: list 1;
-      content: counter(list, hiragana) " " counter(list, decimal-leading-zero);
-      word-spacing: 1em;
-      padding-right: 1em;
-    }
-  }
-}
 p {
   line-height: 1.3;
 }
