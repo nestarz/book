@@ -64,6 +64,8 @@
     "jw-canvas-ascii": "^0.1.4",
     "libphonenumber-js": "^1.7.8",
     "lodash": "^4.17.11",
+    "markdown-to-jsx": "^6.9.1",
+    "meyda": "^4.2.0",
     "mobile-detect": "^1.4.3",
     "moment-timezone": "^0.5.23",
     "p5": "^0.7.3",

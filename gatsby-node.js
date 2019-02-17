@@ -22,6 +22,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
           {
             test: /react-audio-waveform/,
             use: loaders.null()
+          },
+          {
+            test: /tone/,
+            use: loaders.null()
           }
         ]
       }

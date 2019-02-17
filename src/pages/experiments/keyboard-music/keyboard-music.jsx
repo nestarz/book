@@ -1,59 +1,45 @@
 import Layout from "components/Layout";
 import TwoColumns from "components/Layout/Columns/Two";
+import Synth from "components/Visual/Tone/Synth";
 import { useToggleGlobalLanguage } from "hooks/useLanguage";
-import React, { useEffect, useState } from "react";
+import Markdown from 'markdown-to-jsx';
+import React from "react";
 import styled from "styled-components";
-import Tone from "tone";
-import useKey from "use-key-hook";
+import { useToggle } from 'react-use';
+import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
+const Wrapper = styled(TwoColumns)`
+th {
+  text-align: center;
+  font-weight: normal;
+  padding: 1em;
+}
+td{
+    border-top:1px solid ${props => props.theme.brand.primary};
+    padding: 1em;
+}
+tr td:not(:last-child){
+    width:1%;
+    white-space:nowrap;
+}
+.toggle {
+  cursor: pointer;
+}
+`;
+const md = `
+## Mapping inherited from Ableton Live
 
-const Wrapper = styled(TwoColumns)``;
-
-//create a synth and connect it to the master output (your speakers)
-var synth = new Tone.Synth({
-	"oscillator" : {
-		"type" : "sine",
-		"modulationFrequency" : 0.2
-	},
-	"envelope" : {
-		"attack" : 0.02,
-		"decay" : 0.1,
-		"sustain" : 0.2,
-		"release" : 0.8,
-	}
-}).toMaster();
-//create a distortion effect
-var distortion = new Tone.Distortion(0.4).toMaster();
-//connect a synth to the distortion
-synth.connect(distortion);
-const triggerSynth = time => {
-  //play a 'C4' for the duration of an 8th note
-  synth.triggerAttackRelease("C4", "8n", time);
-};
+| M |	M |	Toggle computer **MIDI keyboard** |
+| --- | --- | --- |
+| A to L | A to L | This row triggers white notes from C (the A key). |
+| W to O | W to O | This row triggers black notes from C# (the W key). Actual keys are: WE – TYU – O |
+| Z |	Z |	Octave down |
+| X |	X |	Octave up |
+| C |	C |	Decrease note velocity |
+| V |	V |	Increase note velocity |
+`;
 function Index({ location }) {
   const [language, toggleLanguage] = useToggleGlobalLanguage();
-  const [playing, setPlaying] = useState(false);
-  useEffect(() => {
-    Tone.Transport.schedule(triggerSynth, 0);
-    Tone.Transport.schedule(triggerSynth, "0:2");
-    Tone.Transport.schedule(triggerSynth, "0:2:2.5");
-    Tone.Transport.loopEnd = "1m";
-    Tone.Transport.loop = true;
-  }, []);
-  useEffect(() => {
-    if (!playing) {
-      Tone.Transport.stop();
-    } else {
-      Tone.Transport.start("+0.0");
-    }
-  }, [playing]);
-  useKey(pressedKey => {
-    console.log("Detected Key press", pressedKey);
-    const octaves = ["C4", "E4", "G4", "A4"];
-    synth.triggerAttackRelease(
-      octaves[Math.floor(Math.random() * octaves.length)],
-      "8n"
-    );
-  });
+  const [controls, toggleControls] = useToggle(false);
   return (
     <Layout pathname={location.pathname} withNav={true}>
       <Wrapper>
@@ -70,10 +56,14 @@ function Index({ location }) {
         </div>
         <div>
           <div className={"body"}>
-            <h1>Use your keyboard to play notes and control p5 output (WIP)</h1>
-            <button onClick={() => setPlaying(!playing)}>
-              {playing ? "Stop" : "Play"}
-            </button>
+            <h1>
+              Use your voice/keyboard to play notes and control p5 output (WIP)
+            </h1>
+            <Synth />
+            <h1 className={"toggle"} onClick={() => toggleControls()}>
+              <span>Display Controls {controls ? <MdArrowDropDown/> : <MdArrowDropUp/>}</span>
+            </h1>
+            {controls && <Markdown children={md} />}
           </div>
         </div>
       </Wrapper>
