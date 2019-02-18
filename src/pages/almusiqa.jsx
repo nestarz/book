@@ -98,7 +98,7 @@ const Index = ({ playlists, location }) => {
                 <span className="desc">
                   sharing favorites albums. Inspired by fantastic{" "}
                   <OutboundLink
-                    href="https://www.almusiqa.info"
+                    href="https://www.listentothis.info"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

@@ -4,10 +4,10 @@ import { Content, Wrapper } from "./styles";
 
 const Index = ({ children, className }) => {
   const [showFullScreen, setShowFullScreen] = useState(false);
-  useFullScreen("app", showFullScreen);
+  useFullScreen("single", showFullScreen);
 
   return (
-    <Wrapper id="app">
+    <Wrapper id="single">
       <div onClick={() => setShowFullScreen(!showFullScreen)}>
         Go Fullscreen
       </div>

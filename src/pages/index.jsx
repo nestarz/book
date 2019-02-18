@@ -105,6 +105,14 @@ const About = styled.h1`
   :before {
     content: "A1" !important;
   }
+  /*color: ${props => props.theme.brand.primary} !important;*/
+  transform: translateX(-3em);
+  margin-top: 1em !important;
+  margin-bottom: 1em !important;
+  font-size: 190% !important;
+  @media (max-width: 700px) {
+    font-size: 100% !important;
+  }
 `;
 const ProjectItem = ({ project, onMouseOver, onMouseOut, i }) => {
   let ref = useRef(null);

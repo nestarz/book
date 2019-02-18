@@ -6,12 +6,11 @@ import NetartPage from "components/Experiments/Portfolio/Netart";
 import RenderPage from "components/Experiments/Portfolio/Render";
 import Layout from "components/Layout";
 import Pagination from "components/Pagination";
-import Clock from "external/react-live-clock/src/Component";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
-import styled, { createGlobalStyle } from "styled-components";
-import { convertToTesserae, TesseraeFont } from "styles/fonts/Tesserae";
+import styled from "styled-components";
 import { PageA3_Paysage } from "styles/print";
+import { useFullScreen } from "hooks/useFullScreen";
 
 export const frontmatter = {
   title: "Portfolio A3",
@@ -26,18 +25,20 @@ export const frontmatter = {
 const PaginationWrapper = styled.div`
   font-size: 1vw;
   display: flex;
-  width: 100%;
   margin: 0 auto;
   flex: 1;
   align-items: center;
+  & > button {
+    @media print {
+      display: none;
+    }
+  }
   ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
   @media print {
-    width: 42cm;
-    height: 24cm;
     ul.page-numbers {
       display: none;
     }
@@ -73,9 +74,9 @@ const Index = ({ location }) => {
   const [continuousScroll, setContinuousScroll] = useState(false);
   return (
     <Layout pathname={location.pathname} withNav={true}>
-      <TesseraeFont />
       <PageA3_Paysage />
       <PaginationWrapper>
+        <button onClick={() => setContinuousScroll(!continuousScroll)}>continuousScroll</button>
         <Pagination
           amountPerPage={continuousScroll ? 7 : 1}
           keysGoPrevious={[37, 38]}

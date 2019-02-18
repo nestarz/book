@@ -1,33 +1,36 @@
 import styled from "styled-components";
 
 export const Info = styled.div`
-background-color: white;
-position: relative;
-font-size: 1em;
-z-index: 99999;
-letter-spacing: -0.05em;
-max-height: none !important;
-overflow: visible !important;
-h1 {
+  background-color: white;
+  position: relative;
+  font-size: 1em;
+  z-index: 99999;
+  letter-spacing: -0.05em;
+  max-height: none !important;
+  overflow: visible !important;
+  h1 {
     margin: 0;
-    margin-bottom:0.5vmin;
-}
+    margin-bottom: 0.5vmin;
+  }
 `;
 
 export const Wrapper = styled.div`
-flex: 1;
-justify-content: center;
-align-items: center;
-display: flex;
-flex-wrap: wrap;
-& > div:first-child {
-  width: 100%;
-  text-align: center;
-  margin-top: -1em;
-  cursor: pointer;
-  margin-bottom: 0.5em;
-  text-decoration: underline;
-}
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  & > div:first-child {
+    width: 100%;
+    text-align: center;
+    margin-top: -1em;
+    cursor: pointer;
+    margin-bottom: 0.5em;
+    text-decoration: underline;
+    @media print {
+      display: none;
+    }
+  }
   counter-reset: list;
   h1,
   h2,
@@ -42,10 +45,8 @@ flex-wrap: wrap;
   h1,
   h2 {
     letter-spacing: calc(-23 / 1000 * 1.2em);
-    break-before: page;
   }
   h1 {
-    page-break-before: always;
     display: grid;
     grid-template-columns: minmax(2.4em, 0.1fr) 9.9fr;
     &:before {
@@ -88,7 +89,12 @@ flex-wrap: wrap;
 
   .viewport,
   .viewport .content {
-    --width: 73vw;
+    @media not print {
+      --width: 73vw;
+    }
+    @media print {
+      --width: 41.95cm;
+    }
     width: var(--width);
     height: calc(var(--width) / 1.4141);
     margin-left: auto;

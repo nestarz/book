@@ -13,6 +13,9 @@ const reset = css`
   }
   html {
     text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
     overflow-x: hidden;
     overflow-y: auto !important;
     box-sizing: border-box;

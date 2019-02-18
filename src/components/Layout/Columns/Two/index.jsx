@@ -28,6 +28,15 @@ const Wrapper = styled.div`
       counter-increment: list 1;
       color: ${props => props.theme.brand.primary};
       content: counter(list, decimal-leading-zero);
+      transform: scale(1) rotate(0deg) translate(0px,0px) skew(20deg,0deg);
+    }
+    &:hover {
+      transition: transform;
+      &:before {
+        transform: none;
+        text-decoration: underline;
+        text-decoration-style: wavy;
+      }
     }
   }
   button {
@@ -48,6 +57,11 @@ const Wrapper = styled.div`
     z-index: 100;
     &:hover {
       color: ${props => props.theme.brand.primary} !important;
+    }
+  }
+  h1 {
+    a {
+      color: ${props => props.theme.colors.body_color} !important;
     }
   }
   header {
