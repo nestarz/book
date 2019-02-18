@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import { useCounter } from "react-use";
 import Tone from "tone";
-import useKey from "use-key-hook";
+import useKey from "hooks/use-key-hook";
 
 export const useSynth = config => {
   //create a synth and connect it to the master output (your speakers)
   const [synth, setSynth] = useState(null);
   useEffect(() => {
-    const new_synth = new Tone.Synth().toMaster();
+    const new_synth = new Tone.Synth(config).toMaster();
     //const new_synth = new Tone.Synth(config).toMaster();
     setSynth(new_synth);
     return function cleanup() {
@@ -84,8 +83,10 @@ const midiKeyboardsMap = {
   octaveKeys: { ...mapping.octaveKeys }
 };
 
-export const useKeyboardAsMidi = synth => {
-  const [currentOctave, setOctave] = useOctave();
+export const useKeyboardAsMidi = (synth, {
+  octave,
+  setOctave
+}) => {
   const {
     whiteKeys,
     blackKeys,
@@ -93,7 +94,6 @@ export const useKeyboardAsMidi = synth => {
   } = midiKeyboardsMap;
   useKey(
     () => {
-      console.log(currentOctave);
       setOctave(octave => octave + 1);
     },
     { detectKeys: incOctaveKeys },
@@ -101,25 +101,24 @@ export const useKeyboardAsMidi = synth => {
   );
   useKey(
     () => {
-      console.log(currentOctave);
       setOctave(octave => octave - 1);
     },
     { detectKeys: decOctaveKeys },
     { dependencies: [] }
   );
   const keyboardTriggerAttack = (pressedKey, table) => {
-    const pitchOctave = table[String.fromCharCode(pressedKey)] + currentOctave;
+    const pitchOctave = table[String.fromCharCode(pressedKey)] + octave;
     synth.triggerAttackRelease(pitchOctave, "8n");
   };
   useKey(
     key => keyboardTriggerAttack(key, whiteKeys),
     { detectKeys: Object.keys(whiteKeys) },
-    { dependencies: [synth, currentOctave] } //re-render to update keyboardTriggerAttack
+    { dependencies: [synth, octave] } //re-render to update keyboardTriggerAttack
   );
   useKey(
     key => keyboardTriggerAttack(key, blackKeys),
     { detectKeys: Object.keys(blackKeys) },
-    { dependencies: [synth, currentOctave] }
+    { dependencies: [synth, octave] }
   );
-  return [currentOctave, setOctave];
+  return [octave, setOctave];
 };

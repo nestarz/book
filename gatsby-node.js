@@ -124,19 +124,30 @@ exports.onCreateNode = async ({
               createNode,
               createNodeId
             });
-            coverFileNode.parent = node.id;
-            actions.createParentChildLink({
-              parent: node,
-              child: coverFileNode
-            });
-            // Add results to a field of Mdx node + a link to cover file
-            release_fields.push({
-              ...default_musicBrainzReleaseFields,
-              ...result.lookup.release,
-              cover___NODE: coverFileNode.id
-            });
+            if (coverFileNode) {
+              coverFileNode.parent = node.id;
+              actions.createParentChildLink({
+                parent: node,
+                child: coverFileNode
+              });
+              // Add results to a field of Mdx node + a link to cover file
+              release_fields.push({
+                ...default_musicBrainzReleaseFields,
+                ...result.lookup.release,
+                cover___NODE: coverFileNode.id
+              });
+            } else {
+              console.warn("Cover not downloaded")
+              release_fields.push({
+                ...default_musicBrainzReleaseFields,
+                ...result.lookup.release,
+              });
+            }
           })
-        );
+        ).catch(err => {
+          console.log(err)
+          throw err
+        });
       }
       // Add everything into a node field named graphbrainz__release
       createNodeField({

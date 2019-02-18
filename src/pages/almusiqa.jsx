@@ -87,6 +87,7 @@ const Index = ({ playlists, location }) => {
   const playlistsTags = playlists.flatMap(({ frontmatter }, i) =>
     frontmatter.tags.map((tag, i) => tag)
   );
+  console.log(playlists);
   return (
     <Layout pathname={location.pathname} withNav={true}>
       <Wrapper>
@@ -123,12 +124,12 @@ const Index = ({ playlists, location }) => {
               <React.Fragment key={i}>
                 <h1 className={"title"}>{frontmatter.title}</h1>
                 <Post>
-                  {playlist.map((release, j) => (
+                  {playlist.map((release, j) => (release.cover ?
                     <Release key={j}>
                       <div>
                         <Img fluid={release.cover.childImageSharp.fluid} />
                       </div>
-                    </Release>
+                    </Release> : <></>
                   ))}
                 </Post>
                 {playlist.map((release, j) => (

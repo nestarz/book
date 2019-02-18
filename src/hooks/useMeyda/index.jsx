@@ -1,21 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Meyda from "meyda";
 import { isEqual } from 'lodash';
-import { useGetSet } from 'react-use';
 
-export const useMeyda = (audioNode) => {
+export const useMeydaAnalyzer = (config) => {
   const [analyzer, setAnalyzer] = useState();
-  const [getFeatures, setFeatures] = useGetSet();
-  const features = getFeatures();
+  const [audioContext, setAudioContext] = useState();
+  const [source, setSource] = useState();
+  const [features, setFeatures] = useState();
+  const featuresRef = useRef(features);
   useEffect(() => {
-    if (audioNode && !analyzer) {
+    if (source && audioContext && !analyzer) {
       const new_analyzer = Meyda.createMeydaAnalyzer({
-        audioContext: audioNode.context.rawContext,
-        source: audioNode,
-        bufferSize: 512,
-        featureExtractors: ["rms"],
+        audioContext: audioContext,
+        source: source,
+        bufferSize: config.bufferSize || 512,
+        featureExtractors: config.featureExtractors || ['rms'],
         callback: (nextFeatures) => {
-          const currFeatures = getFeatures();
+          const currFeatures = featuresRef.current;
           if (!isEqual(currFeatures, nextFeatures)) {
             console.log(currFeatures, nextFeatures)
             setFeatures(nextFeatures);
@@ -24,11 +25,19 @@ export const useMeyda = (audioNode) => {
       });
       setAnalyzer(new_analyzer);
     } else if (analyzer) {
-      analyzer.setSource(audioNode)
+      analyzer.setSource(source)
     }
-  }, [audioNode])
+  }, [source])
   useEffect(() => {
     if(analyzer) analyzer.start();
   }, [analyzer])
-  return [analyzer, features]
+  useEffect(() => {
+    featuresRef.current = features;
+  }, [features])
+  return {
+    analyzer,
+    features,
+    setAudioContext,
+    setSource
+  }
 };

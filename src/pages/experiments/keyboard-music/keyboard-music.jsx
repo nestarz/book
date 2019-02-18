@@ -59,11 +59,11 @@ function Index({ location }) {
             <h1>
               Use your voice/keyboard to play notes and control p5 output (WIP)
             </h1>
+            {controls && <Markdown children={md} />}
             <Synth />
             <h1 className={"toggle"} onClick={() => toggleControls()}>
               <span>Display Controls {controls ? <MdArrowDropDown/> : <MdArrowDropUp/>}</span>
             </h1>
-            {controls && <Markdown children={md} />}
           </div>
         </div>
       </Wrapper>
