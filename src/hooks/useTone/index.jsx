@@ -3,16 +3,17 @@ import { useCounter } from "react-use";
 import Tone from "tone";
 import useKey from "use-key-hook";
 
-const synthCreation = config => new Tone.Synth(config).toMaster();
 export const useSynth = config => {
   //create a synth and connect it to the master output (your speakers)
   const [synth, setSynth] = useState(null);
   useEffect(() => {
-    setSynth(synthCreation(config));
+    const new_synth = new Tone.Synth().toMaster();
+    //const new_synth = new Tone.Synth(config).toMaster();
+    setSynth(new_synth);
+    return function cleanup() {
+      synth.disconnect();
+    };
   }, []);
-  useEffect(() => {
-    setSynth(synthCreation(config));
-  }, [config]);
   return [synth, setSynth];
 };
 
@@ -38,21 +39,20 @@ function linspace(startValue, stopValue, cardinality) {
   return arr;
 }
 export const useOctave = () => {
-  const [value, { inc, dec, get, set, reset }] = useCounter(8);
-  const [octave, setOctave] = useState(value);
+  const [octave, setOctave] = useState(2);
   useEffect(() => {
-    if (value in linspace(0, 8, 9)) {
-      setOctave(value);
-    } else {
-      reset();
+    if (!(octave in linspace(0, 8, 9))) {
+      setOctave(octave => (octave == 9 ? 0 : 8));
     }
-  }, [value]);
+  }, [octave]);
   // We send controls on value, but real value is octave.
-  return [octave, { inc, dec, set, get, reset }];
+  return [octave, setOctave];
 };
 
-const toUpper = o => Object.keys(o).reduce((c, k) => (c[k.toUpperCase()] = o[k], c), {});
-const toLower = o => Object.keys(o).reduce((c, k) => (c[k.toLowerCase()] = o[k], c), {});
+const toUpper = o =>
+  Object.keys(o).reduce((c, k) => ((c[k.toUpperCase()] = o[k]), c), {});
+const toLower = o =>
+  Object.keys(o).reduce((c, k) => ((c[k.toLowerCase()] = o[k]), c), {});
 const mapping = {
   whiteKeys: {
     A: "C",
@@ -85,22 +85,25 @@ const midiKeyboardsMap = {
 };
 
 export const useKeyboardAsMidi = synth => {
-  const [
-    currentOctave,
-    { inc: incOctave, dec: decOctave, get: getOctave, reset: resetOctave }
-  ] = useOctave();
+  const [currentOctave, setOctave] = useOctave();
   const {
     whiteKeys,
     blackKeys,
     octaveKeys: { incOctaveKeys, decOctaveKeys }
   } = midiKeyboardsMap;
   useKey(
-    () => incOctave(),
+    () => {
+      console.log(currentOctave);
+      setOctave(octave => octave + 1);
+    },
     { detectKeys: incOctaveKeys },
     { dependencies: [] }
   );
   useKey(
-    () => decOctave(),
+    () => {
+      console.log(currentOctave);
+      setOctave(octave => octave - 1);
+    },
     { detectKeys: decOctaveKeys },
     { dependencies: [] }
   );
@@ -111,18 +114,12 @@ export const useKeyboardAsMidi = synth => {
   useKey(
     key => keyboardTriggerAttack(key, whiteKeys),
     { detectKeys: Object.keys(whiteKeys) },
-    { dependencies: [synth, currentOctave] }
+    { dependencies: [synth, currentOctave] } //re-render to update keyboardTriggerAttack
   );
   useKey(
     key => keyboardTriggerAttack(key, blackKeys),
     { detectKeys: Object.keys(blackKeys) },
     { dependencies: [synth, currentOctave] }
   );
-  const octaveControls = {
-    inc: incOctave,
-    dec: decOctave,
-    get: getOctave,
-    reset: resetOctave
-  };
-  return [currentOctave, octaveControls];
+  return [currentOctave, setOctave];
 };

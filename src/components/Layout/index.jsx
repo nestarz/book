@@ -81,21 +81,21 @@ const LumiereToggle = styled.div`
     justify-content: center;
     align-content: center;
   }
-  p {
+  div.child {
     margin: 0;
     padding: 0;
     margin-top: 0.5rem;
     text-align: right;
   }
-  div > p:not(:first-child) {
+  div > div.child:not(:first-child) {
     display: none;
   }
   div:hover {
-    p {
+    div.child {
       color: ${props => props.theme.brand.primary} !important;
       display: block !important;
     }
-    p:first-child {
+    div.child:first-child {
       display: none !important;
     }
   }
@@ -128,39 +128,39 @@ const Layout = ({ children, pathname, customSEO, withNav = false }) => {
         {alwaysOn && <GlobalPrintStyle />}
         <LumiereToggle className={"A"}>
           {!withNav && (
-            <p
+            <div className={"child"}
               onClick={() =>
                 setCurrThemeIndex((currThemeIndex + 1) % themes.length)
               }
             >
               {currThemeIndex == 1 ? <IoIosSunny /> : <IoIosMoon />}
-            </p>
+            </div>
           )}
           {withNav && (
             <>
               <div>
-                <p onClick={() => window.history.back()}>
+                <div className={"child"} onClick={() => window.history.back()}>
                   <StarFixed />
-                </p>
-                <p onClick={() => window.history.back()}>
+                </div>
+                <div className={"child"} onClick={() => window.history.back()}>
                   <MdClose />
-                </p>
-                <p onClick={() => window.history.back()}>
+                </div>
+                <div className={"child"} onClick={() => window.history.back()}>
                   <MdArrowBack />
-                </p>
-                <p onClick={() => window.history.forward()}>
+                </div>
+                <div className={"child"} onClick={() => window.history.forward()}>
                   <MdArrowForward />
-                </p>
-                <p onClick={() => window.print()}>
+                </div>
+                <div className={"child"} onClick={() => window.print()}>
                   <MdPrint />
-                </p>
-                <p
+                </div>
+                <div className={"child"}
                   onClick={() =>
                     setCurrThemeIndex((currThemeIndex + 1) % themes.length)
                   }
                 >
                   {currThemeIndex == 1 ? <IoIosSunny /> : <IoIosMoon />}
-                </p>
+                </div>
               </div>
             </>
           )}

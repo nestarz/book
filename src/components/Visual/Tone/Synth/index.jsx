@@ -21,7 +21,7 @@ const Index = () => {
   return (
     <>
       <div>currentOctave : {currentOctave}</div>
-      <div>features: {features && features.energy}</div>
+      {/* <div>features: {features && features.energy}</div> */}
     </>
   );
 };

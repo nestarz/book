@@ -13,21 +13,22 @@ export const useMeyda = (audioNode) => {
         audioContext: audioNode.context.rawContext,
         source: audioNode,
         bufferSize: 512,
-        featureExtractors: ["energy"],
+        featureExtractors: ["rms"],
         callback: (nextFeatures) => {
           const currFeatures = getFeatures();
           if (!isEqual(currFeatures, nextFeatures)) {
-            console.log(isEqual(currFeatures, nextFeatures), currFeatures, nextFeatures)
+            console.log(currFeatures, nextFeatures)
             setFeatures(nextFeatures);
           }
         }
       });
       setAnalyzer(new_analyzer);
-      console.log(audioNode)
     } else if (analyzer) {
-      //console.log("here")
-      //analyzer.start();
+      analyzer.setSource(audioNode)
     }
   }, [audioNode])
+  useEffect(() => {
+    if(analyzer) analyzer.start();
+  }, [analyzer])
   return [analyzer, features]
 };
