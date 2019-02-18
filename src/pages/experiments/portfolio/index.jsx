@@ -78,8 +78,8 @@ const Index = ({ location }) => {
       <PaginationWrapper>
         <Pagination
           amountPerPage={continuousScroll ? 7 : 1}
-          keysGoPrevious={"left-arrow"}
-          keysGoNext={"right-arrow"}
+          keysGoPrevious={[37, 38]}
+          keysGoNext={[39, 40]}
         >
           <HelloPage />
           <NetartPage />

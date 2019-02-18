@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useKeyPress } from "react-use";
+import useKey from "hooks/use-key-hook";
 
 const nextPage = (curr, max) => {
   return curr < max ? curr + 1 : 1;
@@ -12,7 +12,7 @@ const prevPage = (curr, max) => {
 const Pagination = ({
   children,
   amountPerPage,
-  defaultCurrentPage = 0,
+  defaultCurrentPage = 1,
   className,
   pageNumbersClassName,
   keysGoPrevious,
@@ -22,19 +22,25 @@ const Pagination = ({
   const [currentPage, setCurrentPage] = useState(defaultCurrentPage);
 
   // Controls Events
-  const hasPressedPrevious = useKeyPress(keysGoPrevious);
-  const hasPressedNext = useKeyPress(keysGoNext);
+  useKey(
+    pressedKey => {
+      const maxPage = Math.ceil(todos.length / amountPerPage);
+      const prevIndex = prevPage(currentPage, maxPage);
+      setCurrentPage(prevIndex);
+    },
+    { detectKeys: Array.isArray(keysGoPrevious) ? keysGoPrevious : [keysGoPrevious] },
+    { dependencies: [currentPage] }
+  );
+  useKey(
+    pressedKey => {
+      const maxPage = Math.ceil(todos.length / amountPerPage);
+      const nextIndex = nextPage(currentPage, maxPage);
+      setCurrentPage(nextIndex);
+    },
+    { detectKeys: Array.isArray(keysGoNext) ? keysGoNext : [keysGoNext] },
+    { dependencies: [currentPage] }
+  );
   const handleClick = e => setCurrentPage(Number(e.target.id));
-  useEffect(() => {
-    const maxPage = Math.ceil(todos.length / amountPerPage);
-    const prevIndex = prevPage(currentPage, maxPage);
-    setCurrentPage(prevIndex);
-  }, [hasPressedPrevious]);
-  useEffect(() => {
-    const maxPage = Math.ceil(todos.length / amountPerPage);
-    const nextIndex = nextPage(currentPage, maxPage);
-    setCurrentPage(nextIndex);
-  }, [hasPressedNext]);
 
   // Logic for displaying todos
   const indexOfLastTodo = currentPage * amountPerPage;
