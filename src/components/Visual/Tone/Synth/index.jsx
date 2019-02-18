@@ -1,10 +1,11 @@
-import { useKeyboardAsMidi, useSynth, useTransport } from "hooks/zone.js";
+import { useKeyboardAsMidi, useSynth, useTransport } from "hooks/useTone";
+import { useMeyda } from "hooks/useMeyda";
 import React, { useEffect } from "react";
-
+//https://p5js.org/examples/sound-filter-bandpass.html
 const Index = () => {
   const [synth, setSynth] = useSynth({
     oscillator: {
-      type: 'triangle8'
+      type: "triangle8"
     },
     envelope: {
       attack: 2,
@@ -15,10 +16,12 @@ const Index = () => {
   });
   //const [playing, setPlaying, transport] = useTransport();
   const [currentOctave, octaveControls] = useKeyboardAsMidi(synth);
-  //const cam = useFaceCameraAsMidi(synth);
+  const [analyzer, features] = useMeyda(synth);
+  //console.log(features)
   return (
     <>
-    <div>currentOctave : {currentOctave}</div>
+      <div>currentOctave : {currentOctave}</div>
+      <div>features: {features && features.energy}</div>
     </>
   );
 };
