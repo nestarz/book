@@ -87,7 +87,6 @@ const Index = ({ playlists, location }) => {
   const playlistsTags = playlists.flatMap(({ frontmatter }, i) =>
     frontmatter.tags.map((tag, i) => tag)
   );
-  console.log(playlists);
   return (
     <Layout pathname={location.pathname} withNav={true}>
       <Wrapper>

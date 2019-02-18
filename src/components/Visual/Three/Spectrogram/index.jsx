@@ -22,12 +22,10 @@ const Vis = ({ style, className, bufferSize, features, analyzer, theme }) => {
     var material = new THREE.LineBasicMaterial({
       color: theme.brand.primary
     });
-    var yellowMaterial = new THREE.LineBasicMaterial({
-      color: 0x00ffff
-    });
+
     var ffts = initializeFFTs(20, bufferSize);
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    const renderer = new THREE.WebGLRenderer({ antialias: false });
     renderer.setSize(width, height);
     camera.aspect = width / height;
     camera.updateProjectionMatrix();

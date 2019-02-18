@@ -10,7 +10,7 @@ export const useSynth = config => {
     //const new_synth = new Tone.Synth(config).toMaster();
     setSynth(new_synth);
     return function cleanup() {
-      synth.disconnect();
+      if (synth) synth.disconnect();
     };
   }, []);
   return [synth, setSynth];
