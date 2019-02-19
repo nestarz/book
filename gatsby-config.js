@@ -135,7 +135,7 @@ module.exports = {
       options: {
         nodeTypes: [
           `PeopleYaml`,
-          `CollectivesYaml`,
+          `CollectivesYaml`,
           `ProjectsYaml`,
           `FestivalsYaml`,
           `SchoolsYaml`,
