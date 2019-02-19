@@ -3,6 +3,7 @@ import NotCourierSansFont from "styles/fonts/NotCourierSans";
 import SEO from "components/SEO";
 import { usePrint } from "hooks/usePrint";
 import PropTypes from "prop-types";
+import { Link } from "gatsby";
 import React, { useEffect, useState } from "react";
 import { IoIosMoon, IoIosSunny } from "react-icons/io";
 import {
@@ -81,21 +82,21 @@ const LumiereToggle = styled.div`
     justify-content: center;
     align-content: center;
   }
-  div.child {
+  .child {
     margin: 0;
     padding: 0;
     margin-top: 0.5rem;
     text-align: right;
   }
-  div > div.child:not(:first-child) {
+  div > .child:not(:first-child) {
     display: none;
   }
   div:hover {
-    div.child {
+    .child {
       color: ${props => props.theme.brand.primary} !important;
       display: block !important;
     }
-    div.child:first-child {
+    .child:first-child {
       display: none !important;
     }
   }
@@ -142,9 +143,9 @@ const Layout = ({ children, pathname, customSEO, withNav = false }) => {
                 <div className={"child"} onClick={() => window.history.back()}>
                   <StarFixed />
                 </div>
-                <div className={"child"} onClick={() => window.history.back()}>
+                <Link className={"child"} to={"/"}>
                   <MdClose />
-                </div>
+                </Link>
                 <div className={"child"} onClick={() => window.history.back()}>
                   <MdArrowBack />
                 </div>

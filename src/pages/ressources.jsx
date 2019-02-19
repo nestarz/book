@@ -17,12 +17,17 @@ const Wrapper = styled(TwoColumns)`
       color: ${props => props.theme.brand.primary};
       display: inline-block;
     }
-    .isFilter {
-      color: ${props => props.theme.brand.primary};
-      display: grid;
-      grid-template-columns: minmax(1.5em, 0.1fr) 9.9fr;
-      :before {
-        content: "✕";
+    .tag {
+      &.isFilter {
+        display: grid;
+        grid-template-columns: minmax(1.5em, 0.1fr) 9.9fr 1fr;
+        color: ${props => props.theme.brand.primary};
+        :before {
+          content: "✕";
+        }
+      }
+      .count {
+        font-size: 65%;
       }
     }
   }
@@ -36,7 +41,7 @@ const Wrapper = styled(TwoColumns)`
       .alias {
         font-size: 70%;
         :before {
-          content: 'AKA'
+          content: "AKA";
         }
       }
     }
@@ -125,8 +130,11 @@ const Index = ({ data, location }) => {
         setFoo(!foo); //fix not rerender on new set
       }}
     >
-      <span className={tagFilters.has(name) && "isFilter"}>
-        {name.charAt(0).toUpperCase() + name.slice(1)} ({count})
+      <span className={`tag ${tagFilters.has(name) && "isFilter"}`}>
+        <span>
+          {name.charAt(0).toUpperCase() + name.slice(1)}{" "}
+          <span className="count">{count}</span>
+        </span>
       </span>
     </button>
   ));

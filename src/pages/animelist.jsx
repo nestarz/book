@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import Layout from "components/Layout";
 import Star from "components/SVG/Star";
-import { StaticQuery } from "gatsby";
 import styled from "styled-components";
+import { graphql, StaticQuery } from "gatsby";
 
 const Wrapper = styled.div`
   padding: 1em;
