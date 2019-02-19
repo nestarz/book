@@ -1,0 +1,46 @@
+- name: Manycities
+  url: http://www.regarde.org/portfolio/manycities
+  description: Explorez l'activité humaine dans plusieurs métropoles internationales au travers des données générées par les réseaux de télécommunications mobiles.
+  tags:
+    - data
+    - visualisation
+    - digital
+
+# # Projects
+
+# ## Data Visualisation
+# - [Manycities](http://www.regarde.org/portfolio/manycities) Explorez l'activité humaine dans plusieurs métropoles internationales au travers des données générées par les réseaux de télécommunications mobiles.
+# - [Timeline of technologies for publishing (1963-2018)](https://gitlab.com/JulieBlanc/timeline-publishing) Sections of the timeline: Hardware, OS & platforms Reading softwares Publishing softwares Softwares and systems for text Web-based technologies Formats and languages
+
+# ## Typography
+
+# ### Open Source Fonts
+# - [UseModify](https://usemodify.com/) Use & Modify is a personal selection of beautiful, classy, punk, professional, incomplete, weird typefaces. Open source licenses make them free to use and modify. This selection is the result of deep search and crushes. A project initiated by Raphaël Bastide.
+# - [Work Avec](http://osp.kitchen/foundry/work-avec/) Par Pierre Huyghe-Baert
+# - [Beautiful Web Type](https://github.com/ubuwaits/beautiful-web-type) I am building the definitive resource for open-source type
+
+# ### Licensed Fonts
+# - [Proxima Nova Web Fonts](https://github.com/elliakou/proxima-nova-web-fonts) Proxima Nova is american type designer Mark Simonson's most popular font family, a beautiful geometric-grotesque sans-serif that he created in 1994.
+
+# ### SVG
+# - [dotgrid](dat://dotgrid-neauoire.hashbase.io/) SVG Icon Tool
+
+# ## Collections et Dépôts Git
+# - [Open Source Publishing](http://osp.kitchen/about) OSP makes graphic design using only free and open source software—pieces of software that invite their users to take part in their elaboration.
+# - [dcfvg](http://dcfvg.com/)
+# - [nwc-viewer](https://github.com/zz85/nwc-viewer) open source noteworthy composer music notation viewer & player
+# - [Panwriter](https://github.com/mb21/panwriter) Innovative approaches to making books in browsers. See paged media blog.
+# - [fluid_sim](https://github.com/nestarz/fluid_sim) An implementation of the article "Fast Fluid Dynamics Simulation on the GPU", using C++ and OpenGL 3.3.
+# ![fluid_sim](./sim2.gif)
+# - [Elements of Physics](https://elements-of-physics.surge.sh/) Elements of Physics is an interactive simulation which describes different elements of physics like Gravity, Acceleration and Force. Each element is described with different simulation controls.
+
+# ## Implementations
+# - [lc0-js](https://frpays.github.io/lc0-js/engine.html) Chess engine designed to play chess via neural network
+# - [Dmitry Kurtaev/ Style Transfer](https://dkurtaev.github.io/style_transfer.html) This is a demonstration of Fast Neural Style deep learning networks by Justin Johnson, Alexandre Alahi and Li Fei-Fei using OpenCV.js.
+# - [Tone Analyzer](https://tone-analyzer-demo.ng.bluemix.net/) This service uses linguistic analysis to detect joy, fear, sadness, anger, analytical, confident and tentative tones found in text.
+
+# ## Creative Coding and Design
+# - [NIPS Machine Learning for Creativity and Design](http://nips4creativity.com/) This is a collection of art, music and design using machine learning. It is part of the NIPS Machine Learning for Creativity and Design Workshop 2017.
+# - [ECCV Computer Vision Art Gallery](https://computervisionart.com/) Recent practice in computer vision and AI art.
+# - [Machine Learning for Artists](https://ml4a.github.io/ml4a/) Notes, demos, interactive visuals, art projects, references, further readings, etc.
+#     - [The Neural Aesthetic @ ITP-NYU, Fall 2018](https://ml4a.github.io/classes/itp-F18/)

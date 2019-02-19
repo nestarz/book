@@ -1,0 +1,75 @@
+- name: g.u.i
+  url: http://www.g-u-i.net
+  description: Un collectif créé en 2007 à Paris par Nicolas Couturier et Bachir Soussi-Chiadmi qui rassemble aujourd’hui (Nov. 18) Nicolas Couturier, Sarah Garcin, Julien Gargot, Angeline Ostinelli, Benoît Verjat et Tanguy Wermelinger et qui collabore avec des institutions culturelles et des collectivités publiques, des associations, des artistes et des chercheurs en mettant en œuvre le design graphique, interactif, éditorial, in situ, méthodologique, et la performance.
+  location:
+    city: Paris
+    country: France
+  tags:
+    - interaction
+    - design
+    - media
+    - performance
+    - graphism
+    - communication
+
+- name: Vraiment Vraiment
+  url: http://www.vraimentvraiment.com/
+  description: Transformer les politiques publiques et les acteurs publics en partant de l’expérience usager et de l’expertise des agents. Pour cela, nous aidons les acteurs publics à comprendre le présent et à se projeter dans le futur pour concevoir, mettre en œuvre et évaluer des politiques publiques plus pertinentes, plus soutenables et plus efficaces.
+  location:
+    city: Paris
+    country: France
+  tags:
+    - interaction
+    - design
+    - media
+    - performance
+    - graphism
+    - communication
+    - design fiction
+    - design social
+
+- name: Design Friction
+  url: https://design-friction.com/
+  description: Nous sommes un studio de design fiction qui produit des scénarios spéculatifs et critiques pour les présents à venir.
+  location:
+    city: Paris
+    country: France
+  tags:
+    - design
+    - communication
+    - design fiction
+    - design social
+
+- name: Indianen
+  url: https://www.indianen.be/
+  description: Constantly searching for new ways of approaching a project, we like to work with new technologies as well as traditional materials. We happily move from well designed print to interactive projects using custom software or electronics.
+  location:
+    country: Belgique
+  tags:
+    - design
+    - interactive
+    - graphism
+
+- name: Thisisipaper Studio.
+  url: https://studio.thisispaper.com/
+  description: Thisisipaper is an international and multidisciplinary design studio established in 2011 by Alexander Zakharov and Zuzanna Gasior concentrating on the human side of design. Our team includes architects, designers, writers, developers.
+  location:
+    country: Poland
+    city: Warsaw
+  tags:
+    - design
+    - interactive
+    - graphism
+
+- name: xorxor.
+  url: https://www.xorxor.hu/about.html
+  description: XORXOR is a collaboration between scientist, engineers, artists and robots. We work on projects where real-time visuals meet complex design to create novel experience.
+  location:
+    country: Hungary
+    city: Budapest
+  tags:
+    - design
+    - interactive
+    - science
+    - robotics
+

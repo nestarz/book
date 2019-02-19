@@ -1,0 +1,30 @@
+- name: MA Interaction Design Communication
+  type: master
+  url: http://18.int-des.com/#fh5co-started
+  parent: University of the Arts London
+  description: Develop skills in interaction design, design prototyping and physical computing, user-centred design, open source digital platforms, forecasting and futures, design research, new and interactive media, designing in the anthropocene, strategic design, and critical thinking and making.
+  location:
+    city: London
+    country: United Kingdom
+  tags:
+    - interaction
+    - design
+    - web
+    - communication
+
+- name: École supérieure d’art et de design d’Amiens
+  alias: ESAD
+  type: school
+  url: http://www.esad-amiens.fr
+  description: L’école enseigne le design graphique, le design numérique, la typographie et l’image animée 3D (département Waide Somme). Elle propose également des stages de formation continue pour les professionnels et demandeurs d’emploi.
+  location:
+    city: Amiens
+    country: France
+  tags:
+    - interaction
+    - design
+    - web
+    - communication
+    - graphism
+    - 3d
+    - typography

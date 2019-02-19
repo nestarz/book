@@ -1,10 +1,10 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-const config = require('./config/website')
-const text = require('./config/text')
+  path: `.env.${process.env.NODE_ENV}`
+});
+const config = require("./config/website");
+const text = require("./config/text");
 
-const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
+const pathPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix;
 
 module.exports = {
   pathPrefix: config.pathPrefix,
@@ -12,7 +12,7 @@ module.exports = {
     siteUrl: config.siteUrl + pathPrefix,
     siteConfig: config,
     authorInfo: config.authorInfo,
-    authorCv: text,
+    authorCv: text
   },
   plugins: [
     {
@@ -25,8 +25,8 @@ module.exports = {
         // Url to query from
         url: "https://graphql.anilist.co/",
         // Additional options to pass to node-fetch
-        fetchOptions: {},
-      },
+        fetchOptions: {}
+      }
     },
     {
       resolve: "gatsby-source-graphql",
@@ -38,11 +38,11 @@ module.exports = {
         // Url to query from
         url: "https://graphbrainz.herokuapp.com/",
         // Additional options to pass to node-fetch
-        fetchOptions: {},
-      },
+        fetchOptions: {}
+      }
     },
     {
-      resolve: 'gatsby-remark-toc',
+      resolve: "gatsby-remark-toc",
       options: {
         mdastUtilTocOptions: {
           tight: true,
@@ -52,21 +52,21 @@ module.exports = {
         },
         orderedList: true,
         reuseExistingHeader: true,
-        header: 'Table des matières', // the custom header text
+        header: "Table des matières", // the custom header text
         include: [
-          'content/**/*.md', // an include glob to match against
-          'content/**/*.mdx' // an include glob to match against
+          "content/**/*.md", // an include glob to match against
+          "content/**/*.mdx" // an include glob to match against
         ]
       }
     },
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-styled-components",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'emotion-assets',
-        path: `${__dirname}/src/components/Visual/EmotionalFace/assets`,
-      },
+        name: "emotion-assets",
+        path: `${__dirname}/src/components/Visual/EmotionalFace/assets`
+      }
     },
     {
       resolve: `gatsby-source-twitter`,
@@ -77,65 +77,90 @@ module.exports = {
           consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
           bearer_token: process.env.TWITTER_BEARER_TOKEN
         },
-        tweet_mode: 'extended'
+        tweet_mode: "extended"
       }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'almusiqa',
-        path: `${__dirname}/content/almusiqa`,
-      },
+        name: "almusiqa",
+        path: `${__dirname}/content/almusiqa`
+      }
+    },
+    `gatsby-transformer-yaml`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "ressources",
+        path: `${__dirname}/content/ressources`
+      }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'projects',
-        path: `${__dirname}/content/projects`,
-      },
+        name: "projects",
+        path: `${__dirname}/content/projects`
+      }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'billets',
-        path: `${__dirname}/content/billets`,
-      },
+        name: "billets",
+        path: `${__dirname}/content/billets`
+      }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'letters',
-        path: `${__dirname}/content/letters`,
-      },
+        name: "letters",
+        path: `${__dirname}/content/letters`
+      }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'pages',
-        path: `${__dirname}/src/pages`,
-      },
+        name: "pages",
+        path: `${__dirname}/src/pages`
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `experiments`,
         path: `${__dirname}/src/files`
-      },
+      }
     },
     {
-      resolve: 'gatsby-mdx',
+      resolve: `gatsby-transformer-screenshot`,
       options: {
-        extensions: ['.mdx', '.md'],
+        nodeTypes: [
+          `PeopleYaml`,
+          `CollectivesYaml`,
+          `ProjectsYaml`,
+          `FestivalsYaml`,
+          `SchoolsYaml`,
+          `LaboratoriesYaml`,
+          `DatasetsYaml`,
+          `MagazinesYaml`,
+          `ResidencesYaml`,
+          `PostsYaml`
+        ]
+      }
+    },
+    {
+      resolve: "gatsby-mdx",
+      options: {
+        extensions: [".mdx", ".md"],
         defaultLayouts: {
-          default: require.resolve('./src/components/Layout/index.jsx'),
+          default: require.resolve("./src/components/Layout/index.jsx")
         },
         gatsbyRemarkPlugins: [
           {
-            resolve: 'gatsby-remark-copy-linked-files',
+            resolve: "gatsby-remark-copy-linked-files",
             options: {}
           },
           {
-            resolve: 'gatsby-remark-images',
+            resolve: "gatsby-remark-images",
             options: {
               maxWidth: 800,
               quality: 90,
@@ -145,36 +170,36 @@ module.exports = {
               withWebp: {
                 quality: 80
               }
-            },
+            }
           },
           {
-            resolve: 'gatsby-remark-external-links',
+            resolve: "gatsby-remark-external-links",
             options: {
-              target: '_blank',
-              rel: 'nofollow noopener noreferrer',
-            },
+              target: "_blank",
+              rel: "nofollow noopener noreferrer"
+            }
           },
           {
-            resolve: 'gatsby-remark-responsive-iframe',
-            options: {},
-          },
-        ],
-      },
+            resolve: "gatsby-remark-responsive-iframe",
+            options: {}
+          }
+        ]
+      }
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: config.googleAnalyticsID,
-      },
+        trackingId: config.googleAnalyticsID
+      }
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     "gatsby-transformer-javascript-frontmatter",
-    'gatsby-plugin-lodash',
-    'gatsby-plugin-catch-links',
-    'gatsby-plugin-sitemap',
+    "gatsby-plugin-lodash",
+    "gatsby-plugin-catch-links",
+    "gatsby-plugin-sitemap",
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-manifest",
       options: {
         name: config.siteTitle,
         short_name: config.siteTitleShort,
@@ -182,22 +207,22 @@ module.exports = {
         start_url: config.pathPrefix,
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
-        display: 'standalone',
+        display: "standalone",
         icons: [
           {
-            src: '/favicons/android-chrome-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
+            src: "/favicons/android-chrome-192x192.png",
+            sizes: "192x192",
+            type: "image/png"
           },
           {
-            src: '/favicons/android-chrome-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-          },
-        ],
-      },
+            src: "/favicons/android-chrome-512x512.png",
+            sizes: "512x512",
+            type: "image/png"
+          }
+        ]
+      }
     },
-    'gatsby-plugin-offline',
-    'gatsby-plugin-netlify',
-  ],
-}
+    "gatsby-plugin-offline",
+    "gatsby-plugin-netlify"
+  ]
+};

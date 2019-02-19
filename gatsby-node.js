@@ -137,16 +137,16 @@ exports.onCreateNode = async ({
                 cover___NODE: coverFileNode.id
               });
             } else {
-              console.warn("Cover not downloaded")
+              console.warn("Cover not downloaded");
               release_fields.push({
                 ...default_musicBrainzReleaseFields,
-                ...result.lookup.release,
+                ...result.lookup.release
               });
             }
           })
         ).catch(err => {
-          console.log(err)
-          throw err
+          console.log(err);
+          throw err;
         });
       }
       // Add everything into a node field named graphbrainz__release

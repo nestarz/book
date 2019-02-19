@@ -1,0 +1,42 @@
+- name: Thisispaper
+  url: https://thisispaper.com/
+  description: This is an ongoing visual research by Thisisipaper Studio.
+  location:
+    country: Poland
+    city: Warsaw
+  tags:
+    - research
+    - visual
+    - design
+    - art
+
+- name: Deezen
+  url: https://www.dezeen.com/
+  description: Online architecture, interiors and design magazine based in London.
+  location:
+    country: United Kingdom
+    city: London
+  tags:
+    - architecture
+    - interior
+    - design
+
+- name: AIGA Eye on Design
+  url: https://www.eyeondesign.aiga.org/
+  description: AIGA Eye on Design turns a well trained eye on the best new work from the world’s most exciting emerging and established designers. We’re published by AIGA, the professional association for design, the oldest and largest not-for-profit design organization in the United States.
+  location:
+    country: United States
+    city: New York
+  tags:
+    - design
+
+- name: Distill
+  url: https://distill.pub/
+  description: Machine Learning Research Should Be Clear, Dynamic and Vivid. Distill Is Here to Help.
+  location:
+    country: United States
+    city: New York
+  tags:
+    - machine learning
+    - science
+    - research

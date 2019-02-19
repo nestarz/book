@@ -1,0 +1,29 @@
+- name: Eyeo Festival
+  url: https://vimeo.com/eyeofestival
+  description: Since 2011, the annual Eyeo Festival brings together a community of people drawn to the intersection of art, data and creative technology
+  tags:
+    - art
+    - data
+    - digital
+
+- name: GROW
+  url: https://www.grow.paris/fr/infos/
+  description: Rendez-vous parisien (et plus seulement!) des codeurs créatifs. GROW cherche à ouvrir les possibles de la création numérique.
+  tags:
+    - art
+    - data
+    - digital
+
+- name: EvoMUSART
+  url: http://www.evostar.org/2019/cfp_evomusart.php
+  description: "The use of Computational Intelligence for the development of artistic systems is a recent, exciting and significant area of research. There is a growing interest in the application of these techniques in fields such as: visual art and music generation, analysis, and interpretation; sound synthesis; architecture; video; poetry; design; and other creative tasks."
+  tags:
+    - art
+    - data
+    - digital
+    - architecture
+    - sound
+    - video
+    - design
+    - poetry
+    - generative

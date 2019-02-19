@@ -1,18 +1,16 @@
 - name: Annika Frye
-  source: https://www.annikafrye.de
+  url: https://www.annikafrye.de
   description: Annika Frye is a german designer and design researcher. She works in between practice and theory. Annika’s interests concern the aesthetic qualities of serial production, experimental processes and the design process as source of innovation. She has recently published her dissertation on improvisation in design. After finishing her PhD-project on improvisation at the  University of Art and Design Offenbach she started researching the changes of design processes regarding the connection of digital technology and materiality.
   location:
     country: Germany
   tags:
     - design
     - research
-    - german
-    - theory
     - digital
     - materiality
 
 - name: Aven Le Zhou
-  source: https://www.aven.cc/index.html
+  url: https://www.aven.cc/index.html
   description: Le Zhou, also known as Aven, is an anti-disciplinary designer and technology enthusiast based in Shanghai. His recent focuses are on interactive media, creative coding, computer vision, computational geometry and digital fabrication. He now works as a consultant at Interactive Media Arts Program at NYU Shanghai and an adjunct professor at New Media and Communication Program at Shanghai Art and Design Academy.
   location:
     city: Shanghai
@@ -21,12 +19,11 @@
     - design
     - digital
     - interactive
-    - creative coding
     - computer vision
-    - computational geometry
+    - 3d
 
 - name: Pia Pandelakis
-  source: http://piapandelakis.com/
+  url: http://piapandelakis.com/
   description: Enseignant-chercheur en design à l’Université Toulouse - Jean Jaurès. Recherches visent à esquisser la possibilité d’un Queer[ed] Design.
   profession:
     - Enseignant-chercheur
@@ -38,12 +35,12 @@
   tags:
     - design
     - research
-    - queer[ed]
+    - queer
     - sexualité
     - genre
 
 - name: Tim Knapen
-  source: https://www.timknapen.be/
+  url: https://www.timknapen.be/
   description: Artist and designer working with digital technologies.
   profession:
     - Artist
@@ -54,14 +51,12 @@
     workplace: Université Toulouse - Jean Jaurès
   tags:
     - design
-    - research
-    - queer[ed]
-    - sexualité
-    - genre
+    - art
+    - digital
 
 - name: Catherine Ramus
   alias: Albertine Meunier
-  source: https://www.albertinemeunier.net/
+  url: https://www.albertinemeunier.net/
   description: Albertine Meunier pratique l’art dit numérique depuis 1998 et utilise tout particulièrement Internet comme matériau. Elle se définit elle-même comme une net artiste, artiste pas nette. Cette expression bien que légèrement désuète - un net artiste étant tout simplement un artiste de son temps - contribue à lui conférer un visage humain, bien loin de la froideur des machines numériques.
   profession:
     - Artiste
@@ -75,7 +70,7 @@
 
 
 - name: Patrick Tresset
-  source: http://patricktresset.com/new/
+  url: http://patricktresset.com/new/
   description: Patrick Tresset is a London based artist who develops and presents  theatrical installations with robotic agents as actors which are evocations of humanness. Tresset’s installations use computational systems that introduce artistic, expressive and obsessive aspects to robots’ behaviour.
   profession:
     - Artiste
@@ -85,14 +80,13 @@
   tags:
     - art
     - digital
-    - computational systems
-    - robot
+    - robotics
     - scenography
     - theatrical
     - poetic
 
 - name: Samuel Bianchini
-  source: https://twitter.com/dispotheque?lang=fr
+  url: https://twitter.com/dispotheque?lang=fr
   description: Artiste et enseignant-chercheur à l'EnsAD - PSL, Paris, responsable du groupe de recherche Reflective Interaction d'EnsadLab et de la Chaire arts et sciences
   profession:
     - Enseignant-chercheur
@@ -111,7 +105,7 @@
     - digital
 
 - name: Benoît Verjat
-  source: http://benoit.verjat.com/
+  url: http://benoit.verjat.com/
   description: Chercheur en design et art, enseignant, g-u-i, dcfvg, médialab, ENSA
   profession:
     - Enseignant-chercheur
@@ -132,7 +126,7 @@
     - digital
 
 - name: Julien Gargot
-  source: https://gargot.co/
+  url: https://gargot.co/
   description: Un designer d’interactions, designer de services et développeur basé à Paris.
   profession:
     - Développeur
@@ -148,10 +142,11 @@
     - developer
     - research
     - digital
-    - engineer
+    - design de services
+    - sciences cognitives
 
 - name: Ivan Murit
-  source: http://ivan-murit.fr
+  url: http://ivan-murit.fr
   description: Génère et agence les formes visuelles à l'aide de modèles de phénomènes naturels.
   profession:
     - Artiste
@@ -168,7 +163,7 @@
     - generative
 
 - name: Matt DesLauriers
-  source: https://www.mattdesl.com/
+  url: https://www.mattdesl.com/
   description: Designs and develops creative technology projects, including digital installations, rich 3D web experiences, generative art, interactive games, data visualizations, and more.
   profession:
     - Artiste
@@ -185,10 +180,10 @@
     - generative
     - interactive
     - data
-    - installations
+    - scenography
 
 - name: Ralf Baecker
-  source: http://www.rlfbckr.org/
+  url: http://www.rlfbckr.org/
   description: Artist working at the interface of art, science and technology
   profession:
     - Artiste
@@ -200,13 +195,13 @@
     - art
     - digital
     - technology
-    - installations
+    - scenography
     - machines
     - interactive
     - poetic
 
 - name: Vincent Duc
-  source: http://vincent.duc.ensad.fr/
+  url: http://vincent.duc.ensad.fr/
   description: Designer graphique & Directeur artistique, ENSAD, Paris
   profession:
     - Designer
@@ -218,7 +213,7 @@
     - design
 
 - name: Wang Zhihong
-  source: http://wangzhihong.com/
+  url: http://wangzhihong.com/
   description: Leading graphic designer based in Taiwan and a member of AGI (Alliance Graphique Internationale)
   profession:
     - Designer
@@ -229,7 +224,7 @@
     - design
 
 - name: Brannon Dorsey
-  source: https://brannon.online/
+  url: https://brannon.online/
   description: Artist, programmer, and researcher based in Philadelphia, PA
   profession:
     - Programmer
@@ -246,7 +241,7 @@
     - developer
 
 - name: Gene Kogan
-  source: http://genekogan.com
+  url: http://genekogan.com
   description: Artist and programmer who is interested in generative systems, computer science, and software for creativity and self-expression.
   profession:
     - Programmer
@@ -264,7 +259,7 @@
     - interactive
 
 - name: Raphaël Bastide
-  source: https://raphaelbastide.com
+  url: https://raphaelbastide.com
   description: Artist and instructor based in Paris, my work is mainly relating to the digital and computer program culture.
   profession:
     - Enseignant
@@ -278,11 +273,10 @@
     - art
     - developer
     - interactive
-    - computer
     - digital
 
 - name: Pierre Bertet
-  source: https://pierre.world/
+  url: https://pierre.world/
   description:
   profession:
   location:
@@ -290,13 +284,12 @@
     country: Spain
   tags:
     - game
-    - tool
     - developer
     - hacker
     - digital
 
 - name: Patricio Gonzalez Vivo
-  source: http://patriciogonzalezvivo.com/about.php
+  url: http://patriciogonzalezvivo.com/about.php
   description: Artist and engineer who uses code and light to turn data into stunning landscapes.
   profession:
     - Engineer
@@ -314,7 +307,7 @@
     - digital
 
 - name: Alexander Buzin
-  source: https://alexbuzin.me/#about
+  url: https://alexbuzin.me/#about
   description: Creative web designer & VR artist from Kiev, Ukraine.
   profession:
     - Engineer
@@ -332,7 +325,7 @@
     - digital
 
 - name: Julie Blanc
-  source: http://julie-blanc.fr/
+  url: http://julie-blanc.fr/
   description: Research student at @EnsadLab | Working on @pagedmedia_org | Member of @prepostprint | Design, CSS print, browser-based publications, workflows & code
   profession:
     - Designer
@@ -354,7 +347,7 @@
     - digital
 
 - name: Floriane Rousselot
-  source: http://florianerousselot.com
+  url: http://florianerousselot.com
   description: Graphic designer, South of France. Founder of @typelab.fr
   profession:
     - Designer
@@ -367,18 +360,17 @@
     - typography
     - web
     - design
-    - print
 
 - name: Frederik Berlaen
   alias: TypeMyType
-  source: http://typemytype.com/
+  url: http://typemytype.com/
   description: Works under the name of TypeMyType providing font services, programming and teaching at Luca School of Arts Ghent and at ESAD in Amiens.
   profession:
     - Designer
   location:
     country: France
     workplace:
-      - ESAD
+      - ESAD, Amiens
       - Luca School of Arts Ghent
   tags:
     - graphism
@@ -387,7 +379,7 @@
     - design
 
 - name: Pierrick Thébault
-  source: http://www.regarde.org/
+  url: http://www.regarde.org/
   description: Pierrick est un chercheur en design et un praticien intéressé par les systèmes complexes, la visualisation de données et les environnements connectés.
   profession:
     - Designer
@@ -401,7 +393,7 @@
     - visualisation
 
 - name: Sámuel Setényi
-  source: http://samuelsetenyi.com/about.html
+  url: http://samuelsetenyi.com/about.html
   description: I work with new technology to make art and design works that continue the tradition of human expression and craftsmanship in a meaningful way.
   profession:
     - Designer
@@ -412,11 +404,10 @@
     - data
     - visualisation
     - generative
-    - industriel
     - visualisation
 
 - name: Vibert Thio
-  source: https://vibertthio.com/portfolio/
+  url: https://vibertthio.com/portfolio/
   description: Thio defines himself as a poetic technologist, playing around the disciplines of music, art, and technology. He develops a wide variety of projects, including interactive machine learning, audio/visual web pages, diverse musical instruments, and art rehabilitation. (https://github.com/vibertthio/etude)
   profession:
     - Artist
@@ -435,8 +426,8 @@
     - poetic
 
 - name: Thijs Koerselman
-  alias: 0x80
-  source: https://github.com/0x80
+  alias: "0x80"
+  url: https://github.com/0x80
   description: Design applications, interactive systems and websites. Love using technology in creative contexts.
   profession:
     - Designer
@@ -456,7 +447,7 @@
     - interactive
 
 - name: Sarah Rothberg
-  source: http://sarahrothberg.com
+  url: http://sarahrothberg.com
   description: Sarah Rothberg is an artist who captures the interplay between technology, systems, and the personal, creating meaning through unique and strange interactions. Her idiosyncratic experiences suggest other ways of remembering, thinking, understanding, and communicating.
   profession:
     - Artist

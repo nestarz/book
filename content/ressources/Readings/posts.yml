@@ -1,0 +1,18 @@
+- name: Glyph Drawing Club explores the contemporary potential for ASCII-inspired design
+  url: https://eyeondesign.aiga.org/procrastinators-unite-now-you-can-create-logos-illustrations-with-any-font-or-glyph-you-like/
+  tags:
+    - ascii
+    - typography
+
+- collection:
+    - name: Spectral, the first parametric Google font by Prototypo
+      url: https://spectral.prototypo.io/
+    - name: What’s the Difference Between Variable and Parametric Fonts?
+      url: ttps://eyeondesign.aiga.org/parametric-and-variable-typeface-systems-shape-shifters-for-letterforms/
+    - name: Axis-Praxis is a website for playing with OpenType Variable Fonts
+      url: https://www.axis-praxis.org/
+  tags:
+    - parametric
+    - typography
+    - variable font
+    - graphism

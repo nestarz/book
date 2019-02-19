@@ -146,7 +146,8 @@ const Index = ({
         <div>
           <Name withDesc={true} />
           <div className={"nav"}>
-            <Link to={"/almusiqa"}>Almusiqa</Link>
+          <Link to={"/ressources"}>Ressources (v2)</Link>
+          <Link to={"/almusiqa"}>Almusiqa</Link>
             <Link to={"/animelist"}>Animes</Link>
             <button onClick={() => toggleLanguage()}>
               {language == "en" ? "Passer en Français" : "Switch to English"}

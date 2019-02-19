@@ -28,7 +28,7 @@ const Wrapper = styled.div`
       counter-increment: list 1;
       color: ${props => props.theme.brand.primary};
       content: counter(list, decimal-leading-zero);
-      transform: scale(1) rotate(0deg) translate(0px,0px) skew(20deg,0deg);
+      transform: scale(1) rotate(0deg) translate(0px, 0px) skew(20deg, 0deg);
     }
     &:hover {
       transition: transform;
@@ -116,6 +116,46 @@ const Wrapper = styled.div`
     padding-left: 1em;
     padding-right: 1em;
     page-break-before: always;
+    & > div ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li:last-child {
+      }
+    }
+    & > div > ol,
+    & > div > ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      @media (max-width: 700px) {
+        grid-template-columns: 1fr;
+      }
+      overflow: hidden;
+      word-break: break-word;
+      li {
+        margin: 0;
+        margin-bottom: 0.4em;
+        column-break-inside: avoid;
+        & > p {
+          margin: 0;
+        }
+        a {
+          text-decoration: none;
+          display: block;
+          font-size: 100%;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+        & > a + img {
+          margin-top: 1.5em;
+          margin-bottom: 1.5em;
+        }
+      }
+    }
+    & > div ul {
+      column-gap: 1em;
+    }
     h1,
     h2 {
       margin: 1em 0;
