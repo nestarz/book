@@ -17,7 +17,7 @@ const SvgHolder = styled.div`
     width: 3em;
     height: 3em;
     animation-name: spin;
-    animation-duration: 100s;
+    animation-duration: 90s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
   }

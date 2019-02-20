@@ -1,11 +1,10 @@
 import Layout from "components/Layout";
 import TwoColumns from "components/Layout/Columns/Two";
 import { graphql } from "gatsby";
+import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import styled from "styled-components";
-import Img from "gatsby-image";
-import { MdViewList, MdViewColumn } from "react-icons/md";
 
 const Wrapper = styled(TwoColumns)`
   button {
@@ -115,11 +114,11 @@ const Item = ({ item }) => {
     : "";
   return (
     <li>
-      {item.childScreenshot && (
+      {item.childScreenshot ? (
         <Img
           fluid={item.childScreenshot.screenshotFile.childImageSharp.fluid}
         />
-      )}
+      ) : <div></div>}
       <div>
         <a href={item.url}>
           {item.name}{" "}
@@ -198,7 +197,7 @@ const Index = ({ data, location }) => {
                   return <></>;
                 } else {
                   if (currCategory == null) setCurrCategory(category);
-                }
+                  }
                 return (
                   <div>
                     <h1>

@@ -1,23 +1,16 @@
 import "circular-std";
-import NotCourierSansFont from "styles/fonts/NotCourierSans";
 import SEO from "components/SEO";
+import Star from "components/SVG/Star";
+import { Link } from "gatsby";
 import { usePrint } from "hooks/usePrint";
 import PropTypes from "prop-types";
-import { Link } from "gatsby";
 import React, { useEffect, useState } from "react";
 import { IoIosMoon, IoIosSunny } from "react-icons/io";
-import {
-  MdArrowBack,
-  MdArrowForward,
-  MdClose,
-  MdMenu,
-  MdPrint
-} from "react-icons/md";
 import { useGlobal } from "reactn";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
+import NotCourierSansFont from "styles/fonts/NotCourierSans";
 import { dark_theme, theme } from "../../../config/theme";
 import reset from "../../styles/reset";
-import Star from "components/SVG/Star";
 const StarFixed = styled(Star)`
   position: fixed;
   bottom: 1em;
@@ -88,17 +81,17 @@ const LumiereToggle = styled.div`
     margin-top: 0.5rem;
     text-align: right;
   }
-  div > .child:not(:first-child) {
-    display: none;
-  }
-  div:hover {
+  div {
     .child {
       color: ${props => props.theme.brand.primary} !important;
       display: block !important;
     }
-    .child:first-child {
-      display: none !important;
+    .moon {
+      margin-bottom: 2.8em;
     }
+    /* .child:first-child {
+      display: none !important;
+    } */
   }
 `;
 
@@ -140,22 +133,10 @@ const Layout = ({ children, pathname, customSEO, withNav = false }) => {
           {withNav && (
             <>
               <div>
-                <div className={"child"} onClick={() => window.history.back()}>
+              <Link className={"child"} to={"/"}>
                   <StarFixed />
-                </div>
-                <Link className={"child"} to={"/"}>
-                  <MdClose />
-                </Link>
-                <div className={"child"} onClick={() => window.history.back()}>
-                  <MdArrowBack />
-                </div>
-                <div className={"child"} onClick={() => window.history.forward()}>
-                  <MdArrowForward />
-                </div>
-                <div className={"child"} onClick={() => window.print()}>
-                  <MdPrint />
-                </div>
-                <div className={"child"}
+                  </Link>
+                <div className={"child moon"}
                   onClick={() =>
                     setCurrThemeIndex((currThemeIndex + 1) % themes.length)
                   }
