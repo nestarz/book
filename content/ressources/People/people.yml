@@ -31,7 +31,8 @@
   location:
     city: Toulouse
     country: France
-    workplace: Université Toulouse - Jean Jaurès
+    workplace:
+      - Université Toulouse - Jean Jaurès
   tags:
     - design
     - research
@@ -48,7 +49,8 @@
   location:
     city: Toulouse
     country: France
-    workplace: Université Toulouse - Jean Jaurès
+    workplace:
+      - Université Toulouse - Jean Jaurès
   tags:
     - design
     - art
@@ -232,7 +234,7 @@
     - Researcher
   location:
     city: Philadelphia
-    country: United States
+    country: USA
   tags:
     - graphism
     - design
@@ -248,7 +250,7 @@
     - Artist
   location:
     city: New York
-    country: United States
+    country: USA
   tags:
     - generative
     - science
@@ -454,7 +456,7 @@
     - Enseignant-Chercheur
   location:
     city: New York
-    country: United States
+    country: USA
   tags:
     - data
     - visualisation

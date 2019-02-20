@@ -11,13 +11,25 @@ const Wrapper = styled(TwoColumns)`
     margin: 0;
     display: block;
     color: ${props => props.theme.colors.body_color};
+    &.inline {
+      display: inline-block;
+      margin-right: 0.5em;
+      font-size: 70%;
+      opacity: 0.4;
+      &:hover {
+        opacity: 1;
+      }
+    }
     &.more {
+      &:hover {
+        color: ${props => props.theme.colors.body_color} !important;
+      }
+    }
+    .moreToggle {
       &:before {
-        content: "... ";
-        color: ${props => props.theme.colors.body_color};
+        content: ' '
       }
       color: ${props => props.theme.brand.primary};
-      display: inline-block;
     }
     .tag {
       &.isFilter {
@@ -31,7 +43,13 @@ const Wrapper = styled(TwoColumns)`
     }
     .count {
       font-size: 65%;
+      @media (max-width: 700px) {
+        display: none;
+      }
     }
+  }
+  footer {
+    white-space: nowrap;
   }
   .body {
     max-width: 50rem;
@@ -64,10 +82,14 @@ const Wrapper = styled(TwoColumns)`
     a {
       .alias {
         font-size: 70%;
-        :before {
-          content: "AKA";
-        }
+        font-style: italic;
       }
+    }
+    .location {
+      font-size: 70%;
+      font-style: italic;
+      color: ${props => props.theme.colors.body_color};
+      margin-bottom: 0.5em;
     }
     ul:not(*:empty) {
       margin: 1em 0;
@@ -76,7 +98,7 @@ const Wrapper = styled(TwoColumns)`
       grid-template-columns: 1fr;
       li {
         display: grid;
-        grid-template-columns: 0.15fr 1fr;
+        grid-template-columns: 0.2fr 0.8fr;
         grid-gap: 1em;
       }
     }
@@ -107,7 +129,7 @@ Array.prototype.flatMap = function(f) {
   return flatMap(f, this);
 };
 
-const Item = ({ item }) => {
+const Item = ({ item, setTagsFilters }) => {
   const [seeMore, setSeeMore] = useState(false);
   const excerpt = item.description
     ? item.description.replace(/^(.{150}[^\s]*).*/, "$1")
@@ -118,18 +140,36 @@ const Item = ({ item }) => {
         <Img
           fluid={item.childScreenshot.screenshotFile.childImageSharp.fluid}
         />
-      ) : <div></div>}
+      ) : (
+        <div />
+      )}
       <div>
         <a href={item.url}>
           {item.name}{" "}
-          {item.alias && <span className="alias">{item.alias}</span>}
+          {item.alias && <span className="alias">({item.alias})</span>}
         </a>
-        {seeMore ? item.description : excerpt}
-        {item.description && excerpt != item.description && (
-          <button onClick={() => setSeeMore(!seeMore)} className={"more"}>
-            {seeMore ? "Moins" : "Plus"}
-          </button>
+        {item.location && (
+          <div className="location">
+            {item.location.city && item.location.city + ","}{" "}
+            {item.location.country}
+          </div>
         )}
+        <button onClick={() => setSeeMore(!seeMore)} className={"more"}>
+          {seeMore ? item.description : excerpt}
+          {item.description && excerpt != item.description && (
+            <span className="moreToggle">{seeMore ? " Moins" : "..."}</span>
+          )}
+        </button>
+        <div>
+          {item.tags.map((tag, index) => (
+            <button
+              className="tag inline"
+              onClick={() => setTagsFilters(new Set([tag]))}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
       </div>
     </li>
   );
@@ -197,7 +237,7 @@ const Index = ({ data, location }) => {
                   return <></>;
                 } else {
                   if (currCategory == null) setCurrCategory(category);
-                  }
+                }
                 return (
                   <div>
                     <h1>
@@ -234,10 +274,12 @@ const Index = ({ data, location }) => {
                     if (isSubSet) {
                       if (node.collection) {
                         return node.collection.map((item, k) => (
-                          <Item item={item} />
+                          <Item item={item} setTagsFilters={setTagsFilters} />
                         ));
                       } else {
-                        return <Item item={node} />;
+                        return (
+                          <Item item={node} setTagsFilters={setTagsFilters} />
+                        );
                       }
                     }
                   })}
@@ -260,6 +302,12 @@ export const pageQuery = graphql`
         node {
           name
           url
+          alias
+          location {
+            city
+            country
+            workplace
+          }
           childScreenshot {
             screenshotFile {
               childImageSharp {
@@ -278,6 +326,10 @@ export const pageQuery = graphql`
       edges {
         node {
           name
+          location {
+            city
+            country
+          }
           url
           childScreenshot {
             screenshotFile {
@@ -317,6 +369,10 @@ export const pageQuery = graphql`
         node {
           name
           url
+          location {
+            city
+            country
+          }
           childScreenshot {
             screenshotFile {
               childImageSharp {
@@ -336,6 +392,10 @@ export const pageQuery = graphql`
         node {
           name
           url
+          location {
+            city
+            country
+          }
           childScreenshot {
             screenshotFile {
               childImageSharp {
@@ -355,6 +415,10 @@ export const pageQuery = graphql`
         node {
           name
           url
+          location {
+            city
+            country
+          }
           childScreenshot {
             screenshotFile {
               childImageSharp {
@@ -393,6 +457,10 @@ export const pageQuery = graphql`
         node {
           name
           url
+          location {
+            city
+            country
+          }
           childScreenshot {
             screenshotFile {
               childImageSharp {
@@ -412,6 +480,10 @@ export const pageQuery = graphql`
         node {
           name
           url
+          location {
+            city
+            country
+          }
           childScreenshot {
             screenshotFile {
               childImageSharp {

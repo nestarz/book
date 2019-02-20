@@ -74,6 +74,9 @@ const Wrapper = styled.div`
     }
   }
   & > *:first-child {
+    @media (max-width: 700px) {
+      font-size: 70%;
+    }
     min-width: 20vw;
     flex: 1;
     @media (max-width: 700px) {
@@ -87,7 +90,14 @@ const Wrapper = styled.div`
     justify-content: space-between;
     padding: 1em;
     position: relative;
-
+    h1 {
+      @media (max-width: 700px) {
+        grid-template-columns: minmax(0, 0.1fr) 9.9fr;
+        &:before {
+          content: " ";
+        }
+      }
+    }
     &,
     .nav {
       > *:last-child {
@@ -97,7 +107,7 @@ const Wrapper = styled.div`
     }
   }
   & > *:nth-child(2) {
-    flex: 4;
+    flex: 10;
     max-height: 100vh;
     overflow-x: scroll;
   }
