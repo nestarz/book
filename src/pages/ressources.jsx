@@ -5,10 +5,13 @@ import PropTypes from "prop-types";
 import React, { useState } from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
+import { MdViewList, MdViewColumn } from "react-icons/md";
 
 const Wrapper = styled(TwoColumns)`
   button {
+    margin: 0;
     display: block;
+    color: ${props => props.theme.colors.body_color};
     &.more {
       &:before {
         content: "... ";
@@ -26,16 +29,38 @@ const Wrapper = styled(TwoColumns)`
           content: "✕";
         }
       }
-      .count {
-        font-size: 65%;
-      }
+    }
+    .count {
+      font-size: 65%;
     }
   }
   .body {
     max-width: 50rem;
+    &.inline {
+      max-width: 45rem;
+    }
     h1 {
       margin-bottom: 0.1em;
       margin-top: 0;
+      position: relative;
+      button.layout {
+        color: ${props => props.theme.brand.primary};
+        position: absolute;
+        right: 0;
+        top: 5%;
+      }
+    }
+    .focus {
+      h1 {
+        transform: translateX(-3em);
+        margin-top: 1em !important;
+        margin-bottom: 1em !important;
+        font-size: 190% !important;
+        width: 113%;
+        @media (max-width: 700px) {
+          font-size: 100% !important;
+        }
+      }
     }
     a {
       .alias {
@@ -47,6 +72,14 @@ const Wrapper = styled(TwoColumns)`
     }
     ul:not(*:empty) {
       margin: 1em 0;
+    }
+    ul.inline {
+      grid-template-columns: 1fr;
+      li {
+        display: grid;
+        grid-template-columns: 0.15fr 1fr;
+        grid-gap: 1em;
+      }
     }
     .gatsby-image-wrapper {
       margin-bottom: 1em;
@@ -78,7 +111,7 @@ Array.prototype.flatMap = function(f) {
 const Item = ({ item }) => {
   const [seeMore, setSeeMore] = useState(false);
   const excerpt = item.description
-    ? item.description.replace(/^(.{200}[^\s]*).*/, "$1")
+    ? item.description.replace(/^(.{150}[^\s]*).*/, "$1")
     : "";
   return (
     <li>
@@ -106,6 +139,8 @@ const Item = ({ item }) => {
 const Index = ({ data, location }) => {
   const [tagFilters, setTagsFilters] = useState(() => new Set());
   const [foo, setFoo] = useState(false);
+  const [currCategory, setCurrCategory] = useState("people");
+  const [layoutType, setLayoutType] = useState(false);
   const tags = Object.keys(data)
     .map((category, i) =>
       data[category].edges.map(({ node }, j) => {
@@ -146,16 +181,54 @@ const Index = ({ data, location }) => {
             <h1>
               Ressources, <span className={"desc"}>Essentials</span>
             </h1>
+            <div style={{ margin: "1em 0" }}>
+              {Object.keys(data).map((category, i) => {
+                const count = data[category].edges
+                  .map(({ node }, j) => {
+                    const isSubSet = Array.from(tagFilters).every(val => {
+                      return node.tags.includes(val);
+                    });
+                    if (isSubSet) {
+                      return 1;
+                    } else return 0;
+                  })
+                  .reduce((pv, cv) => pv + cv, 0);
+                if (count == 0) {
+                  if (category == currCategory) setCurrCategory(null);
+                  return <></>;
+                } else {
+                  if (currCategory == null) setCurrCategory(category);
+                }
+                return (
+                  <div>
+                    <h1>
+                      <button onClick={() => setCurrCategory(category)}>
+                        {category.charAt(0).toUpperCase() + category.slice(1)}{" "}
+                        <span className="count">{count}</span>
+                      </button>
+                    </h1>
+                  </div>
+                );
+              })}
+            </div>
           </header>
           <footer>{setTags}</footer>
         </div>
         <div>
-          <div className="body">
-            {Object.keys(data).map((category, i) => (
-              <div>
-                <h1>{category.charAt(0).toUpperCase() + category.slice(1)}</h1>
-                <ul>
-                  {data[category].edges.map(({ node }, j) => {
+          <div className={`body ${layoutType && "inline"}`}>
+            {currCategory && (
+              <div className={"focus"}>
+                <h1>
+                  {currCategory.charAt(0).toUpperCase() + currCategory.slice(1)}{" "}
+                  <button
+                    className={"layout"}
+                    onClick={() => setLayoutType(!layoutType)}
+                  >
+                    {layoutType ? "||" : "—"}
+                  </button>
+                </h1>
+                <ul className={layoutType && "inline"}>
+                  {data[currCategory].edges.map(({ node }, j) => {
                     const isSubSet = Array.from(tagFilters).every(val => {
                       return node.tags.includes(val);
                     });
@@ -171,7 +244,7 @@ const Index = ({ data, location }) => {
                   })}
                 </ul>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </Wrapper>
