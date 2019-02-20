@@ -1,6 +1,6 @@
 module.exports = {
   shortBio: {
-    fr: "Intéressé par de multiples champs : objet, céramique, architecture,  animation, dessin, culture, édition, mode, jeu vidéo, réalité virtuelle, interactions. Je recherche à allier mon profil scientifique pour des expérimentations et productions tangibles, éthiques et créatives.",
+    fr: "Intéressé par de multiples champs : objet, céramique, architecture, animation, culture, édition, mode, jeu vidéo... Je recherche à allier mon profil scientifique pour des expérimentations et productions tangibles, éthiques et créatives.",
     en: 'Currently focusing on Interaction and Object Design exploring the interaction of objects, people, art, technology and science using form and code with a mix of analog and digital materials.',
   },
   languages: {
