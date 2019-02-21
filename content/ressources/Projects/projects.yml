@@ -31,7 +31,7 @@
 # - [nwc-viewer](https://github.com/zz85/nwc-viewer) open source noteworthy composer music notation viewer & player
 # - [Panwriter](https://github.com/mb21/panwriter) Innovative approaches to making books in browsers. See paged media blog.
 # - [fluid_sim](https://github.com/nestarz/fluid_sim) An implementation of the article "Fast Fluid Dynamics Simulation on the GPU", using C++ and OpenGL 3.3.
-# ![fluid_sim](./sim2.gif)
+# ![fluid_sim](./data/sim2.gif)
 # - [Elements of Physics](https://elements-of-physics.surge.sh/) Elements of Physics is an interactive simulation which describes different elements of physics like Gravity, Acceleration and Force. Each element is described with different simulation controls.
 
 # ## Implementations
