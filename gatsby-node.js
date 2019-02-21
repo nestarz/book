@@ -5,9 +5,12 @@ const { createRemoteFileNode } = require(`gatsby-source-filesystem`);
 const wrapper = promise =>
   promise
     .then(result => {
-      return { result, error: null };
+      if (result.errors) {
+        throw result.errors
+      }
+      return { result, error: null }
     })
-    .catch(error => ({ error, result: null }));
+    .catch(error => ({ error, result: null }))
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   actions.setWebpackConfig({
@@ -35,7 +38,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  const fragments = require("./src/fragments/createPages");
+  const fragments = require("./src/queries/createPages");
   const { result } = await wrapper(graphql(fragments.pages));
   if (result.errors) throw result.errors;
   const pages = [
@@ -82,7 +85,7 @@ exports.createPages = async ({ graphql, actions }) => {
 const {
   default_musicBrainzReleaseFields,
   queryMusicBrainzRelease
-} = require("./src/fragments/musicbrainz");
+} = require("./src/queries/musicbrainz");
 exports.onCreateNode = async ({
   node,
   actions,

@@ -1,9 +1,9 @@
-import Layout from "components/Layout";
-import Contact from "components/Layout/Contact";
-import Header from "components/Layout/Header/Name2";
-import DigestList from "components/Layout/List/Billets";
-import ExperimentList from "components/Layout/List/Experiments";
-import ProjectList from "components/Layout/List/Projects";
+import Layout from "components/Layout/Main";
+import Contact from "components/Content/Contact";
+import Header from "components/Content/Name2";
+import DigestList from "components/Queries/Billets";
+import ExperimentList from "components/Queries/Experiments";
+import ProjectList from "components/Queries/Projects";
 import { graphql, StaticQuery, Link } from "gatsby";
 import Img from "gatsby-image";
 import { useToggleGlobalLanguage } from "hooks/useLanguage";

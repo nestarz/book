@@ -1,6 +1,6 @@
 import React from "react";
-import Cv from "components/Content/CurriculumVitae";
-import Layout from "components/Layout";
+import Cv from "components/Content/Cv";
+import Layout from "components/Layout/Main";
 
 const Index = ({ location }) => {
   return (

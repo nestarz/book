@@ -1,10 +1,10 @@
-import Layout from "components/Layout";
-import TwoColumns from "components/Layout/Columns/Two";
-import Contact from "components/Layout/Contact";
-import Name from "components/Layout/Header/Name";
-import ExperimentList from "components/Layout/List/Experiments";
-import ProjectList from "components/Layout/List/Projects";
-import SpringPosition from "components/Layout/SpringPosition";
+import Layout from "components/Layout/Main";
+import TwoColumns from "components/Layout/Template/TwoColumns";
+import Contact from "components/Content/Contact";
+import Name from "components/Content/Name";
+import ExperimentList from "components/Queries/Experiments";
+import ProjectList from "components/Queries/Projects";
+import SpringPosition from "components/Visual/SpringPosition";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import useHover from "hooks/useHover";

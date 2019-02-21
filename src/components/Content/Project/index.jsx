@@ -4,7 +4,7 @@ import Body from "./Body";
 import Footer from "./Footer";
 import Header from "./Header";
 import TOC from "./TOC";
-import TwoColumns from "components/Layout/Columns/Two";
+import TwoColumns from "components/Layout/Template/TwoColumns";
 
 const Wrapper = styled(TwoColumns)`
   .body {

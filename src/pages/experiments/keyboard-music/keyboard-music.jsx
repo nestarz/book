@@ -1,5 +1,5 @@
-import Layout from "components/Layout";
-import TwoColumns from "components/Layout/Columns/Two";
+import Layout from "components/Layout/Main";
+import TwoColumns from "components/Layout/Template/TwoColumns";
 import Synth from "components/Visual/Tone/Synth";
 import { useToggleGlobalLanguage } from "hooks/useLanguage";
 import Markdown from 'markdown-to-jsx';

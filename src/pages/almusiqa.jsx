@@ -1,6 +1,6 @@
-import Layout from "components/Layout";
-import TwoColumns from "components/Layout/Columns/Two";
-import PlaylistList from "components/Layout/List/Playlists";
+import Layout from "components/Layout/Main";
+import TwoColumns from "components/Layout/Template/TwoColumns";
+import PlaylistList from "components/Queries/Playlists";
 import Img from "gatsby-image";
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
 import { OutboundLink } from "gatsby-plugin-google-analytics";

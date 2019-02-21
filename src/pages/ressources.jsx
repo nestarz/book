@@ -1,5 +1,5 @@
-import Layout from "components/Layout";
-import TwoColumns from "components/Layout/Columns/Two";
+import Layout from "components/Layout/Main";
+import TwoColumns from "components/Layout/Template/TwoColumns";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import PropTypes from "prop-types";

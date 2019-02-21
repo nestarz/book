@@ -1,5 +1,5 @@
-import VisitCard from "components/Content/VisitCard";
-import Layout from "components/Layout";
+import VisitCard from "components/Content/Card";
+import Layout from "components/Layout/Main";
 import { useToggleGlobalLanguage } from "hooks/useLanguage";
 import _ from "lodash";
 import React, { useState } from "react";

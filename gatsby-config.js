@@ -127,7 +127,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `experiments`,
-        path: `${__dirname}/src/files`
+        path: `${__dirname}/src/data`
       }
     },
     {
@@ -152,7 +152,7 @@ module.exports = {
       options: {
         extensions: [".mdx", ".md"],
         defaultLayouts: {
-          default: require.resolve("./src/components/Layout/index.jsx")
+          default: require.resolve("./src/components/Layout/Main/index.jsx")
         },
         gatsbyRemarkPlugins: [
           {

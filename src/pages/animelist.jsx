@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Layout from "components/Layout";
-import Star from "components/SVG/Star";
+import Layout from "components/Layout/Main";
+import Star from "components/Visual/SVG/Star";
 import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Fausse3d from "components/Experiments/Fausse3d";
+import Fausse3d from "components/Content/Experiments/Fausse3d";
 
 const Index = ({ data }) => {
   return <Fausse3d />;
