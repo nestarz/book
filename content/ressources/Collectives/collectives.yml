@@ -1,3 +1,34 @@
+- name: Open Source Publishing
+  alias: OSP
+  url: http://osp.kitchen/
+  location:
+    city: Paris
+    country: France
+  description: "OSP makes graphic design using only free and open source software—pieces of software that invite their users to take part in their elaboration. Founded in 2006 in the context of Brussels art organisation Constant, the OSP caravan now comprises a group of individuals from different background and practices: typography, graphic design, cartography, programming, mathematics, writing, performance. Through a collaborative practice, they work on workshops, commissioned or self-commissioned projects, searching to redefine their playground, digging for a more intimate relation with the tools."
+  tags:
+    - typography
+    - typeface
+    - open source
+    - graphism
+    - performance
+    - programming
+    - cartography
+    - data
+    - art
+
+- name: Speculoos
+  url: https://www.speculoos.com
+  location:
+    city: Bruxelles
+    country: Belgique
+  description: "Créée en 2000 par deux typographes-graphistes (Pierre Huyghebaert et Alexia de Visscher) et un architecte (François Dispaux), Speculoos est une structure collective basée à Bruxelles. Désormais articulée autour de Pierre Huyghebaert, de Sophie Boiron et de plusieurs collaborateurs indépendants dont Delphine Platteeuw, Speculoos œuvre principalement dans le domaine culturel, associatif ou public, conjointement à des missions pédagogiques. Si sa structure est de type commerciale, son travail n’est pas une marchandise, mais vise à la production de sens. Aussi, Speculoos fait partie et travaille avec Atelier cartographique."
+  tags:
+    - typography
+    - cartography
+    - graphism
+    - data
+    - design
+
 - name: g.u.i
   url: http://www.g-u-i.net
   description: Un collectif créé en 2007 à Paris par Nicolas Couturier et Bachir Soussi-Chiadmi qui rassemble aujourd’hui (Nov. 18) Nicolas Couturier, Sarah Garcin, Julien Gargot, Angeline Ostinelli, Benoît Verjat et Tanguy Wermelinger et qui collabore avec des institutions culturelles et des collectivités publiques, des associations, des artistes et des chercheurs en mettant en œuvre le design graphique, interactif, éditorial, in situ, méthodologique, et la performance.
@@ -11,6 +42,20 @@
     - performance
     - graphism
     - communication
+
+- name: Hundred Rabbits
+  url: https://100r.co/
+  description: Rekka is an illustrator, writer, admirer of seabirds and purveyor of fungi. Devine is a programmer, artist and musician, a tireless creative, pasta monarch, and fervent believer in open-source content. Together, we created HundredRabbits, our studio on the water.
+  location:
+    country: Unknown
+  tags:
+    - data
+    - music
+    - technology
+    - tools
+    - games
+    - illustration
+    - open source
 
 - name: Vraiment Vraiment
   url: http://www.vraimentvraiment.com/
@@ -72,4 +117,3 @@
     - interactive
     - science
     - robotics
-

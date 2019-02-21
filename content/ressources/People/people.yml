@@ -285,7 +285,7 @@
     city: Madrid
     country: Spain
   tags:
-    - game
+    - games
     - developer
     - hacker
     - digital
@@ -429,7 +429,7 @@
 
 - name: Thijs Koerselman
   alias: "0x80"
-  url: https://github.com/0x80
+  url: http://www.vauxlab.com
   description: Design applications, interactive systems and websites. Love using technology in creative contexts.
   profession:
     - Designer
@@ -465,3 +465,22 @@
     - software
     - interactive
     - mixed reality
+
+- name: David Mondou-Labbe
+  url: https://wiki.xxiivv.com/#home
+  alias: Aliceffekt, Devine Lu Linvega
+  description: Aliceffekt is a Lo-Fi post-Industrial act who first performed in 2008 in Montreal, Canada, New York, USA and Tokyo, Japan. David Mondou originally started the Aliceffekt project to create soundscapes to complement his illustrations and animations. Less than a year later he was able to successfully take his music to Tokyo, Japan. Aliceffekt has produced a wide collection of tracks, with genres ranging from IDM, darkwave, industrial, and glitch. He has also collaborated with other artists such as Takahiro Kato, Laura Burk, Unter Null, Zer1, Funky-T and Johnny Hollow.
+  profession:
+    - Artist
+    - Musician
+    - Developer
+  location:
+    city: Tokyo
+    country: Japan
+  tags:
+    - data
+    - music
+    - technology
+    - tools
+    - games
+    - illustration

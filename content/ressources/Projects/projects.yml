@@ -1,35 +1,122 @@
+- name: dotgrid
+  url: https://dotgrid-neauoire.hashbase.io/
+  description: Dotgrid is a simple vector drawing application that works directly in the browser. ([Github](https://github.com/hundredrabbits/Dotgrid))
+  authors:
+    - Hundredrabbits
+  tags:
+    - typography
+    - typeface
+    - open source
+    - tools
+
+- name: Orca
+  url: https://wiki.xxiivv.com/#orca
+  description: Orca is a visual programming playground. Each letter of the alphabet is an operation, lowercase letters operate on bang, uppercase letters operate each frame.
+  authors:
+    - Hundredrabbits
+  tags:
+    - music
+    - open source
+    - tools
+    - programming
+    - synthesizer
+    - midi
+
+- name: Timeline of technologies for publishing (1963-2018)
+  url: http://recherche.julie-blanc.fr/timeline-publishing/
+  description: "Sections of the timeline: Hardware, OS & platforms Reading softwares Publishing softwares Softwares and systems for text Web-based technologies Formats and languages ([Gitlab](https://gitlab.com/JulieBlanc/timeline-publishing))"
+  authors:
+    - Julie Blanc
+  tags:
+    - data
+    - visualisation
+    - timeline
+    - web
+    - css
+    - graphism
+    - édition
+    - publication
+
+- name: UseModify
+  url: https://usemodify.com/
+  description: "Use & Modify is a personal selection of beautiful, classy, punk, professional, incomplete, weird typefaces. Open source licenses make them free to use and modify. This selection is the result of deep search and crushes. A project initiated by Raphaël Bastide."
+  authors:
+    - Raphaël Bastide
+  tags:
+    - typography
+    - typeface
+    - free
+    - open source
+    - collection
+
+- name: Beautiful Web Type
+  url: https://beautifulwebtype.com
+  description: I am building the definitive resource for open-source type ([Github](https://beautifulwebtype.com))
+  authors:
+    - Chad Mazzola
+  tags:
+    - typography
+    - typeface
+    - free
+    - open source
+    - collection
+
+- name: Work Avec
+  url: http://osp.kitchen/foundry/work-avec/
+  description: A schoolbook version of the Work Sans font
+  authors:
+    - Pierre Huyghe-Baert
+  tags:
+    - typography
+    - typeface
+    - open source
+
+- name: dcfvg
+  url: http://dcfvg.com/
+  description: Dcfvg (dont l’enchaînement des touches sur le clavier forment un “w”) est un bureau d’étude dont Benoît Verjat est l’unique chercheur. Ce bureau “s’applique à imaginer de nouvelles manières de produire et transformer des flux d’images et de langage” explique t’il.
+  authors:
+    - Benoît Verjat
+  tags:
+    - art
+    - science
+    - research
+    - digital
+
+- name: nwc-viewer
+  url: https://zz85.github.io/nwc-viewer/
+  description: Notably is a musical viewer and player for NWC (Noteworthy Composer) files. It attempts to parse multiple version of nwc files and renders music notation. It is cross-platform and doesn't require installation, using only browser based technologies like js, canvas and html.
+  authors:
+    - Joshua Koo
+  tags:
+    - digital
+    - music
+    - open source
+    - viewer
+    - tools
+    - midi
+
+- name: Panwriter
+  url: https://panwriter.com/
+  authors:
+    - Paged Media
+  description: Innovative approaches to making books in browsers. See paged media blog.
+  tags:
+    - web
+    - css
+    - graphism
+    - édition
+    - publication
+
 - name: Manycities
   url: http://www.regarde.org/portfolio/manycities
+  authors:
+    - Pierrick Thébault
   description: Explorez l'activité humaine dans plusieurs métropoles internationales au travers des données générées par les réseaux de télécommunications mobiles.
   tags:
     - data
     - visualisation
     - digital
 
-# # Projects
-
-# ## Data Visualisation
-# - [Manycities](http://www.regarde.org/portfolio/manycities) Explorez l'activité humaine dans plusieurs métropoles internationales au travers des données générées par les réseaux de télécommunications mobiles.
-# - [Timeline of technologies for publishing (1963-2018)](https://gitlab.com/JulieBlanc/timeline-publishing) Sections of the timeline: Hardware, OS & platforms Reading softwares Publishing softwares Softwares and systems for text Web-based technologies Formats and languages
-
-# ## Typography
-
-# ### Open Source Fonts
-# - [UseModify](https://usemodify.com/) Use & Modify is a personal selection of beautiful, classy, punk, professional, incomplete, weird typefaces. Open source licenses make them free to use and modify. This selection is the result of deep search and crushes. A project initiated by Raphaël Bastide.
-# - [Work Avec](http://osp.kitchen/foundry/work-avec/) Par Pierre Huyghe-Baert
-# - [Beautiful Web Type](https://github.com/ubuwaits/beautiful-web-type) I am building the definitive resource for open-source type
-
-# ### Licensed Fonts
-# - [Proxima Nova Web Fonts](https://github.com/elliakou/proxima-nova-web-fonts) Proxima Nova is american type designer Mark Simonson's most popular font family, a beautiful geometric-grotesque sans-serif that he created in 1994.
-
-# ### SVG
-# - [dotgrid](dat://dotgrid-neauoire.hashbase.io/) SVG Icon Tool
-
-# ## Collections et Dépôts Git
-# - [Open Source Publishing](http://osp.kitchen/about) OSP makes graphic design using only free and open source software—pieces of software that invite their users to take part in their elaboration.
-# - [dcfvg](http://dcfvg.com/)
-# - [nwc-viewer](https://github.com/zz85/nwc-viewer) open source noteworthy composer music notation viewer & player
-# - [Panwriter](https://github.com/mb21/panwriter) Innovative approaches to making books in browsers. See paged media blog.
 # - [fluid_sim](https://github.com/nestarz/fluid_sim) An implementation of the article "Fast Fluid Dynamics Simulation on the GPU", using C++ and OpenGL 3.3.
 # ![fluid_sim](./data/sim2.gif)
 # - [Elements of Physics](https://elements-of-physics.surge.sh/) Elements of Physics is an interactive simulation which describes different elements of physics like Gravity, Acceleration and Force. Each element is described with different simulation controls.

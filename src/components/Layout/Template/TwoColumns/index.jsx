@@ -164,7 +164,7 @@ const Wrapper = styled.div`
       }
     }
     & > div ul {
-      column-gap: 1em;
+      grid-gap: 1em;
     }
     h1,
     h2 {

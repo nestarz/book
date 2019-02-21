@@ -27,7 +27,7 @@ const Wrapper = styled(TwoColumns)`
     }
     .moreToggle {
       &:before {
-        content: ' '
+        content: " ";
       }
       color: ${props => props.theme.brand.primary};
     }
@@ -91,21 +91,31 @@ const Wrapper = styled(TwoColumns)`
       color: ${props => props.theme.colors.body_color};
       margin-bottom: 0.5em;
     }
-    ul:not(*:empty) {
+    ul.mainUl:not(*:empty) {
       margin: 1em 0;
+      & > li {
+        display: flex;
+        flex-direction: column;
+        justify-content: normal;
+        & > * {
+          margin-bottom: 1em;
+        }
+        & > :first-child {
+          :empty {
+            background-color: ${props => props.theme.colors.body_color};
+            flex: 1;
+            opacity: 0.05;
+            max-height: 316.23px;
+          }
+        }
+      }
     }
     ul.inline {
       grid-template-columns: 1fr;
-      li {
+      & > li {
         display: grid;
         grid-template-columns: 0.2fr 0.8fr;
         grid-gap: 1em;
-      }
-    }
-    .gatsby-image-wrapper {
-      margin-bottom: 1em;
-      & + div {
-        margin-bottom: 1em;
       }
     }
   }
@@ -161,20 +171,50 @@ const Item = ({ item, setTagsFilters }) => {
           )}
         </button>
         <div>
-          {item.tags.map((tag, index) => (
-            <button
-              className="tag inline"
-              onClick={() => setTagsFilters(new Set([tag]))}
-            >
-              {tag}
-            </button>
-          ))}
+          {item.tags &&
+            item.tags.map((tag, index) => (
+              <button
+                className="tag inline"
+                onClick={() => setTagsFilters(new Set([tag]))}
+              >
+                {tag}
+              </button>
+            ))}
         </div>
       </div>
     </li>
   );
 };
 
+const Collection = ({ items, setTagsFilters, parentNode }) => {
+  return (
+    <li>
+      {parentNode.childScreenshot ? (
+        <Img
+          fluid={parentNode.childScreenshot.screenshotFile.childImageSharp.fluid}
+        />
+      ) : (
+        <div />
+      )}
+      <ul className={"collection"}>
+        {items.map((item, k) => (
+          <Item item={item} setTagsFilters={setTagsFilters} />
+        ))}
+        <div>
+          {parentNode.tags &&
+            parentNode.tags.map((tag, index) => (
+              <button
+                className="tag inline"
+                onClick={() => setTagsFilters(new Set([tag]))}
+              >
+                {tag}
+              </button>
+            ))}
+        </div>
+      </ul>
+    </li>
+  );
+};
 const Index = ({ data, location }) => {
   const [tagFilters, setTagsFilters] = useState(() => new Set());
   const [foo, setFoo] = useState(false);
@@ -266,16 +306,20 @@ const Index = ({ data, location }) => {
                     {layoutType ? "||" : "—"}
                   </button>
                 </h1>
-                <ul className={layoutType && "inline"}>
+                <ul className={`mainUl ${layoutType && "inline"}`}>
                   {data[currCategory].edges.map(({ node }, j) => {
                     const isSubSet = Array.from(tagFilters).every(val => {
                       return node.tags.includes(val);
                     });
                     if (isSubSet) {
                       if (node.collection) {
-                        return node.collection.map((item, k) => (
-                          <Item item={item} setTagsFilters={setTagsFilters} />
-                        ));
+                        return (
+                          <Collection
+                            setTagsFilters={setTagsFilters}
+                            items={node.collection}
+                            parentNode={node}
+                          />
+                        );
                       } else {
                         return (
                           <Item item={node} setTagsFilters={setTagsFilters} />
