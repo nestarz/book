@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   h2,
   h3,
   h4 {
-    font-size: 100%;
+    font-size: 114.305%;
     margin: 0;
     padding: 0;
     flex: 0;
@@ -28,14 +28,14 @@ const Wrapper = styled.div`
       counter-increment: list 1;
       color: ${props => props.theme.brand.primary};
       content: counter(list, decimal-leading-zero);
-      transform: scale(1) rotate(0deg) translate(0px, 0px) skew(20deg, 0deg);
+      transform: scale(1) rotate(0deg) translate(4px, 0px) skew(20deg, 0deg);
     }
     &:hover {
       transition: transform;
       &:before {
         transform: none;
         text-decoration: underline;
-        text-decoration-style: wavy;
+        text-decoration-style: dotted;
       }
     }
   }

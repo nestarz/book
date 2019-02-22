@@ -23,7 +23,7 @@ export const frontmatter = {
 };
 
 const PaginationWrapper = styled.div`
-  font-size: 1vw;
+  font-size: 0.97222vw;
   display: flex;
   margin: 0 auto;
   flex: 1;

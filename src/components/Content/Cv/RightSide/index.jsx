@@ -7,17 +7,14 @@ const RecordBlock = styled.div`
   margin: 0 auto;
   max-width: ${props => props.theme.container[props.type]};
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 0.1fr 0.9fr;
   .recordDate {
-    flex: 0;
     min-width: 0%;
     margin: 0;
-    writing-mode: vertical-rl;
     margin-bottom: 1em;
-    text-orientation: mixed;
   }
   .recordMain {
-    flex-grow: 1;
     & > div:first-child {
       font-weight: 500;
     }

@@ -1,4 +1,5 @@
 import "circular-std";
+import "typeface-libre-baskerville";
 import SEO from "components/SEO";
 import Star from "components/Visual/SVG/Star";
 import { Link } from "gatsby";
@@ -19,8 +20,9 @@ const StarFixed = styled(Star)`
 const GlobalStyle = createGlobalStyle`
   ${reset}
   html {
-    font-family: "CircularStd", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     cursor: crosshair;
+    font-family: "Libre Baskerville";
+    font-weight: 120;
   }
   html, body {
     margin: 0;
@@ -29,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
   body {
-    font-size: 105%;
+    font-size: 77.766666%;
   }
   #___gatsby, #___gatsby > div {
     margin: 0;
@@ -45,6 +47,7 @@ const GlobalStyle = createGlobalStyle`
   }
   h1, h2, h3, h4 {
     font-weight: 500;
+    font-family: "CircularStd", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
   .ScrollUpButton__Container {
     background-color: transparent !important;

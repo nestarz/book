@@ -13,7 +13,7 @@ const reset = css`
   }
   html {
     text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
+    /* -webkit-font-smoothing: antialiased; http://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/ */
     font-feature-settings: "kern" 1;
     font-kerning: normal;
     overflow-x: hidden;

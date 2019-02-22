@@ -105,6 +105,7 @@ const About = styled.h1`
   :before {
     content: "A1" !important;
   }
+  font-family: "Libre Baskerville";
   /*color: ${props => props.theme.brand.primary} !important;*/
   transform: translateX(-3em);
   margin-top: 1em !important;
@@ -146,7 +147,7 @@ const Index = ({
         <div>
           <Name withDesc={true} />
           <div className={"nav"}>
-          <Link to={"/ressources"}>Ressources (v2)</Link>
+          <Link to={"/ressources"}>Ressources</Link>
           <Link to={"/almusiqa"}>Almusiqa</Link>
             <Link to={"/animelist"}>Animes</Link>
             <button onClick={() => toggleLanguage()}>
