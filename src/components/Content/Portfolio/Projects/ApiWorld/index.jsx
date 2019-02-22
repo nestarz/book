@@ -14,7 +14,7 @@ const LocalWrapper = styled(PortfolioWrapper)`
 `;
 
 const Tweet = styled(Info)`
-  border-right: 0.1em dashed ${props => props.theme.brand.primary};
+  border-right: 0.1em dashed;
   font-size: 1.2em;
   padding: 0.5em;
 

@@ -84,14 +84,14 @@ p {
   }
   @media (min-width: 700px) {
     & > * {
-      border-bottom: 0.1em solid ${props => props.theme.brand.primary};
+      border-bottom: 0.1em dotted;
       padding: 1em;
     }
     & > *:last-child, & > *:nth-last-child(2):nth-child(odd) {
       border-bottom: none;
     }
     & > *:nth-child(odd) {
-      border-right: .1em dotted ${props => props.theme.brand.primary};
+      border-right: .1em dotted;
     }
   }
 }
