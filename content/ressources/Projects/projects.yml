@@ -21,6 +21,7 @@
     - programming
     - synthesizer
     - midi
+    - ascii
 
 - name: Timeline of technologies for publishing (1963-2018)
   url: http://recherche.julie-blanc.fr/timeline-publishing/
@@ -117,17 +118,109 @@
     - visualisation
     - digital
 
-# - [fluid_sim](https://github.com/nestarz/fluid_sim) An implementation of the article "Fast Fluid Dynamics Simulation on the GPU", using C++ and OpenGL 3.3.
-# ![fluid_sim](./data/sim2.gif)
-# - [Elements of Physics](https://elements-of-physics.surge.sh/) Elements of Physics is an interactive simulation which describes different elements of physics like Gravity, Acceleration and Force. Each element is described with different simulation controls.
+- name: fluid_sim
+  url: https://github.com/Erkaman/fluid_sim
+  authors:
+    - Eric Arnebäck
+  description: An implementation of the article "Fast Fluid Dynamics Simulation on the GPU", using C++ and OpenGL 3.3.
+  tags:
+    - opengl
+    - fluid
+    - simulation
+    - 2d
 
-# ## Implementations
-# - [lc0-js](https://frpays.github.io/lc0-js/engine.html) Chess engine designed to play chess via neural network
-# - [Dmitry Kurtaev/ Style Transfer](https://dkurtaev.github.io/style_transfer.html) This is a demonstration of Fast Neural Style deep learning networks by Justin Johnson, Alexandre Alahi and Li Fei-Fei using OpenCV.js.
-# - [Tone Analyzer](https://tone-analyzer-demo.ng.bluemix.net/) This service uses linguistic analysis to detect joy, fear, sadness, anger, analytical, confident and tentative tones found in text.
+- name: Elements of Physics
+  url: https://elements-of-physics.surge.sh/
+  authors:
+    - Nitin Tulswani
+  description:  Elements of Physics is an interactive simulation which describes different elements of physics like Gravity, Acceleration and Force. Each element is described with different simulation controls.
+  tags:
+    - learning
+    - physics
+    - interactive
 
-# ## Creative Coding and Design
-# - [NIPS Machine Learning for Creativity and Design](http://nips4creativity.com/) This is a collection of art, music and design using machine learning. It is part of the NIPS Machine Learning for Creativity and Design Workshop 2017.
-# - [ECCV Computer Vision Art Gallery](https://computervisionart.com/) Recent practice in computer vision and AI art.
-# - [Machine Learning for Artists](https://ml4a.github.io/ml4a/) Notes, demos, interactive visuals, art projects, references, further readings, etc.
-#     - [The Neural Aesthetic @ ITP-NYU, Fall 2018](https://ml4a.github.io/classes/itp-F18/)
+- name: lc0-js
+  url: https://frpays.github.io/lc0-js/engine.html
+  authors:
+    - LCZero
+  description: Chess engine designed to play chess via neural network
+  tags:
+    - games
+    - neural network
+    - machine learning
+
+- name: Style Transfer
+  url: https://dkurtaev.github.io/style_transfer.html
+  authors:
+    - Dmitry Kurtaev
+  description: This is a demonstration of Fast Neural Style deep learning networks by Justin Johnson, Alexandre Alahi and Li Fei-Fei using OpenCV.js.
+  tags:
+    - opencv
+    - neural network
+    - machine learning
+    - image processing
+
+- name: Tone Analyzer
+  url: https://tone-analyzer-demo.ng.bluemix.net/
+  authors:
+    - IBM
+  description: This service uses linguistic analysis to detect joy, fear, sadness, anger, analytical, confident and tentative tones found in text.
+  tags:
+    - neural network
+    - machine learning
+    - nlp
+    - linguistic
+    - emotions
+
+- name: Learn X in Y minutes
+  url: https://learnxinyminutes.com/
+  authors:
+    - Adam Bard
+  description: Learn X in Y minutes is a site for short programming language tutorials designed for professional programmers to get up to speed quickly on a new language. It started as a blog response to a Lua tutorial I saw on HN. I made my own Clojure version, and was encouraged to set up a site and accept contributions via Github. [Github](https://github.com/adambard/learnxinyminutes-docs)
+  tags:
+    - learning
+    - programming
+    - tutorials
+
+- name: NIPS Machine Learning for Creativity and Design
+  url: http://nips4creativity.com/
+  authors:
+    - NIPS Machine Learning for Creativity and Design Workshop
+  description: This is a collection of art, music and design using machine learning. It is part of the NIPS Machine Learning for Creativity and Design Workshop.
+  tags:
+    - neural network
+    - machine learning
+    - art
+    - music
+    - design
+    - linguistic
+    - emotions
+    - collection
+
+- name: ECCV Computer Vision Art Gallery
+  url: https://computervisionart.com
+  authors:
+    - European Conference on Computer Vision (ECCV)
+  description: Recent practice in computer vision and AI art.
+  tags:
+    - neural network
+    - machine learning
+    - computer vision
+    - art
+    - design
+    - fashion
+    - collection
+
+- name: Machine Learning for Artists
+  url: https://ml4a.github.io/ml4a
+  authors:
+    - European Conference on Computer Vision (ECCV)
+  description: Notes, demos, interactive visuals, art projects, references, further readings, etc.
+  tags:
+    - neural network
+    - machine learning
+    - computer vision
+    - art
+    - design
+    - fashion
+    - collection

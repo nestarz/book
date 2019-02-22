@@ -484,3 +484,19 @@
     - tools
     - games
     - illustration
+
+- name: Eric Arnebäck
+  url: https://erkaman.github.io/
+  description: This website is the portfolio of Eric Arnebäck, a Swedish developer currently based in Sweden. I am a developer specializing in Real-time Computer Graphics, mainly using technologies such as OpenGL, WebGL, Unity and Direct3D with the languages Javascript, C++ and C#. I am also skilled in Applied Mathematics, mainly in the areas Computational Geometry, Digital Geometry Processing and Numerical Optimization.
+  profession:
+    - Developer
+    - Engineer
+  location:
+    country: Sweden
+  tags:
+    - developer
+    - real-time
+    - computer graphics
+    - computational geometry
+    - rendering
+    - simulation

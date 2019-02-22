@@ -36,3 +36,45 @@
     - design
     - poetry
     - generative
+
+- name: NIPS Machine Learning for Creativity and Design Workshop
+  url: https://nips.cc/Conferences/2018/Schedule?showEvent=10924
+  location:
+    city: Montréal
+    country: Canada
+  description: "Over the past few years, generative machine learning and machine creativity have continued grow and attract a wider audience to machine learning. Generative models enable new types of media creation across images, music, and text - including recent advances such as sketch-rnn and the Universal Music Translation Network. This one-day workshop broadly explores issues in the applications of machine learning to creativity and design. We will look at algorithms for generation and creation of new media and new designs, engaging researchers building the next generation of generative models (GANs, RL, etc). We investigate the social and cultural impact of these new models, engaging researchers from HCI/UX communities and those using machine learning to develop new creative tools. In addition to covering the technical advances, we also address the ethical concerns ranging from the use of biased datasets to building tools for better “DeepFakes”. Finally, we’ll hear from some of the artists and musicians who are adopting machine learning including deep learning and reinforcement learning as part of their own artistic process. We aim to balance the technical issues and challenges of applying the latest generative models to creativity and design with philosophical and cultural issues that surround this area of research."
+  tags:
+    - art
+    - data
+    - digital
+    - architecture
+    - sound
+    - video
+    - design
+    - poetry
+    - generative
+    - neural network
+    - machine learning
+    - music
+    - design
+
+- name: ECCV 2018 Workshop on Computer Vision for Fashion, Art and Design
+  url: https://sites.google.com/view/eccvfashion/home
+  location:
+    city: Munich
+    country: Germany
+  description: "Creative domains render a big part of modern society, having a strong influence on economy and cultural life. Much effort within creative domains, such as fashion, art and design, centers around the creation, consumption and analytics of creative visual content. In recent years, there has been an explosion of research in applying machine learning and computer vision algorithms to various aspects of the creative domains including generating, analyzing and processing visual content. This ever-increasing interest is most evident in two important research trends: (1) Computer Vision for Fashion and (2) Visual Content Generation for Creative Applications."
+  tags:
+    - art
+    - data
+    - digital
+    - architecture
+    - sound
+    - video
+    - design
+    - poetry
+    - generative
+    - neural network
+    - machine learning
+    - music
+    - design
