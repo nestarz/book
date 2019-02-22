@@ -110,7 +110,7 @@ const Wrapper = styled(TwoColumns)`
         }
       }
     }
-    ul.inline {
+    ul.mainUl.inline {
       grid-template-columns: 1fr;
       & > li {
         display: grid;

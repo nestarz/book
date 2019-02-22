@@ -12,6 +12,33 @@
     - web
     - communication
 
+- name: DAE Master Information Design
+  type: master
+  url: http://www.masterinformationdesign.info/
+  parent: Design Academy Eindhoven
+  description: Established in 2010, the Master Information Design is one of four master programmes at Design Academy Eindhoven (DAE). The two-year curriculum is set up around research and design assignments, given by the design tutors, writing and thesis supervisors, and lectures and workshops given by guest lecturers. During the second year, students work on individual research themes, which they have formulated themselves. In order to formulate topical research themes the master programmes cooperate with external institutions, governments, companies, leading experts, as well as with the researchers of the DAE- Readerships.
+  location:
+    city: Eindhoven
+    country: Netherlands
+  tags:
+    - interaction
+    - design
+    - web
+    - communication
+    - information
+    - data
+
+- name: ENSCI-Les Ateliers
+  type: school
+  url: https://www.ensci.com/
+  description: Dans nos sociétés technicisées, la création, la conception par le design, reste encore une affaire de généralistes qui doivent répondre par des projets en abordant résolument des sujets. La diversité et la complexité de ces sujets transforment quotidiennement nos approches pédagogiques et remettent en question nos possibles certitudes. Dans ce contexte, faire école  réside également dans notre capacité à accompagner voire à transcender la transformation de la société telle qu’elle est vécue technologiquement, scientifiquement et socialement. Le caractère généraliste de nos approches, notre ouverture aux univers spécialisés, notre faculté à ne pas se laisser trahir par nos habitus conditionnent considérablement le modèle que nous nous représentons et sa transformation en projet pour notre établissement. *— Yann Fabès, directeur de l’ENSCI-Les Ateliers*
+  location:
+    city: Paris
+    country: France
+  tags:
+    - design
+    - industrial
+
 - name: École supérieure d’art et de design d’Amiens
   alias: ESAD
   type: school
