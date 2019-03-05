@@ -12,14 +12,16 @@ export const frontmatter = {
 
 const Wrapper = styled(PosterTemplate)`
   background-color: black;
+  color: white;
   font-size: 120%;
   font-family: monospace;
   border: 1em solid black;
   .highlight {
-    color: red;
+    color: white;
+    background-color: black;
     filter: blur(0.3px);
     display: inline-block;
-    transform: scale(5, 2);
+    transform: scale(2, 2);
   }
 `;
 
@@ -36,7 +38,7 @@ const Internal = ({ fileIds }) => {
     const newVal = Math.floor(Math.random() * 100);
     if (Math.random() > 0.8) setNumbers([newVal]);
     else setNumbers([...numbers, newVal]);
-  }, 500);
+  }, 300);
   console.log(numbers);
   return (
     <Wrapper>
