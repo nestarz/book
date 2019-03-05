@@ -29,6 +29,19 @@ const PaginationWrapper = styled.div`
   flex: 1;
   align-items: center;
   & > button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    text-align: inherit;
+    text-decoration: underline;
+    position: fixed;
+    z-index: 999;
+    bottom: 3em;
+    right: 1em;
     @media print {
       display: none;
     }
@@ -76,7 +89,7 @@ const Index = ({ location }) => {
     <Layout pathname={location.pathname} withNav={true}>
       <PageA3_Paysage />
       <PaginationWrapper>
-        <button onClick={() => setContinuousScroll(!continuousScroll)}>continuousScroll</button>
+        <button onClick={() => setContinuousScroll(!continuousScroll)}>1-Page</button>
         <Pagination
           amountPerPage={continuousScroll ? 7 : 1}
           keysGoPrevious={[37, 38]}
