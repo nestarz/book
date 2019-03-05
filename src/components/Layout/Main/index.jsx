@@ -14,14 +14,18 @@ import { dark_theme, theme } from "../../../../config/theme";
 import reset from "../../../styles/reset";
 const StarFixed = styled(Star)`
   position: fixed;
-  bottom: 1em;
-  right: 1em;
+  bottom: -50em;
+  right: -3em;
+  transform: scale(-1, 1);
+  pointer-events: none;
 `;
 const GlobalStyle = createGlobalStyle`
   ${reset}
   html {
     cursor: crosshair;
+    font-family: "CircularStd", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-family: "Libre Baskerville";
+    font-size: 95%;
     font-weight: 120;
   }
   html, body {
@@ -31,7 +35,8 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
   body {
-    font-size: 77.766666%;
+    /*font-size: 77.766666%;*/
+    font-size: 100%;
   }
   #___gatsby, #___gatsby > div {
     margin: 0;
@@ -47,7 +52,6 @@ const GlobalStyle = createGlobalStyle`
   }
   h1, h2, h3, h4 {
     font-weight: 500;
-    font-family: "CircularStd", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
   .ScrollUpButton__Container {
     background-color: transparent !important;
@@ -70,7 +74,7 @@ const LumiereToggle = styled.div`
   bottom: 1.5em;
   right: 1.5em;
   cursor: pointer;
-  z-index: 999;
+  z-index: -1;
   & > div {
     font-size: 120%;
     display: flex;
@@ -85,6 +89,7 @@ const LumiereToggle = styled.div`
     text-align: right;
   }
   div {
+    z-index: -1;
     .child {
       color: ${props => props.theme.brand.primary} !important;
       display: block !important;

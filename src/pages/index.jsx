@@ -105,7 +105,6 @@ const About = styled.h1`
   :before {
     content: "A1" !important;
   }
-  font-family: "Libre Baskerville";
   /*color: ${props => props.theme.brand.primary} !important;*/
   transform: translateX(-3em);
   margin-top: 1em !important;
@@ -171,7 +170,7 @@ const Index = ({
                 ))
               }
             </ProjectList>
-            <About>{shortBio[language]}</About>
+            {/* <About>{shortBio[language]}</About> */}
             <ExperimentList>
               {projects =>
                 projects.map((project, i) => (

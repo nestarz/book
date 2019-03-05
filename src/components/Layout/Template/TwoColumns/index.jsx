@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   h2,
   h3,
   h4 {
-    font-size: 114.305%;
+    font-size: 100%;
     margin: 0;
     padding: 0;
     flex: 0;
@@ -22,13 +22,17 @@ const Wrapper = styled.div`
   }
   h1 {
     page-break-before: always;
-    display: grid;
-    grid-template-columns: minmax(2.4em, 0.1fr) 9.9fr;
+    /* display: grid;
+    grid-template-columns: minmax(2em, 0.1fr) 9.9fr; */
     &:before {
-      counter-increment: list 1;
+      /* counter-increment: list 1;
       color: ${props => props.theme.brand.primary};
       content: counter(list, decimal-leading-zero);
-      transform: scale(1) rotate(0deg) translate(4px, 0px) skew(20deg, 0deg);
+      font-family: "Libre Baskerville";
+      font-size: 90%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; */
     }
     &:hover {
       transition: transform;
@@ -118,6 +122,7 @@ const Wrapper = styled.div`
     > *:last-child {
       margin-bottom: 1em !important;
     }
+    background-color: ${props => props.theme.colors.bg_color} !important;
     flex: 1;
     max-width: 40rem;
     font-size: 100%;

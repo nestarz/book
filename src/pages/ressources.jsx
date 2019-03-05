@@ -69,11 +69,12 @@ const Wrapper = styled(TwoColumns)`
     }
     .focus {
       h1 {
-        transform: translateX(-3em);
+        /* transform: translateX(-3em);
+        width: 113%; */
+
         margin-top: 1em !important;
         margin-bottom: 1em !important;
         font-size: 190% !important;
-        width: 113%;
         @media (max-width: 700px) {
           font-size: 100% !important;
         }

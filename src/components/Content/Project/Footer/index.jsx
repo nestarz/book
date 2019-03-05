@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 const H1 = styled.h1`
   margin: 0 !important;
-  :after,
-  :before {
-    display: none;
+  &:after,
+  &:before {
+    display: none !important;
   }
 `;
 const Header = ({ birthtime, frontmatter }) => {

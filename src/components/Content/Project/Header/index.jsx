@@ -18,14 +18,12 @@ const Header = ({
   ];
   return (
     <header>
-      <h1>
-        <Typed
-          strings={strings}
-          typeSpeed={10}
-          showCursor={true}
-          smartBackspace={true}
-        />
-      </h1>
+      <span>
+        <h1>{frontmatter.title}</h1>
+        <span class="desc">
+          {frontmatter.subtitle ? frontmatter.subtitle : excerpt}
+        </span>
+      </span>
     </header>
   );
 };
