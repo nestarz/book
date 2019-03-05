@@ -122,7 +122,6 @@ const Wrapper = styled.div`
     > *:last-child {
       margin-bottom: 1em !important;
     }
-    background-color: ${props => props.theme.colors.bg_color} !important;
     flex: 1;
     max-width: 40rem;
     font-size: 100%;

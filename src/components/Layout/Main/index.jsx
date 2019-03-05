@@ -14,10 +14,8 @@ import { dark_theme, theme } from "../../../../config/theme";
 import reset from "../../../styles/reset";
 const StarFixed = styled(Star)`
   position: fixed;
-  bottom: -50em;
-  right: -3em;
-  transform: scale(-1, 1);
-  pointer-events: none;
+  bottom: 1em;
+  right: 1em;
 `;
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -74,7 +72,7 @@ const LumiereToggle = styled.div`
   bottom: 1.5em;
   right: 1.5em;
   cursor: pointer;
-  z-index: -1;
+  z-index: 999;
   & > div {
     font-size: 120%;
     display: flex;
@@ -89,7 +87,6 @@ const LumiereToggle = styled.div`
     text-align: right;
   }
   div {
-    z-index: -1;
     .child {
       color: ${props => props.theme.brand.primary} !important;
       display: block !important;
